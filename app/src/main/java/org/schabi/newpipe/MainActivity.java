@@ -65,6 +65,7 @@ import org.schabi.newpipe.databinding.InstanceSpinnerLayoutBinding;
 import org.schabi.newpipe.databinding.ToolbarLayoutBinding;
 import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.extractor.NewPipe;
+import org.schabi.newpipe.extractor.ServiceList;
 import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.comments.CommentsInfoItem;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
@@ -283,16 +284,18 @@ public class MainActivity extends AppCompatActivity {
 
         //Kiosks
         final int currentServiceId = ServiceHelper.getSelectedServiceId(this);
-        final StreamingService service = NewPipe.getService(currentServiceId);
+        if (currentServiceId != ServiceList.YouTube.getServiceId()) {
+            final StreamingService service = NewPipe.getService(currentServiceId);
 
-        int kioskMenuItemId = 0;
+            int kioskMenuItemId = 0;
 
-        for (final String ks : service.getKioskList().getAvailableKiosks()) {
-            drawerLayoutBinding.navigation.getMenu()
-                    .add(R.id.menu_kiosks_group, kioskMenuItemId, 0, KioskTranslator
-                            .getTranslatedKioskName(ks, this))
-                    .setIcon(KioskTranslator.getKioskIcon(ks));
-            kioskMenuItemId++;
+            for (final String ks : service.getKioskList().getAvailableKiosks()) {
+                drawerLayoutBinding.navigation.getMenu()
+                        .add(R.id.menu_kiosks_group, kioskMenuItemId, 0, KioskTranslator
+                                .getTranslatedKioskName(ks, this))
+                        .setIcon(KioskTranslator.getKioskIcon(ks));
+                kioskMenuItemId++;
+            }
         }
 
         //Settings and About
@@ -392,7 +395,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupDrawerHeader() {
-        drawerHeaderBinding.drawerHeaderActionButton.setOnClickListener(view -> toggleServices());
+        final boolean hasMultipleServices = ServiceHelper.getEnabledServices().size() > 1;
+        drawerHeaderBinding.drawerHeaderActionButton.setOnClickListener(view -> {
+            if (hasMultipleServices) {
+                toggleServices();
+            }
+        });
+        drawerHeaderBinding.drawerHeaderActionButton
+                .setVisibility(hasMultipleServices ? View.VISIBLE : View.GONE);
+        drawerHeaderBinding.drawerArrow.setVisibility(hasMultipleServices ? View.VISIBLE : View.GONE);
 
         // If the current app name is bigger than the default "NewPipe" (7 chars),
         // let the text view grow a little more as well.
@@ -410,6 +421,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void toggleServices() {
+        if (ServiceHelper.getEnabledServices().size() <= 1) {
+            return;
+        }
         servicesShown = !servicesShown;
 
         drawerLayoutBinding.navigation.getMenu().removeGroup(R.id.menu_services_group);
@@ -433,7 +447,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showServices() {
-        for (final StreamingService s : NewPipe.getServices()) {
+        for (final StreamingService s : ServiceHelper.getEnabledServices()) {
             final String title = s.getServiceInfo().getName();
 
             final MenuItem menuItem = drawerLayoutBinding.navigation.getMenu()

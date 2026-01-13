@@ -22,6 +22,8 @@ import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.services.peertube.PeertubeInstance;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
@@ -116,9 +118,14 @@ public final class ServiceHelper {
     }
 
     public static int getSelectedServiceId(final Context context) {
-        return Optional.ofNullable(getSelectedService(context))
-                .orElse(DEFAULT_FALLBACK_SERVICE)
-                .getServiceId();
+        final StreamingService selectedService =
+                Optional.ofNullable(getSelectedService(context)).orElse(DEFAULT_FALLBACK_SERVICE);
+        if (!isServiceEnabled(selectedService.getServiceId())) {
+            setSelectedServicePreferences(context,
+                    DEFAULT_FALLBACK_SERVICE.getServiceInfo().getName());
+            return DEFAULT_FALLBACK_SERVICE.getServiceId();
+        }
+        return selectedService.getServiceId();
     }
 
     @Nullable
@@ -128,10 +135,25 @@ public final class ServiceHelper {
                         context.getString(R.string.default_service_value));
 
         try {
-            return NewPipe.getService(serviceName);
+            final StreamingService service = NewPipe.getService(serviceName);
+            if (!isServiceEnabled(service.getServiceId())) {
+                setSelectedServicePreferences(context,
+                        DEFAULT_FALLBACK_SERVICE.getServiceInfo().getName());
+                return DEFAULT_FALLBACK_SERVICE;
+            }
+            return service;
         } catch (final ExtractionException e) {
             return null;
         }
+    }
+
+    public static boolean isServiceEnabled(final int serviceId) {
+        return serviceId == ServiceList.YouTube.getServiceId();
+    }
+
+    @NonNull
+    public static List<StreamingService> getEnabledServices() {
+        return Collections.singletonList(ServiceList.YouTube);
     }
 
     @NonNull
