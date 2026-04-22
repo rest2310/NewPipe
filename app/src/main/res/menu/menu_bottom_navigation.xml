@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_bottom_home"
+        android:icon="@drawable/ic_subscriptions"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/action_bottom_subscriptions"
+        android:icon="@drawable/ic_tv"
+        android:title="@string/tab_subscriptions" />
+    <item
+        android:id="@+id/action_bottom_playlists"
+        android:icon="@drawable/ic_bookmark"
+        android:title="@string/tab_bookmarks" />
+    <item
+        android:id="@+id/action_bottom_downloads"
+        android:icon="@drawable/ic_file_download"
+        android:title="@string/downloads" />
+</menu>

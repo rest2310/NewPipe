@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_overflow_history"
+        android:title="@string/action_history"
+        android:icon="@drawable/ic_history"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_overflow_settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_overflow_about"
+        android:title="@string/tab_about"
+        android:icon="@drawable/ic_info_outline"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_overflow_donation"
+        android:title="@string/donation_title"
+        android:icon="@drawable/volunteer_activism_ic"
+        android:showAsAction="never" />
+</menu>

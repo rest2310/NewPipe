@@ -10,14 +10,12 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.SubMenu
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
-import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -58,7 +56,6 @@ import org.schabi.newpipe.streams.io.NoFileManagerSafeGuard
 import org.schabi.newpipe.streams.io.StoredFileHelper
 import org.schabi.newpipe.util.NavigationHelper
 import org.schabi.newpipe.util.OnClickGesture
-import org.schabi.newpipe.util.ServiceHelper
 import org.schabi.newpipe.util.ThemeHelper.getGridSpanCountChannels
 import org.schabi.newpipe.util.external_communication.ShareUtils
 import java.text.SimpleDateFormat
@@ -139,45 +136,12 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
     }
 
     private fun buildImportExportMenu(menu: Menu) {
-        // -- Import --
-        val importSubMenu = menu.addSubMenu(R.string.import_from)
-
-        addMenuItemToSubmenu(importSubMenu, R.string.previous_export) { onImportPreviousSelected() }
+        setClickListenerToMenuItem(menu.add(R.string.import_title), Runnable { onImportPreviousSelected() })
             .setIcon(R.drawable.ic_backup)
-
-        for (service in ServiceHelper.getEnabledServices()) {
-            val subscriptionExtractor = service.subscriptionExtractor ?: continue
-
-            val supportedSources = subscriptionExtractor.supportedSources
-            if (supportedSources.isEmpty()) continue
-
-            addMenuItemToSubmenu(importSubMenu, service.serviceInfo.name) {
-                onImportFromServiceSelected(service.serviceId)
-            }
-                .setIcon(ServiceHelper.getIcon(service.serviceId))
-        }
-
-        // -- Export --
-        val exportSubMenu = menu.addSubMenu(R.string.export_to)
-
-        addMenuItemToSubmenu(exportSubMenu, R.string.file) { onExportSelected() }
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER)
+        setClickListenerToMenuItem(menu.add(R.string.export_title), Runnable { onExportSelected() })
             .setIcon(R.drawable.ic_save)
-    }
-
-    private fun addMenuItemToSubmenu(
-        subMenu: SubMenu,
-        @StringRes title: Int,
-        onClick: Runnable
-    ): MenuItem {
-        return setClickListenerToMenuItem(subMenu.add(title), onClick)
-    }
-
-    private fun addMenuItemToSubmenu(
-        subMenu: SubMenu,
-        title: String,
-        onClick: Runnable
-    ): MenuItem {
-        return setClickListenerToMenuItem(subMenu.add(title), onClick)
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER)
     }
 
     private fun setClickListenerToMenuItem(
@@ -189,11 +153,6 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
             true
         }
         return menuItem
-    }
-
-    private fun onImportFromServiceSelected(serviceId: Int) {
-        val fragmentManager = fm
-        NavigationHelper.openSubscriptionsImportFragment(fragmentManager, serviceId)
     }
 
     private fun onImportPreviousSelected() {

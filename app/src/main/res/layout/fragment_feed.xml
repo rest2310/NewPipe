@@ -2,7 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen_surface"
+    android:clipToPadding="false"
+    android:paddingTop="8dp">
 
     <RelativeLayout
         android:id="@+id/refresh_root_view"
@@ -79,6 +82,10 @@
             android:id="@+id/items_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="24dp"
             android:scrollbars="vertical"
             android:visibility="gone"
             tools:listitem="@layout/list_stream_item"

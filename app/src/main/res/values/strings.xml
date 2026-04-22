@@ -34,7 +34,7 @@
     <string name="subscription_update_failed">Could not update subscription</string>
     <string name="show_info">Show info</string>
     <string name="tab_subscriptions">Subscriptions</string>
-    <string name="tab_bookmarks">Bookmarked Playlists</string>
+    <string name="tab_bookmarks">Playlists</string>
     <string name="tab_bookmarks_short">Playlists</string>
     <string name="tab_choose">Choose Tab</string>
     <string name="controls_background_title">Background</string>
@@ -371,7 +371,7 @@
     <string name="title_activity_about">About NewPipe</string>
     <string name="title_licenses">Third-party Licenses</string>
     <string name="copyright">© %1$s by %2$s under %3$s</string>
-    <string name="tab_about">About \u0026 FAQ</string>
+    <string name="tab_about">About</string>
     <string name="tab_licenses">Licenses</string>
     <string name="app_description">Libre lightweight streaming on Android.</string>
     <string name="contribution_title">Contribute</string>
@@ -872,10 +872,6 @@
     <string name="migration_info_6_7_message">SoundCloud has discontinued the original Top 50 charts. The corresponding tab has been removed from your main page.</string>
     <string name="migration_info_7_8_title">YouTube combined trending removed</string>
     <string name="migration_info_7_8_message">YouTube has discontinued the combined trending page as of 21st July 2025. NewPipe replaced the default trending page with the trending livestreams.\n\nYou can also select different trending pages in \"Settings > Content > Content of main page\".</string>
-    <string name="trending_gaming">Gaming trends</string>
-    <string name="trending_podcasts">Trending podcasts</string>
-    <string name="trending_movies">Trending movies and shows</string>
-    <string name="trending_music">Trending music</string>
     <string name="entry_deleted">Entry deleted</string>
     <string name="player_http_403">HTTP error 403 received from server while playing, likely caused by streaming URL expiration or an IP ban</string>
     <string name="player_http_invalid_status">HTTP error %1$s received from server while playing</string>

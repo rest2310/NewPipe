@@ -1,7 +1,5 @@
 package org.schabi.newpipe.local.subscription;
 
-import static org.schabi.newpipe.extractor.subscription.SubscriptionExtractor.ContentSource.CHANNEL_URL;
-import static org.schabi.newpipe.local.subscription.services.SubscriptionsImportService.CHANNEL_URL_MODE;
 import static org.schabi.newpipe.local.subscription.services.SubscriptionsImportService.INPUT_STREAM_MODE;
 import static org.schabi.newpipe.local.subscription.services.SubscriptionsImportService.KEY_MODE;
 import static org.schabi.newpipe.local.subscription.services.SubscriptionsImportService.KEY_VALUE;
@@ -9,7 +7,6 @@ import static org.schabi.newpipe.local.subscription.services.SubscriptionsImport
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,38 +20,20 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
-import androidx.core.text.util.LinkifyCompat;
 
 import com.evernote.android.state.State;
 
 import org.schabi.newpipe.BaseFragment;
 import org.schabi.newpipe.R;
-import org.schabi.newpipe.error.ErrorInfo;
-import org.schabi.newpipe.error.ErrorUtil;
-import org.schabi.newpipe.error.UserAction;
-import org.schabi.newpipe.extractor.NewPipe;
-import org.schabi.newpipe.extractor.exceptions.ExtractionException;
-import org.schabi.newpipe.extractor.subscription.SubscriptionExtractor;
 import org.schabi.newpipe.local.subscription.services.SubscriptionsImportService;
 import org.schabi.newpipe.streams.io.NoFileManagerSafeGuard;
 import org.schabi.newpipe.streams.io.StoredFileHelper;
 import org.schabi.newpipe.util.Constants;
-import org.schabi.newpipe.util.ServiceHelper;
-
-import java.util.Collections;
-import java.util.List;
 
 public class SubscriptionsImportFragment extends BaseFragment {
     @State
     int currentServiceId = Constants.NO_SERVICE_ID;
-
-    private List<SubscriptionExtractor.ContentSource> supportedSources;
-    private String relatedUrl;
-
-    @StringRes
-    private int instructionsString;
 
     /*//////////////////////////////////////////////////////////////////////////
     // Views
@@ -84,16 +63,6 @@ public class SubscriptionsImportFragment extends BaseFragment {
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setupServiceVariables();
-        if (supportedSources.isEmpty() && currentServiceId != Constants.NO_SERVICE_ID) {
-            ErrorUtil.showSnackbar(activity,
-                    new ErrorInfo(new String[]{}, UserAction.SUBSCRIPTION_IMPORT_EXPORT,
-                            "Service does not support importing subscriptions",
-                            currentServiceId,
-                            R.string.general_error));
-            activity.finish();
-        }
     }
 
     @Override
@@ -123,25 +92,9 @@ public class SubscriptionsImportFragment extends BaseFragment {
 
         infoTextView = rootView.findViewById(R.id.info_text_view);
 
-        // TODO: Support services that can import from more than one source
-        //  (show the option to the user)
-        if (supportedSources.contains(CHANNEL_URL)) {
-            inputButton.setText(R.string.import_title);
-            inputText.setVisibility(View.VISIBLE);
-            inputText.setHint(ServiceHelper.getImportInstructionsHint(currentServiceId));
-        } else {
-            inputButton.setText(R.string.import_file_title);
-        }
-
-        if (instructionsString != 0) {
-            if (TextUtils.isEmpty(relatedUrl)) {
-                setInfoText(getString(instructionsString));
-            } else {
-                setInfoText(getString(instructionsString, relatedUrl));
-            }
-        } else {
-            setInfoText("");
-        }
+        inputButton.setText(R.string.import_file_title);
+        inputText.setVisibility(View.GONE);
+        setInfoText("");
 
         final ActionBar supportActionBar = activity.getSupportActionBar();
         if (supportActionBar != null) {
@@ -157,21 +110,7 @@ public class SubscriptionsImportFragment extends BaseFragment {
     }
 
     private void onImportClicked() {
-        if (inputText.getVisibility() == View.VISIBLE) {
-            final String value = inputText.getText().toString();
-            if (!value.isEmpty()) {
-                onImportUrl(value);
-            }
-        } else {
-            onImportFile();
-        }
-    }
-
-    public void onImportUrl(final String value) {
-        ImportConfirmationDialog.show(this, new Intent(activity, SubscriptionsImportService.class)
-                .putExtra(KEY_MODE, CHANNEL_URL_MODE)
-                .putExtra(KEY_VALUE, value)
-                .putExtra(Constants.KEY_SERVICE_ID, currentServiceId));
+        onImportFile();
     }
 
     public void onImportFile() {
@@ -199,30 +138,8 @@ public class SubscriptionsImportFragment extends BaseFragment {
         }
     }
 
-    ///////////////////////////////////////////////////////////////////////////
-    // Subscriptions
-    ///////////////////////////////////////////////////////////////////////////
-
-    private void setupServiceVariables() {
-        if (currentServiceId != Constants.NO_SERVICE_ID) {
-            try {
-                final SubscriptionExtractor extractor = NewPipe.getService(currentServiceId)
-                        .getSubscriptionExtractor();
-                supportedSources = extractor.getSupportedSources();
-                relatedUrl = extractor.getRelatedUrl();
-                instructionsString = ServiceHelper.getImportInstructions(currentServiceId);
-                return;
-            } catch (final ExtractionException ignored) {
-            }
-        }
-
-        supportedSources = Collections.emptyList();
-        relatedUrl = null;
-        instructionsString = 0;
-    }
-
     private void setInfoText(final String infoString) {
         infoTextView.setText(infoString);
-        LinkifyCompat.addLinks(infoTextView, Linkify.WEB_URLS);
+        Linkify.addLinks(infoTextView, Linkify.WEB_URLS);
     }
 }
