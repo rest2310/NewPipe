@@ -59,6 +59,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.schabi.newpipe.databinding.ActivityMainBinding;
 import org.schabi.newpipe.databinding.DrawerHeaderBinding;
@@ -183,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (final Exception e) {
             ErrorUtil.showUiErrorSnackbar(this, "Setting up drawer", e);
         }
+        setupBottomNavigation();
         if (DeviceUtils.isTv(this)) {
             FocusOverlayView.setupFocusObserver(this);
         }
@@ -208,6 +210,36 @@ public class MainActivity extends AppCompatActivity {
         }
 
         MigrationManager.showUserInfoIfPresent(this);
+    }
+
+    private void setupBottomNavigation() {
+        final BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        if (bottomNavigationView == null) {
+            return;
+        }
+
+        mainBinding.getRoot().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        drawerLayoutBinding.navigation.setVisibility(View.GONE);
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            final int itemId = item.getItemId();
+            if (itemId == R.id.bottom_nav_home) {
+                NavigationHelper.openFeedFragment(getSupportFragmentManager());
+                return true;
+            } else if (itemId == R.id.bottom_nav_subscriptions) {
+                NavigationHelper.openSubscriptionFragment(getSupportFragmentManager());
+                return true;
+            } else if (itemId == R.id.bottom_nav_playlists) {
+                NavigationHelper.openBookmarksFragment(getSupportFragmentManager());
+                return true;
+            } else if (itemId == R.id.bottom_nav_downloads) {
+                NavigationHelper.openDownloads(this);
+                return true;
+            }
+            return false;
+        });
+
+        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_home);
     }
 
     @Override
@@ -280,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
                         R.string.tab_subscriptions)
                 .setIcon(R.drawable.ic_tv);
         drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_tabs_group, ITEM_ID_FEED, ORDER, R.string.fragment_feed_title)
+                .add(R.id.menu_tabs_group, ITEM_ID_FEED, ORDER, R.string.tab_home)
                 .setIcon(R.drawable.ic_subscriptions);
         drawerLayoutBinding.navigation.getMenu()
                 .add(R.id.menu_tabs_group, ITEM_ID_BOOKMARKS, ORDER, R.string.tab_bookmarks)
@@ -288,9 +320,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayoutBinding.navigation.getMenu()
                 .add(R.id.menu_tabs_group, ITEM_ID_DOWNLOADS, ORDER, R.string.downloads)
                 .setIcon(R.drawable.ic_file_download);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_tabs_group, ITEM_ID_HISTORY, ORDER, R.string.action_history)
-                .setIcon(R.drawable.ic_history);
 
         //Kiosks
         final int currentServiceId = ServiceHelper.getSelectedServiceId(this);
@@ -299,6 +328,14 @@ public class MainActivity extends AppCompatActivity {
         int kioskMenuItemId = 0;
 
         for (final String ks : service.getKioskList().getAvailableKiosks()) {
+            if ("Trending".equals(ks)
+                    || "trending_gaming".equals(ks)
+                    || "trending_music".equals(ks)
+                    || "trending_movies_and_shows".equals(ks)
+                    || "trending_podcasts_episodes".equals(ks)
+                    || "Live".equals(ks)) {
+                continue;
+            }
             drawerLayoutBinding.navigation.getMenu()
                     .add(R.id.menu_kiosks_group, kioskMenuItemId, 0, KioskTranslator
                             .getTranslatedKioskName(ks, this))
@@ -306,17 +343,7 @@ public class MainActivity extends AppCompatActivity {
             kioskMenuItemId++;
         }
 
-        //Settings and About
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_options_about_group, ITEM_ID_SETTINGS, ORDER, R.string.settings)
-                .setIcon(R.drawable.ic_settings);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_options_about_group, ITEM_ID_DONATION, ORDER,
-                        R.string.donation_title)
-                .setIcon(R.drawable.volunteer_activism_ic);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_options_about_group, ITEM_ID_ABOUT, ORDER, R.string.tab_about)
-                .setIcon(R.drawable.ic_info_outline);
+
     }
 
     private boolean drawerItemSelected(final MenuItem item) {
@@ -364,9 +391,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case ITEM_ID_DOWNLOADS:
                 NavigationHelper.openDownloads(this);
-                break;
-            case ITEM_ID_HISTORY:
-                NavigationHelper.openStatisticFragment(getSupportFragmentManager());
                 break;
         }
     }
@@ -737,6 +761,16 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(false);
         }
 
+        menu.add(0, ITEM_ID_HISTORY, 0, R.string.action_history)
+                .setIcon(R.drawable.ic_history)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(0, ITEM_ID_SETTINGS, 0, R.string.settings)
+                .setIcon(R.drawable.ic_settings)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(0, ITEM_ID_ABOUT, 0, R.string.tab_about)
+                .setIcon(R.drawable.ic_info_outline)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+
         updateDrawerNavigation();
 
         return true;
@@ -751,6 +785,18 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             onHomeButtonPressed();
             return true;
+        }
+
+        switch (item.getItemId()) {
+            case ITEM_ID_HISTORY:
+                NavigationHelper.openStatisticFragment(getSupportFragmentManager());
+                return true;
+            case ITEM_ID_SETTINGS:
+            case ITEM_ID_ABOUT:
+                optionsAboutSelected(item);
+                return true;
+            default:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

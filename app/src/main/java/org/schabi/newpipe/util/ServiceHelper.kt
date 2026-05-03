@@ -25,14 +25,7 @@ object ServiceHelper {
     @JvmStatic
     @DrawableRes
     fun getIcon(serviceId: Int): Int {
-        return when (serviceId) {
-            0 -> R.drawable.ic_smart_display
-            1 -> R.drawable.ic_cloud
-            2 -> R.drawable.ic_placeholder_media_ccc
-            3 -> R.drawable.ic_placeholder_peertube
-            4 -> R.drawable.ic_placeholder_bandcamp
-            else -> R.drawable.ic_circle
-        }
+        return if (serviceId == ServiceList.YouTube.serviceId) R.drawable.ic_smart_display else R.drawable.ic_circle
     }
 
     @JvmStatic
@@ -64,7 +57,6 @@ object ServiceHelper {
     fun getImportInstructions(serviceId: Int): Int {
         return when (serviceId) {
             0 -> R.string.import_youtube_instructions
-            1 -> R.string.import_soundcloud_instructions
             else -> -1
         }
     }
@@ -80,7 +72,6 @@ object ServiceHelper {
     @StringRes
     fun getImportInstructionsHint(serviceId: Int): Int {
         return when (serviceId) {
-            1 -> R.string.import_soundcloud_instructions_hint
             else -> -1
         }
     }
@@ -103,7 +94,7 @@ object ServiceHelper {
 
     @JvmStatic
     fun getNameOfServiceById(serviceId: Int): String {
-        return ServiceList.all().stream()
+        return listOf(ServiceList.YouTube).stream()
             .filter { it.serviceId == serviceId }
             .findFirst()
             .map(StreamingService::getServiceInfo)
@@ -118,7 +109,8 @@ object ServiceHelper {
      */
     @JvmStatic
     fun getServiceById(serviceId: Int): StreamingService {
-        return ServiceList.all().firstNotNullOf { it.takeIf { it.serviceId == serviceId } }
+        require(serviceId == ServiceList.YouTube.serviceId) { "Only YouTube is supported" }
+        return ServiceList.YouTube
     }
 
     @JvmStatic
@@ -163,6 +155,6 @@ object ServiceHelper {
 
     @JvmStatic
     fun initServices(context: Context) {
-        ServiceList.all().forEach { initService(context, it.serviceId) }
+        initService(context, ServiceList.YouTube.serviceId)
     }
 }

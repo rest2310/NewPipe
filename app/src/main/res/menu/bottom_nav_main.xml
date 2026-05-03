@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bottom_nav_home" android:title="@string/tab_home" android:icon="@drawable/ic_subscriptions"/>
+    <item android:id="@+id/bottom_nav_subscriptions" android:title="@string/tab_subscriptions" android:icon="@drawable/ic_tv"/>
+    <item android:id="@+id/bottom_nav_playlists" android:title="@string/tab_bookmarks" android:icon="@drawable/ic_bookmark"/>
+    <item android:id="@+id/bottom_nav_downloads" android:title="@string/downloads" android:icon="@drawable/ic_file_download"/>
+</menu>
