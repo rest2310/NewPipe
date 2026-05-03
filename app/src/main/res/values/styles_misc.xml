@@ -39,12 +39,14 @@
     </style>
 
     <style name="FilePickerAlertDialogThemeLight" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:windowAnimationStyle">@style/Animation.NewPipe.Smooth</item>
         <item name="colorPrimary">@color/light_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/light_youtube_primary_color</item>
         <item name="colorAccent">@color/light_settings_accent_color</item>
     </style>
 
     <style name="FilePickerAlertDialogThemeDark" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:windowAnimationStyle">@style/Animation.NewPipe.Smooth</item>
         <item name="colorPrimary">@color/dark_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/dark_youtube_primary_color</item>
         <item name="colorAccent">@color/dark_settings_accent_color</item>
@@ -66,7 +68,9 @@
         <item name="tint">?attr/actionColor</item>
     </style>
 
-    <style name="DarkPopupMenu" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="DarkPopupMenu" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:popupBackground">@drawable/surface_rounded_large</item>
+    </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="popupTheme">@style/ToolbarPopupTheme</item>
@@ -77,6 +81,8 @@
     </style>
     <style name="ToolbarPopupTheme" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
         <item name="tint">@color/contrastColor</item>
+        <item name="android:popupBackground">@drawable/surface_rounded_large</item>
+        <item name="android:windowAnimationStyle">@style/Animation.NewPipe.Smooth</item>
     </style>
     <style name="ContrastToolbarTheme" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
         <item name="popupTheme">@style/ToolbarPopupTheme</item>

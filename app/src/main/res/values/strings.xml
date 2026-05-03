@@ -34,7 +34,8 @@
     <string name="subscription_update_failed">Could not update subscription</string>
     <string name="show_info">Show info</string>
     <string name="tab_subscriptions">Subscriptions</string>
-    <string name="tab_bookmarks">Bookmarked Playlists</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_bookmarks">Playlists</string>
     <string name="tab_bookmarks_short">Playlists</string>
     <string name="tab_choose">Choose Tab</string>
     <string name="controls_background_title">Background</string>
@@ -514,8 +515,10 @@
         <item quantity="other">Importing %d subscriptions…</item>
     </plurals>
     <string name="import_title">Import</string>
-    <string name="import_from">Import from</string>
-    <string name="export_to">Export to</string>
+    <string name="import_from">Import</string>
+    <string name="export_to">Export</string>
+    <string name="import_label">Import</string>
+    <string name="export_label">Export</string>
     <string name="import_ongoing">Importing…</string>
     <string name="export_ongoing">Exporting…</string>
     <string name="import_file_title">Import file</string>

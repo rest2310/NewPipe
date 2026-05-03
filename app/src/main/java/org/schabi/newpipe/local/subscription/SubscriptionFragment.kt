@@ -30,7 +30,6 @@ import org.schabi.newpipe.databinding.FeedItemCarouselBinding
 import org.schabi.newpipe.databinding.FragmentSubscriptionBinding
 import org.schabi.newpipe.error.ErrorInfo
 import org.schabi.newpipe.error.UserAction
-import org.schabi.newpipe.extractor.ServiceList
 import org.schabi.newpipe.extractor.channel.ChannelInfoItem
 import org.schabi.newpipe.fragments.BaseStateFragment
 import org.schabi.newpipe.ktx.animate
@@ -48,7 +47,6 @@ import org.schabi.newpipe.local.subscription.item.Header
 import org.schabi.newpipe.local.subscription.item.ImportSubscriptionsHintPlaceholderItem
 import org.schabi.newpipe.util.NavigationHelper
 import org.schabi.newpipe.util.OnClickGesture
-import org.schabi.newpipe.util.ServiceHelper
 import org.schabi.newpipe.util.ThemeHelper.getGridSpanCountChannels
 import org.schabi.newpipe.util.external_communication.ShareUtils
 
@@ -124,44 +122,19 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
 
     private fun buildImportExportMenu(menu: Menu) {
         // -- Import --
-        val importSubMenu = menu.addSubMenu(R.string.import_from)
-
-        addMenuItemToSubmenu(importSubMenu, R.string.previous_export) { importExportHelper.onImportPreviousSelected() }
+        addMenuItemToMenu(menu, R.string.import_label) { importExportHelper.onImportPreviousSelected() }
             .setIcon(R.drawable.ic_backup)
 
-        for (service in ServiceList.all()) {
-            val subscriptionExtractor = service.subscriptionExtractor ?: continue
-
-            val supportedSources = subscriptionExtractor.supportedSources
-            if (supportedSources.isEmpty()) continue
-
-            addMenuItemToSubmenu(importSubMenu, service.serviceInfo.name) {
-                onImportFromServiceSelected(service.serviceId)
-            }
-                .setIcon(ServiceHelper.getIcon(service.serviceId))
-        }
-
-        // -- Export --
-        val exportSubMenu = menu.addSubMenu(R.string.export_to)
-
-        addMenuItemToSubmenu(exportSubMenu, R.string.file) { importExportHelper.onExportSelected() }
+        addMenuItemToMenu(menu, R.string.export_label) { importExportHelper.onExportSelected() }
             .setIcon(R.drawable.ic_save)
     }
 
-    private fun addMenuItemToSubmenu(
-        subMenu: SubMenu,
+    private fun addMenuItemToMenu(
+        menu: Menu,
         @StringRes title: Int,
         onClick: Runnable
     ): MenuItem {
-        return setClickListenerToMenuItem(subMenu.add(title), onClick)
-    }
-
-    private fun addMenuItemToSubmenu(
-        subMenu: SubMenu,
-        title: String,
-        onClick: Runnable
-    ): MenuItem {
-        return setClickListenerToMenuItem(subMenu.add(title), onClick)
+        return setClickListenerToMenuItem(menu.add(title), onClick)
     }
 
     private fun setClickListenerToMenuItem(

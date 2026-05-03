@@ -19,6 +19,11 @@
         <item name="floatingActionButtonStyle">@style/FloatingActionButtonTheme</item>
         <item name="toolbarSearchColor">@color/white</item>
         <item name="colorControlActivated">?attr/colorPrimary</item>
+        <item name="android:windowAnimationStyle">@style/Animation.NewPipe.Smooth</item>
+        <item name="materialAlertDialogTheme">@style/Widget.NewPipe.Dialog</item>
+        <item name="buttonStyle">@style/Widget.NewPipe.Button</item>
+        <item name="cardViewStyle">@style/Widget.NewPipe.Card</item>
+        <item name="bottomNavigationStyle">@style/Widget.NewPipe.BottomNavigation</item>
     </style>
     <style name="Base" parent="Base.V21"/>
 
@@ -155,4 +160,43 @@
 
     <style name="RouterActivityThemeDark" parent="Base.RouterActivityThemeDark" />
 
+
+<!-- Modern design system overrides -->
+    <style name="ShapeAppearance.NewPipe.Rounded.Medium" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.NewPipe.Rounded.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="Widget.NewPipe.Button" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.NewPipe.Rounded.Medium</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Widget.NewPipe.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">18dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardPreventCornerOverlap">true</item>
+    </style>
+
+    <style name="Widget.NewPipe.BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">22dp</item>
+        <item name="itemRippleColor">?attr/colorControlHighlight</item>
+    </style>
+
+    <style name="Widget.NewPipe.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.NewPipe.Rounded.Large</item>
+    </style>
+    <style name="Animation.NewPipe.Smooth" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@android:anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@android:anim/fade_out</item>
+    </style>
 </resources>
