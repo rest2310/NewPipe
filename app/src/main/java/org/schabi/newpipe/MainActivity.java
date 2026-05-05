@@ -761,15 +761,9 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(false);
         }
 
-        menu.add(0, ITEM_ID_HISTORY, 0, R.string.action_history)
-                .setIcon(R.drawable.ic_history)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-        menu.add(0, ITEM_ID_SETTINGS, 0, R.string.settings)
-                .setIcon(R.drawable.ic_settings)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-        menu.add(0, ITEM_ID_ABOUT, 0, R.string.tab_about)
-                .setIcon(R.drawable.ic_info_outline)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(0, ITEM_ID_HISTORY, 0, R.string.action_history).setIcon(R.drawable.ic_history).setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(0, ITEM_ID_SETTINGS, 0, R.string.settings).setIcon(R.drawable.ic_settings).setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(0, ITEM_ID_ABOUT, 0, R.string.tab_about).setIcon(R.drawable.ic_info_outline).setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
 
         updateDrawerNavigation();
 
