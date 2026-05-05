@@ -62,8 +62,6 @@ public class MainFragment extends BaseFragment implements TabLayout.OnTabSelecte
     private SharedPreferences prefs;
     private boolean youtubeRestrictedModeEnabled;
     private String youtubeRestrictedModeEnabledKey;
-    private boolean mainTabsPositionBottom;
-    private String mainTabsPositionKey;
 
     /*//////////////////////////////////////////////////////////////////////////
     // Fragment's LifeCycle
@@ -89,8 +87,6 @@ public class MainFragment extends BaseFragment implements TabLayout.OnTabSelecte
         prefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
         youtubeRestrictedModeEnabledKey = getString(R.string.youtube_restricted_mode_enabled);
         youtubeRestrictedModeEnabled = prefs.getBoolean(youtubeRestrictedModeEnabledKey, false);
-        mainTabsPositionKey = getString(R.string.main_tabs_position_key);
-        mainTabsPositionBottom = prefs.getBoolean(mainTabsPositionKey, false);
     }
 
     @Override
@@ -122,12 +118,6 @@ public class MainFragment extends BaseFragment implements TabLayout.OnTabSelecte
         if (youtubeRestrictedModeEnabled != newYoutubeRestrictedModeEnabled || hasTabsChanged) {
             youtubeRestrictedModeEnabled = newYoutubeRestrictedModeEnabled;
             setupTabs();
-        }
-
-        final boolean newMainTabsPosition = prefs.getBoolean(mainTabsPositionKey, false);
-        if (mainTabsPositionBottom != newMainTabsPosition) {
-            mainTabsPositionBottom = newMainTabsPosition;
-            updateTabLayoutPosition();
         }
     }
 
@@ -237,7 +227,7 @@ public class MainFragment extends BaseFragment implements TabLayout.OnTabSelecte
     private void updateTabLayoutPosition() {
         final ScrollableTabLayout tabLayout = binding.mainTabLayout;
         final ViewPager viewPager = binding.pager;
-        final boolean bottom = mainTabsPositionBottom;
+        final boolean bottom = false;
 
         // change layout params to make the tab layout appear either at the top or at the bottom
         final var tabParams = (RelativeLayout.LayoutParams) tabLayout.getLayoutParams();

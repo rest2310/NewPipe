@@ -15,6 +15,7 @@ import org.schabi.newpipe.R;
 import org.schabi.newpipe.error.ErrorInfo;
 import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.error.UserAction;
+import org.schabi.newpipe.settings.tabs.TabsJsonHelper;
 import org.schabi.newpipe.util.DeviceUtils;
 
 import java.util.Collections;
@@ -169,6 +170,20 @@ public final class SettingMigrations {
         }
     };
 
+    private static final Migration MIGRATION_8_9 = new Migration(8, 9) {
+        @Override
+        protected void migrate(@NonNull final Context context) {
+            // Main tabs are now fixed to the bottom navigation destinations. Rewrite any
+            // previously saved custom tabs so forbidden kiosk/trending/history/custom entries
+            // are not retained, and remove the obsolete tab-position preference.
+            sp.edit()
+                    .putString(context.getString(R.string.saved_tabs_key),
+                            TabsJsonHelper.getJsonToSave(null))
+                    .remove(context.getString(R.string.main_tabs_position_key))
+                    .apply();
+        }
+    };
+
     /**
      * List of all implemented migrations.
      * <p>
@@ -184,12 +199,13 @@ public final class SettingMigrations {
             MIGRATION_5_6,
             MIGRATION_6_7,
             MIGRATION_7_8,
+            MIGRATION_8_9,
     };
 
     /**
      * Version number for preferences. Must be incremented every time a migration is necessary.
      */
-    private static final int VERSION = 8;
+    private static final int VERSION = 9;
 
 
     static void runMigrationsIfNeeded(@NonNull final Context context) {

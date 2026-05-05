@@ -40,14 +40,6 @@
         app:iconSpaceReserved="false"
         app:useSimpleSummaryProvider="true" />
 
-    <PreferenceScreen
-        android:fragment="org.schabi.newpipe.settings.tabs.ChooseTabsFragment"
-        android:key="@string/main_page_content_key"
-        android:summary="@string/main_page_content_summary"
-        android:title="@string/main_page_content"
-        app:singleLineTitle="false"
-        app:iconSpaceReserved="false" />
-
     <MultiSelectListPreference
         android:key="@string/show_channel_tabs_key"
         android:summary="@string/show_channel_tabs_summary"
