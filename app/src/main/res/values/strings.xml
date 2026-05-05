@@ -394,8 +394,6 @@
     <string name="main_page_content_summary">What tabs are shown on the main page</string>
     <string name="main_page_content_swipe_remove">Swipe items to remove them</string>
     <string name="blank_page_summary">Blank page</string>
-    <string name="kiosk_page_summary">Kiosk page</string>
-    <string name="default_kiosk_page_summary">Default Kiosk</string>
     <string name="channel_page_summary">Channel page</string>
     <string name="select_a_channel">Select a channel</string>
     <string name="no_channel_subscribed_yet">No channel subscriptions yet</string>
@@ -412,7 +410,6 @@
     <string name="select_a_feed_group">Select a feed group</string>
     <string name="no_feed_group_created_yet">No feed group created yet</string>
     <!-- Kiosk Names -->
-    <string name="trending">Trending</string>
     <string name="top_50">Top 50</string>
     <string name="new_and_hot">New and hot</string>
     <string name="local">Local</string>
@@ -876,10 +873,6 @@
     <string name="migration_info_6_7_message">SoundCloud has discontinued the original Top 50 charts. The corresponding tab has been removed from your main page.</string>
     <string name="migration_info_7_8_title">YouTube combined trending removed</string>
     <string name="migration_info_7_8_message">YouTube has discontinued the combined trending page as of 21st July 2025. NewPipe replaced the default trending page with the trending livestreams.\n\nYou can also select different trending pages in \"Settings > Content > Content of main page\".</string>
-    <string name="trending_gaming">Gaming trends</string>
-    <string name="trending_podcasts">Trending podcasts</string>
-    <string name="trending_movies">Trending movies and shows</string>
-    <string name="trending_music">Trending music</string>
     <string name="entry_deleted">Entry deleted</string>
     <string name="player_http_403">HTTP error 403 received from server while playing, likely caused by streaming URL expiration or an IP ban</string>
     <string name="player_http_invalid_status">HTTP error %1$s received from server while playing</string>

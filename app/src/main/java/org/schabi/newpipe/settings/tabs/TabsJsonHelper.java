@@ -11,6 +11,7 @@ import com.grack.nanojson.JsonWriter;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -18,9 +19,19 @@ import java.util.stream.Collectors;
  */
 public final class TabsJsonHelper {
     private static final String JSON_TABS_ARRAY_KEY = "tabs";
+    private static final String JSON_TAB_ID_KEY = "tab_id";
+    private static final String JSON_KIOSK_ID_KEY = "kiosk_id";
+    private static final int OLD_KIOSK_TAB_ID = 5;
+    private static final int OLD_DEFAULT_KIOSK_TAB_ID = 7;
+    private static final Set<String> REMOVED_KIOSK_IDS = Set.of(
+            "Trending",
+            "live",
+            "trending_gaming",
+            "trending_music",
+            "trending_movies_and_shows",
+            "trending_podcasts_episodes");
 
     private static final List<Tab> FALLBACK_INITIAL_TABS_LIST = List.of(
-            Tab.Type.DEFAULT_KIOSK.getTab(),
             Tab.Type.FEED.getTab(),
             Tab.Type.SUBSCRIPTIONS.getTab(),
             Tab.Type.BOOKMARKS.getTab());
@@ -56,6 +67,7 @@ public final class TabsJsonHelper {
             final JsonArray tabsArray = outerJsonObject.getArray(JSON_TABS_ARRAY_KEY, null);
 
             final var returnTabs = tabsArray.streamAsJsonObjects()
+                    .filter(TabsJsonHelper::isSupportedSavedTab)
                     .map(Tab::from)
                     .filter(Objects::nonNull)
                     .collect(Collectors.toUnmodifiableList());
@@ -79,13 +91,33 @@ public final class TabsJsonHelper {
         jsonWriter.array(JSON_TABS_ARRAY_KEY);
         if (tabList != null) {
             for (final Tab tab : tabList) {
-                tab.writeJsonOn(jsonWriter);
+                if (Tab.typeFrom(tab.getTabId()) != null) {
+                    tab.writeJsonOn(jsonWriter);
+                }
             }
         }
         jsonWriter.end();
 
         jsonWriter.end();
         return jsonWriter.done();
+    }
+
+    private static boolean isSupportedSavedTab(final JsonObject tabJsonObject) {
+        final int tabId = tabJsonObject.getInt(JSON_TAB_ID_KEY, -1);
+        if (tabId == OLD_DEFAULT_KIOSK_TAB_ID) {
+            return false;
+        }
+        if (tabId != OLD_KIOSK_TAB_ID) {
+            return true;
+        }
+
+        final String kioskId = tabJsonObject.getString(JSON_KIOSK_ID_KEY, "");
+        if (REMOVED_KIOSK_IDS.contains(kioskId)) {
+            return false;
+        }
+
+        // All historical custom kiosk tabs are unsupported, including kiosk ids not listed above.
+        return false;
     }
 
     public static List<Tab> getDefaultTabs() {

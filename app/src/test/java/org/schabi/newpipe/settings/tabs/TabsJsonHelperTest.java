@@ -88,16 +88,14 @@ public class TabsJsonHelperTest {
     public void testSaveAndReading() throws JsonParserException {
         // Saving
         final Tab.BlankTab blankTab = new Tab.BlankTab();
-        final Tab.DefaultKioskTab defaultKioskTab = new Tab.DefaultKioskTab();
         final Tab.SubscriptionsTab subscriptionsTab = new Tab.SubscriptionsTab();
         final Tab.ChannelTab channelTab = new Tab.ChannelTab(
                 666, "https://example.org", "testName");
-        final Tab.KioskTab kioskTab = new Tab.KioskTab(123, "trending_key");
         final Tab.FeedGroupTab feedGroupTab = new Tab.FeedGroupTab(
                 1L, "x", 123);
 
         final List<Tab> tabs = Arrays.asList(
-                blankTab, defaultKioskTab, subscriptionsTab, channelTab, kioskTab, feedGroupTab);
+                blankTab, subscriptionsTab, channelTab, feedGroupTab);
         final String returnedJson = TabsJsonHelper.getJsonToSave(tabs);
 
         // Reading
@@ -111,34 +109,43 @@ public class TabsJsonHelperTest {
                 (JsonObject) tabsFromArray.get(0)));
         assertEquals(blankTab.getTabId(), blankTabFromReturnedJson.getTabId());
 
-        final Tab.DefaultKioskTab defaultKioskTabFromReturnedJson = requireNonNull(
-                (Tab.DefaultKioskTab) Tab.from((JsonObject) tabsFromArray.get(1)));
-        assertEquals(defaultKioskTab.getTabId(), defaultKioskTabFromReturnedJson.getTabId());
-
         final Tab.SubscriptionsTab subscriptionsTabFromReturnedJson = requireNonNull(
-                (Tab.SubscriptionsTab) Tab.from((JsonObject) tabsFromArray.get(2)));
+                (Tab.SubscriptionsTab) Tab.from((JsonObject) tabsFromArray.get(1)));
         assertEquals(subscriptionsTab.getTabId(), subscriptionsTabFromReturnedJson.getTabId());
 
-        final Tab.ChannelTab channelTabFromReturnedJson = requireNonNull((Tab.ChannelTab) Tab.from(
-                (JsonObject) tabsFromArray.get(3)));
+        final Tab.ChannelTab channelTabFromReturnedJson = requireNonNull(
+                (Tab.ChannelTab) Tab.from((JsonObject) tabsFromArray.get(2)));
         assertEquals(channelTab.getTabId(), channelTabFromReturnedJson.getTabId());
         assertEquals(channelTab.getChannelServiceId(),
                 channelTabFromReturnedJson.getChannelServiceId());
         assertEquals(channelTab.getChannelUrl(), channelTabFromReturnedJson.getChannelUrl());
         assertEquals(channelTab.getChannelName(), channelTabFromReturnedJson.getChannelName());
 
-        final Tab.KioskTab kioskTabFromReturnedJson = requireNonNull((Tab.KioskTab) Tab.from(
-                (JsonObject) tabsFromArray.get(4)));
-        assertEquals(kioskTab.getTabId(), kioskTabFromReturnedJson.getTabId());
-        assertEquals(kioskTab.getKioskServiceId(), kioskTabFromReturnedJson.getKioskServiceId());
-        assertEquals(kioskTab.getKioskId(), kioskTabFromReturnedJson.getKioskId());
-
         final Tab.FeedGroupTab grpTabFromReturnedJson = requireNonNull(
-                (Tab.FeedGroupTab) Tab.from((JsonObject) tabsFromArray.get(5)
+                (Tab.FeedGroupTab) Tab.from((JsonObject) tabsFromArray.get(3)
                 ));
         assertEquals(feedGroupTab.getTabId(), grpTabFromReturnedJson.getTabId());
         assertEquals(feedGroupTab.getFeedGroupId(), grpTabFromReturnedJson.getFeedGroupId());
         assertEquals(feedGroupTab.getIconId(), grpTabFromReturnedJson.getIconId());
         assertEquals(feedGroupTab.getFeedGroupName(), grpTabFromReturnedJson.getFeedGroupName());
+    }
+
+    @Test
+    public void testRemovedKioskTabsAreFilteredOnRead()
+            throws TabsJsonHelper.InvalidJsonException {
+        final int feedTabId = Tab.Type.FEED.getTabId();
+        final String tabsJson = "{\"" + JSON_TABS_ARRAY_KEY + "\":["
+                + "{\"" + JSON_TAB_ID_KEY + "\":5,\"service_id\":0,\"kiosk_id\":\"Trending\"},"
+                + "{\"" + JSON_TAB_ID_KEY + "\":5,\"service_id\":0,\"kiosk_id\":\"live\"},"
+                + "{\"" + JSON_TAB_ID_KEY
+                + "\":5,\"service_id\":0,\"kiosk_id\":\"trending_gaming\"},"
+                + "{\"" + JSON_TAB_ID_KEY + "\":7},"
+                + "{\"" + JSON_TAB_ID_KEY + "\":" + feedTabId + "}"
+                + "]}";
+
+        final List<Tab> items = TabsJsonHelper.getTabsFromJson(tabsJson);
+
+        assertEquals(1, items.size());
+        assertEquals(feedTabId, items.get(0).getTabId());
     }
 }
