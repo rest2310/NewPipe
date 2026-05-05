@@ -7,6 +7,10 @@
     <dimen name="spacing_mid">12dp</dimen>
     <dimen name="spacing_micro">4dp</dimen>
     <dimen name="spacing_nano">2dp</dimen>
+    <dimen name="rounded_surface_radius">18dp</dimen>
+    <dimen name="rounded_surface_radius_small">12dp</dimen>
+    <dimen name="rounded_surface_radius_large">24dp</dimen>
+    <dimen name="rounded_surface_spacing">8dp</dimen>
 
     <!-- Video Item Search View Dimensions-->
     <!-- Text Size -->

@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/rounded_surface_spacing">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="14dp"
-        android:background="?attr/contrast_background_color">
+        android:background="@drawable/rounded_settings_group_background">
 
         <View
             android:layout_width="match_parent"

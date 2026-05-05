@@ -19,6 +19,20 @@
         <item name="floatingActionButtonStyle">@style/FloatingActionButtonTheme</item>
         <item name="toolbarSearchColor">@color/white</item>
         <item name="colorControlActivated">?attr/colorPrimary</item>
+        <item name="alertDialogTheme">@style/NewPipe.AlertDialog</item>
+        <item name="popupMenuStyle">@style/NewPipe.PopupMenu</item>
+        <item name="actionOverflowMenuStyle">@style/NewPipe.PopupMenu.Overflow</item>
+        <item name="android:popupMenuStyle">@style/NewPipe.PopupMenu</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAnimationStyle">@style/NewPipe.WindowAnimation</item>
+        <item name="bottomSheetDialogTheme">@style/NewPipe.BottomSheetDialog</item>
+        <item name="bottomNavigationStyle">@style/NewPipe.BottomNavigationView</item>
+        <item name="rounded_surface_background">@drawable/rounded_surface_background</item>
+        <item name="rounded_list_item_background">@drawable/rounded_list_item_background</item>
+        <item name="rounded_selected_navigation_background">@drawable/rounded_selected_navigation_pill</item>
+        <item name="rounded_dialog_background">@drawable/rounded_dialog_background</item>
+        <item name="rounded_menu_popup_background">@drawable/rounded_menu_popup_background</item>
+        <item name="rounded_bottom_sheet_background">@drawable/rounded_bottom_sheet_background</item>
     </style>
     <style name="Base" parent="Base.V21"/>
 
@@ -86,12 +100,67 @@
     <style name="Base.BlackTheme" parent="Base.V21.BlackTheme" />
     <style name="BlackTheme" parent="Base.BlackTheme"/>
 
+    <!-- App-wide rounded Material component layer -->
+    <style name="NewPipe" />
+
+    <style name="NewPipe.WindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_popup_exit</item>
+    </style>
+
+    <style name="NewPipe.AlertDialog" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/rounded_dialog_background</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:windowAnimationStyle">@style/NewPipe.WindowAnimation</item>
+        <item name="colorAccent">?attr/colorAccent</item>
+    </style>
+
+    <style name="NewPipe.PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/rounded_menu_popup_background</item>
+    </style>
+
+    <style name="NewPipe.PopupMenu.Overflow" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/rounded_menu_popup_background</item>
+    </style>
+
+    <style name="NewPipe.BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/NewPipe.BottomSheet</item>
+        <item name="android:windowAnimationStyle">@style/NewPipe.BottomSheetAnimation</item>
+    </style>
+
+    <style name="NewPipe.BottomSheet">
+        <item name="android:background">@drawable/rounded_bottom_sheet_background</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+    </style>
+
+    <style name="NewPipe.BottomSheetAnimation">
+        <item name="android:windowEnterAnimation">@anim/bottom_sheet_enter</item>
+        <item name="android:windowExitAnimation">@anim/bottom_sheet_exit</item>
+    </style>
+
+    <style name="NewPipe.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="itemBackground">?attr/rounded_selected_navigation_background</item>
+        <item name="itemIconTint">?attr/colorControlActivated</item>
+        <item name="itemRippleColor">?attr/colorControlHighlight</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="elevation">8dp</item>
+    </style>
+
+    <style name="NewPipe.RoundedSurface">
+        <item name="android:background">?attr/rounded_surface_background</item>
+    </style>
+
+    <style name="NewPipe.RoundedListItem">
+        <item name="android:background">?attr/rounded_list_item_background</item>
+    </style>
+
     <!-- Dialogs -->
     <style name="LightDialogTheme" parent="Theme.AppCompat.DayNight.Dialog">
         <item name="colorPrimary">@color/light_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/light_youtube_primary_color</item>
         <item name="colorAccent">@color/light_youtube_accent_color</item>
-        <item name="android:windowBackground">@color/light_dialog_background_color</item>
+        <item name="android:windowBackground">@drawable/rounded_dialog_background</item>
         <item name="windowBackground">@color/light_dialog_background_color</item>
     </style>
 
@@ -99,7 +168,7 @@
         <item name="colorPrimary">@color/dark_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/dark_youtube_primary_color</item>
         <item name="colorAccent">@color/dark_youtube_accent_color</item>
-        <item name="android:windowBackground">@color/dark_dialog_background_color</item>
+        <item name="android:windowBackground">@drawable/rounded_dialog_background</item>
         <item name="windowBackground">@color/dark_dialog_background_color</item>
     </style>
 
@@ -107,7 +176,7 @@
         <item name="colorPrimary">@color/light_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/light_youtube_primary_color</item>
         <item name="colorAccent">@color/light_youtube_accent_color</item>
-        <item name="android:windowBackground">@color/light_dialog_background_color</item>
+        <item name="android:windowBackground">@drawable/rounded_dialog_background</item>
         <item name="windowBackground">@color/light_dialog_background_color</item>
     </style>
 
@@ -115,7 +184,7 @@
         <item name="colorPrimary">@color/dark_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/dark_youtube_primary_color</item>
         <item name="colorAccent">@color/dark_youtube_accent_color</item>
-        <item name="android:windowBackground">@color/dark_dialog_background_color</item>
+        <item name="android:windowBackground">@drawable/rounded_dialog_background</item>
         <item name="windowBackground">@color/dark_dialog_background_color</item>
     </style>
 

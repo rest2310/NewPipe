@@ -20,7 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_navigation_height"
         android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
+        android:background="?attr/rounded_surface_background"
+        app:itemBackground="?attr/rounded_selected_navigation_background"
+        app:itemRippleColor="?attr/colorControlHighlight"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_bottom_navigation" />
 
@@ -29,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
+        android:background="?attr/rounded_bottom_sheet_background"
         app:behavior_hideable="true"
         app:behavior_peekHeight="0dp"
         app:layout_behavior="org.schabi.newpipe.player.gesture.CustomBottomSheetBehavior" />

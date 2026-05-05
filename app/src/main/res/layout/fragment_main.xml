@@ -14,6 +14,7 @@
         app:tabRippleColor="@color/white"
         app:tabIconTint="@color/white"
         app:tabIndicatorColor="@color/white"
+        app:tabIndicatorFullWidth="false"
         app:tabGravity="fill"
         app:tabMinWidth="60dp" />
 
