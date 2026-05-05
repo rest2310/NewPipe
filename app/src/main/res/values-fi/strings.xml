@@ -142,7 +142,7 @@
     <string name="charset_most_special_characters">Suurin osa erikoismerkeistä</string>
     <string name="title_activity_about">Tietoja NewPipe</string>
     <string name="title_licenses">Kolmannen osapuolen Lisenssit</string>
-    <string name="tab_about">Tietoja &amp; UKK</string>
+    <string name="tab_about">Tietoja</string>
     <string name="tab_licenses">Lisenssit</string>
     <string name="app_description">Vapaata ja kevyttä suoratoistoa Androidilla.</string>
     <string name="view_on_github">Näytä GitHub:ssa</string>

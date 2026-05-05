@@ -188,7 +188,7 @@
     <string name="title_activity_about">نیو پائپ کے بارے میں</string>
     <string name="title_licenses">تیسری پارٹی کی لائسنس</string>
     <string name="copyright" formatted="true">© %1$s بذریعہ %2$s %3$s کے تحت</string>
-    <string name="tab_about">کے بارے میں اور اکثر پوچھے گئے سوالات</string>
+    <string name="tab_about">کے بارے میں</string>
     <string name="tab_licenses">لائسنس</string>
     <string name="app_description">اینڈروئیڈ پر لِبرے کی ہلکی اسٹریمنگ۔</string>
     <string name="contribution_title">تعاون کریں</string>

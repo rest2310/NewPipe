@@ -760,7 +760,7 @@
         <item quantity="few">%s nova toka</item>
         <item quantity="other">%s novih tokova</item>
     </plurals>
-    <string name="tab_about">O aplikaciji i pitanja</string>
+    <string name="tab_about">O aplikaciji</string>
     <plurals name="download_finished_notification">
         <item quantity="one">%s preuzimanje je gotovo</item>
         <item quantity="few">%s preuzimanja su gotova</item>

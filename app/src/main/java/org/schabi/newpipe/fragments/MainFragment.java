@@ -169,13 +169,23 @@ public class MainFragment extends BaseFragment implements TabLayout.OnTabSelecte
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
-        if (item.getItemId() == R.id.action_search) {
+        final int itemId = item.getItemId();
+        if (itemId == R.id.action_search) {
             try {
                 NavigationHelper.openSearchFragment(getFM(),
                         ServiceHelper.getSelectedServiceId(activity), "");
             } catch (final Exception e) {
                 ErrorUtil.showUiErrorSnackbar(this, "Opening search fragment", e);
             }
+            return true;
+        } else if (itemId == R.id.action_history) {
+            NavigationHelper.openStatisticFragment(getFM());
+            return true;
+        } else if (itemId == R.id.action_settings) {
+            NavigationHelper.openSettings(requireContext());
+            return true;
+        } else if (itemId == R.id.action_about) {
+            NavigationHelper.openAbout(requireContext());
             return true;
         }
         return super.onOptionsItemSelected(item);

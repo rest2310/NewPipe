@@ -102,7 +102,7 @@
     <string name="contribution_title">Contribui</string>
     <string name="app_description">Riprodutzione lìbera e lèbia de trasmissiones (streaming) in Android.</string>
     <string name="tab_licenses">Litzèntzias</string>
-    <string name="tab_about">Informatziones e PF</string>
+    <string name="tab_about">Informatziones</string>
     <string name="copyright">© %1$s de %2$s cun litzèntzia %3$s</string>
     <string name="title_licenses">Litzèntzias de tertzas partes</string>
     <string name="title_activity_about">In subra de NewPipe</string>

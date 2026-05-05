@@ -69,7 +69,7 @@
     <string name="preferred_player_fetcher_notification_message">تحميل المحتوى المطلوب</string>
     <string name="title_licenses">تراخيص الجهات الخارجية</string>
     <string name="clear_playback_states_summary">حذف كل مواقف التشغيل</string>
-    <string name="tab_about">عن التطبيق والأسئلة الشائعة</string>
+    <string name="tab_about">عن التطبيق</string>
     <string name="import_subscriptions_hint">استيراد الاشتراكات أو تصديرها من القائمة المكونة من 3 نقاط</string>
     <string name="downloads_title">الملفات المحملة</string>
     <string name="invalid_source">لا يوجد مثل هذا الملف/مصدر المحتوى</string>

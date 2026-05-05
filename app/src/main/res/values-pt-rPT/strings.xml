@@ -474,7 +474,7 @@
     <string name="content_not_available">Conteúdo indisponível</string>
     <string name="subscribed_button_title">Subscrito</string>
     <string name="thumbnail_cache_wipe_complete_notice">Cache de imagens limpa</string>
-    <string name="tab_about">Sobre e perguntas frequentes</string>
+    <string name="tab_about">Sobre</string>
     <string name="subscribers_count_not_available">Contagem de subscrições indisponível</string>
     <string name="preferred_open_action_settings_summary">Ação padrão ao abrir o conteúdo — %s</string>
     <string name="playback_reset">Repor</string>
