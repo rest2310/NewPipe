@@ -269,7 +269,6 @@
     <string name="previous_export">Előző exportálás</string>
     <string name="subscriptions_import_unsuccessful">A feliratkozások importálása sikertelen</string>
     <string name="subscriptions_export_unsuccessful">A feliratkozások exportálása sikertelen</string>
-    <string name="import_youtube_instructions">YouTube feliratkozások importálása a Google Takeoutból: \n \n1. Navigáljon erre az oldalra: %1$s \n2. Jelentkezzen be, ha kérik \n3. Kattintson „Az összes adatot tartalmazza” gombra, majd a „Kijelölések megszüntetése” gombra, majd válassza ki a „feliratkozások” lehetőséget és kattintson az „OK” gombra \n4. Kattintson a „Következő lépés”, majd az \"Exportálás indítása” gombra \n5. Kattintson a „Letöltés” gombra, amikor megjelenik, \n6. Kattintson a lenti FÁJL IMPORTÁLÁSA gombra, és válassza ki a letöltött ZIP-fájlt \n7. [Ha a ZIP-fájl importálása nem sikerül] Bontsa ki a .csv fájlt (általában: „YouTube és YouTube Music/feliratkozások/feliratkozások.csv”), majd kattintson lent a FÁJL IMPORTÁLÁSA gombra, és válassza az exportált CSV-fájlt</string>
     <string name="import_network_expensive_warning">Ez a művelet adatforgalom-igényes lehet.
 \n
 \nBiztos, hogy folytatja\?</string>

@@ -266,15 +266,6 @@
     <string name="previous_export">Předchozí export</string>
     <string name="subscriptions_import_unsuccessful">Odběry nelze importovat</string>
     <string name="subscriptions_export_unsuccessful">Odběry nelze exportovat</string>
-    <string name="import_youtube_instructions">Importovat odběry YouTube z exportu dat Google:
-\n
-\n1. Přejděte na tuto adresu URL: %1$s
-\n2. Při požádání se přihlaste
-\n3. Klikněte na „Jsou zahrnuta všechna data“, poté na „Zrušit výběr všech“ a poté vyberte jen \"odběry\" a klikněte na OK
-\n4. Klikněte na „Další krok“ a poté na „Vytvořit export“
-\n5. Vyčkejte, než se objeví tlačítko „Stáhnout“ a klikněte na něj
-\n6. Klepněte na IMPORTOVAT SOUBOR níže a vyberte stažený soubor .zip
-\n7. [Pokud se import .zip souboru nezdaří] Rozbalte soubor .csv (měl by se nacházet v „YouTube and YouTube Music/subscriptions/subscriptions.csv“), klepněte na IMPORTOVAT SOUBOR níže a vyberte rozbalený soubor csv</string>
     <string name="import_network_expensive_warning">Pamatujte, že tato operace může být náročná na data. 
 \n 
 \nChcete pokračovat?</string>

@@ -259,15 +259,6 @@
     <string name="previous_export">Vorige exportering</string>
     <string name="subscriptions_import_unsuccessful">De abonnementen kunnen niet worden geïmporteerd</string>
     <string name="subscriptions_export_unsuccessful">De abonnementen kunnen niet worden geëxporteerd</string>
-    <string name="import_youtube_instructions">Importeer je YouTube-abonnementen vanaf Google Takeout:
-\n
-\n1. Ga naar dit adres: %1$s
-\n2. Log in op je account
-\n3. Druk op ‘Alle YouTube-gegevens inbegrepen’, dan op ‘Selectie van alle items ongedaan maken’, dan selecteer alleen ‘abonnementen’ en druk op ‘OK’
-\n4. Druk op ‘Volgende stap’, dan op ‘Export maken’
-\n5. Druk op de knop ‘Downloaden’ nadat deze verschijnt
-\n6. Druk onder op ‘Bestand importeren’ en selecteer de gedownloade zip file
-\n7. [Als de zip-import faalt] Uit het zip-bestand, pak de .csv uit (normaal in de map ‘YouTube en YouTube Music/abonnementen/abonnementen.csv’), druk onder op ‘Bestand importeren’ en selecteer het uitgepakte zip-bestand</string>
     <string name="import_network_expensive_warning">Let op: deze actie kan veel MB’s van je mobiele netwerk gebruiken. 
 \n 
 \nWil je doorgaan?</string>

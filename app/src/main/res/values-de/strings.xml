@@ -272,15 +272,6 @@
     <string name="enable_leak_canary_summary">Die Überwachung von Speicherlecks kann dazu führen, dass die App beim Heap-Dumping nicht mehr reagiert</string>
     <string name="enable_disposed_exceptions_title">Fehler außerhalb des Lebenszyklus melden</string>
     <string name="enable_disposed_exceptions_summary">Erzwingen der Meldung unzustellbarer Rx-Ausnahmen außerhalb des Lebenszyklus von Fragmenten oder Aktivitäten nach der Entsorgung</string>
-    <string name="import_youtube_instructions">Importiere YouTube-Abonnements aus dem Google Takeout:
-\n
-\n1. Gehe zu dieser URL: %1$s
-\n2. Melde dich an, falls du dazu aufgefordert wirst
-\n3. Klicke auf „Alle Daten enthalten“, dann auf „Alle abwählen“, wähle dann nur „Abonnements“ und klicke auf „OK“
-\n4. Klicke auf „Nächster Schritt“ und dann auf „Export erstellen“
-\n5. Klicke auf die Schaltfläche „Download“, nachdem sie erscheint
-\n6. Klicke unten auf \"Datei importieren\" und wähle die heruntergeladene Zip-Datei aus
-\n7. [Wenn der Zip-Import fehlschlägt] Entpacke die CSV-Datei (normalerweise unter „YouTube und YouTube Music/Abos/Abos.csv“), klicke auf \"Datei importieren\" und wähle die extrahierte CSV-Datei aus</string>
     <string name="no_streams_available_download">Keine Streams zum Download verfügbar</string>
     <string name="preferred_open_action_settings_title">Bevorzugte „Öffnen“-Aktion</string>
     <string name="preferred_open_action_settings_summary">Standardaktion beim Öffnen von Inhalten — %s</string>

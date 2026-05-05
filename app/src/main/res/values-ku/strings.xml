@@ -228,11 +228,6 @@
     <string name="previous_export">هاوردەی پێشووتر</string>
     <string name="subscriptions_import_unsuccessful">ناتوانرێ بەشدارییەکان هەناردەبکرێنەوە</string>
     <string name="subscriptions_export_unsuccessful">ناتوانرێ بەشدارییەکان هاوردە بکرێن</string>
-    <string name="import_youtube_instructions">بۆ هێنانەوەی بەشداربوونەکانی یوتوب پێویستە پەڕگەی خەزن بوو بگەڕێنیتەوە:
-\n
-\n1. ئەم بەستەرە بکەوە: s%1$s
-\n2. بچۆرەژوورەوە گەر داوای‌ کرد
-\n3. داگرتنێک دەست پێدەکات (ئەمە پەڕگەی خەزنکراوە)</string>
     <string name="import_network_expensive_warning">ئەوە بزانە ئەم کردارە پێویستی بە هێڵێکی گران هەیە.
 \n
 \nدەتەوێ بەردەوامبیت؟</string>

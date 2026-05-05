@@ -296,11 +296,6 @@
     <string name="previous_export">Eksport terdahulu</string>
     <string name="subscriptions_import_unsuccessful">Tidak dapat mengimport langganan</string>
     <string name="subscriptions_export_unsuccessful">Tidak dapat mengeksport langganan</string>
-    <string name="import_youtube_instructions">Import langganan YouTube dengan memuat turun fail eksport:
-\n
-\n1. Pergi ke URL ini: %1$s
-\n2. Log masuk apabila ditanya
-\n3. Muat turun harus bermula (itulah file eksport)</string>
     <string name="import_network_expensive_warning">Ingatkan bahawa operasi ini boleh menggunakan banyak data.
 \n
 \nAdakah anda mahu meneruskan\?</string>

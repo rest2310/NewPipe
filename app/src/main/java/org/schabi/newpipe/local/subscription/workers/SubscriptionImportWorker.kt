@@ -5,7 +5,6 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.Parcelable
 import android.util.Log
-import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.net.toUri
@@ -25,7 +24,6 @@ import kotlinx.coroutines.withContext
 import kotlinx.parcelize.Parcelize
 import org.schabi.newpipe.BuildConfig
 import org.schabi.newpipe.R
-import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.local.subscription.SubscriptionManager
 import org.schabi.newpipe.util.ExtractorHelper
 
@@ -113,20 +111,6 @@ class SubscriptionImportWorker(
     private suspend fun loadSubscriptionsFromInput(input: SubscriptionImportInput): List<SubscriptionItem> {
         return withContext(Dispatchers.IO) {
             when (input) {
-                is SubscriptionImportInput.ChannelUrlMode ->
-                    NewPipe.getService(input.serviceId).subscriptionExtractor
-                        .fromChannelUrl(input.url)
-                        .map { SubscriptionItem(it.serviceId, it.url, it.name) }
-
-                is SubscriptionImportInput.InputStreamMode ->
-                    applicationContext.contentResolver.openInputStream(input.url.toUri())?.use {
-                        val contentType =
-                            MimeTypeMap.getFileExtensionFromUrl(input.url).ifEmpty { DEFAULT_MIME }
-                        NewPipe.getService(input.serviceId).subscriptionExtractor
-                            .fromInputStream(it, contentType)
-                            .map { SubscriptionItem(it.serviceId, it.url, it.name) }
-                    }
-
                 is SubscriptionImportInput.PreviousExportMode ->
                     applicationContext.contentResolver.openInputStream(input.url.toUri())?.use {
                         ImportExportJsonHelper.readFrom(it)
@@ -176,7 +160,6 @@ class SubscriptionImportWorker(
 
         private const val NOTIFICATION_ID = 4568
         private const val NOTIFICATION_CHANNEL_ID = "newpipe"
-        private const val DEFAULT_MIME = "application/octet-stream"
         private const val PARALLEL_EXTRACTIONS = 8
         private const val BUFFER_COUNT_BEFORE_INSERT = 50
 
@@ -186,50 +169,22 @@ class SubscriptionImportWorker(
 
 sealed class SubscriptionImportInput : Parcelable {
     @Parcelize
-    data class ChannelUrlMode(val serviceId: Int, val url: String) : SubscriptionImportInput()
-
-    @Parcelize
-    data class InputStreamMode(val serviceId: Int, val url: String) : SubscriptionImportInput()
-
-    @Parcelize
     data class PreviousExportMode(val url: String) : SubscriptionImportInput()
 
     fun toData(): Data {
-        val (mode, serviceId, url) = when (this) {
-            is ChannelUrlMode -> Triple(CHANNEL_URL_MODE, serviceId, url)
-            is InputStreamMode -> Triple(INPUT_STREAM_MODE, serviceId, url)
-            is PreviousExportMode -> Triple(PREVIOUS_EXPORT_MODE, null, url)
+        val (mode, url) = when (this) {
+            is PreviousExportMode -> PREVIOUS_EXPORT_MODE to url
         }
-        return workDataOf("mode" to mode, "service_id" to serviceId, "url" to url)
+        return workDataOf("mode" to mode, "url" to url)
     }
 
     companion object {
 
-        private const val CHANNEL_URL_MODE = 0
-        private const val INPUT_STREAM_MODE = 1
         private const val PREVIOUS_EXPORT_MODE = 2
 
         fun fromData(data: Data): SubscriptionImportInput {
             val mode = data.getInt("mode", PREVIOUS_EXPORT_MODE)
             when (mode) {
-                CHANNEL_URL_MODE -> {
-                    val serviceId = data.getInt("service_id", -1)
-                    if (serviceId == -1) {
-                        throw IllegalArgumentException("No service id provided")
-                    }
-                    val url = data.getString("url")!!
-                    return ChannelUrlMode(serviceId, url)
-                }
-
-                INPUT_STREAM_MODE -> {
-                    val serviceId = data.getInt("service_id", -1)
-                    if (serviceId == -1) {
-                        throw IllegalArgumentException("No service id provided")
-                    }
-                    val url = data.getString("url")!!
-                    return InputStreamMode(serviceId, url)
-                }
-
                 PREVIOUS_EXPORT_MODE -> {
                     val url = data.getString("url")!!
                     return PreviousExportMode(url)

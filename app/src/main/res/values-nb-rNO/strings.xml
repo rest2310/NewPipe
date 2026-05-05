@@ -280,15 +280,6 @@
     <string name="import_settings">Ønsker du også å importere innstillinger?</string>
     <string name="subscriptions_import_unsuccessful">Kunne ikke importere abonnementer</string>
     <string name="subscriptions_export_unsuccessful">Kunne ikke eksportere abonnementer</string>
-    <string name="import_youtube_instructions">Importer YoutTube-abonnementer fra Google takeout:
-\n
-\n1. Gå til denne nettadressen: %1$s
-\n2. Logg inn når forespurt
-\n3. Klikk på \"All data inkludert\", så på \"Fjern merket for alle\", så på kun \"Abonnementer\", og klikk så \"OK\"
-\n4. Klikk på \"Neste steg\" og så på \"Opprett eksport\"
-\n5. Klikk på \"Last ned\"-knappen etter den vises
-\n6. Klikk på IMPORTER FIL under og velg den nedlastede .zip filen
-\n7. [Dersom .zip importen feiler] Pakk ut .csv filen (vanligvis under \"YouTube og YouTube Music/subscriptions/subscriptions.csv\"), klikk på IMPORTER FIL under og velg den utpakkede csv filen</string>
     <string name="use_inexact_seek_summary">Unøyaktig spoling lar spilleren søke posisjoner raskere med redusert presisjon. Å søke i 5, 15 eller 25 sekunder fungerer ikke med dette</string>
     <string name="auto_queue_summary">Fortsett fullendt (ikke-repeterende) avspillingskø ved å legge til en relatert strøm</string>
     <string name="enable_leak_canary_summary">Overvåkning av minnelekkasjer kan forårsake at appen ikke svarer under heap dumping</string>

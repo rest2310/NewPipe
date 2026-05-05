@@ -7,7 +7,6 @@ package org.schabi.newpipe.util
 
 import android.content.Context
 import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 import java.util.concurrent.TimeUnit
@@ -37,32 +36,6 @@ object ServiceHelper {
             else -> filter
         }
     }
-
-    /**
-     * Get a resource string with instructions for importing subscriptions for each service.
-     *
-     * @param serviceId service to get the instructions for
-     * @return the string resource containing the instructions or -1 if the service don't support it
-     */
-    @JvmStatic
-    @StringRes
-    fun getImportInstructions(serviceId: Int): Int {
-        return when (serviceId) {
-            ServiceList.YouTube.serviceId -> R.string.import_youtube_instructions
-            else -> -1
-        }
-    }
-
-    /**
-     * For services that support importing from a channel url, return a hint that will
-     * be used in the EditText that the user will type in his channel url.
-     *
-     * @param serviceId service to get the hint for
-     * @return the hint's string resource or -1 if the service don't support it
-     */
-    @JvmStatic
-    @StringRes
-    fun getImportInstructionsHint(serviceId: Int): Int = -1
 
     @JvmStatic
     fun getSelectedServiceId(context: Context): Int {

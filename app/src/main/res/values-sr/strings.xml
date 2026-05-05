@@ -292,15 +292,6 @@
     <string name="import_network_expensive_warning">Имајте на уму да ова операција може потрошити доста података.
 \n
 \nЖелите ли да наставите\?</string>
-    <string name="import_youtube_instructions">Увезите YouTube праћења из Google Takeout-а:
-\n
-\n1. Идите на ову URL адресу: %1$s
-\n2. Пријавите се када се то од вас затражи
-\n3. Кликните на „Сви подаци укључени“, затим на „Опозови све“, затим изаберите само „праћења“ и кликните на „ У реду“
-\n4. Кликните на „Следећи корак“, а затим на „Направи извоз“
-\n5. Кликните на дугме „Преузми“ након што се појави
-\n6. Кликните на УВЕЗИ ФАЈЛ испод и изаберите преузети .zip фајл
-\n7. [Ако увоз .zip не успе] Извуците .csv фајл (обично под „YouTube and YouTube Music/subscriptions/subscriptions.csv“), кликните на УВЕЗИ ФАЈЛ испод и изаберите извучени csv фајл</string>
     <string name="subscriptions_export_unsuccessful">Није могуће извести праћења</string>
     <string name="subscriptions_import_unsuccessful">Није могуће увести праћења</string>
     <string name="previous_export">Претходни извоз</string>

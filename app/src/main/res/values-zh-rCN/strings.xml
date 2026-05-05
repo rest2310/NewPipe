@@ -283,15 +283,6 @@
     <string name="previous_export">先前的导出</string>
     <string name="subscriptions_import_unsuccessful">无法导入订阅</string>
     <string name="subscriptions_export_unsuccessful">无法导出订阅</string>
-    <string name="import_youtube_instructions">从 Google takeout 导入 YouTube 订阅：
-\n
-\n1. 打开这个网址：%1$s
-\n2. 登录谷歌账号
-\n3. 单击“包含所有数据”，然后单击“取消全选”，然后仅选择“订阅”并单击“确定”
-\n4. 点击“下一步”，然后点击“创建导出作业”
-\n5. 出现“下载”按钮后点击它
-\n6. 单击下面的导入文件并选择下载的 .zip 文件
-\n7.（如果 .zip 导入失败）解压 .csv文件（通常在“YouTube和YouTube Music/subscriptions/subscriptions.csv”下），点击下方的导入文件，选择解压出来的 csv 文件</string>
     <string name="import_network_expensive_warning">该操作消耗大量流量，
 \n
 \n你想继续吗？</string>

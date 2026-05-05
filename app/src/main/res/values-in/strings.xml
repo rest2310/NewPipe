@@ -272,15 +272,6 @@
     <string name="previous_export">Ekspor sebelumnya</string>
     <string name="subscriptions_import_unsuccessful">Tidak bisa mengimpor langganan</string>
     <string name="subscriptions_export_unsuccessful">Tidak bisa mengekspor langganan</string>
-    <string name="import_youtube_instructions">Impor langganan YouTube dari Google takeout:
-\n
-\n1. Kunjungi URL ini: %1$s
-\n2. Masuk ketika ditanyakan
-\n3. Klik \"Semua data disertakan\", lalu \"Batalkan semua pilihan\", lalu hanya pilih \"langganan\" dan klik \"OKE\"
-\n4. Klik \"Langkah berikutnya\" dan kemudian \"Buat ekspor\"
-\n5. Klik tombol \"Unduh\"
-\n6. Klik IMPOR FILE di bawah dan pilih file .zip yang terunduh
-\n7. [Jika impor .zip gagal] Ekstrak file .csv (biasanya di \"YouTube dan YouTube Music/langganan/langganan.csv\"), klik IMPOR FILE di bawah dan pilih file csv yang diekstrak</string>
     <string name="import_network_expensive_warning">Perlu diingat operasi ini membutuhkan bandwidth yang besar.
 \n
 \nApakah Anda ingin melanjutkan\?</string>

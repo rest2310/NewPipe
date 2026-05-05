@@ -261,15 +261,6 @@
     <string name="previous_export">Exportação anterior</string>
     <string name="subscriptions_import_unsuccessful">Não foi possível importar as inscrições</string>
     <string name="subscriptions_export_unsuccessful">Não foi possível exportar as inscrições</string>
-    <string name="import_youtube_instructions">Importar inscrições do YouTube em Google Takeout:
-\n
-\n1. Acesse este URL: %1$s
-\n2. Faça login quando solicitado
-\n3. Clique em \"Todos os dados incluídos\", depois em \"Desmarcar todos\", selecione apenas \"Inscrições\" e clique em \"OK\"
-\n4. Clique em \"Próxima etapa\" e, em seguida, em \"Criar exportação\"
-\n5. Clique no botão \"Download\" quando ele aparecer
-\n6. Clique em IMPORTAR ARQUIVO abaixo e selecione o arquivo .zip baixado
-\n7. [Se a importação do .zip falhar] Extraia o arquivo .csv (geralmente em \"YouTube e YouTube Music/subscriptions/subscriptions.csv\"), clique em IMPORTAR ARQUIVO abaixo e selecione o arquivo csv extraído</string>
     <string name="import_network_expensive_warning">Tenha em mente que esta operação poderá consumir muitos dados.
 \n
 \nVocê deseja continuar\?</string>

@@ -282,11 +282,6 @@
     <string name="previous_export">การส่งออกก่อนหน้านี้</string>
     <string name="subscriptions_import_unsuccessful">ไม่สามารถนำเข้าการสมัครรับข้อมูล</string>
     <string name="subscriptions_export_unsuccessful">ไม่สามารถส่งออกการสมัครรับข้อมูล</string>
-    <string name="import_youtube_instructions">นำเข้ารายการช่องที่บอกรับใน YouTube โดยการดาวน์โหลดไฟล์การส่งออก: 
-\n 
-\n1. ไปที่ URL นี้: %1$s 
-\n2. เข้าสู่ระบบเมื่อระบบถาม 
-\n3. การดาวน์โหลดควรเริ่มต้น (นั่นคือไฟล์ที่ส่งออก)</string>
     <string name="import_network_expensive_warning">โปรดทราบว่าการดำเนินการนี้อาจใช้งานข้อมูลมือถือที่มีค่าใช้จ่าย
 \n
 \nคุณต้องการที่จะทำต่อไปหรือไม่\?</string>

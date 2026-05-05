@@ -364,15 +364,6 @@
     <string name="clear_queue_confirmation_title">Prieš išvalant eilę prašyti patvirtinimo</string>
     <string name="seek_duration_title">Greito prasukimo trukmė</string>
     <string name="use_inexact_seek_summary">Netikslus prasukimas leidžia grotuvui greitai peršokti į kitą vietą su sumažintu tikslumu. 5, 15 ar 25 sekundės to nenaudoja</string>
-    <string name="import_youtube_instructions">Importuokite „YouTube“ prenumeratas iš „Google Takeout“:
-\n
-\n1. Eikite į šį URL adresą: %1$s
-\n2. Prisijunkite, kai būsite paprašyti
-\n3. Spustelėkite „All data included“ (įtraukti visus duomenis), tada „Deselect all“ (panaikinti visų duomenų pasirinkimą), tada pasirinkite tik „Subscriptions“ (prenumeratos) ir spustelėkite „OK“ (gerai).
-\n4. Spustelėkite „Next step“ (kitas žingsnis), tada „Create export“ (sukurti eksportą).
-\n5. Pasirodžius mygtukui „Download“ (Atsisiųsti), spustelėkite jį ir
-\n6. Spustelėkite toliau Importuoti failą ir pasirinkite atsisiųstą ZIP failą
-\n7. [Jei nepavyksta importuoti ZIP failo] Ištraukite .csv failą (paprastai po „YouTube and YouTube Music/subscriptions/subscriptions.json“), spustelėkite toliau esantį Importuoti failą ir pasirinkite išgautą CSV failą</string>
     <string name="app_license">NewPipe yra „copyleft libre“ programinė įranga: galite ją naudoti, studijuoti ir patobulinti. Konkrečiau, galite ją platinti ir (arba) modifikuoti pagal „Free Software Foundation“ paskelbtą GNU bendrosios viešosios licencijos sąlygas, pasirinktinai pagal 3 licencijos versiją arba (jūsų pasirinkimu) bet kurią vėlesnę versiją.</string>
     <string name="paid_content">Šis turinys prieinamas tik sumokėjusiems naudotojams, todėl \"NewPipe\" negali jo transliuoti ar atsisiųsti.</string>
     <string name="youtube_music_premium_content">Šis vaizdo įrašas prieinamas tik \"YouTube Music Premium\" nariams, todėl \"NewPipe\" negali jo transliuoti ar atsisiųsti.</string>

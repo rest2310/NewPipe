@@ -287,15 +287,6 @@
     <string name="previous_export">Föregående export</string>
     <string name="subscriptions_import_unsuccessful">Kunde inte importera prenumerationer</string>
     <string name="subscriptions_export_unsuccessful">kunde inte exportera prenumerationer</string>
-    <string name="import_youtube_instructions">Importera YouTube-prenumerationer från Google takeout:
-\n
-\n1. Gå till följande webbadress: %1$s
-\n2. Logga in när du blir tillfrågad
-\n3. Klicka på \"All YouTube-data tas med\", sen på \"Avmarkera alla\", välj sen bara \"prenumerationer\" och klicka på \"OK\"
-\n4. Klicka på \"Nästa steg\" och sen på \"Skapa export\"
-\n5. Klicka på \"Hämta\"-knappen när den kommer fram
-\n6. Klicka på IMPORTERA FIL nedan och välj den nedladdade zip-filen
-\n7. [Om zip-importen misslyckas] Packa upp .csv-filen (vanligtvis under \"YouTube och YouTube Musik/subscriptions/subscriptions.csv\"), klicka på IMPORTERA FIL nedan och välj den uppackade csv-filen</string>
     <string name="import_network_expensive_warning">Tänk på att denna operation kan vara nätverksintensiv.
 \n
 \nVill du fortsätta\?</string>

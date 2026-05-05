@@ -270,15 +270,6 @@
     <string name="previous_export">Eelmine eksport</string>
     <string name="subscriptions_import_unsuccessful">Tellimuste import nurjus</string>
     <string name="subscriptions_export_unsuccessful">Tellimuste eksport nurjus</string>
-    <string name="import_youtube_instructions">Impordi YouTube tellimused Google väljavõttest:
-\n
-\n1. Ava aadress: %1$s
-\n2. Logi sisse, kui seda küsitakse.
-\n3. Klõpsa \"Kõigi andmetega\", vali \"Tühista kõik\", vali ainult \"Tellimused\" ja klõpsa \"OK\".
-\n4. Klõpsa \"Järgmine samm\" ja seejärel \"Loo eksport\".
-\n5. Klõpsa nupul \"Laadi alla\" siis, kui ta ilmub.
-\n6. Klõpsi siitsamast \"Impordi fail\" linki ning vali allalaaditud .zip fail.
-\n7. Kui .zip faili importimine ei toimi, siis paki .csv fail lahti (tavaliselt on see fail \"YouTube ja YouTube Muusika/tellimused/tellimused\" või \"YouTube and YouTube Music/subscriptions/subscriptions\") ja klõpsi siitsamast \"Impordi fail\" linki ning vali lahtipakitud csv fail.</string>
     <string name="import_network_expensive_warning">See toiming võib põhjustada suurt võrguliiklust.
 \n
 \nKas jätkata?</string>

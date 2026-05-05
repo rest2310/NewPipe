@@ -512,15 +512,6 @@
     <string name="import_from_previous_export">Import from previous export</string>
     <string name="subscriptions_import_unsuccessful">Could not import subscriptions</string>
     <string name="subscriptions_export_unsuccessful">Could not export subscriptions</string>
-    <string name="import_youtube_instructions">Import YouTube subscriptions from Google takeout:
-\n
-\n1. Go to this URL: %1$s
-\n2. Log in when asked
-\n3. Click on \"All data included\", then on \"Deselect all\", then select only \"subscriptions\" and click \"OK\"
-\n4. Click on \"Next step\" and then on \"Create export\"
-\n5. Click on the \"Download\" button after it appears
-\n6. Click on IMPORT FILE below and select the downloaded .zip file
-\n7. [If the .zip import fails] Extract the .csv file (usually under \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), click on IMPORT FILE below and select the extracted csv file</string>
     <string name="import_network_expensive_warning">Keep in mind this operation can be network expensive.\n\nDo you want to continue?</string>
     <!-- Playback Parameters -->
     <string name="playback_speed_control">Playback Speed Controls</string>

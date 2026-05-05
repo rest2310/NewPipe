@@ -517,14 +517,6 @@
     <string name="done">Kirî</string>
     <string name="recaptcha_request_toast">reCAPTCHA dijwarî xwestin</string>
     <string name="subtitle_activity_recaptcha">Dema ku çareser bibe \"Kirî\" çap bikin</string>
-    <string name="import_youtube_instructions">Tevlêbûnên YouTube-ê ji barkirina Google-ê bikişînin:
-\n
-\n1. Herin vê URL-ê: %1$s
-\n2. Dema ku ji we tê xwestin bikevin hundur
-\n3. Li ser \"Hemî daneyên tê de\" bikirtînin, dûre \"Hemî hilbijêrin\" hilbijêrinîn, paşê tenê \"abonetiyê\" hilbijêrin û \"OK\" bikirtînin
-\n4. Li ser \"Pênga Next\" û paşê jî li ser \"Afirandina hinardeyê\" bitikînin
-\n5. Bişkojka \"Dakêşanê\" bitikîne piştî ku xuya dibe û
-\n6. Ji zip zipê dakêşandî pelê .json derxînin (bi gelemperî di bin \"YouTube û YouTube de Music/subscriptions/subscriptions.json\") û wê li vir îthal bikin.</string>
     <string name="show_thumbnail_summary">Hem ji bo paşnavê dîmendera kilît û hem jî ji bo agahdarkirinê wêneyên nîgarê bikar bînin</string>
     <string name="no_app_to_open_intent">Tu cîhaz li ser amûrê we nikare vê vebike</string>
     <string name="chapters">Beş</string>

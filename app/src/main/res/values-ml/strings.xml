@@ -10,14 +10,6 @@
     <string name="import_network_expensive_warning">ഈ പ്രവർത്തനം നെറ്റ്‌വർക്ക് ചെലവേറിയതായിരിക്കുമെന്ന് ഓർമ്മിക്കുക.
 \n
 \nനിങ്ങൾ തുടരാൻ ആഗ്രഹിക്കുന്നുവോ\?</string>
-    <string name="import_youtube_instructions">ഗൂഗിൾ ടേക്ക് ഔട്ടിൽ നിന്ന് യൂട്യൂബ് സബ്‌സ്‌ക്രിപ്‌ഷനുകൾ ഇമ്പോർട്ടുചെയ്യുക:
-\n
-\n1. ഈ URL ലേക്ക് പോകുക: %1$s
-\n2. ആവശ്യപ്പെടുമ്പോൾ ലോഗിൻ ചെയ്യുക
-\n3. \"All data included\" ക്ലിക്കുചെയ്യുക, തുടർന്ന് \"Deselect all\" എന്നതിൽ ക്ലിക്കുചെയ്യുക, തുടർന്ന് \"subscriptions\" മാത്രം തിരഞ്ഞെടുത്ത് \"OK\" ക്ലിക്കുചെയ്യുക.
-\n4. \"Next Export\" ക്ലിക്കുചെയ്യുക, തുടർന്ന് \"Create Export\" ക്ലിക്കുചെയ്യുക
-\n5. \"Download\" ബട്ടൺ പ്രത്യക്ഷപ്പെട്ടതിനുശേഷം അതിൽ ക്ലിക്കുചെയ്യുക
-\n6. ഡൗൺ‌ലോഡുചെയ്‌ത ടേക്ക്ഔട്ട് സിപ്പിൽ നിന്ന് .json ഫയൽ എക്‌സ്‌ട്രാക്റ്റുചെയ്യുക (സാധാരണയായി \"YouTube, YouTube Music / subscription / subscription.json\" ന് കീഴിൽ) അത് ഇവിടെ ഇറക്കുമതി ചെയ്യുക.</string>
     <string name="subscriptions_export_unsuccessful">സബ്‌സ്‌ക്രിപ്‌ഷനുകൾ എക്‌സ്‌പോർട്ടുചെയ്യാനായില്ല</string>
     <string name="subscriptions_import_unsuccessful">സബ്‌സ്‌ക്രിപ്‌ഷനുകൾ ഇറക്കുമതി ചെയ്യാൻ കഴിഞ്ഞില്ല</string>
     <string name="previous_export">മുമ്പത്തെ എക്സ്പോർട്ട്</string>

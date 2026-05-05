@@ -30,15 +30,6 @@
     <string name="subscriptions_export_unsuccessful">Ekki tókst að flytja út áskriftir</string>
     <string name="no_channel_subscribed_yet">Engar áskriftir ennþá</string>
     <string name="subscriptions_import_unsuccessful">Ekki tókst að flytja inn áskriftir</string>
-    <string name="import_youtube_instructions">Flytja inn YouTube áskriftir frá Google takeout:
-\n
-\n1) Farðu á: %1$s
-\n2) Skráðu þig inn þegar spurt er.
-\n3) Smelltu á „Öll gögn innifalin,“ síðan á „Afvelja allt,“ veldu síðan aðeins „áskriftir“ og smelltu á „Í lagi.“
-\n4) Smelltu á „Næsta skref“ og síðan á „Búa til útflutning.“
-\n5) Smelltu á \"Sækja\" hnappinn eftir að hann birtist.
-\n6) Smelltu á FLYTJA INN SKRÁ fyrir neðan og veldu .zip skrána.
-\n7) [Ef .zip innflutningur mistekst] Taktu út .csv skrána (venjulega undir „YouTube og YouTube Music/subscriptions/subscriptions.csv“), smelltu á FLYTJA INN SKRÁ fyrir neðan og veldu þá skrá.</string>
     <string name="use_external_audio_player_title">Nota utanaðkomandi hljóðspilara</string>
     <string name="app_description">Frjáls og léttur streymisspilari fyrir Android.</string>
     <string name="title_activity_about">Um NewPipe</string>

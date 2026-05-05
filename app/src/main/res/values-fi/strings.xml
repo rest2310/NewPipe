@@ -287,15 +287,6 @@
     <string name="previous_export">Edellinen vienti</string>
     <string name="subscriptions_import_unsuccessful">Tilauksia ei voitu tuoda</string>
     <string name="subscriptions_export_unsuccessful">Tilauksia ei voitu viedä</string>
-    <string name="import_youtube_instructions">Tuo YouTube-tilaukset Google Takeoutista:
-\n
-\n1. Mene osoitteeseen: %1$s
-\n2. Kirjaudu sisään pyydettäessä
-\n3. Klikkaa \"Kaikki Youtube-data valittuna\", sitten \"Poista kaikki valinnat\", sitten ainoastaan \"tilaukset\" ja klikkaa \"OK\"
-\n4. Klikkaa \"Seuraava vaihe\" ja \"Luo vienti\"
-\n5. Klikkaa \"Lataa\"-painiketta tämän ilmestyessä
-\n6. Klikkaa TUO TIEDOSTO alhaalta ja valitse ladattu .zip-tiedosto
-\n7. [Jos zip-tiedoston tuonti epäonnistuu] Pura .csv-tiedosto (yleensä sijainnissa \"Youtube ja Youtube Musiikki/tilaukset/tilaukset.csv\") ja klikkaa TUO TIEDOSTO alhaalta ja valitse purettu csv-tiedosto</string>
     <string name="import_network_expensive_warning">Ota huomioon että tämä operaatio voi käyttää paljon dataa. 
 \n
 \nHaluatko jatkaa\?</string>

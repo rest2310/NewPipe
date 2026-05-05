@@ -283,15 +283,6 @@
     <string name="previous_export">Xuất trước</string>
     <string name="subscriptions_import_unsuccessful">Không thể nhập kênh đăng ký</string>
     <string name="subscriptions_export_unsuccessful">Không thể xuất kênh đăng ký</string>
-    <string name="import_youtube_instructions">Nhập danh sách đăng ký YouTube từ Google Takeout:
-\n
-\n1. Vào URL này: %1$s
-\n2. Đăng nhập khi được yêu cầu
-\n3. Nhấn chọn \"Bao gồm tất cả dữ liệu trên YouTube\", sau đó nhấn \"Bỏ chọn tất cả\", sau đó chỉ chọn mục \"đăng ký\" rồi nhấn OK
-\n4. Nhấn nút \"Bước tiếp theo\" rồi nhấn \"Tạo tệp xuất\"
-\n5. Nhấn nút \"Tải xuống\" khi nó xuất hiện
-\n6. Từ file zip mới tải về, trích xuất file .json ra (thường nằm ở đường dẫn \"YouTube và YouTube Music/đăng ký/subscriptions.json\") rồi nhập vào đây.
-\n7. [Nếu nhập file .zip không thành công] Hãy giải nén tệp .csv (thường nó được để dưới phần \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), nhấn vào nút NHẬP TỆP ở phía bên dưới rồi chọn tệp csv đã được giải nén</string>
     <string name="import_network_expensive_warning">Hãy nhớ rằng hoạt động này có thể khiến bạn bị mất kênh bạn đã đăng ký trước đó.
 \n
 \nBạn có muốn tiếp tục không\?</string>

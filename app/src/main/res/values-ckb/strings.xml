@@ -435,14 +435,6 @@
     <string name="settings_file_replacement_character_title">ڕه‌نووسی جێگۆڕین</string>
     <string name="settings">ڕێكخستنه‌كان</string>
     <string name="missions_header_finished">دابه‌زێنراو</string>
-    <string name="import_youtube_instructions">بۆ هاورده‌كردنی بەژداربوونەکانی یوتوب له‌ گووگڵه‌وه‌:
-\n
-\n1. ئەم بەستەرە بکەرەوە: %1$s
-\n2. بچۆرەژوورەوە گەر داوای‌ کرد
-\n3. كرته‌ بكه‌ له‌ \"All data included\"، پاشان كرته‌ بكه‌ له‌ \"Deselect all\" ، پاشان ته‌نیا \"subscriptions\" هه‌ڵبژێره‌ پاشان كرته‌ له‌ \"OK\" بكه‌
-\n4. كرته‌ بكه‌ له‌ \"Next step\" و دواتر له‌ \"Create export\"
-\n5. كرته‌ بكه‌ له‌ \"Download\" دوای دەرکەوتنی
-\n6. له‌ فایلی دابه‌زێنراودا فایلی .json ئێكستراكت بكه‌ و لێره‌دا هاورده‌ی بكه‌.</string>
     <string name="systems_language">به‌پێی سیستەم</string>
     <string name="network_error">کێشە لە هێڵەکەتدا هەیە</string>
     <plurals name="watching">

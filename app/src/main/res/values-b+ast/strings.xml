@@ -187,14 +187,6 @@
     <string name="confirm_prompt">¿Quies llimpiar l\'historial de descargues o desaniciar tolos ficheros baxaos\?</string>
     <string name="previous_export">Esportación anterior</string>
     <string name="import_file_title">Importación d\'un ficheru</string>
-    <string name="import_youtube_instructions">Importa les soscripciones de YouTube dende Google Takeout:
-\n
-\n1. Vete a esta URL: %1$s
-\n2. Anicia sesión cuando se te pida
-\n3. Calca en «Tolos datos incluyíos», darréu en «Deseleicionar too», dempués esbilla namás «soscripciones» y calca «Aceutar»
-\n4. Calca en «Pasu siguiente» y darréu en «Crear una esportación»
-\n5. Calca nel botón «Baxar» dempués de qu\'apaeza y
-\n6. A partir del ficheru baxáu, estrái\'l ficheru .json (polo xeneral baxo «YouTube and YouTube Music/subscriptions/subscriptions.json») ya impórtalu equí.</string>
     <string name="minimize_on_exit_title">Minimizar al cambiar d\'aplicación</string>
     <string name="minimize_on_exit_background_description">Minimizar al reproductor en segundu planu</string>
     <string name="minimize_on_exit_popup_description">Minimizar al reproductor en ventanu</string>
