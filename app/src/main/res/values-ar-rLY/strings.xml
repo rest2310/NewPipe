@@ -67,7 +67,6 @@
     <string name="no_streams_available_download">لا يوجد بث متاح للتنزيل</string>
     <string name="restore_defaults_confirmation">هل تريد استعادة الإعدادات الافتراضية؟</string>
     <string name="preferred_player_fetcher_notification_message">تحميل المحتوى المطلوب</string>
-    <string name="peertube_instance_add_title">إضافة نموذج</string>
     <string name="title_licenses">تراخيص الجهات الخارجية</string>
     <string name="clear_playback_states_summary">حذف كل مواقف التشغيل</string>
     <string name="tab_about">عن التطبيق والأسئلة الشائعة</string>
@@ -78,9 +77,7 @@
     <string name="feed_load_error_account_info">تعذر تحميل موجز \'%s\'.</string>
     <string name="question_mark">؟</string>
     <string name="check_for_updates">التحقق من وجود تحديثات</string>
-    <string name="peertube_instance_url_title">مثيلات خوادم پيرتيوب</string>
     <string name="more_than_100_videos">+100 فيديو</string>
-    <string name="peertube_instance_add_exists">مثيل الخادم موجود بالفعل</string>
     <string name="clear_queue_confirmation_title">طلب تأكيد قبل مسح قائمة الانتظار</string>
     <string name="metadata_subscribers">المشتركون</string>
     <string name="feed_show_partially_watched">تمت مشاهدتها جزئيا</string>
@@ -107,7 +104,6 @@
     <string name="enable_search_history_summary">تخزين طلبات البحث محليًّا</string>
     <string name="notification_colorize_title">تلوين الإشعارات</string>
     <string name="caption_auto_generated">توليد تلقائي</string>
-    <string name="peertube_instance_add_fail">لا يمكن التحقق من صحة المثال</string>
     <string name="show_play_with_kodi_title">عرض خيار التشغيل بواسطة كودي</string>
     <string name="fast_mode">الوضع السريع</string>
     <string name="feed_hide_streams_title">إظهار الموجزات التالية</string>
@@ -256,7 +252,6 @@
     <string name="error_report_open_issue_button_text">تقرير على GitHub</string>
     <string name="black_theme_title">أسود</string>
     <string name="streams_notification_channel_name">بث جديد</string>
-    <string name="import_soundcloud_instructions_hint">معرفك, soundcloud.com/هويتك</string>
     <string name="hold_to_append">ضغط مطول للإدراج الى قائمة الانتظار</string>
     <string name="metadata_privacy_private">خاص</string>
     <string name="crash_the_app">اغلق التطبيق قسريا</string>
@@ -366,7 +361,6 @@
     <string name="off">إيقاف</string>
     <string name="metadata_tags">الوسوم</string>
     <string name="metadata_host">المضيف</string>
-    <string name="peertube_instance_url_help">ابحث عن مثيلات الخوادم التي تناسبك على %s</string>
     <string name="streams_notifications_network_title">مطلوب اتصال الشبكة</string>
     <string name="check_new_streams">تشغيل التحقق من وجود تدفقات جديدة</string>
     <string name="no_views">دون مشاهدات</string>
@@ -379,7 +373,6 @@
     <string name="add_to_playlist">إضافة إلى قائمة التشغيل</string>
     <string name="channels">القنوات</string>
     <string name="dont_show">لا تظهر</string>
-    <string name="peertube_instance_add_help">أدخل عنوان للمثيل</string>
     <string name="info_labels">ماذا:\nطلب:\nلغة المحتوى:\nبلد المحتوى:\nلغة التطبيق:\nالخدمات:\nتوقيت جرينتش:\nالحزمة:\nالإصدار:\nOS نسخة:</string>
     <string name="use_external_video_player_summary">يزيل الصوت في بعض الجودات</string>
     <string name="feed_fetch_channel_tabs">جلب ألسنة القنوات</string>
@@ -461,17 +454,10 @@
     <string name="remove_watched_popup_title">إزالة مقاطع الفيديو التي تمت مشاهدتها؟</string>
     <string name="albums">الالبومات</string>
     <string name="tracks">المسارات</string>
-    <string name="peertube_instance_url_summary">حدد مثيلات PeerTube المفضلة لديك</string>
     <string name="settings_category_player_notification_title">إشعار المشغل</string>
     <string name="use_inexact_seek_summary">خاصية التقديم الغير دقيق تسمح للمشغل بالقفز خلال الفديو بشكل أسرع مع دقة قفز أقل. خاصية القفز ل5، 15 او 25 لا تعمل مع القفز الغير دقيق</string>
     <string name="paused">متوقف</string>
     <string name="controls_popup_title">نافذة منبثقة</string>
-    <string name="import_soundcloud_instructions">قم باستيراد ملف تعريف SoundCloud عن طريق كتابة عنوان URL أو معرفك:
-\n
-\n1. تمكين \"وضع سطح المكتب\" في متصفح الويب (الموقع غير متاح للأجهزة المحمولة)
-\n2. انتقل إلى عنوان URL هذا: %1$s
-\n3. تسجيل الدخول عندما يطلب منك
-\n4. انسخ عنوان URL للملف الشخصي الذي تمت إعادة توجيهك إليه.</string>
     <string name="select_a_playlist">اختر قائمة تشغيل</string>
     <string name="metadata_age_limit">الحد العمري</string>
     <string name="no_app_to_open_intent">لا يوجد تطبيق على جهازك يمكنه فتح هذا</string>
@@ -615,7 +601,6 @@
 \n6. انقر على IMPORT FILE أدناه وحدد الملف البريدي تحميلها
 \n7. [إذا فشل استيراد الرمز البريدي] استخراج ملف .csv (عادة تحت عنوان \"يوتيوب ويوتيوب الموسيقى / الاشتراكات / الاشتراكات.csv\")، انقر على IMPORT FILE أدناه وحدد ملف csv المستخرج</string>
     <string name="notification_action_buffering">جارٍ التحميل</string>
-    <string name="soundcloud_go_plus_content">هذا مسار SoundCloud Go+، على الأقل في بلدك، لذلك لا يمكن دفقه أو تنزيله بواسطة NewPipe.</string>
     <string name="wifi_only">فقط على شبكة Wi-Fi</string>
     <string name="show_thumbnail_title">إظهار الصورة المصغرة</string>
     <string name="playback_speed_control">ضوابط سرعة التشغيل</string>
@@ -801,7 +786,6 @@
     <string name="disable_media_tunneling_title">تعطيل نفق الوسائط</string>
     <string name="channel_tab_tracks">المسارات</string>
     <string name="feed_group_dialog_empty_name">اسم المجموعة فارغ</string>
-    <string name="peertube_instance_add_https_only">يتم دعم عناوين URL HTTPS فقط</string>
     <string name="duration">المدة</string>
     <string name="subscriptions_export_unsuccessful">لا يمكن تصدير الاشتراكات</string>
     <string name="no_streams">لاتوجد بثوث</string>

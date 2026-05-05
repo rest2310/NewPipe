@@ -298,13 +298,6 @@
 \n5. Klikkaa \"Lataa\"-painiketta tämän ilmestyessä
 \n6. Klikkaa TUO TIEDOSTO alhaalta ja valitse ladattu .zip-tiedosto
 \n7. [Jos zip-tiedoston tuonti epäonnistuu] Pura .csv-tiedosto (yleensä sijainnissa \"Youtube ja Youtube Musiikki/tilaukset/tilaukset.csv\") ja klikkaa TUO TIEDOSTO alhaalta ja valitse purettu csv-tiedosto</string>
-    <string name="import_soundcloud_instructions">Tuo SoundCloud-profiili kirjoittamalla joko osoite tai ID:si:
-\n
-\n1. Laita päälle työpöytämoodi selaimessasi (tai käytä tietokonetta, tämä sivu ei toimi mobiilisivuna)
-\n2. Mene tähän osoitteeseen: %1$s
-\n3. Kirjaudu sisään kysyttäessä.
-\n4. Kopioi se nettiosoite johon sinut ohjattiin.</string>
-    <string name="import_soundcloud_instructions_hint">sinun käyttäjänimesi, soundcloud.com/&lt;sinun käyttäjänimesi&gt;</string>
     <string name="import_network_expensive_warning">Ota huomioon että tämä operaatio voi käyttää paljon dataa. 
 \n
 \nHaluatko jatkaa\?</string>
@@ -372,14 +365,6 @@
 \nSalli ”%1$s” asetuksissa katsoaksesi.</string>
     <string name="youtube_restricted_mode_enabled_title">Ota käyttöön YouTuben ”Rajoitettu tila”</string>
     <string name="settings_category_updates_title">Päivitykset</string>
-    <string name="peertube_instance_add_exists">Instanssi on jo olemassa</string>
-    <string name="peertube_instance_add_https_only">Vain HTTPS-URL:t ovat tuettuja</string>
-    <string name="peertube_instance_add_fail">Instanssia ei voitu vahvistaa</string>
-    <string name="peertube_instance_add_help">Syötä instanssin URL</string>
-    <string name="peertube_instance_add_title">Lisää instanssi</string>
-    <string name="peertube_instance_url_help">Hae instansseja, joista pidät, osoitteesta %s</string>
-    <string name="peertube_instance_url_summary">Valitse PeerTube-suosikki-instanssisi</string>
-    <string name="peertube_instance_url_title">PeerTube-instanssit</string>
     <string name="autoplay_title">Automaattinen toisto</string>
     <string name="settings_category_clear_data_title">Tietojen tyhjennys</string>
     <string name="enable_playback_resume_title">Jatka toistoa</string>
@@ -580,7 +565,6 @@
     <string name="paid_content">Tämä sisältö on saatavilla vain maksaneille käyttäjillä, joten NewPipe ei voi suoratoistaa tai ladata sitä.</string>
     <string name="youtube_music_premium_content">Tämä video on saatavilla vain YouTube Music Premium -jäsenille, joten NewPipe ei voi suoratoistaa tai ladata sitä.</string>
     <string name="private_content">Tämä sisältö on yksityinen, joten NewPipe ei voi suoratoistaa tai ladata sitä.</string>
-    <string name="soundcloud_go_plus_content">Tämä on SoundCloud Go+ -raita maassasi, joten NewPipe ei voi suoratoistaa tai ladata sitä.</string>
     <string name="georestricted_content">Tämä sisältö ei ole saatavilla maassasi.</string>
     <string name="crash_the_app">Kaada sovellus</string>
     <string name="recaptcha_solve">Ratkaise</string>

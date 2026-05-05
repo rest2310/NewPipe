@@ -137,14 +137,6 @@
     <string name="settings_category_video_audio_title">Video va audio</string>
     <string name="settings_category_player_behavior_title">Xatti-harakat</string>
     <string name="settings_category_player_title">Ijro etish</string>
-    <string name="peertube_instance_add_exists">Namuna allaqachon mavjud</string>
-    <string name="peertube_instance_add_https_only">Faqat HTTPS URL-lari qo\'llab-quvvatlanadi</string>
-    <string name="peertube_instance_add_fail">Namunani tasdiqlab bo\'lmadi</string>
-    <string name="peertube_instance_add_help">Namuna URL manzilini kiriting</string>
-    <string name="peertube_instance_add_title">Namuna qo\'shish</string>
-    <string name="peertube_instance_url_help">%s da sizga yoqadigan misollarni toping</string>
-    <string name="peertube_instance_url_summary">Sevimli PeerTube nusxalarini tanlang</string>
-    <string name="peertube_instance_url_title">PeerTube misollari</string>
     <string name="content_language_title">Standart kontent tili</string>
     <string name="default_content_country_title">Standart kontent mamlakati</string>
     <string name="unsupported_url_dialog_message">URL manzili aniqlanmadi. Boshqa ilova bilan ochilsinmi\?</string>
@@ -471,13 +463,6 @@
     <string name="import_network_expensive_warning">Ushbu operatsiyani bajarish tarmoq uchun qimmat bo\'lishi mumkinligini yodda tuting.
 \n
 \nDavom etishni xohlaysizmi\?</string>
-    <string name="import_soundcloud_instructions_hint">sizningID, soundcloud.com/yourid</string>
-    <string name="import_soundcloud_instructions">URL yoki ID-ni yozib SoundCloud profilini import qiling:
-\n
-\n1. Veb-brauzerda \"ish stoli rejimini\" yoqing (sayt mobil qurilmalar uchun mavjud emas)
-\n2. Ushbu URL manziliga o\'ting: %1$s
-\n3. So\'ralganda tizimga kiring
-\n4. Siz yo\'naltirilgan profil URL manzilidan nusxa oling.</string>
     <string name="import_youtube_instructions">YouTube-ga obunalarni Google takeout-dan import qilish:
 \n
 \n1. Ushbu URL manzilga o\'ting: %1$s

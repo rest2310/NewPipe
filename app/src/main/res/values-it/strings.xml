@@ -273,13 +273,6 @@
 \n5. Premi il pulsante \"Scarica\" quando compare
 \n6. Premi IMPORTA FILE qui sotto e seleziona il file ZIP scaricato
 \n7. [Se l\'importazione fallisce] Estrai il file CSV (solitamente in \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), premi IMPORTA FILE qui sotto e seleziona il file CSV estratto</string>
-    <string name="import_soundcloud_instructions">Importa un profilo SoundCloud inserendo l\'URL o il tuo ID:
-\n
-\n1. Abilitare la «modalità desktop» del browser (il sito non è disponibile per i dispositivi mobili)
-\n2. Aprire questo URL: %1$s
-\n3. Accedere quando richiesto
-\n4. Copiare l\'URL del profilo a cui si viene indirizzati.</string>
-    <string name="import_soundcloud_instructions_hint">iltuoID, soundcloud.com/iltuoid</string>
     <string name="import_network_expensive_warning">Tieni presente che questa operazione può consumare una grande quantità di traffico dati.
 \n 
 \nVuoi continuare?</string>
@@ -426,14 +419,6 @@
     </plurals>
     <string name="default_kiosk_page_summary">Contenuti in evidenza predefiniti</string>
     <string name="seek_duration_title">Durata avanzamento e riavvolgimento rapidi</string>
-    <string name="peertube_instance_url_title">Istanze PeerTube</string>
-    <string name="peertube_instance_url_summary">Seleziona le istanze PeerTube preferite</string>
-    <string name="peertube_instance_url_help">Trova altre istanze su %s</string>
-    <string name="peertube_instance_add_title">Aggiungi istanza</string>
-    <string name="peertube_instance_add_help">Inserisci l\'URL dell\'istanza</string>
-    <string name="peertube_instance_add_fail">Impossibile convalidare l\'istanza</string>
-    <string name="peertube_instance_add_https_only">Sono supportati solo gli URL HTTPS</string>
-    <string name="peertube_instance_add_exists">L\'istanza esiste già</string>
     <string name="local">Locale</string>
     <string name="recently_added">Aggiunti di recente</string>
     <string name="most_liked">Più piaciuti</string>
@@ -585,7 +570,6 @@
     <string name="no_app_to_open_intent">Sul tuo dispositivo non c\'è alcuna app che può aprirlo</string>
     <string name="crash_the_app">Fai crashare l\'app</string>
     <string name="paid_content">Questo contenuto è disponibile solo per gli utenti paganti, quindi non può essere riprodotto o scaricato da NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Nel tuo Paese questa è una traccia SoundCloud Go+, quindi non può essere riprodotta o scaricata da NewPipe.</string>
     <string name="youtube_music_premium_content">Questo video è disponibile solo per i membri di YouTube Music Premium, quindi non può essere riprodotto o scaricato da NewPipe.</string>
     <string name="private_content">Questo contenuto è privato, quindi non può essere riprodotto o scaricato da NewPipe.</string>
     <string name="georestricted_content">Questo contenuto non è disponibile nel tuo Paese.</string>

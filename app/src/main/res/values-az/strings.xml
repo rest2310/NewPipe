@@ -135,7 +135,6 @@
 \n
 \nOnu görmək istəyirsinizsə, tənzimləmələrdə \"%1$s\" seçimini aktivləşdirin.</string>
     <string name="youtube_restricted_mode_enabled_summary">YouTube potensial yetkin məzmunu gizlədən \"Məhdud Rejim\" təmin edir</string>
-    <string name="peertube_instance_url_title">\"PeerTube\" serverləri</string>
     <string name="notification_actions_at_most_three">Yığcam bildirişdə göstərmək üçün ən çoxu üç fəaliyyət seçə bilərsiniz!</string>
     <string name="feed_update_threshold_option_always_update">Həmişə yenilə</string>
     <string name="settings_category_feed_title">Axın</string>
@@ -203,8 +202,6 @@
     <string name="limit_mobile_data_usage_title">Mobil internet istifadə edərkən ayırdetməni məhdudlaşdır</string>
     <string name="limit_data_usage_none_description">Limitsiz</string>
     <string name="one_item_deleted">1 element silindi.</string>
-    <string name="peertube_instance_add_title">Server əlavə et</string>
-    <string name="peertube_instance_url_summary">Sevimli \"PeerTube\" serverlərinizi seçin</string>
     <string name="delete_downloaded_files">Endirilmiş faylları sil</string>
     <string name="confirm_prompt">Endirmə tarixçənizi təmizləmək və ya bütün endirilmiş faylları silmək istəyirsiniz\?</string>
     <string name="clear_download_history">Endirmə tarixçəsini təmizlə</string>
@@ -371,13 +368,6 @@
     <string name="enable_disposed_exceptions_summary">Utilizasiyadan sonra fraqment və ya fəaliyyətin yaşam dövründən kənarda, çatdırıla bilməyən Rx istisnaları barədə məlumat verməsinə məcbur et</string>
     <string name="show_original_time_ago_summary">Xidmətlərdən alınmış orijinal mətnlər yayım elementlərində görünəcək</string>
     <string name="check_new_streams">Yeni yayımları yoxlamanı işə sal</string>
-    <string name="import_soundcloud_instructions">URL və ya ID\'nizi daxil etməklə SoundCloud profilini idxal edin:
-\n
-\n1. Veb-brauzerdə \"iş masası rejimini\" aktiv edin (sayt mobil cihazlar üçün mövcud deyil)
-\n2. Bu URL\'ə keçin: %1$s
-\n3. Soruşulduqda daxil olun
-\n4. Yönləndirildiyiniz profilin URL\'sini kopyalayın.</string>
-    <string name="import_soundcloud_instructions_hint">ID\'niz, soundcloud.com/ID\'niz</string>
     <string name="import_network_expensive_warning">Unutmayın ki, bu əməliyyat şəbəkəyə ağır yük ola bilər.
 \n
 \nDavam etmək istəyirsiniz\?</string>
@@ -477,7 +467,6 @@
     <string name="show_meta_info_summary">Yayım yaradıcısı, məzmunu və ya axtarış sorğusu haqqında əlavə məlumat olan üst məlumat qutularını gizlətmək üçün söndür</string>
     <string name="auto_queue_summary">Əlaqəli yayımı əlavə etməklə (təkrarlanmayan) sonlanacaq oynatma növbəsini davam etdir</string>
     <string name="remote_search_suggestions">Kənar axtarış təklifləri</string>
-    <string name="peertube_instance_add_exists">Server artıq mövcuddur</string>
     <string name="start_main_player_fullscreen_summary">Videoları kiçik oynadıcıda başlatma, avtomatik fırlatma kilidlidirsə, birbaşa tam ekran rejiminə keçid. Siz hələ də tam ekrandan çıxmaqla mini oynadıcıya daxil ola bilərsiniz</string>
     <string name="more_than_100_videos">100+ video</string>
     <string name="infinite_videos">∞ video</string>
@@ -578,9 +567,6 @@
     <string name="info_labels">Nə:\nSorğu:\nMəzmun Dili:\nMəzmun Ölkəsi:\nTətbiq Dili:\nXidmət:\nGMT Saatı:\nPaket:\nVersiya:\nƏS versiyası:</string>
     <string name="error_snackbar_message">Bağışlayın, nəsə səhv oldu.</string>
     <string name="copy_for_github">Formatlanmış hesabatı köçür</string>
-    <string name="peertube_instance_add_help">Server URL\'sini daxil et</string>
-    <string name="peertube_instance_add_fail">Serveri təsdiqləmək mümkün olmadı</string>
-    <string name="peertube_instance_url_help">%s-də bəyəndiyiniz serverləri tapın</string>
     <string name="show_hold_to_append_summary">Video \"Təfsilatlar\" səhifəsində fon və ya ani görüntü düyməsin basarkən ipucu göstər</string>
     <string name="caption_setting_description">Oynadıcı titr mətn miqyasını və arxa plan üslublarını dəyişdir. Effektiv olması üçün tətbiqi yenidən başlatmaq tələb olunur</string>
     <string name="error_occurred_detail">Xəta baş verdi: %1$s</string>
@@ -604,7 +590,6 @@
     <string name="chapters">Bölmələr</string>
     <string name="no_app_to_open_intent">Cihazınızdakı heç bir tətbiq bunu aça bilməz</string>
     <string name="show_thumbnail_title">Miniatürü göstər</string>
-    <string name="soundcloud_go_plus_content">Bu, ən azı sizin ölkənizdə olan SoundCloud Go+ trekidir, ona görə də NewPipe tərəfindən yayımlamaq və ya endirmək mümkün deyil.</string>
     <string name="private_content">Bu məzmun şəxsidir, ona görə də NewPipe tərəfindən yayımlamaq və ya endirmək mümkün deyil.</string>
     <string name="metadata_support">Dəstək</string>
     <string name="metadata_privacy">Məxfilik</string>
@@ -619,7 +604,6 @@
     <string name="title_activity_history">Tarixçə</string>
     <string name="charset_letters_and_digits">Hərflər və rəqəmlər</string>
     <string name="crash_the_player">Oynadıcını çökdür</string>
-    <string name="peertube_instance_add_https_only">Yalnız HTTPS URL\'ləri dəstəklənir</string>
     <string name="settings_category_player_notification_title">Oynadıcı bildirişi</string>
     <string name="streams_notification_channel_name">Yeni yayımlar</string>
     <string name="error_report_channel_name">Xəta hesabatı bildirişi</string>

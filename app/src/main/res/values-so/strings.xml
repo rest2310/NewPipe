@@ -85,7 +85,6 @@
     <string name="playback_reset">Sidii hore kuceli</string>
     <string name="skip_silence_checkbox">Horay u dhaafi meelaha aamusan</string>
     <string name="playback_speed_control">Maamulista Xawaaraha</string>
-    <string name="import_soundcloud_instructions_hint">ID-gaaga, soundcloud.com/yourid</string>
     <string name="subscriptions_export_unsuccessful">Rukunka lama gudbin karo</string>
     <string name="subscriptions_import_unsuccessful">Lama soo galin karo rukunka</string>
     <string name="previous_export">Gudbin hore</string>
@@ -359,14 +358,6 @@
     <string name="settings_category_video_audio_title">Muuqaalada &amp; Dhagaysiga</string>
     <string name="settings_category_player_title">Daareha</string>
     <string name="settings_category_player_behavior_title">Dabeecada</string>
-    <string name="peertube_instance_add_exists">Qaybtan horay ayay ujirtay</string>
-    <string name="peertube_instance_add_https_only">Kaliya waxaa la taageeraa tixraacyada HTTPS-ka ah</string>
-    <string name="peertube_instance_add_fail">Lama ansixin karo qaybtan</string>
-    <string name="peertube_instance_add_help">Gali tixraaca qaybta</string>
-    <string name="peertube_instance_add_title">Ku dar qayb</string>
-    <string name="peertube_instance_url_help">Ka hel qaybaha aad jeceshahay %s</string>
-    <string name="peertube_instance_url_summary">Dooro qaybaha aad jeceshahay ee PeerTube-ka</string>
-    <string name="peertube_instance_url_title">Qaybaha PeerTube</string>
     <string name="content_language_title">Luuqada muuqaalka/dhagaysiga</string>
     <string name="default_content_country_title">Wadanka muuqaalada/dhagaysiga</string>
     <string name="unsupported_url_dialog_message">Lama aqoonsan karo tixraacan. Ku fur app kale\?</string>
@@ -542,12 +533,6 @@
     <string name="import_network_expensive_warning">Hawlgalkan wuxuu noqon karaa mid khad badan isticmaala.
 \n
 \nMa rabtaa inaad sii wado\?</string>
-    <string name="import_soundcloud_instructions">Soogali meesha SoundCloud adoo ku qoraya tixraaca ama ID-gaaga:
-\n
-\n1. Fur nidaamka \"Desktop mode\" browser-kaaga dhexdiisa (sababtoo ah websitekan moobilada kuma shaqaynayo)
-\n2. Booqo tixraacan %1$s
-\n3. Gali akoonkaaga marka lagu waydiiyo 
-\n4. Koobiyee tixraaca boga ee lagugu xawilay.</string>
     <string name="import_youtube_instructions">Soo gali rukumada YouTube-ka:
 \n
 \n1. Booqo tixraacan: %1$s
@@ -576,7 +561,6 @@
     <string name="paid_content">Shaygan waxaa loo heli karaa kaliya xubnaha bixiyay lacag, sidaa darteed NewPipe laguma daawan/dagsan karo.</string>
     <string name="youtube_music_premium_content">Muuqaalkan waxaa loo heli karaa kaliya xubnaha YouTube Music Premium, sidaa darteed NewPipe laguma daawan/dagsan karo.</string>
     <string name="private_content">Shaygan waa khaas, sidaa darteed NewPipe laguma daawan karo lagumana dajin karo.</string>
-    <string name="soundcloud_go_plus_content">Shaygan waa SoundCloud Go+, ama ugu yaraan wadankaaga ayuu ka yahay, sidaa darteed NewPipe laguma daawan/dagsan karo.</string>
     <string name="georestricted_content">Shaygan wadanka aad joogto looma heli karo.</string>
     <string name="crash_the_app">Khalkhali appka</string>
     <string name="recaptcha_solve">Xalli</string>

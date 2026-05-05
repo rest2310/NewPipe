@@ -277,13 +277,6 @@
 \n5. Cliquez sur le bouton « Télécharger » après qu’il soit apparut
 \n6.Cliquez sur IMPORTER LE FICHIER en dessous et sélectionnez le fichier zip téléchargé
 \n7. [Si l\'importation à échoué] Extrayez le fichier .csv (généralement sous « YouTube and YouTube Music/subscriptions/subscriptions.csv »), cliquez sur IMPORTER LE FICHIER en dessous et sélectionnez le ficher csv extrait</string>
-    <string name="import_soundcloud_instructions">Veuillez importer un profil SoundCloud en saisissant l’URL de votre profil ou votre identifiant.
-\n 
-\n1. Activez le « mode bureau » dans votre navigateur Web (le site n’est pas disponible pour les appareils mobiles).
-\n2. Suivez ce lien : %1$s.
-\n3. Connectez-vous à votre compte.
-\n4. Copiez le lien du profil vers lequel vous venez d’être redirigé.</string>
-    <string name="import_soundcloud_instructions_hint">votre identifiant, soundcloud.com/votreidentifiant</string>
     <string name="import_network_expensive_warning">Cette opération peut charger énormément la connexion réseau.
 \n 
 \nVoulez-vous continuer \?</string>
@@ -426,14 +419,6 @@
         <item quantity="other">%s auditeurs</item>
     </plurals>
     <string name="seek_duration_title">Durée de l’avance et retour rapide</string>
-    <string name="peertube_instance_url_title">Instances PeerTube</string>
-    <string name="peertube_instance_url_summary">Veuillez choisir vos instances PeerTube préférées</string>
-    <string name="peertube_instance_url_help">Trouvez les instances que vous aimez sur %s</string>
-    <string name="peertube_instance_add_title">Ajouter une instance</string>
-    <string name="peertube_instance_add_help">Veuillez saisir l’URL de l’instance</string>
-    <string name="peertube_instance_add_fail">Impossible de valider l’instance</string>
-    <string name="peertube_instance_add_https_only">Seules les URL en HTTPS sont prises en charge</string>
-    <string name="peertube_instance_add_exists">L’instance existe déjà</string>
     <string name="local">Local</string>
     <string name="recently_added">Ajoutées récemment</string>
     <string name="most_liked">Les plus aimées</string>
@@ -591,7 +576,6 @@
     <string name="paid_content">Ce contenu est uniquement disponible pour les utilisateurs qui ont payé, il ne peut donc pas être diffusé en continu ni téléchargé par NewPipe.</string>
     <string name="youtube_music_premium_content">Cette vidéo n’est disponible que pour les membres de YouTube Music Premium, elle ne peut donc pas être diffusée en continu ni téléchargée par NewPipe.</string>
     <string name="private_content">Ce contenu est privé, il ne peut donc pas être diffusé en continu ni téléchargé par NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Ceci est une piste SoundCloud Go+, au moins dans votre pays, elle ne peut donc pas être diffusée ou téléchargée par NewPipe.</string>
     <string name="restricted_video_no_stream">Cette vidéo est soumise à une limite d’âge.
 \nEn raison des nouvelles politiques de YouTube concernant les vidéos soumises à une limite d’âge, NewPipe ne peut accéder à aucun de ses flux vidéo et ne peut donc pas les lire.</string>
     <string name="radio">Radio</string>

@@ -370,10 +370,6 @@
     <string name="resume_on_audio_focus_gain_title">Halda áfram</string>
     <string name="unsupported_url">Óstudd vefslóð</string>
     <string name="default_content_country_title">Sjálfgefið landsvæði efnis</string>
-    <string name="peertube_instance_url_title">PeerTube þjónar</string>
-    <string name="peertube_instance_add_title">Bæta við</string>
-    <string name="peertube_instance_add_help">Sláðu inn slóð tilviks</string>
-    <string name="peertube_instance_add_exists">Tilvik er þegar til</string>
     <string name="settings_category_player_notification_title">Tilkynning spilara</string>
     <string name="background_player_playing_toast">Bakgrunnsspilun</string>
     <string name="error_report_title">Villuskýrsla</string>
@@ -414,12 +410,6 @@
     <string name="import_from">Flytja inn frá</string>
     <string name="export_to">Flytja út til</string>
     <string name="previous_export">Fyrri útflutningur</string>
-    <string name="import_soundcloud_instructions">Flyttu inn SoundCloud reikningi með því að slá inn slóð þess eða auðkenni:
-\n
-\n1) Virkjaðu skrifborðsstillingu í vafra. Síðan er ekki fáanleg fyrir farsíma.
-\n2) Farðu hingað: %1$s
-\n3) Skráðu þig inn þegar spurt er.
-\n4. Afritaðu slóðina sem þér var vísað á.</string>
     <string name="import_network_expensive_warning">Þessi aðgerð getur valdið mikla netnotkun.
 \n
 \nHalda áfram\?</string>
@@ -499,7 +489,6 @@
     <string name="feed_use_dedicated_fetch_method_summary">Fáanlegt fyrir sumar þjónustur. Það er venjulega miklu hraðari en getur skilað ófullnægjandi upplýsingum (t.d. engin lengd, tegund, staða beinna útsendinga)</string>
     <string name="feed_use_dedicated_fetch_method_help_text">Ef áskriftir eru uppfærðar of hægt máttu prófa hraðstreymissham (kveiktu á honum í stillingunum eða með hnappnum hér að neðan). \n \nNewPipe getur uppfært áskriftir á tvo vegu: \n• Sækja alla áskriftarrásina - hægvirkt en veitir allar upplýsingar. \n• Nota sérstök forritaskil - fljótvirkt en upplýsingar verða minni. \n \nHraðstreymishamur getur veitt ófullnægjandi upplýsingar, t.d. engin lengd, tegund, staða og getur skilað færri atriðum. \n \nYouTube er dæmi um þjónustu sem býður upp á þetta með RSS-streymi sínu. \n \nValið er því á milli hraða eða nákvæmra upplýsinga.</string>
     <string name="detail_sub_channel_thumbnail_view_description">Smámynd rásar</string>
-    <string name="soundcloud_go_plus_content">Þetta er SoundCloud Go+ lag að minnsta kosti í þínu landi — það er ekki hægt að streyma því eða sækja með NewPipe.</string>
     <string name="youtube_music_premium_content">Þetta myndskeið er aðeins í boði fyrir YouTube Tónlist Premium meðlimi, það er ekki hægt að streyma því eða sækja með NewPipe.</string>
     <string name="description_select_note">Þú getur nú valið texta inni í lýsingunni. Athugaðu að síðan getur flöktað og mögulega er ekki hægt að smella á tengla í valhami.</string>
     <string name="enable_search_history_summary">Geyma leitarfyrirspurnir í tæki</string>
@@ -601,10 +590,6 @@
     <string name="show_hold_to_append_title">Sýna ábendinguna „Haltu niðri til að bæta við spilunarröð“</string>
     <string name="show_hold_to_append_summary">Sýna ábendingu þegar ýtt er á bakgrunninn eða sprettihnappinn á myndskeiðinu í „Nánar:\"</string>
     <string name="unsupported_url_dialog_message">Óþekkt slóð. Opna með öðru forriti\?</string>
-    <string name="peertube_instance_url_summary">Veldu uppáhalds PeerTube tilvik þín</string>
-    <string name="peertube_instance_url_help">Þú mátt finna tilviki á %s</string>
-    <string name="peertube_instance_add_fail">Gat ekki staðfest tilvik</string>
-    <string name="peertube_instance_add_https_only">Aðeins HTTPS vefslóðir eru studdar</string>
     <string name="settings_category_player_notification_summary">Stilla tilkynningu fyrir spilandi streymi</string>
     <string name="show_age_restricted_content_title">Sýna aldurstakmarkað efni</string>
     <string name="show_age_restricted_content_summary">Sýna efni sem hugsanlega hentar ekki börnum vegna þess að það hefur aldurstakmark (t.d. 18+)</string>
@@ -641,7 +626,6 @@
     <string name="show_crash_the_player_summary">Sýna valkost til að hrynja spilara</string>
     <string name="crash_the_app">Hrynja forrit</string>
     <string name="create_error_notification">Búа til villutilkynningu</string>
-    <string name="import_soundcloud_instructions_hint">auðkenniÞitt, soundcloud.com/auðkenniÞitt</string>
     <string name="unhook_checkbox">Aftengja (getur valdið truflun)</string>
     <string name="permission_denied">Aðgerð hafnað af kerfi</string>
     <string name="checking_updates_toast">Leit að uppfærslum…</string>

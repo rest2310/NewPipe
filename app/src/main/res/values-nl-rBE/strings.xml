@@ -279,13 +279,6 @@
 \n5. Klik op de knop \"Downloaden\" nadat deze verschijnt
 \n6. Klik op IMPORTEER BESTAND hieronder en selecteer het gedownloade zip-bestand
 \n7. [Als de zip import faalt] Pak het .csv bestand uit (gebruikelijk in de folder \"YouTube en YouTube Music/abonnementen/abonnementen.csv), klik op IMPORTEER BESTAND hieronder en selecteer het uitgepakt csv bestand</string>
-    <string name="import_soundcloud_instructions">Importeer een SoundCloud-profiel door de URL of het ID ervan in te voeren:
-\n
-\n1. Kies een webbrowser en schakel bureaubladmodus in (de website is niet beschikbaar voor mobiele apparaten)
-\n2. Ga naar dit adres: %1$s
-\n3. Log in op uw account
-\n4. Kopieer de koppeling van de pagina waar u op terechtkomt (dat is uw profiel-URL).</string>
-    <string name="import_soundcloud_instructions_hint">uwID, soundbutt.com/uwid</string>
     <string name="import_network_expensive_warning">Let op: deze actie kan veel MB’s van uw netwerk gebruiken.
 \n
 \nWilt u doorgaan\?</string>
@@ -522,14 +515,6 @@
     <string name="youtube_restricted_mode_enabled_summary">YouTube biedt een \"beperkte modes\" aan, dit verbergt mogelijk materiaal voor volwassenen</string>
     <string name="youtube_restricted_mode_enabled_title">YouTube \"beperkte modus\" aanzetten</string>
     <string name="show_age_restricted_content_summary">Toon inhoud die mogelijk niet geschikt is voor kinderen omwille van een leeftijdslimiet (zoals 18+)</string>
-    <string name="peertube_instance_add_exists">Kanaal bestaat al</string>
-    <string name="peertube_instance_add_https_only">Alleen HTTPS URL\'s worden ondersteund</string>
-    <string name="peertube_instance_add_fail">Kon kanaal niet valideren</string>
-    <string name="peertube_instance_add_help">Kanaal URL invoeren</string>
-    <string name="peertube_instance_add_title">Kanaal toevoegen</string>
-    <string name="peertube_instance_url_help">Vind het kanaal dat u leuk vindt op %s</string>
-    <string name="peertube_instance_url_summary">Selecteer je favoriete PeerTube kanaal</string>
-    <string name="peertube_instance_url_title">PeerTube kanaal</string>
     <string name="unsupported_url_dialog_message">Kon de URL niet herkennen. In een andere app openen\?</string>
     <string name="settings_category_clear_data_title">Wis data</string>
     <string name="enable_playback_state_lists_summary">Laat afspeeltijd in afspeellijst zien</string>
@@ -588,7 +573,6 @@
     <string name="radio">Radio</string>
     <string name="paid_content">Deze inhoud is enkel toegankelijk voor betalende gebruikers, waardoor het niet kan worden gestreamd of gedownload door NewPipe.</string>
     <string name="youtube_music_premium_content">Deze video is enkel toegankelijk voor YouTube Music Premium leden, waardoor het niet kan worden gestreamd of gedownload door NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Dit is (tenminste in uw land) een SoundCloud Go+ titel, waardoor het niet kan worden gestreamd of gedownload door NewPipe.</string>
     <string name="georestricted_content">Deze inhoud is niet toegankelijk in uw land.</string>
     <string name="no_app_to_open_intent">Geen app beschikbaar om dit te openen</string>
     <string name="chapters">Hoofdstukken</string>

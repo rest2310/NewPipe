@@ -294,12 +294,6 @@
 \n5. Nhấn nút \"Tải xuống\" khi nó xuất hiện
 \n6. Từ file zip mới tải về, trích xuất file .json ra (thường nằm ở đường dẫn \"YouTube và YouTube Music/đăng ký/subscriptions.json\") rồi nhập vào đây.
 \n7. [Nếu nhập file .zip không thành công] Hãy giải nén tệp .csv (thường nó được để dưới phần \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), nhấn vào nút NHẬP TỆP ở phía bên dưới rồi chọn tệp csv đã được giải nén</string>
-    <string name="import_soundcloud_instructions">Để nhập hồ sơ SoundCloud bằng cách nhập URL hoặc ID của bạn, hãy làm các bước như sau:
-\n
-\n1. Bật \"chế độ máy tính\" trong trình duyệt web (trang web không khả dụng cho thiết bị di động)
-\n2. Truy cập URL này: %1$s
-\n3. Đăng nhập khi được hỏi
-\n4. Sao chép URL tiểu sử mà bạn đã được chuyển hướng đến.</string>
     <string name="import_network_expensive_warning">Hãy nhớ rằng hoạt động này có thể khiến bạn bị mất kênh bạn đã đăng ký trước đó.
 \n
 \nBạn có muốn tiếp tục không\?</string>
@@ -336,7 +330,6 @@
     <string name="subscribers_count_not_available">Số người đăng ký không khả dụng</string>
     <string name="main_page_content_summary">Chọn các tab để hiện trên trang chủ</string>
     <string name="top_50">Top 50 phổ biến</string>
-    <string name="import_soundcloud_instructions_hint">Nhập ID SoundCloud hoặc link soundcloud.com/&lt;ID của bạn&gt;</string>
     <string name="updates_setting_title">Cập nhật</string>
     <string name="updates_setting_description">Hiển thị thông báo để nhắc cập nhật ứng dụng khi có phiên bản mới</string>
     <string name="list_view_mode">Chế độ hiển thị danh sách</string>
@@ -405,11 +398,6 @@
     <string name="delete_playback_states_alert">Xóa tất cả vị trí phát\?</string>
     <string name="feed_groups_header_title">Nhóm kênh</string>
     <string name="choose_instance_prompt">Chọn một thực thể</string>
-    <string name="peertube_instance_add_exists">Thực thể đã tồn tại</string>
-    <string name="peertube_instance_add_fail">Không thể xác nhận thực thể</string>
-    <string name="peertube_instance_add_help">Nhập URL thực thể</string>
-    <string name="peertube_instance_add_title">Thêm thực thể</string>
-    <string name="peertube_instance_url_help">Tìm thực thể bạn thích trên %s</string>
     <plurals name="days">
         <item quantity="other">%d ngày</item>
     </plurals>
@@ -458,9 +446,6 @@
 \n
 \nBật \"%1$s\" trong cài đặt nếu bạn muốn xem video này.</string>
     <string name="youtube_restricted_mode_enabled_title">Bật chế độ hạn chế YouTube</string>
-    <string name="peertube_instance_add_https_only">Chỉ URL HTTPS được hỗ trợ</string>
-    <string name="peertube_instance_url_summary">Chọn thực thể PeerTube ưa thích</string>
-    <string name="peertube_instance_url_title">Thực thể PeerTube</string>
     <string name="seek_duration_title">Thời lượng tua-nhanh tới/-lùi</string>
     <string name="show_original_time_ago_summary">Dòng chữ mô tả thời gian gốc từ các dịch vụ sẽ được hiển thị thay thế</string>
     <string name="show_original_time_ago_title">Hiển thị thời gian ban đầu trước đây trên các mục</string>
@@ -571,7 +556,6 @@
     <string name="paid_content">Nội dung này chỉ dành cho người dùng trả phí, nên NewPipe không thể phát hay tải xuống.</string>
     <string name="youtube_music_premium_content">Video này chỉ được dành cho thành viên YouTube Music Premium, nên NewPipe không thể phát hay tải xuống.</string>
     <string name="private_content">Nội dung này được để ở chế độ riêng tư, nên NewPipe không thể phát hay tải xuống.</string>
-    <string name="soundcloud_go_plus_content">Đây là bản nhạc SoundCloud Go+, ít nhất là ở quốc gia của bạn, vì vậy NewPipe không thể phát trực tuyến hoặc tải xuống bản nhạc này.</string>
     <string name="georestricted_content">Nội dung này không có sẵn ở quốc gia của bạn.</string>
     <string name="crash_the_app">Làm văng ứng dụng</string>
     <string name="restricted_video_no_stream">Video này bị giới hạn độ tuổi.

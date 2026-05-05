@@ -168,7 +168,6 @@
     <string name="default_content_country_title">預設嘅國家內容</string>
     <string name="artists">演出者</string>
     <string name="albums">專輯</string>
-    <string name="peertube_instance_add_https_only">淨係支援 HTTPS 嘅 URL</string>
     <string name="settings_category_debug_title">除錯</string>
     <string name="undo">復原</string>
     <string name="file_deleted">剷走咗個檔案</string>
@@ -390,15 +389,12 @@
     <string name="show_meta_info_title">顯示元資訊</string>
     <string name="show_meta_info_summary">閂埋佢去隱藏元資訊窗口，收起有關串流創作者、串流內容或者搜尋請求嘅額外資訊</string>
     <string name="show_hold_to_append_title">顯示「撳住就輪候」提示</string>
-    <string name="peertube_instance_url_summary">揀選啱你心水嘅 PeerTube 站</string>
     <string name="settings_category_history_title">紀錄與快取</string>
     <string name="notification_channel_description">NewPipe 播放器嘅通知</string>
     <string name="metadata_cache_wipe_title">抹除元資料快取</string>
     <string name="metadata_cache_wipe_complete_notice">抹除咗元資料快取</string>
     <string name="auto_queue_title">自動輪候接落串流</string>
     <string name="auto_queue_summary">排隊清單嘅片要播完嘅時候 (並未設定循環播放) ，就追加一條相似性質嘅串流片</string>
-    <string name="peertube_instance_url_title">PeerTube 站</string>
-    <string name="peertube_instance_url_help">去 %s 發掘啱你心水嘅站</string>
     <string name="playlists">播放清單</string>
     <string name="error_report_channel_name">問題報告通知</string>
     <string name="error_report_channel_description">報告問題嘅通知</string>
@@ -491,7 +487,6 @@
     <string name="no_appropriate_file_manager_message_android_10">搵唔到合適嘅檔案總管進行呢個動作。
 \n請安裝一個與儲存空間存取框架兼容嘅檔案管理程式</string>
     <string name="georestricted_content">呢部內容限區，喺你所在國家未有提供。</string>
-    <string name="soundcloud_go_plus_content">呢首 (至少喺你所在國家而言) 係 SoundCloud Go+ 單曲，因此 NewPipe 未能串流或下載。</string>
     <string name="private_content">呢部內容係私人嘢，因此 NewPipe 未能串流或下載。</string>
     <string name="auto_device_theme_title">明或暗 (跟返部機嘅主題色系)</string>
     <string name="featured">精選</string>
@@ -634,10 +629,6 @@
     <string name="progressive_load_interval_summary">更改載入播放間隔大細 (目前係 %s)。細啲或者可以等條片快啲開波</string>
     <string name="clear_queue_confirmation_title">問咗先至將排隊列表清走</string>
     <string name="clear_queue_confirmation_description">目前播放器嘅排隊列表將會清走</string>
-    <string name="peertube_instance_add_title">加一個站</string>
-    <string name="peertube_instance_add_help">請輸入個站嘅 URL</string>
-    <string name="peertube_instance_add_fail">驗證唔到個站</string>
-    <string name="peertube_instance_add_exists">個站已經喺度喇</string>
     <string name="import_data_summary">冚過你目前嘅紀錄、訂閱、播放清單，同埋 (有得揀係咪冚埋) 設定</string>
     <string name="export_data_summary">匯出紀錄、訂閱、播放清單，同埋設定</string>
     <string name="feed_new_items">新嘅摘要項目</string>
@@ -647,13 +638,6 @@
     <string name="progressive_load_interval_title">載入播放間隔大細</string>
     <string name="kiosk_page_summary">互動頁面</string>
     <string name="default_kiosk_page_summary">預設嘅互動站（Kiosk）</string>
-    <string name="import_soundcloud_instructions">輸入 URL 或者你嘅 ID 去匯入 SoundCloud 個人檔案：
-\n
-\n一、喺網頁瀏覽器啟用「桌面版模式」(個網唔支援手機版)
-\n二、去呢個網址：%1$s
-\n三、叫你登入就去馬
-\n四、複製佢彈返畀你去個人檔案嗰版個 URL。</string>
-    <string name="import_soundcloud_instructions_hint">你個 ID、soundcloud.com/你個id</string>
     <string name="select_a_kiosk">揀選互動站</string>
     <string name="show_original_time_ago_title">顯示返項目原本話時隔幾耐</string>
     <string name="disable_media_tunneling_title">停用多媒體隧道</string>

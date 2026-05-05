@@ -138,7 +138,6 @@
     <string name="autoplay_title">Spel av sjølvverkande</string>
     <string name="show_hold_to_append_summary">Vis eit råd ved trykk på «Bakgrunn» eller «Sprett opp»-knappane i videodetaljane</string>
     <string name="content_language_title">Forvalt tungemål for innhald</string>
-    <string name="peertube_instance_add_https_only">Stør berre HTTPS-nettadresser</string>
     <string name="settings_category_player_behavior_title">Åtferd</string>
     <string name="settings_category_video_audio_title">Video og ljod</string>
     <string name="settings_category_appearance_title">Utsjånaden</string>

@@ -270,13 +270,6 @@
 \n5. Druk op de knop ‘Downloaden’ nadat deze verschijnt
 \n6. Druk onder op ‘Bestand importeren’ en selecteer de gedownloade zip file
 \n7. [Als de zip-import faalt] Uit het zip-bestand, pak de .csv uit (normaal in de map ‘YouTube en YouTube Music/abonnementen/abonnementen.csv’), druk onder op ‘Bestand importeren’ en selecteer het uitgepakte zip-bestand</string>
-    <string name="import_soundcloud_instructions">Importeer een SoundCloud-profiel door de URL of het ID ervan in te voeren:
-\n
-\n1. Kies een webbrowser en schakel bureaubladmodus in (de website is niet beschikbaar voor mobiele apparaten)
-\n2. Ga naar dit adres: %1$s
-\n3. Log in op je account
-\n4. Kopieer de koppeling van de pagina waar je op terechtkomt (dat is je profiel-URL).</string>
-    <string name="import_soundcloud_instructions_hint">jouwID, soundcloud.com/jouwid</string>
     <string name="import_network_expensive_warning">Let op: deze actie kan veel MB’s van je mobiele netwerk gebruiken. 
 \n 
 \nWil je doorgaan?</string>
@@ -419,14 +412,6 @@
     </plurals>
     <string name="default_kiosk_page_summary">Standaard kiosk</string>
     <string name="seek_duration_title">Duur voor-/achteruit spoelen</string>
-    <string name="peertube_instance_url_title">PeerTube-instanties</string>
-    <string name="peertube_instance_url_summary">Selecteer je favorite PeerTube-instanties</string>
-    <string name="peertube_instance_url_help">Vind de instanties die je leuk vindt op %s</string>
-    <string name="peertube_instance_add_title">Instantie toevoegen</string>
-    <string name="peertube_instance_add_help">Instantie-URL invoeren</string>
-    <string name="peertube_instance_add_fail">Kon instantie niet valideren</string>
-    <string name="peertube_instance_add_https_only">Alleen HTTPS-URL\'s worden ondersteund</string>
-    <string name="peertube_instance_add_exists">Instantie bestaat al</string>
     <string name="local">Lokaal</string>
     <string name="recently_added">Recentelijk toegevoegd</string>
     <string name="playlist_no_uploader">Automatisch gegenereerd (geen uploader gevonden)</string>
@@ -578,7 +563,6 @@
     <string name="paid_content">Deze inhoud is alleen beschikbaar voor gebruikers die hebben betaald, dus het kan niet worden gestreamd of gedownload door NewPipe.</string>
     <string name="youtube_music_premium_content">Deze video is alleen beschikbaar voor YouTube Music Premium-leden en kan dus niet worden gestreamd of gedownload door NewPipe.</string>
     <string name="private_content">Deze inhoud is privé en kan dus niet worden gestreamd of gedownload door NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Dit is een SoundCloud Go + -track, althans in jouw land, dus het kan niet worden gestreamd of gedownload door NewPipe.</string>
     <string name="georestricted_content">Deze inhoud is niet beschikbaar in uw land.</string>
     <string name="crash_the_app">App laten crashen</string>
     <string name="recaptcha_solve">Oplossen</string>

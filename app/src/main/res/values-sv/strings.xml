@@ -298,13 +298,6 @@
 \n5. Klicka på \"Hämta\"-knappen när den kommer fram
 \n6. Klicka på IMPORTERA FIL nedan och välj den nedladdade zip-filen
 \n7. [Om zip-importen misslyckas] Packa upp .csv-filen (vanligtvis under \"YouTube och YouTube Musik/subscriptions/subscriptions.csv\"), klicka på IMPORTERA FIL nedan och välj den uppackade csv-filen</string>
-    <string name="import_soundcloud_instructions">Importera en SoundCloud-profil genom att skriva in webbadressen eller ditt ID:
-\n
-\n1. Aktivera \"skrivbordsläge\" i en webbläsare (sidan är inte tillgänglig för mobila enheter)
-\n2. Gå till följande webbadress: %1$s
-\n3. Logga in när du blir tillfrågad
-\n4. Kopiera profilens webbadress som du blev omdirigerad till.</string>
-    <string name="import_soundcloud_instructions_hint">dittID, soundcloud.com/dittid</string>
     <string name="import_network_expensive_warning">Tänk på att denna operation kan vara nätverksintensiv.
 \n
 \nVill du fortsätta\?</string>
@@ -378,14 +371,6 @@
     <string name="seek_duration_title">Spola framåt/bakåt sökvaraktighet</string>
     <string name="enable_playback_state_lists_summary">Visa indikatorer för uppspelningsposition i listor</string>
     <string name="clear_playback_states_title">Ta bort uppspelningspositioner</string>
-    <string name="peertube_instance_url_title">PeerTube-instanser</string>
-    <string name="peertube_instance_url_summary">Välj dina favoritpeertube-instanser</string>
-    <string name="peertube_instance_url_help">Hitta de instanser du gillar på %s</string>
-    <string name="peertube_instance_add_title">Lägg till instans</string>
-    <string name="peertube_instance_add_help">Ange instansens URL</string>
-    <string name="peertube_instance_add_fail">Det gick inte att validera instansen</string>
-    <string name="peertube_instance_add_https_only">Endast HTTPS-URL:er stöds</string>
-    <string name="peertube_instance_add_exists">Instansen finns redan</string>
     <string name="videos_string">Videor</string>
     <string name="delete_playback_states_alert">Ta bort alla uppspelningspositioner\?</string>
     <string name="clear_playback_states_summary">Tar bort alla uppspelningspositioner</string>
@@ -540,7 +525,6 @@
     <string name="notification_action_shuffle">Blanda</string>
     <string name="enqueued">Köad</string>
     <string name="downloads_storage_use_saf_summary_api_29">Från och med Android 10 stöds bara \"Storage Access Framework\"</string>
-    <string name="soundcloud_go_plus_content">Det här är ett SoundCloud Go+-spår, åtminstone i ditt land, så det kan inte strömmas eller hämtas via NewPipe.</string>
     <string name="metadata_host">Värd</string>
     <string name="open_website_license">Öppna webbplats</string>
     <string name="tablet_mode_title">Surfplatteläge</string>

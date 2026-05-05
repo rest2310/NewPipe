@@ -15,7 +15,6 @@
     <string name="minimize_on_exit_title">Minimizar ao trocar de aplicação</string>
     <string name="unmute">Ativar som</string>
     <string name="start_here_on_popup">Iniciar reprodução num popup</string>
-    <string name="import_soundcloud_instructions_hint">suaID, soundcloud.com/suaID</string>
     <string name="default_popup_resolution_title">Resolução padrão para janela popup</string>
     <string name="could_not_import_all_files">Aviso: não foi possível importar todos os ficheiros.</string>
     <string name="download_already_running">Já existe uma descarga em curso com este nome</string>
@@ -75,8 +74,6 @@
 \n
 \nPara o poder ver, tem que ativar \"%1$s\" nas definições.</string>
     <string name="read_full_license">Ver licença</string>
-    <string name="peertube_instance_add_https_only">Apenas os URL HTTPS são suportados</string>
-    <string name="peertube_instance_add_fail">Falha ao validar a instância</string>
     <string name="clear_download_history">Limpar histórico de descargas</string>
     <string name="delete_playback_states_alert">Remover todas as posições de reprodução\?</string>
     <string name="enable_queue_limit">Limitar fila de descargas</string>
@@ -180,7 +177,6 @@
     <string name="minimize_on_exit_background_description">Ativar reprodutor em segundo plano</string>
     <string name="recaptcha_request_toast">Desafio reCAPTCHA solicitado</string>
     <string name="autoplay_title">Reprodução automática</string>
-    <string name="peertube_instance_add_exists">Instância já existe</string>
     <string name="donation_encouragement">NewPipe é desenvolvido por voluntários que utilizam o seu tempo livre para nos proporcionar a melhor experiência. Retribua para ajudar os programadores a tornarem NewPipe ainda melhor.</string>
     <string name="auto_queue_summary">Continuar (sem repetição) a fila de reprodução anexando um vídeo relacionado</string>
     <string name="always">Sempre</string>
@@ -265,12 +261,6 @@
     <string name="missing_file">Ficheiro movido ou eliminado</string>
     <string name="title_last_played">Última reprodução</string>
     <string name="website_encouragement">Visite o site NewPipe para obter mais informação e novidades.</string>
-    <string name="import_soundcloud_instructions">Importe o seu perfil SoundCloud digitando o URL ou a ID.:
-\n
-\n1. Ative o modo desktop do seu navegador web (o site não está disponível para dispositivos móveis)
-\n2. Aceda a este URL: %1$s
-\n3. Inicie a sessão
-\n4. Copie o URL do seu perfil.</string>
     <string name="metadata_cache_wipe_title">Limpar meta-dados em cache</string>
     <string name="parsing_error">Não foi possível processar o site</string>
     <string name="no_comments">Sem comentários</string>
@@ -295,10 +285,8 @@
     <string name="play_queue_audio_settings">Definições de áudio</string>
     <string name="delete">Eliminar</string>
     <string name="playback_tempo">Ritmo</string>
-    <string name="peertube_instance_url_title">Instâncias PeerTube</string>
     <string name="settings_category_player_title">Reprodutor</string>
     <string name="settings_category_debug_title">Depuração</string>
-    <string name="peertube_instance_add_help">Digite o URL da instância</string>
     <string name="preferred_open_action_settings_title">Ação de \'Abrir\' preferida</string>
     <string name="settings_category_video_audio_title">Vídeo e áudio</string>
     <string name="charset_letters_and_digits">Letras e dígitos</string>
@@ -352,7 +340,6 @@
         <item quantity="other">%d horas</item>
     </plurals>
     <string name="auto_queue_title">Adicionar o próximo vídeo à fila automaticamente</string>
-    <string name="peertube_instance_url_summary">Defina as suas instâncias favoritas PeerTube</string>
     <string name="export_data_summary">Exportar histórico, subscrições, listas de reprodução e definições</string>
     <string name="best_resolution">Melhor resolução</string>
     <string name="select_a_channel">Selecione um canal</string>
@@ -389,7 +376,6 @@
     <string name="contribution_title">Participar</string>
     <string name="controls_background_title">Segundo plano</string>
     <string name="unknown_content">[Desconhecido]</string>
-    <string name="peertube_instance_url_help">Encontre as instâncias que gosta em %s</string>
     <string name="select_a_kiosk">Selecione um \"kiosk\"</string>
     <string name="channels">Canais</string>
     <string name="max_retry_msg">Tentativas máximas</string>
@@ -523,7 +509,6 @@
     <string name="caption_setting_description">Modificar escala de legendas e estilo de fundo. Tem que reiniciar a aplicação para aplicar as alterações</string>
     <string name="permission_denied">Ação recusada pelo sistema</string>
     <string name="songs">Músicas</string>
-    <string name="peertube_instance_add_title">Adicionar instância</string>
     <string name="tracks">Faixas</string>
     <string name="play_with_kodi_title">Reproduzir no Kodi</string>
     <string name="download_to_sdcard_error_title">Armazenamento externo indisponível</string>
@@ -587,7 +572,6 @@
     <string name="paid_content">Este conteúdo só está disponível para utilizadores que pagaram, portanto não pode ser transmitido ou descarregado pelo NewPipe.</string>
     <string name="youtube_music_premium_content">Este vídeo está disponível apenas para os membros do YouTube Music Premium, portanto não pode ser transmitido ou descarregado pelo NewPipe.</string>
     <string name="private_content">Este conteúdo é privado, portanto não pode ser transmitido ou descarregado pelo NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Esta é uma faixa de SoundCloud Go+, pelo menos no seu país, pelo que não pode ser transmitida ou descarregada por NewPipe.</string>
     <string name="georestricted_content">Este conteúdo não está disponível no seu país.</string>
     <string name="restricted_video_no_stream">Este vídeo tem uma restrição de idade.
 \nDevido às novas políticas do YouTube quanto a vídeos com restrição de idade, o NewPipe não pode aceder as estes vídeos, por isso não consegue reproduzi-lo.</string>

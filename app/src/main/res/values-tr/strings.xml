@@ -266,13 +266,6 @@
 \n5. Göründüğünde \"İndir\" düğmesini tıklayın
 \n6. Aşağıdaki DOSYAYI İÇE AKTAR düğmesini tıklayın ve indirilen .zip dosyasını seçin
 \n7. [.zip içe aktarma işlemi başarısız olursa] .csv dosyasını çıkarın (genellikle \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), aşağıdaki DOSYAYI İÇE AKTAR düğmesini tıklayın ve çıkarılan csv dosyasını seçin</string>
-    <string name="import_soundcloud_instructions">URL\'yi veya ID\'nizi yazarak SoundCloud profilini içe aktarın:
-\n
-\n1. Web tarayıcısında \"masaüstü kipi\" etkinleştirin (site, mobil aygıtlar için uygun değildir)
-\n2. Şu adrese gidin: %1$s
-\n3. Sorulduğunda giriş yapın
-\n4. Yönlendirildiğiniz profil URL\'sini kopyalayın.</string>
-    <string name="import_soundcloud_instructions_hint">kimliginiz, soundcloud.com/kimliginiz</string>
     <string name="import_network_expensive_warning">Bu sürecin ağa yük olabileceğini unutmayın.
 \n
 \nSürdürmek istiyor musunuz\?</string>
@@ -420,14 +413,6 @@
         <item quantity="other">%s dinleyici</item>
     </plurals>
     <string name="seek_duration_title">Hızlı ileri/geri atlama süresi</string>
-    <string name="peertube_instance_url_title">PeerTube örnekleri</string>
-    <string name="peertube_instance_url_summary">Favori PeerTube örneklerinizi seçin</string>
-    <string name="peertube_instance_url_help">%s adresinde beğendiğiniz örnekleri bulun</string>
-    <string name="peertube_instance_add_title">Örnek ekle</string>
-    <string name="peertube_instance_add_help">Örnek URL\'sini girin</string>
-    <string name="peertube_instance_add_fail">Örnek doğrulanamadı</string>
-    <string name="peertube_instance_add_https_only">Yalnızca HTTPS URL\'leri desteklenmektedir</string>
-    <string name="peertube_instance_add_exists">Örnek zaten var</string>
     <string name="local">Yerel</string>
     <string name="recently_added">Son eklenen</string>
     <string name="most_liked">En çok beğenilen</string>
@@ -576,7 +561,6 @@
     <string name="paid_content">Bu içerik yalnızca ücretini ödemiş kullanıcılara açıktır, bu nedenle NewPipe tarafından oynatılamaz ve indirilemez.</string>
     <string name="youtube_music_premium_content">Bu video yalnızca YouTube Müzik Premium üyelerine açıktır, bu nedenle NewPipe tarafından oynatılamaz veya indirilemez.</string>
     <string name="private_content">Bu içerik özeldir, bu nedenle NewPipe tarafından oynatılamaz ve indirilemez.</string>
-    <string name="soundcloud_go_plus_content">Bu SoundCloud Go+ parçasıdır, en azından sizin ülkenizde, bu nedenle NewPipe tarafından oynatılamaz ve indirilemez.</string>
     <string name="georestricted_content">Bu içerik ülkenizde kullanılamaz.</string>
     <string name="restricted_video_no_stream">Bu video yaş kısıtlıdır.
 \nYouTube\'un yeni yaş kısıtlı videolar ilkesi gereği, NewPipe böylesi videoların akışına erişemez ve bu nedenle oynatamaz.</string>

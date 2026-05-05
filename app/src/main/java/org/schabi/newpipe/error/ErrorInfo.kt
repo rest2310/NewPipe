@@ -11,7 +11,6 @@ import java.net.UnknownHostException
 import kotlinx.parcelize.Parcelize
 import org.schabi.newpipe.R
 import org.schabi.newpipe.extractor.Info
-import org.schabi.newpipe.extractor.ServiceList
 import org.schabi.newpipe.extractor.ServiceList.YouTube
 import org.schabi.newpipe.extractor.exceptions.AccountTerminatedException
 import org.schabi.newpipe.extractor.exceptions.AgeRestrictedContentException
@@ -23,7 +22,6 @@ import org.schabi.newpipe.extractor.exceptions.PaidContentException
 import org.schabi.newpipe.extractor.exceptions.PrivateContentException
 import org.schabi.newpipe.extractor.exceptions.ReCaptchaException
 import org.schabi.newpipe.extractor.exceptions.SignInConfirmNotBotException
-import org.schabi.newpipe.extractor.exceptions.SoundCloudGoPlusContentException
 import org.schabi.newpipe.extractor.exceptions.UnsupportedContentInCountryException
 import org.schabi.newpipe.extractor.exceptions.YoutubeMusicPremiumContentException
 import org.schabi.newpipe.ktx.isNetworkRelated
@@ -164,10 +162,8 @@ class ErrorInfo private constructor(
 
         const val YOUTUBE_IP_BAN_FAQ_URL = "https://newpipe.net/FAQ/#ip-banned-youtube"
 
-        private fun getServiceName(serviceId: Int?) = // not using getNameOfServiceById since we want to accept a nullable serviceId and we
-            // want to default to SERVICE_NONE
-            ServiceList.all().firstOrNull { it.serviceId == serviceId }?.serviceInfo?.name
-                ?: SERVICE_NONE
+        private fun getServiceName(serviceId: Int?) =
+            if (serviceId == YouTube.serviceId) YouTube.serviceInfo.name else SERVICE_NONE
 
         fun throwableToStringList(throwable: Throwable) = arrayOf(throwable.stackTraceToString())
 
@@ -240,9 +236,6 @@ class ErrorInfo private constructor(
 
                 throwable is PrivateContentException ->
                     ErrorMessage(R.string.private_content)
-
-                throwable is SoundCloudGoPlusContentException ->
-                    ErrorMessage(R.string.soundcloud_go_plus_content)
 
                 throwable is UnsupportedContentInCountryException ->
                     ErrorMessage(R.string.unsupported_content_in_country)
@@ -353,7 +346,6 @@ class ErrorInfo private constructor(
                 is GeographicRestrictionException,
                 is PaidContentException,
                 is PrivateContentException,
-                is SoundCloudGoPlusContentException,
                 is UnsupportedContentInCountryException,
                 is YoutubeMusicPremiumContentException -> true
 

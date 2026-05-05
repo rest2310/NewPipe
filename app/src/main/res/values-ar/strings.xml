@@ -254,7 +254,6 @@
     <string name="import_ongoing">عملية الاستعادة جارية …</string>
     <string name="export_ongoing">عملية التصدير جارية …</string>
     <string name="import_file_title">إستيراد ملف</string>
-    <string name="import_soundcloud_instructions_hint">معرفك, soundcloud.com/هويتك</string>
     <string name="metadata_cache_wipe_title">امسح البيانات الوصفيّة المخزّنة مؤقّتًا</string>
     <string name="metadata_cache_wipe_summary">إزالة جميع بيانات صفحات الويب المخزنة مؤقّتًا</string>
     <string name="metadata_cache_wipe_complete_notice">تم محو ذاكرة التخزين المؤقتّة للبيانات الوصفيّة</string>
@@ -302,12 +301,6 @@
 \n5. انقر على زر \"تحميل\" بعد ظهوره
 \n6. انقر على IMPORT FILE أدناه وحدد الملف البريدي تحميلها
 \n7. [إذا فشل استيراد الرمز البريدي] استخراج ملف .csv (عادة تحت عنوان \"يوتيوب ويوتيوب الموسيقى / الاشتراكات / الاشتراكات.csv\")، انقر على IMPORT FILE أدناه وحدد ملف csv المستخرج</string>
-    <string name="import_soundcloud_instructions">قم باستيراد ملف تعريف SoundCloud عن طريق كتابة عنوان URL أو معرفك: 
-\n 
-\n1. تمكين \"وضع سطح المكتب\" في متصفح الويب (الموقع غير متاح للأجهزة المحمولة) 
-\n2. انتقل إلى عنوان URL هذا: %1$s 
-\n3. تسجيل الدخول عندما يطلب منك
-\n4. انسخ عنوان URL للملف الشخصي الذي تمت إعادة توجيهك إليه.</string>
     <string name="import_network_expensive_warning">ضع في اعتبارك أن هذه العملية يمكن أن تكون مكلفة اذا كنت تستخدم بيانات اشتراك انترنت. 
 \n 
 \nهل تريد الاستمرار؟</string>
@@ -441,13 +434,6 @@
         <item quantity="other">%s مستمعين</item>
     </plurals>
     <string name="seek_duration_title">تسريع إلى الأمام/-ترجيع وقت البحث</string>
-    <string name="peertube_instance_url_title">مثيلات خوادم پيرتيوب</string>
-    <string name="peertube_instance_url_summary">حدد مثيلات PeerTube المفضلة لديك</string>
-    <string name="peertube_instance_add_title">إضافة نموذج</string>
-    <string name="peertube_instance_add_help">أدخل عنوان للمثيل</string>
-    <string name="peertube_instance_add_fail">لا يمكن التحقق من صحة المثال</string>
-    <string name="peertube_instance_add_https_only">يتم دعم عناوين URL HTTPS فقط</string>
-    <string name="peertube_instance_add_exists">مثيل الخادم موجود بالفعل</string>
     <string name="local">محلي</string>
     <string name="recently_added">أُضيف مؤخرًا</string>
     <string name="most_liked">الأكثر إعجابًا</string>
@@ -455,7 +441,6 @@
     <string name="recovering">استرد</string>
     <string name="error_download_resource_gone">لا يمكن استرداد هذا التنزيل</string>
     <string name="choose_instance_prompt">اختيار مثيل</string>
-    <string name="peertube_instance_url_help">ابحث عن مثيلات الخوادم التي تناسبك على %s</string>
     <string name="clear_download_history">تنظيف تاريخ التحميل</string>
     <string name="delete_downloaded_files">حذف الملفات المحملة</string>
     <string name="permission_display_over_apps">امنح الإذن بالعرض فوق التطبيقات الأخرى</string>
@@ -616,7 +601,6 @@
     <string name="paid_content">يتوفر هذا المحتوى فقط للمستخدمين الذين قاموا بالدفع، لذلك لا يمكن بثه أو تنزيله عبر NewPipe.</string>
     <string name="youtube_music_premium_content">يتوفر هذا الفيديو فقط لأعضاء YouTube Music Premium، لذلك لا يمكن بثه أو تنزيله من قبل NewPipe.</string>
     <string name="private_content">هذا المحتوى خاص، لذلك لا يمكن دفقه أو تنزيله بواسطة NewPipe.</string>
-    <string name="soundcloud_go_plus_content">هذا مسار SoundCloud Go+، على الأقل في بلدك، لذلك لا يمكن دفقه أو تنزيله بواسطة NewPipe.</string>
     <string name="georestricted_content">هذا المحتوى غير متوفر في بلدك.</string>
     <string name="crash_the_app">اغلق التطبيق قسريا</string>
     <string name="restricted_video_no_stream">هذا الفيديو مقيد بالفئة العمرية.

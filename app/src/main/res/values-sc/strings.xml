@@ -215,12 +215,6 @@
     <string name="downloads_storage_use_saf_summary">Sa \'Storage Access Framework\' (Istrutura de Atzessu a s\'Archiviatzione) permitet sos iscarrigamentos in un\'ischeda SD esterna</string>
     <string name="queued">postu in lista</string>
     <string name="updates_setting_description">Ammustra una notìfica pro cussigiare un\'agiornamentu de s\'aplicatzione cando b\'est una versione noa a disponimentu</string>
-    <string name="import_soundcloud_instructions">Importa unu profilu de SoundCloud iscriende o s\'URL o su còdighe identificativu (ID) tuo:
-\n
-\n 1. Abìlita sa modalidade \"pro elaboradores de iscrivania\" in unu navigadore web (custu situ no est a disponimentu pro dispositivos mòbiles)
-\n 2. Bae a custu URL: %1$s
-\n 3. Intra in su contu tuo cando ti lu benit pedidu
-\n 4. Còpia s\'URL de su profilu a ue ses istadu mandadu.</string>
     <string name="export_ongoing">Esportende…</string>
     <string name="msg_popup_permission">B\'at bisòngiu de custu permissu pro
 \nabèrrere sa modalidade ventanedda</string>
@@ -365,7 +359,6 @@
     <string name="import_network_expensive_warning">Ammenta·ti chi custa operatzione diat pòdere impreare meda sa retza tua.
 \n
 \n Cheres sighire\?</string>
-    <string name="import_soundcloud_instructions_hint">IDtuo, soundcloud.com/IDtuo</string>
     <string name="could_not_setup_download_menu">Impostatzione de su menù de iscarrigamentu fallida</string>
     <string name="content_not_available">Cuntenutu no a disponimentu</string>
     <string name="parsing_error">Anàlisi de su situ web fallida</string>
@@ -432,14 +425,6 @@
     <string name="settings_category_video_audio_title">Vìdeos e àudio</string>
     <string name="settings_category_player_behavior_title">Cumportamentu</string>
     <string name="settings_category_player_title">Riproduidore</string>
-    <string name="peertube_instance_add_exists">S\'istàntzia esistit giai</string>
-    <string name="peertube_instance_add_https_only">Petzi sos URL HTTPS sunt suportados</string>
-    <string name="peertube_instance_add_fail">Impossìbile cunvalidare s\'istàntzia</string>
-    <string name="peertube_instance_add_help">Inserta s\'URL de s\'istàntzia</string>
-    <string name="peertube_instance_add_title">Annanghe un\'istàntzia</string>
-    <string name="peertube_instance_url_help">Agata sas istàntzias chi t\'agradant in %s</string>
-    <string name="peertube_instance_url_summary">Ischerta sas istàntzias de PeerTube preferidas tuas</string>
-    <string name="peertube_instance_url_title">Istàntzias de PeerTube</string>
     <string name="content_language_title">Limba predefinida pro sos cuntenutos</string>
     <string name="default_content_country_title">Istadu predefinidu pro sos cuntenutos</string>
     <string name="unsupported_url">URL non suportadu</string>
@@ -576,7 +561,6 @@
     <string name="paid_content">Custu vìdeu est a disponimentu petzi pro sos impreadores chi ant pagadu, e duncas non podet èssere riproduidu o iscarrigadu dae NewPipe.</string>
     <string name="youtube_music_premium_content">Custu vìdeu est a disponimentu petzi pro sos membros de YouTube Music Premium, e duncas non podet èssere riproduidu o iscarrigadu dae NewPipe.</string>
     <string name="private_content">Custu cuntenutu est privadu, e duncas non podet èssere riproduidu o iscarrigadu dae NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Custa est una rasta SoundCloud Go+, a su mancu in su paisu tuo, e duncas non podet èssere riproduida o iscarrigada dae NewPipe.</string>
     <string name="georestricted_content">Custu cuntenutu no est a disponimentu in su paisu tuo.</string>
     <string name="crash_the_app">Faghe serrare s\'aplicatzione</string>
     <string name="restricted_video_no_stream">Custu vìdeu tenet unu lìmite de edade.

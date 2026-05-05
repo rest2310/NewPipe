@@ -1617,7 +1617,7 @@ public final class VideoDetailFragment
         }
 
         if (!info.getErrors().isEmpty()) {
-            // Bandcamp fan pages are not yet supported and thus a ContentNotAvailableException is
+            // Some pages are not yet supported and thus a ContentNotAvailableException is
             // thrown. This is not an error and thus should not be shown to the user.
             for (final Throwable throwable : info.getErrors()) {
                 if (throwable instanceof ContentNotSupportedException

@@ -274,8 +274,6 @@
 \n5. Haga clic en el botón de \"Descargar\" una vez que aparezca
 \n6. Haga clic en el botón IMPORTAR ARCHIVO que se muestra abajo y seleccione el archivo zip descargado
 \n7. [En caso de que la importación falle] Extraiga el archivo .csv (generalmente dentro de \"Youtube y Youtube Music/suscripciones/suscripciones.csv\"), haga clic en IMPORTAR ARCHIVO y seleccione el archivo csv extraído anteriormente</string>
-    <string name="import_soundcloud_instructions">Importa un perfil de SoundCloud escribiendo la URL o tu ID: \n \n1. Habilita el «modo escritorio» en un navegador web (el sitio no está disponible para dispositivos móviles) \n2. Ve a esta URL: %1$s \n3. Inicia sesión cuando se te pida \n4. Copia la URL del perfil a la que fuiste redireccionado.</string>
-    <string name="import_soundcloud_instructions_hint">tuID, soundcloud.com/tuID</string>
     <string name="import_network_expensive_warning">Esta operación puede causar un uso intensivo de la red.
 \n
 \n¿Quieres continuar\?</string>
@@ -425,14 +423,6 @@
         <item quantity="other">%s oyentes</item>
     </plurals>
     <string name="seek_duration_title">Duración de búsqueda al avanzar y/o retroceder</string>
-    <string name="peertube_instance_url_title">Instancias de PeerTube</string>
-    <string name="peertube_instance_url_summary">Selecciona tus instancias favoritas de PeerTube</string>
-    <string name="peertube_instance_url_help">Encuentra las instancias que te gusten en %s</string>
-    <string name="peertube_instance_add_title">Añadir instancia</string>
-    <string name="peertube_instance_add_help">Ingresar URL de la instancia</string>
-    <string name="peertube_instance_add_fail">No se pudo validar la instancia</string>
-    <string name="peertube_instance_add_https_only">Solo se admiten URL HTTPS</string>
-    <string name="peertube_instance_add_exists">La instancia ya existe</string>
     <string name="local">Local</string>
     <string name="recently_added">Añadidos recientemente</string>
     <string name="most_liked">Más gustados</string>
@@ -578,7 +568,6 @@
     <string name="show_meta_info_title">Mostrar meta información</string>
     <string name="show_description_title">Mostrar descripción</string>
     <string name="open_with">Abrir con</string>
-    <string name="soundcloud_go_plus_content">Esta es una pista de SoundCloud Go+, al menos en tu país, por lo que no puede ser transmitido ni descargado por NewPipe.</string>
     <string name="crash_the_app">La aplicación dejó de funcionar</string>
     <string name="paid_content">Este contenido solo está disponible para los usuarios que hayan pagado, por lo que no puede ser transmitido o descargado por NewPipe.</string>
     <string name="youtube_music_premium_content">Este vídeo solo está disponible para los miembros de YouTube Music Premium, por lo que no puede ser transmitido ni descargado por NewPipe.</string>

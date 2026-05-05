@@ -322,12 +322,6 @@
 \n۵.پس از ظاهر شدن دکمهٔ Download رویش کلیک کنید
 \n۶. درون‌ریزی پرونده را در زیر زده و پروندهٔ فشردهٔ بارگیری شده را برگزینید
 \n۷. [اگر درون‌ریزی شکست خورد] پروندهٔ ‪.csv‬ را (معمولاً زیر YouTube and YouTube Music/subscriptions/subscriptions.csv) استخراج کنید، روی درون‌ریزی پرونده در زیر زده و پروندهٔ csv استخراج شده را برگزینید</string>
-    <string name="import_soundcloud_instructions">وارد کردن نمایه ساندکلاد با وارد کردن نشانی یا ID شما:
-\n
-\n۱. حالت میزکار را در مرورگر وب فعال کنید (سایت برای دستگاه‌های همراه در دسترس نیست)
-\n۲. به این نشانی بروید: %1$s
-\n۳. در صورت لزوم، وارد شوید
-\n۴. نشانی نمایه‌ای که به آن هدایت شده‌اید را کپی کنید.</string>
     <string name="import_network_expensive_warning">در نظر داشته باشید که این عملیات می‌تواند داده زیادی مصرف کند.
 \n
 \nادامه می‌دهید؟</string>
@@ -401,18 +395,9 @@
     <string name="enable_disposed_exceptions_title">گزارش کردن خطاهای \"خارج از چرخه حیات\"</string>
     <string name="metadata_cache_wipe_summary">حذف حافظه کش شده همه صفحات وب</string>
     <string name="minimize_on_exit_background_description">کوچک کردن پخش کننده به پس زمینه</string>
-    <string name="import_soundcloud_instructions_hint">آی‌دی شما، soundcloud.com/yourid</string>
     <string name="minimize_on_exit_summary">عملکرد هنگام تغییر به برنامه دیگر از پخش‌کننده اصلی فیلم — %s</string>
     <string name="tracks">قطعه‌ها</string>
     <string name="videos_string">ویدیوها</string>
-    <string name="peertube_instance_add_exists">این نمونه قبلا وجود دارد</string>
-    <string name="peertube_instance_add_https_only">تنها نشانی‌های دارای http پشتیبانی می‌شوند</string>
-    <string name="peertube_instance_add_fail">ناتوانی در اعتبارسنجی نشانی نمونه</string>
-    <string name="peertube_instance_add_help">نشانی نمونه را وارد کنید</string>
-    <string name="peertube_instance_add_title">افزودن نمونه</string>
-    <string name="peertube_instance_url_help">نمونه‌های مورد علاقه خود را در %s پیدا کنید</string>
-    <string name="peertube_instance_url_summary">نمونه پیرتیوب مورد علاقه خود در را انتخاب کنید</string>
-    <string name="peertube_instance_url_title">نمونه‌های پیرتیوب</string>
     <string name="seek_duration_title">مدت زمان حرکت سریع به جلو یا عقب</string>
     <string name="minimize_on_exit_title">کمینه کردن به هنگام تغییر برنامه</string>
     <string name="video_detail_by">توسط %s</string>
@@ -608,7 +593,6 @@
     <string name="restricted_video_no_stream">این ویدیو محدود به سن است.
 \nبنا به سیاست‌های جدید یوتوب دربارهٔ ویدیوهای محدود به سن، نیوپایپ نمی‌تواند به هیچ یک از جریان‌های ویدیوییش دست پیدا کرده و بنابراین در پخش آن، ناتوان است.</string>
     <string name="georestricted_content">این محتوا در کشورتان قابل دسترسی نیست.</string>
-    <string name="soundcloud_go_plus_content">این قطعه، لااقل در کشور شما، یک قطعهٔ گوپلاس سوندکلود است. پس نمی‌تواند به دست نیوپایپ جریان یافته یا بارگیری شود.</string>
     <string name="private_content">این محتوا خصوصی است. پس نمی‌تواند به دست نیوپایپ جریان یافته یا بارگیری شود.</string>
     <string name="youtube_music_premium_content">این ویدیو فقط برای اعضای ویژهٔ آهنگ‌های یوتوب در دسترس است. پس نمی‌تواند به دست نیوپایپ جریان یافته یا بارگیری شود.</string>
     <string name="paid_content">این محتوا فقط برای کاربرانی که پول داده‌اند در دسترس است. پس نمی‌تواند به دست نیوپایپ جریان یافته یا بارگیری شود.</string>

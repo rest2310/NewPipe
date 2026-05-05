@@ -304,13 +304,6 @@
     <string name="enable_leak_canary_summary">メモリリークの監視は、ヒープダンピング時にアプリが無反応になる原因となります</string>
     <string name="enable_disposed_exceptions_title">ライフサイクルエラーの報告</string>
     <string name="enable_disposed_exceptions_summary">破棄されたフラグメントまたはアクティビティの、ライフサイクル範囲外での配信不能なRx例外を強制的に報告します</string>
-    <string name="import_soundcloud_instructions">URL または ID を入力して SoundCloud プロファイルをインポートします:
-\n
-\n1. Web ブラウザーで \"デスクトップモード\" を有効にします (サイトは携帯デバイスで利用できません)
-\n2. この URL に移動します: %1$s
-\n3. 必要に応じてログインします
-\n4. リダイレクトされたプロファイル URL をコピーします。</string>
-    <string name="import_soundcloud_instructions_hint">あなたのID, soundcloud.com/あなたのid</string>
     <string name="import_network_expensive_warning">この操作により通信料金が増えることがあります。ご注意ください。
 \n
 \n続行しますか\?</string>
@@ -416,14 +409,6 @@
         <item quantity="other">%s 人が聴取中</item>
     </plurals>
     <string name="seek_duration_title">高速早送り/巻き戻し間隔</string>
-    <string name="peertube_instance_url_title">PeerTube インスタンス</string>
-    <string name="peertube_instance_url_summary">PeerTube インスタンスを選択する</string>
-    <string name="peertube_instance_url_help">あなたに最適なインスタンスを探す: %s</string>
-    <string name="peertube_instance_add_title">インスタンスを追加</string>
-    <string name="peertube_instance_add_help">インスタンスの URL を入力</string>
-    <string name="peertube_instance_add_fail">インスタンスを検証することができませんでした</string>
-    <string name="peertube_instance_add_https_only">HTTPS の URL のみに対応しています</string>
-    <string name="peertube_instance_add_exists">インスタンスはすでに存在しています</string>
     <string name="local">ローカル</string>
     <string name="recently_added">最近追加された</string>
     <string name="most_liked">最も評価された</string>
@@ -566,7 +551,6 @@
     <string name="paid_content">このコンテンツは有料のユーザーのみが利用できるため、NewPipeでのストリーミングやダウンロードはできません。</string>
     <string name="youtube_music_premium_content">この動画は YouTube ミュージック プレミアム会員のみが利用できるようになっているので、NewPipe でストリーミングやダウンロードを行うことはできません。</string>
     <string name="private_content">このコンテンツは非公開のため、NewPipeでストリーミングやダウンロードすることはできません。</string>
-    <string name="soundcloud_go_plus_content">これは SoundCloud Go+ トラックなので、少なくともあなたの国では、NewPipeではストリーミングやダウンロードができません。</string>
     <string name="georestricted_content">このコンテンツは、お住まいの国ではご利用いただけません。</string>
     <string name="crash_the_app">アプリのクラッシュ</string>
     <string name="restricted_video_no_stream">この動画は年齢制限があります。

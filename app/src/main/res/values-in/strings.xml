@@ -283,13 +283,6 @@
 \n5. Klik tombol \"Unduh\"
 \n6. Klik IMPOR FILE di bawah dan pilih file .zip yang terunduh
 \n7. [Jika impor .zip gagal] Ekstrak file .csv (biasanya di \"YouTube dan YouTube Music/langganan/langganan.csv\"), klik IMPOR FILE di bawah dan pilih file csv yang diekstrak</string>
-    <string name="import_soundcloud_instructions">Impor profil SoundCloud dengan mengetik URL atau ID Anda:
-\n
-\n1. Aktifkan \"mode desktop\" di peramban web (situs tidak tersedia untuk perangkat seluler)
-\n2. Kunjungi URL ini: %1$s
-\n3. Masuk ketika ditanya
-\n4. Salin URL profil Anda ketika dialihkan.</string>
-    <string name="import_soundcloud_instructions_hint">idAnda, soundcloud.com/idAnda</string>
     <string name="import_network_expensive_warning">Perlu diingat operasi ini membutuhkan bandwidth yang besar.
 \n
 \nApakah Anda ingin melanjutkan\?</string>
@@ -414,14 +407,6 @@
     <plurals name="listening">
         <item quantity="other">%s pendengar</item>
     </plurals>
-    <string name="peertube_instance_url_title">Situs PeerTube</string>
-    <string name="peertube_instance_url_summary">Pilih situs PeerTube favorit Anda</string>
-    <string name="peertube_instance_url_help">Temukan situs yang Anda suka di %s</string>
-    <string name="peertube_instance_add_title">Tambah situs</string>
-    <string name="peertube_instance_add_help">Masukkan URL situs</string>
-    <string name="peertube_instance_add_fail">Tidak bisa memvalidasi situs</string>
-    <string name="peertube_instance_add_https_only">Hanya mendukung URL HTTPS</string>
-    <string name="peertube_instance_add_exists">Situs sudah ada</string>
     <string name="local">Lokal</string>
     <string name="recently_added">Baru ditambahkan</string>
     <string name="most_liked">Disukai terbanyak</string>
@@ -566,7 +551,6 @@
     <string name="paid_content">Konten ini hanya tersedia untuk pengguna yang telah membayar, sehingga tidak bisa diputar atau diunduh oleh NewPipe.</string>
     <string name="youtube_music_premium_content">Video ini hanya tersedia untuk anggota YouTube Music Premium, sehingga tidak bisa diputar atau diunduh oleh NewPipe.</string>
     <string name="private_content">Konten ini bersifat privat, sehingga tidak dapat diputar atau diunduh oleh NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Ini adalah sebuah trek SoundCloud Go +, setidaknya di negara Anda, sehingga tidak bisa diputar atau diunduh oleh NewPipe.</string>
     <string name="georestricted_content">Konten ini tidak tersedia di negara Anda.</string>
     <string name="crash_the_app">Hentikan aplikasi</string>
     <string name="restricted_video_no_stream">Video ini dibatasi usia.

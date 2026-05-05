@@ -256,16 +256,9 @@
     <string name="previous_export">之前的匯出</string>
     <string name="invalid_file">檔案不存在或缺少讀寫檔案的權限</string>
     <string name="import_youtube_instructions">從 Google Takeout 匯入您的 YouTube 訂閱： \n \n1. 移至此網址：%1$s \n2. 當被提示時登入帳號 \n3. 按一下「包含所有資料」，接著「取消選取全部」，然後僅勾選「訂閱」並按一下「確定」 \n4. 按一下「下一步」然後「建立匯出」 \n5. 在「下載」按鈕出現後按一下它 \n6. 點擊下方的「匯入檔案」並選取已下載的 zip 檔案 \n7. [若 zip 匯入失敗] 擷取 .csv 檔案 (通常位於「YouTube 與 YouTube Music/訂閱/訂閱.csv」)，按一下下方的「匯入檔案」並選取擷取的 csv 檔案</string>
-    <string name="import_soundcloud_instructions_hint">您的 ID, soundcloud.com/yourid</string>
     <string name="import_network_expensive_warning">請記住，此操作可造成昂貴網路花費。 
 \n 
 \n您是否希望繼續？</string>
-    <string name="import_soundcloud_instructions">透過輸入 URL 或您的 ID 來匯入 SoundCloud 個人設定檔： 
-\n 
-\n1. 在瀏覽器中啟用「桌面模式」(該網站不適用於行動裝置) 
-\n2. 移至此網址： %1$s 
-\n3. 當被提示時登入帳號 
-\n4. 複製您被重新導向到的個人設定檔網址。</string>
     <string name="thumbnail_cache_wipe_complete_notice">已清除圖片快取</string>
     <string name="metadata_cache_wipe_title">清除已快取的詮釋資料</string>
     <string name="metadata_cache_wipe_summary">移除所有已快取的網頁資料</string>
@@ -408,14 +401,6 @@
         <item quantity="other">%s 位聽眾</item>
     </plurals>
     <string name="seek_duration_title">快轉／快退搜尋持續時間</string>
-    <string name="peertube_instance_url_title">PeerTube 實例</string>
-    <string name="peertube_instance_url_summary">選取您最愛的 PeerTube 實例</string>
-    <string name="peertube_instance_url_help">在 %s 上找到您喜歡的實例</string>
-    <string name="peertube_instance_add_title">新增實例</string>
-    <string name="peertube_instance_add_help">輸入實例網址</string>
-    <string name="peertube_instance_add_fail">無法驗證實例</string>
-    <string name="peertube_instance_add_https_only">僅支援 HTTPS 網址</string>
-    <string name="peertube_instance_add_exists">實例已存在</string>
     <string name="local">本機</string>
     <string name="recently_added">最近新增</string>
     <string name="most_liked">最喜歡</string>
@@ -549,7 +534,6 @@
     <string name="paid_content">此內容僅對已付費的內容可用，因此無法由 NewPipe 串流或下載。</string>
     <string name="youtube_music_premium_content">此影片僅供 YouTube Music Premium 會員使用，因此無法由 NewPipe 串流或下載。</string>
     <string name="private_content">此內容為私人內容，因此無法由 NewPipe 串流或下載。</string>
-    <string name="soundcloud_go_plus_content">這是 SoundCloud Go+ 的曲目，因此至少在您的國家無法由 NewPipe 串流或下載。</string>
     <string name="georestricted_content">此內容在您所在的國家不可用。</string>
     <string name="restricted_video_no_stream">此影片有年齡限制。
 \n因為 YouTube 新的年齡影片限制政策，NewPipe 無法存取任何這類的視訊串流，因此無法播放。</string>

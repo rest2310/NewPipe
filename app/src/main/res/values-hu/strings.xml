@@ -270,8 +270,6 @@
     <string name="subscriptions_import_unsuccessful">A feliratkozások importálása sikertelen</string>
     <string name="subscriptions_export_unsuccessful">A feliratkozások exportálása sikertelen</string>
     <string name="import_youtube_instructions">YouTube feliratkozások importálása a Google Takeoutból: \n \n1. Navigáljon erre az oldalra: %1$s \n2. Jelentkezzen be, ha kérik \n3. Kattintson „Az összes adatot tartalmazza” gombra, majd a „Kijelölések megszüntetése” gombra, majd válassza ki a „feliratkozások” lehetőséget és kattintson az „OK” gombra \n4. Kattintson a „Következő lépés”, majd az \"Exportálás indítása” gombra \n5. Kattintson a „Letöltés” gombra, amikor megjelenik, \n6. Kattintson a lenti FÁJL IMPORTÁLÁSA gombra, és válassza ki a letöltött ZIP-fájlt \n7. [Ha a ZIP-fájl importálása nem sikerül] Bontsa ki a .csv fájlt (általában: „YouTube és YouTube Music/feliratkozások/feliratkozások.csv”), majd kattintson lent a FÁJL IMPORTÁLÁSA gombra, és válassza az exportált CSV-fájlt</string>
-    <string name="import_soundcloud_instructions">SoundCloud-profil importálása a webcím vagy az azonosítójának begépelésével: \n \n1. A webböngészőben engedélyezze az „asztali módot” (az oldal nem érhető el mobileszközökön) \n2. Navigáljon a következő webcímre: %1$s \n3. Jelentkezzen be, ha kéri \n4. Másolja ki a profil webcímét, ahova át lett irányítva.</string>
-    <string name="import_soundcloud_instructions_hint">saját azonosítója, soundcloud.com/azonosító</string>
     <string name="import_network_expensive_warning">Ez a művelet adatforgalom-igényes lehet.
 \n
 \nBiztos, hogy folytatja\?</string>
@@ -456,7 +454,6 @@
 \n
 \nEngedélyezze a(z) „%1$s” beállítást, ha meg szeretné tekinteni.</string>
     <string name="show_age_restricted_content_summary">Gyermekek számára esetlegesen nem megfelelő, korhatáros tartalom megjelenítése (például 18+)</string>
-    <string name="peertube_instance_add_https_only">Csak a HTTPS webcímek támogatottak</string>
     <string name="show_meta_info_title">Metainformációk megjelenítése</string>
     <string name="clear_queue_confirmation_description">A jelenleg aktív lejátszási sor le lesz cserélve</string>
     <string name="clear_queue_confirmation_title">Megerősítés kérése a lejátszási sor törlése előtt</string>
@@ -516,13 +513,6 @@
     <string name="hash_channel_name">Videó ujjlenyomat-készítési értesítése</string>
     <string name="youtube_restricted_mode_enabled_summary">A YouTube biztosít egy „Korlátozott módot”, amely elrejti a lehetséges felnőtteknek szóló tartalmat</string>
     <string name="youtube_restricted_mode_enabled_title">A YouTube „Korlátozott mód” bekapcsolása</string>
-    <string name="peertube_instance_add_exists">A példány már létezik</string>
-    <string name="peertube_instance_add_fail">A példány érvényesítése sikertelen</string>
-    <string name="peertube_instance_add_help">Adja meg a példány webcímét</string>
-    <string name="peertube_instance_add_title">Példány hozzáadása</string>
-    <string name="peertube_instance_url_help">Találjon Önnek tetsző példányokat itt: %s</string>
-    <string name="peertube_instance_url_summary">Válassza ki a kedvenc PeerTube példányait</string>
-    <string name="peertube_instance_url_title">PeerTube példányok</string>
     <string name="enable_disposed_exceptions_title">Életciklusából kifutott hibák jelentése</string>
     <string name="preferred_open_action_settings_title">Előnyben részesített „megnyitási” művelet</string>
     <string name="drawer_close">Fiók bezárása</string>
@@ -599,7 +589,6 @@
     <string name="detail_heart_img_view_description">Készítő által szívecskézve</string>
     <string name="on">Be</string>
     <string name="feed_load_error_account_info">A(z) „%s” hírfolyam nem tölthető be.</string>
-    <string name="soundcloud_go_plus_content">Ez egy SoundCloud Go+ szám, legalábbis az Ön országában, így nem játszható le vagy tölthető le a NewPipe-pal.</string>
     <string name="show_meta_info_summary">Kapcsolja ki, hogy elrejtse a metainformációs dobozokat, melyek további információkat tartalmaznak a közvetítés létrehozójáról, annak tartalmáról vagy egy keresési kérésről</string>
     <string name="error_report_channel_name">Hibajelentési értesítés</string>
     <string name="error_report_channel_description">Értesítések a hibák jelentéséhez</string>

@@ -261,7 +261,6 @@
     <string name="no_streams_available_download">Ingen strømmer tilgjengelige for nedlasting</string>
     <string name="preferred_open_action_settings_title">Foretrukket åpningshandling</string>
     <string name="preferred_open_action_settings_summary">Forvalgt handling ved åpning av innhold — %s</string>
-    <string name="import_soundcloud_instructions_hint">din-ID, soundcloud.com/dinid</string>
     <string name="import_network_expensive_warning">Husk at denne handlingen kan belaste nettverket tungt.
 \n
 \nØnsker du å fortsette?</string>
@@ -292,12 +291,6 @@
 \n5. Klikk på \"Last ned\"-knappen etter den vises
 \n6. Klikk på IMPORTER FIL under og velg den nedlastede .zip filen
 \n7. [Dersom .zip importen feiler] Pakk ut .csv filen (vanligvis under \"YouTube og YouTube Music/subscriptions/subscriptions.csv\"), klikk på IMPORTER FIL under og velg den utpakkede csv filen</string>
-    <string name="import_soundcloud_instructions">Importer en SoundCloud-profil ved å skrive enten nettadressen eller din ID:
-\n
-\n1. Skru på \"skrivebordsmodus\" i en nettleser ( siden er ikke tilgjengelig for mobile enheter)
-\n2. Gå til denne nettadressen: %1$s
-\n3. Logg inn når forespurt
-\n4. Kopier profil-nettadressen du ble videresendt til.</string>
     <string name="use_inexact_seek_summary">Unøyaktig spoling lar spilleren søke posisjoner raskere med redusert presisjon. Å søke i 5, 15 eller 25 sekunder fungerer ikke med dette</string>
     <string name="auto_queue_summary">Fortsett fullendt (ikke-repeterende) avspillingskø ved å legge til en relatert strøm</string>
     <string name="enable_leak_canary_summary">Overvåkning av minnelekkasjer kan forårsake at appen ikke svarer under heap dumping</string>
@@ -420,20 +413,12 @@
         <item quantity="other">%s lyttere</item>
     </plurals>
     <string name="default_kiosk_page_summary">Standard kiosk</string>
-    <string name="peertube_instance_url_title">PeerTube-instanser</string>
     <string name="local">Lokal</string>
     <string name="recently_added">Nylig lagt til</string>
     <string name="most_liked">Mest likt</string>
     <string name="choose_instance_prompt">Velg en instans</string>
     <string name="clear_download_history">Tøm nedlastingshistorikk</string>
     <string name="delete_downloaded_files">Slett nedlastede filer</string>
-    <string name="peertube_instance_url_summary">Velg dine favoritter blant PeerTube-instansene</string>
-    <string name="peertube_instance_url_help">Finn instansene du liker på %s</string>
-    <string name="peertube_instance_add_title">Legg til instans</string>
-    <string name="peertube_instance_add_help">Skriv inn nettadresse til instans</string>
-    <string name="peertube_instance_add_fail">Kunne ikke bekrefte instans</string>
-    <string name="peertube_instance_add_https_only">Kun HTTPS-nettadresser støttes</string>
-    <string name="peertube_instance_add_exists">Instansen finnes allerede</string>
     <string name="playlist_no_uploader">Autogenerert (fant ingen opplaster)</string>
     <string name="recovering">gjenoppretter</string>
     <string name="error_download_resource_gone">Kan ikke gjenopprette denne nedlastingen</string>
@@ -579,7 +564,6 @@
     <string name="paid_content">Innholdet er kun tilgjengelig for brukere som har betalt, så det kan ikke strømmes eller lastes ned av NewPipe.</string>
     <string name="private_content">Innholdet er privat, så det kan ikke strømmes eller lastes ned av NewPipe.</string>
     <string name="youtube_music_premium_content">Videoen er kun tilgjengelig for YouTube Music Premium-medlemmer, så den kan ikke strømmes eller lastes ned av NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Dette er et spor fra SoundCloud Go+, ihvertfall i ditt land, så det kan ikke strømmes eller lastes ned av NewPipe.</string>
     <string name="georestricted_content">Innholdet er ikke tilgjengelig i din region.</string>
     <string name="download_has_started">Nedlastingen har startet</string>
     <string name="select_night_theme_toast">Du kan velge ditt favorittnattema nedenfor</string>

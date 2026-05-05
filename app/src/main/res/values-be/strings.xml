@@ -294,8 +294,6 @@
     <string name="subscriptions_import_unsuccessful">Не ўдалося імпартаваць падпіскі</string>
     <string name="subscriptions_export_unsuccessful">Не ўдалося экспартаваць падпіскі</string>
     <string name="import_youtube_instructions">Імпарт падпісак YouTube з Google Takeout: \n \n1. Перайдзіце па гэтым URL: %1$s \n2. Увайдзіце, калі вас папросяць \n3. Націсніце на «Усе даныя ўключаны», затым на «Зняць выбар з усіх», затым выберыце толькі «падпіскі» і націсніце «ОК» \n4. Націсніце «Наступны крок», а затым «Стварыць экспарт» \n5. Націсніце на кнопку «Спампаваць» пасля таго, як яна з\'явіцца \n6. Ніжэй націсніце на ІМПАРТАВАЦЬ ФАЙЛ і выберыце спампаваны файл .zip \n7. [Калі не ўдаецца імпартаваць .zip] Трэба выняць файл .csv (звычайна ў раздзеле «YouTube і YouTube Music/subscriptions/subscriptions.csv»), ніжэй націсніце ІМПАРТАВАЦЬ ФАЙЛ і выберыце выняты файл CSV</string>
-    <string name="import_soundcloud_instructions">Каб імпартаваць профіль SoundCloud, увядзіце URL або свой ID:\n\n1. Уключыце «Версія для ПК» у браўзеры (сайт не падтрымліваецца мабільнымі прыладамі) \n2. Перайдзіце на: %1$s \n3. Увайдзіце, калі неабходна \n4. Скапіруйце URL-адрас профілю, на які вас перанакіравала.</string>
-    <string name="import_soundcloud_instructions_hint">вашID, soundcloud.com/вашID</string>
     <string name="import_network_expensive_warning">Гэтае дзеянне можа выклікаць вялікі расход трафіку. 
 \n 
 \nПрацягнуць?</string>
@@ -397,9 +395,6 @@
     <string name="drawer_header_description">Пераключэнне сэрвісу, зараз выбраны:</string>
     <string name="clear_playback_states_summary">Выдаліць усе пазіцыі прайгравання</string>
     <string name="youtube_restricted_mode_enabled_title">Уключыць «Абмежаваны рэжым» YouTube</string>
-    <string name="peertube_instance_add_https_only">Падтрымліваюцца толькі URL-адрасы HTTPS</string>
-    <string name="peertube_instance_add_title">Дадаць сервер</string>
-    <string name="peertube_instance_url_title">Серверы PeerTube</string>
     <string name="search_showing_result_for">Вынікі для: %s</string>
     <string name="notification_scale_to_square_image_title">Абразаць мініяцюру да прапорцый 1:1</string>
     <string name="notification_scale_to_square_image_summary">Абразаць мініяцюру відэа ў апавяшчэнні з прапорцый 16:9 да 1:1</string>
@@ -414,10 +409,6 @@
     <string name="delete_downloaded_files">Выдаліць спампаваныя файлы</string>
     <string name="show_original_time_ago_summary">Зыходныя тэксты з сэрвісаў будуць бачны ў ленце элементаў</string>
     <string name="clear_cookie_summary">Ачысціць файлы cookie, якія NewPipe захоўвае пры рашэнні reCAPTCHA</string>
-    <string name="peertube_instance_add_exists">Сервер (інстанс) ужо існуе</string>
-    <string name="peertube_instance_add_fail">Не ўдалося праверыць сервер</string>
-    <string name="peertube_instance_add_help">Увядзіце URL-адрас сервера</string>
-    <string name="peertube_instance_url_summary">Выберыце ўлюбёныя серверы PeerTube</string>
     <string name="clear_queue_confirmation_description">Чарга актыўнага прайгравальніка будзе заменена</string>
     <string name="clear_queue_confirmation_summary">Пераключэнне з аднаго плэера на другі можа прывесці да замены вашай чаргі</string>
     <string name="clear_queue_confirmation_title">Запытваць пацвярджэнне перад ачысткай чаргі</string>
@@ -573,7 +564,6 @@
     <string name="error_report_channel_description">Апавяшчэнні для паведамлення аб памылках</string>
     <string name="error_report_notification_title">Адбылася памылка NewPipe, націсніце, каб адправіць справаздачу</string>
     <string name="start_main_player_fullscreen_summary">Калі аўтапаварот адключаны, відэа адразу запускаецца ў поўнаэкранным рэжыме. Міні-плэер застаецца даступным, трэба толькі выйсці з поўнаэкраннага рэжыму</string>
-    <string name="peertube_instance_url_help">Шукайце серверы, якія вам даспадобы, на %s</string>
     <string name="show_meta_info_title">Паказваць метаданыя</string>
     <string name="ignore_hardware_media_buttons_title">Ігнараваць падзеі апаратных медыякнопак</string>
     <string name="show_age_restricted_content_summary">Паказваць змесціва, якое можа быць непрыдатным для дзяцей, бо мае ўзроставыя абмежаванні (напрыклад, 18+)</string>
@@ -696,7 +686,6 @@
     <string name="show_thumbnail_summary">Выкарыстоўваць мініяцюру як фон для экрана блакіроўкі і апавяшчэнняў</string>
     <string name="no_appropriate_file_manager_message">Для гэтага дзеяння не знойдзены прыдатны файлавы менеджар. \nУсталюйце файлавы менеджар або паспрабуйце адключыць «%s» у наладах спампоўвання</string>
     <string name="georestricted_content">Гэты кантэнт недаступны ў вашай краіне.</string>
-    <string name="soundcloud_go_plus_content">Гэта трэк SoundCloud Go+ (прынамсі ў вашай краіне), таму NewPipe не можа яго прайграць або спампаваць.</string>
     <string name="private_content">Гэты кантэнт прыватны, таму NewPipe не можа яго прайграць або спампаваць.</string>
     <string name="youtube_music_premium_content">Гэта відэа даступна толькі для падпісчыкаў YouTube Music Premium, таму NewPipe не можа яго прайграць або спампаваць.</string>
     <string name="account_terminated">Уліковы запіс спынены</string>

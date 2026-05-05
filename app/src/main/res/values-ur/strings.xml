@@ -271,14 +271,6 @@
 \n%1$s 
 \n2. جب پوچھا جائے تو لاگ ان کریں 
 \n3. ڈاؤن لوڈ شروع ہونا چاہئے (یہ برآمد فائل ہے)</string>
-    <string name="import_soundcloud_instructions">۔URL یا آپ کی ID ٹائپ کرکے ایک SoundCloud پروفائل درآمد کریں: 
-\n 
-\n1. ویب براؤزر میں \"ڈیسک ٹاپ موڈ\" کو فعال کریں (یہ سائٹ موبائل آلات کے لئے دستیاب نہیں ہے) 
-\n2. اس URL پر جائیں:
-\n%1$s 
-\n3. جب پوچھا جائے تو لاگ ان کریں 
-\n4. پروفائل URL کاپی کریں جہاں تک آپ کی رہنمائی کی گئی تھی۔</string>
-    <string name="import_soundcloud_instructions_hint">آپ کی آئی ڈی، soundcloud.com/yourid</string>
     <string name="import_network_expensive_warning">اس بات کو ذہن میں رکھیں کہ اس عملیہ کا نیٹ ورک مہنگا ہو سکتا ہے۔
 \n
 \nکیا آپ جاری رکھنا چاہتے ہیں ؟</string>
@@ -416,14 +408,6 @@
     </plurals>
     <string name="default_kiosk_page_summary">طے شدہ کیوسک</string>
     <string name="seek_duration_title">آگے بھگانے /- پیچھے کرنے کی مدت</string>
-    <string name="peertube_instance_url_title">پیر ٹیوب واقعات</string>
-    <string name="peertube_instance_url_summary">اپنے پسندیدہ پیر ٹیوب کی مثالیں منتخب کریں</string>
-    <string name="peertube_instance_url_help">ایسی مثالوں کی تلاش کریں جو آپ %s پر پسند کرتے ہیں</string>
-    <string name="peertube_instance_add_title">مثال شامل کریں</string>
-    <string name="peertube_instance_add_help">مثال کا URL درج کریں</string>
-    <string name="peertube_instance_add_fail">مثال کی توثیق نہیں کی جا سکی</string>
-    <string name="peertube_instance_add_https_only">صرف HTTPS URLs موافق ہیں</string>
-    <string name="peertube_instance_add_exists">مثال پہلے سے موجود ہے</string>
     <string name="local">مقامی</string>
     <string name="recently_added">حال ہی میں شامل</string>
     <string name="most_liked">زیادہ پسندیدہ</string>

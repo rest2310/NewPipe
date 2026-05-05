@@ -297,13 +297,6 @@
 \n5. Faga click no botón de \"Decarregar\" despois de que apareza
 \n6. Faga click en IMPORTAR ARQUIVO abaixo e seleccione o ficheiro .zip descarregado
 \n7. [Se a importación do .zip fallar] Extraia o ficheiro .csv (xeralmente en Youtube e Youtube Music/subscriptions/subscriptions.csv), e faga click en IMPORTAR FICHEIRO abaixo e seleccione o .csv extraído</string>
-    <string name="import_soundcloud_instructions">Pode importar un perfil do SoundCloud escribindo o URL ou o seu ID:
-\n
-\n1. Active o «modo desktop» nun navegador da Internet (o sitio non está dispoñíbel para dispositivos móbiles)
-\n2. Acceda ao URL %1$s
-\n3. Inicie a sesión cando lle for solicitado
-\n4. Copie o URL de perfil a que foi redirixido.</string>
-    <string name="import_soundcloud_instructions_hint">oseuID, soundcloud.com/oseuid</string>
     <string name="import_network_expensive_warning">Teña en conta que esta operación pode consumir moitos recursos de rede.
 \n
 \nDesexa continuar?</string>
@@ -326,7 +319,6 @@
     <string name="minimize_on_exit_background_description">Minimizar ao reprodutor en segundo plano</string>
     <string name="minimize_on_exit_popup_description">Minimizar o reprodutor popup</string>
     <string name="local">Limitado</string>
-    <string name="peertube_instance_add_https_only">Só son compatibles os URLs HTTPS</string>
     <string name="show_comments_summary">Desactiva para agochalos comentarios</string>
     <string name="enable_playback_resume_title">Retomar a reprodución</string>
     <string name="playlist_page_summary">Páxina das listas de reprodución</string>
@@ -508,13 +500,6 @@
 \nSe desexa visualizalo, habilite \"%1$s\" nas opcións.</string>
     <string name="youtube_restricted_mode_enabled_title">Activar modo restrinxido de YouTube</string>
     <string name="settings_category_updates_title">Actualizacións</string>
-    <string name="peertube_instance_add_exists">A instancia xa existe</string>
-    <string name="peertube_instance_add_fail">Non se puido validar a instancia</string>
-    <string name="peertube_instance_add_help">Introduza o URL da instancia</string>
-    <string name="peertube_instance_add_title">Engadir instancia</string>
-    <string name="peertube_instance_url_help">Atopar as instancias que lle gustan en %s</string>
-    <string name="peertube_instance_url_summary">Selecciona as instancias favoritas de PeerTube</string>
-    <string name="peertube_instance_url_title">Instancias de PeerTube</string>
     <string name="content_language_title">Idioma do contido predeterminado</string>
     <string name="autoplay_title">Reprodución automática</string>
     <string name="settings_category_clear_data_title">Eliminar datos</string>
@@ -645,7 +630,6 @@
     <string name="detail_heart_img_view_description">Valorado polo creador</string>
     <string name="error_report_notification_toast">Ocorreu un erro, vexa a notificación</string>
     <string name="auto_queue_toggle">Auto-enfileirar</string>
-    <string name="soundcloud_go_plus_content">Esta é unha pista de SoundCloud Go+, polo menos no seu país, así que non pode ser transmitida ou descarregada por NewPipe.</string>
     <string name="error_report_channel_name">Notificación de relatorio de erros</string>
     <string name="error_report_channel_description">Notificacións para reportar erros</string>
     <string name="error_report_notification_title">NewPipe atopou un erro, presione para reportar</string>

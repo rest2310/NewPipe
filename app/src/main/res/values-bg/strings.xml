@@ -285,8 +285,6 @@
     <string name="subscriptions_import_unsuccessful">Неуспешно внасяне на абонатите</string>
     <string name="subscriptions_export_unsuccessful">Неуспешно изнасяне на абонатите</string>
     <string name="import_youtube_instructions">Внасяне на абонаменти в YouTube от Google Takeout: \n \n1. Отидете на този URL: %1$s \n2. Влезте, когато бъдете помолени \n3. Щракнете върху „Всички включени данни“, след това върху „Демаркиране на всички“, след това изберете само „абонаменти“ и щракнете върху „OK“ \n4. Кликнете върху „Следваща стъпка“ и след това върху „Създаване на износ“ \n5. Кликнете върху бутона \"Изтегляне\", след като се появи \n6. Кликнете върху ВНАСЯНЕ НА ФАЙЛ по-долу и изберете изтегления .zip файл \n7. [Ако внасянето на .zip е неуспешно] Разархивирайте .csv файла (обикновено под „YouTube и YouTube Music/subscriptions/subscriptions.csv“), щракнете върху ВНАСЯНЕ НА ФАЙЛ по-долу и изберете извлечения csv файл</string>
-    <string name="import_soundcloud_instructions">Внесете профил в SoundCloud, като въведете или URL адреса, или вашия ID: \n \n1. Включете „десктоп режим“ в браузър (сайтът е недостъпен за мобилни устройства) \n2. Посетете връзката: %1$s \n3. Влезте в профила си, ако се изисква \n4. Копирайте хипервръзката на профилната страница, към която сте насочени.</string>
-    <string name="import_soundcloud_instructions_hint">вашиятID, soundcloud.com/вашиятID</string>
     <string name="import_network_expensive_warning">Това действие може да изразходва голямо количество данни от вашия трафик.
 \n
 \nЖелаете ли да продължите?</string>
@@ -431,7 +429,6 @@
     <string name="metadata_privacy_unlisted">Скрит</string>
     <string name="metadata_privacy_private">Частен</string>
     <string name="remote_search_suggestions">Предложения за отдалечено търсене</string>
-    <string name="peertube_instance_add_title">Добави инстанция</string>
     <string name="videos_string">Видеа</string>
     <string name="error_report_open_issue_button_text">Доклад в GitHub</string>
     <string name="copy_for_github">Копиране във форматиран вид</string>
@@ -483,8 +480,6 @@
     <string name="metadata_category">Категория</string>
     <string name="download_has_started">Изтеглянето започна</string>
     <string name="permission_denied">Действието отказано от системата</string>
-    <string name="peertube_instance_url_summary">Изберете любимите си PeerTube инстанции</string>
-    <string name="peertube_instance_add_https_only">Поддържат се само HTTPS хипервръзки</string>
     <plurals name="minutes">
         <item quantity="one">%d минута</item>
         <item quantity="other">%d минути</item>
@@ -503,10 +498,8 @@
     <string name="remove_watched_popup_title">Премахни изгледаните потоци?</string>
     <string name="remove_watched_popup_partially_watched_streams">Да, както и само частично изгледаните видеа</string>
     <string name="subscribers_count_not_available">Брой на абонати не е наличен</string>
-    <string name="peertube_instance_add_exists">Инстанцията вече съществува</string>
     <string name="missing_file">Файлът е преместен или изтрит</string>
     <string name="app_update_notification_channel_description">Известие за нова версия на NewPipe</string>
-    <string name="peertube_instance_url_title">PeerTube инстанции</string>
     <string name="download_already_pending">Има насрочено изтегляне с това име</string>
     <string name="download_already_running">Вече има активно изтегляне с това име</string>
     <string name="confirm_prompt">Искате да изтриете историята на изтеглянията или всички изтеглени файлове\?</string>
@@ -604,8 +597,6 @@
     <string name="share_playlist_content_details">%1$s
 \n%2$s</string>
     <string name="video_details_list_item">- %1$s: %2$s</string>
-    <string name="peertube_instance_url_help">Може да си харесате инстанции на %s</string>
-    <string name="peertube_instance_add_fail">Инстанцията не можа да бъде потвърдена</string>
     <string name="settings_category_player_notification_title">Известие на плеъра</string>
     <string name="msg_failed_to_copy">Неуспешно копиране в клипборда</string>
     <string name="faq_title">Често задавани въпроси</string>
@@ -655,7 +646,6 @@
 \nНакратко, изборът се свежда до предпочинанието ви: бързина или точна информация.</string>
     <string name="feed_oldest_subscription_update">Емисията е последно обновявана: %s</string>
     <string name="feed_use_dedicated_fetch_method_summary">Налично за някои услуги, обичайно е много по-бързо, но връща ограничено количество видеа и често пъти непълна информация (например няма времетраене, вид на видеото, дали е на живо)</string>
-    <string name="peertube_instance_add_help">Въведете URL адреса на инстанцията</string>
     <string name="play_queue_audio_track">Аудио: %s</string>
     <string name="show_channel_details">Покажи информация за канала</string>
     <string name="playlist_no_uploader">Авто-генерирани (не е намерен ъплоудер)</string>
@@ -746,7 +736,6 @@
     <string name="account_terminated">Профилът е прекратен</string>
     <string name="detail_pinned_comment_view_description">Фиксиран коментар</string>
     <string name="streams_not_yet_supported_removed">Потоци, които все още не се поддържат от програмата за изтегляне, не се показват</string>
-    <string name="soundcloud_go_plus_content">Това е песен на SoundCloud Go+, поне във вашата страна, така че не може да бъде предавана поточно или изтеглена от NewPipe.</string>
     <string name="description_select_note">Вече можете да изберете текст в описанието. Имайте предвид, че страницата може да трепти и връзките може да не могат да се кликват, докато сте в режим на избор.</string>
     <string name="start_main_player_fullscreen_summary">Не стартирайте видеоклипове в миниплейъра, а директно превключете в режим на цял екран, ако автоматичното завъртане е заключено. Все още можете да получите достъп до миниплейъра, като излезете от цял екран</string>
     <string name="error_report_channel_description">Известия за докладване на грешки</string>

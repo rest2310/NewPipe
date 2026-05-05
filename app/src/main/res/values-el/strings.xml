@@ -296,12 +296,6 @@
 \n5. Πατήστε «Λήψη» όταν εμφανιστεί.
 \n6. Πατήστε το ΕΙΣΑΓΩΓΗ ΑΡΧΕΙΟΥ και επιλέξτε το ληφθέν αρχείο zip.
 \n7. Αν η εισαγωγή από το zip αποτύχει, εξάγετε το αρχείο .csv (συνήθως βρίσκεται στο \"YouTube και YouTube Music/subscriptions/subscriptions.csv\"), πατήστε το ΕΙΣΑΓΩΓΗ ΑΡΧΕΙΟΥ και επιλέξτε το ληφθέν αρχείο csv</string>
-    <string name="import_soundcloud_instructions">Για να εισάγετε τον λογαριασμό SoundCloud σας, πληκτρολογήστε τον σύνδεσμο ή το ID σας:
-\n
-\n1. Ενεργοποιήστε τη λειτουργία «Desktop mode» στον φυλλομετρητή σας (καθώς η ιστοσελίδα δεν είναι διαθέσιμη για κινητά)
-\n2. Πλοηθηθείτε στο %1$s
-\n3. Εισέλθετε στο λογαριασμό σας, όταν σας ζητηθεί
-\n4. Αντιγράψτε τον σύνδεσμο του λογαριασμού στον οποίο ανακατευθυνθήκατε.</string>
     <string name="import_network_expensive_warning">Αυτή η διαδικασία μπορεί να χρησιμοποιήσει μεγάλο όγκο δεδομένων.
 \n
 \nΕπιθυμείτε να συνεχίσετε;</string>
@@ -311,7 +305,6 @@
     <string name="minimize_on_exit_summary">Ενέργεια κατά τη μετάβαση σε άλλη εφαρμογή — %s</string>
     <string name="trending">Δημοφιλή</string>
     <string name="enable_disposed_exceptions_title">Αναφορά σφαλμάτων εκτός κύκλου ζωής</string>
-    <string name="import_soundcloud_instructions_hint">Το όνομα χρήστη σας, soundcloud.com/όνομαχρήστη</string>
     <string name="unhook_checkbox">Απαγκίστρωση (μπορεί να προκαλέσει παραμόρφωση)</string>
     <string name="skip_silence_checkbox">Γρήγορη αναπαραγωγή κατά τη διάρκεια της σίγασης</string>
     <string name="playback_step">Βήμα</string>
@@ -420,7 +413,6 @@
         <item quantity="other">%s ακροατές</item>
     </plurals>
     <string name="default_kiosk_page_summary">Προεπιλεγμένο περίπτερο</string>
-    <string name="peertube_instance_add_https_only">Μόνο HTTPS σύνδεσμοι υποστηρίζονται</string>
     <string name="local">Τοπικά</string>
     <string name="recently_added">Προστέθηκαν πρόσφατα</string>
     <string name="playlist_no_uploader">Δημιουργήθηκε αυτόματα (δεν βρέθηκε χρήστης μεταφόρτωσης)</string>
@@ -547,14 +539,7 @@
     <string name="clear_cookie_title">Εκκαθάριση reCAPTCHA cookies</string>
     <string name="youtube_restricted_mode_enabled_summary">Το YouTube διαθέτει «Περιορισμένη Λειτουργία» η οποία κρύβει πιθανώς ακατάλληλο περιεχόμενο</string>
     <string name="show_age_restricted_content_summary">Εμφάνιση πιθανώς ακατάλληλου περιεχομένου (18+)</string>
-    <string name="peertube_instance_add_exists">Το instance υπάρχει ήδη</string>
-    <string name="peertube_instance_add_fail">Αδυναμία πιστοποίησης του instance</string>
-    <string name="peertube_instance_add_help">Προσθέστε την URL του instance</string>
-    <string name="peertube_instance_add_title">Προσθήκη instance</string>
-    <string name="peertube_instance_url_help">Βρείτε τα instances που σας αρέσουν στο %s</string>
-    <string name="peertube_instance_url_summary">Επιλογή των αγαπημένων σας PeerTube instances</string>
     <string name="show_original_time_ago_title">Εμφάνιση αυθεντικού παρελθόντος χρόνου στα αντικείμενα</string>
-    <string name="peertube_instance_url_title">Στιγμιότυπα PeerTube</string>
     <string name="notification_colorize_title">Χρωματισμός ειδοποιήσεων</string>
     <string name="notification_colorize_summary">Επιτρέπει στο Android να τροποποιήσει το χρώμα της ειδοποίησης, σύμφωνα με το κύριο χρώμα του εικονιδίου (δεν διατίθεται σε όλες τις συσκευές)</string>
     <string name="show_thumbnail_summary">Χρήση των εικονιδίων ως φόντο στην οθόνη κλειδώματος και στις ειδοποιήσεις</string>
@@ -577,7 +562,6 @@
     <string name="paid_content">Αυτό το περιεχόμενο είναι διαθέσιμο μόνο σε χρήστες που έχουν πληρώσει και δεν μπορεί να αναπαραχθεί ή να το κατεβάσετε με το NewPipe.</string>
     <string name="youtube_music_premium_content">Αυτό το βίντεο είναι διαθέσιμο μόνο για τα μέλη του YouTube Music Premium και δεν μπορεί να αναπαραχθεί ή να το κατεβάσετε με το NewPipe.</string>
     <string name="private_content">Αυτό το περιεχόμενο είναι ιδιωτικό και δεν μπορεί να αναπαραχθεί ή να το κατεβάσετε με το NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Αυτό είναι ένα κομμάτι SoundCloud Go+, τουλάχιστον στη χώρα σας. Έτσι δεν μπορεί να αναπαραχθεί ή να το κατεβάσετε με το NewPipe.</string>
     <string name="georestricted_content">Αυτό το περιεχόμενο δεν είναι διαθέσιμο στη χώρα σας.</string>
     <string name="restricted_video_no_stream">Αυτό το βίντεο έχει περιορισμό ηλικίας.
 \nΛόγω της νέας πολιτικής του YouTube για αυτά τα βίντεο, το NewPipe δεν μπορεί να το αναπαράγει.</string>

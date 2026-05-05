@@ -295,13 +295,6 @@
 \n5. 出现“下载”按钮后点击它
 \n6. 单击下面的导入文件并选择下载的 .zip 文件
 \n7.（如果 .zip 导入失败）解压 .csv文件（通常在“YouTube和YouTube Music/subscriptions/subscriptions.csv”下），点击下方的导入文件，选择解压出来的 csv 文件</string>
-    <string name="import_soundcloud_instructions">通过输入网址或你的 ID 导入 SoundCloud 配置文件：
-\n
-\n1. 在浏览器中启用“电脑模式“（该网站未适配移动设备）；
-\n2. 打开该网站：%1$s；
-\n3. 登录（如果需要）；
-\n4. 复制得到的配置文件下载地址。</string>
-    <string name="import_soundcloud_instructions_hint">你的 ID：soundcloud.com/［你的ID］</string>
     <string name="import_network_expensive_warning">该操作消耗大量流量，
 \n
 \n你想继续吗？</string>
@@ -415,14 +408,6 @@
     <plurals name="listening">
         <item quantity="other">%s 位听众</item>
     </plurals>
-    <string name="peertube_instance_url_title">PeerTube 服务器</string>
-    <string name="peertube_instance_url_summary">设置自定义 PeerTube 服务器</string>
-    <string name="peertube_instance_url_help">查找你需要的服务器 %s</string>
-    <string name="peertube_instance_add_title">添加服务器</string>
-    <string name="peertube_instance_add_help">输入服务器网址（URL）</string>
-    <string name="peertube_instance_add_fail">无法验证服务器</string>
-    <string name="peertube_instance_add_https_only">仅支持 HTTPS URL</string>
-    <string name="peertube_instance_add_exists">该服务器已存在</string>
     <string name="local">本地</string>
     <string name="recently_added">最近添加</string>
     <string name="most_liked">最受欢迎</string>
@@ -567,7 +552,6 @@
     <string name="paid_content">此内容仅对已付费的用户可用，因此 NewPipe 无法流式传输或下载该内容。</string>
     <string name="youtube_music_premium_content">该视频仅供 YouTube Music Premium 会员使用，NewPipe 无法流式传输或下载该视频。</string>
     <string name="private_content">此内容是私有的，因此 NewPipe 无法流式传输或下载该内容。</string>
-    <string name="soundcloud_go_plus_content">这是 SoundCloud Go +曲目，至少在你所在的国家/地区是这样，因此 NewPipe 无法流式传输或下载它。</string>
     <string name="georestricted_content">此内容在你所在的国家/地区不可用。</string>
     <string name="restricted_video_no_stream">这个视频有年龄限制。
 \n由于 YouTube 针对此类视频的新政策，NewPipe 无法访问其任何视频流，因此无法播放该视频。</string>

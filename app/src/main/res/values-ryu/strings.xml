@@ -306,13 +306,6 @@
     <string name="enable_leak_canary_summary">メモリリークぬかんしぇー、ヒープダンピングじんかいアプリぬむはんのうになるぎんいんとぅなやびーん</string>
     <string name="enable_disposed_exceptions_title">ライフサイクルエラーぬほうくーく</string>
     <string name="enable_disposed_exceptions_summary">はきさったるフラグメントあらんでぃアクティビティぬ、ライフサイクルはんいぬいでぃのーいしんふぬうなRxれいがいちーょうせいてぃきにほうくくさびーん</string>
-    <string name="import_soundcloud_instructions">URLあらんでぃIDんかいゅうりょくしてぃSoundCloudプロファイルインポートさびーん：：
-\n
-\n1. Webブラウザーっし \"デスクトップモード\" ゆうこうなさびーん（サイトーけいたいデバイスでぃりようなやびらん）
-\n2. くぬURLんかいうぅいちゃーさびーん： %1$s
-\n3. ふぃちぐとぅうぅーじてぃログインさびーん
-\n4. リダイレクトさったるプロファイルURLコピーさびーん。</string>
-    <string name="import_soundcloud_instructions_hint">うんじゅがID, soundcloud.com/うんじゅがid</string>
     <string name="import_network_expensive_warning">くぬあしっさにゆりちうしんりょうきんがかじゅーいるくとぅがあいびーん。ぐちゅういください。
 \n
 \nずっこうさびーが？</string>
@@ -421,14 +414,6 @@
         <item quantity="other">%sんかいんがちょうしゅちゅう</item>
     </plurals>
     <string name="seek_duration_title">こうすくはやうくい/まきむどぅしかんかく</string>
-    <string name="peertube_instance_url_title">PeerTubeインスタンス</string>
-    <string name="peertube_instance_url_summary">PeerTubeインスタンスさんたくすん</string>
-    <string name="peertube_instance_url_help">うんじゅんかいさちちーやーインスタンスかめーいん：%s</string>
-    <string name="peertube_instance_add_title">インスタンスちちが</string>
-    <string name="peertube_instance_add_help">インスタンスぬURLんかいゅうりょく</string>
-    <string name="peertube_instance_add_fail">インスタンスきんしょうするくとぅがなやびらんたん</string>
-    <string name="peertube_instance_add_https_only">HTTPSぬURLぬみんかいたいおうそーいびーん</string>
-    <string name="peertube_instance_add_exists">インスタンスーしでぃにすんじぇーそーいびーん</string>
     <string name="local">ローカル</string>
     <string name="recently_added">さいきんちいからさったん</string>
     <string name="most_liked">かんひょうが</string>
@@ -576,7 +561,6 @@
     <string name="paid_content">くぬコンテンツーゆーいるりょうぬユーザーぬみがいようないるたみ、NewPipeっしぬストリーミングてぃがろーダウンロードーなやびらん。</string>
     <string name="youtube_music_premium_content">くぬちゃーしがーYouTubeミュージックプレミアムかいさるんぬみがいようないるようなとーくとぅ、NewPipeっしストリーミングてぃがろーダウンロードうくないしぇーなやびらん。</string>
     <string name="private_content">くぬコンテンツーふぃかかいぬたみ、NewPipeっしストリーミングてぃがろーダウンロードすしぇーなやびらん。</string>
-    <string name="soundcloud_go_plus_content">くれーSoundCloud Go+トラックやくとぅ、すくなくとぅむうんじゅがくにっしぇー、NewPipeっしぇーストリーミングてぃがろーダウンロードぬなやびらん。</string>
     <string name="georestricted_content">くぬコンテンツー、うすんまいぬくにっしぇーぐりよういただきやびらん。</string>
     <string name="crash_the_app">アプリぬクラッシュ</string>
     <string name="restricted_video_no_stream">くぬちゃーがはにーるれいうぅいゆいぎんぬあいびーん。

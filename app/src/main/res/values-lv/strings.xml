@@ -260,14 +260,6 @@
     <string name="settings_category_video_audio_title">Video un audio</string>
     <string name="settings_category_player_behavior_title">Uzvedība</string>
     <string name="settings_category_player_title">Atskaņotājs</string>
-    <string name="peertube_instance_add_exists">Šāds serveris (instance) jau eksistē</string>
-    <string name="peertube_instance_add_https_only">Atbalsta tikai HTTPS URL adreses</string>
-    <string name="peertube_instance_add_fail">Nevarēja apstiprināt serveri (instanci)</string>
-    <string name="peertube_instance_add_help">Ievadiet servera (instances) URL</string>
-    <string name="peertube_instance_add_title">Pievienot serveri (instanci)</string>
-    <string name="peertube_instance_url_help">Atrodiet sev tīkamus serverus (instances) %s vietnē</string>
-    <string name="peertube_instance_url_summary">Atlasiet savas iecienītākās PeerTube instances</string>
-    <string name="peertube_instance_url_title">PeerTube serveri (instances)</string>
     <string name="no_app_to_open_intent">Neviena lietotne jūsu ierīcē nevar šo atvērt</string>
     <string name="chapters">Nodaļas</string>
     <string name="recent">Jaunākie</string>
@@ -389,13 +381,6 @@
     <string name="drawer_close">Aizvērt Atvilkni</string>
     <string name="drawer_open">Atvērt Atvilkni</string>
     <string name="most_liked">Vispopulārākais</string>
-    <string name="import_soundcloud_instructions_hint">jūsuID , soundcloud.com/jūsuID</string>
-    <string name="import_soundcloud_instructions">Importējiet SoundCloud profilu, ierakstot URL vai ID:
-\n
-\n1. Tīmekļa pārlūkprogrammā ieslēdziet \"datoru vietni\" (vietne nav pieejama mobilajām ierīcēm)
-\n2. Dodieties uz šo URL:%1$s
-\n3. Ierakstaties, kad tiek prasīts
-\n4. Nokopējiet profila URL, uz kuru tikāt novirzīts.</string>
     <string name="import_youtube_instructions">Ievietot YouTube abonementus no Google Takeout:\n\n1. Dodieties uz šo vietni: %1$s\n2. Autorizējieties, ja nepieciešams\n3. Noklikšķiniet uz \"Visi dati iekļauti\", pēc tam uz \"Atcelt visu atlasi\", pēc tam atlasiet tikai \"Abonementi\" un noklikšķiniet uz \"Labi\"\n4. Noklikšķiniet uz \"Nākamais solis\" un pēc tam uz \"Izveidot eksportu\"\n5. Pēc tam, kad tā parādās, noklikšķiniet uz pogas \"Lejupielādēt\"\n6. Noklikšķiniet IEVIETOT DATNI zemāk un izvēlaties lejupielādēto .zip failu\n7. [Ja .zip failu neizdodas ievietot] Izvelciet .csv failu (parasti zem \"YouTube un YouTube Music/subscriptions/subscriptions.csv\") no arhīva, tad noklikšķiniet uz IEVIETOT DATNI zemāk un atlasiet tikko izvilkto csv failu</string>
     <string name="preferred_open_action_settings_summary">Noklusējuma darbība, kad atver saturu — %s</string>
     <string name="show_original_time_ago_summary">Pakalpojumu oriģinālteksti būs redzami video vienumos</string>
@@ -570,7 +555,6 @@
     <string name="paid_content">Šis saturs ir pieejams tikai lietotājiem, kuri ir samaksājuši, tāpēc to nevar straumēt vai lejupielādēt ar Newpipe.</string>
     <string name="youtube_music_premium_content">Šis videoklips ir pieejams tikai YouTube Mūzikas Prēmijas dalībniekiem, tāpēc to nevar straumēt vai lejupielādēt ar Newpipe.</string>
     <string name="private_content">Šis saturs ir privāts, tāpēc Newpipe to nevar straumēt vai lejupielādēt.</string>
-    <string name="soundcloud_go_plus_content">Šis ir SoundCloud Go+ audio, vismaz jūsu valstī, tāpēc to nevar straumēt vai lejupielādēt ar Newpipe.</string>
     <string name="georestricted_content">Šis saturs nav pieejams jūsu valstī.</string>
     <string name="crash_the_app">Izraisīt lietotnes nobrukšanu</string>
     <string name="show_channel_details">Rādīt kanāla informāciju</string>

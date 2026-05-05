@@ -283,13 +283,6 @@
 \n5. Klicke auf die Schaltfläche „Download“, nachdem sie erscheint
 \n6. Klicke unten auf \"Datei importieren\" und wähle die heruntergeladene Zip-Datei aus
 \n7. [Wenn der Zip-Import fehlschlägt] Entpacke die CSV-Datei (normalerweise unter „YouTube und YouTube Music/Abos/Abos.csv“), klicke auf \"Datei importieren\" und wähle die extrahierte CSV-Datei aus</string>
-    <string name="import_soundcloud_instructions">Importiere ein SoundCloud-Profil, indem die URL oder deine ID eingegeben wird:
-\n
-\n1. Aktiviere den Desktop-Modus in einem Web-Browser (die Seite ist für mobile Geräte nicht verfügbar)
-\n2. Gehe zu dieser URL: %1$s
-\n3. Melde dich an, falls du dazu aufgefordert wirst
-\n4. Kopiere die Profil-URL, zu der du weitergeleitet wurdest.</string>
-    <string name="import_soundcloud_instructions_hint">deineID, soundcloud.com/deineid</string>
     <string name="no_streams_available_download">Keine Streams zum Download verfügbar</string>
     <string name="preferred_open_action_settings_title">Bevorzugte „Öffnen“-Aktion</string>
     <string name="preferred_open_action_settings_summary">Standardaktion beim Öffnen von Inhalten — %s</string>
@@ -429,18 +422,10 @@
         <item quantity="one">%s Zuhörer</item>
         <item quantity="other">%s Zuhörer</item>
     </plurals>
-    <string name="peertube_instance_url_title">PeerTube-Instanzen</string>
-    <string name="peertube_instance_url_help">Finde auf %s die Instanzen, die dir gefallen</string>
-    <string name="peertube_instance_add_title">Instanz hinzufügen</string>
-    <string name="peertube_instance_add_help">URL der Instanz eingeben</string>
-    <string name="peertube_instance_add_fail">Validierung der Instanz fehlgeschlagen</string>
-    <string name="peertube_instance_add_exists">Instanz existiert bereits</string>
     <string name="local">Lokal</string>
     <string name="recently_added">Kürzlich hinzugefügt</string>
     <string name="playlist_no_uploader">Auto-generiert (kein Autor gefunden)</string>
     <string name="choose_instance_prompt">Eine Instanz wählen</string>
-    <string name="peertube_instance_url_summary">Bevorzugte Peertube-Instanzen auswählen</string>
-    <string name="peertube_instance_add_https_only">Es werden nur HTTPS-Adressen unterstützt</string>
     <string name="seek_duration_title">Dauer der Suche bei schnellem Vor-/Zurückspulen</string>
     <string name="most_liked">Am beliebtesten</string>
     <string name="recovering">Wiederherstellen</string>
@@ -583,7 +568,6 @@
     <string name="private_content">Dieser Inhalt ist privat, kann also nicht von NewPipe gestreamt oder heruntergeladen werden.</string>
     <string name="paid_content">Diese Inhalte sind nur für Benutzer verfügbar, die bezahlt haben, können also nicht von NewPipe gestreamt oder heruntergeladen werden.</string>
     <string name="youtube_music_premium_content">Dieses Video ist nur für YouTube-Music-Premium-Mitglieder verfügbar und kann daher nicht von NewPipe gestreamt oder heruntergeladen werden.</string>
-    <string name="soundcloud_go_plus_content">Dies ist ein SoundCloud Go+ Track, zumindest in deinem Land, kann er von NewPipe nicht gestreamt oder heruntergeladen werden.</string>
     <string name="georestricted_content">Dieser Inhalt ist in deinem Land nicht verfügbar.</string>
     <string name="crash_the_app">App abstürzen lassen</string>
     <string name="restricted_video_no_stream">Dieses Video ist altersbeschränkt.
