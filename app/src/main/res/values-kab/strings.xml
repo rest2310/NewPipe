@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="settings_category_video_audio_title">Avidyu akked d imesli</string>
-    <string name="tab_about">Ɣef &amp; ISTEQSIYEN</string>
+    <string name="tab_about">Ɣef</string>
     <string name="feed_create_new_group_button_title">Amaynut</string>
     <string name="all">Akk</string>
     <string name="kore_not_found">Sbedd asnas n Kore yexxuṣen\?</string>

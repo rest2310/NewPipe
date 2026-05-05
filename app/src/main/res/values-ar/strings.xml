@@ -60,7 +60,7 @@
     <string name="all">الجميع</string>
     <string name="video">الفيديو</string>
     <string name="settings_category_downloads_title">التنزيل</string>
-    <string name="tab_about">حول التطبيق &amp; الأسئلة الشائعة</string>
+    <string name="tab_about">حول التطبيق</string>
     <string name="title_activity_history">التاريخ</string>
     <string name="action_history">التاريخ</string>
     <string name="open_in_popup_mode">فتح في الوضع المنبثق</string>

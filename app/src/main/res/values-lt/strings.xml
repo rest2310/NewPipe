@@ -156,7 +156,7 @@
     <string name="title_activity_about">Apie NewPipe</string>
     <string name="title_licenses">Trečiųjų šalių licencijos</string>
     <string name="copyright" formatted="true">© %1$s %2$s pagal %3$s</string>
-    <string name="tab_about">Apie ir DUK</string>
+    <string name="tab_about">Apie</string>
     <string name="tab_licenses">Licencijos</string>
     <string name="app_description">Nemokama, atviro kodo transliacijų peržiūros programėlė Android sistemai.</string>
     <string name="contribution_title">Prisidėti</string>

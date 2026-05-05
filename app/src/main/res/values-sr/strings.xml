@@ -112,7 +112,7 @@
     <string name="best_resolution">Најбоља резолуција</string>
     <string name="settings_category_downloads_title">Преузимање</string>
     <string name="title_activity_about">О NewPipe</string>
-    <string name="tab_about">О нама и ЧПП</string>
+    <string name="tab_about">О нама</string>
     <string name="tab_licenses">Лиценце</string>
     <string name="app_description">Слободно и лагано токовање на Android-у.</string>
     <string name="view_on_github">Погледај на GitHub-у</string>

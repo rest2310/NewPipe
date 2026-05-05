@@ -601,7 +601,7 @@
         <item quantity="one">%s ଜଣ ଦେଖୁଛନ୍ତି</item>
         <item quantity="other">ମୋଟ %s ଜଣ ଦେଖୁଛନ୍ତି</item>
     </plurals>
-    <string name="tab_about">ବିଷୟରେ &amp; FAQ</string>
+    <string name="tab_about">ବିଷୟରେ</string>
     <string name="faq_title">ପ୍ରାୟତଃ ପଚରାଯାଇଥିବା ପ୍ରଶ୍ନ</string>
     <string name="faq_description">ଯଦି ଆପଣ ଆପ୍ ବ୍ୟବହାର କରିବାରେ ଅସୁବିଧାର ସମ୍ମୁଖୀନ ହେଉଛନ୍ତି, ସାଧାରଣ ପ୍ରଶ୍ନର ଏହି ଉତ୍ତରଗୁଡିକ ଯାଞ୍ଚ କରିବାକୁ ନିଶ୍ଚିତ ହୁଅନ୍ତୁ!</string>
     <string name="faq">ୱେବସାଇଟ୍ ରେ ଦେଖନ୍ତୁ</string>

@@ -159,7 +159,7 @@
     <string name="title_activity_about">על אודות NewPipe</string>
     <string name="title_licenses">רישיונות צד שלישי</string>
     <string name="copyright" formatted="true">© %1$s ע״י %2$s תחת %3$s</string>
-    <string name="tab_about">על אודות ושו״ת</string>
+    <string name="tab_about">על אודות</string>
     <string name="tab_licenses">רישיונות</string>
     <string name="app_description">נגן קל וחופשי להזרמת מדיה עבור Android.</string>
     <string name="contribution_title">התנדבות</string>

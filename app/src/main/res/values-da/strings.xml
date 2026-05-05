@@ -209,7 +209,7 @@
     <string name="title_activity_about">Om NewPipe</string>
     <string name="title_licenses">Tredjepartslicenser</string>
     <string name="copyright" formatted="true">© %1$s af %2$s under %3$s</string>
-    <string name="tab_about">Om &amp; Ofte Stillede Spørgsmål</string>
+    <string name="tab_about">Om</string>
     <string name="tab_licenses">Licenser</string>
     <string name="app_description">Fri letvægtsstreaming på Android.</string>
     <string name="contribution_title">Bidrag</string>

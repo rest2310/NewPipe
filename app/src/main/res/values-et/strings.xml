@@ -196,7 +196,7 @@
     <string name="charset_most_special_characters">Erimärgid</string>
     <string name="title_activity_about">Rakenduse teave: NewPipe</string>
     <string name="title_licenses">Kolmanda osapoole litsentsid</string>
-    <string name="tab_about">Rakenduse teave ja KKK</string>
+    <string name="tab_about">Rakenduse teave</string>
     <string name="tab_licenses">Litsentsid</string>
     <string name="contribution_title">Panusta</string>
     <string name="view_on_github">Vaata GitHubis</string>

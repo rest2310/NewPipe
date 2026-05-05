@@ -123,7 +123,7 @@
     <string name="title_activity_about">Om NewPipe</string>
     <string name="title_licenses">Tredjepartslisenser</string>
     <string name="copyright" formatted="true">© %1$s av %2$s lisensiert %3$s</string>
-    <string name="tab_about">Om og Ofte stilte spørsmål</string>
+    <string name="tab_about">Om</string>
     <string name="tab_licenses">Lisenser</string>
     <string name="app_description">Fri lett strømming på Android.</string>
     <string name="resume_on_audio_focus_gain_title">Fortsett avspilling</string>

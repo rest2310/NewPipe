@@ -197,7 +197,7 @@
     <string name="title_activity_about">ਨਿਊਪਾਈਪ ਬਾਰੇ ਵਿੱਚ ਜਾਣੋ</string>
     <string name="title_licenses">ਤੀਜੀ ਧਿਰ ਦੇ ਲਾਈਸੈਂਸ</string>
     <string name="copyright" formatted="true">%2$s ਵੱਲੋਂ © %1$s , %3$s ਅਧੀਨ</string>
-    <string name="tab_about">ਐਪ ਬਾਰੇ ਤੇ ਆਮ ਸਵਾਲ</string>
+    <string name="tab_about">ਐਪ ਬਾਰੇ</string>
     <string name="tab_licenses">ਲਾਈਸੈਂਸ</string>
     <string name="app_description">ਐਂਡਰਾਇਡ ਦੇ ਲਈ ਹਲਕੀ ਅਤੇ ਮੁਫ਼ਤ ਸਟ੍ਰੀਮਿੰਗ ਐਪਲੀਕੇਸ਼ਨ।</string>
     <string name="contribution_title">ਯੋਗਦਾਨ ਪਾਓ</string>

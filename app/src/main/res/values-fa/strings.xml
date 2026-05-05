@@ -172,7 +172,7 @@
     <string name="charset_letters_and_digits">حروف و اعداد</string>
     <string name="charset_most_special_characters">مهم‌ترین نویسه‌های خاص</string>
     <string name="title_activity_about">درباره نیوپایپ</string>
-    <string name="tab_about">درباره و سوالات‌متداول</string>
+    <string name="tab_about">درباره</string>
     <string name="tab_licenses">پروانه‌ها</string>
     <string name="app_description">پخش‌کننده آزاد سبُک برای اندروید.</string>
     <string name="contribution_title">مشارکت</string>

@@ -206,7 +206,7 @@
     <string name="notification_scale_to_square_image_title">அட்டைப் படத்தை 1:1 விகிதத்தில் செதுக்கவும்</string>
     <string name="search_showing_result_for">%s :க்கான முடிவுகளைக் காட்டுகிறது</string>
     <string name="open_with">இதனுடன் திற</string>
-    <string name="tab_about">பற்றி &amp; கேள்விகள்</string>
+    <string name="tab_about">பற்றி</string>
     <string name="title_activity_about">நியூபைப் பற்றி</string>
     <string name="trending">நடப்பு</string>
     <string name="download_failed">பதிவிறக்கம் தோல்வியடைந்தது</string>

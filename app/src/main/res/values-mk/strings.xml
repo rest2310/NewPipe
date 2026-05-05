@@ -190,7 +190,7 @@
     <string name="title_activity_about">За NewPipe</string>
     <string name="title_licenses">Лиценци од трети страни</string>
     <string name="copyright" formatted="true">© %1$s од %2$s под %3$s</string>
-    <string name="tab_about">За апликацијата и често поставувани прашања</string>
+    <string name="tab_about">За апликацијата</string>
     <string name="tab_licenses">Лиценци</string>
     <string name="app_description">Слободна, лесна YouTube апликација за Андроид.</string>
     <string name="contribution_title">Допринеси</string>

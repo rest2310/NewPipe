@@ -53,7 +53,7 @@
     <string name="app_update_notification_channel_description">Tilkynningar fyrir nýjar útgáfur NewPipe</string>
     <string name="clear_cookie_summary">Hreinsa vefkökur sem NewPipe geymir þegar þú leysir reCAPTCHA</string>
     <string name="error_report_notification_title">NewPipe rakst á villu, ýttu til að tilkynna hana</string>
-    <string name="tab_about">Um okkur og algengar spurningar</string>
+    <string name="tab_about">Um okkur</string>
     <string name="subscribe_button_title">Gerast áskrifandi</string>
     <string name="show_higher_resolutions_summary">Aðeins sum tæki geta spilað 2K/4K myndskeið</string>
     <string name="play_with_kodi_title">Spila með Kodi</string>

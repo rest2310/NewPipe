@@ -195,7 +195,7 @@
     <string name="charset_letters_and_digits">Betűk és számok</string>
     <string name="charset_most_special_characters">Legtöbb speciális karakter</string>
     <string name="title_activity_about">A NewPipe névjegye</string>
-    <string name="tab_about">Névjegy és GYIK</string>
+    <string name="tab_about">Névjegy</string>
     <string name="tab_licenses">Licencek</string>
     <string name="app_description">Szabad, egyszerű közvetítésnézés Androidon.</string>
     <string name="contribution_title">Közreműködés</string>

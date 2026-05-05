@@ -86,7 +86,7 @@
     <string name="title_activity_about">关于 NewPipe</string>
     <string name="title_licenses">第三方许可</string>
     <string name="copyright" formatted="true">© %1$s 由 %2$s 遵循 %3$s 协议发布</string>
-    <string name="tab_about">关于和常见问题</string>
+    <string name="tab_about">关于</string>
     <string name="tab_licenses">许可证</string>
     <string name="settings_category_downloads_title">下载</string>
     <string name="settings_file_charset_title">文件名中允许的字符</string>
