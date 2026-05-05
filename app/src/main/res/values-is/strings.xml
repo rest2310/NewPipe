@@ -393,8 +393,6 @@
     <string name="title_activity_play_queue">Spilunarröð</string>
     <string name="enqueue_next_stream">Bæta við</string>
     <string name="enqueued_next">Í röð næst</string>
-    <string name="drawer_open">Opna skúffu</string>
-    <string name="drawer_close">Loka skúffu</string>
     <string name="playlist_creation_success">Spilunarlisti búinn til</string>
     <string name="bookmark_playlist">Bókamerkja spilunarlista</string>
     <string name="unbookmark_playlist">Fjarlægja bókamerki</string>
@@ -516,7 +514,6 @@
     <string name="saved_tabs_invalid_json">Gat ekki lesið vistaða flipa þannig að mun nota sjálfgefna</string>
     <string name="detail_thumbnail_view_description">Spila myndskeið, lengd:</string>
     <string name="detail_uploader_thumbnail_view_description">Smámynd höfundar</string>
-    <string name="drawer_header_description">Víxla þjónustu. Nú valin:</string>
     <plurals name="new_streams">
         <item quantity="one">%s nýtt streymi</item>
         <item quantity="other">%s ný streymi</item>

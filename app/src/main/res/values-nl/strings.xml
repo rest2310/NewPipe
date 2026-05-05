@@ -189,8 +189,6 @@
     <string name="switch_to_background">Verplaatsen naar achtergrond</string>
     <string name="switch_to_popup">Verplaatsen naar pop-up</string>
     <string name="switch_to_main">Verplaatsen naar hoofdvenster</string>
-    <string name="drawer_open">Menu openen</string>
-    <string name="drawer_close">Menu sluiten</string>
     <string name="no_player_found_toast">Geen speler met streamondersteuning gevonden (je kan VLC installeren om af te spelen).</string>
     <string name="always">Altijd</string>
     <string name="just_once">Eénmalig</string>
@@ -478,7 +476,6 @@
 \nYouTube is een voorbeeld van een service die deze snelle methode aanbiedt door zijn RSS-feed.
 \n
 \nDe keuze komt dus neer op wat je liever hebt: snelheid of precieze informatie.</string>
-    <string name="drawer_header_description">Service wisselen, momenteel geselecteerd:</string>
     <string name="most_liked">Meest geliked</string>
     <string name="error_postprocessing_stopped">NewPipe werd gesloten terwijl het bezig was met het bestand</string>
     <string name="songs">Nummers</string>

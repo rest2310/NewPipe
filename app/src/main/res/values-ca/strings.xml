@@ -207,8 +207,6 @@
     <string name="override_current_data">Això sobreescriurà els paràmetres actuals.</string>
     <string name="trending">Tendències</string>
     <string name="top_50">Els millors 50</string>
-    <string name="drawer_open">Obre el calaix</string>
-    <string name="drawer_close">Tanca el calaix</string>
     <string name="preferred_player_fetcher_notification_title">S\'està obtenint la informació…</string>
     <string name="preferred_player_fetcher_notification_message">S\'està carregant el contingut seleccionat</string>
     <string name="delete_playlist_prompt">Voleu eliminar aquesta llista de reproducció\?</string>
@@ -396,7 +394,6 @@
     <string name="clear_playback_states_title">Esborra les posicions de reproducció</string>
     <string name="clear_playback_states_summary">Esborra totes les posicions de reproducció</string>
     <string name="delete_playback_states_alert">Voleu suprimir tots els punts de reproducció\?</string>
-    <string name="drawer_header_description">In/Habilita el servei; selecció actual:</string>
     <string name="no_one_watching">Cap visualització</string>
     <plurals name="watching">
         <item quantity="one">%s visualització</item>

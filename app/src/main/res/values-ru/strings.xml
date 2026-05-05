@@ -209,8 +209,6 @@
     <string name="give_back">Воздать должное</string>
     <string name="website_title">Веб-сайт</string>
     <string name="website_encouragement">Для получения более подробной информации и последних новостей о NewPipe посетите наш веб-сайт.</string>
-    <string name="drawer_open">Открыть боковую панель</string>
-    <string name="drawer_close">Закрыть боковую панель</string>
     <string name="video_player">Видеоплеер</string>
     <string name="background_player">Фоновый плеер</string>
     <string name="popup_player">Плеер в окне</string>
@@ -410,7 +408,6 @@
     <string name="clear_playback_states_title">Очистить позиции воспроизведения</string>
     <string name="clear_playback_states_summary">Удалить все позиции воспроизведения</string>
     <string name="delete_playback_states_alert">Удалить все позиции воспроизведения\?</string>
-    <string name="drawer_header_description">Переключение сервисов, сейчас выбрано:</string>
     <string name="default_kiosk_page_summary">Киоск по умолчанию</string>
     <string name="no_one_watching">Никто не смотрел</string>
     <plurals name="watching">

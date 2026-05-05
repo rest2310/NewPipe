@@ -214,8 +214,6 @@
     <string name="no_valid_zip_file">कोई वैध ज़िप फ़ाइल नहीं है</string>
     <string name="could_not_import_all_files">चेतावनी: सभी फ़ाइलों को आयात नहीं किया जा सका।</string>
     <string name="override_current_data">यह आपके वर्तमान सेटअप को ओवरराइड कर देगा।</string>
-    <string name="drawer_open">ड्रावर खोलें</string>
-    <string name="drawer_close">ड्रावर बंद करें</string>
     <string name="video_player">वीडियो प्लेयर</string>
     <string name="background_player">बैकग्राउंड प्लेयर</string>
     <string name="popup_player">पॉपअप प्लेयर</string>
@@ -401,7 +399,6 @@
     <string name="show_error">त्रुटि दिखाएं</string>
     <string name="error_http_unsupported_range">सर्वर मल्टी थ्रेडेड डाउनलोड स्वीकार नहीं करता, @string/msg_threads = 1 के साथ पुनः कोशिश करें</string>
     <string name="downloads_storage_use_saf_summary">\'स्टोरेज एक्सेस फ्रेमवर्क\' आपको बाहरी एसडी कार्ड पर डाउनलोड करने देता है</string>
-    <string name="drawer_header_description">सेवा चुनें, वर्तमान चुनाव :</string>
     <string name="default_kiosk_page_summary">डिफ़ॉल्ट कियोस्क</string>
     <string name="no_one_watching">कोई दर्शक नहीं देख रहा</string>
     <plurals name="watching">

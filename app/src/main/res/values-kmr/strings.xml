@@ -48,7 +48,6 @@
         <item quantity="other">%s abonekirin</item>
     </plurals>
     <string name="no_subscribers">Ne abone</string>
-    <string name="drawer_header_description">Karûbarê veguheztinê, niha hatî hilbijartin:</string>
     <string name="retry">Dîsa biceribîne</string>
     <string name="audio">Deng</string>
     <string name="video">Vîdyo</string>
@@ -478,8 +477,6 @@
     <string name="video_player">Vîdyo listikvanêr</string>
     <string name="preferred_open_action_settings_summary">Dema vekirina naverokê çalakiya neraza — %s</string>
     <string name="preferred_open_action_settings_title">Çalakiya \'vekirî\' ya bijarte</string>
-    <string name="drawer_close">Drawerê bigire</string>
-    <string name="drawer_open">Dirûvê Vekirî</string>
     <string name="start_here_on_popup">Di popupek de dest bi lîstinê bikin</string>
     <string name="start_here_on_background">Destpêk lîstina li paş</string>
     <string name="enqueued">Rêzkirî</string>

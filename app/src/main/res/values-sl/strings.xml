@@ -337,8 +337,6 @@
     <string name="popup_player">Predvajalnik v pojavnem oknu</string>
     <string name="preferred_open_action_settings_summary">Privzeto dejanje ob odprtju vsebine — %s</string>
     <string name="preferred_open_action_settings_title">Prednostno dejanje \'odpri\'</string>
-    <string name="drawer_close">Zapri omaro</string>
-    <string name="drawer_open">Odpri omaro</string>
     <string name="start_here_on_popup">Začni predvajati v pojavnem oknu</string>
     <string name="enqueued">Uvrščeno</string>
     <string name="enqueue_stream">Uvrsti</string>
@@ -372,7 +370,6 @@
         <item quantity="other">%s gledalcev</item>
     </plurals>
     <string name="subscribers_count_not_available">Število naročnikov ni na voljo</string>
-    <string name="drawer_header_description">Vklop/izklop storitve, trenutno izbrana:</string>
     <string name="detail_drag_description">Povlecite za preureditev</string>
     <string name="description_tab_description">Opis</string>
     <string name="related_items_tab_description">Podobni pretoki</string>

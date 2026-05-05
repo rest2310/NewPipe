@@ -258,7 +258,6 @@
         <item quantity="other">%s obunachilar</item>
     </plurals>
     <string name="no_subscribers">Obunachilar yo\'q</string>
-    <string name="drawer_header_description">Hozirda tanlangan xizmatni yoqish:</string>
     <string name="retry">Qayta</string>
     <string name="audio">Audio</string>
     <string name="video">Video</string>
@@ -514,8 +513,6 @@
     <string name="background_player">Fon pleyeri</string>
     <string name="preferred_open_action_settings_summary">Tarkibni ochishda standart harakat - %s</string>
     <string name="preferred_open_action_settings_title">\"Ochiq\" harakat afzal</string>
-    <string name="drawer_close">Yopiq Tortma</string>
-    <string name="drawer_open">Ochiq Tortma</string>
     <string name="start_here_on_background">Orqa fonda ijroni boshlash</string>
     <string name="start_here_on_popup">Pop-up rejimida ijroni boshlash</string>
     <string name="enqueued">Qo\'shildi</string>

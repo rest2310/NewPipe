@@ -378,8 +378,6 @@
     <string name="background_player">Reproductor en segundu planu</string>
     <string name="video_player">Reproductor de videu</string>
     <string name="preferred_open_action_settings_summary">L\'aición predeterminada al abrir conteníu — %s</string>
-    <string name="drawer_close">Zarrar el caxón</string>
-    <string name="drawer_open">Abrir el caxón</string>
     <string name="enqueued">Amestóse a la cola</string>
     <string name="enqueue_stream">Amestar a la cola</string>
     <string name="hold_to_append">Ten primío p\'amestar a la cola</string>
@@ -428,7 +426,6 @@
     </plurals>
     <string name="no_one_watching">Nun hai espectadores</string>
     <string name="no_subscribers">Nun hai soscriptores</string>
-    <string name="drawer_header_description">Alternar el serviciu, esbillóse:</string>
     <string name="retry">Retentar</string>
     <string name="detail_drag_description">Arrastra pa reordenar</string>
     <string name="detail_uploader_thumbnail_view_description">Avatar del xubidor</string>

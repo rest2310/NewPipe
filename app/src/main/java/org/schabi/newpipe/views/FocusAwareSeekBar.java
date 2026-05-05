@@ -1,6 +1,6 @@
 /*
  * Copyright (C) Eltex ltd 2019 <eltex@eltex-co.ru>
- * FocusAwareDrawerLayout.java is part of NewPipe.
+ * FocusAwareSeekBar.java is part of NewPipe.
  *
  * NewPipe is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

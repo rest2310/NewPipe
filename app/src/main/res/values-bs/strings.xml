@@ -280,7 +280,6 @@
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>
-    <string name="drawer_header_description">Uključi/isključi uslugu, trenutno odabrana:</string>
     <string name="no_subscribers">Nema pretplatnika</string>
     <string name="subscribers_count_not_available">Broj pretplatnika nije dostupan</string>
     <string name="no_views">Nema pregleda</string>
@@ -396,8 +395,6 @@
     <string name="start_here_on_background">Počni reprodukciju u pozadini</string>
     <string name="start_here_on_popup">Počnite igrati u iskačućem prozoru</string>
     <string name="loading_stream_details">Učitavanje detalja toka…</string>
-    <string name="drawer_open">Otvori ladicu</string>
-    <string name="drawer_close">Zatvori ladicu</string>
     <string name="preferred_open_action_settings_title">Preferirana akcija \'otvaranja\'</string>
     <string name="preferred_open_action_settings_summary">Zadana radnja pri otvaranju sadržaja — %s</string>
     <string name="video_player">Video plejer</string>

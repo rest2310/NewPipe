@@ -220,8 +220,6 @@
     <string name="no_valid_zip_file">Ficheiro ZIP inválido</string>
     <string name="could_not_import_all_files">Aviso: não foi possível importar todos os ficheiros.</string>
     <string name="override_current_data">Está prestes a substituir a configuração atual.</string>
-    <string name="drawer_open">Abrir menu</string>
-    <string name="drawer_close">Fechar menu</string>
     <string name="name">Nome</string>
     <string name="metadata_cache_wipe_title">Limpar meta-dados em cache</string>
     <string name="metadata_cache_wipe_summary">Limpar todos os dados da página web</string>
@@ -404,7 +402,6 @@
     <string name="clear_playback_states_title">Remover posições de reprodução</string>
     <string name="clear_playback_states_summary">Remove todas as posições de reprodução</string>
     <string name="delete_playback_states_alert">Remover todas as posições de reprodução\?</string>
-    <string name="drawer_header_description">Alternar serviço atualmente selecionado:</string>
     <string name="default_kiosk_page_summary">\'Kiosk\' padrão</string>
     <string name="no_one_watching">Ninguém está a ver</string>
     <plurals name="watching">

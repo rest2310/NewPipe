@@ -198,8 +198,6 @@
     <string name="start_here_on_popup">在彈出式視窗中開始播放</string>
     <string name="hold_to_append">長按以新增至佇列</string>
     <string name="donation_encouragement">NewPipe 由志願者所開發，他們花費他們的空閒時間務求為您帶來最佳的使用體驗。現在是時候回過頭來，讓我們的開發人員能夠在使 NewPipe 更臻完美的同時，享受一杯咖啡。</string>
-    <string name="drawer_open">打開抽屜</string>
-    <string name="drawer_close">關閉抽屜</string>
     <string name="video_player">影片播放器</string>
     <string name="background_player">背景播放器</string>
     <string name="popup_player">懸浮視窗播放器</string>
@@ -387,7 +385,6 @@
     <string name="clear_playback_states_title">刪除播放位置</string>
     <string name="clear_playback_states_summary">刪除所有播放位置</string>
     <string name="delete_playback_states_alert">刪除所有播放位置？</string>
-    <string name="drawer_header_description">切換服務，目前已選取：</string>
     <plurals name="videos">
         <item quantity="other">%s 部影片</item>
     </plurals>

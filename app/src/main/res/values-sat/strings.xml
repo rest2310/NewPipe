@@ -237,7 +237,6 @@
     <string name="hold_to_append">ᱥᱮᱞᱮᱫᱚᱜ ᱞᱟᱹᱜᱤᱫ ᱫᱚᱦᱚᱭ ᱢᱮ</string>
     <string name="enqueue_next_stream">ᱛᱟᱭᱚᱢ ᱛᱮ Enqueue</string>
     <string name="enqueued_next">ᱛᱟᱭᱚᱢ ᱛᱮ ᱥᱮᱞᱮᱫ ᱢᱮ</string>
-    <string name="drawer_open">ᱚᱯᱮᱱ ᱰᱨᱟᱵᱷᱤᱴ</string>
     <string name="preferred_open_action_settings_title">ᱵᱟᱹᱲᱛᱤ ᱞᱟᱹᱠᱛᱤᱭᱟᱱ \"ᱚᱯᱮᱱ\" ᱠᱟᱹᱢᱤ</string>
     <string name="preferred_open_action_settings_summary">⁇ %s ᱡᱚᱠᱷᱚᱱ ᱥᱟᱦᱴᱟ ᱵᱚᱫᱚᱞᱚᱜ-ᱟ</string>
     <string name="video_player">ᱵᱷᱤᱰᱤᱭᱳ ᱯᱞᱮᱭᱟᱨ</string>
@@ -462,7 +461,6 @@
     <string name="detail_drag_description">ᱱᱟᱣᱟ ᱟᱹᱨᱡᱤ ᱞᱟᱹᱜᱤᱫ ᱟᱹᱪᱩᱨ ᱢᱮ</string>
     <string name="audio">ᱚᱰᱤᱭᱳ</string>
     <string name="retry">ᱟᱨᱦᱚᱸ ᱯᱟᱲᱦᱟᱣ ᱢᱮ</string>
-    <string name="drawer_header_description">ᱱᱤᱛᱚᱜ ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ ᱴᱳᱜᱞ ᱥᱮᱵᱟ:</string>
     <string name="no_subscribers">ᱚᱵᱷᱤᱱᱮᱛᱟᱨ ᱵᱟᱹᱱᱩᱜᱼᱟ</string>
     <string name="no_one_watching">ᱚᱠᱚᱭ ᱦᱚᱸ ᱵᱟᱝ ᱧᱮᱞᱚᱜ ᱠᱟᱱᱟ</string>
     <string name="done">ᱜᱚᱴᱟ ᱟᱠᱟᱱᱟ</string>
@@ -508,7 +506,6 @@
     <string name="play_queue_audio_settings">ᱚᱰᱤᱭᱳ ᱥᱮᱴᱤᱝ</string>
     <string name="play_queue_audio_track">ᱚᱰᱤᱭᱳ: %s</string>
     <string name="loading_stream_details">ᱥᱴᱨᱤᱢ ᱨᱮᱱᱟᱜ ᱰᱮᱴᱮᱞ ᱞᱚᱰ ᱠᱟᱱᱟ…</string>
-    <string name="drawer_close">ᱥᱩᱯᱚᱨ ᱰᱨᱟᱵᱷᱤᱴ</string>
     <string name="create_playlist">ᱱᱟᱶᱟ ᱯᱞᱮᱭᱞᱤᱥᱴ</string>
     <string name="mute">ᱢᱩᱴ</string>
     <string name="start_here_on_popup">ᱢᱤᱫ ᱯᱚᱯ-ᱟᱯ ᱨᱮ ᱠᱷᱮᱞᱚᱸᱰ ᱮᱛᱚᱦᱚᱵ ᱢᱮ</string>

@@ -192,8 +192,6 @@
     <string name="switch_to_background">Basculer en arrière-plan</string>
     <string name="switch_to_popup">Basculer en mode flottant</string>
     <string name="switch_to_main">Basculer en principal</string>
-    <string name="drawer_open">Ouvrir le menu</string>
-    <string name="drawer_close">Fermer le menu</string>
     <string name="no_player_found_toast">Aucun lecteur de flux trouvé (vous pouvez installer VLC pour le lire).</string>
     <string name="always">Toujours</string>
     <string name="just_once">Une seule fois</string>
@@ -404,7 +402,6 @@
     <string name="clear_playback_states_title">Supprimer les positions de reprise de lecture</string>
     <string name="clear_playback_states_summary">Supprime toutes les positions de reprise de lecture</string>
     <string name="delete_playback_states_alert">Voulez-vous supprimer toutes les positions de reprise de lecture \?</string>
-    <string name="drawer_header_description">Basculer le service, actuellement sélectionné :</string>
     <string name="default_kiosk_page_summary">Kiosque par défaut</string>
     <string name="no_one_watching">Personne ne regarde</string>
     <plurals name="watching">

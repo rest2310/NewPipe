@@ -246,8 +246,6 @@
     <string name="hold_to_append">Πιέστε παρατεταμένα για προσθήκη στην ουρά</string>
     <string name="start_here_on_background">Εκκίνηση αναπαραγωγής στο παρασκήνιο</string>
     <string name="start_here_on_popup">Εκκίνηση αναπαραγωγής σε ένα αναδυόμενο παράθυρο</string>
-    <string name="drawer_open">Άνοιγμα συρταριού</string>
-    <string name="drawer_close">Κλείσιμο συρταριού</string>
     <string name="top_50">Τοπ 50</string>
     <string name="new_and_hot">Καινούρια και δημοφιλή</string>
     <string name="preferred_open_action_settings_title">Προτιμώμενη ενέργεια κοινοποίησης</string>
@@ -401,7 +399,6 @@
     <string name="clear_playback_states_title">Διαγραφή θέσεων αναπαραγωγής</string>
     <string name="clear_playback_states_summary">Διαγράφει όλες τις θέσεις αναπαραγωγής</string>
     <string name="delete_playback_states_alert">Να διαγραφούν όλες οι θέσεις αναπαραγωγής;</string>
-    <string name="drawer_header_description">Εναλλαγή υπηρεσιών, επιλεγμένη αυτή τη στιγμή:</string>
     <string name="no_one_watching">Κανείς δεν παρακολουθεί</string>
     <plurals name="watching">
         <item quantity="one">%s παρακολουθεί</item>

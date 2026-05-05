@@ -249,8 +249,6 @@
     <string name="could_not_import_all_files">Varning: det gick inte att importera alla filer.</string>
     <string name="override_current_data">Det här kommer skriva över dina nuvarande inställningar.</string>
     <string name="import_settings">Vill du också importera inställningar?</string>
-    <string name="drawer_open">Öppna navigationspanelen</string>
-    <string name="drawer_close">Stäng navigationspanelen</string>
     <string name="preferred_open_action_settings_title">Föredragen \"öppna\" åtgärd</string>
     <string name="preferred_open_action_settings_summary">Standardåtgärden när du öppnar innehåll — %s</string>
     <string name="video_player">Videospelare</string>
@@ -396,7 +394,6 @@
         <item quantity="other">%s tittar</item>
     </plurals>
     <string name="no_one_watching">Ingen tittar</string>
-    <string name="drawer_header_description">Växla tjänst, för närvarande vald:</string>
     <string name="permission_display_over_apps">Ge behörighet att visa över andra appar</string>
     <string name="no_one_listening">Ingen lyssnar</string>
     <string name="default_kiosk_page_summary">Standardkiosk</string>

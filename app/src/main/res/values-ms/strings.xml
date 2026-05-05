@@ -258,8 +258,6 @@
     <string name="hold_to_append">Pegang untuk beratur</string>
     <string name="start_here_on_background">Mula di sini apabila di latar belakang</string>
     <string name="start_here_on_popup">Mula di sini pada popup baru</string>
-    <string name="drawer_open">Buka Laci</string>
-    <string name="drawer_close">Tutup Laci</string>
     <string name="preferred_open_action_settings_title">Tindakan \'buka\' yang diinginkan</string>
     <string name="preferred_open_action_settings_summary">Tindakan utama apabila membuka kandungan — %s</string>
     <string name="video_player">Pemain video</string>

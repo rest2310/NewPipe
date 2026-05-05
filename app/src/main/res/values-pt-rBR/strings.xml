@@ -284,8 +284,6 @@
     <string name="preferred_open_action_settings_title">Ação preferida ao tocar em \'Abrir\'</string>
     <string name="preferred_open_action_settings_summary">Ação padrão ao abrir conteúdo — %s</string>
     <string name="no_streams_available_download">Nenhum vídeo disponível para download</string>
-    <string name="drawer_open">Abrir gaveta</string>
-    <string name="drawer_close">Fechar gaveta</string>
     <string name="caption_setting_title">Legendas</string>
     <string name="caption_setting_description">Mudar tamanho da legenda e estilos de plano de fundo. Requer reiniciar o aplicativo para ter efeito</string>
     <string name="clear_views_history_title">Remover histórico de reprodução</string>
@@ -404,7 +402,6 @@
     <string name="clear_playback_states_title">Remover posições de reprodução</string>
     <string name="clear_playback_states_summary">Remove todas as posições de reprodução</string>
     <string name="delete_playback_states_alert">Remover todas as posições de reprodução?</string>
-    <string name="drawer_header_description">Alternar serviço, atualmente selecionado:</string>
     <string name="default_kiosk_page_summary">Kiosk padrão</string>
     <string name="no_one_watching">Ninguém está assistindo</string>
     <plurals name="watching">

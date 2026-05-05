@@ -245,8 +245,6 @@
     <string name="hold_to_append">Chờ để thêm vào hàng đợi</string>
     <string name="start_here_on_background">Bắt đầu phát trong nền</string>
     <string name="start_here_on_popup">Bắt đầu phát trong cửa sổ bật lên</string>
-    <string name="drawer_open">Mở ngăn kéo</string>
-    <string name="drawer_close">Đóng ngăn</string>
     <string name="preferred_open_action_settings_title">Ưu tiên hành động \'mở\'</string>
     <string name="preferred_open_action_settings_summary">Hành động mặc định khi mở nội dung — %s</string>
     <string name="video_player">Trình phát video</string>
@@ -449,7 +447,6 @@
     <string name="seek_duration_title">Thời lượng tua-nhanh tới/-lùi</string>
     <string name="show_original_time_ago_summary">Dòng chữ mô tả thời gian gốc từ các dịch vụ sẽ được hiển thị thay thế</string>
     <string name="show_original_time_ago_title">Hiển thị thời gian ban đầu trước đây trên các mục</string>
-    <string name="drawer_header_description">Chọn dịch vụ; dịch vụ hiện tại:</string>
     <string name="video_detail_by">Bởi %s</string>
     <string name="channel_created_by">Được tạo bởi %s</string>
     <string name="detail_sub_channel_thumbnail_view_description">Ảnh đại diện của kênh</string>

@@ -231,7 +231,6 @@
     <string name="video">ვიდეო</string>
     <string name="audio">აუდიო</string>
     <string name="retry">ხელახლა სცადეთ</string>
-    <string name="drawer_header_description">სერვისის გადართვა, ამჟამად არჩეულია:</string>
     <string name="no_subscribers">გამოწერები არ არის</string>
     <plurals name="subscribers">
         <item quantity="one">%s გამომწერი</item>
@@ -340,8 +339,6 @@
     <string name="enqueue_next_stream">რიგი შემდეგი</string>
     <string name="start_here_on_background">დაიწყეთ დაკვრა ფონზე</string>
     <string name="loading_stream_details">ნაკადის დეტალების ჩატვირთვა…</string>
-    <string name="drawer_open">გახსენით უჯრა</string>
-    <string name="drawer_close">დახურეთ უჯრა</string>
     <string name="preferred_open_action_settings_title">სასურველი \"ღია\" მოქმედება</string>
     <string name="preferred_open_action_settings_summary">ნაგულისხმევი მოქმედება შინაარსის გახსნისას — %s</string>
     <string name="video_player">ვიდეო დამკვრელი</string>

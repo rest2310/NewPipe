@@ -201,8 +201,6 @@
     <string name="switch_to_background">الإنتقال إلى التشغيل في الخلفية</string>
     <string name="switch_to_popup">الإنتقال إلى التشغيل في النافذة المنبثقة</string>
     <string name="switch_to_main">الإنتقال إلى الرئيسية</string>
-    <string name="drawer_open">فتح الدرج</string>
-    <string name="drawer_close">إغلاق الدرج</string>
     <string name="always">دائماً</string>
     <string name="just_once">مرة واحدة فقط</string>
     <string name="no_player_found_toast">لم يتم العثور على مشغل بث (يمكنك تثبيت VLC لتشغيله).</string>
@@ -413,7 +411,6 @@
     <string name="clear_playback_states_title">حذف مواقف التشغيل</string>
     <string name="clear_playback_states_summary">حذف كل مواقف التشغيل</string>
     <string name="delete_playback_states_alert">حذف كل مواقف التشغيل؟</string>
-    <string name="drawer_header_description">تبديل الخدمة، المحدد حاليًا:</string>
     <string name="default_kiosk_page_summary">الكشك الافتراضي</string>
     <string name="no_one_watching">لا توجد مشاهدة</string>
     <string name="no_one_listening">لا أحد يستمع</string>

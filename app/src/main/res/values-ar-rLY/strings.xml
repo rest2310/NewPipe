@@ -462,7 +462,6 @@
     <string name="metadata_age_limit">الحد العمري</string>
     <string name="no_app_to_open_intent">لا يوجد تطبيق على جهازك يمكنه فتح هذا</string>
     <string name="msg_wait">يُرجى الإنتظار…</string>
-    <string name="drawer_header_description">تبديل الخدمة، المحدد حاليًا:</string>
     <string name="enable_watch_history_title">سجل المشاهدة</string>
     <string name="image_quality_none">لا تقم بتحميل الصور</string>
     <string name="enable_streams_notifications_summary">الإخطار بأحداث البث الجديدة من الاشتراكات</string>
@@ -515,7 +514,6 @@
     <string name="comments_are_disabled">تم تعطيل التعليقات</string>
     <string name="website_title">موقع الويب</string>
     <string name="enable_search_history_title">سجل البحث</string>
-    <string name="drawer_open">فتح الدرج</string>
     <string name="infinite_videos">∞ فيديو</string>
     <string name="error_http_unsupported_range">الخادم لا يقبل التنزيل المتعدد، إعادة المحاولة مع @string/msg_threads = 1</string>
     <string name="playback_reset">إعادة تعيين</string>
@@ -568,7 +566,6 @@
     <string name="prefer_descriptive_audio_title">تفضل الصوت الوصفي</string>
     <string name="notification_action_shuffle">خلط</string>
     <string name="autoplay_summary">بدء التشغيل تلقائياً — %s</string>
-    <string name="drawer_close">إغلاق الدرج</string>
     <string name="content_not_supported">هذا المحتوى ليس مدعومًا من قبل NewPipe.
 \n
 \nنأمل أن يكون مدعومًا في التحديثات القادمة.</string>

@@ -181,8 +181,6 @@
     <string name="create_playlist">নতুন প্লে লিস্ট</string>
     <string name="always_ask_open_action">সবসময় জিজ্ঞেস করুন</string>
     <string name="video_player">ভিডিও প্লেয়ার</string>
-    <string name="drawer_close">ড্রয়ার বন্ধ করুন</string>
-    <string name="drawer_open">ড্রয়ার খুলন</string>
     <string name="play_queue_audio_settings">অডিও সেটিং</string>
     <string name="recently_added">সাম্প্রতিক যুক্ত</string>
     <string name="new_and_hot">নতুন এবং হট</string>

@@ -404,7 +404,6 @@
     <string name="remove_watched_popup_title">ଦେଖାଯାଇଥିବା ଭିଡିଓଗୁଡିକ ଅପସାରଣ କରିବେ କି?</string>
     <string name="description_select_disable">ବର୍ଣ୍ଣନାରେ ପାଠ ବାଛିବା ଅକ୍ଷମ କରନ୍ତୁ</string>
     <string name="error_ssl_exception">ଏକ ସୁରକ୍ଷିତ ସଂଯୋଗ ସ୍ଥାପନ କରିପାରିଲା ନାହିଁ</string>
-    <string name="drawer_header_description">ଟୋଗଲ୍ ସେବା, ବର୍ତ୍ତମାନ ମନୋନୀତ:</string>
     <string name="give_back">ଫେରସ୍ତ କର</string>
     <string name="overwrite">ଓଭର୍ ରାଇଟ୍ କରନ୍ତୁ</string>
     <string name="metadata_host">ହୋଷ୍ଟ</string>
@@ -623,8 +622,6 @@
     <string name="start_here_on_background">ପୃଷ୍ଠଭୂମିରେ ଖେଳିବା ଆରମ୍ଭ କରନ୍ତୁ</string>
     <string name="start_here_on_popup">ଏକ ପପ୍ଅପ୍ ରେ ଖେଳିବା ଆରମ୍ଭ କରନ୍ତୁ</string>
     <string name="loading_stream_details">ଷ୍ଟ୍ରିମ୍ ବିବରଣୀ ଲୋଡ୍ କରୁଛି…</string>
-    <string name="drawer_open">ଡ୍ରୟର ଖୋଲନ୍ତୁ</string>
-    <string name="drawer_close">ଡ୍ରୟର ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="preferred_open_action_settings_title">ପସନ୍ଦିତ \'ଖୋଲା\' କ୍ରିୟା</string>
     <string name="preferred_open_action_settings_summary">ବିଷୟବସ୍ତୁ ଖୋଲିବା ସମୟରେ ଡିଫଲ୍ଟ କାର୍ଯ୍ୟ -%s</string>
     <string name="video_player">ଭିଡିଓ ପ୍ଲେୟାର</string>

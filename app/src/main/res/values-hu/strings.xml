@@ -515,8 +515,6 @@
     <string name="youtube_restricted_mode_enabled_title">A YouTube „Korlátozott mód” bekapcsolása</string>
     <string name="enable_disposed_exceptions_title">Életciklusából kifutott hibák jelentése</string>
     <string name="preferred_open_action_settings_title">Előnyben részesített „megnyitási” művelet</string>
-    <string name="drawer_close">Fiók bezárása</string>
-    <string name="drawer_open">Fiók megnyitása</string>
     <string name="show_channel_details">Csatorna részleteinek megjelenítése</string>
     <string name="hold_to_append">Tartsa a sorba állításhoz</string>
     <string name="default_kiosk_page_summary">Alapértelmezett témagyűjtemény</string>
@@ -531,7 +529,6 @@
     <string name="remote_search_suggestions">Távoli keresési javaslatok</string>
     <string name="start_main_player_fullscreen_title">A fő lejátszó teljes képernyős indítása</string>
     <string name="start_main_player_fullscreen_summary">A videókat ne a kis lejátszóban indítsa el, hanem kapcsolja be a teljes képernyős módot, ha az automatikus forgatás zárolva van. Továbbra is elérheti a kis lejátszót, ha kilép a teljes képernyőből</string>
-    <string name="drawer_header_description">Szolgáltatás be/ki, jelenleg kiválasztott:</string>
     <string name="comments_are_disabled">A hozzászólások ki vannak kapcsolva</string>
     <string name="main_page_content_swipe_remove">Húzza oldalra az elemeket az eltávolításukhoz</string>
     <string name="enqueue_next_stream">A következő sorba állítása</string>

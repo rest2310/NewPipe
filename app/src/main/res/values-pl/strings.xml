@@ -225,8 +225,6 @@
     <string name="no_valid_zip_file">Nieprawidłowy plik ZIP</string>
     <string name="could_not_import_all_files">Ostrzeżenie: Nie udało się zaimportować wszystkich plików</string>
     <string name="override_current_data">Zastąpi to obecne ustawienia.</string>
-    <string name="drawer_open">Otwórz menu</string>
-    <string name="drawer_close">Zamknij menu</string>
     <string name="popup_player">Odtwarzacz w trybie okienkowym</string>
     <string name="always_ask_open_action">Zawsze pytaj</string>
     <string name="create_playlist">Nowa playlista</string>
@@ -407,7 +405,6 @@
     <string name="clear_playback_states_title">Wyczyść pozycje odtwarzania</string>
     <string name="clear_playback_states_summary">Usuwa wszystkie pozycje odtwarzania</string>
     <string name="delete_playback_states_alert">Usunąć wszystkie pozycje odtwarzania\?</string>
-    <string name="drawer_header_description">Przełącz usługę, aktualnie wybrana:</string>
     <string name="default_kiosk_page_summary">Domyślna karta „Odkrywaj”</string>
     <string name="no_one_watching">Nikt nie ogląda</string>
     <plurals name="watching">

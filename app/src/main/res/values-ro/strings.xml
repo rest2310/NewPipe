@@ -227,8 +227,6 @@
     <string name="hold_to_append">Apăsați pentru a adăuga în coadă</string>
     <string name="start_here_on_background">Începeți redarea în fundal</string>
     <string name="start_here_on_popup">Începeți redarea în popup</string>
-    <string name="drawer_open">Deschdeți sertarul</string>
-    <string name="drawer_close">Închideți sertarul</string>
     <string name="preferred_open_action_settings_title">Opțiunea de deschidere preferată</string>
     <string name="preferred_open_action_settings_summary">Acțiune implicită la deschiderea conținutului - %s</string>
     <string name="video_player">Player Video</string>
@@ -558,7 +556,6 @@
         <item quantity="other">%s spectatori</item>
     </plurals>
     <string name="no_one_watching">Nimeni nu se uită</string>
-    <string name="drawer_header_description">Comutare serviciu, selectat în prezent:</string>
     <string name="description_tab_description">Descriere</string>
     <string name="related_items_tab_description">Articole similare</string>
     <string name="comments_tab_description">Comentarii</string>

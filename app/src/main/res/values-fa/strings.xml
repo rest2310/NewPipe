@@ -295,8 +295,6 @@
     <string name="give_back">حمایت</string>
     <string name="website_encouragement">برای اطلاعات و اخبار بیشتر، به وب‌سایت نیوپایپ سر بزنید.</string>
     <string name="switch_to_popup">تغییر وضعیت به تصویر در تصویر</string>
-    <string name="drawer_open">باز کردن کشو</string>
-    <string name="drawer_close">بستن کشو</string>
     <string name="external_player_unsupported_link_type">پخش‌کننده خارجی، این نوع پیونده‌ها را پشتیبانی نمی‌کند</string>
     <string name="popup_player">پخش‌کنندهٔ تصویر در تصویر</string>
     <string name="export_complete_toast">صادر شد</string>
@@ -466,7 +464,6 @@
         <item quantity="other">%s بیننده</item>
     </plurals>
     <string name="no_one_watching">کسی در حال مشاهده نیست</string>
-    <string name="drawer_header_description">تغییر خدمت، مورد انتخاب شده:</string>
     <string name="permission_display_over_apps">اجازه نمایش روی دیگر برنامه‌ها را بدهید</string>
     <string name="artists">هنرمندان</string>
     <string name="albums">آلبوم‌ها</string>

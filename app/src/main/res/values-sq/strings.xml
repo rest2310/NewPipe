@@ -185,8 +185,6 @@
     <string name="video_player">Luajtësi video</string>
     <string name="preferred_open_action_settings_summary">Veprimi i parazgjedhur kur hapet përmbajtja — %s</string>
     <string name="preferred_open_action_settings_title">Veprimi i preferuar për \'hapjen\'</string>
-    <string name="drawer_close">Mbyll Sirtarin</string>
-    <string name="drawer_open">Hap Sirtarin</string>
     <string name="start_here_on_popup">Nis luajtjen në një popup të ri</string>
     <string name="start_here_on_background">Nis luajtjen në sfond</string>
     <string name="hold_to_append">Mbaj shtypur për të shtuar në radhë</string>
@@ -287,7 +285,6 @@
         <item quantity="other">%s abonentë</item>
     </plurals>
     <string name="no_subscribers">Nuk ka abonues</string>
-    <string name="drawer_header_description">Aktivizoje shërbimin, momentalisht e zgjedhur:</string>
     <string name="retry">Riprovo</string>
     <string name="audio">Audio</string>
     <string name="video">Video</string>

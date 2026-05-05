@@ -293,8 +293,6 @@
     <string name="give_back">Redoni</string>
     <string name="website_title">Retejo</string>
     <string name="website_encouragement">Viziti la retejon de NewPipe por pli da informoj kaj novaĵoj.</string>
-    <string name="drawer_open">Malfermi la tirkeston</string>
-    <string name="drawer_close">Fermi la tirtekston</string>
     <string name="external_player_unsupported_link_type">Ekstaraj ludantoj ne suportas tiajn ligilojn</string>
     <string name="video_player">Filmludilo</string>
     <string name="background_player">Fona ludilo</string>
@@ -399,7 +397,6 @@
     <string name="error_insufficient_storage_left">Neniu spaco havebla sur la aparato</string>
     <string name="error_progress_lost">Progreso perdita, ĉar la dosiero estis forviŝita</string>
     <string name="error_timeout">Eltempiĝo de Konekto</string>
-    <string name="drawer_header_description">Ŝangi la servon, nuntempe elektita:</string>
     <string name="default_kiosk_page_summary">Implicita Kiosko</string>
     <string name="no_one_watching">Neniu spektas</string>
     <plurals name="watching">

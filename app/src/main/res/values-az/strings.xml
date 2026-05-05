@@ -294,7 +294,6 @@
     <string name="detail_likes_img_view_description">Bəyən</string>
     <string name="detail_dislikes_img_view_description">Bəyənməmə</string>
     <string name="detail_drag_description">Yenidən sıralamaq üçün sürüklə</string>
-    <string name="drawer_header_description">Xidməti dəyiş, hazırda seçilmiş:</string>
     <string name="no_subscribers">Abunəçi yoxdur</string>
     <string name="no_views">Baxış yoxdur</string>
     <string name="no_one_watching">Heç kim izləmir</string>
@@ -459,7 +458,6 @@
 \nNewPipe gələcəkdə bu axını yükləyə bilməyəcək.
 \nBu kanaldan abunəliyi çıxarmaq istəyirsiniz\?</string>
     <string name="featured">Seçilən</string>
-    <string name="drawer_close">Çəkməcəni Bağla</string>
     <string name="video_player">Video oynadıcı</string>
     <string name="hash_channel_description">Video fayl xülasəsi prosesi üçün bildirişlər</string>
     <string name="on">Aç</string>
@@ -546,7 +544,6 @@
     <string name="playlist_add_stream_success">Pleylistə salındı</string>
     <string name="mute">Səsi bağla</string>
     <string name="popup_player">Ani görüntü oynadıcı</string>
-    <string name="drawer_open">Çəkməcəni Aç</string>
     <string name="hold_to_append">Növbələşdirmək üçün basılı tut</string>
     <string name="play_queue_remove">Sil</string>
     <string name="app_description">Android\'də pulsuz, zərif yayımlayıcı.</string>

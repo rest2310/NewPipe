@@ -189,8 +189,6 @@
     <string name="switch_to_background">Bytt til bakgrunnsmodus</string>
     <string name="switch_to_popup">Bytt til oppsprettsmodus</string>
     <string name="switch_to_main">Bytt til hovedmodus</string>
-    <string name="drawer_open">Åpne skuff</string>
-    <string name="drawer_close">Lukk skuff</string>
     <string name="no_player_found_toast">Ingen strømmespiller installert (du kan installere VLC for å spille den).</string>
     <string name="always">Alltid</string>
     <string name="just_once">Kun én gang</string>
@@ -401,7 +399,6 @@
     <string name="clear_playback_states_title">Slett avspillingsposisjoner</string>
     <string name="clear_playback_states_summary">Sletter alle avspillingsposisjoner</string>
     <string name="delete_playback_states_alert">Slett alle avspillingsposisjoner\?</string>
-    <string name="drawer_header_description">Skru tjeneste av/på, for tiden er dette status:</string>
     <string name="no_one_watching">Ingen ser på</string>
     <plurals name="watching">
         <item quantity="one">%s seer</item>

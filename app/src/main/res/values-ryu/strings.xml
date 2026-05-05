@@ -182,8 +182,6 @@
     <string name="could_not_import_all_files">けいくーく：まじりぬファイルインポートなやびらんたん。</string>
     <string name="override_current_data">くりにゆり、ぎんじぇーぬしっていぬうわがきさりやびーん。</string>
     <string name="start_here_on_background">バックグラウンドっしりんずくささるゆいかいし</string>
-    <string name="drawer_open">ドロワーふぃらちゅん</string>
-    <string name="drawer_close">ドロワーくーいん</string>
     <string name="video_player">ちゃーしがプレイヤー</string>
     <string name="background_player">バックグラウンドプレイヤー</string>
     <string name="popup_player">ポップアッププレイヤー</string>
@@ -397,7 +395,6 @@
     <string name="clear_playback_states_title">さいせいいちのさくじょ</string>
     <string name="clear_playback_states_summary">まじりぬさいせいいちさちゅるじょさびーん</string>
     <string name="delete_playback_states_alert">まじりぬさいせいいちさちゅるじょさびーが？</string>
-    <string name="drawer_header_description">サービスぬきりけーい、ぎんじぇーぬしんたく：</string>
     <plurals name="videos">
         <item quantity="one">%sふんぬちゃーしが</item>
         <item quantity="other">%sふんぬちゃーしが</item>
