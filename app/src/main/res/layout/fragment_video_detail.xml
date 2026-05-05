@@ -161,7 +161,7 @@
                     android:id="@+id/detail_title_root_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackground"
+                    android:background="?attr/rounded_list_item_background"
                     android:clickable="true"
                     android:focusable="true"
                     android:paddingStart="12dp"
@@ -244,7 +244,7 @@
                             android:layout_height="match_parent"
                             android:layout_toStartOf="@id/details_panel"
                             android:layout_toLeftOf="@id/details_panel"
-                            android:background="?attr/selectableItemBackground"
+                            android:background="?attr/rounded_list_item_background"
                             android:gravity="center_vertical"
                             android:orientation="horizontal"
                             android:padding="6dp">
@@ -591,7 +591,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             app:elevation="16dp"
-            app:tabBackground="?attr/windowBackground"
+            app:tabBackground="?attr/rounded_surface_background"
             app:tabGravity="fill"
             app:tabIconTint="?attr/colorAccent"
             app:tabIndicatorGravity="top" />
@@ -603,7 +603,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.9"
-        android:background="?attr/windowBackground">
+        android:background="?attr/rounded_bottom_sheet_background">
 
         <ImageButton
             android:id="@+id/overlay_thumbnail"
@@ -672,7 +672,7 @@
                 android:id="@+id/overlay_play_queue_button"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:background="?attr/selectableItemBackground"
+                android:background="?attr/rounded_list_item_background"
                 android:contentDescription="@string/title_activity_play_queue"
                 android:scaleType="center"
                 android:src="@drawable/ic_list"
@@ -682,7 +682,7 @@
                 android:id="@+id/overlay_play_pause_button"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:background="?attr/selectableItemBackground"
+                android:background="?attr/rounded_list_item_background"
                 android:contentDescription="@string/pause"
                 android:focusable="true"
                 android:focusedByDefault="true"
@@ -693,7 +693,7 @@
                 android:id="@+id/overlay_close_button"
                 android:layout_width="48dp"
                 android:layout_height="match_parent"
-                android:background="?attr/selectableItemBackground"
+                android:background="?attr/rounded_list_item_background"
                 android:contentDescription="@string/close"
                 android:paddingRight="8dp"
                 android:scaleType="center"

@@ -5,7 +5,7 @@
     android:id="@+id/itemRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/selectableItemBackground"
+    android:background="?attr/rounded_list_item_background"
     android:clickable="true"
     android:focusable="true"
     android:padding="@dimen/channel_item_grid_padding">

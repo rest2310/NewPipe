@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:selectableItemBackground">
+    android:background="?attr/rounded_list_item_background">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/notificationActionIcon"
@@ -55,7 +55,7 @@
         android:id="@+id/notificationActionClickableArea"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="?android:selectableItemBackground"
+        android:background="?attr/rounded_list_item_background"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -8,6 +8,13 @@
     <attr name="focused_selector" format="reference" />
     <attr name="dashed_border" format="reference" />
 
+    <attr name="rounded_surface_background" format="reference" />
+    <attr name="rounded_list_item_background" format="reference" />
+    <attr name="rounded_selected_navigation_background" format="reference" />
+    <attr name="rounded_dialog_background" format="reference" />
+    <attr name="rounded_menu_popup_background" format="reference" />
+    <attr name="rounded_bottom_sheet_background" format="reference" />
+
     <attr name="actionColor" format="color" />
     <attr name="separator_color" format="color" />
     <attr name="contrast_background_color" format="color" />

@@ -32,7 +32,7 @@
             android:layout_height="@dimen/playlist_detail_uploader_layout_height"
             android:layout_toStartOf="@+id/playlist_stream_count"
             android:layout_toLeftOf="@+id/playlist_stream_count"
-            android:background="?attr/selectableItemBackground"
+            android:background="?attr/rounded_list_item_background"
             android:gravity="left|center_vertical"
             android:visibility="gone"
             tools:ignore="RtlHardcoded"

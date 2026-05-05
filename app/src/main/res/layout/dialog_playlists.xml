@@ -7,7 +7,7 @@
         android:id="@+id/newPlaylist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:background="?attr/rounded_list_item_background"
         android:clickable="true"
         android:focusable="true">
 

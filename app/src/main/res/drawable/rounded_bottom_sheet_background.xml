@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/windowBackground" />
+    <corners
+        android:topLeftRadius="@dimen/rounded_surface_radius_large"
+        android:topRightRadius="@dimen/rounded_surface_radius_large" />
+</shape>
