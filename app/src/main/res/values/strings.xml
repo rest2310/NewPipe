@@ -499,8 +499,8 @@
         <item quantity="other">Importing %d subscriptions…</item>
     </plurals>
     <string name="import_title">Import</string>
-    <string name="import_from">Import from</string>
-    <string name="export_to">Export to</string>
+    <string name="import_from">Import</string>
+    <string name="export_to">Export</string>
     <string name="import_ongoing">Importing…</string>
     <string name="export_ongoing">Exporting…</string>
     <string name="import_file_title">Import file</string>
