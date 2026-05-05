@@ -272,15 +272,6 @@
     <string name="previous_export">Predchádzajúci export</string>
     <string name="subscriptions_import_unsuccessful">Nemožno importovať odbery</string>
     <string name="subscriptions_export_unsuccessful">Nemožno exportovať odbery</string>
-    <string name="import_youtube_instructions">Import odberov služby YouTube pomocou Google takeout:
-\n
-\n1. Prejdite na túto adresu URL: %1$s
-\n2. Po výzve sa prihláste do svojho účtu
-\n3. Kliknite na \"Zahrnuté sú všetky údaj služby YouTube\", kliknite na \"Zrušiť výber\", zaškrtnite \"odbery\" a kliknite na OK
-\n4. Kliknite na \"Ďalší krok\" a potom na \"Vytvoriť export\"
-\n5. Po chvíli sa objaví tlačidlo s nápisom \"Stiahnuť\"
-\n6. Kliknite na IMPORT ZO SÚBORU a zvoľte stiahnutý zip súbor
-\n7. Ak import zip súbory zlyhá. Stiahnutý súbor otvorte a extrahujte .csv súbor (nachádza sa v \"/Takeout/YouTube a YouTube Music/odbery/\"), tento súbor importujte do NewPipe</string>
     <string name="import_network_expensive_warning">Operácia môže byť náročná na počet prenesených dát.
 \n
 \nChcete pokračovať?</string>

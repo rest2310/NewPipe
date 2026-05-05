@@ -275,7 +275,6 @@
     <string name="previous_export">Aurreko esportazioa</string>
     <string name="subscriptions_import_unsuccessful">Ezin izan dira harpidetzak inportatu</string>
     <string name="subscriptions_export_unsuccessful">Ezin izan dira harpidetzak esportatu</string>
-    <string name="import_youtube_instructions">Inportatu YouTube harpidetzak Google takeout-etik: \n \n1. Joan URL honetara: %1$s \n2. Hasi saioa eskatzen zaizunean \n3. Hautatu «Datu guztiak barne», gero «Kendu hautapen guztiak», eta hautatu «harpidetzak» soilik eta egin klik «Ados» botoian \n4. Egin klik «Hurrengo pausua» eta «Sortu esportazioa» botoietan \n5. Egin klik «Deskargatu» botoian agertzen denean \n6. Egin klik INPORTATU FITXATEGIA botoian eta hautatu deskargatutako .zip fitxategia \n7. [.zip inportazioak huts egiten badu] Erauzi .csv fitxategia deskargatutako takeout zip-etik (normalean «Youtube eta Youtube Music/harpidetzak/harpidetzak.csv»), egin klik INPORTATU FITXATEGIA botoian eta hautatu erauzitako csv fitxategia</string>
     <string name="import_network_expensive_warning">Eragiketa honek sarearen erabilera handia egin lezake.
 \n
 \nJarraitu nahi duzu?</string>

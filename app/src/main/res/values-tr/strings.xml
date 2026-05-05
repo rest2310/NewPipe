@@ -255,15 +255,6 @@
     <string name="previous_export">Önceki dışa aktarım</string>
     <string name="subscriptions_import_unsuccessful">Abonelikler içe aktarılamadı</string>
     <string name="subscriptions_export_unsuccessful">Abonelikler dışa aktarılamadı</string>
-    <string name="import_youtube_instructions">Google Takeout\'tan YouTube aboneliklerini içe aktar:
-\n
-\n1. Şu adrese gidin: %1$s
-\n2. Sorulduğunda hesabınıza giriş yapın
-\n3. \"Tüm veriler dahil\"e ve sonrasında \"Hiçbirini seçme\"ye tıklayın, ardından yalnızca \"abonelikler\"i seçin ve \"Tamam\"a tıklayın
-\n4. \"Sonraki adım\"a ve ardından \"Dışa aktar\"a tıklayın
-\n5. Göründüğünde \"İndir\" düğmesini tıklayın
-\n6. Aşağıdaki DOSYAYI İÇE AKTAR düğmesini tıklayın ve indirilen .zip dosyasını seçin
-\n7. [.zip içe aktarma işlemi başarısız olursa] .csv dosyasını çıkarın (genellikle \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), aşağıdaki DOSYAYI İÇE AKTAR düğmesini tıklayın ve çıkarılan csv dosyasını seçin</string>
     <string name="import_network_expensive_warning">Bu sürecin ağa yük olabileceğini unutmayın.
 \n
 \nSürdürmek istiyor musunuz\?</string>

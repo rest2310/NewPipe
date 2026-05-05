@@ -311,15 +311,6 @@
     <string name="invalid_file">پرونده موجود نیست و یا مجوز خواندن یا نوشتن روی آن وجود ندارد</string>
     <string name="import_file_title">وارد کردن پرونده</string>
     <string name="previous_export">صادرکردن قبلی</string>
-    <string name="import_youtube_instructions">درون‌ریزی اشتراک‌های یوتوب از بیرون‌بری گوگل:
-\n
-\n۱. به این نشانی بروید: %1$s
-\n۲. در صورت نیاز، وارد شوید
-\n۳. روی All data included و سپس Deselect all کیلک کنید. سپس تنها subscriptions را گزیده و OK را بزنید
-\n۴. روی Next step و سپس Create export کلیک کنید
-\n۵.پس از ظاهر شدن دکمهٔ Download رویش کلیک کنید
-\n۶. درون‌ریزی پرونده را در زیر زده و پروندهٔ فشردهٔ بارگیری شده را برگزینید
-\n۷. [اگر درون‌ریزی شکست خورد] پروندهٔ ‪.csv‬ را (معمولاً زیر YouTube and YouTube Music/subscriptions/subscriptions.csv) استخراج کنید، روی درون‌ریزی پرونده در زیر زده و پروندهٔ csv استخراج شده را برگزینید</string>
     <string name="import_network_expensive_warning">در نظر داشته باشید که این عملیات می‌تواند داده زیادی مصرف کند.
 \n
 \nادامه می‌دهید؟</string>

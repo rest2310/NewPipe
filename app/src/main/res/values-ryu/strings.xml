@@ -282,15 +282,6 @@
     <string name="caption_auto_generated">じどうせいせい</string>
     <string name="caption_setting_description">プレーヤーぬキャプションテキストぬしーゅくしゃくとぅはいけいスタイルへいるかんさびーん。ゆうこうなすんがー、アプリぬさいきちゃーがふぃちようやいびーん</string>
     <string name="empty_list_subtitle">ぬーんあいびらん</string>
-    <string name="import_youtube_instructions">Google takeoutからYouTubeぬとぅうるいちゅるリストインポート：
-\n
-\n1. くぬURLふぃらちゃびーん： %1$s
-\n2. ログインしうぅらんだれーログインさびーん
-\n3. \"まじりしんたく\" クリックしー、あんし \"しんたくまじりかいじょ\" クリック、あんし \"んでぃうるいちゅるチャンネル\" ぬみしんたくし、\"OK\" クリック
-\n4. \"ちぎぬステップ\" クリックしー、あんし \"エクスポートさくせい\" クリック
-\n5. ひょうじされいねー \"ダウンロード\" ボタンクリック
-\n6. ファイルからインポートクリックしダウンロードさるzipファイルしんたく
-\n7.（インポートぬしーやんじねー）csvファイル（たいてい、\"YouTubeとぅYouTube Music/とぅうるいちゅるチャンネル/とぅうるいちゅるチャンネル.csv\" んかいあん）ちゅうさゅちし、ファイルからインポートクリックしてぃちゅうしゅちしたcsvファイルしんたく</string>
     <string name="playback_reset">リセット</string>
     <string name="accept">ちゃーいすん</string>
     <string name="decline">きょふぃする</string>

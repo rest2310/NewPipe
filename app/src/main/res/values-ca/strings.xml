@@ -272,7 +272,6 @@
     <string name="enable_leak_canary_summary">La supervisió de fugues de memòria pot fer que l\'aplicació deixi de respondre mentre es bolca la memòria</string>
     <string name="enable_disposed_exceptions_title">Informa d\'errors fora del cicle de vida</string>
     <string name="enable_disposed_exceptions_summary">Força l\'informe d\'excepcions Rx que no es puguin transmetre que tinguin lloc fora del cicle de vida d\'un fragment o activitat després de disposar-los</string>
-    <string name="import_youtube_instructions">Importeu les vostres subscripcions de YouTube mitjançant la còpia de contingut de Google Takeout: \n \n1. Aneu a : %1$s \n2. Inicieu la sessió si se us demana \n3. Premeu \"Totes les dades incloses\", després \"Dessel·lecciona-ho tot\", llavors sel·leccioneu només \"Subscripcions\" i finalment premeu \"D\'acord\". \n4. Premeu \"Pas següent\" i llavors a \"Crea una exportació\" \n5. Premeu el botó \"Baixa\" un cop hagi aparegut \n6. Premeu a IMPORTA EL FITXER i sel·leccioneu el fitxer .zip descarregat \n7. [En cas que la importació del fitxer .zip hagi fallat] extreieu-ne el fitxer subscripcions.csv (es troba generalment a \"Takeout/YouTube i YouTube Music/subscripcions/subscripcions.csv\"), premeu a IMPORTA EL FITXER i sel·leccioneu el fitxer .csv extret</string>
     <string name="import_network_expensive_warning">Tingueu en compte que això pot comportar un ús intensiu de la xarxa. 
 \n 
 \nVoleu continuar\?</string>

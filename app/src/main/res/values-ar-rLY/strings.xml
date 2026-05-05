@@ -588,15 +588,6 @@
     <string name="detail_likes_img_view_description">الإعجابات</string>
     <string name="general_error">خطأ</string>
     <string name="download_path_audio_dialog_title">اختر مجلد التنزيل للملفات الصوتية</string>
-    <string name="import_youtube_instructions">استيراد اشتراكات YouTube من Google takeout:
-\n
-\n1. انتقل إلى عنوان URL هذا: %1$s
-\n2. تسجيل الدخول عند سؤالك
-\n3. انقر على \"جميع البيانات المدرجة\"، ثم على \"إلغاء تحديد جميع\"، ثم حدد فقط \"الاشتراكات\" وانقر على \"موافق\"
-\n4. انقر على \"الخطوة التالية\" ثم على \"إنشاء التصدير\"
-\n5. انقر على زر \"تحميل\" بعد ظهوره
-\n6. انقر على IMPORT FILE أدناه وحدد الملف البريدي تحميلها
-\n7. [إذا فشل استيراد الرمز البريدي] استخراج ملف .csv (عادة تحت عنوان \"يوتيوب ويوتيوب الموسيقى / الاشتراكات / الاشتراكات.csv\")، انقر على IMPORT FILE أدناه وحدد ملف csv المستخرج</string>
     <string name="notification_action_buffering">جارٍ التحميل</string>
     <string name="wifi_only">فقط على شبكة Wi-Fi</string>
     <string name="show_thumbnail_title">إظهار الصورة المصغرة</string>

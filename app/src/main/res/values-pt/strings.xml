@@ -255,15 +255,6 @@
     <string name="previous_export">Exportação anterior</string>
     <string name="subscriptions_import_unsuccessful">Não foi possível importar as subscrições</string>
     <string name="subscriptions_export_unsuccessful">Não foi possível exportar as subscrições</string>
-    <string name="import_youtube_instructions">Importar subscrições do YouTube do Google Takeout:
-\n
-\n1. Aceda ao URL: %1$s
-\n2. Inicie sessão
-\n3. Clique em \"Todos os dados incluídos\", depois em \"Desmarcar todos\", selecione \"Subscrições\" e clique em \"OK\".
-\n4. Clique em \"Próximo passo\" e, depois, em \"Criar exportação\".
-\n5. Clique no botão \"Descarregar\" após aparecer
-\n6. Clique em IMPORT FILE abaixo e selecione o ficheiro .zip descarregado
-\n7. [Se a importação falhar] Extraia o ficheiro .csv (geralmente em \"YouTube e YouTube Music/subscriptions/subscriptions.csv\"), clique em IMPORT FILE abaixo e selecione o ficheiro csv extraído</string>
     <string name="playback_speed_control">Controlos para velocidade de reprodução</string>
     <string name="playback_tempo">Ritmo</string>
     <string name="clear_views_history_title">Limpar histórico de visualizações</string>

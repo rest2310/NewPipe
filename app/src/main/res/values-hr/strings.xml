@@ -264,15 +264,6 @@
     <string name="previous_export">Prethodni izvoz</string>
     <string name="subscriptions_import_unsuccessful">Nije bilo moguće uvesti pretplate</string>
     <string name="subscriptions_export_unsuccessful">Nije bilo moguće izvesti pretplate</string>
-    <string name="import_youtube_instructions">Uvezi pretplate na YouTubu pomoću Google Takeouta:
-\n
-\n1. Idi na ovaj URL: %1$s
-\n2. Prijavi se
-\n3. Pritisni „Uključeni svi podaci”, zatim „Poništi odabir svih”, a zatim odaberi samo „pretplate” i pritisni „U redu”
-\n4. Pritisni „Sljedeći korak”, a zatim „Stvori izvoz”
-\n5. Pritisni gumb „Preuzmi” nakon što se pojavi
-\n6. Dolje pritisni UVEZI DATOEKU i odaberi preuzetu .zip datoteku
-\n7. [Ako uvoz .zip datoteke ne uspije] izdvoji .csv datoteku (pod „YouTube and YouTube Music/subscriptions/subscriptions.json”), dolje pritisni UVEZI DATOTEKU i odaberi izdvojenu csv datoteku</string>
     <string name="import_network_expensive_warning">Ova operacija može prouzročiti veliku potrošnju mrežnog prometa.
 \n
 \nŽeliš li nastaviti\?</string>

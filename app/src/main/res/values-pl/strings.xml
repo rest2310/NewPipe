@@ -269,15 +269,6 @@
     <string name="previous_export">Poprzedni eksport</string>
     <string name="subscriptions_import_unsuccessful">Nie udało się zaimportować subskrypcji</string>
     <string name="subscriptions_export_unsuccessful">Nie udało się wyeksportować subskrypcji</string>
-    <string name="import_youtube_instructions">Zaimportuj subskrypcje YouTube z Google Takeout:
-\n
-\n1. Przejdź do tego adresu URL: %1$s.
-\n2. Zaloguj się, gdy zostaniesz o to poproszony(-a).
-\n3. Naciśnij „Wybrano wszystkie dane z YouTube”, następnie „Odznacz wszystkie”, potem zaznacz tylko „subskrypcje” i naciśnij „OK”.
-\n4. Naciśnij „Następny krok”, a następnie „Utwórz eksport”.
-\n5. Naciśnij przycisk „Pobierz”, gdy się pojawi.
-\n6. Naciśnij IMPORTUJ PLIK poniżej i wybierz pobrany plik ZIP.
-\n7. [Jeśli importowanie pliku ZIP nie powiedzie się] Wypakuj plik subskrypcje.csv (powinien znajdować się w katalogu „YouTube i YouTube Music/subskrypcje.csv”), naciśnij IMPORTUJ PLIK poniżej i wybierz wypakowany plik CSV.</string>
     <string name="import_network_expensive_warning">Ta operacja może wygenerować duże użycie danych.
 \n
 \nCzy chcesz kontynuować?</string>

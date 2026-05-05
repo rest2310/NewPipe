@@ -266,15 +266,6 @@
     <string name="previous_export">Exportation précédente</string>
     <string name="subscriptions_import_unsuccessful">Impossible d’importer les abonnements</string>
     <string name="subscriptions_export_unsuccessful">Impossible d’exporter les abonnements</string>
-    <string name="import_youtube_instructions">Importez vos abonnements YouTube depuis Google Takeout :
-\n
-\n1. Suivez ce lien : %1$s
-\n2. Connectez-vous à votre compte
-\n3. Cliquez sur « Toutes les données YouTube sont incluses », puis sur « Tout désélectionner », puis sélectionnez uniquement « abonnements » et cliquez sur « OK »
-\n4. Cliquez sur « Étape suivante » et ensuite sur « Créer une exportation »
-\n5. Cliquez sur le bouton « Télécharger » après qu’il soit apparut
-\n6.Cliquez sur IMPORTER LE FICHIER en dessous et sélectionnez le fichier zip téléchargé
-\n7. [Si l\'importation à échoué] Extrayez le fichier .csv (généralement sous « YouTube and YouTube Music/subscriptions/subscriptions.csv »), cliquez sur IMPORTER LE FICHIER en dessous et sélectionnez le ficher csv extrait</string>
     <string name="import_network_expensive_warning">Cette opération peut charger énormément la connexion réseau.
 \n 
 \nVoulez-vous continuer \?</string>

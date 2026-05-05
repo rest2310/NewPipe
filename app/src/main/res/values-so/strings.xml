@@ -530,14 +530,6 @@
     <string name="import_network_expensive_warning">Hawlgalkan wuxuu noqon karaa mid khad badan isticmaala.
 \n
 \nMa rabtaa inaad sii wado\?</string>
-    <string name="import_youtube_instructions">Soo gali rukumada YouTube-ka:
-\n
-\n1. Booqo tixraacan: %1$s
-\n2. Gali akoonkaaga marka lagu waydiiyo
-\n3. Kusii dhufo \"Xogtoo dhan ku dar\", kadibna \"Ha calaamdin dhamaan\" kadibna dooro kaliya \"Rukunka\" oo \"OK\" dheh
-\n4. Ku dhufo \"Talaabada xigta\" kadibna \"Samee gudbin\"
-\n5. Ku dhufo batoonka \"Daji\" kadib markuu soo muuqdo
-\n6. Zip-ka lasoo dajiyay kala furfur faylka .jason (badanaa wuxuu hoos tagaa \" \"YouTube and YouTube Music/subscriptions/subscriptions.json\") kadibna xagan soo gali.</string>
     <string name="caption_setting_title">Qoraal-hooseed</string>
     <string name="caption_auto_generated">isa-sameeyay</string>
     <string name="resize_fit">La ekaysii</string>

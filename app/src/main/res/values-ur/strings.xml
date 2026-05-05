@@ -263,12 +263,6 @@
     <string name="previous_export">پچھلی بر آمد</string>
     <string name="subscriptions_import_unsuccessful">رکنیتوں کو در آمد نہیں کیا جا سکا</string>
     <string name="subscriptions_export_unsuccessful">رکنیتوں بر آمد نہیں کر سکا</string>
-    <string name="import_youtube_instructions">برآمد فائل کو ڈاؤن لوڈ کرکے YouTube کی رکنیت کو درآمد کریں: 
-\n 
-\n1. اس URL پر جائیں:
-\n%1$s 
-\n2. جب پوچھا جائے تو لاگ ان کریں 
-\n3. ڈاؤن لوڈ شروع ہونا چاہئے (یہ برآمد فائل ہے)</string>
     <string name="import_network_expensive_warning">اس بات کو ذہن میں رکھیں کہ اس عملیہ کا نیٹ ورک مہنگا ہو سکتا ہے۔
 \n
 \nکیا آپ جاری رکھنا چاہتے ہیں ؟</string>

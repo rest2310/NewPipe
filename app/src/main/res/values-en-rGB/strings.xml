@@ -4,15 +4,6 @@
     <string name="show_play_with_kodi_summary">Display an option to play a video via Kodi media centre</string>
     <string name="notification_colorize_summary">Have Android customise the notification’s colour according to the main colour in the thumbnail (note that this is not available on all devices)</string>
     <string name="notification_colorize_title">Colourise notification</string>
-    <string name="import_youtube_instructions">Import YouTube subscriptions from Google takeout:
-\n
-\n1. Go to this URL: %1$s
-\n2. Log in when asked
-\n3. Click on ‘All data included’, then on ‘Deselect all’, then select only ‘subscriptions’ and click ‘OK’
-\n4. Click on ‘Next step’ and then on ‘Create export’
-\n5. Click on the ‘Download’ button after it appears
-\n6. Click on IMPORT FILE below and select the downloaded .zip file
-\n7. [If the .zip import fails] Extract the .csv file (usually under ‘YouTube and YouTube Music/subscriptions/subscriptions.csv’), click on IMPORT FILE below and select the extracted csv file</string>
     <string name="subtitle_activity_recaptcha">Press ‘Done’ when solved</string>
     <string name="restricted_video">This video is age restricted.
 \n

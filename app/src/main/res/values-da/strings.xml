@@ -331,15 +331,6 @@
     <string name="export_ongoing">Eksporterer…</string>
     <string name="import_file_title">Importér fil</string>
     <string name="previous_export">Forrige eksport</string>
-    <string name="import_youtube_instructions">Importér YouTube-abonnementer ved at hente eksportfilen:
-\n
-\n1. Gå til denne webadresse: %1$s
-\n2. Log ind, når du bliver bedt om det
-\n3. Klik på \"Alle Youtube-data medtages\", og fravælg alt bortset fra \"abonnementer\".
-\n4. Klik på \"Næste trin\", og derefter \"Opret eksport\".
-\n5. Klik på \"Download\"-knappen efter den popper frem.
-\n6. Klik på \"IMPORTÉR FIL\" nederst på denne side, og vælg den hentede .zip-fil.
-\n7. [Såfremt .zip-importeringen slår fejl] Uddrag .csv-filen (som normalt findes i \"YouTube og YouTube Music/abonnementer/abonnementer.csv\"). Klik på \"IMPORTÉR FIL\" nederst på denne side, og vælg den uddragede .csv-fil</string>
     <string name="import_network_expensive_warning">Bemærk, at denne operation kan kræve meget netværkstrafik.
 \n
 \nVil du fortsætte?</string>

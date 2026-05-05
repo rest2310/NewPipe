@@ -275,7 +275,6 @@
     <string name="previous_export">ਪਿੱਛਲਾ ਐਕਸਪੋਰਟ</string>
     <string name="subscriptions_import_unsuccessful">ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਇੰਪੋਰਟ ਨਹੀਂ ਹੋ ਸਕੀਆਂ</string>
     <string name="subscriptions_export_unsuccessful">ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਐਕਸਪੋਰਟ ਨਹੀਂ ਹੋ ਸਕੀਆਂ</string>
-    <string name="import_youtube_instructions">ਗੂਗਲ ਟੇਕਆਊਟ ਤੋਂ ਯੂਟਿਊਬ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਇੰਪੋਰਟ ਕਰਨ ਲਈ ਐਕਸਪੋਰਟ ਫਾਈਲ ਡਾਊਨਲੋਡ ਕਰੋ:\n\n1. ਇਸ URL ਤੇ ਜਾਓ: %1$s\n2. ਮੰਗਣ ਤੇ ਆਪਣੇ ਖਾਤੇ \'ਚ ਲਾਗ-ਇਨ ਕਰੋ\n3. ਕਲਿੱਕ ਕਰੋ \" All data incuded\" ਤੇ, ਫੇਰ \"Deselect all\" ਤੇ ਫੇਰ ਸਿਰਫ \"subscriprion\" ਚੁਣੋ ਅਤੇ \"OK\" ਕਰੋ\n4. \"Next step\" ਤੇ ਕਲਿੱਕ ਕਰੋ ਅਤੇ ਫੇਰ \"create export\" ਤੇ\n5. ਡਾਊਨਲੋਡ ਬਟਨ ਦਿਖਾਈ ਦੇਣ ਤੇ ਇਸ ਤੇ ਕਲਿੱਕ ਕਰੋ। ਇੱਕ ਡਾਉਨਲੋਡ ਸ਼ੁਰੂ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ (ਇਹੀ ਐਕਸਪੋਰਟ ਫਾਈਲ ਹੈ)\n6. ਥੱਲੇ ਇੰਪੋਰਟ ਫਾਈਲ ਤੇ ਕਲਿੱਕ ਕਰੋ ਤੇ ਡਾਊਨਲੋਡ ਕੀਤੀ .zip ਫਾਈਲ ਚੁਣੋ\n7. [ਜੇ .zip ਤੋਂ ਐਕਸਪੋਰਟ ਫੇਲ ਹੋ ਜਾਂਦੀ ਹੈ] ਤਾਂ .csv ਫਾਈਲ ਐਕਸਟਰੈਕਟ ਕਰੋ (ਆਮ ਤੌਰ ਤੇ \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), ਥੱਲੇ ਦਿੱਤੇ ਇੰਪੋਰਟ ਫਾਈਲ ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਐਕਸਟਰੈਕਟ ਕੀਤੀ csv ਫਾਈਲ ਚੁਣੋ</string>
     <string name="import_network_expensive_warning">ਯਾਦ ਰੱਖੋ ਕਿ ਇਸ ਕਾਰਜ ਨਾਲ ਡਾਟਾ ਖਪਤ ਹੋ ਸਕਦਾ ਹੈ।\n\nਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
     <string name="playback_speed_control">ਪਲੇਅਬੈਕ ਸਪੀਡ ਕੰਟਰੋਲ</string>
     <string name="playback_tempo">ਤਾਲ</string>

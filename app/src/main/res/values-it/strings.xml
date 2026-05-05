@@ -262,15 +262,6 @@
     <string name="previous_export">Esportazione precedente</string>
     <string name="subscriptions_import_unsuccessful">Impossibile importare le iscrizioni</string>
     <string name="subscriptions_export_unsuccessful">Impossibile esportare le iscrizioni</string>
-    <string name="import_youtube_instructions">Importa le iscrizioni di YouTube scaricando il file d\'esportazione:
-\n
-\n1. Vai a questo URL: %1$s
-\n2. Accedi quando richiesto
-\n3. Premi \"Tutti i dati inclusi\", \"Deseleziona tutto\", seleziona solo \"iscrizioni\" e premi \"OK\"
-\n4. Premi \"Passaggio successivo\" e poi \"Crea esportazione\"
-\n5. Premi il pulsante \"Scarica\" quando compare
-\n6. Premi IMPORTA FILE qui sotto e seleziona il file ZIP scaricato
-\n7. [Se l\'importazione fallisce] Estrai il file CSV (solitamente in \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), premi IMPORTA FILE qui sotto e seleziona il file CSV estratto</string>
     <string name="import_network_expensive_warning">Tieni presente che questa operazione può consumare una grande quantità di traffico dati.
 \n 
 \nVuoi continuare?</string>

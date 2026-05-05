@@ -267,15 +267,6 @@
     <string name="previous_export">Попереднє експортування</string>
     <string name="subscriptions_import_unsuccessful">Не вдалося імпортувати підписки</string>
     <string name="subscriptions_export_unsuccessful">Не вдалося експортувати підписки</string>
-    <string name="import_youtube_instructions">Імпортуйте підписки YouTube за допомогою Google Takeout:
-\n
-\n1. Перейдіть за посиланням: %1$s
-\n2. Авторизуйтесь, якщо буде потрібно
-\n3. Позначте пункт «YouTube і YouTube Music», потім виберіть тип «підписки»
-\n4. Натисніть «Наступний крок» і «Експортувати дані»
-\n5. Натисніть кнопку «Завантажити», коли вона з\'явиться
-\n6. Натисніть на ІМПОРТУВАТИ ФАЙЛ нижче і виберіть завантажений zip-файл
-\n7. [Якщо не вдалося імпортувати zip] Видобудьте файл .csv (зазвичай у розділі «YouTube і YouTube Music/Підписки/subscriptions.csv»), натисніть ІМПОРТУВАТИ ФАЙЛ нижче та виберіть видобутий файл csv</string>
     <string name="import_network_expensive_warning">Майте на увазі: ця операція може потребувати багато трафіку.
 \n
 \nБажаєте продовжити\?</string>

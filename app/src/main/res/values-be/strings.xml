@@ -291,7 +291,6 @@
     <string name="previous_export">Папярэдні экспарт</string>
     <string name="subscriptions_import_unsuccessful">Не ўдалося імпартаваць падпіскі</string>
     <string name="subscriptions_export_unsuccessful">Не ўдалося экспартаваць падпіскі</string>
-    <string name="import_youtube_instructions">Імпарт падпісак YouTube з Google Takeout: \n \n1. Перайдзіце па гэтым URL: %1$s \n2. Увайдзіце, калі вас папросяць \n3. Націсніце на «Усе даныя ўключаны», затым на «Зняць выбар з усіх», затым выберыце толькі «падпіскі» і націсніце «ОК» \n4. Націсніце «Наступны крок», а затым «Стварыць экспарт» \n5. Націсніце на кнопку «Спампаваць» пасля таго, як яна з\'явіцца \n6. Ніжэй націсніце на ІМПАРТАВАЦЬ ФАЙЛ і выберыце спампаваны файл .zip \n7. [Калі не ўдаецца імпартаваць .zip] Трэба выняць файл .csv (звычайна ў раздзеле «YouTube і YouTube Music/subscriptions/subscriptions.csv»), ніжэй націсніце ІМПАРТАВАЦЬ ФАЙЛ і выберыце выняты файл CSV</string>
     <string name="import_network_expensive_warning">Гэтае дзеянне можа выклікаць вялікі расход трафіку. 
 \n 
 \nПрацягнуць?</string>

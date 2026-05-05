@@ -515,15 +515,6 @@
     <string name="import_network_expensive_warning">Rețineți că această operațiune poate fi costisitoare în rețea.
 \n
 \nContinuați\?</string>
-    <string name="import_youtube_instructions">Importați abonamentele YouTube din Google takeout:
-\n
-\n1. Mergeți la această adresă URL: %1$s
-\n2. Autentificați-vă atunci când vi se cere
-\n3. Faceți clic pe \"Toate datele incluse\", apoi pe \"Deselectați totul\", apoi selectați doar \"Abonamente\" și faceți clic pe \"OK\"
-\n4. Faceți clic pe \"Pasul următor\" și apoi pe \"Creați exportul\"
-\n5. Faceți clic pe butonul \"Descărcare\" după ce acesta apare
-\n6. Faceți clic pe IMPORT FIȘIER de mai jos și selectați fișierul .zip descărcat
-\n7. [În cazul în care importul .zip eșuează] Extrageți fișierul .csv (de obicei sub \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), faceți clic pe IMPORT FIȘIER de mai jos și selectați fișierul csv extras</string>
     <string name="show_original_time_ago_summary">Textele originale din servicii vor fi vizibile în elementele de flux</string>
     <string name="enable_disposed_exceptions_title">Raportați erori în afara ciclului de viață</string>
     <string name="show_memory_leaks">Afișați scurgeri de memorie</string>

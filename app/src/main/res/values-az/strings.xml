@@ -626,7 +626,6 @@
     <string name="loading_stream_details">Yayım təfərrüatları yüklənir…</string>
     <string name="disable_media_tunneling_title">Media girişin qeyri-aktiv et</string>
     <string name="crash_the_app">Tətbiq çökdü</string>
-    <string name="import_youtube_instructions">YouTube abunəliklərin Google Takeout-dan idxal et: \n \n1. %1$s URL\'ə keçin: \n2. Soruşulduqda daxil ol \n3. \"Bütün Məlumatlar Daxildir\",sonra \"Hamısın Seçmə\", yalnız \"abunəlikləri\" seç və \"Oldu\" kliklə \n4. \"Növbəti addım\"üzərinə kliklə, sonra isə \"İxrac Yarat\" üzərinə kliklə \n5. Görünəndən sonra, \"Endirin\"düyməsin bas \n6. Aşağıda FAYLI İDXAL ET düyməsin kliklə və yüklənilmiş (.zip) faylın seç \n7. [Əgər .zip faylı idxalı uğursuz olsa] .csv faylın çıxar(adətən\"YouTubeandYouTubeMusic/subscriptions/subscriptions.csv\" altında),aşağıda FAYLI İDXAL ET-ə kliklə və çıxarılan csv faylın seç</string>
     <string name="playback_speed_control">Oynatma Sürəti Nizamlamaları</string>
     <string name="unhook_checkbox">Ayır (pozuntuya səbəb ola bilər)</string>
     <string name="show_error">Xətanı göstər</string>
