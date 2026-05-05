@@ -2,99 +2,52 @@ package org.schabi.newpipe.settings.tabs;
 
 import androidx.annotation.Nullable;
 
-import com.grack.nanojson.JsonArray;
-import com.grack.nanojson.JsonObject;
-import com.grack.nanojson.JsonParser;
-import com.grack.nanojson.JsonParserException;
 import com.grack.nanojson.JsonStringWriter;
 import com.grack.nanojson.JsonWriter;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
- * Class to get a JSON representation of a list of tabs, and the other way around.
+ * Class to get a JSON representation of the fixed set of main navigation tabs.
  */
 public final class TabsJsonHelper {
     private static final String JSON_TABS_ARRAY_KEY = "tabs";
-    private static final String JSON_TAB_ID_KEY = "tab_id";
-    private static final String JSON_KIOSK_ID_KEY = "kiosk_id";
-    private static final int OLD_KIOSK_TAB_ID = 5;
-    private static final int OLD_DEFAULT_KIOSK_TAB_ID = 7;
-    private static final Set<String> REMOVED_KIOSK_IDS = Set.of(
-            "Trending",
-            "live",
-            "trending_gaming",
-            "trending_music",
-            "trending_movies_and_shows",
-            "trending_podcasts_episodes");
 
-    private static final List<Tab> FALLBACK_INITIAL_TABS_LIST = List.of(
+    private static final List<Tab> FIXED_TABS_LIST = List.of(
             Tab.Type.FEED.getTab(),
             Tab.Type.SUBSCRIPTIONS.getTab(),
-            Tab.Type.BOOKMARKS.getTab());
+            Tab.Type.BOOKMARKS.getTab(),
+            Tab.Type.DOWNLOADS.getTab());
 
     private TabsJsonHelper() { }
 
     /**
-     * Try to reads the passed JSON and returns the list of tabs if no error were encountered.
+     * Return the fixed main navigation tabs.
      * <p>
-     * If the JSON is null or empty, or the list of tabs that it represents is empty, the
-     * {@link #getDefaultTabs fallback list} will be returned.
-     * <p>
-     * Tabs with invalid ids (i.e. not in the {@link Tab.Type} enum) will be ignored.
+     * Saved JSON is ignored intentionally: the app no longer supports user-customized main tabs,
+     * kiosk/trending tabs, history tabs, or arbitrary channel/playlist/feed-group tabs here.
      *
-     * @param tabsJson a JSON string got from {@link #getJsonToSave(List)}.
-     * @return a list of {@link Tab tabs}.
-     * @throws InvalidJsonException if the JSON string is not valid
+     * @param tabsJson ignored legacy JSON string got from {@link #getJsonToSave(List)}.
+     * @return the fixed list of {@link Tab tabs}.
      */
     public static List<Tab> getTabsFromJson(@Nullable final String tabsJson)
             throws InvalidJsonException {
-        if (tabsJson == null || tabsJson.isEmpty()) {
-            return getDefaultTabs();
-        }
-
-        try {
-            final JsonObject outerJsonObject = JsonParser.object().from(tabsJson);
-
-            if (!outerJsonObject.has(JSON_TABS_ARRAY_KEY)) {
-                throw new InvalidJsonException("JSON doesn't contain \"" + JSON_TABS_ARRAY_KEY
-                        + "\" array");
-            }
-
-            final JsonArray tabsArray = outerJsonObject.getArray(JSON_TABS_ARRAY_KEY, null);
-
-            final var returnTabs = tabsArray.streamAsJsonObjects()
-                    .filter(TabsJsonHelper::isSupportedSavedTab)
-                    .map(Tab::from)
-                    .filter(Objects::nonNull)
-                    .collect(Collectors.toUnmodifiableList());
-
-            return returnTabs.isEmpty() ? getDefaultTabs() : returnTabs;
-        } catch (final JsonParserException e) {
-            throw new InvalidJsonException(e);
-        }
+        return getDefaultTabs();
     }
 
     /**
-     * Get a JSON representation from a list of tabs.
+     * Get a JSON representation of the fixed main navigation tabs.
      *
-     * @param tabList a list of {@link Tab tabs}.
-     * @return a JSON string representing the list of tabs
+     * @param tabList ignored; custom main tabs are no longer supported.
+     * @return a JSON string representing the fixed list of tabs
      */
     public static String getJsonToSave(@Nullable final List<Tab> tabList) {
         final JsonStringWriter jsonWriter = JsonWriter.string();
         jsonWriter.object();
 
         jsonWriter.array(JSON_TABS_ARRAY_KEY);
-        if (tabList != null) {
-            for (final Tab tab : tabList) {
-                if (Tab.typeFrom(tab.getTabId()) != null) {
-                    tab.writeJsonOn(jsonWriter);
-                }
-            }
+        for (final Tab tab : FIXED_TABS_LIST) {
+            tab.writeJsonOn(jsonWriter);
         }
         jsonWriter.end();
 
@@ -102,26 +55,8 @@ public final class TabsJsonHelper {
         return jsonWriter.done();
     }
 
-    private static boolean isSupportedSavedTab(final JsonObject tabJsonObject) {
-        final int tabId = tabJsonObject.getInt(JSON_TAB_ID_KEY, -1);
-        if (tabId == OLD_DEFAULT_KIOSK_TAB_ID) {
-            return false;
-        }
-        if (tabId != OLD_KIOSK_TAB_ID) {
-            return true;
-        }
-
-        final String kioskId = tabJsonObject.getString(JSON_KIOSK_ID_KEY, "");
-        if (REMOVED_KIOSK_IDS.contains(kioskId)) {
-            return false;
-        }
-
-        // All historical custom kiosk tabs are unsupported, including kiosk ids not listed above.
-        return false;
-    }
-
     public static List<Tab> getDefaultTabs() {
-        return FALLBACK_INITIAL_TABS_LIST;
+        return FIXED_TABS_LIST;
     }
 
     public static final class InvalidJsonException extends Exception {
