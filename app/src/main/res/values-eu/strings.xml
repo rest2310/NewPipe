@@ -189,8 +189,6 @@
     <string name="hold_to_append">Mantendu ilaran jartzeko</string>
     <string name="start_here_on_background">Hasi erreproduzitzen bigarren planoan</string>
     <string name="start_here_on_popup">Hasi erreproduzitzen laster-leihoan</string>
-    <string name="drawer_open">Ireki tiradera</string>
-    <string name="drawer_close">Itxi tiradera</string>
     <string name="no_player_found_toast">Ez da igorpen-erreproduzigailurik aurkitu (VLC instalatu dezakezu erreproduzitzeko).</string>
     <string name="always">Beti</string>
     <string name="just_once">Behin besterik ez</string>
@@ -401,7 +399,6 @@
     <string name="clear_playback_states_title">Ezabatu erreprodukzio-kokapenak</string>
     <string name="clear_playback_states_summary">Erreprodukzio-kokapen guztiak ezabatzen ditu</string>
     <string name="delete_playback_states_alert">Ezabatu erreprodukzio-kokapen guztiak?</string>
-    <string name="drawer_header_description">Aktibatu zerbitzua, orain hautatua:</string>
     <string name="default_kiosk_page_summary">Kiosko lehenetsia</string>
     <string name="seek_duration_title">Aurreratze/atzeratze bilaketaren iraupena</string>
     <string name="local">Tokikoa</string>

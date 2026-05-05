@@ -197,8 +197,6 @@
     <string name="external_player_unsupported_link_type">Externe Player unterstützen diese Art von Links nicht</string>
     <string name="video_streams_empty">Keine Video-Streams gefunden</string>
     <string name="audio_streams_empty">Keine Audio-Streams gefunden</string>
-    <string name="drawer_open">Navigationsleiste öffnen</string>
-    <string name="drawer_close">Navigationsleiste schließen</string>
     <string name="video_player">Video-Player</string>
     <string name="background_player">Wiedergabe im Hintergrund</string>
     <string name="popup_player">Pop-up-Player</string>
@@ -410,7 +408,6 @@
     <string name="clear_playback_states_title">Wiedergabepositionen löschen</string>
     <string name="clear_playback_states_summary">Alle Wiedergabepositionen löschen</string>
     <string name="delete_playback_states_alert">Alle Wiedergabepositionen löschen\?</string>
-    <string name="drawer_header_description">Dienst umschalten, aktuell ausgewählt:</string>
     <string name="default_kiosk_page_summary">Standard-Kiosk</string>
     <string name="no_one_watching">Niemand schaut zu</string>
     <plurals name="watching">

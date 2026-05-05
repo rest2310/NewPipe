@@ -218,8 +218,6 @@
     <string name="no_valid_zip_file">Netinkamas ZIP failas</string>
     <string name="could_not_import_all_files">Perspėjimas: Nepavyko importuoti visų failų.</string>
     <string name="override_current_data">Tai perrašys dabartinius nustatymus.</string>
-    <string name="drawer_open">Stalčius</string>
-    <string name="drawer_close">Uždaryti stalčių</string>
     <string name="video_player">Video grotuvas</string>
     <string name="background_player">Foninis grotuvas</string>
     <string name="popup_player">Iššokantis grotuvas</string>
@@ -270,7 +268,6 @@
     </plurals>
     <string name="no_one_watching">Niekas nežiūri</string>
     <string name="subscribers_count_not_available">Sekėjų skaičius neprieinamas</string>
-    <string name="drawer_header_description">Perjungti paslaugą, dabar pasirinkta:</string>
     <string name="description_tab_description">Aprašymas</string>
     <string name="related_items_tab_description">Susiję įrašai</string>
     <string name="comments_tab_description">Komentarai</string>

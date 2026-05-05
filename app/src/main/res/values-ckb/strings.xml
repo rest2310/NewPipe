@@ -192,7 +192,6 @@
     <string name="import_settings">دەتەوێت ڕێکخستنەکانیش هاوردە بكرینه‌وه‌؟</string>
     <string name="no_player_found">هیچ لێدەرێکی ڤیدیۆیی نه‌دۆزرایه‌وه‌. ده‌ته‌وێت VLC دابمەزرێنیت؟</string>
     <string name="download_path_title">فۆڵده‌ری داگرتنی ڤیدیۆ</string>
-    <string name="drawer_open">کردنەوەی پلیکانە</string>
     <string name="light_theme_title">ڕووناك</string>
     <string name="show_search_suggestions_summary">ئەو پێشنیازکراوانە هەڵبژێرە کە پیشان دەدرێن لەکاتی گەڕاندا</string>
     <string name="error_progress_lost">کردارەکە هه‌ره‌سی هێنا, چونکە ئەو فایله‌ سڕاوەتەوە</string>
@@ -307,7 +306,6 @@
     <string name="conferences">کۆنفرانسەکان</string>
     <string name="open_in_popup_mode">كردنه‌وه‌ له‌ دۆخی په‌نجه‌ره‌</string>
     <string name="limit_mobile_data_usage_title">سنووری قەبارە لەکاتی بەکارهێنانی ڕایه‌ڵه‌ی مۆبایل</string>
-    <string name="drawer_close">داخستنی پلیکانە</string>
     <string name="settings_category_clear_data_title">سڕینەوەی داتا</string>
     <string name="duration_live">زیندوو</string>
     <string name="no_channel_subscribed_yet">هیچ کەناڵێکی بەژداری نییە</string>
@@ -409,7 +407,6 @@
     <string name="player_unrecoverable_failure">كێشه‌ی نەگێڕانەوەی لێده‌ر ڕوویدا</string>
     <string name="import_ongoing">هاورده‌ ده‌كرێت…</string>
     <string name="share_dialog_title">هاوبه‌شپێكردن له‌گه‌ڵ</string>
-    <string name="drawer_header_description">چه‌سپانی خزمەتگوزاری، دیار کراوی ئێستا:</string>
     <string name="delete_search_history_alert">تەواوی مێژووی گەڕانەکانت بسڕدرێنەوە؟</string>
     <string name="resume_on_audio_focus_gain_summary">بەردەوام بوون له‌ لێدان لەدوای هەبوونی هەر پچڕانێك(وەک پەیوەندی تەلەفۆنی)</string>
     <string name="main_bg_subtitle">کرته‌ بكه‌ بۆ ده‌ستپێكردن.</string>

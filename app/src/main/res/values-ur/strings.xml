@@ -227,8 +227,6 @@
     <string name="hold_to_append">انقطار کو پکڑو</string>
     <string name="start_here_on_background">پس منظر میں چلانا شروع کریں</string>
     <string name="start_here_on_popup">پوپ اپ میں چلانا شروع کریں</string>
-    <string name="drawer_open">دراز کھولیں</string>
-    <string name="drawer_close">دراز بند کریں</string>
     <string name="preferred_open_action_settings_title">پسندیدہ \'کھلی\' کارروائی</string>
     <string name="preferred_open_action_settings_summary">مواد کھولنے پر طے شدہ کارروائی — %s</string>
     <string name="video_player">ویڈیو پلیئر</string>
@@ -395,7 +393,6 @@
     <string name="clear_playback_states_title">پلے بیک پوزیشن حذف کریں</string>
     <string name="clear_playback_states_summary">تمام پلے بیک پوزیشن حذف کی گئی</string>
     <string name="delete_playback_states_alert">تمام پلے بیک پوزیشنس حذف کریں؟</string>
-    <string name="drawer_header_description">ٹوگل خدمت، حالیہ منتخب:</string>
     <string name="no_one_watching">کوئی نہیں دیکھ رہا ہے</string>
     <plurals name="watching">
         <item quantity="one">%s دیکھ رہا</item>

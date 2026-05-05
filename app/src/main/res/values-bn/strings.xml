@@ -42,8 +42,6 @@
     <string name="create_playlist">নতুন প্লে লিস্ট</string>
     <string name="always_ask_open_action">সবসময় জিজ্ঞেস করুন</string>
     <string name="video_player">ভিডিও প্লেয়ার</string>
-    <string name="drawer_close">ড্রয়ার বন্ধ করুন</string>
-    <string name="drawer_open">ড্রয়ার খুলো</string>
     <string name="play_queue_audio_settings">অডিও সেটিং</string>
     <string name="play_queue_stream_detail">বিবরণ</string>
     <string name="play_queue_remove">সরাও</string>
@@ -326,7 +324,6 @@
     <string name="subtitle_activity_recaptcha">সমাধান হয়ে গেলে \"সম্পন্ন\" টিপো</string>
     <string name="no_one_listening">কেউ শুনছে না</string>
     <string name="no_one_watching">কেউ দেখছে না</string>
-    <string name="drawer_header_description">সেবাটি পরিবর্তন করো, বর্তমানে নির্বাচিত:</string>
     <string name="empty_list_subtitle">ঝিঝিপোকা ছাড়া কিছুই নেই এখানে</string>
     <string name="invalid_source">এই ধরনের কোন ফাইল/বিষয়বস্তুর উৎস নেই</string>
     <string name="player_unrecoverable_failure">অপুনরুদ্ধারযোগ্য প্লেয়ার ত্রুটি ঘটেছে</string>

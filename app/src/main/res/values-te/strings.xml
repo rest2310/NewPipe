@@ -272,7 +272,6 @@
     <string name="permission_display_over_apps">ఇతర యాప్‌లలో ప్రదర్శించడానికి అనుమతి ఇవ్వండి</string>
     <string name="copy_for_github">ఫార్మాట్ చేసిన నివేదికను కాపీ చేయండి</string>
     <string name="description_tab_description">వివరణ</string>
-    <string name="drawer_header_description">టోగుల్ సేవ, ప్రస్తుతం ఎంపిక చేయబడింది:</string>
     <plurals name="listening">
         <item quantity="one">%s శ్రోత</item>
         <item quantity="other">%s శ్రోతలు</item>
@@ -379,8 +378,6 @@
     <string name="enqueue_stream">ఎన్క్యూ</string>
     <string name="enqueued">క్యూలో ఉంచారు</string>
     <string name="start_here_on_background">వెనుకగా ప్లే చేయడం ప్రారంభించండి</string>
-    <string name="drawer_open">డ్రాయర్ తెరవండి</string>
-    <string name="drawer_close">డ్రాయర్‌ని మూసివేయండి</string>
     <string name="video_player">చలనచిత్ర ప్లేయర్</string>
     <string name="background_player">తేలియాడే ప్లేయర్</string>
     <string name="processing_may_take_a_moment">ప్రాసెస్ చేస్తోంది... కొంత సమయం పట్టవచ్చు</string>

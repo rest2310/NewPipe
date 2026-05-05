@@ -210,8 +210,6 @@
     <string name="hold_to_append">Tahan untuk mengantre</string>
     <string name="start_here_on_background">Mulai putar di latar belakang</string>
     <string name="start_here_on_popup">Mulai putar di popup</string>
-    <string name="drawer_open">Buka Laci</string>
-    <string name="drawer_close">Tutup Laci</string>
     <string name="video_player">Pemutar video</string>
     <string name="background_player">Pemutar latar belakang</string>
     <string name="popup_player">Pemutar sembulan</string>
@@ -398,7 +396,6 @@
     <plurals name="videos">
         <item quantity="other">%s video</item>
     </plurals>
-    <string name="drawer_header_description">Aktif/Nonaktifkan layanan, saat ini aktif:</string>
     <string name="no_one_watching">Tidak ada yang menonton</string>
     <plurals name="watching">
         <item quantity="other">%s menonton</item>

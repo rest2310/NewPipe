@@ -59,8 +59,6 @@
     <string name="video_player">വീഡിയോ പ്ലെയർ</string>
     <string name="preferred_open_action_settings_summary">ഉള്ളടക്കം തുറക്കുമ്പോൾ സ്ഥിരസ്ഥിതി പ്രവർത്തനം — %s</string>
     <string name="preferred_open_action_settings_title">തിരഞ്ഞെടുത്ത \'ഓപ്പൺ\' പ്രവർത്തനം</string>
-    <string name="drawer_close">ഡ്രോയർ അടക്കുക</string>
-    <string name="drawer_open">ഡ്രോയർ തുറക്കുക</string>
     <string name="start_here_on_popup">ഒരു പുതിയ പോപ്പ്അപ്പിൽ പ്ലേ ചെയ്യാൻ ആരംഭിക്കുക</string>
     <string name="start_here_on_background">പശ്ചാത്തലത്തിൽ പ്ലേ ആരംഭിക്കുക</string>
     <string name="hold_to_append">എൻക്യൂ ചെയ്യാൻ പിടിക്കുക</string>
@@ -175,7 +173,6 @@
         <item quantity="other">%s സബ്ക്രൈബറുകൾ</item>
     </plurals>
     <string name="no_subscribers">സബ്ക്രൈബേഴ്സ് ഇല്ല</string>
-    <string name="drawer_header_description">സേവനം മാറ്റുക, ഇപ്പോൾ തിരഞ്ഞെടുത്തത്:</string>
     <string name="retry">വീണ്ടും ശ്രമിക്കുക</string>
     <string name="audio">ഓഡിയോ</string>
     <string name="video">വീഡിയോ</string>

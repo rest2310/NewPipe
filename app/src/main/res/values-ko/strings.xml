@@ -213,8 +213,6 @@
     <string name="no_valid_zip_file">유효한 ZIP 파일 없음</string>
     <string name="could_not_import_all_files">경고: 파일을 전부 가져오지 못했습니다.</string>
     <string name="override_current_data">이것은 현재 설정을 덮어쓸 것입니다.</string>
-    <string name="drawer_open">드로어 열기</string>
-    <string name="drawer_close">드로어 닫기</string>
     <string name="video_player">비디오 플레이어</string>
     <string name="background_player">백그라운드 플레이어</string>
     <string name="popup_player">팝업 플레이어</string>
@@ -398,7 +396,6 @@
         <item quantity="other">%s 동영상</item>
     </plurals>
     <string name="enable_queue_limit_desc">한 번에 하나씩 다운로드 합니다</string>
-    <string name="drawer_header_description">서비스 토글, 현재 선택된 서비스:</string>
     <string name="default_kiosk_page_summary">기본 키오스크</string>
     <string name="no_one_watching">시청자 없음</string>
     <plurals name="watching">

@@ -192,8 +192,6 @@
     <string name="switch_to_background">Přepnout na pozadí</string>
     <string name="switch_to_popup">Do okna</string>
     <string name="switch_to_main">Přepnout na hlavní</string>
-    <string name="drawer_open">Otevřít Drawer</string>
-    <string name="drawer_close">Zavřít Drawer</string>
     <string name="no_player_found_toast">Nenalezen přehrávač streamu (pro přehrání můžete nainstalovat např. VLC).</string>
     <string name="always">Vždy</string>
     <string name="just_once">Pouze jednou</string>
@@ -404,7 +402,6 @@
     <string name="clear_playback_states_title">Vymazat pozice přehrávání</string>
     <string name="clear_playback_states_summary">Vymaže všechny pozice přehrávání</string>
     <string name="delete_playback_states_alert">Vymazat všechny pozice přehrávání?</string>
-    <string name="drawer_header_description">Přepnout službu, právě vybráno:</string>
     <string name="no_one_watching">Nikdo nesleduje</string>
     <plurals name="watching">
         <item quantity="one">%s sleduje</item>

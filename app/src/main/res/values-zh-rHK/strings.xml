@@ -403,7 +403,6 @@
     <string name="error_report_notification_title">NewPipe 遇到問題，撳一下去報告</string>
     <string name="error_report_notification_toast">發生問題，詳見通知</string>
     <string name="detail_drag_description">拖條片去執好清單排位</string>
-    <string name="drawer_header_description">轉換服務，而家揀選咗嘅係：</string>
     <string name="list_view_mode">清單檢視模式</string>
     <string name="error_progress_lost">做做下冇咗，因為個檔案刪除咗</string>
     <string name="error_timeout">等太耐連線</string>
@@ -509,7 +508,6 @@
     <string name="action_history">紀錄</string>
     <string name="enqueue_next_stream">攝咗做下個播</string>
     <string name="enable_leak_canary_summary">記憶體洩露監測喺傾卸堆疊嘢嘅時候，或者會導致個 app 冇反應</string>
-    <string name="drawer_close">閂埋選單</string>
     <string name="enqueued_next">攝咗做下個播</string>
     <string name="settings_category_player_behavior_title">點做法</string>
     <string name="hash_channel_description">影片雜湊進度嘅通知</string>
@@ -521,7 +519,6 @@
     <string name="select_a_channel">揀選一個頻道</string>
     <string name="title_activity_play_queue">排隊播</string>
     <string name="play_queue_audio_settings">聲音設定</string>
-    <string name="drawer_open">開啟選單</string>
     <string name="set_as_playlist_thumbnail">揀做播放清單縮圖</string>
     <string name="playlist_creation_success">整咗個播放清單</string>
     <string name="playlist_add_stream_success">加咗入播放清單</string>

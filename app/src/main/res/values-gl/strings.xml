@@ -248,8 +248,6 @@
     <string name="hold_to_append">Manteña para colocalo na cola</string>
     <string name="start_here_on_background">Comezar a reproducir en segundo plano</string>
     <string name="start_here_on_popup">Comezar reproducindo nunha xanela emerxente</string>
-    <string name="drawer_open">Abrir o menú</string>
-    <string name="drawer_close">Fechar o menú</string>
     <string name="preferred_open_action_settings_title">Acción «abrir» preferida</string>
     <string name="preferred_open_action_settings_summary">Acción predeterminada ao abrir o contido — %s</string>
     <string name="video_player">Reprodutor de vídeo</string>
@@ -472,7 +470,6 @@
     </plurals>
     <string name="no_one_watching">Ninguén está vendo</string>
     <string name="subscribers_count_not_available">Non hai dispoñible conta de subscritores</string>
-    <string name="drawer_header_description">Cambiar o servizo actualmente seleccionado:</string>
     <string name="error_report_open_github_notice">Verifique se xa existe un problema que fala do seu fallo. Ao crear billetes duplicados, gasta o tempo que nós poderiamos gastar en solucionar o erro real.</string>
     <string name="error_report_open_issue_button_text">Reportar en GitHub</string>
     <string name="copy_for_github">Copia o informe con formato</string>

@@ -147,7 +147,6 @@
     <string name="volume">Ableɣ</string>
     <string name="albums">Ilbumen</string>
     <string name="recent">Melmi kan</string>
-    <string name="drawer_close">Mdel umuɣ</string>
     <string name="open_with">Ldi s</string>
     <string name="show_description_title">Sken-d aglam</string>
     <string name="content_language_title">Tutlayt n ugbur amezwaru</string>
@@ -176,7 +175,6 @@
     <string name="audio_track_name">%1$s %2$s</string>
     <string name="import_file_title">Kter afaylu</string>
     <string name="feed_show_upcoming">Itteddu-d</string>
-    <string name="drawer_open">Ldi umuɣ</string>
     <string name="none">Ula d yiwen</string>
     <string name="share_playlist_content_details">%1$s\n%2$s</string>
     <string name="yes">Ih</string>

@@ -237,8 +237,6 @@
     <string name="hold_to_append">ਕਤਾਰਬੱਧ ਕਰਨ ਵਾਸਤੇ ਦਬਾ ਕੇ ਰੱਖੋ</string>
     <string name="start_here_on_background">ਬੈਕਗ੍ਰਾਊਂਡ ਵਿੱਚ ਚਲਾਉਣਾ ਸ਼ੁਰੂ ਕਰੋ</string>
     <string name="start_here_on_popup">ਪੌਪ-ਅਪ ਵਿੱਚ ਚਲਾਉਣਾ ਸ਼ੁਰੂ ਕਰੋ</string>
-    <string name="drawer_open">ਡਰਾਅਰ ਖੋਲੋ</string>
-    <string name="drawer_close">ਡਰਾਅਰ ਬੰਦ ਕਰੋ</string>
     <string name="preferred_open_action_settings_title">\'ਖੋਲ੍ਹਣ\' ਤੇ ਤਰਜੀਹੀ ਐਕਸ਼ਨ</string>
     <string name="preferred_open_action_settings_summary">ਸਮੱਗਰੀ ਖੋਲ੍ਹਣ ਸਮੇਂ ਡਿਫ਼ਾਲਟ ਕਾਰਵਾਈ — %s</string>
     <string name="video_player">ਵੀਡੀਓ ਪਲੇਅਰ</string>
@@ -401,7 +399,6 @@
     <string name="no_playlist_bookmarked_yet">ਹਾਲੇ ਕੋਈ ਪਲੇਲਿਸਟ ਬੁੱਕਮਾਰਕ ਨਹੀਂ ਕੀਤੀ ਹੋਈ</string>
     <string name="default_kiosk_page_summary">ਡਿਫ਼ਾਲਟ ਕਿਓਸਕ</string>
     <string name="msg_calculating_hash">ਹੈਸ਼ ਦਾ ਲੇਖਾ-ਜੋਖਾ ਹੋ ਰਿਹਾ ਹੈ</string>
-    <string name="drawer_header_description">ਸੇਵਾ ਚੁਣੋ, ਮੌਜੂਦਾ ਚੋਣ:</string>
     <string name="error_report_open_github_notice">ਮਿਹਰਬਾਨੀ ਕਰਕੇ ਜਾਂਚ ਲਓ ਕਿ ਤੁਹਾਡੇ ਵਾਲ੍ਹੇ ਕ੍ਰੈਸ਼ ਦੀ ਗੱਲ ਕਰਦਾ ਕੋਈ ਮਸਲਾ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਤਾਂ ਨਹੀਂ। ਇੱਕੋ ਮਸਲੇ ਦੀਆਂ ਦੋ ਜਾਂ ਵੱਧ ਨਕਲਾਂ ਬਣਾ ਕੇ ਤੁਸੀਂ ਸਾਡੇ ਤੋਂ ਉਹ ਵਕਤ ਖੋਹ ਲੈਂਦੇ ਹੋ ਜੋ ਅਸੀਂ ਅਸਲੀ ਮਸਲੇ ਦੇ ਹੱਲ ਲਈ ਲਾਉਣਾ ਸੀ।</string>
     <string name="copy_for_github">ਫ਼ਾਰਮੈਟ ਕੀਤੀ ਰਿਪੋਰਟ ਕਾਪੀ ਕਰੋ</string>
     <string name="clear_cookie_summary">reCAPTCHA ਹੱਲ ਕਰਦੇ ਵੇਲ਼ੇ ਨਿਊਪਾਈਪ ਵਿੱਚ ਜਮ੍ਹਾਂ ਹੋਣ ਵਾਲ਼ੀਆਂ ਕੁਕੀਜ਼ ਸਾਫ਼ ਕਰੋ</string>

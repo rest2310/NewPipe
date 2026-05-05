@@ -247,7 +247,6 @@
     <string name="preferred_player_fetcher_notification_title">A obter informação…</string>
     <string name="show_search_suggestions_title">Sugestões de pesquisa</string>
     <string name="set_as_playlist_thumbnail">Definir como miniatura da lista de reprodução</string>
-    <string name="drawer_open">Abrir menu</string>
     <plurals name="subscribers">
         <item quantity="one">%s subscritor</item>
         <item quantity="many">%s subscritores</item>
@@ -363,7 +362,6 @@
     <string name="play_queue_stream_detail">Detalhes</string>
     <string name="network_error">Erro de rede</string>
     <string name="enable_search_history_title">Histórico de pesquisa</string>
-    <string name="drawer_header_description">Alternar serviço atualmente selecionado:</string>
     <string name="play_queue_remove">Remover</string>
     <string name="your_comment">Comentários (em inglês):</string>
     <string name="video_player">Reprodutor de vídeo</string>
@@ -452,7 +450,6 @@
     <string name="show_hold_to_append_title">Mostrar dica \"Toque longo para enfileirar\"</string>
     <string name="choose_instance_prompt">Escolha uma instância</string>
     <string name="metadata_cache_wipe_summary">Limpar todos os dados da página web</string>
-    <string name="drawer_close">Fechar menu</string>
     <string name="remove_watched">Remover visualizados</string>
     <string name="settings_file_replacement_character_title">Carácter de substituição</string>
     <string name="video">Vídeo</string>

@@ -114,7 +114,6 @@
     <string name="permission_denied">操作已被系统拒绝</string>
     <string name="download_failed">下载失败</string>
     <string name="no_comments">没有评论</string>
-    <string name="drawer_header_description">切换服务，当前选择：</string>
     <string name="no_player_found">找不到串流播放器。是否安装 VLC？</string>
     <string name="use_external_video_player_title">使用外部视频播放器</string>
     <string name="use_external_audio_player_title">使用外部音频播放器</string>
@@ -224,8 +223,6 @@
     <string name="switch_to_background">切换到后台播放</string>
     <string name="switch_to_popup">切换到悬浮窗播放</string>
     <string name="switch_to_main">切换到主页面</string>
-    <string name="drawer_open">打开抽屉</string>
-    <string name="drawer_close">关闭抽屉</string>
     <string name="external_player_unsupported_link_type">第三方播放器不支持此类型链接</string>
     <string name="video_streams_empty">未找到视频串流</string>
     <string name="audio_streams_empty">找不到音频串流</string>

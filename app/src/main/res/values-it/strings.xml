@@ -192,8 +192,6 @@
     <string name="switch_to_background">Passa in sottofondo</string>
     <string name="switch_to_popup">Passa alla modalità popup</string>
     <string name="switch_to_main">Passa al lettore principale</string>
-    <string name="drawer_open">Apri il menu</string>
-    <string name="drawer_close">Chiudi il menu</string>
     <string name="no_player_found_toast">Nessun lettore multimediale trovato (puoi installare VLC per riprodurlo).</string>
     <string name="always">Sempre</string>
     <string name="just_once">Solo una volta</string>
@@ -404,7 +402,6 @@
     <string name="clear_playback_states_title">Elimina le posizioni di riproduzione</string>
     <string name="clear_playback_states_summary">Elimina tutte le posizioni di riproduzione</string>
     <string name="delete_playback_states_alert">Eliminare tutte le posizioni di riproduzione\?</string>
-    <string name="drawer_header_description">Attiva/disattiva il servizio, attualmente selezionato:</string>
     <string name="no_one_watching">Nessuno sta guardando</string>
     <plurals name="watching">
         <item quantity="one">%s sta guardando</item>

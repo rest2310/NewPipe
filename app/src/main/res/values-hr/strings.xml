@@ -185,8 +185,6 @@
     <string name="website_title">Web-stranica</string>
     <string name="start_here_on_background">Započni reprodukciju u pozadini</string>
     <string name="start_here_on_popup">Reproduciraj u skočnom prozoru</string>
-    <string name="drawer_open">Otvori ladicu</string>
-    <string name="drawer_close">Zatvori ladicu</string>
     <string name="video_player">Video player</string>
     <string name="background_player">Pozadinski player</string>
     <string name="popup_player">Skočni player</string>
@@ -514,7 +512,6 @@
         <item quantity="few">%s gledatelja</item>
         <item quantity="other">%s gledatelja</item>
     </plurals>
-    <string name="drawer_header_description">Uključi/isključi uslugu, trenutačno odabrana:</string>
     <string name="copy_for_github">Kopiraj formatirani izveštaj</string>
     <string name="clear_cookie_summary">Izbriši kolačiće koje NewPipe sprema nakon rješavanja reCAPTCHA</string>
     <string name="recaptcha_cookies_cleared">reCAPTCHA kolačići su izbrisani</string>

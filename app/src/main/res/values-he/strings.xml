@@ -293,8 +293,6 @@
     <string name="could_not_import_all_files">אזהרה: ייבוא חלק מהקבצים נכשל.</string>
     <string name="override_current_data">פעולה זו תדרוס את ההגדרות הקיימות.</string>
     <string name="import_settings">לייבא גם הגדרות\?</string>
-    <string name="drawer_open">פתיחת מגירה</string>
-    <string name="drawer_close">סגירת מגירה</string>
     <string name="preferred_open_action_settings_title">פעולת ‚פתיחה’ מועדפת</string>
     <string name="preferred_open_action_settings_summary">פעולת ברירת מחדל בעת פתיחת תוכן - %s</string>
     <string name="set_as_playlist_thumbnail">הגדרה כתמונת רשימת הנגינה</string>
@@ -407,7 +405,6 @@
     <string name="clear_playback_states_title">מחיקת מיקומי נגינה</string>
     <string name="clear_playback_states_summary">מחיקת כל מיקומי הנגינה</string>
     <string name="delete_playback_states_alert">למחוק את מיקומי הנגינה\?</string>
-    <string name="drawer_header_description">הפעלה/כיבוי שירות, בחירה נוכחית:</string>
     <string name="no_one_watching">אין צופים</string>
     <plurals name="watching">
         <item quantity="one">צופה %s</item>

@@ -31,23 +31,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
@@ -56,12 +51,8 @@ import androidx.preference.PreferenceManager;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import org.schabi.newpipe.databinding.ActivityMainBinding;
-import org.schabi.newpipe.databinding.DrawerHeaderBinding;
-import org.schabi.newpipe.databinding.DrawerLayoutBinding;
 import org.schabi.newpipe.databinding.ToolbarLayoutBinding;
 import org.schabi.newpipe.error.ErrorUtil;
-import org.schabi.newpipe.extractor.NewPipe;
-import org.schabi.newpipe.extractor.ServiceList;
 import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.comments.CommentsInfoItem;
 import org.schabi.newpipe.fragments.BackPressable;
@@ -69,7 +60,10 @@ import org.schabi.newpipe.fragments.MainFragment;
 import org.schabi.newpipe.fragments.detail.VideoDetailFragment;
 import org.schabi.newpipe.fragments.list.comments.CommentRepliesFragment;
 import org.schabi.newpipe.fragments.list.search.SearchFragment;
+import org.schabi.newpipe.local.bookmark.BookmarkFragment;
+import org.schabi.newpipe.local.feed.FeedFragment;
 import org.schabi.newpipe.local.feed.notifications.NotificationWorker;
+import org.schabi.newpipe.local.subscription.SubscriptionFragment;
 import org.schabi.newpipe.player.Player;
 import org.schabi.newpipe.player.event.OnKeyDownListener;
 import org.schabi.newpipe.player.helper.PlayerHolder;
@@ -99,26 +93,10 @@ public class MainActivity extends AppCompatActivity {
     public static final boolean DEBUG = !BuildConfig.BUILD_TYPE.equals("release");
 
     private ActivityMainBinding mainBinding;
-    private DrawerHeaderBinding drawerHeaderBinding;
-    private DrawerLayoutBinding drawerLayoutBinding;
     private ToolbarLayoutBinding toolbarLayoutBinding;
-
-    private ActionBarDrawerToggle toggle;
-
-    private boolean servicesShown = false;
 
     private BroadcastReceiver broadcastReceiver;
 
-    private static final int ITEM_ID_SUBSCRIPTIONS = -1;
-    private static final int ITEM_ID_FEED = -2;
-    private static final int ITEM_ID_BOOKMARKS = -3;
-    private static final int ITEM_ID_DOWNLOADS = -4;
-    private static final int ITEM_ID_HISTORY = -5;
-    private static final int ITEM_ID_SETTINGS = 0;
-    private static final int ITEM_ID_DONATION = 1;
-    private static final int ITEM_ID_ABOUT = 2;
-
-    private static final int ORDER = 0;
     public static final String KEY_IS_IN_BACKGROUND = "is_in_background";
 
     private SharedPreferences sharedPreferences;
@@ -156,9 +134,6 @@ public class MainActivity extends AppCompatActivity {
         sharedPrefEditor = sharedPreferences.edit();
 
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
-        drawerLayoutBinding = mainBinding.drawerLayout;
-        drawerHeaderBinding = DrawerHeaderBinding.bind(drawerLayoutBinding.navigation
-                .getHeaderView(0));
         toolbarLayoutBinding = mainBinding.toolbarLayout;
         setContentView(mainBinding.getRoot());
 
@@ -167,11 +142,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setSupportActionBar(toolbarLayoutBinding.toolbar);
-        try {
-            setupDrawer();
-        } catch (final Exception e) {
-            ErrorUtil.showUiErrorSnackbar(this, "Setting up drawer", e);
-        }
+        setupBottomNavigation();
         if (DeviceUtils.isTv(this)) {
             FocusOverlayView.setupFocusObserver(this);
         }
@@ -228,175 +199,86 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "App moved to background");
     }
 
-    private void setupDrawer() {
-        addDrawerMenuForCurrentService();
-
-        toggle = new ActionBarDrawerToggle(this, mainBinding.getRoot(),
-                toolbarLayoutBinding.toolbar, R.string.drawer_open, R.string.drawer_close);
-        toggle.syncState();
-        mainBinding.getRoot().addDrawerListener(toggle);
-        mainBinding.getRoot().addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
-            private int lastService;
-
-            @Override
-            public void onDrawerOpened(final View drawerView) {
-                lastService = ServiceHelper.getSelectedServiceId(MainActivity.this);
+    private void setupBottomNavigation() {
+        mainBinding.bottomNavigation.setOnItemSelectedListener(item -> {
+            final int itemId = item.getItemId();
+            if (isCurrentBottomNavigationDestination(itemId)) {
+                return true;
             }
 
-            @Override
-            public void onDrawerClosed(final View drawerView) {
-                if (servicesShown) {
-                    toggleServices();
-                }
-                if (lastService != ServiceHelper.getSelectedServiceId(MainActivity.this)) {
-                    ActivityCompat.recreate(MainActivity.this);
-                }
+            final boolean opened = openBottomNavigationDestination(itemId);
+            if (opened) {
+                updateToolbarNavigation();
+            }
+            return opened;
+        });
+        mainBinding.bottomNavigation.setOnItemReselectedListener(item -> {
+            final int itemId = item.getItemId();
+            if (!isCurrentBottomNavigationDestination(itemId)) {
+                openBottomNavigationDestination(itemId);
+                updateToolbarNavigation();
             }
         });
-
-        drawerLayoutBinding.navigation.setNavigationItemSelectedListener(this::drawerItemSelected);
-        setupDrawerHeader();
+        getSupportFragmentManager().addOnBackStackChangedListener(() -> {
+            updateToolbarNavigation();
+            updateBottomNavigationSelection();
+        });
+        updateBottomNavigationSelection();
     }
 
-    /**
-     * Builds the drawer menu for the current service.
-     */
-    private void addDrawerMenuForCurrentService() {
-        // Tabs
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_tabs_group, ITEM_ID_SUBSCRIPTIONS, ORDER,
-                        R.string.tab_subscriptions)
-                .setIcon(R.drawable.ic_tv);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_tabs_group, ITEM_ID_FEED, ORDER, R.string.fragment_feed_title)
-                .setIcon(R.drawable.ic_subscriptions);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_tabs_group, ITEM_ID_BOOKMARKS, ORDER, R.string.tab_bookmarks)
-                .setIcon(R.drawable.ic_bookmark);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_tabs_group, ITEM_ID_DOWNLOADS, ORDER, R.string.downloads)
-                .setIcon(R.drawable.ic_file_download);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_tabs_group, ITEM_ID_HISTORY, ORDER, R.string.action_history)
-                .setIcon(R.drawable.ic_history);
-
-        // Settings and About
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_options_about_group, ITEM_ID_SETTINGS, ORDER, R.string.settings)
-                .setIcon(R.drawable.ic_settings);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_options_about_group, ITEM_ID_DONATION, ORDER,
-                        R.string.donation_title)
-                .setIcon(R.drawable.volunteer_activism_ic);
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_options_about_group, ITEM_ID_ABOUT, ORDER, R.string.tab_about)
-                .setIcon(R.drawable.ic_info_outline);
-    }
-
-    private boolean drawerItemSelected(final MenuItem item) {
-        final int groupId = item.getGroupId();
-        if (groupId == R.id.menu_services_group) {
-            changeService(item);
-        } else if (groupId == R.id.menu_tabs_group) {
-            tabSelected(item);
-        } else if (groupId == R.id.menu_options_about_group) {
-            optionsAboutSelected(item);
+    private boolean openBottomNavigationDestination(final int itemId) {
+        if (itemId == R.id.bottom_navigation_home) {
+            NavigationHelper.openFeedFragment(getSupportFragmentManager());
+        } else if (itemId == R.id.bottom_navigation_subscriptions) {
+            NavigationHelper.openSubscriptionFragment(getSupportFragmentManager());
+        } else if (itemId == R.id.bottom_navigation_playlists) {
+            NavigationHelper.openBookmarksFragment(getSupportFragmentManager());
+        } else if (itemId == R.id.bottom_navigation_downloads) {
+            NavigationHelper.openDownloads(this);
         } else {
             return false;
         }
-
-        mainBinding.getRoot().closeDrawers();
         return true;
     }
 
-    private void changeService(final MenuItem item) {
-        drawerLayoutBinding.navigation.getMenu()
-                .getItem(ServiceHelper.getSelectedServiceId(this))
-                .setChecked(false);
-        ServiceHelper.setSelectedServiceId(this, item.getItemId());
-        drawerLayoutBinding.navigation.getMenu()
-                .getItem(ServiceHelper.getSelectedServiceId(this))
-                .setChecked(true);
-    }
-
-    private void tabSelected(final MenuItem item) {
-        switch (item.getItemId()) {
-            case ITEM_ID_SUBSCRIPTIONS:
-                NavigationHelper.openSubscriptionFragment(getSupportFragmentManager());
-                break;
-            case ITEM_ID_FEED:
-                NavigationHelper.openFeedFragment(getSupportFragmentManager());
-                break;
-            case ITEM_ID_BOOKMARKS:
-                NavigationHelper.openBookmarksFragment(getSupportFragmentManager());
-                break;
-            case ITEM_ID_DOWNLOADS:
-                NavigationHelper.openDownloads(this);
-                break;
-            case ITEM_ID_HISTORY:
-                NavigationHelper.openStatisticFragment(getSupportFragmentManager());
-                break;
+    private boolean isCurrentBottomNavigationDestination(final int itemId) {
+        final Fragment fragment = getSupportFragmentManager()
+                .findFragmentById(R.id.fragment_holder);
+        if (itemId == R.id.bottom_navigation_home) {
+            return fragment instanceof FeedFragment;
+        } else if (itemId == R.id.bottom_navigation_subscriptions) {
+            return fragment instanceof SubscriptionFragment;
+        } else if (itemId == R.id.bottom_navigation_playlists) {
+            return fragment instanceof BookmarkFragment;
         }
+        return false;
     }
 
-    private void optionsAboutSelected(final MenuItem item) {
-        switch (item.getItemId()) {
-            case ITEM_ID_SETTINGS:
-                NavigationHelper.openSettings(this);
-                break;
-            case ITEM_ID_DONATION:
-                ShareUtils.openUrlInBrowser(this, getString(R.string.donation_url));
-                break;
-            case ITEM_ID_ABOUT:
-                NavigationHelper.openAbout(this);
-                break;
-        }
-    }
+    private void updateBottomNavigationSelection() {
+        final Fragment fragment = getSupportFragmentManager()
+                .findFragmentById(R.id.fragment_holder);
 
-    private void setupDrawerHeader() {
-        drawerHeaderBinding.drawerHeaderActionButton.setOnClickListener(view -> toggleServices());
-
-        // If the current app name is bigger than the default "NewPipe" (7 chars),
-        // let the text view grow a little more as well.
-        if (getString(R.string.app_name).length() > "NewPipe".length()) {
-            final ViewGroup.LayoutParams layoutParams =
-                    drawerHeaderBinding.drawerHeaderNewpipeTitle.getLayoutParams();
-            layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
-            drawerHeaderBinding.drawerHeaderNewpipeTitle.setLayoutParams(layoutParams);
-            drawerHeaderBinding.drawerHeaderNewpipeTitle.setMaxLines(2);
-            drawerHeaderBinding.drawerHeaderNewpipeTitle.setMinWidth(getResources()
-                    .getDimensionPixelSize(R.dimen.drawer_header_newpipe_title_default_width));
-            drawerHeaderBinding.drawerHeaderNewpipeTitle.setMaxWidth(getResources()
-                    .getDimensionPixelSize(R.dimen.drawer_header_newpipe_title_max_width));
-        }
-    }
-
-    private void toggleServices() {
-        servicesShown = !servicesShown;
-
-        drawerLayoutBinding.navigation.getMenu().removeGroup(R.id.menu_services_group);
-        drawerLayoutBinding.navigation.getMenu().removeGroup(R.id.menu_tabs_group);
-        drawerLayoutBinding.navigation.getMenu().removeGroup(R.id.menu_options_about_group);
-
-        // Show up or down arrow
-        drawerHeaderBinding.drawerArrow.setImageResource(
-                servicesShown ? R.drawable.ic_arrow_drop_up : R.drawable.ic_arrow_drop_down);
-
-        if (servicesShown) {
-            showServices();
+        final int selectedItemId;
+        if (fragment instanceof SubscriptionFragment) {
+            selectedItemId = R.id.bottom_navigation_subscriptions;
+        } else if (fragment instanceof BookmarkFragment) {
+            selectedItemId = R.id.bottom_navigation_playlists;
+        } else if (fragment instanceof FeedFragment || fragment instanceof MainFragment) {
+            selectedItemId = R.id.bottom_navigation_home;
         } else {
-            addDrawerMenuForCurrentService();
+            selectedItemId = View.NO_ID;
         }
-    }
 
-    private void showServices() {
-        final StreamingService s = ServiceList.YouTube;
-        final String title = s.getServiceInfo().getName();
+        if (selectedItemId == View.NO_ID) {
+            mainBinding.bottomNavigation.getMenu().setGroupCheckable(0, true, false);
+            for (int i = 0; i < mainBinding.bottomNavigation.getMenu().size(); i++) {
+                mainBinding.bottomNavigation.getMenu().getItem(i).setChecked(false);
+            }
+            mainBinding.bottomNavigation.getMenu().setGroupCheckable(0, true, true);
+            return;
+        }
 
-        drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_services_group, s.getServiceId(), ORDER, title)
-                .setIcon(ServiceHelper.getIcon(s.getServiceId()))
-                .setChecked(true);
+        mainBinding.bottomNavigation.getMenu().findItem(selectedItemId).setChecked(true);
     }
 
     @Override
@@ -416,24 +298,7 @@ public class MainActivity extends AppCompatActivity {
         Localization.initPrettyTime(Localization.resolvePrettyTime());
         super.onResume();
 
-        // Close drawer on return, and don't show animation,
-        // so it looks like the drawer isn't open when the user returns to MainActivity
-        mainBinding.getRoot().closeDrawer(GravityCompat.START, false);
-        try {
-            final int selectedServiceId = ServiceHelper.getSelectedServiceId(this);
-            final String selectedServiceName = NewPipe.getService(selectedServiceId)
-                    .getServiceInfo().getName();
-            drawerHeaderBinding.drawerHeaderServiceView.setText(selectedServiceName);
-            drawerHeaderBinding.drawerHeaderServiceIcon.setImageResource(ServiceHelper
-                    .getIcon(selectedServiceId));
-
-            drawerHeaderBinding.drawerHeaderServiceView.post(() -> drawerHeaderBinding
-                    .drawerHeaderServiceView.setSelected(true));
-            drawerHeaderBinding.drawerHeaderActionButton.setContentDescription(
-                    getString(R.string.drawer_header_description) + selectedServiceName);
-        } catch (final Exception e) {
-            ErrorUtil.showUiErrorSnackbar(this, "Setting up service toggle", e);
-        }
+        updateBottomNavigationSelection();
 
         if (sharedPreferences.getBoolean(Constants.KEY_THEME_CHANGE, false)) {
             if (DEBUG) {
@@ -451,10 +316,6 @@ public class MainActivity extends AppCompatActivity {
             NavigationHelper.openMainActivity(this);
         }
 
-        final boolean isHistoryEnabled = sharedPreferences.getBoolean(
-                getString(R.string.enable_watch_history_key), true);
-        drawerLayoutBinding.navigation.getMenu().findItem(ITEM_ID_HISTORY)
-                .setVisible(isHistoryEnabled);
     }
 
     @Override
@@ -495,13 +356,6 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (DEBUG) {
             Log.d(TAG, "onBackPressed() called");
-        }
-
-        if (DeviceUtils.isTv(this)) {
-            if (mainBinding.getRoot().isDrawerOpen(drawerLayoutBinding.navigation)) {
-                mainBinding.getRoot().closeDrawers();
-                return;
-            }
         }
 
         // In case bottomSheet is not visible on the screen or collapsed we can assume that the user
@@ -634,7 +488,7 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(false);
         }
 
-        updateDrawerNavigation();
+        updateToolbarNavigation();
 
         return true;
     }
@@ -679,7 +533,7 @@ public class MainActivity extends AppCompatActivity {
     // Utils
     //////////////////////////////////////////////////////////////////////////*/
 
-    private void updateDrawerNavigation() {
+    private void updateToolbarNavigation() {
         if (getSupportActionBar() == null) {
             return;
         }
@@ -688,14 +542,8 @@ public class MainActivity extends AppCompatActivity {
                 .findFragmentById(R.id.fragment_holder);
         if (fragment instanceof MainFragment) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            if (toggle != null) {
-                toggle.syncState();
-                toolbarLayoutBinding.toolbar.setNavigationOnClickListener(v -> mainBinding.getRoot()
-                        .open());
-                mainBinding.getRoot().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNDEFINED);
-            }
+            toolbarLayoutBinding.toolbar.setNavigationOnClickListener(null);
         } else {
-            mainBinding.getRoot().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbarLayoutBinding.toolbar.setNavigationOnClickListener(v -> onHomeButtonPressed());
         }

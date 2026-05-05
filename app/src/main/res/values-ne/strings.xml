@@ -266,8 +266,6 @@
     <string name="hold_to_append">लामबद्ध गर्न पकड</string>
     <string name="start_here_on_background">पृष्ठभूमिमा बजाउन सुरु गर्नुहोस</string>
     <string name="start_here_on_popup">पपअपमा बजाउन सुरु गर्नुहोस</string>
-    <string name="drawer_open">ड्रअर खोल्नुहोस</string>
-    <string name="drawer_close">ड्रअर बन्द</string>
     <string name="preferred_open_action_settings_title">प्राथमिक \'खुला\' कार्य</string>
     <string name="preferred_open_action_settings_summary">सामग्री खोल्दै गर्दा गरिने पूर्वनिर्धारित कार्य - %s</string>
     <string name="video_player">भिडियो प्लेयर</string>
@@ -395,7 +393,6 @@
     <string name="clear_playback_states_title">प्लेब्याक स्थान मेटाउ</string>
     <string name="clear_playback_states_summary">सबै प्लेब्याक स्थानहरु मेटाउँछ</string>
     <string name="delete_playback_states_alert">सबै प्लेब्याक स्थान मेटाउने\?</string>
-    <string name="drawer_header_description">सेवा टगल गर्नुहोस्, हाल चयन गरिएको:</string>
     <string name="no_one_watching">कसैले हेर्दै हुनुहुँदैन</string>
     <plurals name="watching">
         <item quantity="one">%s जना हेर्दै हुनुहुन्छ</item>

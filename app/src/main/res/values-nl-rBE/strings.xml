@@ -230,8 +230,6 @@
     <string name="hold_to_append">Houd ingedrukt om toe te voegen aan wachtrij</string>
     <string name="start_here_on_background">Begint met afspelen in de achtergrond</string>
     <string name="start_here_on_popup">Afspelen in pop-up</string>
-    <string name="drawer_open">Menu openen</string>
-    <string name="drawer_close">Menu sluiten</string>
     <string name="preferred_open_action_settings_title">Voorkeursactie voor openen</string>
     <string name="preferred_open_action_settings_summary">Standaard actie bij openen van inhoud — %s</string>
     <string name="video_player">Videospeler</string>
@@ -492,7 +490,6 @@
         <item quantity="other">%s kijkers</item>
     </plurals>
     <string name="no_one_watching">Niemand is aan het kijken</string>
-    <string name="drawer_header_description">Toggle service, momenteel geselecteerd:</string>
     <string name="error_report_open_github_notice">Controleer aub of er al een probleem bestaat dat uw crash beschrijft. Wanneer u dubbele tickets aanmaakt, neemt dit tijd van ons in beslag die we beter kunnen besteden aan het oplossen van het daadwerkelijke probleem.</string>
     <string name="error_report_open_issue_button_text">In GitHub rapporteren</string>
     <string name="copy_for_github">Kopieer opgemaakt rapport</string>

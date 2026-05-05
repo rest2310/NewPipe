@@ -228,8 +228,6 @@
     <string name="hold_to_append">Утримуйте, щоб додати в чергу</string>
     <string name="start_here_on_background">Розпочати програвання на фоні</string>
     <string name="start_here_on_popup">Почати відтворення у вікні</string>
-    <string name="drawer_open">Відкрити бічну панель</string>
-    <string name="drawer_close">Закрити бічну панель</string>
     <string name="always_ask_open_action">Завжди питати</string>
     <string name="create_playlist">Нова добірка</string>
     <string name="rename_playlist">Перейменувати</string>
@@ -404,7 +402,6 @@
     <string name="clear_playback_states_title">Видалити позиції відтворення</string>
     <string name="clear_playback_states_summary">Видаляє всі позиції відтворення</string>
     <string name="delete_playback_states_alert">Видалити всі позиції відтворення\?</string>
-    <string name="drawer_header_description">Перемкнути службу, наразі обрано:</string>
     <string name="default_kiosk_page_summary">Типовий кіоск</string>
     <string name="no_one_watching">Немає переглядів</string>
     <plurals name="watching">

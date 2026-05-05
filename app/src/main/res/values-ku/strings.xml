@@ -299,7 +299,6 @@
     <string name="clear_playback_states_title">سڕینەوەی شوێنی کارپێکراوەکان</string>
     <string name="clear_playback_states_summary">شوێنی هەموو کارپێکراوەکان دەسڕێتەوە</string>
     <string name="delete_playback_states_alert">شوێنی هەموو کارپێکراوەکان بسڕدرێتەوە؟</string>
-    <string name="drawer_header_description">خزمەتگوزاری چەسپاو، ئێستا هەڵبژێردراو:</string>
     <string name="no_one_watching">هیچ کەسێک تەماشای ناکات</string>
     <plurals name="watching">
         <item quantity="one">%s تەماشا دەکات</item>
@@ -343,8 +342,6 @@
     <string name="top_50">باشترین 50</string>
     <string name="new_and_hot">نوێ و چالاک</string>
     <string name="hold_to_append">پەنجەت داگرە بۆ ڕیزنەبوون</string>
-    <string name="drawer_open">کردنەوەی پلیکانە</string>
-    <string name="drawer_close">داخستنی پلیکانە</string>
     <string name="enable_leak_canary_summary">چاودێری دزەکردنی بیرگە ڕەنگە ببێتە هۆی وەڵامنەدانەوەی لەکاتی گەرمبوون</string>
     <string name="preferred_open_action_settings_title">کرداری ’کردنەوە’ی پێشنیارکراو</string>
     <string name="preferred_open_action_settings_summary">کرداری بنەڕەتی لەکاتی کردنەوەی بابەت — %s</string>

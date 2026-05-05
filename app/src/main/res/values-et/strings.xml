@@ -234,8 +234,6 @@
     <string name="hold_to_append">Järjekorda lisamiseks vajuta</string>
     <string name="start_here_on_background">Hakka taustal mängima</string>
     <string name="start_here_on_popup">Hakka mängima hüpikaknas</string>
-    <string name="drawer_open">Ava sahtel</string>
-    <string name="drawer_close">Sulge sahtel</string>
     <string name="preferred_open_action_settings_title">Lingi avamine</string>
     <string name="preferred_open_action_settings_summary">Vaikimisi tegevus sisu avamisel — %s</string>
     <string name="video_player">Videopleier</string>
@@ -538,7 +536,6 @@
     <string name="error_postprocessing_stopped">NewPipe lõpetas faili töötlemisel töö</string>
     <string name="disable_media_tunneling_summary">Lülita meedia tunneldamine välja juhul, kui esitamisel tekib must ekraan või pildi kuvamine on katkendlik.</string>
     <string name="disable_media_tunneling_title">Lülita meedia tunneldamine välja</string>
-    <string name="drawer_header_description">Vaheta teenust, hetkel on kasutusel:</string>
     <string name="content_not_supported">NewPipe hetkel sellist võimaluist ei toeta.
 \n
 \nAga loodetavasti jõuame sellise võimaluse tulevasse versiooni lisada.</string>

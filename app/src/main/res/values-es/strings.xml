@@ -192,8 +192,6 @@
     <string name="switch_to_background">Cambiar a segundo plano</string>
     <string name="switch_to_popup">Cambiar a emergente</string>
     <string name="switch_to_main">Cambiar a principal</string>
-    <string name="drawer_open">Abrir cajón</string>
-    <string name="drawer_close">Cerrar cajón</string>
     <string name="no_player_found_toast">No se encontró ningún reproductor de retransmisiones (puedes instalar VLC para reproducirlo).</string>
     <string name="always">Siempre</string>
     <string name="just_once">Solo una vez</string>
@@ -408,7 +406,6 @@
     <string name="clear_playback_states_title">Borrar posiciones de reproducción</string>
     <string name="clear_playback_states_summary">Borra todas las posiciones de reproducción</string>
     <string name="delete_playback_states_alert">¿Quieres borrar todas las posiciones de reproducción\?</string>
-    <string name="drawer_header_description">Activar/desactivar servicio, seleccionados actualmente:</string>
     <string name="default_kiosk_page_summary">Quiosco predeterminado</string>
     <string name="no_one_watching">Nadie está viendo</string>
     <plurals name="watching">

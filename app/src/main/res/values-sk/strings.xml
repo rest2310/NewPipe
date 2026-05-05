@@ -218,8 +218,6 @@
     <string name="hold_to_append">Podržaním pridať do zoznamu</string>
     <string name="start_here_on_background">Prehrať (zvuk) odtiaľto na pozadí</string>
     <string name="start_here_on_popup">Spustiť prehrávanie vo vyskakovacom okne</string>
-    <string name="drawer_open">Otvoriť zásuvku</string>
-    <string name="drawer_close">Zavrieť zásuvku</string>
     <string name="video_player">Prehrávač videa</string>
     <string name="background_player">Zvuk na pozadí</string>
     <string name="popup_player">Mini okno</string>
@@ -405,7 +403,6 @@
     <string name="clear_playback_states_title">Odstrániť pozície prehrávania</string>
     <string name="clear_playback_states_summary">Odstráni všetky pozície prehrávania</string>
     <string name="delete_playback_states_alert">Odstrániť všetky pozície prehrávania\?</string>
-    <string name="drawer_header_description">Prepnúť službu, práve vybraté:</string>
     <string name="default_kiosk_page_summary">Predvolený kiosk</string>
     <string name="no_one_watching">Toto nikto nesleduje</string>
     <plurals name="watching">

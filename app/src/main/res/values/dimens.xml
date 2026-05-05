@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="bottom_navigation_height">80dp</dimen>
     <!-- Common dimensions -->
     <dimen name="margin_normal">16dp</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="spacing_mid">12dp</dimen>
     <dimen name="spacing_micro">4dp</dimen>
     <dimen name="spacing_nano">2dp</dimen>
-
-    <!-- Menu Drawer Dimensions -->
-    <dimen name="drawer_header_content_min_height">120dp</dimen>
-    <dimen name="drawer_header_padding_top">16dp</dimen>
-    <dimen name="drawer_header_newpipe_icon_size">48dp</dimen>
-    <dimen name="drawer_header_newpipe_icon_title_space">12dp</dimen>
-    <dimen name="drawer_header_newpipe_title_default_width">130dp</dimen>
-    <dimen name="drawer_header_newpipe_title_max_width">200dp</dimen>
-    <dimen name="drawer_header_newpipe_title_min_text_size">18sp</dimen>
-    <dimen name="drawer_header_newpipe_title_max_text_size">32sp</dimen>
-    <dimen name="drawer_header_service_icon_size">16dp</dimen>
-    <dimen name="drawer_header_service_title_text_size">14sp</dimen>
 
     <!-- Video Item Search View Dimensions-->
     <!-- Text Size -->

@@ -364,7 +364,6 @@
     <string name="one_item_deleted">ஒரு உருப்படி நீக்கப்பட்டது.</string>
     <string name="read_privacy_policy">தனியுரிமைக் கொள்கையைப் படியுங்கள்</string>
     <string name="error_unknown_host">சேவையகத்தைக் கண்டுபிடிக்க முடியவில்லை</string>
-    <string name="drawer_header_description">சேவையை மாற்றி, தற்போது தேர்ந்தெடுக்கப்பட்டது:</string>
     <string name="caption_none">தலைப்புகள் இல்லை</string>
     <string name="feed_groups_header_title">சேனல் குழுக்கள்</string>
     <string name="left_gesture_control_summary">பிளேயர் திரையின் இடது பாதிக்கு சைகையைத் தேர்வுசெய்க</string>
@@ -610,8 +609,6 @@
     <string name="play_queue_remove">அகற்று</string>
     <string name="play_queue_stream_detail">விவரங்கள்</string>
     <string name="play_queue_audio_track">ஆடியோ: %s</string>
-    <string name="drawer_open">திறந்த அலமாரியை</string>
-    <string name="drawer_close">மூடு டிராயர்</string>
     <string name="preferred_open_action_settings_summary">உள்ளடக்கத்தைத் திறக்கும்போது இயல்புநிலை செயல் - %s</string>
     <string name="background_player">பின்னணி பிளேயர்</string>
     <string name="popup_player">பாப்அப் பிளேயர்</string>

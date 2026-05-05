@@ -249,8 +249,6 @@
     <string name="could_not_import_all_files">Varoitus: Ei voitu tuoda kaikkia tiedostoja.</string>
     <string name="override_current_data">Tämä nollaa nykyiset asetuksesi.</string>
     <string name="import_settings">Haluatko myös tuoda asetukset?</string>
-    <string name="drawer_open">Avaa alasvetovalikko</string>
-    <string name="drawer_close">Sulje alasvetovalikko</string>
     <string name="preferred_open_action_settings_title">Ensisijainen avaustapa</string>
     <string name="preferred_open_action_settings_summary">Oletustoiminto avatessa sisältöä — %s</string>
     <string name="video_player">Videosoitin</string>
@@ -344,7 +342,6 @@
     <string name="no_one_listening">Ei kuuntelijoita</string>
     <string name="no_one_watching">Ei katselijoita</string>
     <string name="subscribers_count_not_available">Tilaajien lukumäärä ei saatavilla</string>
-    <string name="drawer_header_description">Kytke palvelu, tällä hetkellä valittuna:</string>
     <string name="permission_display_over_apps">Myönnä käyttöoikeus näyttää muiden sovellusten päällä</string>
     <string name="restore_defaults_confirmation">Haluatko palauttaa oletusarvot\?</string>
     <string name="restore_defaults">Palauta oletusarvot</string>

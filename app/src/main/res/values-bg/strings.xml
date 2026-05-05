@@ -245,8 +245,6 @@
     <string name="hold_to_append">Задръжте, за да поставите на опашката</string>
     <string name="start_here_on_background">Възпроизвеждане от тук при фонов режим</string>
     <string name="start_here_on_popup">Започнете да възпроизвеждате в изскачащ прозорец</string>
-    <string name="drawer_open">Отвори навигационната лента</string>
-    <string name="drawer_close">Затвори навигационната лента</string>
     <string name="preferred_open_action_settings_title">Действие при повикване от друго приложение</string>
     <string name="preferred_open_action_settings_summary">Действие по подразбиране при отваряне на съдържание — %s</string>
     <string name="video_player">Видео плейър</string>
@@ -438,7 +436,6 @@
     <string name="video_detail_by">От %s</string>
     <string name="app_update_notification_channel_name">Известие за нова версия</string>
     <string name="description_tab_description">Описание</string>
-    <string name="drawer_header_description">Превключване на услуги, текущо избран:</string>
     <string name="msg_calculating_hash">Калкулиране на хеш</string>
     <string name="no_playlist_bookmarked_yet">Няма отметнати плейлисти</string>
     <string name="choose_instance_prompt">Изберете инстанция</string>

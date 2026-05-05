@@ -346,8 +346,6 @@
     <string name="video_player">Плејер видео снимака</string>
     <string name="preferred_open_action_settings_summary">Подразумевана радња при отварању садржаја — %s</string>
     <string name="preferred_open_action_settings_title">Преферирана радња при отварању</string>
-    <string name="drawer_close">Затвори фиоку</string>
-    <string name="drawer_open">Отвори фиоку</string>
     <string name="start_here_on_popup">Почни пуштање у искачућем прозору</string>
     <string name="start_here_on_background">Почни пуштање у позадини</string>
     <string name="enqueue_stream">Стави у редослед</string>
@@ -399,7 +397,6 @@
     </plurals>
     <string name="no_one_watching">Нико не гледа</string>
     <string name="subscribers_count_not_available">Број пратилаца није доступан</string>
-    <string name="drawer_header_description">Изаберите услугу, тренутно изабрана:</string>
     <string name="detail_drag_description">Превуците за преуређивање</string>
     <string name="description_tab_description">Опис</string>
     <string name="comments_tab_description">Коментари</string>

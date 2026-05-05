@@ -123,8 +123,6 @@
     <string name="video_player">Muuqaal daareha</string>
     <string name="preferred_open_action_settings_summary">Hawsha la doorbiday marka shay la furayo — %s</string>
     <string name="preferred_open_action_settings_title">Hawsha \'fur\' loo doorbiday</string>
-    <string name="drawer_close">Xidh Khaanada</string>
-    <string name="drawer_open">Fur Khaanada</string>
     <string name="start_here_on_popup">Xaga daaqada ku daar</string>
     <string name="start_here_on_background">Xaga dambe ku daar</string>
     <string name="enqueued">La horay</string>
@@ -240,7 +238,6 @@
         <item quantity="other">%s ayaa rukumatay</item>
     </plurals>
     <string name="no_subscribers">Dad rukuntay ma jiraan</string>
-    <string name="drawer_header_description">Furo adeega, hada waxaa dooran:</string>
     <string name="retry">ku celi</string>
     <string name="audio">Dhagaysi</string>
     <string name="video">Muuqaal</string>

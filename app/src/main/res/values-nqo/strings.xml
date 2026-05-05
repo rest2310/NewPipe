@@ -265,7 +265,6 @@
     <string name="error_report_open_github_notice">ߊ߬ ߡߊߝߍߣߍ߲߫ ߣߴߌ ߟߊ߫ ߝߙߋߞߋ߫ ߛߎ߮ ߣߌ߲߬ ߘߊ߲߭ߕߍ߰ߣߍ߲߫ ߞߘߐ߬ߡߊ߲߫. ߝߙߋߞߋ߫ ߞߋߟߋ߲ ߓߊ߫ ߞߏߝߐ߫ ߞߏ߫ ߝߌ߲߬߸ ߏ߬ ߦߋ߫ ߊ߲ ߠߊ߫ ߕߎ߬ߡߊ ߟߋ߬ ߘߐߕߌߢߍ߫ ߟߊ߫߸ ߞߊ߬ ߞߏ߫ ߜߘߍ߫ ߟߎ߫ ߞߍ ߘߐߛߊ߬ ߊ߲ ߡߊ߬.</string>
     <string name="description_tab_description">ߞߊ߲߬ߛߓߍ</string>
     <string name="subscribers_count_not_available">ߝߊ߬ߝߘߎ߬ߓߊ߯ ߖߊ߬ߕߋ ߡߊ߬ߛߐ߬ߘߐ߲߬ߣߍ߲߬ ߕߍ߫</string>
-    <string name="drawer_header_description">ߞߊ߬ ߗߋߢߊ߫ ߟߎ߬ ߟߊߦߟߍ߬ߡߊ߲߬߸ ߡߍ߲ ߠߎ߬ ߓߊߕߐߡߐ߲ߣߍ߲߫ ߕߋ߲߬:</string>
     <string name="no_subscribers">ߡߊ߬ߝߘߎ߬ߓߊ߰ ߝߏߛߌ߬</string>
     <plurals name="subscribers">
         <item quantity="other">ߡߊ߬ߝߘߎ߬ߓߊ߰ %s</item>
@@ -414,8 +413,6 @@
     <string name="enqueued_next">ߊ߬ ߓߘߊ߫ ߞߍ߫ ߣߊ߬ߕߐ ߘߌ߫ ߕߎ߲߰ߠߌ߲ ߘߐ߫</string>
     <string name="start_here_on_popup">ߞߊ߬ ߕߏߟߏ߲ ߘߊߡߌ߬ߣߊ߬ ߝߢߐߘߊ߫ ߝߎ߲ߞߊ߲ߡߊ ߘߐ߫</string>
     <string name="loading_stream_details">ߥߏ߬ߦߏ߫ ߕߐ߬ߝߍ߬ߦߊ ߟߎ߬ ߖߛߐ ߦߴߌߘߐ߫…</string>
-    <string name="drawer_open">ߢߣߊߥߟߊ ߘߊߦߟߍ߬</string>
-    <string name="drawer_close">ߢߣߊߥߟߊ ߘߊߕߎ߲߯</string>
     <string name="preferred_open_action_settings_title">ߟߞߊ߬ߟߌ߫ ߞߍߟߊ߲߫ ߛߊ߬ߥߏ߬ߣߍ߲ߕߊ</string>
     <string name="name">ߕߐ߮</string>
     <string name="add_to_playlist">ߞߵߊ߬ ߝߙߊ߬ ߕߏߟߏ߲ߛߙߍߘߍ ߟߊ߫</string>

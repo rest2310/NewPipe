@@ -185,8 +185,6 @@
     <string name="switch_to_background">Arka Plana Geç</string>
     <string name="switch_to_popup">Açılır Pencereye Geç</string>
     <string name="switch_to_main">Ana Görünüme Geç</string>
-    <string name="drawer_open">Çekmeceyi Aç</string>
-    <string name="drawer_close">Çekmeceyi Kapat</string>
     <string name="no_player_found_toast">Video oynatıcı bulunamadı (Oynatmak için VLC kurabilirsiniz).</string>
     <string name="always">Her Zaman</string>
     <string name="just_once">Yalnızca Bir Kez</string>
@@ -396,7 +394,6 @@
     <string name="clear_playback_states_title">Oynatım konumlarını sil</string>
     <string name="clear_playback_states_summary">Tüm oynatım konumlarını siler</string>
     <string name="delete_playback_states_alert">Tüm oynatım konumları silinsin mi\?</string>
-    <string name="drawer_header_description">Hizmeti değiştir, şu anda seçili olan:</string>
     <plurals name="videos">
         <item quantity="one">%s video</item>
         <item quantity="other">%s video</item>

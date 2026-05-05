@@ -134,7 +134,6 @@
         <item quantity="other">%s abonenti</item>
     </plurals>
     <string name="no_subscribers">Nav abonentu</string>
-    <string name="drawer_header_description">Izvēlaties pakalpojumu, šobrīd izvēlēts:</string>
     <string name="retry">Atkārtot</string>
     <string name="audio">Audio</string>
     <string name="video">Video</string>
@@ -378,8 +377,6 @@
     <string name="skip_silence_checkbox">Klusuma brīžos patīt uz priekšu</string>
     <string name="unhook_checkbox">Atvienot (var izraisīt traucējumus)</string>
     <string name="import_network_expensive_warning">Paturiet prātā, ka šī darbība var pieprasīt lielu datu daudzumu\n\nVai vēlaties turpināt?</string>
-    <string name="drawer_close">Aizvērt Atvilkni</string>
-    <string name="drawer_open">Atvērt Atvilkni</string>
     <string name="most_liked">Vispopulārākais</string>
     <string name="import_youtube_instructions">Ievietot YouTube abonementus no Google Takeout:\n\n1. Dodieties uz šo vietni: %1$s\n2. Autorizējieties, ja nepieciešams\n3. Noklikšķiniet uz \"Visi dati iekļauti\", pēc tam uz \"Atcelt visu atlasi\", pēc tam atlasiet tikai \"Abonementi\" un noklikšķiniet uz \"Labi\"\n4. Noklikšķiniet uz \"Nākamais solis\" un pēc tam uz \"Izveidot eksportu\"\n5. Pēc tam, kad tā parādās, noklikšķiniet uz pogas \"Lejupielādēt\"\n6. Noklikšķiniet IEVIETOT DATNI zemāk un izvēlaties lejupielādēto .zip failu\n7. [Ja .zip failu neizdodas ievietot] Izvelciet .csv failu (parasti zem \"YouTube un YouTube Music/subscriptions/subscriptions.csv\") no arhīva, tad noklikšķiniet uz IEVIETOT DATNI zemāk un atlasiet tikko izvilkto csv failu</string>
     <string name="preferred_open_action_settings_summary">Noklusējuma darbība, kad atver saturu — %s</string>
