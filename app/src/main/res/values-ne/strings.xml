@@ -311,13 +311,6 @@
 \n1. जानुहोस् यो URL:%1$s 
 \n2. सोधिएको बेलामा लग इन गर्नुहोस् 
 \n3. एउटा डाउनलोड सुरु हुनुपर्दछ (त्यो निर्यात फाईल हो)</string>
-    <string name="import_soundcloud_instructions">या त URL वा तपाईंको ID टाइप गरेर साउन्डक्लाउड(SoundCloud) प्रोफाइल आयात गर्नुहोस्:
-\n
-\n1. वेब ब्राउजरमा \"डेस्कटप मोड\" सक्षम गर्नुहोस् (साइट मोबाइल उपकरणहरूको लागि उपलब्ध छैन)
-\n2. यस URL:%1$s मा जानुहोस्
-\n3. सोधिएको बेलामा लग इन गर्नुहोस्
-\n4. तपाईंलाई URL मा निर्देशित गरिएको प्रोफाइल URL प्रतिलिपि गर्नुहोस्।</string>
-    <string name="import_soundcloud_instructions_hint">yourID, soundcloud.com/youridyourID, soundcloud.com/yourid</string>
     <string name="import_network_expensive_warning">दिमागमा राख्नुहोस् यो अपरेशन नेटवर्क महँगो हुन सक्छ।
 \n
 \nतपाईँ जारी राख्न चाहनुहुन्छ\?</string>
@@ -415,14 +408,6 @@
     </plurals>
     <string name="default_kiosk_page_summary">पूर्वनिर्धारित किओस्क (Kiosk)</string>
     <string name="seek_duration_title">छिटो-अगाडि /-पछाडी खोज्न अवधि</string>
-    <string name="peertube_instance_url_title">PeerTube उदाहरणहरू</string>
-    <string name="peertube_instance_url_summary">आफ्नो मनपर्ने PeerTube उदाहरणहरू चयन</string>
-    <string name="peertube_instance_url_help">%s मा तपाईंलाई मनपर्ने ईन्स्टान्सहरू फेला पार्नुहोस्</string>
-    <string name="peertube_instance_add_title">उदाहरण थप्नुहोस्</string>
-    <string name="peertube_instance_add_help">उदाहरणका URL प्रविष्ट गर्नुहोस्</string>
-    <string name="peertube_instance_add_fail">उदाहरणका मान्य सकेन</string>
-    <string name="peertube_instance_add_https_only">HTTPS URL हरू मात्र समर्थित</string>
-    <string name="peertube_instance_add_exists">उदाहरणका पहिले नै अवस्थित</string>
     <string name="local">स्थानिय</string>
     <string name="recently_added">हालसालै थपिएको</string>
     <string name="most_liked">सबैभन्दा धेरै मनपराइएको</string>

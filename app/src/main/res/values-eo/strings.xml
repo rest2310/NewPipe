@@ -173,12 +173,6 @@
 \n4. Click on \"Next step\" and then on \"Create export\"
 \n5. Click on the \"Download\" button after it appears and
 \n6. From the downloaded takeout zip extract the .json file (usually under \"YouTube and YouTube Music/subscriptions/subscriptions.json\") and import it here.</string>
-    <string name="import_soundcloud_instructions">Importu Soundcloud-n profilon tajpante ĉu la ligilon, ĉu vian ID :
-\n 
-\n1. Ebligu komputilon modon en retumilon (la retejo malhaveblas por poŝtelefonoj)
-\n2. Iru tien: %1$s
-\n3. Ensalutu kiam oni petas vin 
-\n4. Kopiu la ligilon de profilo ke oni kondikis vin.</string>
     <string name="thumbnail_cache_wipe_complete_notice">Bildokaŝmemoro vakigis</string>
     <string name="metadata_cache_wipe_title">Vakigi kaŝmemorigitajn metadatumojn</string>
     <string name="metadata_cache_wipe_summary">Vakigi tutajn kaŝmemorigitajn retpaĝajn datumojn</string>
@@ -335,7 +329,6 @@
     <string name="previous_export">Antaŭa eksportaĵo</string>
     <string name="subscriptions_import_unsuccessful">Ne povis importi abonojn</string>
     <string name="subscriptions_export_unsuccessful">Ne povis eksporti abonojn</string>
-    <string name="import_soundcloud_instructions_hint">via salutnomo, soundcloud.com/salutnomo</string>
     <string name="import_network_expensive_warning">Memoru, ke ĉi tiu operacio povas esti multekosta en la reto.
 \n
 \nĈu vi volas daŭrigi\?</string>
@@ -419,14 +412,6 @@
         <item quantity="other">%s aŭskultantoj</item>
     </plurals>
     <string name="seek_duration_title">Daŭro de rapidpluiga/revolva serĉo</string>
-    <string name="peertube_instance_url_title">Instancoj de PeerTube</string>
-    <string name="peertube_instance_url_summary">Elekti viajn preferitajn instancojn de PeerTube</string>
-    <string name="peertube_instance_url_help">Trovu la instancojn ke vi ŝatas ĉe %s</string>
-    <string name="peertube_instance_add_title">Aldoni instanco</string>
-    <string name="peertube_instance_add_help">Eniri la ligilon de la instanco</string>
-    <string name="peertube_instance_add_fail">Ne povis validigi instanco</string>
-    <string name="peertube_instance_add_https_only">Nur HTTPS ligiloj estas subtenitaj</string>
-    <string name="peertube_instance_add_exists">La instanco jam ekzistas</string>
     <string name="local">Lokaj</string>
     <string name="recently_added">Freŝe aldonitaj</string>
     <string name="most_liked">La plej ŝatitaj</string>

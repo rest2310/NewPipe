@@ -275,7 +275,6 @@
 \n5. Pritisni gumb „Preuzmi” nakon što se pojavi
 \n6. Dolje pritisni UVEZI DATOEKU i odaberi preuzetu .zip datoteku
 \n7. [Ako uvoz .zip datoteke ne uspije] izdvoji .csv datoteku (pod „YouTube and YouTube Music/subscriptions/subscriptions.json”), dolje pritisni UVEZI DATOTEKU i odaberi izdvojenu csv datoteku</string>
-    <string name="import_soundcloud_instructions_hint">tvojID, soundcloud.com/tvojid</string>
     <string name="import_network_expensive_warning">Ova operacija može prouzročiti veliku potrošnju mrežnog prometa.
 \n
 \nŽeliš li nastaviti\?</string>
@@ -333,12 +332,6 @@
     <string name="caption_setting_title">Titlovi</string>
     <string name="caption_setting_description">Promijeni veličinu titlova i stilove pozadine playera. Zahtijeva ponovno pokretanje aplikacije</string>
     <string name="enable_disposed_exceptions_summary">Prisilno izvijesti o neisporučivim Rx iznimaka izvan fragmenta ili životnog ciklusa aktivnosti nakon odlaganja</string>
-    <string name="import_soundcloud_instructions">Uvezi SoundCloud profil upisom URL-a ili svog ID-a:
-\n
-\n1. Omogući „način rada na radnoj površini” u web-pregledniku (stranica nije dostupna na mobilnim uređajima)
-\n2. Idi na ovaj URL: %1$s
-\n3. Prijavi se
-\n4. Kopiraj URL profila na koji te se preusmjerava.</string>
     <string name="playback_tempo">Brzina</string>
     <string name="playback_pitch">Visina tona</string>
     <string name="unhook_checkbox">Odspoji (može prouzročiti izobličenje)</string>
@@ -404,7 +397,6 @@
     <string name="no_one_watching">Nitko ne gleda</string>
     <string name="no_one_listening">Nitko ne sluša</string>
     <string name="default_kiosk_page_summary">Standardni kiosk</string>
-    <string name="peertube_instance_add_https_only">Podržani su samo HTTP URL-ovi</string>
     <string name="local">Lokalni</string>
     <string name="recently_added">Nedavno dodani</string>
     <string name="playlist_no_uploader">Automatski generirano (prenositelj nedefiniran)</string>
@@ -533,13 +525,6 @@
     <string name="youtube_restricted_mode_enabled_summary">YouTube nudi postavku „Ograničeni način rada”, čime se skriva sadržaj za odrasle</string>
     <string name="youtube_restricted_mode_enabled_title">Uključi YouTube postavku „Ograničeni način rada”</string>
     <string name="show_age_restricted_content_summary">Prikaži sadržaj koji vjerojatno nije prikladan za djecu, jer je dobno ograničen (kategorija 18)</string>
-    <string name="peertube_instance_add_exists">Instanca već postoji</string>
-    <string name="peertube_instance_add_fail">Nije bilo moguće provjeriti instancu</string>
-    <string name="peertube_instance_add_help">Upiši URL instance</string>
-    <string name="peertube_instance_add_title">Dodaj instancu</string>
-    <string name="peertube_instance_url_help">Pronađi instance koje voliš na %s</string>
-    <string name="peertube_instance_url_summary">Odaberi svoje omiljene PeerTube instance</string>
-    <string name="peertube_instance_url_title">PeerTube instance</string>
     <string name="seek_duration_title">Vrijeme premotavanja prema naprijed ili natrag</string>
     <string name="notification_action_nothing">Ništa</string>
     <string name="notification_action_shuffle">Promiješaj</string>
@@ -583,7 +568,6 @@
     <string name="show_description_summary">Isključi za skrivanje opisa videozapisa i dodatnih informacija</string>
     <string name="show_description_title">Prikaži opis</string>
     <string name="open_with">Otvori pomoću</string>
-    <string name="soundcloud_go_plus_content">Ovo je SoundCloud Go+ snimka (barem u tvojoj zemlji), stoga ga NewPipe ne može emitirati ili preuzeti.</string>
     <string name="restricted_video_no_stream">Ovaj je video dobno ograničen.
 \nZbog novih YouTube pravila za videa s dobnim ograničenjem, NewPipe ne može pristupiti nijednoj vlastitoj video emisiji i stoga je ne može reproducirati.</string>
     <string name="download_has_started">Preuzimanje je započeto</string>

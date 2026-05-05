@@ -277,13 +277,6 @@
 \n5. Vyčkejte, než se objeví tlačítko „Stáhnout“ a klikněte na něj
 \n6. Klepněte na IMPORTOVAT SOUBOR níže a vyberte stažený soubor .zip
 \n7. [Pokud se import .zip souboru nezdaří] Rozbalte soubor .csv (měl by se nacházet v „YouTube and YouTube Music/subscriptions/subscriptions.csv“), klepněte na IMPORTOVAT SOUBOR níže a vyberte rozbalený soubor csv</string>
-    <string name="import_soundcloud_instructions">Importovat profil SoundCloud zadáním adresy URL nebo vašeho ID:
-\n
-\n1. Ve svém prohlížeči povolte „režim pro PC“ (pro mobilní zařízení není stránka dostupná)
-\n2. Přejděte na tuto adresu URL: %1$s
-\n3. Při požádání se přihlaste
-\n4. Zkopírujte URL adresu profilu, na kterou jste byli přesměrováni.</string>
-    <string name="import_soundcloud_instructions_hint">vašeID, soundcloud.com/yourid</string>
     <string name="import_network_expensive_warning">Pamatujte, že tato operace může být náročná na data. 
 \n 
 \nChcete pokračovat?</string>
@@ -426,14 +419,6 @@
     </plurals>
     <string name="default_kiosk_page_summary">Výchozí kiosek</string>
     <string name="seek_duration_title">Délka přetočení vpřed/zpět</string>
-    <string name="peertube_instance_url_title">Instance PeerTube</string>
-    <string name="peertube_instance_url_summary">Vybrat oblíbené instance PeerTube</string>
-    <string name="peertube_instance_url_help">Vyhledat instance, které se vám líbí, na %s</string>
-    <string name="peertube_instance_add_title">Přidat instanci</string>
-    <string name="peertube_instance_add_help">Zadat URL instance</string>
-    <string name="peertube_instance_add_fail">Instanci nebylo možno potvrdit</string>
-    <string name="peertube_instance_add_https_only">Podporujeme pouze URL s HTTPS</string>
-    <string name="peertube_instance_add_exists">Instance již existuje</string>
     <string name="local">Místní</string>
     <string name="recently_added">Přidány nedávno</string>
     <string name="most_liked">Nejoblíbenější</string>
@@ -593,7 +578,6 @@
     <string name="paid_content">Tento obsah je dostupný jen platícím uživatelům, a tak jej NewPipe nemůže stáhnout ani přehrát.</string>
     <string name="youtube_music_premium_content">Toto video je dostupné jen členům YouTube Music Premium, a tak je NewPipe nemůže stáhnout ani přehrát.</string>
     <string name="private_content">Tento obsah je soukromý, a tak jej NewPipe nemůže stáhnout ani přehrát.</string>
-    <string name="soundcloud_go_plus_content">Toto je stopa SoundCloud Go+, přinejmenším ve Vaší zemi, a tak ji NewPipe nemůže stáhnout ani přehrát.</string>
     <string name="georestricted_content">Tento obsah není ve vaší zemi dostupný.</string>
     <string name="show_channel_details">Zobrazit podrobnosti kanálu</string>
     <string name="recaptcha_solve">Vyřešit</string>

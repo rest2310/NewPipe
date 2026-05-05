@@ -35,7 +35,6 @@
     <string name="start_main_player_fullscreen_title">დაიწყეთ მთავარი მოთამაშე სრულ ეკრანზე</string>
     <string name="unsupported_url_dialog_message">URL-ის ამოცნობა ვერ მოხერხდა. გავხსნა სხვა აპით\?</string>
     <string name="default_audio_format_title">ნაგულისხმევი აუდიო ფორმატი</string>
-    <string name="peertube_instance_url_summary">აირჩიეთ თქვენი საყვარელი PeerTube ეგზემპლარები</string>
     <string name="progressive_load_interval_title">დაკვრის დატვირთვის ინტერვალის ზომა</string>
     <string name="progressive_load_interval_summary">შეცვალეთ დატვირთვის ინტერვალის ზომა (ამჟამად %s). დაბალმა მნიშვნელობამ შეიძლება დააჩქაროს საწყისი ვიდეოს ჩატვირთვა.</string>
     <string name="clear_queue_confirmation_title">მოითხოვეთ დადასტურება რიგის გასუფთავებამდე</string>
@@ -123,11 +122,6 @@
     <string name="unsupported_url">URL მხარდაუჭერელია</string>
     <string name="default_content_country_title">ჩანაწერის სასურველი ქვეყანა</string>
     <string name="content_language_title">ნაგულისხმევი შინაარსის ენა</string>
-    <string name="peertube_instance_url_title">PeerTube-ის შემთხვევები</string>
-    <string name="peertube_instance_url_help">იპოვეთ თქვენთვის სასურველი შემთხვევები %s-ზე</string>
-    <string name="peertube_instance_add_title">მაგალითის დამატება</string>
-    <string name="peertube_instance_add_help">შეიყვანეთ მაგალითის URL</string>
-    <string name="peertube_instance_add_https_only">მხარდაჭერილია მხოლოდ HTTPS URL-ები</string>
     <string name="settings_category_player_title">დამკვრელი</string>
     <string name="settings_category_player_behavior_title">Მოქმედება</string>
     <string name="settings_category_video_audio_title">ვიდეო და აუდიო</string>
@@ -394,13 +388,6 @@
     <string name="import_file_title">ფაილის იმპორტი</string>
     <string name="previous_export">წინა ექსპორტი</string>
     <string name="subscriptions_export_unsuccessful">გამოწერების ექსპორტი ვერ მოხერხდა</string>
-    <string name="import_soundcloud_instructions">SoundCloud პროფილის იმპორტი URL-ის ან თქვენი ID-ის აკრეფით:
-\n
-\n 1. ჩართეთ \"დესკტოპის რეჟიმი\" ვებ-ბრაუზერში (საიტი მიუწვდომელია მობილური მოწყობილობებისთვის)
-\n 2. გადადით ამ URL-ზე: %1$s
-\n 3. შედით სისტემაში მოთხოვნისას
-\n 4. დააკოპირეთ პროფილის URL, რომელზეც გადამისამართდით.</string>
-    <string name="import_soundcloud_instructions_hint">თქვენი ID, soundcloud.com/yourid</string>
     <string name="import_network_expensive_warning">გაითვალისწინეთ, რომ ეს ოპერაცია შეიძლება იყოს ქსელის ძვირი.
 \n
 \n Გინდა გააგრძელო\?</string>
@@ -581,8 +568,6 @@
     <string name="unknown_format">უცნობი ფორმატი</string>
     <string name="unknown_quality">უცნობი ხარისხი</string>
     <string name="sort">დალაგება</string>
-    <string name="peertube_instance_add_exists">ეგეთი უკვე არსებობს</string>
-    <string name="peertube_instance_add_fail">ინსტანციის დადასტურება ვერ მოხერხდა</string>
     <string name="youtube_restricted_mode_enabled_title">ჩართეთ YouTube-ის „შეზღუდული რეჟიმი“</string>
     <string name="restricted_video">ეს ვიდეო ასაკობრივი შეზღუდულია.
 \n
@@ -691,7 +676,6 @@
 \n YouTube არის სერვისის მაგალითი, რომელიც გთავაზობთ ამ სწრაფ მეთოდს თავისი RSS არხით.
 \n
 \n ასე რომ, არჩევანი დამოკიდებულია იმაზე, თუ რა გირჩევნიათ: სიჩქარე ან ზუსტი ინფორმაცია.</string>
-    <string name="soundcloud_go_plus_content">ეს არის SoundCloud Go+ სიმღერა, ყოველ შემთხვევაში თქვენს ქვეყანაში, ამიტომ მისი სტრიმინგი ან ჩამოტვირთვა შეუძლებელია NewPipe-ის მიერ.</string>
     <string name="no_appropriate_file_manager_message">ამ მოქმედებისთვის შესაბამისი ფაილების მენეჯერი ვერ მოიძებნა.
 \n გთხოვთ, დააინსტალიროთ ფაილის მენეჯერი ან სცადოთ გამორთოთ \'%s\' ჩამოტვირთვის პარამეტრებში</string>
     <string name="youtube_music_premium_content">ეს ვიდეო ხელმისაწვდომია მხოლოდ YouTube Music Premium-ის წევრებისთვის, ამიტომ მისი სტრიმინგი ან ჩამოტვირთვა შეუძლებელია NewPipe-ის მიერ.</string>

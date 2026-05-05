@@ -264,13 +264,6 @@
 \n5. \"다운로드\" 버튼이 나타나면 클릭합니다
 \n6. 아래의 \"파일 가져오기\"를 클릭하고 다운로드한 .zip 파일을 선택합니다
 \n7. [.zip 파일 가져오기를 실패한 경우] .csv 파일(일반적으로 \"YouTube 및 YouTube Music/구독정보/구독정보.csv\")을 압축해제한 다음, 아래의 \"파일 가져오기\"를 클릭한 후 압축해제한 csv 파일을 선택합니다</string>
-    <string name="import_soundcloud_instructions">URL 또는 ID를 입력하여 SoundCloud 프로필을 가져옵니다:
-\n 
-\n1. 웹 브라우저에서 \"데스크톱 모드\"를 활성화합니다(모바일 장치에서는 사이트를 사용할 수 없습니다)
-\n2. 다음 URL로 이동: %1$s
-\n3. 요청 시 로그인
-\n4. 리디렉션된 프로필 URL을 복사합니다.</string>
-    <string name="import_soundcloud_instructions_hint">프로필ID, soundcloud.com/프로필ID</string>
     <string name="import_network_expensive_warning">경고: 데이터가 많이 소모될 수 있습니다. 
 \n 
 \n계속하시겠습니까\?</string>
@@ -416,14 +409,6 @@
         <item quantity="other">%s명 청취중</item>
     </plurals>
     <string name="seek_duration_title">빠른-감기/되감기 찾는 시간</string>
-    <string name="peertube_instance_url_title">피어튜브 인스턴스</string>
-    <string name="peertube_instance_url_summary">선호하는 PeerTube 인스턴스 선택</string>
-    <string name="peertube_instance_url_help">%s에서 원하는 인스턴스 찾기</string>
-    <string name="peertube_instance_add_title">인스턴스 추가하기</string>
-    <string name="peertube_instance_add_help">인스턴스 URL 입력</string>
-    <string name="peertube_instance_add_fail">인스턴스를 확인할 수 없음</string>
-    <string name="peertube_instance_add_https_only">HTTPS URL만 지원</string>
-    <string name="peertube_instance_add_exists">인스턴스가 이미 존재</string>
     <string name="local">로컬</string>
     <string name="recently_added">최근에 추가됨</string>
     <string name="most_liked">가장 선호하는</string>
@@ -643,7 +628,6 @@
     <string name="chapters">챕터</string>
     <string name="recent">최근</string>
     <string name="account_terminated">계정이 해지됨</string>
-    <string name="soundcloud_go_plus_content">이것은 적어도 귀하의 국가에서 SoundCloud Go+ 트랙이므로 NewPipe에서 스트리밍하거나 다운로드할 수 없습니다.</string>
     <string name="auto_device_theme_title">자동 (장치 테마)</string>
     <string name="detail_pinned_comment_view_description">고정된 댓글</string>
     <string name="featured">추천</string>

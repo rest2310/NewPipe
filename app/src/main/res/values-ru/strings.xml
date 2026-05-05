@@ -284,13 +284,6 @@
 \n5. Нажмите кнопку «Скачать», когда она появится
 \n6. Нажмите ИМПОРТ ФАЙЛА внизу и выберите скачанный ZIP-архив
 \n7. [Если импортировать ZIP-файл не удалось] Из скачанного ZIP-архива распакуйте CSV-файл (обычно это «YouTube и YouTube Music/подписки/подписки.csv»), нажмите ИМПОРТ ФАЙЛА и выберите этот CSV-файл</string>
-    <string name="import_soundcloud_instructions">Импортируйте профиль SoundCloud, введя его URL или ID:
-\n
-\n1. Включите «Версия для ПК» в браузере (сайт не поддерживается мобильными устройствами)
-\n2. Перейдите по ссылке %1$s
-\n3. Авторизуйтесь, если потребуется
-\n4. Скопируйте URL профиля из адресной строки.</string>
-    <string name="import_soundcloud_instructions_hint">вашID, soundcloud.com/вашID</string>
     <string name="import_network_expensive_warning">Это действие может вызвать большой расход трафика.
 \n 
 \nПродолжить?</string>
@@ -432,14 +425,6 @@
         <item quantity="many">%s слушателей</item>
     </plurals>
     <string name="seek_duration_title">Шаг перемотки</string>
-    <string name="peertube_instance_url_title">Серверы PeerTube</string>
-    <string name="peertube_instance_url_summary">Выберите предпочтительные серверы</string>
-    <string name="peertube_instance_url_help">Каталог серверов: %s</string>
-    <string name="peertube_instance_add_title">Новый сервер</string>
-    <string name="peertube_instance_add_help">URL сервера</string>
-    <string name="peertube_instance_add_fail">Не удалось проверить сервер</string>
-    <string name="peertube_instance_add_https_only">Поддерживается только HTTPS</string>
-    <string name="peertube_instance_add_exists">Сервер уже существует</string>
     <string name="local">Локальное</string>
     <string name="recently_added">Новое</string>
     <string name="most_liked">Популярное</string>
@@ -595,7 +580,6 @@
     <string name="paid_content">Этот контент доступен только оплатившим его пользователям, поэтому NewPipe не может воспроизвести или загрузить его.</string>
     <string name="youtube_music_premium_content">Это видео доступно только для пользователей YouTube Music Premium, поэтому NewPipe не может воспроизвести или загрузить его.</string>
     <string name="private_content">Это частный контент, поэтому NewPipe не может воспроизвести или загрузить его.</string>
-    <string name="soundcloud_go_plus_content">Этот трек требует SoundCloud Go+, по крайней мере в Вашей стране. Поэтому NewPipe не может воспроизвести или загрузить его.</string>
     <string name="georestricted_content">Этот контент недоступен в вашей стране.</string>
     <string name="download_has_started">Загрузка началась</string>
     <string name="select_night_theme_toast">Вы можете выбрать предпочтительную ночную тему ниже</string>

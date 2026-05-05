@@ -283,13 +283,6 @@
 \n5. Po chvíli sa objaví tlačidlo s nápisom \"Stiahnuť\"
 \n6. Kliknite na IMPORT ZO SÚBORU a zvoľte stiahnutý zip súbor
 \n7. Ak import zip súbory zlyhá. Stiahnutý súbor otvorte a extrahujte .csv súbor (nachádza sa v \"/Takeout/YouTube a YouTube Music/odbery/\"), tento súbor importujte do NewPipe</string>
-    <string name="import_soundcloud_instructions">Importovať SoundCloud profil zadaním URL adresy alebo vášho ID:
-\n
-\n1. Prepnite režim na \"desktop\" (web nie je dostupný pre mobilné zariadenia)
-\n2. Prejdite na túto URL adresu: %1$s
-\n3. Po výzve sa prihláste do svojho účtu
-\n4. Skopírujte adresu URL, na ktorú ste boli presmerovaní.</string>
-    <string name="import_soundcloud_instructions_hint">vašeID, soundcloud.com/vašeid</string>
     <string name="import_network_expensive_warning">Operácia môže byť náročná na počet prenesených dát.
 \n
 \nChcete pokračovať?</string>
@@ -427,14 +420,6 @@
         <item quantity="other">%s poslucháčov</item>
     </plurals>
     <string name="seek_duration_title">Dĺžka rýchleho pretáčania</string>
-    <string name="peertube_instance_url_title">Inštancie PeerTube</string>
-    <string name="peertube_instance_url_summary">Vyberte si svoje obľúbené inštancie PeerTube</string>
-    <string name="peertube_instance_url_help">Nájdite inštancie, ktoré chcete na %s</string>
-    <string name="peertube_instance_add_title">Pridať inštanciu</string>
-    <string name="peertube_instance_add_help">Vložiť URL inštancie</string>
-    <string name="peertube_instance_add_fail">Nepodarilo sa overiť inštanciu</string>
-    <string name="peertube_instance_add_https_only">Podporované sú iba adresy URL s HTTPS</string>
-    <string name="peertube_instance_add_exists">Inštancia už existuje</string>
     <string name="local">Miestne</string>
     <string name="recently_added">Nedávno pridané</string>
     <string name="most_liked">Najobľúbenejšie</string>
@@ -587,7 +572,6 @@
     <string name="paid_content">Tento obsah je k dispozícii iba platiacim používateľom, preto ho NewPipe nemôže streamovať ani sťahovať.</string>
     <string name="youtube_music_premium_content">Toto video je k dispozícii iba členom služby YouTube Music Premium, preto ho NewPipe nemôže streamovať ani sťahovať.</string>
     <string name="private_content">Toto je privátny obsah a preto ho NewPipe nemôže prehrávať ani sťahovať.</string>
-    <string name="soundcloud_go_plus_content">Táto skladba je typu SoundCloud Go+, pre vašu krajinu je tento typ zakázaný a preto ju NewPipe nemôže streamovať ani sťahovať.</string>
     <string name="georestricted_content">Tento obsah nie je vo vašej krajine k dispozícii.</string>
     <string name="crash_the_app">Vynútiť zastavenie</string>
     <string name="restricted_video_no_stream">Toto video je vekovo obmedzené.

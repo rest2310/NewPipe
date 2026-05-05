@@ -292,13 +292,6 @@
     <string name="import_network_expensive_warning">Имајте на уму да ова операција може потрошити доста података.
 \n
 \nЖелите ли да наставите\?</string>
-    <string name="import_soundcloud_instructions_hint">ВашID, soundcloud.com/yourid</string>
-    <string name="import_soundcloud_instructions">Увезите SoundCloud профил тако што ћете откуцати URL адресу или свој ID:
-\n
-\n1. Омогућите „верзију сајта за рачунар“ у веб-прегледачу (сајт није доступан за мобилне уређаје)
-\n2. Идите на ову URL адресу: %1$s
-\n3. Пријавите се када се то од вас затражи
-\n4. Копирајте URL адресу профила на који сте преусмерени.</string>
     <string name="import_youtube_instructions">Увезите YouTube праћења из Google Takeout-а:
 \n
 \n1. Идите на ову URL адресу: %1$s
@@ -475,14 +468,6 @@
     <string name="youtube_restricted_mode_enabled_title">Укључи YouTube-ов „Ограничени режим“</string>
     <string name="show_age_restricted_content_summary">Приказивање садржаја који можда није прикладан за децу, јер има старосну границу (попут 18+)</string>
     <string name="settings_category_updates_title">Ажурирања</string>
-    <string name="peertube_instance_add_exists">Инстанца већ постоји</string>
-    <string name="peertube_instance_add_https_only">Подржане су само HTTPS URL адресе</string>
-    <string name="peertube_instance_add_fail">Није могуће потврдити инстанцу</string>
-    <string name="peertube_instance_add_help">Унесите URL адресу инстанце</string>
-    <string name="peertube_instance_add_title">Додајте инстанцу</string>
-    <string name="peertube_instance_url_help">Пронађите инстанце које вам се свиђају на %s</string>
-    <string name="peertube_instance_url_title">PeerTube инстанце</string>
-    <string name="peertube_instance_url_summary">Изаберите своје омиљене PeerTube инстанце</string>
     <string name="unsupported_url_dialog_message">URL адреса није препозната. Отворити помоћу друге апликације\?</string>
     <string name="autoplay_title">Аутоматско пуштање</string>
     <string name="settings_category_clear_data_title">Чишћење података</string>
@@ -529,7 +514,6 @@
     <string name="paid_content">Овај садржај је доступан само корисницима који су платили, тако да га NewPipe не може токовати или преузимати.</string>
     <string name="youtube_music_premium_content">Овај видео снимак је доступан само премијум YouTube Music члановима, тако да га NewPipe не може токовати или преузимати.</string>
     <string name="private_content">Овај садржај је приватан, тако да га NewPipe не може токовати или преузимати.</string>
-    <string name="soundcloud_go_plus_content">Ово је SoundCloud Go+ нумера, барем у вашој земљи, тако да је NewPipe не може токовати или преузимати.</string>
     <string name="georestricted_content">Овај садржај није доступан у вашој земљи.</string>
     <string name="no_app_to_open_intent">Ниједна апликација на вашем уређају не може да отвори ово</string>
     <string name="chapters">Поглавља</string>

@@ -4,12 +4,6 @@
     <string name="show_play_with_kodi_summary">Display an option to play a video via Kodi media centre</string>
     <string name="notification_colorize_summary">Have Android customise the notification’s colour according to the main colour in the thumbnail (note that this is not available on all devices)</string>
     <string name="notification_colorize_title">Colourise notification</string>
-    <string name="import_soundcloud_instructions">Import a SoundCloud profile by typing either the URL or your ID:
-\n
-\n1. Enable ‘desktop mode’ in a web browser (the site is not available for mobile devices)
-\n2. Go to this URL: %1$s
-\n3. Log in when asked
-\n4. Copy the profile URL you were redirected to.</string>
     <string name="import_youtube_instructions">Import YouTube subscriptions from Google takeout:
 \n
 \n1. Go to this URL: %1$s
@@ -74,7 +68,6 @@
     <string name="title_licenses">Third-party licences</string>
     <string name="download_to_sdcard_error_message">Downloading to SD card not possible. Reset download folder location\?</string>
     <string name="settings_category_player_behavior_title">Behaviour</string>
-    <string name="peertube_instance_url_summary">Select your favourite PeerTube instances</string>
     <string name="resume_on_audio_focus_gain_summary">Continue playing after interruptions (e.g. phone calls)</string>
     <string name="upload_date_text">Published on %1$s</string>
     <string name="error_report_button_text">Report this error via e-mail</string>

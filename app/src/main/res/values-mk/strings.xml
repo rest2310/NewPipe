@@ -270,13 +270,6 @@
 \n1. Оди на оваа врска: %1$s 
 \n2. Пријави се на твојот профил 
 \n3. Ќе започне превземање (тој фајл ти треба)</string>
-    <string name="import_soundcloud_instructions">Внеси SoundCloud членства, преку внесување URL или ID на профилот: 
-\n 
-\n1. Вклучете „десктоп режим“ во вашиот пребарувач (страната не е достапна за мобилни уреди) 
-\n2. Одете на оваа врска: %1$s 
-\n3. Пријавете се на вашиот профил 
-\n4. Копирајте го URL-то на кое бевте пренасочени (тоа е URL-то на вашиот профил).</string>
-    <string name="import_soundcloud_instructions_hint">korisnickoime, soundcloud.com/korisnickoime</string>
     <string name="import_network_expensive_warning">Треба да знаеш дека оваа операција троши многу интернет.
 \n
 \nСакаш да продолжиш?</string>
@@ -391,10 +384,6 @@
     <string name="enable_playback_state_lists_title">Позиции во листите</string>
     <string name="enable_playback_state_lists_summary">Покажете ги индикаторите за позиција за репродукција во листите</string>
     <string name="seek_duration_title">Брзо премотување напред</string>
-    <string name="peertube_instance_url_title">Примери на PeerTube</string>
-    <string name="peertube_instance_url_summary">Одберете ги вашите омилени PeerTube пример</string>
-    <string name="peertube_instance_url_help">Пронајдете ги примерите кои ви се допаѓаат на %s</string>
-    <string name="peertube_instance_add_title">Додадете пример</string>
     <string name="recent">Скорешни</string>
     <string name="enqueue_stream">Додај во редослед</string>
     <string name="feed_show_partially_watched">Делумно изгледани</string>
@@ -424,7 +413,6 @@
     <string name="clear_queue_confirmation_description">Активниот редослед на емитувања ќе биде заменет</string>
     <string name="clear_download_history">Исчисти ја историјата на преземања</string>
     <string name="local_search_suggestions">Местни предлози за пребарување</string>
-    <string name="peertube_instance_add_help">Внесете URL адреса на инстанцата</string>
     <string name="error_postprocessing_failed">Неуспешна постобработка</string>
     <string name="remove_duplicates_message">Да се отстранат сите стримови дупликати од оваа плејлиста?</string>
     <string name="feed_create_new_group_button_title">Нова група</string>
@@ -555,8 +543,6 @@
     <string name="image_quality_low">Низок квалитет</string>
     <string name="metadata_language">Јазик</string>
     <string name="always_use_exoplayer_set_output_surface_workaround_title">Секогаш користете го заобиколувањето на опцијата на површината на видео-излезот на ExoPlayer\n(Англиски: Always use ExoPlayer\'s video output surface setting workaround)</string>
-    <string name="peertube_instance_add_https_only">Поддржани се само HTTPS линкови</string>
-    <string name="peertube_instance_add_exists">Инстанцата веќе постои</string>
     <plurals name="deleted_downloads_toast">
         <item quantity="one">Избришано е %1$s преземање</item>
         <item quantity="other">Избришани се %1$s преземања</item>
@@ -589,7 +575,6 @@
     <string name="playlist_page_summary">Страница на плејлистата</string>
     <string name="channel_created_by">Создаден од %s</string>
     <string name="video_detail_by">Од %s</string>
-    <string name="soundcloud_go_plus_content">Ова е песна на SoundCloud Go+ (барем во Вашата држава), така што не може да биде емитувана или преземена од страна на NewPipe.</string>
     <string name="night_theme_summary">Изберете го Вашиот омилен ноќен режим — %s</string>
     <string name="select_night_theme_toast">Можете да го изберете Вашиот омилен ноќен режим подолу</string>
     <string name="metadata_tags">Ознаки</string>
@@ -705,7 +690,6 @@
     <string name="no_audio_streams_available_for_external_players">Нема достапни аудио стримови за надворешни плеери</string>
     <string name="settings_category_exoplayer_summary">Управувајте со некои поставки за ExoPlayer. За овие промени да стапат на сила, потребно е апликацијата да се рестартира</string>
     <string name="always_use_exoplayer_set_output_surface_workaround_summary">Ово заобиколување ги ослободува и повторно ги инстанцира видео кодеците кога ќе дојде до промена на површината, наместо директно да ја постави површината на кодекот. Веќе се користи од ExoPlayer на некои уреди со овој проблем. Оваа поставка има ефект само на Android 6 и понови верзии\n\nОвозможувањето на оваа поставка може да спречи грешки при емитување при префрлување на тековниот видео плеер или пуштање на цел екран</string>
-    <string name="peertube_instance_add_fail">Инстанцата не може да биде потврдена</string>
     <string name="image_quality_summary">Изберете го квалитетот на сликите и дали воопшто да се вчитуваат слики, за да го намалите користењето на интернет и меморија. Промените го чистат кешот на сликите (анг. image cache), како и во меморијата, така и на дискот — %s</string>
     <string name="video_details_list_item">- %1$s: %2$s</string>
     <string name="none">Ништо</string>

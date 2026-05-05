@@ -37,7 +37,6 @@
     <string name="start_main_player_fullscreen_title">Lañsañ al lenner pennañ e mod skramm a-bezh</string>
     <string name="autoplay_title">Lenn emgefreek</string>
     <string name="default_content_country_title">Bro an endalc\'had dre ziouer</string>
-    <string name="peertube_instance_url_title">Erioloù PeerTube</string>
     <string name="none">Tra ebet</string>
     <string name="default_video_format_title">Mentrezh video dre ziouer</string>
     <string name="notification_action_shuffle">Lenn mell-divell</string>
@@ -64,9 +63,6 @@
     <string name="enable_watch_history_title">Sellet ouzh ar roll istor</string>
     <string name="subscribed_button_title">Koumanantet</string>
     <string name="default_resolution_title">Diarunusted dre ziouer</string>
-    <string name="peertube_instance_url_summary">Diuzit hoc\'h erioloù PeerTube gwell ganeoc\'h</string>
-    <string name="peertube_instance_url_help">Kavit an erioloù a blij deoc\'h war %s</string>
-    <string name="peertube_instance_add_title">Ouzhpennañ un eriol</string>
     <string name="settings_category_player_title">Lenner</string>
     <string name="settings_category_video_audio_title">Video hag aodio</string>
     <string name="settings_category_history_title">Roll istor ha krubuilh</string>

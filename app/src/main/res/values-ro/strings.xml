@@ -325,14 +325,6 @@
     <string name="delete_playback_states_alert">Ștergeți toate pozițiile din playback\?</string>
     <string name="clear_playback_states_summary">Ștergeți toate pozițiile de redare</string>
     <string name="videos_string">Videoclipuri</string>
-    <string name="peertube_instance_add_exists">Instanța există deja</string>
-    <string name="peertube_instance_add_https_only">Sunt acceptate numai URL-urile HTTPS</string>
-    <string name="peertube_instance_add_fail">Nu s-a putut valida instanța</string>
-    <string name="peertube_instance_add_help">Introduceți URL-ul instanței</string>
-    <string name="peertube_instance_add_title">Adăugați o instanță</string>
-    <string name="peertube_instance_url_help">Găsiți instanțele care vă plac pe %s</string>
-    <string name="peertube_instance_url_summary">Selectați instanțele PeerTube preferate</string>
-    <string name="peertube_instance_url_title">Instanțe PeerTube</string>
     <string name="seek_duration_title">Durată derulare rapidă înainte/înapoi</string>
     <string name="done">Gata</string>
     <string name="subtitle_activity_recaptcha">Apăsați \"Gata\" după ce ați rezolvat problema</string>
@@ -525,13 +517,6 @@
     <string name="import_network_expensive_warning">Rețineți că această operațiune poate fi costisitoare în rețea.
 \n
 \nContinuați\?</string>
-    <string name="import_soundcloud_instructions_hint">ID-ul dvs., soundcloud.com/yourid</string>
-    <string name="import_soundcloud_instructions">Importați un profil SoundCloud introducând fie URL-ul, fie ID-ul dvs:
-\n
-\n1. Activați \"modul desktop\" într-un browser web (site-ul nu este disponibil pentru dispozitive mobile)
-\n2. Mergeți la acest URL: %1$s
-\n3. Conectați-vă atunci când vi se cere
-\n4. Copiați URL-ul profilului la care ați fost redirecționat.</string>
     <string name="import_youtube_instructions">Importați abonamentele YouTube din Google takeout:
 \n
 \n1. Mergeți la această adresă URL: %1$s
@@ -596,7 +581,6 @@
     <string name="paid_content">Acest conținut este disponibil doar pentru utilizatorii care au plătit, ca atare nu poate fi difuzat sau descărcat de NewPipe.</string>
     <string name="youtube_music_premium_content">Acest videoclip este disponibil doar pentru membrii YouTube Music Premium, ca atare nu poate fi difuzat sau descărcat de NewPipe.</string>
     <string name="private_content">Acest conținut este privat, ca atare nu poate fi difuzat sau descărcat de NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Aceasta este o piesă SoundCloud Go+, cel puțin în țara dvs., deci nu poate fi difuzată sau descărcată de NewPipe.</string>
     <string name="georestricted_content">Acest conținut nu este disponibil în țara dumneavoastră.</string>
     <string name="show_channel_details">Afișați detaliile canalului</string>
     <string name="night_theme_title">Tema de noapte</string>

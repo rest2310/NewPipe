@@ -105,11 +105,6 @@
     <string name="show_hold_to_append_title">ߞߊ߬ ߞߍߞߌߦߊ \"ߊ߬ ߛߐ߲߬ߞߌ߲߬ߣߍ߲ ߕߏ߫ ߞߵߊ߬ ߝߙߊ߬ ߕߎ߲߰ߠߌ߲ ߠߊ߫\" ߦߌ߬ߘߊ߬</string>
     <string name="unsupported_url_dialog_message">ߛߘߌ߬ߜߋ߲߬ ߘߌߣߍ߲ ߡߊ߫ ߛߋ߫ ߡߊߟߐ߲߫ ߠߊ߫. ߞߵߊ߬ ߘߊߦߟߍ߬ ߟߥߊߟߌߟߊ߲߫ ߜߘߍ߫ ߞߣߐ߫؟</string>
     <string name="default_content_country_title">ߞߣߐߘߐ߫ ߖߡߊ߬ߣߊ߬ ߖߏߣߡߊ</string>
-    <string name="peertube_instance_url_help">ߌ ߘߌߦߊߣߍ߲߫ ߛߐߘߊ ߟߎ߫ ߛߐ߬ߘߐ߲߫ ߦߊ߲߬: %s</string>
-    <string name="peertube_instance_add_title">ߛߐߘߊ ߘߏ߫ ߝߙߊ߬</string>
-    <string name="peertube_instance_add_help">ߛߐߘߊ߫ ߛߘߌ߬ߜߋ߲</string>
-    <string name="peertube_instance_add_fail">ߛߐߘߊ ߡߊ߫ ߛߋ߫ ߕߎ߬ߢߊ߬ߟߐ߲߬ ߠߊ߫</string>
-    <string name="peertube_instance_add_https_only">HTTPS ߛߘߌߜߋ߲ ߠߎ߬ ߟߋ߬ ߘߐߙߐ߲߫ ߦߋ߫ ߕߊ߬ ߟߊ߫</string>
     <string name="settings_category_player_behavior_title">ߞߏߟߊߕߊ߯ߡߢߊ</string>
     <string name="settings_category_video_audio_title">ߦߋߡߍ߲ߕߊ ߣߌ߫ ߡߍ߲ߕߊ</string>
     <string name="settings_category_history_title">ߘߝߐ߬ߦߊ ߣߌ߫ ߦߟߌߡߊߛߌ߮</string>
@@ -221,9 +216,6 @@
     <string name="unsupported_url">ߛߘߌ߬ߜߋ߲߫ ߕߊ߬ߓߊߟߌ</string>
     <string name="start_main_player_fullscreen_summary">ߦߋߡߍ߲ߕߊ ߟߎ߬ ߞߊߣߊ߬ ߘߊߦߟߍ߬ ߕߏߟߏ߲ߟߊ߲ ߞߏߘߋߞߏߘߋ ߞߣߐ߫߸ ߞߏ߬ߣߌ߲߬ ߞߵߊ߬ ߟߊߞߊ߬ ߥߊ߲߬ߥߊ߲߬ ߝߊ ߘߐ߫ ߣߴߊ߬ ߞߵߊ߬ ߕߘߍ߬ ߥߟߏߒߖߘߍ߬ߡߊ ߜߊߛߏ߲ߣߍ߲߫. ߌ ߘߌ߫ ߛߋ߫ ߕߏߟߏ߲ߟߊ߲ ߞߏߘߋߞߏߘߋ ߡߊߛߐ߬ߘߐ߲߬ ߠߊ߫ ߣߴߌ ߓߐ߫ ߘߊ߫ ߥߊ߲߬ߥߊ߲߬ ߝߊ ߗߏ߯ߦߊ ߘߐ߫</string>
     <string name="content_language_title">ߞߣߐߘߐ߫ ߞߊ߲߫ ߖߏߣߡߊ</string>
-    <string name="peertube_instance_url_title">PeerTube ߛߐߘߊ ߟߎ߬</string>
-    <string name="peertube_instance_url_summary">ߌ ߟߊ߫ PeerTube ߛߐߘߊ߫ ߤߍߣߍ߲ߣߊ߲ߕߊ ߟߎ߬ ߛߎߥߊ߲ߘߌ߫</string>
-    <string name="peertube_instance_add_exists">ߛߐߘߊ ߏ߬ ߦߋ߲߬ ߞߘߐ߬ߡߊ߲߫</string>
     <string name="settings_category_player_title">ߕߏߟߏ߲ߟߊ߲</string>
     <string name="all">ߊ߬ߓߍ߯</string>
     <string name="error_report_title">ߝߎ߬ߕߎ߲߬ߕߌ߫ ߘߊ߲߬ߕߍ߰ߟߌ</string>
@@ -461,7 +453,6 @@
     <string name="enable_disposed_exceptions_title">ߝߎ߬ߕߎ߲߬ߕߌ߫ ߛߌ߬ ߓߊ߲ߣߍ߲ ߠߎ߬ ߞߏߐߝߐ߫</string>
     <string name="subscriptions_import_unsuccessful">ߡߊ߬ߝߘߎ߬ߟߌ ߟߎ߬ ߣߍ߫ ߟߊߛߣߍ߫ ߟߊ߫</string>
     <string name="subscriptions_export_unsuccessful">ߡߊ߬ߝߘߎ߬ߟߌ ߟߎ߬ ߕߍ߫ ߛߋ߫ ߟߊߓߐ߫ ߟߊ߫</string>
-    <string name="import_soundcloud_instructions_hint">ߌߟߊ߫ߜߊ߲߬ߞߎ߲߬ߕߐ߮߸ soundcloud.com/ߌߟߊ߫ߜߊ߲߬ߞߎ߲߬ߕߐ߮</string>
     <string name="import_network_expensive_warning">ߦߴߊ߬ ߟߐ߲߫ ߞߏ߫ ߗߋߥߊߟߌ ߣߌ߲߬ ߘߌߣߊ߬ ߞߙߏ߬ߝߏ߫ ߜߊ߲߬ߞߎ߲߬ߠߌ߲ ߖߛߐ߫ ߞߏߛߓߍ߫.
 \n
 \nߞߵߊ߬ ߓߟߏߕߎ߲߰؟</string>
@@ -564,12 +555,6 @@
 \n߅. ߌ ߦߋ߫ \"ߞߊ߬ ߟߊߖߌ߰\" ߞߎ߬ߘߎ ߛߐ߲߬ߞߌ߲߫ ߊ߬ ߟߊ߲ߞߣߍߡߊߣߍ߲ ߞߐ߫
 \n߆. ߊ߬ ߛߐ߲߬ߞߌ߲߫ \"ߞߊ߬ ߞߐߕߐ߮ ߟߊߛߣߍ߫\" ߞߊ߲߬ ߘߎ߰ߟߊ߫ ߦߊ߬߸ ߦߋ߫ .zip ߞߐߕߐ߯ ߟߊߖߌ߰ߣߍ߲ ߛߎߥߊ߲ߘߌ߫
 \n߇. [ߣߌ߫ ߝߝߝ ߟߊߛߣߍ ߗߌߙߏ߲߫ ߘߊ߲߫] ߦߋ߫ ߝߝߝ ߞߐߕߐ߮ ߓߐ߬ߛߌ߬ ߊ߬ ߘߐ߫ (ߊ߬ ߛߌߦߊߡߊ߲ ߘߐ߫ ߕߐ߯ ߛߎ߮ ߣߌ߲߬ ߠߋ߬ \"YouTube and YouTube Music/subscriptions/subscriptions.csv\")߸ߊ߬ ߛߐ߲߬ߞߌ߲߫ \"ߞߐߕߐ߮ ߟߊߛߣߍ߲߫\" ߞߊ߲߬ ߘߎ߰ߟߊ߫߸ ߞߊ߬ csv ߞߐߕߐ߯ ߓߐ߬ߛߌ߬ߣߍ߲ ߛߎ߲ߥߊ߲ߘߌ߫</string>
-    <string name="import_soundcloud_instructions">ߌ ߟߊ߫ SoundCloud ߢߊߞߙߍ߫ ߛߘߌ߬ߜߋ߲ ߠߊߘߏ߬ ߥߊߟߴߌߟߊ߫ ߜߊ߬ߞߎ߲߬ߕߐ߮ ߞߊ߬ SoundCloud ߢߊߞߙߍ߫ ߘߏ߫ ߟߊߛߣߍ߫:
-\n
-\n߁. \"ߛߓߍߘߊ߫ ߗߏ߯ߦߊ\" ߟߊߢߊ߯ ߌߟߊ߫ ߓߟߐߟߐ߫ ߛߏ߲߯ߓߊߟߊ߲ ߞߣߐ߫ (ߣߴߊ߬ ߞߵߊ߬ ߕߘߍ߬ ߏ߬ ߕߴߌߟߊ߫ ߕߙߏߞߏ߫ ߕߊ߬ߕߊ ߟߊ߫)
-\n߂. ߥߊ߫ ߛߘߌ߬ߜߋ߲ ߣߌ߲߬ ߞߊ߲߬: %1$s
-\n߃. ߌ ߜߊ߲߬ߞߎ߲߬ ߣߴߊ߬ ߡߊߢߌ߬ߣߌ߲߬ߞߊ߬ ߘߊ߫
-\n߄. ߢߊߞߙߍ߫ ߛߘߌ߬ߜߋ߲ ߓߊߓߌߟߊ߫߸ ߌ ߟߊߛߌ߲߫ ߛߊ߲ ߦߋ߫ ߡߍ߲ ߡߊ߬ ߏ߬ ߘߌ߬.</string>
     <string name="playback_speed_control">ߘߐ߬ߛߊ߬ߙߌ߬ߟߌ߫ ߓߏ߬ߙߌ߬ߛߋ߲ ߡߊ߬ߡߙߊ߬ߟߌ ߟߎ߬</string>
     <string name="playback_tempo">ߞߍߛߋ߲</string>
     <string name="playback_pitch">ߞߊ߲ߡߊߛߙߋ</string>
@@ -698,7 +683,6 @@
     <string name="progressive_load_interval_exoplayer_default">ExoPlayer ߡߐ߬ߟߐ߲߬ ߖߏߣߡߊ</string>
     <string name="you_successfully_subscribed">ߝߙߏߝߋ ߣߌ߲߬ ߡߊߝߘߎߣߌ߲߫ ߌ ߓߟߏ߫ ߡߎ߬ߕߎ߲߬</string>
     <string name="open_website_license">ߞߊ߬ ߞߍߦߙߐ ߘߊߦߟߍ߬</string>
-    <string name="soundcloud_go_plus_content">ߣߌ߲߬ ߦߋ߫ SoundCloud Go+ ߜߋ߬ߙߋ ߘߏ߫ ߟߋ߬ ߘߌ߫߸ ߡߍ߲ ߕߴߌ ߟߊ߫ ߖߡߊ߬ߣߊ ߞߣߐ߫߸ ߏ߬ ߘߐ߫ ߊ߬ ߕߍ߫ ߛߋ߫ ߘߐߛߊߙߌ߫ ߟߊ߫ ߥߟߊ߫ ߞߵߊ߬ ߟߊߖߌ߰ ߣߌߎߔߌߔ ߓߟߏ߫.</string>
     <string name="feed_use_dedicated_fetch_method_summary">ߊ߬ ߦߋ߫ ߗߋߢߊ ߘߏ߫ ߟߎ߫ ߘߐ߫߸ ߊ߬ߟߋ߬ ߞߊߟߌߡߊ߲ߓߊ ߟߋ߬ ߝߊߣߊ߲߫ ߦߋ߫߸ ߞߏ߬ߣߌ߲߬ ߊ߬ ߘߌ߫ ߛߋ߫ ߝߌ߬ߛߌ߫ ߘߊ߲߬ߠߊߕߍ߰ߣߍ߲ ߠߥߊ߫ ߟߊ߫ ߊ߬ߣߌ߫ ߟߌ߬ߤߟߊ߬ ߘߝߊߓߊߟߌ ߟߎ߬ (ߟߊߒߡߊ߫ ߘߐ߫߸ ߥߎ߬ߛߎ߸ ߝߌ߬ߛߌ ߛߎ߯ߦߊ ߥߟߊ߫ ߝߊ߲ߞߢߊ߫ ߟߌ߬ߤߟߊ)</string>
     <string name="paid_content">ߞߣߐߘߐ ߣߌ߲߬ ߦߋ߫ ߡߊߛߐ߬ߘߐ߲߬ ߠߊ߫ ߕߣߐ߬ߓߐ߬ߟߊ߫ ߛߙߊ߬ߓߐ߬ߟߊ ߟߎ߬ ߟߋ߬ ߘߐߙߐ߲߫ ߓߟߏ߫߸ ߏ߬ ߘߐ߫ ߊ߬ ߕߍ߫ ߛߋ߫ ߘߐߛߊߙߌ߫ ߟߊ߫ ߥߟߊ߫ ߞߵߊ߬ ߟߊߖߌ߰ ߣߌߎߔߌߔ ߓߟߏ.</string>
     <string name="feed_use_dedicated_fetch_method_help_text">ߊ߬ ߦߴߌ ߢߣߊ߫ ߟߋ߬ ߞߏ߫ ߥߏ߬ߦߏ ߟߎ߬ ߖߛߐ ߟߊߛߎߡߊߡߊ߲߫ ߠߋ߬ ߞߏߖߎ߯ߦߊ߫؟ ߣߴߏ߬ ߟߋ߸ ߖߛߐߟߌ߫ ߞߊߟߌ߲ ߡߊߝߍߣߍ߲߫ (ߌ ߘߌ߫ ߛߴߊ߬ ߡߊߝߊ߬ߟߋ߲߬ ߠߊ߫ ߢߊߓߐߟߌ ߟߎ߬ ߘߐ߫ ߥߟߊ߫ ߘߎ߰ߟߊ߬ߘߐ߬ ߞߘߎ ߣߌ߲߬ ߛߐ߲߬ߞߌ߲߫).

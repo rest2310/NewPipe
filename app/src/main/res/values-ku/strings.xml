@@ -233,13 +233,6 @@
 \n1. ئەم بەستەرە بکەوە: s%1$s
 \n2. بچۆرەژوورەوە گەر داوای‌ کرد
 \n3. داگرتنێک دەست پێدەکات (ئەمە پەڕگەی خەزنکراوە)</string>
-    <string name="import_soundcloud_instructions">هەناردەکردنەوەی پەڕەی کەسی SoundCloud بەدانانی بەستەر یاخوود ئایدی:
-\n
-\n1. دۆخی ”Desktop mode” لە وێبگەرەکەتدا چالاک بکە (ئەم ماڵپەڕە بۆ وێبگەری مۆبایلەکان بەردەست نییە)
-\n2. ئەم بەستەرە بکەرەوە : %1$s
-\n3. بچۆرە ژوورەوە گەر داواکرا
-\n4. بەستەری پەڕەی کەسییەکەت دابنێ.</string>
-    <string name="import_soundcloud_instructions_hint">ئایدییەکەت , soundcloud.com/yourid</string>
     <string name="import_network_expensive_warning">ئەوە بزانە ئەم کردارە پێویستی بە هێڵێکی گران هەیە.
 \n
 \nدەتەوێ بەردەوامبیت؟</string>
@@ -397,14 +390,6 @@
     <string name="overwrite_failed">ناتوانرێ لەسەر ئەو فایلە جێگیربکرێ</string>
     <string name="default_kiosk_page_summary">پەڕەی بنەڕەتی</string>
     <string name="seek_duration_title">ماوەی خێرا بردنە پێشەوە\\ گێڕانەوە بۆ دواوە</string>
-    <string name="peertube_instance_url_title">دۆخی پێرتووبی</string>
-    <string name="peertube_instance_url_summary">دۆخە دڵخوازەکانی پێرتووبی دیاریبکە</string>
-    <string name="peertube_instance_url_help">ئەو دۆخانە بدۆزەرەوە کە لەگەڵ خۆتدا دەگونجێن لە %s</string>
-    <string name="peertube_instance_add_title">زیادکردنی دۆخ</string>
-    <string name="peertube_instance_add_help">بەستەری دۆخ دابنێ</string>
-    <string name="peertube_instance_add_fail">ناتوانرێ پشتگیری دۆخەکە بکرێ</string>
-    <string name="peertube_instance_add_https_only">تەنها بەستەرەکانی https پشتگیریکراون</string>
-    <string name="peertube_instance_add_exists">هەمان دۆخ کاراکراوە</string>
     <string name="error_http_not_found">نەدۆزرایەوە</string>
     <string name="error_postprocessing_failed">چارەسەرکردن شکستی هێنا</string>
     <string name="stop">ڕاگرتن</string>

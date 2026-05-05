@@ -1,7 +1,6 @@
 package org.schabi.newpipe.settings.migration;
 
 import static org.schabi.newpipe.MainActivity.DEBUG;
-import static org.schabi.newpipe.extractor.ServiceList.SoundCloud;
 import static org.schabi.newpipe.extractor.ServiceList.YouTube;
 
 import android.content.Context;
@@ -163,13 +162,13 @@ public final class SettingMigrations {
     private static final Migration MIGRATION_6_7 = new Migration(6, 7) {
         @Override
         protected void migrate(@NonNull final Context context) {
-            // The SoundCloud Top 50 Kiosk was removed in the extractor,
+            // Service id 1 previously exposed the Top 50 kiosk, which was removed in the extractor,
             // so we remove the corresponding tab if it exists.
             final TabsManager tabsManager = TabsManager.getManager(context);
             final List<Tab> tabs = tabsManager.getTabs();
             final List<Tab> cleanedTabs = tabs.stream()
                     .filter(tab -> !(tab instanceof Tab.KioskTab kioskTab
-                            && kioskTab.getKioskServiceId() == SoundCloud.getServiceId()
+                            && kioskTab.getKioskServiceId() == 1
                             && kioskTab.getKioskId().equals("Top 50")))
                     .collect(Collectors.toUnmodifiableList());
             if (tabs.size() != cleanedTabs.size()) {

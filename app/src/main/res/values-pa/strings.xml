@@ -278,8 +278,6 @@
     <string name="subscriptions_import_unsuccessful">ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਇੰਪੋਰਟ ਨਹੀਂ ਹੋ ਸਕੀਆਂ</string>
     <string name="subscriptions_export_unsuccessful">ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਐਕਸਪੋਰਟ ਨਹੀਂ ਹੋ ਸਕੀਆਂ</string>
     <string name="import_youtube_instructions">ਗੂਗਲ ਟੇਕਆਊਟ ਤੋਂ ਯੂਟਿਊਬ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਇੰਪੋਰਟ ਕਰਨ ਲਈ ਐਕਸਪੋਰਟ ਫਾਈਲ ਡਾਊਨਲੋਡ ਕਰੋ:\n\n1. ਇਸ URL ਤੇ ਜਾਓ: %1$s\n2. ਮੰਗਣ ਤੇ ਆਪਣੇ ਖਾਤੇ \'ਚ ਲਾਗ-ਇਨ ਕਰੋ\n3. ਕਲਿੱਕ ਕਰੋ \" All data incuded\" ਤੇ, ਫੇਰ \"Deselect all\" ਤੇ ਫੇਰ ਸਿਰਫ \"subscriprion\" ਚੁਣੋ ਅਤੇ \"OK\" ਕਰੋ\n4. \"Next step\" ਤੇ ਕਲਿੱਕ ਕਰੋ ਅਤੇ ਫੇਰ \"create export\" ਤੇ\n5. ਡਾਊਨਲੋਡ ਬਟਨ ਦਿਖਾਈ ਦੇਣ ਤੇ ਇਸ ਤੇ ਕਲਿੱਕ ਕਰੋ। ਇੱਕ ਡਾਉਨਲੋਡ ਸ਼ੁਰੂ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ (ਇਹੀ ਐਕਸਪੋਰਟ ਫਾਈਲ ਹੈ)\n6. ਥੱਲੇ ਇੰਪੋਰਟ ਫਾਈਲ ਤੇ ਕਲਿੱਕ ਕਰੋ ਤੇ ਡਾਊਨਲੋਡ ਕੀਤੀ .zip ਫਾਈਲ ਚੁਣੋ\n7. [ਜੇ .zip ਤੋਂ ਐਕਸਪੋਰਟ ਫੇਲ ਹੋ ਜਾਂਦੀ ਹੈ] ਤਾਂ .csv ਫਾਈਲ ਐਕਸਟਰੈਕਟ ਕਰੋ (ਆਮ ਤੌਰ ਤੇ \"YouTube and YouTube Music/subscriptions/subscriptions.csv\"), ਥੱਲੇ ਦਿੱਤੇ ਇੰਪੋਰਟ ਫਾਈਲ ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਐਕਸਟਰੈਕਟ ਕੀਤੀ csv ਫਾਈਲ ਚੁਣੋ</string>
-    <string name="import_soundcloud_instructions">URL ਜਾਂ ਆਪਣੀ ID ਟਾਈਪ ਕਰਕੇ ਸਾਉੰਡ ਕਲਾਉਡ ਪ੍ਰੋਫਾਈਲ ਇੰਪੋਰਟ ਕਰੋ: \n \n1. ਇੱਕ ਵੈਬ-ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ \"ਡੈਸਕਟਾਪ ਮੋਡ\" ਨੂੰ ਚਾਲੂ ਕਰੋ (ਸਾਈਟ ਮੋਬਾਈਲ ਉਪਕਰਣਾਂ ਲਈ ਉਪਲਬਧ ਨਹੀਂ ਹੈ) \n2. ਇਸ URL ਤੇ ਜਾਓ: %1$s \n3. ਆਪਣੇ ਖਾਤੇ ਚ ਲੌਗ-ਇਨ ਕਰੋ \n4. ਨਿਰਦੇਸ਼ਤ ਕੀਤੇ ਗਏ ਪ੍ਰੋਫਾਈਲ URL ਨੂੰ ਕਾਪੀ ਕਰੋ।</string>
-    <string name="import_soundcloud_instructions_hint">ਤੁਹਾਡੀ ਆਈਡੀ, soundcloud.com/ਤੁਹਾਡੀ ਆਈਡੀ</string>
     <string name="import_network_expensive_warning">ਯਾਦ ਰੱਖੋ ਕਿ ਇਸ ਕਾਰਜ ਨਾਲ ਡਾਟਾ ਖਪਤ ਹੋ ਸਕਦਾ ਹੈ।\n\nਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
     <string name="playback_speed_control">ਪਲੇਅਬੈਕ ਸਪੀਡ ਕੰਟਰੋਲ</string>
     <string name="playback_tempo">ਤਾਲ</string>
@@ -553,14 +551,6 @@
     <string name="youtube_restricted_mode_enabled_summary">ਯੂਟਿਊਬ \"ਪਾਬੰਦੀਸ਼ੁਦਾ ਮੋਡ\" ਉਪਲਬਧ ਕਰਾਉਂਦਾ ਹੈ ਜੋ ਬਾਲਗਾਂ ਵਾਲ਼ੀ ਸਮੱਗਰੀ ਲੁਕਾਉਂਦਾ ਹੈ</string>
     <string name="youtube_restricted_mode_enabled_title">ਯੂਟਿਊਬ ਦਾ ਪਾਬੰਦੀਸ਼ੁਦਾ ਮੋਡ ਚਾਲੂ ਕਰੋ</string>
     <string name="show_age_restricted_content_summary">ਉਹ ਸਮੱਗਰੀ ਵੀ ਵਿਖਾਓ ਜੋ ਉਮਰ-ਸੀਮਾ ਕਰਕੇ ਬੱਚਿਆਂ ਲਈ ਸ਼ਾਇਦ ਸਹੀ ਨਾ ਹੋਵੇ (ਜਿਵੇਂ 18+)</string>
-    <string name="peertube_instance_add_exists">ਇੰਸਟੈਂਸ ਪਹਿਲਾਂ ਤੋਂ ਮੌਜੂਦ ਹੈ</string>
-    <string name="peertube_instance_add_https_only">ਸਿਰਫ਼ HTTP URLs ਹੀ ਮੰਨਣਯੋਗ ਹਨ</string>
-    <string name="peertube_instance_add_fail">ਇੰਸਟੈਂਸ ਦੀ ਜਾਇਜ਼ਗੀ ਤਸਦੀਕ ਨਹੀਂ ਹੋ ਸਕੀ</string>
-    <string name="peertube_instance_add_help">ਇੰਸਟੈਂਸ URL ਦਾਖ਼ਲ ਕਰੋ</string>
-    <string name="peertube_instance_add_title">ਇੰਸਟੈਂਸ ਜੋੜੋ</string>
-    <string name="peertube_instance_url_help">ਤੁਹਾਡੇ ਪਸੰਦੀਦਾ ਇੰਸਟੈਂਸ %s \'ਤੇ ਲੱਭੋ</string>
-    <string name="peertube_instance_url_summary">ਆਪਣੇ ਪਸੰਦੀਦਾ ਪੀਅਰਟਿਊਬ ਇੰਸਟੈਂਸ ਚੁਣੋ</string>
-    <string name="peertube_instance_url_title">ਪੀਅਰਟਿਊਬ ਇੰਸਟੈਂਸ</string>
     <string name="unsupported_url_dialog_message">URL ਪਛਾਣ ਨਹੀਂ ਹੋਇਆ। ਕਿਸੇ ਹੋਰ ਐਪ ਨਾਲ਼ ਖੋਲ੍ਹਣਾ ਹੈ\?</string>
     <string name="auto_queue_toggle">ਆਟੋ ਕਤਾਰਬੱਧ ਕਰੋ</string>
     <string name="show_meta_info_summary">ਸਟ੍ਰੀਮ ਨਿਰਮਾਤਾ, ਸਟ੍ਰੀਮ ਸਮੱਗਰੀ ਜਾਂ ਖੋਜ ਬੇਨਤੀ ਦੇ ਬਾਰੇ ਵਿੱਚ ਅਤਿਰਿਕਤ ਜਾਣਕਾਰੀ ਦਿੰਦੇ ਮੈਟਾ ਜਾਣਕਾਰੀ ਬਕਸੇ ਨੂੰ ਲੁਕਾਉਣ ਲਈ ਬੰਦ ਕਰੋ</string>
@@ -627,7 +617,6 @@
     <string name="leak_canary_not_available">ਲੀਕ-ਕੈਨਰੀ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ</string>
     <string name="show_error_snackbar">ਤਰੁੱਟੀ ਤੇ ਸਨੈਕਬਾਰ ਵਿਖਾਓ</string>
     <string name="feed_use_dedicated_fetch_method_summary">ਕੁਝ ਸੇਵਾਵਾਂ ਵਿੱਚ ਹੀ ਉਪਲੱਬਧ ਇਹ ਤਰੀਕਾ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਫੀਡ ਵਿੱਚ ਤੇਜ ਜਾਣਕਾਰੀ ਮੁਹੱਈਆ ਕਰਵਾਉਂਦਾ ਹੈ, ਪਰ ਕੁਝ ਗਿਣਤੀ ਦੀਆਂ ਹੀ ਆਈਟਮ ਪ੍ਰਦਾਨ ਕਰ ਸਕਦਾ ਹੈ ਉਹ ਵੀ ਅਕਸਰ ਬਿਨਾਂ ਪੂਰੀ ਜਾਣਕਾਰੀ( ਜਿਵੇਂ ਅਵਧੀ, ਸਟ੍ਰੀਮ ਦੀ ਕਿਸਮ, ਕੋਈ ਸਟ੍ਰੀਮ ਲਾਈਵ ਹੈ, ਨਹੀਂ ਦੱਸਦਾ)</string>
-    <string name="soundcloud_go_plus_content">ਇਹ ਸਾਊਂਡਕਲਾਊਡ ਗੋ-ਪਲੱਸ ਟਰੈਕ ਹੈ, ਘੱਟੋ-ਘੱਟ ਤੁਹਾਡੇ ਦੇਸ਼ ਵਿੱਚ, ਇਸ ਲਈ ਇਹ ਸਟ੍ਰੀਮ ਜਾਂ ਡਾਊਨਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।</string>
     <string name="unknown_format">ਅਗਿਆਤ ਫਾਰਮੈਟ</string>
     <string name="unknown_quality">ਅਗਿਆਤ ਕੁਆਲਿਟੀ</string>
     <string name="faq_title">ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ</string>

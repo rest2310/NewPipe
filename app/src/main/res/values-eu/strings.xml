@@ -278,8 +278,6 @@
     <string name="subscriptions_import_unsuccessful">Ezin izan dira harpidetzak inportatu</string>
     <string name="subscriptions_export_unsuccessful">Ezin izan dira harpidetzak esportatu</string>
     <string name="import_youtube_instructions">Inportatu YouTube harpidetzak Google takeout-etik: \n \n1. Joan URL honetara: %1$s \n2. Hasi saioa eskatzen zaizunean \n3. Hautatu «Datu guztiak barne», gero «Kendu hautapen guztiak», eta hautatu «harpidetzak» soilik eta egin klik «Ados» botoian \n4. Egin klik «Hurrengo pausua» eta «Sortu esportazioa» botoietan \n5. Egin klik «Deskargatu» botoian agertzen denean \n6. Egin klik INPORTATU FITXATEGIA botoian eta hautatu deskargatutako .zip fitxategia \n7. [.zip inportazioak huts egiten badu] Erauzi .csv fitxategia deskargatutako takeout zip-etik (normalean «Youtube eta Youtube Music/harpidetzak/harpidetzak.csv»), egin klik INPORTATU FITXATEGIA botoian eta hautatu erauzitako csv fitxategia</string>
-    <string name="import_soundcloud_instructions">Inportatu SoundCloud profila URL-a edo zure ID-a idatziz: \n \n1. Gaitu «mahaigain modua» web nabigatzailean (gunea ez dabil mugikorretan) \n2. Joan URL honetara: %1$s \n3. Hasi saioa eskatzen zaizunean \n4. Kopiatu profilaren URL-a eraman zaizun orritik.</string>
-    <string name="import_soundcloud_instructions_hint">zureID,soundcloud.com/zureid</string>
     <string name="import_network_expensive_warning">Eragiketa honek sarearen erabilera handia egin lezake.
 \n
 \nJarraitu nahi duzu?</string>
@@ -406,14 +404,6 @@
     <string name="drawer_header_description">Aktibatu zerbitzua, orain hautatua:</string>
     <string name="default_kiosk_page_summary">Kiosko lehenetsia</string>
     <string name="seek_duration_title">Aurreratze/atzeratze bilaketaren iraupena</string>
-    <string name="peertube_instance_url_title">PeerTube instantziak</string>
-    <string name="peertube_instance_url_summary">Hautatu zure gogoko PeerTube instantziak</string>
-    <string name="peertube_instance_url_help">Aurkitu gustuko instantziak hemen: %s</string>
-    <string name="peertube_instance_add_title">Gehitu instantzia</string>
-    <string name="peertube_instance_add_help">Sartu instantziaren URLa</string>
-    <string name="peertube_instance_add_fail">Ezin izan da instantzia balioztatu</string>
-    <string name="peertube_instance_add_https_only">HTTPS URLak soilik onartzen dira</string>
-    <string name="peertube_instance_add_exists">Instantzia badago aurretik</string>
     <string name="local">Tokikoa</string>
     <string name="recently_added">Berriki gehitua</string>
     <string name="most_liked">Gogokoenak</string>
@@ -559,7 +549,6 @@
     <string name="paid_content">Eduki hau ordaindu duten erabiltzaileentzat soilik dago eskuragarri, eta NewPipe-k ezin du igorri edo deskargatu.</string>
     <string name="youtube_music_premium_content">Bideo hau YouTube Music Premium kideentzako soilik dago eskuragarri, eta NewPipe-k ezin du igorri edo deskargatu.</string>
     <string name="private_content">Eduki hau pribatua da, eta NewPipe-k ezin du igorri edo deskargatu.</string>
-    <string name="soundcloud_go_plus_content">Hau SoundCloud Go+ zerbitzuko pista bat da, zure herrialdean behintzat, eta NewPipe-k ezin du igorri edo deskargatu.</string>
     <string name="georestricted_content">Eduki hau ez dago eskuragarri zure herrialdean.</string>
     <string name="crash_the_app">Aplikazioa kraskatu</string>
     <string name="recaptcha_solve">Ebatzi</string>

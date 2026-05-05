@@ -303,7 +303,6 @@
     <string name="caption_setting_title">כתוביות</string>
     <string name="caption_setting_description">שינוי גודל כותרת הנגן וסגנונות הרקע. נדרשת הפעלה מחדש כדי ששינויים אלה יכנסו לתוקף</string>
     <string name="enable_leak_canary_summary">מעקב אחר זליגת זיכרון עשויה לגרום ליישומון להיות בלתי זמין בזמן העתקת תוכן הזיכרון לקובץ</string>
-    <string name="import_soundcloud_instructions_hint">המזהה שלך, soundcloud.com/המזהה שלך</string>
     <string name="import_network_expensive_warning">נא לשים לב כי פעולה זו עשויה להעמיס על תקשורת הנתונים. 
 \n 
 \nלהמשיך\?</string>
@@ -336,12 +335,6 @@
     <string name="conferences">כנסים</string>
     <string name="enable_disposed_exceptions_title">דיווח על שגיאות שמחוץ למחזור החיים</string>
     <string name="enable_disposed_exceptions_summary">אילוץ דיווח על חריגות מחוץ למקטעים או למחזור חיי הפעילות לאחר ההשלכה בתשדורת יוצאת</string>
-    <string name="import_soundcloud_instructions">ניתן לייבא פרופיל SoundCloud על ידי הקלדת הכתובת או המזהה שלך:
-\n
-\n1. עליך להפעיל „מצב שולחן עבודה” בדפדפן שלך (האתר לא זמין למכשירים ניידים)
-\n2. לעבור לכתובת הזו: %1$s
-\n3. להיכנס אם נתבקשת
-\n4. להעתיק את כתובת הפרופיל אליו הועברת.</string>
     <string name="playback_speed_control">בקרי מהירות נגינה</string>
     <string name="playback_pitch">גובה צליל</string>
     <string name="limit_mobile_data_usage_title">הגבלת הרזולוציה בעת שימוש בנתונים סלולריים</string>
@@ -431,14 +424,6 @@
     </plurals>
     <string name="default_kiosk_page_summary">קיוסק ברירת מחדל</string>
     <string name="seek_duration_title">משך קפיצה מהירה קדימה/אחורה</string>
-    <string name="peertube_instance_url_title">מופעים של PeerTube</string>
-    <string name="peertube_instance_url_summary">נא לבחור את מופעי ה־PeerTube המועדפים עליך</string>
-    <string name="peertube_instance_url_help">איתור המופעים האהובים עליך תחת %s</string>
-    <string name="peertube_instance_add_title">הוספת מופע</string>
-    <string name="peertube_instance_add_help">נא להכניס כתובת מופע</string>
-    <string name="peertube_instance_add_fail">לא ניתן לאמת את המופע</string>
-    <string name="peertube_instance_add_https_only">יש תמיכה בכתובות HTTPS בלבד</string>
-    <string name="peertube_instance_add_exists">המופע כבר קיים</string>
     <string name="local">מקומי</string>
     <string name="recently_added">נוספו לאחרונה</string>
     <string name="most_liked">האהובים ביותר</string>
@@ -597,7 +582,6 @@
     <string name="paid_content">התוכן הזה זמין רק למשתמשים ששילמו, לכן לא ניתן להזרים או להוריד אותו עם NewPipe.</string>
     <string name="youtube_music_premium_content">סרטון זה זמין רק למנויי YouTube Music Premium, לכן לא ניתן להזרים או להוריד אותו עם NewPipe.</string>
     <string name="private_content">זה תוכן פרטי, לכן לא ניתן להזרים או להוריד אותו עם NewPipe.</string>
-    <string name="soundcloud_go_plus_content">רצועה זו של SoundCloud Go+‎ מוגבלת, לפחות במדינה שלך, לכן לא ניתן להזרים או להוריד אותה עם NewPipe.</string>
     <string name="georestricted_content">תוכן זה אינו זמין במדינה שלך.</string>
     <string name="restricted_video_no_stream">הצפייה בסרטון הזה מוגבלת בגיל.
 \nעקב מדיניות חדשה ב־YouTube בנוגע לסרטונים מוגבלי גיל, ל־NewPipe אין אפשרות לגשת לתזרימי הווידאו של השירות ולכן אין אפשרות לנגן אותם.</string>

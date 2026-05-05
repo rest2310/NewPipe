@@ -87,7 +87,6 @@
     <string name="enqueue">نۆبه‌ت</string>
     <string name="play_with_kodi_title">لێدان به‌ Kodi</string>
     <string name="error_unable_to_load_comments">ناتوانرێت لێدوانەکان باربکرێن</string>
-    <string name="peertube_instance_add_help">بەستەری دۆخ دابنێ</string>
     <string name="download_path_audio_summary">فایلی دەنگە داگیراوەکان لێرەدا هەڵدەگیرێن</string>
     <string name="error_snackbar_message">ببورە، هەندێك کێشە ڕوویدا.</string>
     <string name="export_to">هەناردە کردن بۆ</string>
@@ -173,7 +172,6 @@
     <string name="black_theme_title">ڕه‌ش</string>
     <string name="default_popup_resolution_title">قه‌باره‌ی بنەڕەتی په‌نجه‌ره‌</string>
     <string name="could_not_import_all_files">ئاگاداربە: ناتوانرێت هەموو فایله‌كان هاوردە بكرێن .</string>
-    <string name="peertube_instance_url_summary">ئارەزوومەندییەکانی دۆخی پێرتووب دیار بکە</string>
     <string name="feed_oldest_subscription_update">دواین نوێکردنەوەی فیید: %s</string>
     <string name="stop">ڕاگرتن</string>
     <string name="list">خشته‌یی</string>
@@ -184,12 +182,10 @@
     <string name="invalid_file">ئەو فایله‌ بوونی نییە یان دەسەڵاتی خوێندنەوە و نوسینی لاوازە</string>
     <string name="parsing_error">ناتوانرێت ماڵپەڕ شیبکرێتەوە</string>
     <string name="settings_file_charset_title">ڕه‌نووسه‌ ڕێپێدراوه‌كان له‌ فایله‌ ناوییه‌كاندا</string>
-    <string name="import_soundcloud_instructions_hint">ئایدییەکەت ، soundcloud.com/yourid</string>
     <string name="fragment_feed_title">چی نوێ هه‌یه‌</string>
     <string name="msg_running_detail">كرتە بکە بۆ وردەکاری</string>
     <string name="delete_playback_states_alert">شوێنی هەموو کارپێکراوەکان بسڕدرێنەوە؟</string>
     <string name="top_50">باشترین ٥٠</string>
-    <string name="peertube_instance_add_https_only">تەنها بەستەرەکانی https پشتگیریکراون</string>
     <string name="error_ssl_exception">پەیوەستبوونی پارێزراو هه‌ره‌سی هێنا</string>
     <string name="remove_watched_popup_warning">ئەو ڤیدیۆیانەی پێشتر سەیرت کردوون و دواتر زیادت کردوون بۆ خشتەلێدان لادەدرێن. \nئایا دڵنیایت؟ ئەمە ناگەڕێنرێتەوە!</string>
     <string name="detail_sub_channel_thumbnail_view_description">وێنۆچکەی سه‌روێنه‌ی کەناڵ</string>
@@ -202,7 +198,6 @@
     <string name="error_progress_lost">کردارەکە هه‌ره‌سی هێنا, چونکە ئەو فایله‌ سڕاوەتەوە</string>
     <string name="controls_add_to_playlist_title">زیادی بکە بۆ</string>
     <string name="no_subscribers">به‌ژداری نییه‌</string>
-    <string name="peertube_instance_url_title">دۆخی پێرتووب</string>
     <string name="playlist_creation_success">خشتەلێدان سازکرا</string>
     <string name="unhook_checkbox">سڕینەوەی بەستەر (ڕەنگە ببێتە هۆی تێکدان)</string>
     <string name="channel_page_summary">پەڕەی کەناڵەکان</string>
@@ -218,7 +213,6 @@
     <string name="play_audio">ده‌نگ</string>
     <string name="show_original_time_ago_title">پیشاندانی کاتی بنچینەیی پێشوو لەسەر بابەتەکان</string>
     <string name="play_queue_stream_detail">وردەکارییەکان</string>
-    <string name="peertube_instance_add_exists">هەمان دۆخ کاراکراوە</string>
     <string name="content_language_title">زمانی بنەڕەتی بابەت</string>
     <string name="tab_bookmarks">خشتەلێدانه‌ نیشانەکراوەکان</string>
     <string name="privacy_policy_title">سیاسەتی تایبەتی نیوپایپ</string>
@@ -324,14 +318,12 @@
     <string name="songs">گۆرانییەکان</string>
     <string name="controls_download_desc">داگرتنی فایلی پەخش</string>
     <string name="list_view_mode">شێوازی پیشاندانی خشتە</string>
-    <string name="peertube_instance_add_title">زیادکردنی دۆخ</string>
     <string name="accept">پەسەند</string>
     <string name="delete_playlist_prompt">ئەم خشتەلێدانه‌ بسڕدرێتەوە؟</string>
     <string name="mute">بێدەنگکردن</string>
     <string name="website_encouragement">سەردانی ماڵپەڕی نیوپایپ بکە بۆ زانیاری و هەواڵی نوێ.</string>
     <string name="app_description">به‌رنامه‌یه‌كی خۆڕایی و کێشکەم بۆ پەخش لەسەر ئەندرۆید.</string>
     <string name="content_not_available">بابەت به‌رده‌ست نییە</string>
-    <string name="peertube_instance_url_help">ئەو دۆخانە بدۆزەرەوە کە لەگەڵ خۆتدا دەگونجێن لە %s</string>
     <string name="file">فایل</string>
     <string name="error_http_not_found">نەدۆزرایەوە</string>
     <string name="post_processing">چارەسەردەکرێت</string>
@@ -463,7 +455,6 @@
     <string name="error_report_title">هەڵە لە سكاڵا</string>
     <string name="metadata_cache_wipe_summary">سڕینەوەی پاشماوەی هەموو ماڵپه‌ڕه‌كان</string>
     <string name="kore_not_found">بەرنامەکە نه‌دۆزرایه‌وه‌. دابمه‌زرێت؟</string>
-    <string name="peertube_instance_add_fail">ناتوانرێ پشتگیری دۆخەکە بکرێ</string>
     <string name="install">دابەزاندن</string>
     <string name="videos_string">ڤیدیۆکان</string>
     <string name="unsupported_url">بەستەرەکە پشتگیری نەکراوە</string>
@@ -506,12 +497,6 @@
     <string name="could_not_setup_download_menu">ناتوانرێ لیستی دابه‌زاندن دابنرێت</string>
     <string name="app_update_available_notification_title">وەشانی نوێی نیوپایپ بەردەستە!</string>
     <string name="playlist_thumbnail_change_success">وێنۆچکەی خشتەلێدان گۆڕدرا.</string>
-    <string name="import_soundcloud_instructions">هێنانەوەی پەڕەی کەسی SoundCloud بەدانانی بەستەر یاخوود ئایدی: 
-\n 
-\n1. دۆخی ”Desktop mode” لە وێبگەرەکەتدا چالاک بکە (ئەم ماڵپەڕە بۆ وێبگەری مۆبایلەکان بەردەست نییە) 
-\n2. ئەم بەستەرە بکەرەوە : %1$s 
-\n3. بچۆرە ژوورەوە گەر داواکرا 
-\n4. بەستەری پەڕەی کەسییەکەت دابنێ.</string>
     <string name="charset_letters_and_digits">پیت و ژمارەکان</string>
     <string name="default_content_country_title">بابەتی وڵاتی بنەڕەتی</string>
     <string name="updates_setting_title">نوێکارییەکان</string>
@@ -597,7 +582,6 @@
     <string name="paid_content">ئه‌م بابه‌ته‌ ته‌نیا بۆ ئه‌و كه‌سانه‌ به‌رده‌سته‌ كه‌ پاره‌یان داوه‌ ، بۆیه‌ ناتوانرێت له‌ نیوپایپه‌وه‌ داببه‌زێنرێت.</string>
     <string name="account_terminated">هه‌ژمار له‌ناوبراوه‌</string>
     <string name="youtube_music_premium_content">ئه‌م ڤیدیۆیه‌ ته‌نیا له‌ وه‌شانی نایابی یوتوب میوزیك به‌رده‌سته‌ ، بۆیه‌ ناتوانرێت له‌ نیوپایپه‌وه‌ داببه‌زێنرێت.</string>
-    <string name="soundcloud_go_plus_content">ئه‌مه‌ تراكی SoundCloud Go+ ه‌ ، لانی كه‌م له‌ وڵاته‌كه‌ی تۆدا، ناتوانرێت له‌لایه‌ن نیوپایپه‌وه‌ داببه‌زێنرێت.</string>
     <string name="georestricted_content">ئه‌م بابه‌ته‌ له‌ وڵاته‌كه‌ی تۆدا به‌رده‌ست نییه‌.</string>
     <string name="no_app_to_open_intent">هیچ به‌رنامه‌یه‌كی نێو مۆبایله‌كه‌ت ناتوانێت ئه‌مه‌ بكاته‌وه‌</string>
     <string name="chapters">به‌شه‌كان</string>

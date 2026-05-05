@@ -313,7 +313,7 @@ public class StreamItemAdapter<T extends Stream, U extends Stream> extends BaseA
                 @NonNull final StreamInfoWrapper<X> streamsWrapper,
                 @NonNull final Response response) {
             // try to use additional headers from CDNs or servers,
-            // e.g. x-amz-meta-file-type (e.g. for SoundCloud)
+            // e.g. x-amz-meta-file-type
             final List<String> keys = response.responseHeaders().keySet().stream()
                     .filter(k -> k.endsWith("file-type")).collect(Collectors.toList());
             if (!keys.isEmpty()) {

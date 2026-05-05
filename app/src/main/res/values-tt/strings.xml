@@ -21,7 +21,6 @@
     <string name="settings_category_clear_data_title">Мәгълүматны чистарту</string>
     <string name="download_dialog_title">Йөкләп алу</string>
     <string name="autoplay_title">Автоматик уйнату</string>
-    <string name="peertube_instance_url_title">\"PeerTube\" серверлары</string>
     <string name="settings_category_appearance_title">Тышкы күренеш</string>
     <string name="settings_category_debug_title">Хата төзәтү</string>
     <string name="settings_category_updates_title">Яңартулар</string>
@@ -39,7 +38,6 @@
     <string name="settings_category_history_title">Тарих һәм кэш</string>
     <string name="users">Кулланучылар</string>
     <string name="events">Вакыйгалар</string>
-    <string name="peertube_instance_add_title">Сервер өстәү</string>
     <string name="content">Эчтәлек</string>
     <string name="duration_live">Турыдан-туры</string>
     <string name="clear">Чистарту</string>

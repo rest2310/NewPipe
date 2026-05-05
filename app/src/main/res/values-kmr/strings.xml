@@ -194,14 +194,6 @@
     <string name="settings_category_video_audio_title">Video û deng</string>
     <string name="settings_category_player_behavior_title">Xwenîşandinî</string>
     <string name="settings_category_player_title">Lîstikvan</string>
-    <string name="peertube_instance_add_exists">Mînak jixwe heye</string>
-    <string name="peertube_instance_add_https_only">Tenê URL-yên HTTPS têne piştgirî kirin</string>
-    <string name="peertube_instance_add_fail">Mînak nehate pejirandin</string>
-    <string name="peertube_instance_add_help">URL-ya mînakê binivîse</string>
-    <string name="peertube_instance_add_title">Mînak zêde bikin</string>
-    <string name="peertube_instance_url_help">Mînakên ku hûn dixwazin li %s bibînin</string>
-    <string name="peertube_instance_url_summary">Mînakên xweyên bijare yên PeerTube hilbijêrin</string>
-    <string name="peertube_instance_url_title">Mînakên PeerTube</string>
     <string name="content_language_title">Zimanê naveroka bixweber</string>
     <string name="default_content_country_title">Welatê naverokê standard</string>
     <string name="unsupported_url_dialog_message">URL-yê nasnakin. Bi sepek din vedibe\?</string>
@@ -442,13 +434,6 @@
     <string name="import_network_expensive_warning">Di hişê xwe de bimînin ev operasyon dikare bihayê torê be.
 \n
 \nMa hûn dixwazin berdewam bikin\?</string>
-    <string name="import_soundcloud_instructions_hint">Dixwaze, soundcloud.com/yourid</string>
-    <string name="import_soundcloud_instructions">Bi navnîşana URL an Nasnameya xwe profîlek SoundCloud bikirin:
-\n
-\n1. Di rû-gerokê de \"moda sermaseyê\" çalak bike (malper ji bo cîhazên mobîl peyda nabe)
-\n2. Herin vê URL-ê: %1$s
-\n3. Dema ku ji we were pirsîn bikevin hundur
-\n4. URL-ya profîlê ku hûn lê hatine rêve kirin kopî bikin.</string>
     <string name="subscriptions_export_unsuccessful">Nikare abonetiyê bişîne</string>
     <string name="subscriptions_import_unsuccessful">Nekarîn abone nekarin</string>
     <string name="previous_export">Hinardeya berê</string>

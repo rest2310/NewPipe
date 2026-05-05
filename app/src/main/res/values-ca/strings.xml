@@ -275,13 +275,6 @@
     <string name="enable_disposed_exceptions_title">Informa d\'errors fora del cicle de vida</string>
     <string name="enable_disposed_exceptions_summary">Força l\'informe d\'excepcions Rx que no es puguin transmetre que tinguin lloc fora del cicle de vida d\'un fragment o activitat després de disposar-los</string>
     <string name="import_youtube_instructions">Importeu les vostres subscripcions de YouTube mitjançant la còpia de contingut de Google Takeout: \n \n1. Aneu a : %1$s \n2. Inicieu la sessió si se us demana \n3. Premeu \"Totes les dades incloses\", després \"Dessel·lecciona-ho tot\", llavors sel·leccioneu només \"Subscripcions\" i finalment premeu \"D\'acord\". \n4. Premeu \"Pas següent\" i llavors a \"Crea una exportació\" \n5. Premeu el botó \"Baixa\" un cop hagi aparegut \n6. Premeu a IMPORTA EL FITXER i sel·leccioneu el fitxer .zip descarregat \n7. [En cas que la importació del fitxer .zip hagi fallat] extreieu-ne el fitxer subscripcions.csv (es troba generalment a \"Takeout/YouTube i YouTube Music/subscripcions/subscripcions.csv\"), premeu a IMPORTA EL FITXER i sel·leccioneu el fitxer .csv extret</string>
-    <string name="import_soundcloud_instructions">Importeu un perfil del SoundCloud mitjançant l\'URL o l\'identificador del vostre perfil: 
-\n 
-\n1. Activeu el «Mode d\'ordinador» en un navegador (el lloc web no està disponible per a dispositius mòbils) 
-\n2. Aneu a: %1$s 
-\n3. Inicieu la sessió al vostre compte quan si us demani 
-\n4. Copieu l\'URL on si us ha redirigit.</string>
-    <string name="import_soundcloud_instructions_hint">identificador, soundcloud.com/identificador</string>
     <string name="import_network_expensive_warning">Tingueu en compte que això pot comportar un ús intensiu de la xarxa. 
 \n 
 \nVoleu continuar\?</string>
@@ -433,14 +426,6 @@
 \n
 \nSi desitgeu visualitzar-lo, activeu \"%1$s\" a paràmetres.</string>
     <string name="youtube_restricted_mode_enabled_title">Activa el \"mode restringit\" de YouTube</string>
-    <string name="peertube_instance_add_exists">La instància introduïda ja existeix</string>
-    <string name="peertube_instance_add_https_only">Només estàn soportades URLs HTTPS</string>
-    <string name="peertube_instance_add_fail">No ha estat possible validar la instància</string>
-    <string name="peertube_instance_add_help">Introdueix l\'enllaç d\'una instància</string>
-    <string name="peertube_instance_add_title">Afegeix-hi una instància</string>
-    <string name="peertube_instance_url_help">Troba les instàncies que t\'agraden en %s</string>
-    <string name="peertube_instance_url_summary">Selecciona les teves instàncies preferides del PeerTube</string>
-    <string name="peertube_instance_url_title">Instàncies del PeerTube</string>
     <string name="seek_duration_title">Avançar/-rebobinar duració cerca</string>
     <string name="recent">Recents</string>
     <string name="show_thumbnail_summary">Estableix la miniatura com a fons de la pantalla de bloqueig i també de les notificacions</string>
@@ -577,7 +562,6 @@
     <string name="paid_content">Aquests contingut és només accessible per usuaris de pagament, així que no pot ésser ni reproduït ni baixat pel NewPipe.</string>
     <string name="youtube_music_premium_content">Aquest vídeo és només disponible pels usuaris subscriptors de YouTube Music Premium, així que no pot ésser ni reproduït ni baixat pel NewPipe.</string>
     <string name="private_content">Aquest contingut és privat, així que no pot ésser ni reproduït ni baixat amb el NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Aquesta és una pista de SoundCloud Go+ des del territori on us trobeu, així que no pot ésser reproduïda o baixada pel NewPipe.</string>
     <string name="georestricted_content">Aquest contingut no és disponible al vostre territori.</string>
     <string name="no_app_to_open_intent">El vostre dispositiu no té cap aplicació capaç d\'obrir aquest tipus de contingut</string>
     <string name="crash_the_app">Força l\'aturada de l\'aplicació</string>

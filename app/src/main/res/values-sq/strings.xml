@@ -137,13 +137,6 @@
     <string name="import_network_expensive_warning">Duhet të dini se ku veprim mund të jetë i shtrenjtë në kosto interneti.
 \n
 \nDëshironi të vazhdoni\?</string>
-    <string name="import_soundcloud_instructions_hint">IDjuaj, soundcloud.com/idjuaj</string>
-    <string name="import_soundcloud_instructions">Importoni një profil nga SoundCloud duke shkruar URL ose ID tuaj:
-\n
-\n1. Aktivizoni \"modalitetin desktop\" në një shfletues interneti (faqja e internetit nuk është e disponueshme për pajisjet mobile)
-\n2. Shkoni tek kjo URL: %1$s
-\n3. Hyni kur t\'ju kërkohet
-\n4. Kopjoni URL e profilit drejt të cilit u ridrejtuat.</string>
     <string name="import_youtube_instructions">Importoni abonimet nga YouTube përmes Google Takeout:
 \n
 \n1. Shkoni tek kjo URL: %1$s
@@ -452,14 +445,6 @@
     <string name="background_player_playing_toast">Duke luajtur në sfond</string>
     <string name="settings_category_updates_title">Përditësimet</string>
     <string name="settings_category_debug_title">Rregullo</string>
-    <string name="peertube_instance_add_exists">Instanca ekziston tashmë</string>
-    <string name="peertube_instance_add_https_only">Vetëm URL-të HTTPS janë të mbështetura</string>
-    <string name="peertube_instance_add_fail">Nuk arriti të vërtetësohej instanca</string>
-    <string name="peertube_instance_add_help">Vendosni URL e instancës</string>
-    <string name="peertube_instance_add_title">Shtoni instancë</string>
-    <string name="peertube_instance_url_help">Gjeni instancat që ju pëlqeni në %s</string>
-    <string name="peertube_instance_url_summary">Zgjidhni instancat tuaja të preferuara të PeerTube</string>
-    <string name="peertube_instance_url_title">Instancat PeerTube</string>
     <string name="default_content_country_title">Shteti i parazgjedhur i përmbajtjes</string>
     <string name="unsupported_url">URL e pambështetur</string>
     <string name="show_hold_to_append_summary">Trego ndihmën kur shtypet sfondi ose butoni i popup në \"Detajet:\" e videos</string>
@@ -571,7 +556,6 @@
     <string name="featured">E përzgjedhur</string>
     <string name="paid_content">Kjo përmbajtje është e disponueshme vetëm për përdoruesit që kanë paguar, kështu që nuk mund të luhet apo shkarkohet nga NewPipe.</string>
     <string name="youtube_music_premium_content">Kjo video është e disponueshme vetëm për anëtarët e YouTube Music Premium, kështu që nuk mund të luhet apo shkarkohet nga NewPipe.</string>
-    <string name="soundcloud_go_plus_content">Ky është një skedar SoundCloud Go+, të paktën në shtetin tuaj, kështu që nuk mund të luhet apo shkarkohet nga NewPipe.</string>
     <string name="show_meta_info_summary">Fikeni për të fshehur kutitë e të dhënave meta me information ekstra rreth krijuesit të stream, përmbajtjen e stream dhe kërkimit</string>
     <string name="off">Fikur</string>
     <string name="on">Ndezur</string>

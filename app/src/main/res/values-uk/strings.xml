@@ -278,13 +278,6 @@
 \n5. Натисніть кнопку «Завантажити», коли вона з\'явиться
 \n6. Натисніть на ІМПОРТУВАТИ ФАЙЛ нижче і виберіть завантажений zip-файл
 \n7. [Якщо не вдалося імпортувати zip] Видобудьте файл .csv (зазвичай у розділі «YouTube і YouTube Music/Підписки/subscriptions.csv»), натисніть ІМПОРТУВАТИ ФАЙЛ нижче та виберіть видобутий файл csv</string>
-    <string name="import_soundcloud_instructions">Імпортуйте профіль SoundCloud, вписавши або URL, або ваш ID:
-\n
-\n1. Увімкніть режим «Версія для ПК» у браузері (сайт не підтримується мобільними пристроями)
-\n2. Перейдіть за цим посиланням: %1$s
-\n3. За запитом увійдіть до облікового запису
-\n4. Скопіюйте URL профілю, до якого ви будете переспрямовані.</string>
-    <string name="import_soundcloud_instructions_hint">вашID, soundcloud.com/yourid</string>
     <string name="import_network_expensive_warning">Майте на увазі: ця операція може потребувати багато трафіку.
 \n
 \nБажаєте продовжити\?</string>
@@ -426,13 +419,6 @@
         <item quantity="many">%s слухачів</item>
     </plurals>
     <string name="seek_duration_title">Швидке перемотування</string>
-    <string name="peertube_instance_url_title">Екземпляри PeerTube</string>
-    <string name="peertube_instance_url_summary">Виберіть сервер PeerTube</string>
-    <string name="peertube_instance_url_help">Каталог серверів: %s</string>
-    <string name="peertube_instance_add_title">Додати екземпляр</string>
-    <string name="peertube_instance_add_help">Введіть URL екземпляра</string>
-    <string name="peertube_instance_add_https_only">Підтримуються лише HTTPS-посилання</string>
-    <string name="peertube_instance_add_exists">Екземпляр уже існує</string>
     <string name="recently_added">Недавно додані</string>
     <string name="most_liked">Найвподобаніші</string>
     <string name="recovering">відновлення</string>
@@ -473,7 +459,6 @@
     <string name="unmute">Увімкнути звук</string>
     <string name="local">Локальне</string>
     <string name="videos_string">Відео</string>
-    <string name="peertube_instance_add_fail">Не вдалося перевірити сервер</string>
     <string name="content_not_supported">NewPipe ще не підтримує цей вміст.
 \n
 \nМожливо, підтримка з\'явиться в наступних версіях.</string>
@@ -572,7 +557,6 @@
     <string name="night_theme_title">Нічна тема</string>
     <string name="video_detail_by">Від %s</string>
     <string name="show_thumbnail_summary">Використовувати ескізи для фону екрана блокування і для сповіщень</string>
-    <string name="soundcloud_go_plus_content">Це доріжка для SoundCloud Go+, принаймні у вашій країні, тому її не можна передавати потоково або завантажувати через NewPipe.</string>
     <string name="private_content">Цей вміст є приватним, тому його не можна передавати потоково або завантажувати через NewPipe.</string>
     <string name="youtube_music_premium_content">Це відео доступне лише для користувачів YouTube Music Premium, тому його не можна передавати потоково або завантажувати через NewPipe.</string>
     <string name="paid_content">Цей вміст доступний лише користувачам, які заплатили, тому його не можна передавати потоково або завантажувати через NewPipe.</string>

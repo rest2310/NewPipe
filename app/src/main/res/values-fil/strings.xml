@@ -208,23 +208,17 @@
     <string name="best_resolution">Pinakamainam na resolusyon</string>
     <string name="file_deleted">Natanggal ang file</string>
     <string name="just_once">Isang Beses Lang</string>
-    <string name="peertube_instance_add_https_only">Mga HTTPS URL lang ang suportado</string>
     <string name="songs">Mga kanta</string>
     <string name="autoplay_title">Awtopaandar</string>
-    <string name="peertube_instance_url_help">Mahahanap mo sa %s ang hilig mong mga instansya</string>
     <string name="resume_on_audio_focus_gain_summary">Patuloy na mag-play pagkatapos ng istorbo (hal. tawag sa telepono)</string>
     <string name="download_dialog_title">I-download</string>
     <string name="start_main_player_fullscreen_summary">Huwag buksan ang mga video sa mini player at dumiretso na sa fullscreen mode kung naka-lock ang awto rotasyon. Magagamit mo pa rin ang mini player kung aalis ka sa fullscreen</string>
     <string name="show_hold_to_append_title">Ipakita ang tip ng \"I-hold para ipila\"</string>
     <string name="show_hold_to_append_summary">Ipakita ang tip tuwing pinpindot ang background o ang buttong pumapop-up sa video na \"Details:\"</string>
     <string name="unsupported_url_dialog_message">Hindi makilala ang URL. Buksan sa ibang app\?</string>
-    <string name="peertube_instance_url_title">Mga instansya ng PeerTube</string>
     <string name="restricted_video">Ang video na ito ay may paghihigpit sa edad.
 \n
 \nBuksan ang \"%1$s\" sa ayos ng app kung gusto mong makita ito.</string>
-    <string name="peertube_instance_add_title">Magdagdag ng mga instansya</string>
-    <string name="peertube_instance_add_fail">Hindi maberipika ang instansya</string>
-    <string name="peertube_instance_add_exists">Naidagdag na ang instansyang iyan</string>
     <string name="settings_category_player_behavior_title">Ugali</string>
     <string name="settings_category_video_audio_title">Bidyo at tunog</string>
     <string name="settings_category_history_title">Kasaysayan at cache</string>
@@ -239,8 +233,6 @@
     <string name="popup_playing_toast">Nagpe-play sa popup mode</string>
     <string name="background_player_playing_toast">Nagpe-play sa background</string>
     <string name="settings_category_player_title">Player</string>
-    <string name="peertube_instance_add_help">Ilagay ang URL ng instansya</string>
-    <string name="peertube_instance_url_summary">Piliin ang iyong mga paboritong instansya ng PeerTube</string>
     <string name="downloads_title">Mga download</string>
     <string name="all">Lahat</string>
     <string name="default_content_country_title">Default na bansa ng nilalaman</string>

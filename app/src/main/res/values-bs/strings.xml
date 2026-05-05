@@ -141,14 +141,6 @@
     <string name="unsupported_url_dialog_message">URL nije prepoznat. Otvoriti s drugom aplikacijom?</string>
     <string name="default_content_country_title">Zadana zemlja sadržaja</string>
     <string name="content_language_title">Zadani jezik sadržaja</string>
-    <string name="peertube_instance_url_title">PeerTube instance</string>
-    <string name="peertube_instance_url_summary">Odaberite svoje omiljene PeerTube instance</string>
-    <string name="peertube_instance_url_help">Pronađite instance koje vam se sviđaju na %s</string>
-    <string name="peertube_instance_add_title">Dodaj instancu</string>
-    <string name="peertube_instance_add_help">Unesite URL instance</string>
-    <string name="peertube_instance_add_fail">Nije moguće validirati instancu</string>
-    <string name="peertube_instance_add_https_only">Podržani su samo HTTPS URL-ovi</string>
-    <string name="peertube_instance_add_exists">Instanca već postoji</string>
     <string name="settings_category_player_title">Pokretač</string>
     <string name="settings_category_player_behavior_title">Ponašanje</string>
     <string name="settings_category_video_audio_title">Video i audio</string>
@@ -465,8 +457,6 @@
     <string name="subscriptions_import_unsuccessful">Nije moguće uvesti pretplate</string>
     <string name="subscriptions_export_unsuccessful">Nije moguće izvesti pretplate</string>
     <string name="import_youtube_instructions">Uvoz YouTube pretplata iz Google arhive:\n\n1. Idite na ovaj URL: %1$s\n2. Prijavite se kada se to od vas zatraži\n3. Kliknite na \"Svi podaci uključeni\", zatim na \"Poništi odabir svih\", a zatim odaberite samo \"pretplate\" i kliknite na \"U redu\"\n4. Kliknite na \"Sljedeći korak\", a zatim na \"Kreiraj izvoz\"\n5. Kliknite na dugme \"Preuzmi\" nakon što se pojavi\n6. Kliknite na UVOZ DATOTEKE ispod i odaberite preuzetu .zip datoteku\n7. [Ako uvoz .zip datoteke ne uspije] Izvucite .csv datoteku (obično pod \"YouTube i YouTube Music/pretplate/pretplate.csv\"), kliknite na UVOZ DATOTEKE ispod i odaberite izvučenu csv datoteku</string>
-    <string name="import_soundcloud_instructions">Uvezite SoundCloud profil unosom URL-a ili vašeg ID-a:\n\n1. Omogućite \"desktop mode\" u web pregledniku (stranica nije dostupna za mobilne uređaje)\n2. Idite na ovaj URL: %1$s\n3. Prijavite se kada se to od vas zatraži\n4. Kopirajte URL profila na koji ste preusmjereni.</string>
-    <string name="import_soundcloud_instructions_hint">tvoj ID, soundcloud.com/tvojID</string>
     <string name="import_network_expensive_warning">Imajte na umu da ova operacija može biti skupa za mrežu.\n\nŽelite li nastaviti?</string>
     <string name="playback_speed_control">Kontrole brzine reprodukcije</string>
     <string name="playback_tempo">Brzina</string>
@@ -623,7 +613,6 @@
     <string name="no_appropriate_file_manager_message">Nije pronađen odgovarajući upravitelj datoteka za ovu radnju.\nMolimo instalirajte upravitelj datoteka ili pokušajte onemogućiti \'%s\' u postavkama preuzimanja</string>
     <string name="no_appropriate_file_manager_message_android_10">Nije pronađen odgovarajući upravitelj datoteka za ovu radnju.\nMolimo instalirajte upravitelj datoteka kompatibilan sa Storage Access Frameworkom</string>
     <string name="georestricted_content">Ovaj sadržaj nije dostupan u vašoj zemlji.</string>
-    <string name="soundcloud_go_plus_content">Ovo je pjesma na SoundCloud Go+ platformi, barem u vašoj zemlji, tako da je NewPipe ne može strimovati ili preuzeti.</string>
     <string name="private_content">Ovaj sadržaj je privatan, tako da ga NewPipe ne može strimovati ili preuzimati.</string>
     <string name="youtube_music_premium_content">Ovaj video je dostupan samo članovima YouTube Music Premium-a, tako da ga NewPipe ne može strimovati ili preuzeti.</string>
     <string name="account_terminated">Račun ukinut</string>

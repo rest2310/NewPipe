@@ -303,13 +303,6 @@
 \n1. Pergi ke URL ini: %1$s
 \n2. Log masuk apabila ditanya
 \n3. Muat turun harus bermula (itulah file eksport)</string>
-    <string name="import_soundcloud_instructions">Import profil SoundCloud dengan menaip sama ada URL atau ID anda:
-\n
-\n1. Dayakan \"mod desktop\" dalam pelayar web (laman web tidak tersedia untuk peranti mudah alih)
-\n2. Pergi ke URL ini: %1$s
-\n3. Log masuk apabila ditanya
-\n4. Salin URL profil yang diarahkan ke.</string>
-    <string name="import_soundcloud_instructions_hint">idAnda, soundcloud.com/idanda</string>
     <string name="import_network_expensive_warning">Ingatkan bahawa operasi ini boleh menggunakan banyak data.
 \n
 \nAdakah anda mahu meneruskan\?</string>
