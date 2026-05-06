@@ -2,8 +2,6 @@ package org.schabi.newpipe.settings.tabs;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static java.util.Objects.requireNonNull;
 
 import com.grack.nanojson.JsonArray;
 import com.grack.nanojson.JsonObject;
@@ -13,8 +11,8 @@ import com.grack.nanojson.JsonParserException;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TabsJsonHelperTest {
     private static final String JSON_TABS_ARRAY_KEY = "tabs";
@@ -26,27 +24,27 @@ public class TabsJsonHelperTest {
 
         final String emptyTabsJson = "{\"" + JSON_TABS_ARRAY_KEY + "\":[]}";
         List<Tab> items = TabsJsonHelper.getTabsFromJson(emptyTabsJson);
-        assertEquals(items, defaultTabs);
+        assertEquals(defaultTabs, items);
 
         final String nullSource = null;
         items = TabsJsonHelper.getTabsFromJson(nullSource);
-        assertEquals(items, defaultTabs);
+        assertEquals(defaultTabs, items);
     }
 
     @Test
-    public void testInvalidIdRead() throws TabsJsonHelper.InvalidJsonException {
+    public void testLegacyCustomTabsAreIgnored() throws TabsJsonHelper.InvalidJsonException {
         final int blankTabId = Tab.Type.BLANK.getTabId();
-        final String emptyTabsJson = "{\"" + JSON_TABS_ARRAY_KEY + "\":["
+        final String legacyTabsJson = "{\"" + JSON_TABS_ARRAY_KEY + "\":["
                 + "{\"" + JSON_TAB_ID_KEY + "\":" + blankTabId + "},"
                 + "{\"" + JSON_TAB_ID_KEY + "\":" + 12345678 + "}" + "]}";
-        final List<Tab> items = TabsJsonHelper.getTabsFromJson(emptyTabsJson);
+        final List<Tab> items = TabsJsonHelper.getTabsFromJson(legacyTabsJson);
 
-        assertEquals("Should ignore the tab with invalid id", 1, items.size());
-        assertEquals(blankTabId, items.get(0).getTabId());
+        assertEquals("Should ignore legacy saved tabs and return fixed navigation tabs",
+                getTabIds(TabsJsonHelper.getDefaultTabs()), getTabIds(items));
     }
 
     @Test
-    public void testInvalidRead() {
+    public void testInvalidJsonIsIgnored() throws TabsJsonHelper.InvalidJsonException {
         final List<String> invalidList = Arrays.asList(
                 "{\"notTabsArray\":[]}",
                 "{invalidJSON]}",
@@ -54,39 +52,22 @@ public class TabsJsonHelperTest {
         );
 
         for (final String invalidContent : invalidList) {
-            try {
-                TabsJsonHelper.getTabsFromJson(invalidContent);
-
-                fail("didn't throw exception");
-            } catch (final Exception e) {
-                final boolean isExpectedException =
-                        e instanceof TabsJsonHelper.InvalidJsonException;
-                assertTrue("\"" + e.getClass().getSimpleName()
-                        + "\" is not the expected exception", isExpectedException);
-            }
+            assertEquals(TabsJsonHelper.getDefaultTabs(),
+                    TabsJsonHelper.getTabsFromJson(invalidContent));
         }
     }
 
     @Test
     public void testEmptyAndNullSave() throws JsonParserException {
-        final List<Tab> emptyList = Collections.emptyList();
-        String returnedJson = TabsJsonHelper.getJsonToSave(emptyList);
-        assertTrue(isTabsArrayEmpty(returnedJson));
+        String returnedJson = TabsJsonHelper.getJsonToSave(List.of());
+        assertEquals(getTabIds(TabsJsonHelper.getDefaultTabs()), getTabIdsFromJson(returnedJson));
 
-        final List<Tab> nullList = null;
-        returnedJson = TabsJsonHelper.getJsonToSave(nullList);
-        assertTrue(isTabsArrayEmpty(returnedJson));
-    }
-
-    private boolean isTabsArrayEmpty(final String returnedJson) throws JsonParserException {
-        final JsonObject jsonObject = JsonParser.object().from(returnedJson);
-        assertTrue(jsonObject.containsKey(JSON_TABS_ARRAY_KEY));
-        return jsonObject.getArray(JSON_TABS_ARRAY_KEY).isEmpty();
+        returnedJson = TabsJsonHelper.getJsonToSave(null);
+        assertEquals(getTabIds(TabsJsonHelper.getDefaultTabs()), getTabIdsFromJson(returnedJson));
     }
 
     @Test
-    public void testSaveAndReading() throws JsonParserException {
-        // Saving
+    public void testSaveIgnoresInputAndWritesFixedTabs() throws JsonParserException {
         final Tab.BlankTab blankTab = new Tab.BlankTab();
         final Tab.SubscriptionsTab subscriptionsTab = new Tab.SubscriptionsTab();
         final Tab.ChannelTab channelTab = new Tab.ChannelTab(
@@ -98,36 +79,7 @@ public class TabsJsonHelperTest {
                 blankTab, subscriptionsTab, channelTab, feedGroupTab);
         final String returnedJson = TabsJsonHelper.getJsonToSave(tabs);
 
-        // Reading
-        final JsonObject jsonObject = JsonParser.object().from(returnedJson);
-        assertTrue(jsonObject.containsKey(JSON_TABS_ARRAY_KEY));
-        final JsonArray tabsFromArray = jsonObject.getArray(JSON_TABS_ARRAY_KEY);
-
-        assertEquals(tabs.size(), tabsFromArray.size());
-
-        final Tab.BlankTab blankTabFromReturnedJson = requireNonNull((Tab.BlankTab) Tab.from(
-                (JsonObject) tabsFromArray.get(0)));
-        assertEquals(blankTab.getTabId(), blankTabFromReturnedJson.getTabId());
-
-        final Tab.SubscriptionsTab subscriptionsTabFromReturnedJson = requireNonNull(
-                (Tab.SubscriptionsTab) Tab.from((JsonObject) tabsFromArray.get(1)));
-        assertEquals(subscriptionsTab.getTabId(), subscriptionsTabFromReturnedJson.getTabId());
-
-        final Tab.ChannelTab channelTabFromReturnedJson = requireNonNull(
-                (Tab.ChannelTab) Tab.from((JsonObject) tabsFromArray.get(2)));
-        assertEquals(channelTab.getTabId(), channelTabFromReturnedJson.getTabId());
-        assertEquals(channelTab.getChannelServiceId(),
-                channelTabFromReturnedJson.getChannelServiceId());
-        assertEquals(channelTab.getChannelUrl(), channelTabFromReturnedJson.getChannelUrl());
-        assertEquals(channelTab.getChannelName(), channelTabFromReturnedJson.getChannelName());
-
-        final Tab.FeedGroupTab grpTabFromReturnedJson = requireNonNull(
-                (Tab.FeedGroupTab) Tab.from((JsonObject) tabsFromArray.get(3)
-                ));
-        assertEquals(feedGroupTab.getTabId(), grpTabFromReturnedJson.getTabId());
-        assertEquals(feedGroupTab.getFeedGroupId(), grpTabFromReturnedJson.getFeedGroupId());
-        assertEquals(feedGroupTab.getIconId(), grpTabFromReturnedJson.getIconId());
-        assertEquals(feedGroupTab.getFeedGroupName(), grpTabFromReturnedJson.getFeedGroupName());
+        assertEquals(getTabIds(TabsJsonHelper.getDefaultTabs()), getTabIdsFromJson(returnedJson));
     }
 
     @Test
@@ -145,7 +97,19 @@ public class TabsJsonHelperTest {
 
         final List<Tab> items = TabsJsonHelper.getTabsFromJson(tabsJson);
 
-        assertEquals(1, items.size());
-        assertEquals(feedTabId, items.get(0).getTabId());
+        assertEquals(getTabIds(TabsJsonHelper.getDefaultTabs()), getTabIds(items));
+    }
+
+    private List<Integer> getTabIds(final List<Tab> tabs) {
+        return tabs.stream().map(Tab::getTabId).collect(Collectors.toUnmodifiableList());
+    }
+
+    private List<Integer> getTabIdsFromJson(final String returnedJson) throws JsonParserException {
+        final JsonObject jsonObject = JsonParser.object().from(returnedJson);
+        assertTrue(jsonObject.containsKey(JSON_TABS_ARRAY_KEY));
+        final JsonArray tabsFromArray = jsonObject.getArray(JSON_TABS_ARRAY_KEY);
+        return tabsFromArray.streamAsJsonObjects()
+                .map(json -> json.getInt(JSON_TAB_ID_KEY))
+                .collect(Collectors.toUnmodifiableList());
     }
 }

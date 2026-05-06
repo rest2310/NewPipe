@@ -47,7 +47,6 @@ import org.schabi.newpipe.fragments.MainFragment;
 import org.schabi.newpipe.fragments.detail.VideoDetailFragment;
 import org.schabi.newpipe.fragments.list.channel.ChannelFragment;
 import org.schabi.newpipe.fragments.list.comments.CommentRepliesFragment;
-import org.schabi.newpipe.fragments.list.kiosk.KioskFragment;
 import org.schabi.newpipe.fragments.list.playlist.PlaylistFragment;
 import org.schabi.newpipe.fragments.list.search.SearchFragment;
 import org.schabi.newpipe.local.bookmark.BookmarkFragment;
@@ -70,6 +69,8 @@ import org.schabi.newpipe.util.external_communication.ShareUtils;
 
 import java.util.List;
 import java.util.Optional;
+
+import us.shandian.giga.ui.fragment.MissionsFragment;
 
 public final class NavigationHelper {
     public static final String MAIN_FRAGMENT_TAG = "main_fragment_tag";
@@ -582,14 +583,6 @@ public final class NavigationHelper {
                 .commit();
     }
 
-    public static void openKioskFragment(final FragmentManager fragmentManager, final int serviceId,
-                                         final String kioskId) throws ExtractionException {
-        defaultTransaction(fragmentManager)
-                .replace(R.id.fragment_holder, KioskFragment.getInstance(serviceId, kioskId))
-                .addToBackStack(null)
-                .commit();
-    }
-
     public static void openLocalPlaylistFragment(final FragmentManager fragmentManager,
                                                  final long playlistId, final String name) {
         defaultTransaction(fragmentManager)
@@ -602,6 +595,13 @@ public final class NavigationHelper {
     public static void openStatisticFragment(final FragmentManager fragmentManager) {
         defaultTransaction(fragmentManager)
                 .replace(R.id.fragment_holder, new StatisticsPlaylistFragment())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public static void openDownloadsFragment(final FragmentManager fragmentManager) {
+        defaultTransaction(fragmentManager)
+                .replace(R.id.fragment_holder, new MissionsFragment())
                 .addToBackStack(null)
                 .commit();
     }
