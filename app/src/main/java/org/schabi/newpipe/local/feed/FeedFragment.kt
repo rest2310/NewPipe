@@ -58,8 +58,8 @@ import java.util.function.Consumer
 import org.schabi.newpipe.NewPipeDatabase
 import org.schabi.newpipe.R
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity
-import org.schabi.newpipe.database.subscription.SubscriptionEntity
 import org.schabi.newpipe.database.stream.model.StreamStateEntity
+import org.schabi.newpipe.database.subscription.SubscriptionEntity
 import org.schabi.newpipe.databinding.FragmentFeedBinding
 import org.schabi.newpipe.error.ErrorInfo
 import org.schabi.newpipe.error.ErrorUtil
@@ -702,7 +702,9 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         return when (currentFeedFilter) {
             FeedFilter.ALL,
             FeedFilter.FAVORITES -> this
+
             FeedFilter.NEW -> filter { it.streamWithState.stateProgressMillis == null }
+
             FeedFilter.UNFINISHED -> filter { item ->
                 val progress = item.streamWithState.stateProgressMillis ?: return@filter false
                 val duration = item.streamWithState.stream.duration

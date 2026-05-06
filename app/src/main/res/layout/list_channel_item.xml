@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemRoot"
@@ -8,69 +8,139 @@
     android:background="?attr/rounded_list_item_background"
     android:clickable="true"
     android:focusable="true"
+    android:orientation="vertical"
     android:padding="@dimen/video_item_search_padding">
 
-    <TextView
-        android:id="@+id/itemTitleView"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/channelRowContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/itemThumbnailView"
+            android:layout_width="@dimen/video_item_search_avatar_image_width"
+            android:layout_height="@dimen/video_item_search_avatar_image_height"
+            android:layout_marginLeft="@dimen/video_item_search_avatar_left_margin"
+            android:layout_marginRight="@dimen/video_item_search_avatar_right_margin"
+            android:src="@drawable/placeholder_person"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/CircularImageView"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/itemTitleView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/video_item_search_title_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/itemAdditionalDetails"
+            app:layout_constraintEnd_toStartOf="@+id/favoriteButton"
+            app:layout_constraintStart_toEndOf="@+id/itemThumbnailView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Channel Title, Lorem ipsum" />
+
+        <TextView
+            android:id="@+id/itemAdditionalDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/video_item_search_upload_date_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/itemTitleView"
+            app:layout_constraintStart_toStartOf="@+id/itemTitleView"
+            app:layout_constraintTop_toBottomOf="@+id/itemTitleView"
+            tools:text="10M subscribers" />
+
+        <ImageButton
+            android:id="@+id/favoriteButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/feed_filter_favorites"
+            android:src="@drawable/ic_favorite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/subscribedButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/subscribedButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:text="@string/subscribed_button_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/expandButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/expandButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/show_more"
+            android:src="@drawable/ic_expand_more"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/latestVideosContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/video_item_search_image_right_margin"
-        android:layout_toEndOf="@+id/itemThumbnailView"
-        android:layout_toRightOf="@+id/itemThumbnailView"
-        android:ellipsize="end"
-        android:lines="1"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/video_item_search_title_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/itemChannelDescriptionView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemThumbnailView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Channel Title, Lorem ipsum" />
+        android:layout_marginStart="@dimen/video_item_search_avatar_image_width"
+        android:layout_marginTop="@dimen/spacing_micro"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
 
-    <TextView
-        android:id="@+id/itemChannelDescriptionView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/channel_item_description_to_details_margin"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="@dimen/video_item_search_uploader_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/itemAdditionalDetails"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/itemTitleView"
-        app:layout_constraintTop_toBottomOf="@+id/itemTitleView"
-        tools:text="Channel description, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique vitae sem vitae blanditLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique vitae sem vitae blanditLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique vitae sem vitae blandit" />
+        <ProgressBar
+            android:id="@+id/latestVideosProgress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/itemAdditionalDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/itemThumbnailView"
-        android:layout_toRightOf="@+id/itemThumbnailView"
-        android:lines="1"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="@dimen/video_item_search_upload_date_text_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/itemTitleView"
-        app:layout_constraintTop_toBottomOf="@+id/itemChannelDescriptionView"
-        tools:text="10M subscribers • 1000 videos" />
+        <TextView
+            android:id="@+id/latestVideo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="@dimen/spacing_micro"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            tools:text="Latest video title" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/itemThumbnailView"
-        android:layout_width="@dimen/video_item_search_avatar_image_width"
-        android:layout_height="@dimen/video_item_search_avatar_image_height"
-        android:layout_marginLeft="@dimen/video_item_search_avatar_left_margin"
-        android:layout_marginRight="@dimen/video_item_search_avatar_right_margin"
-        android:src="@drawable/placeholder_person"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/itemTitleView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearance="@style/CircularImageView"
-        tools:ignore="RtlHardcoded" />
+        <TextView
+            android:id="@+id/latestVideo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="@dimen/spacing_micro"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            tools:text="Another latest video title" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/latestVideo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="@dimen/spacing_micro"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            tools:text="Third latest video title" />
+    </LinearLayout>
+</LinearLayout>

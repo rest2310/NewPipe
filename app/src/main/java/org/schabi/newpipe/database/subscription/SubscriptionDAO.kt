@@ -77,6 +77,12 @@ abstract class SubscriptionDAO : BasicDAO<SubscriptionEntity> {
     @Query("SELECT * FROM subscriptions WHERE uid = :subscriptionId")
     abstract fun getSubscription(subscriptionId: Long): SubscriptionEntity
 
+    @Query("UPDATE subscriptions SET is_favorite = :isFavorite WHERE service_id = :serviceId AND url LIKE :url")
+    abstract fun setFavorite(serviceId: Int, url: String, isFavorite: Boolean): Int
+
+    @Query("SELECT is_favorite FROM subscriptions WHERE service_id = :serviceId AND url LIKE :url")
+    abstract fun isFavorite(serviceId: Int, url: String): Flowable<Boolean>
+
     @Query("DELETE FROM subscriptions")
     abstract override fun deleteAll(): Int
 

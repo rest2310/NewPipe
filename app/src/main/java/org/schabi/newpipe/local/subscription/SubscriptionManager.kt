@@ -105,6 +105,12 @@ class SubscriptionManager(context: Context) {
         subscriptionTable.update(subscriptionEntity)
     }
 
+    fun setFavorite(serviceId: Int, url: String, isFavorite: Boolean): Completable {
+        return Completable.fromCallable { subscriptionTable.setFavorite(serviceId, url, isFavorite) }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+
     fun deleteSubscription(serviceId: Int, url: String): Completable {
         return Completable.fromCallable { subscriptionTable.deleteSubscription(serviceId, url) }
             .subscribeOn(Schedulers.io())
