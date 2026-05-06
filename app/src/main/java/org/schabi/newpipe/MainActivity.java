@@ -51,6 +51,7 @@ import androidx.preference.PreferenceManager;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity;
+import org.schabi.newpipe.download.DownloadRootFragment;
 import org.schabi.newpipe.databinding.ActivityMainBinding;
 import org.schabi.newpipe.databinding.ToolbarLayoutBinding;
 import org.schabi.newpipe.error.ErrorUtil;
@@ -88,17 +89,18 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Objects;
 
-import us.shandian.giga.ui.fragment.MissionsFragment;
-
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     @SuppressWarnings("ConstantConditions")
     public static final boolean DEBUG = !BuildConfig.BUILD_TYPE.equals("release");
+    private static final String KEY_PENDING_BOTTOM_NAVIGATION_DOWNLOADS =
+            "pending_bottom_navigation_downloads";
 
     private ActivityMainBinding mainBinding;
     private ToolbarLayoutBinding toolbarLayoutBinding;
 
     private BroadcastReceiver broadcastReceiver;
+
     private boolean pendingBottomNavigationDownloads;
 
     public static final String KEY_IS_IN_BACKGROUND = "is_in_background";
@@ -136,6 +138,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPrefEditor = sharedPreferences.edit();
+
+        pendingBottomNavigationDownloads = savedInstanceState != null
+                && savedInstanceState.getBoolean(KEY_PENDING_BOTTOM_NAVIGATION_DOWNLOADS);
 
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         toolbarLayoutBinding = mainBinding.toolbarLayout;
@@ -246,8 +251,7 @@ public class MainActivity extends AppCompatActivity {
                 pendingBottomNavigationDownloads = true;
                 return false;
             }
-            NavigationHelper.openRootFragment(getSupportFragmentManager(),
-                    new MissionsFragment());
+            openEmbeddedDownloadsRoot();
         } else {
             return false;
         }
@@ -264,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (itemId == R.id.bottom_navigation_playlists) {
             return fragment instanceof BookmarkFragment;
         } else if (itemId == R.id.bottom_navigation_downloads) {
-            return fragment instanceof MissionsFragment;
+            return fragment instanceof DownloadRootFragment;
         }
         return false;
     }
@@ -280,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
             selectedItemId = R.id.bottom_navigation_playlists;
         } else if (fragment instanceof FeedFragment) {
             selectedItemId = R.id.bottom_navigation_home;
-        } else if (fragment instanceof MissionsFragment) {
+        } else if (fragment instanceof DownloadRootFragment) {
             selectedItemId = R.id.bottom_navigation_downloads;
         } else {
             selectedItemId = View.NO_ID;
@@ -296,6 +300,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mainBinding.bottomNavigation.getMenu().findItem(selectedItemId).setChecked(true);
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull final Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(KEY_PENDING_BOTTOM_NAVIGATION_DOWNLOADS,
+                pendingBottomNavigationDownloads);
     }
 
     @Override
@@ -422,8 +433,17 @@ public class MainActivity extends AppCompatActivity {
                                            @NonNull final String[] permissions,
                                            @NonNull final int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PermissionHelper.DOWNLOADS_REQUEST_CODE && grantResults.length == 0) {
+            pendingBottomNavigationDownloads = false;
+            updateBottomNavigationSelection();
+            return;
+        }
         for (final int i : grantResults) {
             if (i == PackageManager.PERMISSION_DENIED) {
+                if (requestCode == PermissionHelper.DOWNLOADS_REQUEST_CODE) {
+                    pendingBottomNavigationDownloads = false;
+                    updateBottomNavigationSelection();
+                }
                 return;
             }
         }
@@ -431,8 +451,7 @@ public class MainActivity extends AppCompatActivity {
             case PermissionHelper.DOWNLOADS_REQUEST_CODE:
                 if (pendingBottomNavigationDownloads) {
                     pendingBottomNavigationDownloads = false;
-                    NavigationHelper.openRootFragment(getSupportFragmentManager(),
-                            new MissionsFragment());
+                    openEmbeddedDownloadsRoot();
                     updateToolbarNavigation();
                     updateBottomNavigationSelection();
                 } else {
@@ -558,6 +577,11 @@ public class MainActivity extends AppCompatActivity {
     // Utils
     //////////////////////////////////////////////////////////////////////////*/
 
+    private void openEmbeddedDownloadsRoot() {
+        NavigationHelper.openRootFragment(getSupportFragmentManager(),
+                new DownloadRootFragment());
+    }
+
     private void updateToolbarNavigation() {
         if (getSupportActionBar() == null) {
             return;
@@ -590,7 +614,7 @@ public class MainActivity extends AppCompatActivity {
         return fragment instanceof FeedFragment
                 || fragment instanceof SubscriptionFragment
                 || fragment instanceof BookmarkFragment
-                || fragment instanceof MissionsFragment;
+                || fragment instanceof DownloadRootFragment;
     }
 
     private void handleIntent(final Intent intent) {
