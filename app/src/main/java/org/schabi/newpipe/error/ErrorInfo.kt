@@ -162,8 +162,7 @@ class ErrorInfo private constructor(
 
         const val YOUTUBE_IP_BAN_FAQ_URL = "https://newpipe.net/FAQ/#ip-banned-youtube"
 
-        private fun getServiceName(serviceId: Int?) =
-            if (serviceId == YouTube.serviceId) YouTube.serviceInfo.name else SERVICE_NONE
+        private fun getServiceName(serviceId: Int?) = if (serviceId == YouTube.serviceId) YouTube.serviceInfo.name else SERVICE_NONE
 
         fun throwableToStringList(throwable: Throwable) = arrayOf(throwable.stackTraceToString())
 

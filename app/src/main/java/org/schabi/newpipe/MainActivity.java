@@ -85,7 +85,10 @@ import org.schabi.newpipe.views.FocusOverlayView;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 import java.util.Objects;
+
+import us.shandian.giga.ui.fragment.MissionsFragment;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -96,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
     private ToolbarLayoutBinding toolbarLayoutBinding;
 
     private BroadcastReceiver broadcastReceiver;
+    private boolean pendingBottomNavigationDownloads;
 
     public static final String KEY_IS_IN_BACKGROUND = "is_in_background";
 
@@ -234,7 +238,12 @@ public class MainActivity extends AppCompatActivity {
         } else if (itemId == R.id.bottom_navigation_playlists) {
             NavigationHelper.openBookmarksFragment(getSupportFragmentManager());
         } else if (itemId == R.id.bottom_navigation_downloads) {
-            NavigationHelper.openDownloads(this);
+            if (!PermissionHelper.checkStoragePermissions(
+                    this, PermissionHelper.DOWNLOADS_REQUEST_CODE)) {
+                pendingBottomNavigationDownloads = true;
+                return false;
+            }
+            NavigationHelper.openDownloadsFragment(getSupportFragmentManager());
         } else {
             return false;
         }
@@ -250,6 +259,8 @@ public class MainActivity extends AppCompatActivity {
             return fragment instanceof SubscriptionFragment;
         } else if (itemId == R.id.bottom_navigation_playlists) {
             return fragment instanceof BookmarkFragment;
+        } else if (itemId == R.id.bottom_navigation_downloads) {
+            return fragment instanceof MissionsFragment;
         }
         return false;
     }
@@ -265,6 +276,8 @@ public class MainActivity extends AppCompatActivity {
             selectedItemId = R.id.bottom_navigation_playlists;
         } else if (fragment instanceof FeedFragment || fragment instanceof MainFragment) {
             selectedItemId = R.id.bottom_navigation_home;
+        } else if (fragment instanceof MissionsFragment) {
+            selectedItemId = R.id.bottom_navigation_downloads;
         } else {
             selectedItemId = View.NO_ID;
         }
@@ -412,7 +425,13 @@ public class MainActivity extends AppCompatActivity {
         }
         switch (requestCode) {
             case PermissionHelper.DOWNLOADS_REQUEST_CODE:
-                NavigationHelper.openDownloads(this);
+                if (pendingBottomNavigationDownloads) {
+                    pendingBottomNavigationDownloads = false;
+                    NavigationHelper.openDownloadsFragment(getSupportFragmentManager());
+                    updateBottomNavigationSelection();
+                } else {
+                    NavigationHelper.openDownloads(this);
+                }
                 break;
             case PermissionHelper.DOWNLOAD_DIALOG_REQUEST_CODE:
                 final Fragment fragment = getSupportFragmentManager()
