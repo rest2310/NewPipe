@@ -86,7 +86,7 @@ abstract class FeedDAO {
         )
         AND (
             NOT :favoritesOnly
-            OR sub.notification_mode = 1
+            OR sub.is_favorite = 1
         )
 
         ORDER BY s.upload_date IS NULL DESC, s.upload_date DESC, s.uploader ASC

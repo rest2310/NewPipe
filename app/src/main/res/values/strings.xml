@@ -30,6 +30,7 @@
     <string name="subscribed_button_title">Subscribed</string>
     <string name="unsubscribe">Unsubscribe</string>
     <string name="channel_unsubscribed">Channel unsubscribed</string>
+    <string name="remove_subscription_confirmation">Remove this subscription?</string>
     <string name="subscription_change_failed">Could not change subscription</string>
     <string name="subscription_update_failed">Could not update subscription</string>
     <string name="show_info">Show info</string>

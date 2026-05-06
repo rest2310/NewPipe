@@ -14,38 +14,27 @@ import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.evernote.android.state.State
-import com.xwray.groupie.Group
 import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Section
-import com.xwray.groupie.viewbinding.GroupieViewHolder
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import org.schabi.newpipe.R
-import org.schabi.newpipe.database.feed.model.FeedGroupEntity.Companion.GROUP_ALL_ID
 import org.schabi.newpipe.databinding.DialogTitleBinding
-import org.schabi.newpipe.databinding.FeedItemCarouselBinding
 import org.schabi.newpipe.databinding.FragmentSubscriptionBinding
 import org.schabi.newpipe.error.ErrorInfo
 import org.schabi.newpipe.error.UserAction
 import org.schabi.newpipe.extractor.channel.ChannelInfoItem
+import org.schabi.newpipe.extractor.stream.StreamInfoItem
 import org.schabi.newpipe.fragments.BaseStateFragment
 import org.schabi.newpipe.ktx.animate
 import org.schabi.newpipe.local.subscription.SubscriptionViewModel.SubscriptionState
-import org.schabi.newpipe.local.subscription.dialog.FeedGroupDialog
-import org.schabi.newpipe.local.subscription.dialog.FeedGroupReorderDialog
 import org.schabi.newpipe.local.subscription.item.ChannelItem
-import org.schabi.newpipe.local.subscription.item.FeedGroupAddNewGridItem
-import org.schabi.newpipe.local.subscription.item.FeedGroupAddNewItem
-import org.schabi.newpipe.local.subscription.item.FeedGroupCardGridItem
-import org.schabi.newpipe.local.subscription.item.FeedGroupCardItem
-import org.schabi.newpipe.local.subscription.item.FeedGroupCarouselItem
-import org.schabi.newpipe.local.subscription.item.GroupsHeader
 import org.schabi.newpipe.local.subscription.item.Header
 import org.schabi.newpipe.local.subscription.item.ImportSubscriptionsHintPlaceholderItem
 import org.schabi.newpipe.util.NavigationHelper
 import org.schabi.newpipe.util.OnClickGesture
-import org.schabi.newpipe.util.ThemeHelper.getGridSpanCountChannels
 import org.schabi.newpipe.util.external_communication.ShareUtils
 
 class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
@@ -57,19 +46,12 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
     private lateinit var importExportHelper: SubscriptionsImportExportHelper
     private val disposables: CompositeDisposable = CompositeDisposable()
 
-    private val groupAdapter = GroupAdapter<GroupieViewHolder<FeedItemCarouselBinding>>()
-    private lateinit var carouselAdapter: GroupAdapter<GroupieViewHolder<FeedItemCarouselBinding>>
-    private lateinit var feedGroupsCarousel: FeedGroupCarouselItem
-    private lateinit var feedGroupsSortMenuItem: GroupsHeader
+    private val groupAdapter = GroupAdapter<GroupieViewHolder>()
     private val subscriptionsSection = Section()
 
     @State
     @JvmField
     var itemsListState: Parcelable? = null
-
-    @State
-    @JvmField
-    var feedGroupsCarouselState: Parcelable? = null
 
     init {
         setHasOptionsMenu(true)
@@ -92,7 +74,6 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
     override fun onPause() {
         super.onPause()
         itemsListState = binding.itemsList.layoutManager?.onSaveInstanceState()
-        feedGroupsCarouselState = feedGroupsCarousel.onSaveInstanceState()
     }
 
     override fun onDestroyView() {
@@ -136,10 +117,6 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
             }
     }
 
-    private fun openReorderDialog() {
-        FeedGroupReorderDialog().show(parentFragmentManager, null)
-    }
-
     // ////////////////////////////////////////////////////////////////////////
     // Fragment Views
     // ////////////////////////////////////////////////////////////////////////
@@ -148,90 +125,28 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
         super.initViews(rootView, savedInstanceState)
         _binding = FragmentSubscriptionBinding.bind(rootView)
 
-        groupAdapter.spanCount = if (SubscriptionViewModel.shouldUseGridForSubscription(requireContext())) getGridSpanCountChannels(context) else 1
-        binding.itemsList.layoutManager = GridLayoutManager(requireContext(), groupAdapter.spanCount).apply {
-            spanSizeLookup = groupAdapter.spanSizeLookup
-        }
+        groupAdapter.spanCount = 1
+        binding.itemsList.layoutManager = LinearLayoutManager(requireContext())
         binding.itemsList.adapter = groupAdapter
         binding.itemsList.itemAnimator = null
 
         viewModel = ViewModelProvider(this)[SubscriptionViewModel::class.java]
         viewModel.stateLiveData.observe(viewLifecycleOwner) { it?.let(this::handleResult) }
-        viewModel.feedGroupsLiveData.observe(viewLifecycleOwner) {
-            it?.let { (groups, listViewMode) ->
-                handleFeedGroups(groups, listViewMode)
-            }
-        }
 
         setupInitialLayout()
     }
 
     private fun setupInitialLayout() {
-        Section().apply {
-            carouselAdapter = GroupAdapter<GroupieViewHolder<FeedItemCarouselBinding>>()
-
-            carouselAdapter.setOnItemClickListener { item, _ ->
-                when (item) {
-                    is FeedGroupCardItem ->
-                        NavigationHelper.openFeedFragment(fm, item.groupId, item.name)
-
-                    is FeedGroupCardGridItem ->
-                        NavigationHelper.openFeedFragment(fm, item.groupId, item.name)
-
-                    is FeedGroupAddNewItem ->
-                        FeedGroupDialog.newInstance().show(fm, null)
-
-                    is FeedGroupAddNewGridItem ->
-                        FeedGroupDialog.newInstance().show(fm, null)
-                }
-            }
-            carouselAdapter.setOnItemLongClickListener { item, _ ->
-                if ((item is FeedGroupCardItem && item.groupId == GROUP_ALL_ID) ||
-                    (item is FeedGroupCardGridItem && item.groupId == GROUP_ALL_ID)
-                ) {
-                    return@setOnItemLongClickListener false
-                }
-
-                when (item) {
-                    is FeedGroupCardItem ->
-                        FeedGroupDialog.newInstance(item.groupId).show(fm, null)
-
-                    is FeedGroupCardGridItem ->
-                        FeedGroupDialog.newInstance(item.groupId).show(fm, null)
-                }
-                return@setOnItemLongClickListener true
-            }
-
-            feedGroupsCarousel = FeedGroupCarouselItem(
-                carouselAdapter = carouselAdapter,
-                listViewMode = viewModel.getListViewMode()
-            )
-
-            feedGroupsSortMenuItem = GroupsHeader(
-                title = getString(R.string.feed_groups_header_title),
-                onSortClicked = ::openReorderDialog,
-                onToggleListViewModeClicked = ::toggleListViewMode,
-                listViewMode = viewModel.getListViewMode()
-            )
-
-            add(Section(feedGroupsSortMenuItem, listOf(feedGroupsCarousel)))
-            groupAdapter.clear()
-            groupAdapter.add(this)
-        }
-
         subscriptionsSection.setPlaceholder(ImportSubscriptionsHintPlaceholderItem())
         subscriptionsSection.setHideWhenEmpty(true)
 
+        groupAdapter.clear()
         groupAdapter.add(
             Section(
                 Header(getString(R.string.tab_subscriptions)),
                 listOf(subscriptionsSection)
             )
         )
-    }
-
-    private fun toggleListViewMode() {
-        viewModel.setListViewMode(!viewModel.getListViewMode())
     }
 
     private fun showLongTapDialog(selectedItem: ChannelInfoItem) {
@@ -252,7 +167,7 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
 
                 1 -> ShareUtils.openUrlInBrowser(requireContext(), selectedItem.url)
 
-                2 -> deleteChannel(selectedItem)
+                2 -> confirmDeleteChannel(selectedItem)
             }
         }
 
@@ -264,6 +179,14 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
         AlertDialog.Builder(requireContext())
             .setCustomTitle(dialogTitleBinding.root)
             .setItems(commands, actions)
+            .show()
+    }
+
+    private fun confirmDeleteChannel(selectedItem: ChannelInfoItem) {
+        AlertDialog.Builder(requireContext())
+            .setMessage(R.string.remove_subscription_confirmation)
+            .setPositiveButton(R.string.yes) { _, _ -> deleteChannel(selectedItem) }
+            .setNegativeButton(R.string.no, null)
             .show()
     }
 
@@ -289,6 +212,16 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
         override fun held(selectedItem: ChannelInfoItem) = showLongTapDialog(selectedItem)
     }
 
+    private fun openLatestVideo(stream: StreamInfoItem) = NavigationHelper.openVideoDetailFragment(
+        requireContext(),
+        fm,
+        stream.serviceId,
+        stream.url,
+        stream.name,
+        null,
+        false
+    )
+
     override fun handleResult(result: SubscriptionState) {
         super.handleResult(result)
 
@@ -297,11 +230,11 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
                 result.subscriptions.forEach {
                     if (it is ChannelItem) {
                         it.gesturesListener = listenerChannelItem
-                        it.itemVersion = if (SubscriptionViewModel.shouldUseGridForSubscription(requireContext())) {
-                            ChannelItem.ItemVersion.GRID
-                        } else {
-                            ChannelItem.ItemVersion.MINI
-                        }
+                        it.favoriteClickListener = viewModel::setFavorite
+                        it.unsubscribeClickListener = ::confirmDeleteChannel
+                        it.expandClickListener = viewModel::toggleExpanded
+                        it.latestVideoClickListener = ::openLatestVideo
+                        it.itemVersion = ChannelItem.ItemVersion.NORMAL
                     }
                 }
 
@@ -318,40 +251,6 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
                 result.error?.let {
                     showError(ErrorInfo(result.error, UserAction.SOMETHING_ELSE, "Subscriptions"))
                 }
-            }
-        }
-    }
-
-    private fun handleFeedGroups(groups: List<Group>, listViewMode: Boolean) {
-        if (feedGroupsCarouselState != null) {
-            feedGroupsCarousel.onRestoreInstanceState(feedGroupsCarouselState)
-            feedGroupsCarouselState = null
-        }
-
-        binding.itemsList.post {
-            if (context == null) {
-                // since this part was posted to the next UI cycle, the fragment might have been
-                // removed in the meantime
-                return@post
-            }
-
-            feedGroupsCarousel.listViewMode = listViewMode
-            feedGroupsSortMenuItem.showSortButton = groups.size > 1
-            feedGroupsSortMenuItem.listViewMode = listViewMode
-            feedGroupsCarousel.notifyChanged(FeedGroupCarouselItem.PAYLOAD_UPDATE_LIST_VIEW_MODE)
-            feedGroupsSortMenuItem.notifyChanged(GroupsHeader.PAYLOAD_UPDATE_ICONS)
-
-            // update items here to prevent flickering
-            carouselAdapter.apply {
-                clear()
-                if (listViewMode) {
-                    add(FeedGroupAddNewItem())
-                    add(FeedGroupCardItem(GROUP_ALL_ID, getString(R.string.all), FeedGroupIcon.WHATS_NEW))
-                } else {
-                    add(FeedGroupAddNewGridItem())
-                    add(FeedGroupCardGridItem(GROUP_ALL_ID, getString(R.string.all), FeedGroupIcon.WHATS_NEW))
-                }
-                addAll(groups)
             }
         }
     }

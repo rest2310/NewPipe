@@ -348,9 +348,10 @@ public final class NavigationHelper {
     }
 
     /**
-     * @deprecated Normal app startup should open Home via {@link #openHomeFragment(FragmentManager)}.
-     *             This method remains only for back-stack recovery paths that still navigate to the
-     *             root destination.
+     * @param fragmentManager the fragment manager used for navigation
+     * @deprecated Normal app startup should open Home via
+     *             {@link #openHomeFragment(FragmentManager)}. This method remains only for
+     *             back-stack recovery paths that still navigate to the root destination.
      */
     @Deprecated
     public static void gotoMainFragment(final FragmentManager fragmentManager) {
@@ -361,8 +362,10 @@ public final class NavigationHelper {
     }
 
     /**
-     * @deprecated Use {@link #openHomeFragment(FragmentManager)} instead. Kept as a compatibility
-     *             wrapper for callers that still expect the former root-navigation helper.
+     * @param fragmentManager the fragment manager used for navigation
+     * @deprecated Use {@link #openHomeFragment(FragmentManager)} instead. Kept as a
+     *             compatibility wrapper for callers that still expect the former root-navigation
+     *             helper.
      */
     @Deprecated
     public static void openMainFragment(final FragmentManager fragmentManager) {

@@ -49,7 +49,10 @@ data class SubscriptionEntity(
 
     @get:NotificationMode
     @ColumnInfo(name = SUBSCRIPTION_NOTIFICATION_MODE)
-    var notificationMode: Int = 0
+    var notificationMode: Int = 0,
+
+    @ColumnInfo(name = SUBSCRIPTION_IS_FAVORITE)
+    var isFavorite: Boolean = false
 ) {
     @Ignore
     fun toChannelInfoItem(): ChannelInfoItem {
@@ -70,6 +73,7 @@ data class SubscriptionEntity(
         const val SUBSCRIPTION_SUBSCRIBER_COUNT: String = "subscriber_count"
         const val SUBSCRIPTION_DESCRIPTION: String = "description"
         const val SUBSCRIPTION_NOTIFICATION_MODE: String = "notification_mode"
+        const val SUBSCRIPTION_IS_FAVORITE: String = "is_favorite"
 
         @JvmStatic
         @Ignore
