@@ -231,18 +231,18 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean openBottomNavigationDestination(final int itemId) {
         if (itemId == R.id.bottom_navigation_home) {
-            NavigationHelper.openHomeFragment(getSupportFragmentManager());
+            NavigationHelper.openHomeFragmentAsRoot(getSupportFragmentManager());
         } else if (itemId == R.id.bottom_navigation_subscriptions) {
-            NavigationHelper.openSubscriptionFragment(getSupportFragmentManager());
+            NavigationHelper.openSubscriptionFragment(getSupportFragmentManager(), true);
         } else if (itemId == R.id.bottom_navigation_playlists) {
-            NavigationHelper.openBookmarksFragment(getSupportFragmentManager());
+            NavigationHelper.openBookmarksFragment(getSupportFragmentManager(), true);
         } else if (itemId == R.id.bottom_navigation_downloads) {
             if (!PermissionHelper.checkStoragePermissions(
                     this, PermissionHelper.DOWNLOADS_REQUEST_CODE)) {
                 pendingBottomNavigationDownloads = true;
                 return false;
             }
-            NavigationHelper.openDownloadsFragment(getSupportFragmentManager());
+            NavigationHelper.openDownloadsFragment(getSupportFragmentManager(), true);
         } else {
             return false;
         }
@@ -426,7 +426,8 @@ public class MainActivity extends AppCompatActivity {
             case PermissionHelper.DOWNLOADS_REQUEST_CODE:
                 if (pendingBottomNavigationDownloads) {
                     pendingBottomNavigationDownloads = false;
-                    NavigationHelper.openDownloadsFragment(getSupportFragmentManager());
+                    NavigationHelper.openDownloadsFragment(getSupportFragmentManager(), true);
+                    updateToolbarNavigation();
                     updateBottomNavigationSelection();
                 } else {
                     NavigationHelper.openDownloads(this);
@@ -558,12 +559,28 @@ public class MainActivity extends AppCompatActivity {
 
         final Fragment fragment = getSupportFragmentManager()
                 .findFragmentById(R.id.fragment_holder);
-        if (fragment instanceof FeedFragment) {
+        final boolean isBottomNavigationRoot = fragment instanceof FeedFragment
+                || fragment instanceof SubscriptionFragment
+                || fragment instanceof BookmarkFragment
+                || fragment instanceof MissionsFragment;
+        if (isBottomNavigationRoot) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             toolbarLayoutBinding.toolbar.setNavigationOnClickListener(null);
+            toolbarLayoutBinding.toolbar.setBackgroundColor(
+                    ThemeHelper.resolveColorFromAttr(this, R.attr.windowBackground));
+            toolbarLayoutBinding.toolbar.setTitleTextColor(
+                    ContextCompat.getColor(this, R.color.contrastColor));
+            toolbarLayoutBinding.toolbar.setSubtitleTextColor(
+                    ContextCompat.getColor(this, R.color.contrastColor));
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbarLayoutBinding.toolbar.setNavigationOnClickListener(v -> onHomeButtonPressed());
+            toolbarLayoutBinding.toolbar.setBackgroundColor(
+                    ThemeHelper.resolveColorFromAttr(this, R.attr.colorPrimary));
+            toolbarLayoutBinding.toolbar.setTitleTextColor(
+                    ThemeHelper.resolveColorFromAttr(this, R.attr.actionColor));
+            toolbarLayoutBinding.toolbar.setSubtitleTextColor(
+                    ThemeHelper.resolveColorFromAttr(this, R.attr.actionColor));
         }
     }
 

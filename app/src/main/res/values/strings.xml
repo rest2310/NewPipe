@@ -691,6 +691,12 @@
     <string name="feed_notification_loading">Loading feed…</string>
     <string name="feed_processing_message">Processing feed…</string>
     <string name="feed_new_items">New feed items</string>
+    <string name="feed_search_hint">Search YouTube...</string>
+    <string name="feed_filter_all">All</string>
+    <string name="feed_filter_favorites">Favorites</string>
+    <string name="feed_filter_new">New</string>
+    <string name="feed_filter_unfinished">Unfinished</string>
+    <string name="refresh">Refresh</string>
     <string name="feed_group_dialog_select_subscriptions">Select subscriptions</string>
     <string name="feed_group_dialog_empty_selection">No subscription selected</string>
     <plurals name="feed_group_dialog_selection_count">
