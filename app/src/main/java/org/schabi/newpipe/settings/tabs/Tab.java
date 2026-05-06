@@ -12,6 +12,7 @@ import com.grack.nanojson.JsonStringWriter;
 
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.database.LocalItem.LocalItemType;
+import org.schabi.newpipe.download.DownloadRootFragment;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.fragments.BlankFragment;
 import org.schabi.newpipe.fragments.list.channel.ChannelFragment;
@@ -23,8 +24,6 @@ import org.schabi.newpipe.local.playlist.LocalPlaylistFragment;
 import org.schabi.newpipe.local.subscription.SubscriptionFragment;
 
 import java.util.Objects;
-
-import us.shandian.giga.ui.fragment.MissionsFragment;
 
 public abstract class Tab {
     private static final String JSON_TAB_ID_KEY = "tab_id";
@@ -294,8 +293,8 @@ public abstract class Tab {
         }
 
         @Override
-        public MissionsFragment getFragment(final Context context) {
-            return new MissionsFragment();
+        public DownloadRootFragment getFragment(final Context context) {
+            return new DownloadRootFragment();
         }
     }
 

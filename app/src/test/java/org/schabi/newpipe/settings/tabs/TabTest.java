@@ -1,6 +1,7 @@
 package org.schabi.newpipe.settings.tabs;
 
 import org.junit.Test;
+import org.schabi.newpipe.download.DownloadRootFragment;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,5 +17,10 @@ public class TabTest {
             final boolean added = usedIds.add(type.getTabId());
             assertTrue("Id was already used: " + type.getTabId(), added);
         }
+    }
+
+    @Test
+    public void downloadsTabUsesEmbeddedRootFragment() throws Exception {
+        assertTrue(Tab.Type.DOWNLOADS.getTab().getFragment(null) instanceof DownloadRootFragment);
     }
 }

@@ -65,6 +65,7 @@ public class MissionsFragment extends Fragment {
     private Context mContext;
 
     private DownloadManagerBinder mBinder;
+    private boolean mBound;
     private boolean mForceUpdate;
 
     private DownloadMission unsafeMissionTarget = null;
@@ -77,7 +78,8 @@ public class MissionsFragment extends Fragment {
             mBinder = (DownloadManagerBinder) binder;
             mBinder.clearDownloadNotifications();
 
-            mAdapter = new MissionAdapter(mContext, mBinder.getDownloadManager(), mEmpty, getView());
+            mAdapter = new MissionAdapter(mContext, mBinder.getDownloadManager(),
+                    mEmpty, getView());
 
             mAdapter.setRecover(MissionsFragment.this::recoverMission);
 
@@ -98,14 +100,16 @@ public class MissionsFragment extends Fragment {
     };
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.missions, container, false);
 
         mPrefs = PreferenceManager.getDefaultSharedPreferences(requireActivity());
         mLinear = mPrefs.getBoolean("linear", false);
 
         // Bind the service
-        mContext.bindService(new Intent(mContext, DownloadManagerService.class), mConnection, Context.BIND_AUTO_CREATE);
+        mBound = mContext.bindService(new Intent(mContext, DownloadManagerService.class),
+                mConnection, Context.BIND_AUTO_CREATE);
 
         // Views
         mEmpty = v.findViewById(R.id.list_empty_view);
@@ -161,12 +165,15 @@ public class MissionsFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mBinder == null || mAdapter == null) return;
-
-        mBinder.removeMissionEventListener(mAdapter);
-        mBinder.enableNotifications(true);
-        mContext.unbindService(mConnection);
-        mAdapter.onDestroy();
+        if (mBinder != null && mAdapter != null) {
+            mBinder.removeMissionEventListener(mAdapter);
+            mBinder.enableNotifications(true);
+            mAdapter.onDestroy();
+        }
+        if (mBound) {
+            mContext.unbindService(mConnection);
+            mBound = false;
+        }
 
         mBinder = null;
         mAdapter = null;
@@ -194,10 +201,10 @@ public class MissionsFragment extends Fragment {
         } else if (itemId == R.id.clear_list) {
             showClearDownloadHistoryPrompt();
             return true;
-        } else if (itemId == R.id.start_downloads) {
+        } else if (itemId == R.id.start_downloads && mBinder != null) {
             mBinder.getDownloadManager().startAllMissions();
             return true;
-        } else if (itemId == R.id.pause_downloads) {
+        } else if (itemId == R.id.pause_downloads && mBinder != null && mAdapter != null) {
             mBinder.getDownloadManager().pauseAllMissions(false);
             mAdapter.refreshMissionItems();// update items view
 
@@ -231,6 +238,10 @@ public class MissionsFragment extends Fragment {
     }
 
     private void updateList() {
+        if (mAdapter == null || mList == null) {
+            return;
+        }
+
         if (mLinear) {
             mList.setLayoutManager(mLinearManager);
         } else {
@@ -255,7 +266,7 @@ public class MissionsFragment extends Fragment {
     }
 
     private void setAdapterButtons() {
-        if (mClear == null || mStart == null || mPause == null) return;
+        if (mAdapter == null || mClear == null || mStart == null || mPause == null) return;
 
         mAdapter.setClearButton(mClear);
         mAdapter.setMasterButtons(mStart, mPause);
@@ -328,7 +339,8 @@ public class MissionsFragment extends Fragment {
 
         try {
             Uri fileUri = result.getData().getData();
-            if (fileUri.getAuthority() != null && FilePickerActivityHelper.isOwnFileUri(mContext, fileUri)) {
+            if (fileUri.getAuthority() != null
+                    && FilePickerActivityHelper.isOwnFileUri(mContext, fileUri)) {
                 fileUri = Uri.fromFile(Utils.getFileForUri(fileUri));
             }
 
