@@ -59,10 +59,12 @@ import org.schabi.newpipe.NewPipeDatabase
 import org.schabi.newpipe.R
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity
 import org.schabi.newpipe.database.subscription.SubscriptionEntity
+import org.schabi.newpipe.database.stream.model.StreamStateEntity
 import org.schabi.newpipe.databinding.FragmentFeedBinding
 import org.schabi.newpipe.error.ErrorInfo
 import org.schabi.newpipe.error.ErrorUtil
 import org.schabi.newpipe.error.UserAction
+import org.schabi.newpipe.extractor.ServiceList
 import org.schabi.newpipe.extractor.exceptions.AccountTerminatedException
 import org.schabi.newpipe.extractor.exceptions.ContentNotAvailableException
 import org.schabi.newpipe.extractor.stream.StreamInfoItem
@@ -77,7 +79,6 @@ import org.schabi.newpipe.local.feed.item.StreamItem
 import org.schabi.newpipe.local.feed.service.FeedLoadService
 import org.schabi.newpipe.local.subscription.SubscriptionManager
 import org.schabi.newpipe.util.DeviceUtils
-import org.schabi.newpipe.util.Localization
 import org.schabi.newpipe.util.NavigationHelper
 import org.schabi.newpipe.util.ThemeHelper.getGridSpanCountStreams
 import org.schabi.newpipe.util.ThemeHelper.getItemViewMode
@@ -107,6 +108,8 @@ class FeedFragment : BaseStateFragment<FeedState>() {
     private var isRefreshing = false
 
     private var lastNewItemsCount = 0
+    private var currentFeedFilter = FeedFilter.ALL
+    private var latestLoadedState: FeedState.LoadedState? = null
 
     init {
         setHasOptionsMenu(true)
@@ -161,6 +164,21 @@ class FeedFragment : BaseStateFragment<FeedState>() {
 
         feedBinding.itemsList.adapter = groupAdapter
         setupListViewMode()
+        setupHomeHeader()
+    }
+
+    private fun setupHomeHeader() {
+        feedBinding.feedFilterChips.setOnCheckedStateChangeListener { _, checkedIds ->
+            val checkedId = checkedIds.firstOrNull() ?: R.id.feed_filter_all
+            currentFeedFilter = when (checkedId) {
+                R.id.feed_filter_favorites -> FeedFilter.FAVORITES
+                R.id.feed_filter_new -> FeedFilter.NEW
+                R.id.feed_filter_unfinished -> FeedFilter.UNFINISHED
+                else -> FeedFilter.ALL
+            }
+            viewModel.setFavoritesOnly(currentFeedFilter == FeedFilter.FAVORITES)
+            latestLoadedState?.let(::handleLoadedState)
+        }
     }
 
     override fun onPause() {
@@ -192,7 +210,13 @@ class FeedFragment : BaseStateFragment<FeedState>() {
 
     override fun initListeners() {
         super.initListeners()
-        feedBinding.refreshRootView.setOnClickListener { reloadContent() }
+        feedBinding.feedSearchBar.setOnClickListener {
+            NavigationHelper.openSearchFragment(
+                fm,
+                ServiceList.YouTube.serviceId,
+                ""
+            )
+        }
         feedBinding.swipeRefreshLayout.setOnRefreshListener { reloadContent() }
         feedBinding.newItemsLoadedButton.setOnClickListener {
             hideNewItemsLoaded(true)
@@ -208,14 +232,17 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         super.onCreateOptionsMenu(menu, inflater)
 
         activity.supportActionBar?.setDisplayShowTitleEnabled(true)
-        activity.supportActionBar?.setTitle(R.string.fragment_feed_title)
-        activity.supportActionBar?.subtitle = groupName
+        activity.supportActionBar?.setTitle(R.string.home_toolbar_title)
+        activity.supportActionBar?.subtitle = groupName.takeIf { it.isNotEmpty() }
 
         inflater.inflate(R.menu.menu_feed_fragment, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_item_feed_help) {
+        if (item.itemId == R.id.menu_item_feed_refresh) {
+            reloadContent()
+            return true
+        } else if (item.itemId == R.id.menu_item_feed_help) {
             val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
             val usingDedicatedMethod = sharedPreferences
@@ -235,8 +262,6 @@ class FeedFragment : BaseStateFragment<FeedState>() {
                 .setPositiveButton(resources.getString(R.string.ok), null)
                 .show()
             return true
-        } else if (item.itemId == R.id.menu_item_feed_toggle_played_items) {
-            showStreamVisibilityDialog()
         }
 
         return super.onOptionsItemSelected(item)
@@ -313,7 +338,7 @@ class FeedFragment : BaseStateFragment<FeedState>() {
     override fun showLoading() {
         super.showLoading()
         feedBinding.itemsList.animateHideRecyclerViewAllowingScrolling()
-        feedBinding.refreshRootView.animate(false, 0)
+        feedBinding.refreshRootView.animate(true, 0)
         feedBinding.loadingProgressText.animate(true, 200)
         feedBinding.swipeRefreshLayout.isRefreshing = true
         isRefreshing = true
@@ -349,7 +374,7 @@ class FeedFragment : BaseStateFragment<FeedState>() {
     override fun handleError() {
         super.handleError()
         feedBinding.itemsList.animateHideRecyclerViewAllowingScrolling()
-        feedBinding.refreshRootView.animate(false, 0)
+        feedBinding.refreshRootView.animate(true, 0)
         feedBinding.loadingProgressText.animate(false, 0)
         feedBinding.swipeRefreshLayout.isRefreshing = false
         isRefreshing = false
@@ -417,11 +442,13 @@ class FeedFragment : BaseStateFragment<FeedState>() {
             else -> StreamItem.ItemVersion.NORMAL
         }
         loadedState.items.forEach { it.itemVersion = itemVersion }
+        latestLoadedState = loadedState
+        val filteredItems = loadedState.items.filterForCurrentChip()
 
         // This need to be saved in a variable as the update occurs async
         val oldOldestSubscriptionUpdate = oldestSubscriptionUpdate
 
-        groupAdapter.updateAsync(loadedState.items, false) {
+        groupAdapter.updateAsync(filteredItems, false) {
             oldOldestSubscriptionUpdate?.run {
                 highlightNewItemsAfter(oldOldestSubscriptionUpdate)
             }
@@ -432,15 +459,6 @@ class FeedFragment : BaseStateFragment<FeedState>() {
             listState = null
         }
 
-        val feedsNotLoaded = loadedState.notLoadedCount > 0
-        feedBinding.refreshSubtitleText.isVisible = feedsNotLoaded
-        if (feedsNotLoaded) {
-            feedBinding.refreshSubtitleText.text = getString(
-                R.string.feed_subscription_not_loaded_count,
-                loadedState.notLoadedCount
-            )
-        }
-
         if (oldestSubscriptionUpdate != loadedState.oldestUpdate ||
             (oldestSubscriptionUpdate == null && loadedState.oldestUpdate == null)
         ) {
@@ -449,7 +467,7 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         }
         oldestSubscriptionUpdate = loadedState.oldestUpdate
 
-        if (loadedState.items.isEmpty()) {
+        if (filteredItems.isEmpty()) {
             showEmptyState()
         } else {
             hideLoading()
@@ -550,10 +568,7 @@ class FeedFragment : BaseStateFragment<FeedState>() {
     }
 
     private fun updateRefreshViewState() {
-        feedBinding.refreshText.text = getString(
-            R.string.feed_oldest_subscription_update,
-            oldestSubscriptionUpdate?.let { Localization.relativeTime(it) } ?: "—"
-        )
+        feedBinding.refreshRootView.isVisible = true
     }
 
     /**
@@ -681,6 +696,27 @@ class FeedFragment : BaseStateFragment<FeedState>() {
             }
         )
         listState = null
+    }
+
+    private fun List<StreamItem>.filterForCurrentChip(): List<StreamItem> {
+        return when (currentFeedFilter) {
+            FeedFilter.ALL,
+            FeedFilter.FAVORITES -> this
+            FeedFilter.NEW -> filter { it.streamWithState.stateProgressMillis == null }
+            FeedFilter.UNFINISHED -> filter { item ->
+                val progress = item.streamWithState.stateProgressMillis ?: return@filter false
+                val duration = item.streamWithState.stream.duration
+                duration <= 0 || !StreamStateEntity(item.streamWithState.stream.uid, progress)
+                    .isFinished(duration)
+            }
+        }
+    }
+
+    private enum class FeedFilter {
+        ALL,
+        FAVORITES,
+        NEW,
+        UNFINISHED
     }
 
     companion object {

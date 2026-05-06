@@ -11,7 +11,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.preference.PreferenceManager
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Flowable
-import io.reactivex.rxjava3.functions.Function6
+import io.reactivex.rxjava3.functions.Function7
 import io.reactivex.rxjava3.processors.BehaviorProcessor
 import io.reactivex.rxjava3.schedulers.Schedulers
 import java.time.OffsetDateTime
@@ -52,6 +52,11 @@ class FeedViewModel(
         .startWithItem(initialShowFutureItems)
         .distinctUntilChanged()
 
+    private val favoritesOnly = BehaviorProcessor.create<Boolean>()
+    private val favoritesOnlyFlowable = favoritesOnly
+        .startWithItem(false)
+        .distinctUntilChanged()
+
     private val mutableStateLiveData = MutableLiveData<FeedState>()
     val stateLiveData: LiveData<FeedState> = mutableStateLiveData
 
@@ -61,33 +66,41 @@ class FeedViewModel(
             showPlayedItemsFlowable,
             showPartiallyPlayedItemsFlowable,
             showFutureItemsFlowable,
+            favoritesOnlyFlowable,
             feedDatabaseManager.notLoadedCount(groupId),
             feedDatabaseManager.oldestSubscriptionUpdate(groupId),
 
-            Function6 {
+            Function7 {
                     t1: FeedEventManager.Event,
                     t2: Boolean,
                     t3: Boolean,
                     t4: Boolean,
-                    t5: Long,
-                    t6: List<OffsetDateTime?>
+                    t5: Boolean,
+                    t6: Long,
+                    t7: List<OffsetDateTime?>
                 ->
-                return@Function6 CombineResultEventHolder(t1, t2, t3, t4, t5, t6.firstOrNull())
+                return@Function7 CombineResultEventHolder(t1, t2, t3, t4, t5, t6, t7.firstOrNull())
             }
         )
         .throttleLatest(DEFAULT_THROTTLE_TIMEOUT, TimeUnit.MILLISECONDS)
         .subscribeOn(Schedulers.io())
         .observeOn(Schedulers.io())
-        .map { (event, showPlayedItems, showPartiallyPlayedItems, showFutureItems, notLoadedCount, oldestUpdate) ->
-            val streamItems = if (event is SuccessResultEvent || event is IdleEvent) {
+        .map { holder ->
+            val streamItems = if (holder.t1 is SuccessResultEvent || holder.t1 is IdleEvent) {
                 feedDatabaseManager
-                    .getStreams(groupId, showPlayedItems, showPartiallyPlayedItems, showFutureItems)
+                    .getStreams(
+                        groupId,
+                        holder.t2,
+                        holder.t3,
+                        holder.t4,
+                        holder.t5
+                    )
                     .blockingGet(arrayListOf())
             } else {
                 arrayListOf()
             }
 
-            CombineResultDataHolder(event, streamItems, notLoadedCount, oldestUpdate)
+            CombineResultDataHolder(holder.t1, streamItems, holder.t6, holder.t7)
         }
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe { (event, listFromDB, notLoadedCount, oldestUpdate) ->
@@ -115,8 +128,9 @@ class FeedViewModel(
         val t2: Boolean,
         val t3: Boolean,
         val t4: Boolean,
-        val t5: Long,
-        val t6: OffsetDateTime?
+        val t5: Boolean,
+        val t6: Long,
+        val t7: OffsetDateTime?
     )
 
     private data class CombineResultDataHolder(
@@ -125,6 +139,10 @@ class FeedViewModel(
         val t3: Long,
         val t4: OffsetDateTime?
     )
+
+    fun setFavoritesOnly(favoritesOnly: Boolean) {
+        this.favoritesOnly.onNext(favoritesOnly)
+    }
 
     fun setSaveShowPlayedItems(showPlayedItems: Boolean) {
         this.showPlayedItems.onNext(showPlayedItems)

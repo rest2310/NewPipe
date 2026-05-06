@@ -48,6 +48,9 @@ abstract class FeedDAO {
         INNER JOIN feed f
         ON s.uid = f.stream_id
 
+        INNER JOIN subscriptions sub
+        ON sub.uid = f.subscription_id
+
         LEFT JOIN feed_group_subscription_join fgs
         ON (
             :groupId <> ${FeedGroupEntity.GROUP_ALL_ID}
@@ -81,6 +84,10 @@ abstract class FeedDAO {
             OR s.upload_date IS NULL
             OR s.upload_date < :uploadDateBefore
         )
+        AND (
+            NOT :favoritesOnly
+            OR sub.notification_mode = 1
+        )
 
         ORDER BY s.upload_date IS NULL DESC, s.upload_date DESC, s.uploader ASC
         LIMIT 500
@@ -90,7 +97,8 @@ abstract class FeedDAO {
         groupId: Long,
         includePlayed: Boolean,
         includePartiallyPlayed: Boolean,
-        uploadDateBefore: OffsetDateTime?
+        uploadDateBefore: OffsetDateTime?,
+        favoritesOnly: Boolean
     ): Maybe<List<StreamWithState>>
 
     /**
