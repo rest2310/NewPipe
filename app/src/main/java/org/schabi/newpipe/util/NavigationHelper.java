@@ -43,7 +43,6 @@ import org.schabi.newpipe.extractor.stream.Stream;
 import org.schabi.newpipe.extractor.stream.StreamInfo;
 import org.schabi.newpipe.extractor.stream.StreamInfoItem;
 import org.schabi.newpipe.extractor.stream.VideoStream;
-import org.schabi.newpipe.fragments.MainFragment;
 import org.schabi.newpipe.fragments.detail.VideoDetailFragment;
 import org.schabi.newpipe.fragments.list.channel.ChannelFragment;
 import org.schabi.newpipe.fragments.list.comments.CommentRepliesFragment;
@@ -348,19 +347,35 @@ public final class NavigationHelper {
                         R.animator.custom_fade_in, R.animator.custom_fade_out);
     }
 
+    /**
+     * @deprecated Normal app startup should open Home via {@link #openHomeFragment(FragmentManager)}.
+     *             This method remains only for back-stack recovery paths that still navigate to the
+     *             root destination.
+     */
+    @Deprecated
     public static void gotoMainFragment(final FragmentManager fragmentManager) {
         final boolean popped = fragmentManager.popBackStackImmediate(MAIN_FRAGMENT_TAG, 0);
         if (!popped) {
-            openMainFragment(fragmentManager);
+            openHomeFragment(fragmentManager);
         }
     }
 
+    /**
+     * @deprecated Use {@link #openHomeFragment(FragmentManager)} instead. Kept as a compatibility
+     *             wrapper for callers that still expect the former root-navigation helper.
+     */
+    @Deprecated
     public static void openMainFragment(final FragmentManager fragmentManager) {
+        openHomeFragment(fragmentManager);
+    }
+
+    public static void openHomeFragment(final FragmentManager fragmentManager) {
         InfoCache.getInstance().trimCache();
 
         fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         defaultTransaction(fragmentManager)
-                .replace(R.id.fragment_holder, new MainFragment())
+                .replace(R.id.fragment_holder, FeedFragment.newInstance(
+                        FeedGroupEntity.GROUP_ALL_ID, null))
                 .addToBackStack(MAIN_FRAGMENT_TAG)
                 .commit();
     }
