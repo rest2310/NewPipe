@@ -42,18 +42,9 @@ class FeedDatabaseManager(context: Context) {
 
     fun getStreams(
         groupId: Long,
-        includePlayedStreams: Boolean,
-        includePartiallyPlayedStreams: Boolean,
-        includeFutureStreams: Boolean,
-        favoritesOnly: Boolean = false
+        filter: FeedFilter = FeedFilter.ALL
     ): Maybe<List<StreamWithState>> {
-        return feedTable.getStreams(
-            groupId,
-            includePlayedStreams,
-            includePartiallyPlayedStreams,
-            if (includeFutureStreams) null else OffsetDateTime.now(),
-            favoritesOnly
-        )
+        return feedTable.getStreams(groupId, filter.id)
     }
 
     fun outdatedSubscriptions(outdatedThreshold: OffsetDateTime) = feedTable.getAllOutdated(outdatedThreshold)

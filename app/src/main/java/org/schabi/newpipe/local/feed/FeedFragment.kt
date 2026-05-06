@@ -58,7 +58,6 @@ import java.util.function.Consumer
 import org.schabi.newpipe.NewPipeDatabase
 import org.schabi.newpipe.R
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity
-import org.schabi.newpipe.database.stream.model.StreamStateEntity
 import org.schabi.newpipe.database.subscription.SubscriptionEntity
 import org.schabi.newpipe.databinding.FragmentFeedBinding
 import org.schabi.newpipe.error.ErrorInfo
@@ -109,7 +108,6 @@ class FeedFragment : BaseStateFragment<FeedState>() {
 
     private var lastNewItemsCount = 0
     private var currentFeedFilter = FeedFilter.ALL
-    private var latestLoadedState: FeedState.LoadedState? = null
 
     init {
         setHasOptionsMenu(true)
@@ -176,8 +174,7 @@ class FeedFragment : BaseStateFragment<FeedState>() {
                 R.id.feed_filter_unfinished -> FeedFilter.UNFINISHED
                 else -> FeedFilter.ALL
             }
-            viewModel.setFavoritesOnly(currentFeedFilter == FeedFilter.FAVORITES)
-            latestLoadedState?.let(::handleLoadedState)
+            viewModel.setFeedFilter(currentFeedFilter)
         }
     }
 
@@ -265,33 +262,6 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         }
 
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun showStreamVisibilityDialog() {
-        val dialogItems = arrayOf(
-            getString(R.string.feed_show_watched),
-            getString(R.string.feed_show_partially_watched),
-            getString(R.string.feed_show_upcoming)
-        )
-
-        val checkedDialogItems = booleanArrayOf(
-            viewModel.getShowPlayedItemsFromPreferences(),
-            viewModel.getShowPartiallyPlayedItemsFromPreferences(),
-            viewModel.getShowFutureItemsFromPreferences()
-        )
-
-        AlertDialog.Builder(requireContext())
-            .setTitle(R.string.feed_hide_streams_title)
-            .setMultiChoiceItems(dialogItems, checkedDialogItems) { _, which, isChecked ->
-                checkedDialogItems[which] = isChecked
-            }
-            .setPositiveButton(R.string.ok) { _, _ ->
-                viewModel.setSaveShowPlayedItems(checkedDialogItems[0])
-                viewModel.setSaveShowPartiallyPlayedItems(checkedDialogItems[1])
-                viewModel.setSaveShowFutureItems(checkedDialogItems[2])
-            }
-            .setNegativeButton(R.string.cancel, null)
-            .show()
     }
 
     override fun onDestroyOptionsMenu() {
@@ -442,13 +412,10 @@ class FeedFragment : BaseStateFragment<FeedState>() {
             else -> StreamItem.ItemVersion.NORMAL
         }
         loadedState.items.forEach { it.itemVersion = itemVersion }
-        latestLoadedState = loadedState
-        val filteredItems = loadedState.items.filterForCurrentChip()
-
         // This need to be saved in a variable as the update occurs async
         val oldOldestSubscriptionUpdate = oldestSubscriptionUpdate
 
-        groupAdapter.updateAsync(filteredItems, false) {
+        groupAdapter.updateAsync(loadedState.items, false) {
             oldOldestSubscriptionUpdate?.run {
                 highlightNewItemsAfter(oldOldestSubscriptionUpdate)
             }
@@ -467,7 +434,7 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         }
         oldestSubscriptionUpdate = loadedState.oldestUpdate
 
-        if (filteredItems.isEmpty()) {
+        if (loadedState.items.isEmpty()) {
             showEmptyState()
         } else {
             hideLoading()
@@ -696,29 +663,6 @@ class FeedFragment : BaseStateFragment<FeedState>() {
             }
         )
         listState = null
-    }
-
-    private fun List<StreamItem>.filterForCurrentChip(): List<StreamItem> {
-        return when (currentFeedFilter) {
-            FeedFilter.ALL,
-            FeedFilter.FAVORITES -> this
-
-            FeedFilter.NEW -> filter { it.streamWithState.stateProgressMillis == null }
-
-            FeedFilter.UNFINISHED -> filter { item ->
-                val progress = item.streamWithState.stateProgressMillis ?: return@filter false
-                val duration = item.streamWithState.stream.duration
-                duration <= 0 || !StreamStateEntity(item.streamWithState.stream.uid, progress)
-                    .isFinished(duration)
-            }
-        }
-    }
-
-    private enum class FeedFilter {
-        ALL,
-        FAVORITES,
-        NEW,
-        UNFINISHED
     }
 
     companion object {

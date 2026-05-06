@@ -23,16 +23,18 @@ abstract class FeedDAO {
     abstract fun deleteAll(): Int
 
     /**
-     * @param groupId          the group id to get feed streams of; use
-     *                         [FeedGroupEntity.GROUP_ALL_ID] to not filter by group
-     * @param includePlayed    if false, only return all of the live, never-played or non-finished
-     *                         feed streams (see `@see` items); if true no filter is applied
-     * @param uploadDateBefore get only streams uploaded before this date (useful to filter out
-     *                         future streams); use null to not filter by upload date
-     * @return the feed streams filtered according to the conditions provided in the parameters
+     * @param groupId the group id to get feed streams of; use
+     *                [FeedGroupEntity.GROUP_ALL_ID] to not filter by group
+     * @param filterId the id of the feed-layer filter to apply:
+     *                 0 = all feed streams,
+     *                 1 = streams from favorite subscriptions,
+     *                 2 = streams not opened since the subscription feed was last loaded or
+     *                     streams without watch history,
+     *                 3 = streams with saved progress greater than zero and below the
+     *                     completed threshold
+     * @return the feed streams filtered according to the selected filter
      * @see StreamStateEntity.isFinished()
      * @see StreamStateEntity.PLAYBACK_FINISHED_END_MILLISECONDS
-     * @see StreamStateEntity.PLAYBACK_SAVE_THRESHOLD_START_MILLISECONDS
      */
     @Query(
         """
@@ -41,15 +43,22 @@ abstract class FeedDAO {
 
         LEFT JOIN stream_state sst
         ON s.uid = sst.stream_id
-        
-        LEFT JOIN stream_history sh
+
+        LEFT JOIN (
+            SELECT stream_id, MAX(access_date) AS latest_access_date
+            FROM stream_history
+            GROUP BY stream_id
+        ) sh
         ON s.uid = sh.stream_id
-        
+
         INNER JOIN feed f
         ON s.uid = f.stream_id
 
         INNER JOIN subscriptions sub
         ON sub.uid = f.subscription_id
+
+        LEFT JOIN feed_last_updated flu
+        ON flu.subscription_id = f.subscription_id
 
         LEFT JOIN feed_group_subscription_join fgs
         ON (
@@ -62,31 +71,25 @@ abstract class FeedDAO {
             OR fgs.group_id = :groupId
         )
         AND (
-            :includePlayed
-            OR sh.stream_id IS NULL
-            OR sst.stream_id IS NULL
-            OR sst.progress_time < s.duration * 1000 - ${StreamStateEntity.PLAYBACK_FINISHED_END_MILLISECONDS}
-            OR sst.progress_time < s.duration * 1000 * 3 / 4
-            OR s.stream_type = 'LIVE_STREAM'
-            OR s.stream_type = 'AUDIO_LIVE_STREAM'
-        )
-        AND (
-            :includePartiallyPlayed
-            OR sh.stream_id IS NULL
-            OR sst.stream_id IS NULL
-            OR (sst.progress_time <= ${StreamStateEntity.PLAYBACK_SAVE_THRESHOLD_START_MILLISECONDS}
-            AND sst.progress_time <= s.duration * 1000 / 4)
-            OR (sst.progress_time >= s.duration * 1000 - ${StreamStateEntity.PLAYBACK_FINISHED_END_MILLISECONDS}
-            AND sst.progress_time >= s.duration * 1000 * 3 / 4)
-        )
-        AND (
-            :uploadDateBefore IS NULL
-            OR s.upload_date IS NULL
-            OR s.upload_date < :uploadDateBefore
-        )
-        AND (
-            NOT :favoritesOnly
-            OR sub.is_favorite = 1
+            :filterId = 0
+            OR (:filterId = 1 AND sub.is_favorite = 1)
+            OR (
+                :filterId = 2
+                AND (
+                    sh.stream_id IS NULL
+                    OR flu.last_updated IS NULL
+                    OR sh.latest_access_date < flu.last_updated
+                )
+            )
+            OR (
+                :filterId = 3
+                AND sst.progress_time > 0
+                AND (
+                    s.duration <= 0
+                    OR sst.progress_time < s.duration * 1000 - ${StreamStateEntity.PLAYBACK_FINISHED_END_MILLISECONDS}
+                    OR sst.progress_time < s.duration * 1000 * 3 / 4
+                )
+            )
         )
 
         ORDER BY s.upload_date IS NULL DESC, s.upload_date DESC, s.uploader ASC
@@ -95,10 +98,7 @@ abstract class FeedDAO {
     )
     abstract fun getStreams(
         groupId: Long,
-        includePlayed: Boolean,
-        includePartiallyPlayed: Boolean,
-        uploadDateBefore: OffsetDateTime?,
-        favoritesOnly: Boolean
+        filterId: Int
     ): Maybe<List<StreamWithState>>
 
     /**

@@ -14,19 +14,27 @@ import org.junit.Test
 import org.schabi.newpipe.database.feed.dao.FeedDAO
 import org.schabi.newpipe.database.feed.model.FeedEntity
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity
+import org.schabi.newpipe.database.feed.model.FeedLastUpdatedEntity
+import org.schabi.newpipe.database.history.dao.StreamHistoryDAO
+import org.schabi.newpipe.database.history.model.StreamHistoryEntity
 import org.schabi.newpipe.database.stream.StreamWithState
 import org.schabi.newpipe.database.stream.dao.StreamDAO
+import org.schabi.newpipe.database.stream.dao.StreamStateDAO
 import org.schabi.newpipe.database.stream.model.StreamEntity
+import org.schabi.newpipe.database.stream.model.StreamStateEntity
 import org.schabi.newpipe.database.subscription.SubscriptionDAO
 import org.schabi.newpipe.database.subscription.SubscriptionEntity
 import org.schabi.newpipe.extractor.ServiceList
 import org.schabi.newpipe.extractor.channel.ChannelInfo
 import org.schabi.newpipe.extractor.stream.StreamType
+import org.schabi.newpipe.local.feed.FeedFilter
 
 class FeedDAOTest {
     private lateinit var db: AppDatabase
     private lateinit var feedDAO: FeedDAO
     private lateinit var streamDAO: StreamDAO
+    private lateinit var streamStateDAO: StreamStateDAO
+    private lateinit var streamHistoryDAO: StreamHistoryDAO
     private lateinit var subscriptionDAO: SubscriptionDAO
 
     private val serviceId = ServiceList.YouTube.serviceId
@@ -58,6 +66,8 @@ class FeedDAOTest {
         ).build()
         feedDAO = db.feedDAO()
         streamDAO = db.streamDAO()
+        streamStateDAO = db.streamStateDAO()
+        streamHistoryDAO = db.streamHistoryDAO()
         subscriptionDAO = db.subscriptionDAO()
     }
 
@@ -70,13 +80,7 @@ class FeedDAOTest {
     @Test
     fun testUnlinkStreamsOlderThan_KeepOne() {
         setupUnlinkDelete("2023-08-15T00:00:00Z")
-        val streams = feedDAO.getStreams(
-            FeedGroupEntity.GROUP_ALL_ID,
-            includePlayed = true,
-            includePartiallyPlayed = true,
-            null
-        )
-            .blockingGet()
+        val streams = getStreams(FeedFilter.ALL)
         val allowedStreams = listOf(stream3, stream5, stream6, stream7)
         assertEqual(streams, allowedStreams)
     }
@@ -84,15 +88,66 @@ class FeedDAOTest {
     @Test
     fun testUnlinkStreamsOlderThan_KeepMultiple() {
         setupUnlinkDelete("2023-08-01T00:00:00Z")
-        val streams = feedDAO.getStreams(
-            FeedGroupEntity.GROUP_ALL_ID,
-            includePlayed = true,
-            includePartiallyPlayed = true,
-            null
-        )
-            .blockingGet()
+        val streams = getStreams(FeedFilter.ALL)
         val allowedStreams = listOf(stream3, stream4, stream5, stream6, stream7)
         assertEqual(streams, allowedStreams)
+    }
+
+    @Test
+    fun testGetStreams_AllFilterReturnsEveryFeedItem() {
+        clearAndFillTables()
+
+        val streams = getStreams(FeedFilter.ALL)
+
+        assertEqual(streams, allStreams)
+    }
+
+    @Test
+    fun testGetStreams_FavoritesFilterReturnsFavoriteSubscriptionsOnly() {
+        clearAndFillTables()
+
+        val streams = getStreams(FeedFilter.FAVORITES)
+
+        assertEqual(streams, listOf(stream4, stream5))
+    }
+
+    @Test
+    fun testGetStreams_NewFilterReturnsNotOpenedSinceFeedLoadOrWithoutHistory() {
+        clearAndFillTables()
+        val feedLoadedAt = OffsetDateTime.parse("2023-09-10T00:00:00Z")
+        (1L..4L).forEach { subscriptionId ->
+            feedDAO.setLastUpdatedForSubscription(FeedLastUpdatedEntity(subscriptionId, feedLoadedAt))
+        }
+        streamHistoryDAO.insertAll(
+            listOf(
+                StreamHistoryEntity(1, OffsetDateTime.parse("2023-09-11T00:00:00Z"), 1),
+                StreamHistoryEntity(3, OffsetDateTime.parse("2023-09-11T00:00:00Z"), 1),
+                StreamHistoryEntity(4, OffsetDateTime.parse("2023-09-09T00:00:00Z"), 1),
+                StreamHistoryEntity(5, OffsetDateTime.parse("2023-09-11T00:00:00Z"), 1),
+                StreamHistoryEntity(6, OffsetDateTime.parse("2023-09-11T00:00:00Z"), 1),
+                StreamHistoryEntity(7, OffsetDateTime.parse("2023-09-11T00:00:00Z"), 1)
+            )
+        )
+
+        val streams = getStreams(FeedFilter.NEW)
+
+        assertEqual(streams, listOf(stream2, stream4))
+    }
+
+    @Test
+    fun testGetStreams_UnfinishedFilterReturnsStartedButNotCompletedStreamsOnly() {
+        clearAndFillTables()
+        streamStateDAO.insertAll(
+            listOf(
+                StreamStateEntity(1, 0),
+                StreamStateEntity(2, 10_000),
+                StreamStateEntity(4, 80_000)
+            )
+        )
+
+        val streams = getStreams(FeedFilter.UNFINISHED)
+
+        assertEqual(streams, listOf(stream2))
     }
 
     private fun assertEqual(streams: List<StreamWithState>?, allowedStreams: List<StreamEntity>) {
@@ -104,6 +159,10 @@ class FeedDAOTest {
                 .sortedBy { it.uid }
                 .toList()
         )
+    }
+
+    private fun getStreams(filter: FeedFilter): List<StreamWithState> {
+        return feedDAO.getStreams(FeedGroupEntity.GROUP_ALL_ID, filter.id).blockingGet()
     }
 
     private fun setupUnlinkDelete(time: String) {
@@ -122,7 +181,7 @@ class FeedDAOTest {
         subscriptionDAO.insertAll(
             listOf(
                 SubscriptionEntity.from(ChannelInfo(serviceId, "1", "https://youtube.com/channel/1", "https://youtube.com/channel/1", "channel-1")),
-                SubscriptionEntity.from(ChannelInfo(serviceId, "2", "https://youtube.com/channel/2", "https://youtube.com/channel/2", "channel-2")),
+                SubscriptionEntity.from(ChannelInfo(serviceId, "2", "https://youtube.com/channel/2", "https://youtube.com/channel/2", "channel-2")).apply { isFavorite = true },
                 SubscriptionEntity.from(ChannelInfo(serviceId, "3", "https://youtube.com/channel/3", "https://youtube.com/channel/3", "channel-3")),
                 SubscriptionEntity.from(ChannelInfo(serviceId, "4", "https://youtube.com/channel/4", "https://youtube.com/channel/4", "channel-4"))
             )

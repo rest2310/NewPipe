@@ -52,6 +52,7 @@
             android:layout_marginTop="8dp"
             app:checkedChip="@id/feed_filter_all"
             app:chipSpacingHorizontal="8dp"
+            app:selectionRequired="true"
             app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
