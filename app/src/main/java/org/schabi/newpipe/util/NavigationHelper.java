@@ -369,26 +369,22 @@ public final class NavigationHelper {
         openHomeFragment(fragmentManager);
     }
 
-    public static void openHomeFragment(final FragmentManager fragmentManager) {
-        InfoCache.getInstance().trimCache();
-
+    public static void openRootFragment(final FragmentManager fragmentManager,
+                                        final Fragment fragment) {
         fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         defaultTransaction(fragmentManager)
-                .replace(R.id.fragment_holder, FeedFragment.newInstance(
-                        FeedGroupEntity.GROUP_ALL_ID, null))
-                .addToBackStack(MAIN_FRAGMENT_TAG)
+                .replace(R.id.fragment_holder, fragment)
                 .commit();
     }
 
-    public static void openHomeFragmentAsRoot(final FragmentManager fragmentManager) {
+    public static void openHomeFragment(final FragmentManager fragmentManager) {
         InfoCache.getInstance().trimCache();
+        openRootFragment(fragmentManager, FeedFragment.newInstance(
+                FeedGroupEntity.GROUP_ALL_ID, null));
+    }
 
-        fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        defaultTransaction(fragmentManager)
-                .replace(R.id.fragment_holder, FeedFragment.newInstance(
-                        FeedGroupEntity.GROUP_ALL_ID, null))
-                .addToBackStack(MAIN_FRAGMENT_TAG)
-                .commit();
+    public static void openHomeFragmentAsRoot(final FragmentManager fragmentManager) {
+        openHomeFragment(fragmentManager);
     }
 
     public static boolean tryGotoSearchFragment(final FragmentManager fragmentManager) {
@@ -594,14 +590,16 @@ public final class NavigationHelper {
 
     public static void openFeedFragment(final FragmentManager fragmentManager, final long groupId,
                                         @Nullable final String groupName, final boolean asRoot) {
+        final Fragment fragment = FeedFragment.newInstance(groupId, groupName);
         if (asRoot) {
-            fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            openRootFragment(fragmentManager, fragment);
+            return;
         }
 
-        final FragmentTransaction transaction = defaultTransaction(fragmentManager)
-                .replace(R.id.fragment_holder, FeedFragment.newInstance(groupId, groupName));
-        transaction.addToBackStack(asRoot ? MAIN_FRAGMENT_TAG : null);
-        transaction.commit();
+        defaultTransaction(fragmentManager)
+                .replace(R.id.fragment_holder, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     public static void openBookmarksFragment(final FragmentManager fragmentManager) {
@@ -651,13 +649,14 @@ public final class NavigationHelper {
                                              final Fragment fragment,
                                              final boolean asRoot) {
         if (asRoot) {
-            fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            openRootFragment(fragmentManager, fragment);
+            return;
         }
 
-        final FragmentTransaction transaction = defaultTransaction(fragmentManager)
-                .replace(R.id.fragment_holder, fragment);
-        transaction.addToBackStack(asRoot ? MAIN_FRAGMENT_TAG : null);
-        transaction.commit();
+        defaultTransaction(fragmentManager)
+                .replace(R.id.fragment_holder, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     /*//////////////////////////////////////////////////////////////////////////

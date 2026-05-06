@@ -50,6 +50,7 @@ import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
+import org.schabi.newpipe.database.feed.model.FeedGroupEntity;
 import org.schabi.newpipe.databinding.ActivityMainBinding;
 import org.schabi.newpipe.databinding.ToolbarLayoutBinding;
 import org.schabi.newpipe.error.ErrorUtil;
@@ -231,18 +232,22 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean openBottomNavigationDestination(final int itemId) {
         if (itemId == R.id.bottom_navigation_home) {
-            NavigationHelper.openHomeFragmentAsRoot(getSupportFragmentManager());
+            NavigationHelper.openRootFragment(getSupportFragmentManager(),
+                    FeedFragment.newInstance(FeedGroupEntity.GROUP_ALL_ID, null));
         } else if (itemId == R.id.bottom_navigation_subscriptions) {
-            NavigationHelper.openSubscriptionFragment(getSupportFragmentManager(), true);
+            NavigationHelper.openRootFragment(getSupportFragmentManager(),
+                    new SubscriptionFragment());
         } else if (itemId == R.id.bottom_navigation_playlists) {
-            NavigationHelper.openBookmarksFragment(getSupportFragmentManager(), true);
+            NavigationHelper.openRootFragment(getSupportFragmentManager(),
+                    new BookmarkFragment());
         } else if (itemId == R.id.bottom_navigation_downloads) {
             if (!PermissionHelper.checkStoragePermissions(
                     this, PermissionHelper.DOWNLOADS_REQUEST_CODE)) {
                 pendingBottomNavigationDownloads = true;
                 return false;
             }
-            NavigationHelper.openDownloadsFragment(getSupportFragmentManager(), true);
+            NavigationHelper.openRootFragment(getSupportFragmentManager(),
+                    new MissionsFragment());
         } else {
             return false;
         }
@@ -405,7 +410,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
             finish();
         } else {
             super.onBackPressed();
@@ -426,7 +431,8 @@ public class MainActivity extends AppCompatActivity {
             case PermissionHelper.DOWNLOADS_REQUEST_CODE:
                 if (pendingBottomNavigationDownloads) {
                     pendingBottomNavigationDownloads = false;
-                    NavigationHelper.openDownloadsFragment(getSupportFragmentManager(), true);
+                    NavigationHelper.openRootFragment(getSupportFragmentManager(),
+                            new MissionsFragment());
                     updateToolbarNavigation();
                     updateBottomNavigationSelection();
                 } else {
@@ -559,11 +565,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Fragment fragment = getSupportFragmentManager()
                 .findFragmentById(R.id.fragment_holder);
-        final boolean isBottomNavigationRoot = fragment instanceof FeedFragment
-                || fragment instanceof SubscriptionFragment
-                || fragment instanceof BookmarkFragment
-                || fragment instanceof MissionsFragment;
-        if (isBottomNavigationRoot) {
+        if (isBottomNavigationRootFragment(fragment)) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             toolbarLayoutBinding.toolbar.setNavigationOnClickListener(null);
             toolbarLayoutBinding.toolbar.setBackgroundColor(
@@ -582,6 +584,13 @@ public class MainActivity extends AppCompatActivity {
             toolbarLayoutBinding.toolbar.setSubtitleTextColor(
                     ThemeHelper.resolveColorFromAttr(this, R.attr.actionColor));
         }
+    }
+
+    private boolean isBottomNavigationRootFragment(@Nullable final Fragment fragment) {
+        return fragment instanceof FeedFragment
+                || fragment instanceof SubscriptionFragment
+                || fragment instanceof BookmarkFragment
+                || fragment instanceof MissionsFragment;
     }
 
     private void handleIntent(final Intent intent) {
