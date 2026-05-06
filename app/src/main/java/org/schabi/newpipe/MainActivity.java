@@ -56,7 +56,6 @@ import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.comments.CommentsInfoItem;
 import org.schabi.newpipe.fragments.BackPressable;
-import org.schabi.newpipe.fragments.MainFragment;
 import org.schabi.newpipe.fragments.detail.VideoDetailFragment;
 import org.schabi.newpipe.fragments.list.comments.CommentRepliesFragment;
 import org.schabi.newpipe.fragments.list.search.SearchFragment;
@@ -232,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean openBottomNavigationDestination(final int itemId) {
         if (itemId == R.id.bottom_navigation_home) {
-            NavigationHelper.openFeedFragment(getSupportFragmentManager());
+            NavigationHelper.openHomeFragment(getSupportFragmentManager());
         } else if (itemId == R.id.bottom_navigation_subscriptions) {
             NavigationHelper.openSubscriptionFragment(getSupportFragmentManager());
         } else if (itemId == R.id.bottom_navigation_playlists) {
@@ -274,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
             selectedItemId = R.id.bottom_navigation_subscriptions;
         } else if (fragment instanceof BookmarkFragment) {
             selectedItemId = R.id.bottom_navigation_playlists;
-        } else if (fragment instanceof FeedFragment || fragment instanceof MainFragment) {
+        } else if (fragment instanceof FeedFragment) {
             selectedItemId = R.id.bottom_navigation_home;
         } else if (fragment instanceof MissionsFragment) {
             selectedItemId = R.id.bottom_navigation_downloads;
@@ -480,8 +479,8 @@ public class MainActivity extends AppCompatActivity {
             // to show the top level comments again.
             openDetailFragmentFromCommentReplies(fm, true);
         } else if (!NavigationHelper.tryGotoSearchFragment(fm)) {
-            // If search fragment wasn't found in the backstack go to the main fragment
-            NavigationHelper.gotoMainFragment(fm);
+            // If search fragment wasn't found in the back stack, recover to Home.
+            NavigationHelper.openHomeFragment(fm);
         }
     }
 
@@ -539,12 +538,12 @@ public class MainActivity extends AppCompatActivity {
             // while the app is closed he will see a blank fragment on place of kiosk.
             // Let's open it first
             if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
-                NavigationHelper.openMainFragment(getSupportFragmentManager());
+                NavigationHelper.openHomeFragment(getSupportFragmentManager());
             }
 
             handleIntent(getIntent());
         } else {
-            NavigationHelper.gotoMainFragment(getSupportFragmentManager());
+            NavigationHelper.openHomeFragment(getSupportFragmentManager());
         }
     }
 
@@ -559,7 +558,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Fragment fragment = getSupportFragmentManager()
                 .findFragmentById(R.id.fragment_holder);
-        if (fragment instanceof MainFragment) {
+        if (fragment instanceof FeedFragment) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             toolbarLayoutBinding.toolbar.setNavigationOnClickListener(null);
         } else {
@@ -621,7 +620,7 @@ public class MainActivity extends AppCompatActivity {
                         searchString);
 
             } else {
-                NavigationHelper.gotoMainFragment(getSupportFragmentManager());
+                NavigationHelper.openHomeFragment(getSupportFragmentManager());
             }
         } catch (final Exception e) {
             ErrorUtil.showUiErrorSnackbar(this, "Handling intent", e);

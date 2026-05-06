@@ -530,7 +530,7 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
                 Log.d(TAG, "onClick() called with: v = [" + v + "]");
             }
             if (isSearchEditBlank()) {
-                NavigationHelper.gotoMainFragment(getFM());
+                NavigationHelper.openHomeFragment(getFM());
                 return;
             }
 
