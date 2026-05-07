@@ -4,6 +4,7 @@
  */
 
 import com.android.build.api.dsl.ApplicationExtension
+import org.gradle.api.tasks.util.PatternFilterable
 
 plugins {
     alias(libs.plugins.android.application)
@@ -96,6 +97,10 @@ configure<ApplicationExtension> {
     }
 
     sourceSets {
+        getByName("main") {
+            res.srcDir(layout.buildDirectory.dir("generated/res/bottomNavigationIcons"))
+            (res as PatternFilterable).exclude("drawable/nav/**")
+        }
         getByName("androidTest") {
             assets.directories += "$projectDir/schemas"
         }
@@ -123,6 +128,37 @@ configure<ApplicationExtension> {
         }
     }
 }
+
+val bottomNavigationIconNames = mapOf(
+    "ic_nav_home_inactive" to "ic_subscriptions",
+    "ic_nav_home_active" to "ic_subscriptions",
+    "ic_nav_subscriptions_inactive" to "ic_tv",
+    "ic_nav_subscriptions_active" to "ic_tv",
+    "ic_nav_playlists_inactive" to "ic_bookmark",
+    "ic_nav_playlists_active" to "ic_bookmark",
+    "ic_nav_downloads_inactive" to "ic_file_download",
+    "ic_nav_downloads_active" to "ic_file_download",
+)
+
+val generateBottomNavigationIcons = tasks.register<Sync>("generateBottomNavigationIcons") {
+    val navIconDir = layout.projectDirectory.dir("src/main/res/drawable/nav")
+    val fallbackIconDir = layout.projectDirectory.dir("src/main/res/drawable")
+    val generatedDrawableDir = layout.buildDirectory.dir(
+        "generated/res/bottomNavigationIcons/drawable"
+    )
+
+    into(generatedDrawableDir)
+    bottomNavigationIconNames.forEach { (iconName, fallbackIconName) ->
+        val customIcon = navIconDir.file("$iconName.xml").asFile
+        val fallbackIcon = fallbackIconDir.file("$fallbackIconName.xml").asFile
+        from(customIcon.takeIf { it.isFile } ?: fallbackIcon) {
+            rename { "$iconName.xml" }
+        }
+    }
+}
+
+tasks.matching { it.name.startsWith("merge") && it.name.endsWith("Resources") }
+    .configureEach { dependsOn(generateBottomNavigationIcons) }
 
 ksp {
     arg("room.schemaLocation", "$projectDir/schemas")

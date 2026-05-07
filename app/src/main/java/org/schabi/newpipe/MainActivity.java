@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     private BroadcastReceiver broadcastReceiver;
 
     private boolean pendingBottomNavigationDownloads;
+    private int lastAnimatedBottomNavigationItemId = View.NO_ID;
 
     public static final String KEY_IS_IN_BACKGROUND = "is_in_background";
 
@@ -296,10 +297,43 @@ public class MainActivity extends AppCompatActivity {
                 mainBinding.bottomNavigation.getMenu().getItem(i).setChecked(false);
             }
             mainBinding.bottomNavigation.getMenu().setGroupCheckable(0, true, true);
+            lastAnimatedBottomNavigationItemId = View.NO_ID;
             return;
         }
 
         mainBinding.bottomNavigation.getMenu().findItem(selectedItemId).setChecked(true);
+        animateBottomNavigationSelection(selectedItemId);
+    }
+
+    private void animateBottomNavigationSelection(final int selectedItemId) {
+        if (lastAnimatedBottomNavigationItemId == selectedItemId) {
+            return;
+        }
+
+        for (int i = 0; i < mainBinding.bottomNavigation.getMenu().size(); i++) {
+            final MenuItem item = mainBinding.bottomNavigation.getMenu().getItem(i);
+            final View itemView = mainBinding.bottomNavigation.findViewById(item.getItemId());
+            if (itemView != null) {
+                itemView.animate().cancel();
+                itemView.setScaleX(1.0f);
+                itemView.setScaleY(1.0f);
+                itemView.setAlpha(1.0f);
+            }
+        }
+
+        final View selectedView = mainBinding.bottomNavigation.findViewById(selectedItemId);
+        if (selectedView != null) {
+            selectedView.setScaleX(0.92f);
+            selectedView.setScaleY(0.92f);
+            selectedView.setAlpha(0.75f);
+            selectedView.animate()
+                    .scaleX(1.0f)
+                    .scaleY(1.0f)
+                    .alpha(1.0f)
+                    .setDuration(180L)
+                    .start();
+        }
+        lastAnimatedBottomNavigationItemId = selectedItemId;
     }
 
     @Override
