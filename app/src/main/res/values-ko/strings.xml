@@ -75,7 +75,6 @@
     <string name="subscription_change_failed">구독을 변경할 수 없음</string>
     <string name="subscription_update_failed">구독을 업데이트할 수 없음</string>
     <string name="tab_subscriptions">구독목록</string>
-    <string name="fragment_feed_title">새로운 영상</string>
     <string name="controls_background_title">백그라운드</string>
     <string name="controls_popup_title">팝업</string>
     <string name="default_popup_resolution_title">기본 팝업 해상도</string>
@@ -164,14 +163,10 @@
     <string name="delete_item_search_history">이 항목을 검색 기록에서 삭제할까요?</string>
     <string name="main_page_content">메인 화면의 내용</string>
     <string name="blank_page_summary">빈 페이지</string>
-    <string name="kiosk_page_summary">키오스크 페이지</string>
     <string name="channel_page_summary">채널 페이지</string>
     <string name="select_a_channel">채널 선택</string>
     <string name="no_channel_subscribed_yet">구독중인 채널이 없습니다</string>
-    <string name="select_a_kiosk">키오스크 선택</string>
     <string name="trending">인기 급상승</string>
-    <string name="top_50">탑 50</string>
-    <string name="new_and_hot">신작 및 인기 동영상</string>
     <string name="play_queue_remove">제거</string>
     <string name="play_queue_stream_detail">상세 정보</string>
     <string name="play_queue_audio_settings">오디오 설정</string>
@@ -351,7 +346,6 @@
     <string name="max_retry_desc">다운로드를 취소하기 전까지 다시 시도할 최대 횟수</string>
     <string name="pause_downloads_on_mobile">종량제 네트워크에서 일시정지</string>
     <string name="pause_downloads_on_mobile_desc">모바일 데이터로 전환될 때, 일부 다운로드는 정지되지 않습니다</string>
-    <string name="conferences">컨퍼런스</string>
     <string name="show_comments_title">댓글 보기</string>
     <string name="show_comments_summary">댓글 숨기기</string>
     <string name="autoplay_title">자동 재생</string>
@@ -387,7 +381,6 @@
         <item quantity="other">%s 동영상</item>
     </plurals>
     <string name="enable_queue_limit_desc">한 번에 하나씩 다운로드 합니다</string>
-    <string name="default_kiosk_page_summary">기본 키오스크</string>
     <string name="no_one_watching">시청자 없음</string>
     <plurals name="watching">
         <item quantity="other">%s명 시청중</item>
@@ -398,8 +391,6 @@
     </plurals>
     <string name="seek_duration_title">빠른-감기/되감기 찾는 시간</string>
     <string name="local">로컬</string>
-    <string name="recently_added">최근에 추가됨</string>
-    <string name="most_liked">가장 선호하는</string>
     <string name="playlist_no_uploader">자동생성된(업로더를 찾지못함)</string>
     <string name="recovering">복구하기</string>
     <string name="error_download_resource_gone">이 다운로드를 복구할 수 없습니다</string>
@@ -775,8 +766,6 @@
     <string name="reset_settings_title">설정 초기화</string>
     <string name="reset_settings_summary">모든 설정을 기본값으로 초기화</string>
     <string name="share_playlist_as_youtube_temporary_playlist">YouTube 임시 재생목록으로 공유</string>
-    <string name="migration_info_6_7_title">SoundCloud Top 50 페이지가 삭제되었습니다</string>
-    <string name="migration_info_6_7_message">SoundCloud에서 더 이상 기존 Top 50 차트를 제공하지 않습니다. 해당하는 탭이 메인 페이지에서 제거되었습니다.</string>
     <string name="short_thousand">%s천</string>
     <string name="short_million">%s백만</string>
     <string name="short_billion">%s십억</string>
@@ -791,10 +780,6 @@
     <string name="permission_display_over_apps_permission_name">\"다른 앱 위에 표시 허용\"</string>
     <string name="migration_info_7_8_title">YouTube 통합 인기 급상승 동영상이 삭제되었습니다</string>
     <string name="migration_info_7_8_message">YouTube에서 2025년 7월 21일부로 더 이상 통합 인기 급상승 동영상을 제공하지 않습니다. NewPipe에서는 기본 인기 급상승 페이지를 인기 급상승 실시간 페이지로 교체했습니다.\n\n\"설정 &gt; 콘텐츠 &gt; 메인 화면의 내용\"에서 다른 인기 급상승 페이지를 선택할 수 있습니다.</string>
-    <string name="trending_gaming">인기 급상승 게임</string>
-    <string name="trending_podcasts">인기 급상승 팟캐스트</string>
-    <string name="trending_movies">인기 급상승 영화 및 쇼</string>
-    <string name="trending_music">인기 급상승 음악</string>
     <string name="permission_display_over_apps_message">팝업 플레이어를 사용하려면, 이후 Android 설정에서 %1$s 선택 후 %2$s 설정을 켜 주십시오.</string>
     <string name="delete_entry">항목 삭제</string>
     <string name="audio_track_type_secondary">보조</string>

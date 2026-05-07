@@ -87,7 +87,6 @@
     <string name="subscription_change_failed">Не вдалося змінити підписку</string>
     <string name="subscription_update_failed">Не вдалося оновити підписку</string>
     <string name="tab_subscriptions">Підписки</string>
-    <string name="fragment_feed_title">Новинки</string>
     <string name="controls_background_title">У фоні</string>
     <string name="controls_popup_title">У вікні</string>
     <string name="default_popup_resolution_title">Типова роздільність вікна</string>
@@ -154,8 +153,6 @@
     <string name="title_activity_history">Історія</string>
     <string name="export_complete_toast">Експортовано</string>
     <string name="import_complete_toast">Імпортовано</string>
-    <string name="top_50">Топ 50</string>
-    <string name="new_and_hot">Нове та гаряче</string>
     <string name="play_queue_stream_detail">Подробиці</string>
     <string name="play_queue_audio_settings">Налаштування аудіо</string>
     <string name="video_player">Відеопрогравач</string>
@@ -215,11 +212,9 @@
     <string name="title_most_played">Відтворювалося найбільше</string>
     <string name="main_page_content">Вміст на головній сторінці</string>
     <string name="blank_page_summary">Порожня сторінка</string>
-    <string name="kiosk_page_summary">Сторінка кіоску</string>
     <string name="channel_page_summary">Сторінка каналу</string>
     <string name="select_a_channel">Обрати канал</string>
     <string name="no_channel_subscribed_yet">Немає підписок на канали</string>
-    <string name="select_a_kiosk">Обрати кіоск</string>
     <string name="no_valid_zip_file">Немає дійсного ZIP-файлу</string>
     <string name="could_not_import_all_files">Увага: не вдалося імпортувати всі файли.</string>
     <string name="override_current_data">Це перезапише ваші поточні налаштування.</string>
@@ -330,7 +325,6 @@
     <string name="restore_defaults">Відновити типові налаштування</string>
     <string name="restore_defaults_confirmation">Відновити типові значення\?</string>
     <string name="subscribers_count_not_available">Кількість підписників недоступна</string>
-    <string name="conferences">Конференції</string>
     <string name="updates_setting_title">Оновлення</string>
     <string name="auto">Автоматично</string>
     <string name="app_update_available_notification_title">Доступне оновлення NewPipe!</string>
@@ -393,7 +387,6 @@
     <string name="clear_playback_states_title">Видалити позиції відтворення</string>
     <string name="clear_playback_states_summary">Видаляє всі позиції відтворення</string>
     <string name="delete_playback_states_alert">Видалити всі позиції відтворення\?</string>
-    <string name="default_kiosk_page_summary">Типовий кіоск</string>
     <string name="no_one_watching">Немає переглядів</string>
     <plurals name="watching">
         <item quantity="one">%s глядач</item>
@@ -407,8 +400,6 @@
         <item quantity="many">%s слухачів</item>
     </plurals>
     <string name="seek_duration_title">Швидке перемотування</string>
-    <string name="recently_added">Недавно додані</string>
-    <string name="most_liked">Найвподобаніші</string>
     <string name="recovering">відновлення</string>
     <string name="error_download_resource_gone">Неможливо відновити це завантаження</string>
     <string name="choose_instance_prompt">Вибрати екземпляр</string>
@@ -816,14 +807,8 @@
     <string name="channel_tab_likes">Вподобання</string>
     <string name="search_with_service_name">Пошук %1$s</string>
     <string name="search_with_service_name_and_filter">Пошук %1$s (%2$s)</string>
-    <string name="migration_info_6_7_title">Сторінку SoundCloud Top 50 видалено</string>
-    <string name="migration_info_6_7_message">SoundCloud припинив підтримку оригінальних чартів Топ-50. Відповідну вкладку видалено з вашої головної сторінки.</string>
     <string name="migration_info_7_8_title">Видалено об’єднаний тренд YouTube</string>
     <string name="migration_info_7_8_message">YouTube припинив підтримку об’єднаної сторінки трендів з 21 липня 2025 року. NewPipe замінив стандартну сторінку трендів на сторінку трендових прямих трансляцій.\n\nВи також можете вибрати різні сторінки трендів у розділі «Налаштування» &gt; «Контент» &gt; «Контент головної сторінки».</string>
-    <string name="trending_gaming">Ігрові тренди</string>
-    <string name="trending_podcasts">Популярні подкасти</string>
-    <string name="trending_movies">Популярні фільми та шоу</string>
-    <string name="trending_music">Популярна музика</string>
     <string name="short_thousand">%sтис</string>
     <string name="short_million">%sмлн</string>
     <string name="short_billion">%sмлрд</string>

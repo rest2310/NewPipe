@@ -26,7 +26,6 @@
     <string name="subscription_update_failed">ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਅਪਡੇਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ</string>
     <string name="tab_subscriptions">ਸਬਸਕ੍ਰਿਪਸ਼ਨਜ਼</string>
     <string name="tab_bookmarks">ਬੁੱਕਮਾਰਕ ਕੀਤੀਆਂ ਪਲੇਲਿਸਟਾਂ</string>
-    <string name="fragment_feed_title">ਨਵਾਂ ਕੀ ਹੈ</string>
     <string name="controls_background_title">ਬੈਕਗ੍ਰਾਊਂਡ</string>
     <string name="controls_popup_title">ਪੌਪ-ਅਪ</string>
     <string name="controls_add_to_playlist_title">ਦੇ ਵਿੱਚ ਜੋੜ੍ਹੋ</string>
@@ -218,19 +217,15 @@
     <string name="title_most_played">ਸਭ ਤੋਂ ਜਿਆਦਾ ਚਲਾਈ ਗਈ</string>
     <string name="main_page_content">ਮੁੱਖ ਪੰਨੇ ਦੀ ਸਮੱਗਰੀ</string>
     <string name="blank_page_summary">ਖ਼ਾਲੀ ਪੰਨਾ</string>
-    <string name="kiosk_page_summary">ਕਿਓਸਕ ਪੰਨਾ</string>
     <string name="channel_page_summary">ਚੈਨਲ ਪੰਨਾ</string>
     <string name="select_a_channel">ਚੈਨਲ ਚੁਣੋ</string>
     <string name="no_channel_subscribed_yet">ਅਜੇ ਤੱਕ ਕੋਈ ਚੈਨਲ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਨਹੀਂ</string>
-    <string name="select_a_kiosk">ਇੱਕ ਕਿਓਸਕ ਚੁਣੋ</string>
     <string name="export_complete_toast">ਐਕਸਪੋਰਟ ਕੀਤਾ ਗਿਆ</string>
     <string name="import_complete_toast">ਇੰਪੋਰਟ ਕੀਤਾ ਗਿਆ</string>
     <string name="no_valid_zip_file">ਕੋਈ ਵੈਧ ZIP ਫਾਈਲ ਨਹੀਂ ਹੈ</string>
     <string name="could_not_import_all_files">ਚੇਤਾਵਨੀ: ਸਾਰੀਆਂ ਫਾਈਲਾਂ ਇੰਪੋਰਟ ਨਹੀਂ ਕੀਤੀਆਂ ਜਾ ਸਕੀਆਂ।</string>
     <string name="override_current_data">ਇਹ ਤੁਹਾਡੇ ਮੌਜੂਦਾ ਸੈਟ-ਅਪ ਨੂੰ ਓਵਰ-ਰਾਈਡ ਕਰ ਦੇਵੇਗਾ।</string>
     <string name="trending">ਫਿਲਹਾਲ ਰੁਝਾਨ ਵਿੱਚ ਹੈ</string>
-    <string name="top_50">ਸਿਖਰਲੇ 50</string>
-    <string name="new_and_hot">ਨਵੇਂ ਅਤੇ ਤਾਜ਼ਾ-ਤਰੀਨ</string>
     <string name="play_queue_remove">ਹਟਾਓ</string>
     <string name="play_queue_stream_detail">ਵੇਰਵੇ</string>
     <string name="play_queue_audio_settings">ਆਡੀਓ ਸੈਟਿੰਗਾਂ</string>
@@ -349,7 +344,6 @@
     <string name="pause_downloads_on_mobile">ਮੀਟਰ ਕੀਤੇ ਨੈੱਟਵਰਕ ਤੇ ਰੋਕੋ</string>
     <string name="pause_downloads_on_mobile_desc">ਮੋਬਾਈਲ ਡਾਟਾ ਦੇ ਇਸਤੇਮਾਲ ਵੇਲੇ ਫਾਇਦੇਮੰਦ ਹੈ, ਹਾਲਾਂਕਿ ਕੁਝ ਡਾਉਨਲੋਡਾਂ ਨੂੰ ਮੁਅੱਤਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ</string>
     <string name="events">ਇਵੇੰਟਸ</string>
-    <string name="conferences">ਕਾਨਫਰੰਸਾਂ</string>
     <string name="show_comments_title">ਟਿੱਪਣੀਆਂ ਵਿਖਾਓ</string>
     <string name="show_comments_summary">ਟਿੱਪਣੀਆਂ ਲੁਕਾਉਣ ਲਈ ਇਸਨੂੰ ਬੰਦ ਕਰੋ</string>
     <string name="autoplay_title">ਆਟੋ-ਪਲੇਅ</string>
@@ -396,7 +390,6 @@
     <string name="show_memory_leaks">ਮੈਮਰੀ ਲੀਕ ਵਿਖਾਓ</string>
     <string name="playlist_no_uploader">ਆਪਣੇ-ਆਪ ਬਣੀ (ਕੋਈ ਅਪਲੋਡਰ ਨਹੀਂ ਲੱਭਿਆ)</string>
     <string name="no_playlist_bookmarked_yet">ਹਾਲੇ ਕੋਈ ਪਲੇਲਿਸਟ ਬੁੱਕਮਾਰਕ ਨਹੀਂ ਕੀਤੀ ਹੋਈ</string>
-    <string name="default_kiosk_page_summary">ਡਿਫ਼ਾਲਟ ਕਿਓਸਕ</string>
     <string name="msg_calculating_hash">ਹੈਸ਼ ਦਾ ਲੇਖਾ-ਜੋਖਾ ਹੋ ਰਿਹਾ ਹੈ</string>
     <string name="error_report_open_github_notice">ਮਿਹਰਬਾਨੀ ਕਰਕੇ ਜਾਂਚ ਲਓ ਕਿ ਤੁਹਾਡੇ ਵਾਲ੍ਹੇ ਕ੍ਰੈਸ਼ ਦੀ ਗੱਲ ਕਰਦਾ ਕੋਈ ਮਸਲਾ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਤਾਂ ਨਹੀਂ। ਇੱਕੋ ਮਸਲੇ ਦੀਆਂ ਦੋ ਜਾਂ ਵੱਧ ਨਕਲਾਂ ਬਣਾ ਕੇ ਤੁਸੀਂ ਸਾਡੇ ਤੋਂ ਉਹ ਵਕਤ ਖੋਹ ਲੈਂਦੇ ਹੋ ਜੋ ਅਸੀਂ ਅਸਲੀ ਮਸਲੇ ਦੇ ਹੱਲ ਲਈ ਲਾਉਣਾ ਸੀ।</string>
     <string name="copy_for_github">ਫ਼ਾਰਮੈਟ ਕੀਤੀ ਰਿਪੋਰਟ ਕਾਪੀ ਕਰੋ</string>
@@ -508,8 +501,6 @@
     <string name="enqueue_stream">ਕਤਾਰਬੱਧ ਕਰੋ</string>
     <string name="show_channel_details">ਚੈਨਲ ਵੇਰਵੇ ਵਿਖਾਓ</string>
     <string name="title_activity_play_queue">ਪਲੇਅ ਕਤਾਰ</string>
-    <string name="most_liked">ਵਧੇਰੇ ਪਸੰਦ ਕੀਤੇ ਗਏ</string>
-    <string name="recently_added">ਹਾਲ ਹੀ ਵਿੱਚ ਸ਼ਾਮਿਲ</string>
     <string name="local">ਸਥਾਨਕ</string>
     <string name="select_a_playlist">ਪਲੇਲਿਸਟ ਚੁਣੋ</string>
     <string name="done">ਹੋ ਗਿਆ</string>
@@ -800,14 +791,8 @@
     <string name="short_thousand">%sਹਜ਼ਾਰ</string>
     <string name="short_million">%sਮਿਲੀਅਨ</string>
     <string name="short_billion">%sਅਰਬ</string>
-    <string name="migration_info_6_7_title">SoundCloud ਟੌਪ 50 ਪੰਨਾ ਹਟਾ ਦਿੱਤਾ ਗਿਆ</string>
-    <string name="migration_info_6_7_message">SoundCloud ਨੇ ਮੂਲ ਟੌਪ 50 ਚਾਰਟਾਂ ਨੂੰ ਬੰਦ ਕਰ ਦਿੱਤਾ ਹੈ। ਸੰਬੰਧਿਤ ਟੈਬ ਨੂੰ ਤੁਹਾਡੇ ਮੁੱਖ ਪੰਨੇ ਤੋਂ ਹਟਾ ਦਿੱਤਾ ਗਿਆ ਹੈ।</string>
     <string name="migration_info_7_8_title">YouTube ਸੰਯੁਕਤ ਰੁਝਾਨ ਹਟਾਇਆ ਗਿਆ</string>
     <string name="migration_info_7_8_message">YouTube ਨੇ 21 ਜੁਲਾਈ 2025 ਤੋਂ ਸੰਯੁਕਤ \"ਰੁਝਾਨ ਵਿੱਚ\" ਪੰਨੇ ਨੂੰ ਬੰਦ ਕਰ ਦਿੱਤਾ ਹੈ। NewPipe ਨੇ ਡਿਫ਼ਾਲਟ \"ਰੁਝਾਨ ਵਿੱਚ\" ਪੰਨੇ ਨੂੰ ਟ੍ਰੈਂਡਿੰਗ ਲਾਈਵਸਟ੍ਰੀਮਾਂ ਨਾਲ ਬਦਲ ਦਿੱਤਾ ਹੈ।\n\nਤੁਸੀਂ \"ਸੈਟਿੰਗਾਂ &gt; ਸਮੱਗਰੀ &gt; ਮੁੱਖ ਪੰਨੇ ਦੀ ਸਮੱਗਰੀ\" ਵਿੱਚ ਵੱਖ-ਵੱਖ ਟ੍ਰੈਂਡਿੰਗ ਪੰਨਿਆਂ ਨੂੰ ਵੀ ਚੁਣ ਸਕਦੇ ਹੋ।</string>
-    <string name="trending_gaming">ਗੇਮਿੰਗ ਟ੍ਰੈਂਡਸ</string>
-    <string name="trending_podcasts">ਟ੍ਰੈਂਡਿੰਗ ਪੌਡਕਾਸਟ</string>
-    <string name="trending_movies">ਟਰੈਂਡਿੰਗ ਫ਼ਿਲਮਾਂ ਅਤੇ ਸ਼ੋਅ</string>
-    <string name="trending_music">ਟਰੈਂਡਿੰਗ ਸੰਗੀਤ</string>
     <string name="player_http_403">ਪਲੇਅ ਕਰਦੇ ਸਮੇਂ ਸਰਵਰ ਤੋਂ HTTP error 403 ਪ੍ਰਾਪਤ ਹੋਇਆ, ਜੋ ਸ਼ਾਇਦ ਸਟ੍ਰੀਮਿੰਗ URL ਦੀ ਮਿਆਦ ਪੁੱਗਣ ਜਾਂ IP ਦੀ ਪਾਬੰਦੀ ਕਾਰਨ ਹੋਈ ਹੈ</string>
     <string name="player_http_invalid_status">ਚਲਾਉਣ ਦੌਰਾਨ ਸਰਵਰ ਤੋਂ HTTP error %1$s ਪ੍ਰਾਪਤ ਹੋਇਆ</string>
     <string name="youtube_player_http_403">ਪਲੇਅ ਕਰਦੇ ਸਮੇਂ ਸਰਵਰ ਤੋਂ HTTP error 403 ਪ੍ਰਾਪਤ ਹੋਇਆ, ਜੋ ਸ਼ਾਇਦ IP ਬੈਨ ਜਾਂ ਸਟ੍ਰੀਮਿੰਗ URL ਡੀਔਬਫਸਕੇਸ਼ਨ ਸਮੱਸਿਆਵਾਂ ਕਾਰਨ ਹੋਈ ਹੈ</string>

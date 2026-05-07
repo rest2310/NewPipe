@@ -26,7 +26,6 @@
     <string name="show_info">پیشاندانی زانیاری</string>
     <string name="tab_subscriptions">به‌شدارییه‌كان</string>
     <string name="tab_bookmarks">لیستەلێدانە نیشانەکراوەکان</string>
-    <string name="fragment_feed_title">چی نوێ هه‌یه‌</string>
     <string name="controls_background_title">پاشبنەما</string>
     <string name="controls_popup_title">په‌نجه‌ره‌</string>
     <string name="controls_add_to_playlist_title">زیادکردن بۆ</string>
@@ -323,19 +322,15 @@
     <string name="app_description">ئەپێکی خۆڕایی و کێشی کەم تایبەت بە یوتوب لەسەر ئەندرۆید.</string>
     <string name="app_license_title">مۆڵەتنامەی ئەپ</string>
     <string name="blank_page_summary">پەڕەی بەتاڵ</string>
-    <string name="kiosk_page_summary">پەڕەی کیۆسک</string>
     <string name="channel_page_summary">پەڕەی کەناڵەکان</string>
     <string name="select_a_channel">هەڵبژاردنی کەناڵ</string>
     <string name="no_channel_subscribed_yet">هیچ کەناڵێکی بەشداری نییە</string>
-    <string name="select_a_kiosk">هەڵبژاردنی کیۆسک</string>
     <string name="export_complete_toast">هاوردەکرا</string>
     <string name="import_complete_toast">هەناردەکرا</string>
     <string name="no_valid_zip_file">فایلی ZIP دروست نییە</string>
     <string name="could_not_import_all_files">ئاگاداربە: ناتوانرێ هەموو فایلەکان هەناردەبکرێن.</string>
     <string name="override_current_data">ئەمە لەسەر ڕێکخستنەکانی ئێستات جێگیردەبێت.</string>
     <string name="trending">پڕبینەرەکان</string>
-    <string name="top_50">باشترین 50</string>
-    <string name="new_and_hot">نوێ و چالاک</string>
     <string name="hold_to_append">پەنجەت داگرە بۆ ڕیزنەبوون</string>
     <string name="enable_leak_canary_summary">چاودێری دزەکردنی بیرگە ڕەنگە ببێتە هۆی وەڵامنەدانەوەی لەکاتی گەرمبوون</string>
     <string name="preferred_open_action_settings_title">کرداری ’کردنەوە’ی پێشنیارکراو</string>
@@ -374,13 +369,11 @@
     <string name="download_failed">دابەزاندن کەوت</string>
     <string name="generate_unique_name">دانانی ناوی نوێ</string>
     <string name="overwrite">جێگیرکردن</string>
-    <string name="conferences">کۆنفرانسەکان</string>
     <string name="error_unable_to_load_comments">ناتوانرێ لێدوانەکان باربکرێ</string>
     <string name="enable_playback_state_lists_summary">پیشاندانی نیشانەکەری شوێنی کارپێکراو لە لیستەکان</string>
     <string name="overwrite_unrelated_warning">فایلێک بەهەمان ناو هەیە</string>
     <string name="overwrite_finished_warning">فایلێکی دابەزێنراو بەم ناوەوە هەیە</string>
     <string name="overwrite_failed">ناتوانرێ لەسەر ئەو فایلە جێگیربکرێ</string>
-    <string name="default_kiosk_page_summary">پەڕەی بنەڕەتی</string>
     <string name="seek_duration_title">ماوەی خێرا بردنە پێشەوە\\ گێڕانەوە بۆ دواوە</string>
     <string name="error_http_not_found">نەدۆزرایەوە</string>
     <string name="error_postprocessing_failed">چارەسەرکردن شکستی هێنا</string>
@@ -405,8 +398,6 @@
     <string name="downloads_storage_use_saf_summary">چوارچێوەی گەیشتن بە بیرگە ڕێگەدەدات بە دابەزاندنی پەڕگەکان لە بیرگەی دەرەکیدا.
 \nتێبینی: هەندێ لە مۆبایلەکان پشتگیری ناکرێن</string>
     <string name="local">ناوخۆ</string>
-    <string name="recently_added">لەم ماوەیەدا بڵاوکرابێتەوە</string>
-    <string name="most_liked">زۆرترین بەدڵبوون</string>
     <string name="playlist_no_uploader">خۆکاری دانرا (هیچ بەرزکەرەوەیەک نەدۆزرایەوە)</string>
     <string name="recovering">دەگەڕێنرێتەوە</string>
     <string name="error_download_resource_gone">ناتوانرێ ئەم دابەزاندنە بهێنرێتەوە</string>

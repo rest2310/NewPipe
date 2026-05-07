@@ -118,7 +118,6 @@
     <string name="subscription_change_failed">チャンネル登録を変更できません</string>
     <string name="subscription_update_failed">チャンネル登録を更新できません</string>
     <string name="tab_subscriptions">登録チャンネル</string>
-    <string name="fragment_feed_title">新着</string>
     <string name="enable_search_history_title">検索履歴</string>
     <string name="enable_search_history_summary">検索履歴を記憶します</string>
     <string name="enable_watch_history_title">再生履歴</string>
@@ -153,13 +152,10 @@
     <string name="delete_item_search_history">このアイテムを検索履歴から削除しますか？</string>
     <string name="main_page_content">メインページのコンテンツ</string>
     <string name="blank_page_summary">空白ページ</string>
-    <string name="kiosk_page_summary">Kioskページ</string>
     <string name="channel_page_summary">チャンネルページ</string>
     <string name="select_a_channel">チャンネルを選択</string>
     <string name="no_channel_subscribed_yet">登録しているチャンネルはありません</string>
-    <string name="select_a_kiosk">Kioskを選択</string>
     <string name="trending">人気</string>
-    <string name="top_50">トップ50</string>
     <string name="play_queue_remove">削除</string>
     <string name="play_queue_stream_detail">詳細</string>
     <string name="play_queue_audio_settings">音声の設定</string>
@@ -270,7 +266,6 @@
     <string name="show_hold_to_append_title">「長押しでキューに追加」のヒントを表示</string>
     <string name="tracks">トラック</string>
     <string name="notification_channel_description">NewPipe のプレイヤーの通知</string>
-    <string name="new_and_hot">新着と人気</string>
     <string name="hold_to_append">長押しでキューに追加</string>
     <string name="start_here_on_popup">ポップアップで連続再生を開始</string>
     <string name="preferred_open_action_settings_title">お好みの「開く」アクション</string>
@@ -309,7 +304,6 @@
     <string name="restore_defaults">既定値に戻す</string>
     <string name="restore_defaults_confirmation">既定の設定を復元しますか\?</string>
     <string name="subscribers_count_not_available">登録者数は利用できません</string>
-    <string name="conferences">会議</string>
     <string name="start_accept_privacy_policy">ヨーロッパの一般データ保護規制（GDPR）に準拠するために、NewPipeの個人情報保護方針にご注意ください。よく読んでください。
 \n私たちに不具合報告を送るためには、これを受け入れなければなりません。</string>
     <string name="updates_setting_title">アプリの更新</string>
@@ -387,7 +381,6 @@
     <plurals name="videos">
         <item quantity="other">%s本の動画</item>
     </plurals>
-    <string name="default_kiosk_page_summary">デフォルトのKiosk</string>
     <string name="no_one_watching">誰も見ていません</string>
     <plurals name="watching">
         <item quantity="other">%s人が視聴中</item>
@@ -398,8 +391,6 @@
     </plurals>
     <string name="seek_duration_title">高速早送り/巻き戻し間隔</string>
     <string name="local">ローカル</string>
-    <string name="recently_added">最近追加された</string>
-    <string name="most_liked">最も評価された</string>
     <string name="recovering">修復中</string>
     <string name="error_download_resource_gone">ダウンロードが修復できません</string>
     <string name="choose_instance_prompt">インスタンスを選択</string>

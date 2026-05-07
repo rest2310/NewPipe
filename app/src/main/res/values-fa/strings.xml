@@ -88,7 +88,6 @@
     <string name="show_info">نمایش اطلاعات</string>
     <string name="tab_subscriptions">اشتراک‌ها</string>
     <string name="tab_bookmarks">سیاههٔ پخش‌های نشان شده</string>
-    <string name="fragment_feed_title">موارد جدید</string>
     <string name="controls_background_title">پس‌زمینه</string>
     <string name="controls_add_to_playlist_title">افزودن به</string>
     <string name="show_higher_resolutions_title">نمایش وضوح‌های بالاتر</string>
@@ -190,14 +189,10 @@
     <string name="title_most_played">بیشترین پخش‌شده</string>
     <string name="main_page_content">محتوای صفحه اصلی</string>
     <string name="blank_page_summary">صفحهٔ خالی</string>
-    <string name="kiosk_page_summary">صفحهٔ کیوسک</string>
     <string name="channel_page_summary">صفحهٔ کانال</string>
     <string name="select_a_channel">کانالی را انتخاب کنید</string>
     <string name="no_channel_subscribed_yet">هنز کانال مشترک‌شده‌ای وجود ندارد</string>
-    <string name="select_a_kiosk">یک کیوسک را انتخاب کنید</string>
     <string name="trending">محبوب</string>
-    <string name="top_50">۵۰ برتر</string>
-    <string name="new_and_hot">جدید و داغ</string>
     <string name="play_queue_remove">حذف</string>
     <string name="play_queue_stream_detail">جزئیات</string>
     <string name="play_queue_audio_settings">تنظیمات صدا</string>
@@ -355,7 +350,6 @@
     <string name="stop">توقف</string>
     <string name="max_retry_msg">بیشینه تلاش مجدد</string>
     <string name="pause_downloads_on_mobile_desc">این ویژگی زمانی که ارتباط را به داده همراه تغییر می‌دهید مفید است هرچند برخی بارگیری‌ها نمی‌توانند تعلیق شوند</string>
-    <string name="conferences">کنفرانس‌ها</string>
     <string name="close">بستن</string>
     <string name="watch_history_states_deleted">موقعیت‌های پخش حذف شدند</string>
     <string name="missing_file">پزونده حذف یا جابجا شده است</string>
@@ -437,10 +431,7 @@
     <string name="show_original_time_ago_title">نمایش زمان سپری‌شده اصلی هر مورد</string>
     <string name="unmute">صدادار</string>
     <string name="mute">بی‌صدا</string>
-    <string name="most_liked">مورد پسندترین‌ها</string>
-    <string name="recently_added">اخیرا اضافه شده</string>
     <string name="local">محلی</string>
-    <string name="default_kiosk_page_summary">کیوسک پیش‌فرض</string>
     <string name="done">انجام شد</string>
     <string name="subtitle_activity_recaptcha">وقتی انجام شد، «Done» یا «انجام شد» را بفشارید</string>
     <string name="infinite_videos">∞ ویدیو</string>

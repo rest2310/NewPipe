@@ -25,7 +25,6 @@
     <string name="show_info">தகவல் காண்பி</string>
     <string name="tab_subscriptions">சந்தாக்கள்</string>
     <string name="tab_bookmarks">நூற்குறித்த ஒளிச்சரங்கள்</string>
-    <string name="fragment_feed_title">புதிதாக</string>
     <string name="controls_background_title">பின்புலம்</string>
     <string name="controls_popup_title">திரைமேல்</string>
     <string name="controls_add_to_playlist_title">இதற்கு சேர்</string>
@@ -389,7 +388,6 @@
     <string name="recaptcha_request_toast">ரெக்காப்ட்சா அறைகூவல் கோரப்பட்டது</string>
     <string name="website_title">வலைத்தளம்</string>
     <string name="read_full_license">உரிமத்தைப் படியுங்கள்</string>
-    <string name="new_and_hot">புதிய மற்றும் சூடான</string>
     <string name="show_error_snackbar">பிழை சிற்றுண்டியைக் காட்டு</string>
     <string name="playback_step">படி</string>
     <string name="app_update_available_notification_text">%s பதிவிறக்க தட்டவும்</string>
@@ -403,7 +401,6 @@
     <string name="done">முடிந்தது</string>
     <string name="privacy_policy_title">நியூபைப்பின் தனியுரிமைக் கொள்கை</string>
     <string name="faq_title">அடிக்கடி கேட்கப்படும் கேள்விகள்</string>
-    <string name="top_50">முதல் 50</string>
     <string name="loading_stream_details">ச்ட்ரீம் விவரங்களை ஏற்றுகிறது…</string>
     <string name="duplicate_in_playlist">சாம்பல் நிறமாக இருக்கும் பிளேலிச்ட்களில் ஏற்கனவே இந்த உருப்படி உள்ளது.</string>
     <string name="playback_speed_control">பின்னணி வேக கட்டுப்பாடுகள்</string>
@@ -466,7 +463,6 @@
     <string name="on">ஆன்</string>
     <string name="max_retry_msg">அதிகபட்ச முயற்சிகள்</string>
     <string name="metadata_tags">குறிச்சொற்கள்</string>
-    <string name="default_kiosk_page_summary">இயல்புநிலை கியோச்க்</string>
     <string name="channel_page_summary">சேனல் பக்கம்</string>
     <string name="select_a_channel">ஒரு சேனலைத் தேர்ந்தெடுக்கவும்</string>
     <string name="could_not_import_all_files">எச்சரிக்கை: எல்லா கோப்புகளையும் இறக்குமதி செய்ய முடியவில்லை.</string>
@@ -594,16 +590,11 @@
     <string name="title_most_played">அதிகம் விளையாடியது</string>
     <string name="main_page_content_summary">என்ன தாவல்கள் முதன்மையான பக்கத்தில் காட்டப்பட்டுள்ளன</string>
     <string name="blank_page_summary">வெற்று பக்கம்</string>
-    <string name="kiosk_page_summary">கியோச்க் பக்கம்</string>
-    <string name="select_a_kiosk">ஒரு கியோச்கைத் தேர்ந்தெடுக்கவும்</string>
     <string name="export_complete_toast">ஏற்றுமதி</string>
     <string name="import_complete_toast">இறக்குமதி செய்யப்பட்டது</string>
     <string name="no_valid_zip_file">செல்லுபடியாகும் சிப் கோப்பு இல்லை</string>
     <string name="override_current_data">இது உங்கள் தற்போதைய அமைப்பை மேலெழுதும்.</string>
     <string name="error_unable_to_load_comments">கருத்துகளை ஏற்ற முடியவில்லை</string>
-    <string name="recently_added">அண்மைக் காலத்தில் சேர்க்கப்பட்டது</string>
-    <string name="most_liked">மிகவும் பிடித்தது</string>
-    <string name="conferences">மாநாடுகள்</string>
     <string name="title_activity_play_queue">வரிசை விளையாடுங்கள்</string>
     <string name="play_queue_remove">அகற்று</string>
     <string name="play_queue_stream_detail">விவரங்கள்</string>

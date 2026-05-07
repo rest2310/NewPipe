@@ -163,14 +163,11 @@
     <string name="no_valid_zip_file">Haqiqiy ZIP fayli yo‘q</string>
     <string name="import_complete_toast">Import qilindi</string>
     <string name="export_complete_toast">Eksport qilindi</string>
-    <string name="select_a_kiosk">kiosk tanlash</string>
     <string name="no_playlist_bookmarked_yet">Hali pleylist xatcho\'plari yo\'q</string>
     <string name="select_a_playlist">Pleylistni tanlang</string>
     <string name="no_channel_subscribed_yet">Hech qanday kanal obunasi yo\'q</string>
     <string name="select_a_channel">Kanal tanlash</string>
     <string name="channel_page_summary">Kanal sahifasi</string>
-    <string name="default_kiosk_page_summary">Standart kiosk</string>
-    <string name="kiosk_page_summary">Kiosk sahifasi</string>
     <string name="blank_page_summary">Bo\'sh sahifa</string>
     <string name="main_page_content_summary">Asosiy sahifada qanday yorliqlar ko\'rsatilgan</string>
     <string name="main_page_content">Asosiy sahifaning tarkibi</string>
@@ -357,7 +354,6 @@
     <string name="feed_subscription_not_loaded_count">Yuklanmadi: %d</string>
     <string name="feed_oldest_subscription_update">Oxirgi yangilanish: %s</string>
     <string name="feed_groups_header_title">Kanal guruhlari</string>
-    <string name="fragment_feed_title">Nima yangiliklar</string>
     <plurals name="days">
         <item quantity="one">%d kun</item>
         <item quantity="other">%d kunlar</item>
@@ -514,12 +510,7 @@
     <string name="play_queue_stream_detail">Detallar</string>
     <string name="play_queue_remove">Olib tashlash</string>
     <string name="title_activity_play_queue">Play navbat</string>
-    <string name="conferences">Konferentsiyalar</string>
-    <string name="most_liked">Eng yoqqanlari</string>
-    <string name="recently_added">Yaqinda qo\'shilgan</string>
     <string name="local">Mahalliy</string>
-    <string name="new_and_hot">Yangi va qaynoqlari</string>
-    <string name="top_50">Top 50</string>
     <string name="trending">Ommabop</string>
     <string name="error_unable_to_load_comments">Fikrlarni yuklab bo‘lmadi</string>
     <string name="import_settings">Sozlamalarni ham import qilmoqchimisiz\?</string>

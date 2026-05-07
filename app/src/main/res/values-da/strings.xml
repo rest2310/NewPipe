@@ -28,7 +28,6 @@
     <string name="tab_subscriptions">Abonnementer</string>
     <string name="tab_bookmarks">Gemte Playlister</string>
     <string name="tab_choose">Vælg Fane</string>
-    <string name="fragment_feed_title">Nyheder</string>
     <string name="controls_background_title">Baggrund</string>
     <string name="controls_popup_title">Popup</string>
     <string name="controls_add_to_playlist_title">Føj til</string>
@@ -233,11 +232,9 @@
     <string name="main_page_content">Indhold af hovedside</string>
     <string name="main_page_content_summary">Hvilke faner vises på hovedsiden</string>
     <string name="blank_page_summary">Tom side</string>
-    <string name="kiosk_page_summary">Kioskside</string>
     <string name="channel_page_summary">Kanalside</string>
     <string name="select_a_channel">Vælg en kanal</string>
     <string name="no_channel_subscribed_yet">Ingen kanalabonnementer endnu</string>
-    <string name="select_a_kiosk">Vælg en kiosk</string>
     <string name="export_complete_toast">Eksporteret</string>
     <string name="import_complete_toast">Importeret</string>
     <string name="no_valid_zip_file">Ingen gyldig ZIP-fil</string>
@@ -245,8 +242,6 @@
     <string name="override_current_data">Dette vil overskrive dine nuværende indstillinger.</string>
     <string name="import_settings">Vil du også importere indstillinger\?</string>
     <string name="trending">Populært lige nu</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Nyt og populært</string>
     <string name="play_queue_remove">Fjern</string>
     <string name="play_queue_stream_detail">Detaljer</string>
     <string name="play_queue_audio_settings">Lydindstillinger</string>
@@ -312,7 +307,6 @@
     <string name="pause">Pause</string>
     <string name="subscriptions_import_unsuccessful">Kunne ikke importere abonnementer</string>
     <string name="subscriptions_export_unsuccessful">Kunne ikke eksportere abonnementer</string>
-    <string name="conferences">Konferencer</string>
     <string name="start_here_on_background">Start afspilning i baggrunden</string>
     <string name="start_here_on_popup">Start afspilning i et popup</string>
     <string name="info_labels">Hvad:\nForespørgsel:\nIndholdssprog:\nIndholdsland:\nApp-sprog:\nTjeneste:\nGMT-tid:\nPakke:\nVersion:\nOS-version:</string>
@@ -530,7 +524,6 @@
     <string name="paid_content">Dette indhold er kun tilgængeligt for brugere, som har betalt for det, så det kan ikke streames eller hentes af NewPipe.</string>
     <string name="account_terminated">Konto lukket</string>
     <string name="private_content">Dette indhold er privat, så det kan ikke streames eller hentes af NewPipe.</string>
-    <string name="recently_added">Nyligt tilføjede</string>
     <string name="featured">Fremhævede</string>
     <plurals name="listening">
         <item quantity="one">%s lytter</item>
@@ -584,9 +577,7 @@
     <string name="playlist_no_uploader">Autogenereret (ingen uploader fundet)</string>
     <string name="unmute">Slå lyd til</string>
     <string name="mute">Sæt på lydløs</string>
-    <string name="most_liked">Mest likede</string>
     <string name="error_unable_to_load_comments">Kunne ikke indlæse kommentarer</string>
-    <string name="default_kiosk_page_summary">Standard Kiosk</string>
     <string name="done">Færdig</string>
     <string name="subtitle_activity_recaptcha">Tryk på \"Færdig\", når den er løst</string>
     <string name="no_comments">Ingen kommentarer</string>
@@ -804,10 +795,6 @@
     <string name="delete_file">Slet fil</string>
     <string name="account_terminated_service_provides_reason">Kontoen er blevet lukket\n\n%1$s angiver følgende årsag: %2$s</string>
     <string name="channel_tab_likes">Likes</string>
-    <string name="migration_info_6_7_title">SoundCloud Top 50-siden fjernet</string>
-    <string name="migration_info_6_7_message">SoundCloud har udfaset de oprindelige Top 50-hitlister. Den tilhørende fane er blevet fjernet fra din hovedside.</string>
     <string name="migration_info_7_8_title">YouTube kombineret trending fjernet</string>
     <string name="migration_info_7_8_message">YouTube har udfaset den kombinerede trending-side pr. 21. juli 2025. NewPipe har erstattet standardsiden for trending med trending livestreams.\n\nDu kan også vælge andre trending-sider under \"Indstillinger &gt; Indhold &gt; Indhold på hovedsiden\".</string>
-    <string name="trending_gaming">Gaming-trends</string>
-    <string name="trending_podcasts">Trending podcasts</string>
 </resources>

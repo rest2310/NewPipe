@@ -119,7 +119,6 @@
     <string name="contribution_title">Kontribusi</string>
     <string name="subscribe_button_title">Berlangganan</string>
     <string name="subscribed_button_title">Dilanggani</string>
-    <string name="fragment_feed_title">Apa Yang Baru</string>
     <string name="resume_on_audio_focus_gain_title">Lanjutkan pemutaran</string>
     <string name="resume_on_audio_focus_gain_summary">Melanjutkan pemutaran setelah interupsi (mis. panggilan telepon)</string>
     <string name="enable_search_history_title">Riwayat pencarian</string>
@@ -191,19 +190,15 @@
     <string name="title_most_played">Sering Diputar</string>
     <string name="main_page_content">Konten halaman utama</string>
     <string name="blank_page_summary">Halaman kosong</string>
-    <string name="kiosk_page_summary">Halaman kiosk</string>
     <string name="channel_page_summary">Halaman saluran</string>
     <string name="select_a_channel">Pilih saluran</string>
     <string name="no_channel_subscribed_yet">Belum ada saluran langganan</string>
-    <string name="select_a_kiosk">Pilih kiosk</string>
     <string name="export_complete_toast">Diekspor</string>
     <string name="import_complete_toast">Diimpor</string>
     <string name="no_valid_zip_file">Berkas ZIP tidak valid</string>
     <string name="could_not_import_all_files">Perhatian: Tidak bisa mengimpor semua berkas.</string>
     <string name="override_current_data">Ini akan menimpa pengaturan Anda saat ini.</string>
     <string name="trending">Sedang Tren</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Baru dan aktual</string>
     <string name="play_queue_remove">Hapus</string>
     <string name="play_queue_stream_detail">Detail</string>
     <string name="play_queue_audio_settings">Pengaturan Audio</string>
@@ -316,7 +311,6 @@
     <string name="restore_defaults_confirmation">Apakah Anda ingin mengembalikan ke bawaan\?</string>
     <string name="subscribers_count_not_available">Jumlah pelanggan tidak tersedia</string>
     <string name="main_page_content_summary">Tab apa yang ditampilkan di halaman utama</string>
-    <string name="conferences">Konferensi</string>
     <string name="updates_setting_title">Pembaruan</string>
     <string name="updates_setting_description">Tampilkan pemberitahuan untuk meminta pembaruan aplikasi saat versi baru tersedia</string>
     <string name="list_view_mode">Mode tampilan berdaftar</string>
@@ -396,13 +390,10 @@
         <item quantity="other">%s pendengar</item>
     </plurals>
     <string name="local">Lokal</string>
-    <string name="recently_added">Baru ditambahkan</string>
-    <string name="most_liked">Disukai terbanyak</string>
     <string name="playlist_no_uploader">Dibuat otomatis (pengunggah tidak ditemukan)</string>
     <string name="recovering">memulihkan</string>
     <string name="error_download_resource_gone">Tidak bisa memulihkan unduhan ini</string>
     <string name="choose_instance_prompt">Pilih situs</string>
-    <string name="default_kiosk_page_summary">Kedai Bawaan</string>
     <string name="clear_download_history">Hapus riwayat unduhan</string>
     <string name="delete_downloaded_files">Hapus berkas yang diunduh</string>
     <string name="permission_display_over_apps">Izinkan untuk ditampilkan di atas aplikasi lain</string>
@@ -783,8 +774,6 @@
     <string name="search_with_service_name">Cari %1$s</string>
     <string name="search_with_service_name_and_filter">Cari %1$s (%2$s)</string>
     <string name="channel_tab_likes">Suka</string>
-    <string name="migration_info_6_7_title">Halaman Top 50 SoundCloud dihapus</string>
-    <string name="migration_info_6_7_message">SoundCloud telah menghentikan dukungan tangga lagu Top 50. Tab terkait telah dihapus dari halaman utama Anda.</string>
     <string name="permission_display_over_apps_message">Untuk menggunakan Pemutar Sembul, silakan pilih %1$s dalam menu pengaturan Android berikut dan aktifkan %2$s.</string>
     <string name="permission_display_over_apps_permission_name">\"Izinkan menampilkan di atas aplikasi\"</string>
     <string name="delete_file">Hapus berkas</string>
@@ -792,10 +781,6 @@
     <string name="account_terminated_service_provides_reason">Akun dihapus\n\n%1$s menyediakan alasan ini: %2$s</string>
     <string name="migration_info_7_8_title">Tren terpadu YouTube dihilangkan</string>
     <string name="migration_info_7_8_message">YouTube telah mengakhiri halaman tren terpadu pada 21 Juli 2025. NewPipe mengganti halaman tren bawaan dengan tren siaran langsung.\n\nAnda juga dapat memilih halaman tren berbeda dalam \"Pengaturan &gt; Konten &gt; Konten di halaman utama\".</string>
-    <string name="trending_gaming">Tren permainan</string>
-    <string name="trending_podcasts">Tren siniar</string>
-    <string name="trending_movies">Tren film dan acara</string>
-    <string name="trending_music">Tren musik</string>
     <string name="entry_deleted">Entri dihapus</string>
     <string name="player_http_403">Kesalahan HTTP 403 diterima dari server saat memutar, dapat disebabkan oleh URL streaming kedaluwarsa atau pemblokiran IP</string>
     <string name="player_http_invalid_status">Kesalahan HTTP %1$s diterima dari server saat memutar</string>

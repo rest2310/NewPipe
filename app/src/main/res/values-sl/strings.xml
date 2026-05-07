@@ -116,7 +116,6 @@
     <string name="subscription_change_failed">Ni bilo mogoče spremeniti naročnine</string>
     <string name="subscription_update_failed">Ni bilo mogoče posodobiti naročnine</string>
     <string name="tab_subscriptions">Naročnine</string>
-    <string name="fragment_feed_title">Kaj je novega</string>
     <string name="settings_category_downloads_title">Prejmi</string>
     <string name="settings_file_charset_title">Dovoljeni znaki v imenih datotek</string>
     <string name="settings_file_replacement_character_summary">Neveljavni znaki so zamenjani z znakom</string>
@@ -170,8 +169,6 @@
     <string name="blank_page_summary">Prazna stran</string>
     <string name="channel_page_summary">Stran kanalov</string>
     <string name="select_a_channel">Izbor kanala</string>
-    <string name="top_50">Najboljših 50</string>
-    <string name="new_and_hot">Novo in priljubljeno</string>
     <string name="play_queue_remove">Odstrani</string>
     <string name="play_queue_stream_detail">Podrobnosti</string>
     <string name="play_queue_audio_settings">Nastavitve zvoka</string>
@@ -247,8 +244,6 @@
     <string name="always_ask_open_action">Vedno vprašaj</string>
     <string name="video_player">Predvajalnik videa</string>
     <string name="start_here_on_background">Začni igrati v ozadju</string>
-    <string name="most_liked">Najbolj všečkan</string>
-    <string name="recently_added">Dodano nedolgo nazaj</string>
     <string name="local">Lokalno</string>
     <string name="error_unable_to_load_comments">Ni mogoče naložiti komentarjev</string>
     <string name="no_valid_zip_file">Ni veljavne ZIP datoteke</string>
@@ -342,7 +337,6 @@
     <string name="enqueue_stream">Uvrsti</string>
     <string name="hold_to_append">Pridržite za uvrstitev</string>
     <string name="title_activity_play_queue">Predvajaj seznam</string>
-    <string name="conferences">Konference</string>
     <string name="trending">Priljubljeno</string>
     <string name="override_current_data">To bo nadomestilo vaše trenutne nastavitve.</string>
     <string name="could_not_import_all_files">Opozorilo: ni mogoče uvoziti vseh datotek.</string>
@@ -432,7 +426,6 @@
     <string name="limit_data_usage_none_description">Brez omejitev</string>
     <string name="decline">Zavrni</string>
     <string name="playback_step">Korak</string>
-    <string name="kiosk_page_summary">Stran kiosk</string>
     <string name="main_page_content_summary">Kateri zavihki so prikazani na domači strani</string>
     <string name="recaptcha_solve">Rešiti</string>
     <string name="metadata_cache_wipe_summary">Izbrišite vse predpomnjene podatke spletnih strani</string>

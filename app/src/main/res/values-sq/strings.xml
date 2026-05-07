@@ -12,7 +12,6 @@
     <string name="did_you_mean">A po mendonit \"%1$s\"\?</string>
     <string name="share_dialog_title">Shpërndaje me</string>
     <string name="show_info">Shfaq informatat</string>
-    <string name="fragment_feed_title">Të rejat</string>
     <string name="controls_add_to_playlist_title">Shto në</string>
     <string name="default_resolution_title">Rezolucioni i parazgjedhur</string>
     <string name="play_with_kodi_title">Luaj me Kodi</string>
@@ -183,12 +182,7 @@
     <string name="play_queue_audio_settings">Aranzhimet Audio</string>
     <string name="play_queue_stream_detail">Detaje</string>
     <string name="play_queue_remove">Hiq</string>
-    <string name="conferences">Konferencat</string>
-    <string name="most_liked">Më të pëlqyerat</string>
-    <string name="recently_added">Të shtuara së fundmi</string>
     <string name="local">Lokale</string>
-    <string name="new_and_hot">Të rejat dhe të nxehtat</string>
-    <string name="top_50">Top 50</string>
     <string name="trending">E trendit</string>
     <string name="error_unable_to_load_comments">Nuk mundën të ngarkohen komentet</string>
     <string name="import_settings">A dëshironi që të importoni dhe aranzhimet gjithashtu\?</string>
@@ -197,12 +191,9 @@
     <string name="no_valid_zip_file">Nuk është skedar ZIP i vlefshëm</string>
     <string name="import_complete_toast">U importua</string>
     <string name="export_complete_toast">U eksportua</string>
-    <string name="select_a_kiosk">Zgjidhni një kioskë</string>
     <string name="no_channel_subscribed_yet">Nuk ka ende kanale të abonuara</string>
     <string name="select_a_channel">Zgjidhni një kanal</string>
     <string name="channel_page_summary">Faqja e Kanaleve</string>
-    <string name="default_kiosk_page_summary">Kioska e Parazgjedhur</string>
-    <string name="kiosk_page_summary">Faqja Kioskë</string>
     <string name="blank_page_summary">Faqe Bosh</string>
     <string name="main_page_content_summary">Cilat tab-e shfaqen në faqen kryesore</string>
     <string name="main_page_content">Përmbajtja e faqes kryesore</string>

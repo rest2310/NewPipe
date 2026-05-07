@@ -103,7 +103,6 @@
     <string name="feed_notification_loading">A carregar…</string>
     <string name="play_audio">Áudio</string>
     <string name="show_original_time_ago_title">Mostrar antiguidade nos itens</string>
-    <string name="default_kiosk_page_summary">\'Kiosk\' padrão</string>
     <string name="playlist_creation_success">Lista de reprodução criada</string>
     <string name="channel_created_by">Criado por %s</string>
     <plurals name="seconds">
@@ -178,7 +177,6 @@
     <string name="import_settings">Também deseja importar as definições\?</string>
     <string name="bookmark_playlist">Guardar lista de reprodução como favorita</string>
     <string name="playback_step">Passo</string>
-    <string name="top_50">Top 50</string>
     <string name="detail_dislikes_img_view_description">Não gosto</string>
     <string name="import_file_title">Importar ficheiro</string>
     <string name="notification_channel_name">Notificação NewPipe</string>
@@ -200,7 +198,6 @@
     <string name="show_next_and_similar_title">Mostrar vídeos \'Seguintes\' e \'Semelhantes\'</string>
     <string name="queued">na fila</string>
     <string name="open_in_browser">Abrir no navegador</string>
-    <string name="new_and_hot">Novos e tendências</string>
     <string name="clear_search_history_summary">Remove o histórico de pesquisas</string>
     <string name="app_update_notification_channel_name">Notificação de nova versão</string>
     <string name="select_a_playlist">Selecione uma lista de reprodução</string>
@@ -305,7 +302,6 @@
     <string name="playback_speed_control">Controlos para velocidade de reprodução</string>
     <string name="subscriptions_export_unsuccessful">Não foi possível exportar as subscrições</string>
     <string name="enable_disposed_exceptions_summary">Forçar reporte de exceções Rx não entregáveis ocorrendo fora do fragmento ou ciclo de vida da atividade após eliminação</string>
-    <string name="recently_added">Recentes</string>
     <plurals name="videos">
         <item quantity="one">%s vídeo</item>
         <item quantity="many">%s vídeos</item>
@@ -323,7 +319,6 @@
     <string name="import_from">Importar de</string>
     <string name="one_item_deleted">1 item eliminado.</string>
     <string name="video_streams_empty">Não foram encontrados vídeos</string>
-    <string name="kiosk_page_summary">Página \'kiosk\'</string>
     <plurals name="hours">
         <item quantity="one">%d hora</item>
         <item quantity="many">%d horas</item>
@@ -340,7 +335,6 @@
     <string name="general_error">Erro</string>
     <string name="clear_playback_states_title">Limpar posições de reprodução</string>
     <string name="import_ongoing">A importar…</string>
-    <string name="fragment_feed_title">Novidades</string>
     <string name="local">Local</string>
     <string name="app_ui_crash">Aplicação terminou em erro</string>
     <string name="delete_item_search_history">Deseja remover este item do histórico de pesquisas\?</string>
@@ -348,7 +342,6 @@
     <string name="app_license">NewPipe é um software livre \"copyleft\": pode utilizar, estudar, partilhar e melhorar a aplicação. Especificamente, pode redistribuir e/ou modificar a aplicação nos termos da GNU General Public License, conforme publicada pela Free Software Foundation, tanto a versão 3 da licença ou (por opção) qualquer versão posterior.</string>
     <string name="infinite_videos">∞ vídeos</string>
     <string name="export_ongoing">A exportar…</string>
-    <string name="most_liked">Mais apreciados</string>
     <string name="downloads_storage_use_saf_title">Utilizar seletor de pastas do sistema (SAF)</string>
     <string name="play_queue_stream_detail">Detalhes</string>
     <string name="network_error">Erro de rede</string>
@@ -365,7 +358,6 @@
     <string name="contribution_title">Participar</string>
     <string name="controls_background_title">Segundo plano</string>
     <string name="unknown_content">[Desconhecido]</string>
-    <string name="select_a_kiosk">Selecione um \"kiosk\"</string>
     <string name="channels">Canais</string>
     <string name="max_retry_msg">Tentativas máximas</string>
     <string name="title_activity_history">Histórico</string>
@@ -401,7 +393,6 @@
     <string name="hold_to_append">Toque longo para colocar na fila</string>
     <string name="downloads_title">Transferências</string>
     <string name="error_file_creation">Não foi possível criar o ficheiro</string>
-    <string name="conferences">Conferências</string>
     <string name="saved_tabs_invalid_json">Não foi possível ler as guias gravadas, portanto usando as guias predefinidas</string>
     <string name="close">Fechar</string>
     <string name="caption_none">Sem legendas</string>
@@ -811,14 +802,8 @@
     <string name="search_with_service_name">Pesquisar %1$s</string>
     <string name="search_with_service_name_and_filter">Pesquisar %1$s (%2$s)</string>
     <string name="channel_tab_likes">Gostos</string>
-    <string name="migration_info_6_7_title">Página Top 50 do SoundCloud removida</string>
-    <string name="migration_info_6_7_message">O SoundCloud descontinuou os gráficos originais do Top 50. A guia correspondente foi removida da sua página principal.</string>
     <string name="migration_info_7_8_title">Tendência combinada do YouTube removida</string>
     <string name="migration_info_7_8_message">O YouTube descontinuou a página de tendência combinada a partir de 21 de julho de 2025. O NewPipe substituiu a página de tendência predefinida com as streams ao vivo de tendência.\n\nTambém pode escolher páginas de tendência diferentes em \"Definições &gt; Conteúdo &gt; Conteúdo da página principal\".</string>
-    <string name="trending_gaming">Tendências de jogos</string>
-    <string name="trending_podcasts">Tendências de podcasts</string>
-    <string name="trending_movies">Tendências de filmes e shows</string>
-    <string name="trending_music">Tendências de música</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>

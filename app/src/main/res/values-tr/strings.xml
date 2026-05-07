@@ -124,7 +124,6 @@
     <string name="subscription_change_failed">Abonelik değiştirilemedi</string>
     <string name="subscription_update_failed">Abonelik güncellenemedi</string>
     <string name="tab_subscriptions">Abonelikler</string>
-    <string name="fragment_feed_title">Yenilikler</string>
     <string name="enable_search_history_title">Arama geçmişi</string>
     <string name="enable_search_history_summary">Arama sorgularını yerel olarak sakla</string>
     <string name="enable_watch_history_title">İzleme geçmişi</string>
@@ -162,14 +161,10 @@
     <string name="player_recoverable_failure">Oynatıcı hatasından kurtarılıyor</string>
     <string name="main_page_content">Ana sayfanın içeriği</string>
     <string name="blank_page_summary">Boş sayfa</string>
-    <string name="kiosk_page_summary">Kiosk sayfası</string>
     <string name="channel_page_summary">Kanal sayfası</string>
     <string name="select_a_channel">Kanal seçin</string>
     <string name="no_channel_subscribed_yet">Henüz kanal aboneliği yok</string>
-    <string name="select_a_kiosk">Kiosk seçin</string>
     <string name="trending">Popüler</string>
-    <string name="top_50">En iyi 50</string>
-    <string name="new_and_hot">Yeni ve popüler</string>
     <string name="play_queue_remove">Kaldır</string>
     <string name="play_queue_stream_detail">Ayrıntılar</string>
     <string name="play_queue_audio_settings">Ses Ayarları</string>
@@ -350,7 +345,6 @@
     <string name="pause_downloads_on_mobile">Kotalı bağlantılarda durdur</string>
     <string name="pause_downloads_on_mobile_desc">Bazı indirmelerin bekletilememesine rağmen mobil veriye geçerken kullanışlıdır</string>
     <string name="events">Olaylar</string>
-    <string name="conferences">Konferanslar</string>
     <string name="missions_header_pending">Beklemede</string>
     <string name="show_comments_title">Yorumları göster</string>
     <string name="show_comments_summary">Yorumları gizlemek için kapatın</string>
@@ -389,7 +383,6 @@
         <item quantity="one">%s video</item>
         <item quantity="other">%s video</item>
     </plurals>
-    <string name="default_kiosk_page_summary">Öntanımlı Kiosk</string>
     <string name="no_one_watching">Kimse izlemiyor</string>
     <plurals name="watching">
         <item quantity="one">%s izleyici</item>
@@ -402,8 +395,6 @@
     </plurals>
     <string name="seek_duration_title">Hızlı ileri/geri atlama süresi</string>
     <string name="local">Yerel</string>
-    <string name="recently_added">Son eklenen</string>
-    <string name="most_liked">En çok beğenilen</string>
     <string name="playlist_no_uploader">Kendiliğinden oluşturulan (yükleyen bulunamadı)</string>
     <string name="recovering">kurtarılıyor</string>
     <string name="error_download_resource_gone">Bu indirme kurtarılamıyor</string>
@@ -797,17 +788,11 @@
     <string name="channel_tab_likes">Beğeni</string>
     <string name="search_with_service_name">%1$s İle Ara</string>
     <string name="search_with_service_name_and_filter">%1$s İle Ara (%2$s)</string>
-    <string name="migration_info_6_7_title">SoundCloud Top 50 sayfası kaldırıldı</string>
-    <string name="migration_info_6_7_message">SoundCloud, özgün Top 50 listesini artık yayınlamıyor. İlgili sekme ana sayfanızdan kaldırıldı.</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>
     <string name="migration_info_7_8_title">YouTube birleşik trendler kaldırıldı</string>
     <string name="migration_info_7_8_message">YouTube, 21 Temmuz 2025\'ten sonra birleşik trendler sayfasını kaldırdı. NewPipe, öntanımlı trendler sayfasını trend canlı akışlarla değiştirdi.\n\n\"Ayarlar &gt; İçerik &gt; Ana sayfanın içeriği\"nden başka trend sayfalar seçebilirsiniz.</string>
-    <string name="trending_gaming">Oyun trendleri</string>
-    <string name="trending_podcasts">Trend podcastler</string>
-    <string name="trending_movies">Trend film ve gösteriler</string>
-    <string name="trending_music">Trend müzik</string>
     <string name="permission_display_over_apps_message">Açılır Oynatıcıyı kullanmak için Android ayarlar menüsünden %1$s seçilmeli ve %2$s etkinleştirilmeli.</string>
     <string name="permission_display_over_apps_permission_name">“Diğer uygulamaların üstünde göstermeye izin ver”</string>
     <string name="delete_file">Dosyayı sil</string>

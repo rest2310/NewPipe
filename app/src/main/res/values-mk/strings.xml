@@ -26,7 +26,6 @@
     <string name="show_info">Покажи информации</string>
     <string name="tab_subscriptions">Членства</string>
     <string name="tab_bookmarks">Обележани плејлисти</string>
-    <string name="fragment_feed_title">Новости</string>
     <string name="controls_background_title">Позадина</string>
     <string name="controls_popup_title">Подпрозорче</string>
     <string name="controls_add_to_playlist_title">Додај на</string>
@@ -210,19 +209,15 @@
     <string name="title_most_played">Најгледани</string>
     <string name="main_page_content">Содржина</string>
     <string name="blank_page_summary">Празна страна</string>
-    <string name="kiosk_page_summary">Киоск</string>
     <string name="channel_page_summary">Канали</string>
     <string name="select_a_channel">Одбери канал</string>
     <string name="no_channel_subscribed_yet">Во моментов немате претплати</string>
-    <string name="select_a_kiosk">Одбери киоск</string>
     <string name="export_complete_toast">Извезувањето беше успешно</string>
     <string name="import_complete_toast">Увезувањето беше успешно</string>
     <string name="no_valid_zip_file">Нема валиден ZIP фајл</string>
     <string name="could_not_import_all_files">Предупредување: Не се внесени сите датотеки.</string>
     <string name="override_current_data">Ова ќе ги избрише моменталните поставки.</string>
     <string name="trending">Популарни</string>
-    <string name="top_50">Топ 50</string>
-    <string name="new_and_hot">Ново и популарно</string>
     <string name="play_queue_remove">Одстрани</string>
     <string name="play_queue_stream_detail">Детали</string>
     <string name="play_queue_audio_settings">Звучни поставки</string>
@@ -349,7 +344,6 @@
     <string name="max_retry_desc">Максимален број обиди пред откажување на преземањето</string>
     <string name="pause_downloads_on_mobile_desc">Корисно при префрлување на мобилни податоци, иако некои преземања не можат да бидат прекинати</string>
     <string name="events">Настани</string>
-    <string name="conferences">Конференции</string>
     <string name="show_comments_title">Прикажи коментари</string>
     <string name="autoplay_title">Автоматско пуштање</string>
     <string name="no_comments">Нема коментари</string>
@@ -395,7 +389,6 @@
         <item quantity="other">%s слушатели</item>
     </plurals>
     <string name="local">Местно</string>
-    <string name="recently_added">Скоро додадено</string>
     <string name="error_insufficient_storage">Нема доволно слободна меморија на уредот</string>
     <string name="feed_notification_loading">Вчитување на фидот…</string>
     <string name="metadata_category">Категорија</string>
@@ -434,7 +427,6 @@
     <string name="tablet_mode_title">Таблет-режим</string>
     <string name="on">Вклучено</string>
     <string name="overwrite_failed">неуспешно презапишување на фајлот</string>
-    <string name="most_liked">Најпопуларни</string>
     <string name="no_streams">Нема стримови</string>
     <string name="main_page_content_swipe_remove">Лизнете елементи за да ги избришете</string>
     <string name="notification_scale_to_square_image_title">Исечи ја сликичката на сооднос 1:1</string>
@@ -663,7 +655,6 @@
     <string name="done">Готово</string>
     <string name="no_dir_yet">Сѐ уште не е избрана папка за преземања, одберете ја стандардната папка за преземања сега</string>
     <string name="no_playlist_bookmarked_yet">Во моментов нема обележани плејлисти</string>
-    <string name="default_kiosk_page_summary">Стандарден киоск</string>
     <string name="faq_description">Ако имате проблеми со користењето на апликацијата, не заборавајте да ги проверите одговориве на често поставувани прашања!</string>
     <string name="reset_all_settings">Ресетирањето на сите поставки ќе ги отфрли сите Ваши претпочитани поставки и ќе ја рестартира апликацијата.\n\nСигурни ли сте дека сакате да продолжите?</string>
     <string name="new_seek_duration_toast">Поради ограничувања на ExoPlayer, стапката на премотување е поставена на %d секунди</string>

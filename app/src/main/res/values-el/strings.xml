@@ -78,7 +78,6 @@
     <string name="subscription_update_failed">Αδύνατη η ενημέρωση της εγγραφής</string>
     <string name="tab_subscriptions">Συνδρομές</string>
     <string name="tab_bookmarks">Λίστες αναπαραγωγής με σελιδοδείκτες</string>
-    <string name="fragment_feed_title">Τι νέο υπάρχει</string>
     <string name="controls_background_title">Στο παρασκήνιο</string>
     <string name="controls_popup_title">Αναδυόμενο παράθυρο</string>
     <string name="controls_add_to_playlist_title">Προσθήκη σε</string>
@@ -229,11 +228,9 @@
     <string name="title_most_played">Αναπαράχθηκε περισσότερο</string>
     <string name="main_page_content">Περιεχόμενο της κεντρικής σελίδας</string>
     <string name="blank_page_summary">Κενή σελίδα</string>
-    <string name="kiosk_page_summary">Σελίδα περιπτέρου</string>
     <string name="channel_page_summary">Σελίδα καναλιών</string>
     <string name="select_a_channel">Επιλέξτε ένα κανάλι</string>
     <string name="no_channel_subscribed_yet">Δεν έχει γίνει εγγραφή σε κάποιο κανάλι ακόμα</string>
-    <string name="select_a_kiosk">Επιλέξτε ένα περίπτερο</string>
     <string name="export_complete_toast">Η εξαγωγή ολοκληρώθηκε</string>
     <string name="import_complete_toast">Η εισαγωγή ολοκληρώθηκε</string>
     <string name="no_valid_zip_file">Μη έγκυρο αρχείο ZIP</string>
@@ -246,8 +243,6 @@
     <string name="hold_to_append">Πιέστε παρατεταμένα για προσθήκη στην ουρά</string>
     <string name="start_here_on_background">Εκκίνηση αναπαραγωγής στο παρασκήνιο</string>
     <string name="start_here_on_popup">Εκκίνηση αναπαραγωγής σε ένα αναδυόμενο παράθυρο</string>
-    <string name="top_50">Τοπ 50</string>
-    <string name="new_and_hot">Καινούρια και δημοφιλή</string>
     <string name="preferred_open_action_settings_title">Προτιμώμενη ενέργεια κοινοποίησης</string>
     <string name="preferred_open_action_settings_summary">Προεπιλεγμένη ενέργεια κοινοποίησης περιεχομένου — %s</string>
     <string name="video_player">Συσκευή αναπαραγωγής βίντεο</string>
@@ -322,7 +317,6 @@
     <string name="restore_defaults_confirmation">Θέλετε να επαναφέρετε τις προεπιλεγμένες ρυθμίσεις;</string>
     <string name="subscribers_count_not_available">Το πλήθος των συνδρομητών δεν είναι διαθέσιμο</string>
     <string name="main_page_content_summary">Ποιές καρτέλες θα εμφανίζονται στην αρχική σελίδα</string>
-    <string name="conferences">Συνέδρια</string>
     <string name="updates_setting_title">Ενημερώσεις</string>
     <string name="updates_setting_description">Εμφάνιση ειδοποίησης όταν μια υπάρχει μια νεότερη έκδοση</string>
     <string name="list_view_mode">Προβολή λίστας</string>
@@ -400,9 +394,7 @@
         <item quantity="one">%s ακροατής</item>
         <item quantity="other">%s ακροατές</item>
     </plurals>
-    <string name="default_kiosk_page_summary">Προεπιλεγμένο περίπτερο</string>
     <string name="local">Τοπικά</string>
-    <string name="recently_added">Προστέθηκαν πρόσφατα</string>
     <string name="playlist_no_uploader">Δημιουργήθηκε αυτόματα (δεν βρέθηκε χρήστης μεταφόρτωσης)</string>
     <string name="recovering">σε ανάκτηση</string>
     <string name="error_download_resource_gone">Δεν είναι δυνατή η ανάκτηση αυτής της λήψης</string>
@@ -520,7 +512,6 @@
     <string name="unmute">Κατάργηση σίγασης</string>
     <string name="enqueued">Προστέθηκε στην ουρά</string>
     <string name="enqueue_stream">Προσθήκη στην ουρά</string>
-    <string name="most_liked">Πιο αγαπημένα</string>
     <string name="error_report_open_github_notice">Παρακαλούμε ελέγξτε αν το πρόβλημα σας έχει ήδη αναφερθεί. Οι διπλές αναφορές μας στερούν το χρόνο που θα μπορούσαμε να διαθέσουμε για την επίλυση του προβλήματος.</string>
     <string name="clear_cookie_summary">Εκκαθάριση των cookies που αποθηκεύει η εφαρμογή όταν επιλύετε ένα reCAPTCHA</string>
     <string name="recaptcha_cookies_cleared">Τα reCAPTCHA cookies εκκαθαρίστηκαν</string>
@@ -797,14 +788,8 @@
     <string name="search_with_service_name">Αναζήτηση %1$s</string>
     <string name="search_with_service_name_and_filter">Αναζήτηση %1$s (%2$s)</string>
     <string name="channel_tab_likes">Μου αρέσει</string>
-    <string name="migration_info_6_7_title">Η σελίδα των SoundCloud Top 50 αφαιρέθηκε</string>
-    <string name="migration_info_6_7_message">Το SoundCloud έχει καταργήσει τα αρχικά charts με τα Top 50. Η αντίστοιχη καρτέλα έχει αφαιρεθεί από την κύρια σελίδα σας.</string>
     <string name="migration_info_7_8_title">Οι συνδυασμένες τάσεις στο YouTube καταργήθηκαν</string>
     <string name="migration_info_7_8_message">Το YouTube έχει καταργήσει τη συνδυασμένη σελίδα με τάσεις από την 21 Ιουλίου 2025. Το NewPipe αντικατέστησε την προεπιλεγμένη σελίδα τάσεων με τις ζωντανές ροές τάσεων.\n\nΜπορείτε επίσης να επιλέξετε διαφορετικές σελίδες με τάσεις στις \"Ρυθμίσεις &gt; Περιεχόμενο &gt; Περιεχόμενο κύριας σελίδας\".</string>
-    <string name="trending_gaming">Τάσεις παιχνιδιών</string>
-    <string name="trending_podcasts">Τάσεις podcasts</string>
-    <string name="trending_movies">Τάσεις ταινιών και εκπομπών</string>
-    <string name="trending_music">Μουσικές τάσεις</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>

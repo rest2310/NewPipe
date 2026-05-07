@@ -118,7 +118,6 @@
     <string name="subscription_change_failed">Não foi possível alterar a subscrição</string>
     <string name="subscription_update_failed">Não foi possível atualizar a subscrição</string>
     <string name="tab_subscriptions">Subscrições</string>
-    <string name="fragment_feed_title">Novidades</string>
     <string name="enable_search_history_title">Pesquisar histórico</string>
     <string name="enable_search_history_summary">Guardar termos de pesquisa localmente</string>
     <string name="enable_watch_history_title">Histórico de visualizações</string>
@@ -169,10 +168,7 @@
     <string name="channel_page_summary">Página do canal</string>
     <string name="select_a_channel">Selecione um canal</string>
     <string name="no_channel_subscribed_yet">Não existem canais subscritos</string>
-    <string name="select_a_kiosk">Selecione um \"kiosk\"</string>
     <string name="trending">Tendências</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Novos e tendências</string>
     <string name="play_queue_remove">Remover</string>
     <string name="play_queue_stream_detail">Detalhes</string>
     <string name="play_queue_audio_settings">Definições de áudio</string>
@@ -214,7 +210,6 @@
     <string name="dismiss">Rejeitar</string>
     <string name="website_title">Site oficial</string>
     <string name="website_encouragement">Visite o site NewPipe para obter mais informação e novidades.</string>
-    <string name="kiosk_page_summary">Página \'kiosk\'</string>
     <string name="export_complete_toast">Exportado</string>
     <string name="import_complete_toast">Importado</string>
     <string name="no_valid_zip_file">Ficheiro ZIP inválido</string>
@@ -358,7 +353,6 @@
     <string name="pause_downloads_on_mobile">Interromper em redes limitadas</string>
     <string name="pause_downloads_on_mobile_desc">Útil ao trocar para dados móveis, mas algumas descargas não podem ser suspensas</string>
     <string name="events">Eventos</string>
-    <string name="conferences">Conferências</string>
     <string name="missions_header_pending">Pendente</string>
     <string name="show_comments_title">Mostrar comentários</string>
     <string name="show_comments_summary">Desative para ocultar comentários</string>
@@ -393,7 +387,6 @@
     <string name="clear_playback_states_title">Remover posições de reprodução</string>
     <string name="clear_playback_states_summary">Remove todas as posições de reprodução</string>
     <string name="delete_playback_states_alert">Remover todas as posições de reprodução\?</string>
-    <string name="default_kiosk_page_summary">\'Kiosk\' padrão</string>
     <string name="no_one_watching">Ninguém está a ver</string>
     <plurals name="watching">
         <item quantity="one">%s a ver</item>
@@ -408,8 +401,6 @@
     </plurals>
     <string name="seek_duration_title">Duração de avanço/recuo rápido</string>
     <string name="local">Local</string>
-    <string name="recently_added">Recentes</string>
-    <string name="most_liked">Mais apreciados</string>
     <string name="playlist_no_uploader">Geração automática (não foi encontrado nenhum carregador)</string>
     <string name="recovering">a recuperar</string>
     <string name="error_download_resource_gone">Não é possível recuperar esta descarga</string>
@@ -811,14 +802,8 @@
     <string name="search_with_service_name">Pesquisar %1$s</string>
     <string name="search_with_service_name_and_filter">Pesquisar %1$s (%2$s)</string>
     <string name="channel_tab_likes">Gostos</string>
-    <string name="migration_info_6_7_title">Página Top 50 do SoundCloud removida</string>
-    <string name="migration_info_6_7_message">O SoundCloud descontinuou os gráficos originais do Top 50. A guia correspondente foi removida da sua página principal.</string>
     <string name="migration_info_7_8_title">Tendência combinada do YouTube removida</string>
     <string name="migration_info_7_8_message">O YouTube descontinuou a página de tendência combinada a partir de 21 de julho de 2025. O NewPipe substituiu a página de tendência predefinida com as streams ao vivo de tendência.\n\nTambém pode escolher páginas de tendência diferentes em \"Definições &gt; Conteúdo &gt; Conteúdo da página principal\".</string>
-    <string name="trending_gaming">Tendências de jogos</string>
-    <string name="trending_podcasts">Tendências de podcasts</string>
-    <string name="trending_movies">Tendências de filmes e shows</string>
-    <string name="trending_music">Tendências de música</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>

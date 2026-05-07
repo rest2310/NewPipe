@@ -67,7 +67,6 @@
     <string name="show_info">Montri informojn</string>
     <string name="tab_subscriptions">Abonoj</string>
     <string name="tab_bookmarks">Konservitaj ludlistoj</string>
-    <string name="fragment_feed_title">Kio novas</string>
     <string name="controls_background_title">Fono</string>
     <string name="controls_popup_title">Ŝprucfenestro</string>
     <string name="controls_add_to_playlist_title">Aldonu al</string>
@@ -118,8 +117,6 @@
     <string name="settings_category_history_title">Historio kaj kaŝmemoro</string>
     <string name="undo">Malfari</string>
     <string name="trending">Tendencoj</string>
-    <string name="top_50">Supro 50</string>
-    <string name="new_and_hot">Nova kaj varma</string>
     <string name="show_hold_to_append_title">Montri la indiko « Tenu por aldoni »</string>
     <string name="show_hold_to_append_summary">Montri indikon premante la fonon aŭ la ŝprucfenestran butonon en filmeta «Detaloj:»</string>
     <string name="play_all">Ludi ĉiujn</string>
@@ -198,7 +195,6 @@
     <string name="max_retry_desc">Maksimuma nombro de provoj antaŭ fordecidi la elŝuton</string>
     <string name="pause_downloads_on_mobile">interrompi ĉe limigitaj komputilaj retoj</string>
     <string name="events">Eventoj</string>
-    <string name="conferences">Konferencoj</string>
     <string name="show_comments_title">Montri komentojn</string>
     <string name="show_comments_summary">Malŝatu por kaŝi komentojn</string>
     <string name="autoplay_title">Aŭtoludo</string>
@@ -274,11 +270,9 @@
     <string name="delete_item_search_history">Ĉu vi volas forviŝi tion eron el la historio de serĉo \?</string>
     <string name="main_page_content">Enhavo de la ĉefpaĝo</string>
     <string name="blank_page_summary">Malplena Paĝo</string>
-    <string name="kiosk_page_summary">Kioska Paĝo</string>
     <string name="channel_page_summary">Kanala Paĝo</string>
     <string name="select_a_channel">Elekti kanalon</string>
     <string name="no_channel_subscribed_yet">Neniuj kanalaj abonoj ankoraŭ</string>
-    <string name="select_a_kiosk">Elekti kioskon</string>
     <string name="start_here_on_background">Komenci ludi fone</string>
     <string name="donation_title">Donaci</string>
     <string name="donation_encouragement">NewPipe estas programadita par volontuoj, elspezante lia tempo por alporti vin la plej bona uzanta sperto. Redoni por helpi programistojn plibonigi NewPipe dum ili ĝuas tason da kafo.</string>
@@ -389,7 +383,6 @@
     <string name="error_insufficient_storage_left">Neniu spaco havebla sur la aparato</string>
     <string name="error_progress_lost">Progreso perdita, ĉar la dosiero estis forviŝita</string>
     <string name="error_timeout">Eltempiĝo de Konekto</string>
-    <string name="default_kiosk_page_summary">Implicita Kiosko</string>
     <string name="no_one_watching">Neniu spektas</string>
     <plurals name="watching">
         <item quantity="one">%s spektanto</item>
@@ -402,8 +395,6 @@
     </plurals>
     <string name="seek_duration_title">Daŭro de rapidpluiga/revolva serĉo</string>
     <string name="local">Lokaj</string>
-    <string name="recently_added">Freŝe aldonitaj</string>
-    <string name="most_liked">La plej ŝatitaj</string>
     <string name="playlist_no_uploader">Aŭtomate generita (neniu alŝutilo trovita)</string>
     <string name="recovering">Reakiranta</string>
     <string name="error_download_resource_gone">Ne povas reakiri tion elŝuton</string>

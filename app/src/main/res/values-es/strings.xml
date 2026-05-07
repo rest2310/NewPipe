@@ -118,7 +118,6 @@
     <string name="subscription_change_failed">No se puede cambiar la suscripción</string>
     <string name="subscription_update_failed">No se pudo actualizar la suscripción</string>
     <string name="tab_subscriptions">Suscripciones</string>
-    <string name="fragment_feed_title">Novedades</string>
     <string name="resume_on_audio_focus_gain_title">Reanudar reproducción</string>
     <string name="resume_on_audio_focus_gain_summary">Continuar reproduciendo después de las interrupciones (ej. llamadas telefónicas)</string>
     <string name="settings_category_downloads_title">Descargar</string>
@@ -162,13 +161,10 @@
     <string name="delete_item_search_history">¿Quieres borrar este elemento del historial de búsquedas\?</string>
     <string name="main_page_content">Contenido de la página principal</string>
     <string name="blank_page_summary">Página en blanco</string>
-    <string name="kiosk_page_summary">Página del quiosco</string>
     <string name="channel_page_summary">Página del canal</string>
     <string name="select_a_channel">Seleccione un canal</string>
     <string name="no_channel_subscribed_yet">No hay suscripciones a canales todavía</string>
-    <string name="select_a_kiosk">Seleccione un quiosco</string>
     <string name="trending">Tendencias</string>
-    <string name="top_50">50 mejores</string>
     <string name="show_hold_to_append_summary">Mostrar sugerencia al pulsar el botón de segundo plano o emergente en la página «Detalles:» del vídeo</string>
     <string name="play_all">Reproducir todo</string>
     <string name="player_stream_failure">No se pudo reproducir este stream</string>
@@ -181,7 +177,6 @@
     <string name="start_here_on_background">Comenzar a reproducir en segundo plano</string>
     <string name="start_here_on_popup">Reproducir en modo emergente</string>
     <string name="show_hold_to_append_title">Mostrar la sugerencia \"Mantener presionado para poner a la cola\"</string>
-    <string name="new_and_hot">Lo nuevo y lo mejor</string>
     <string name="hold_to_append">Mantener pulsado para añadir a la cola</string>
     <string name="donation_title">Donar</string>
     <string name="donation_encouragement">NewPipe es desarrollado por voluntarios que emplean su tiempo libre para brindarle la mejor experiencia. Haz una aportación para ayudarlos a crear un NewPipe mejor mientras disfrutan de una taza de café.</string>
@@ -376,7 +371,6 @@
     <string name="restore_defaults_confirmation">¿Quieres restaurar los valores predefinidos\?</string>
     <string name="subscribers_count_not_available">Número de suscriptores no disponible</string>
     <string name="main_page_content_summary">Qué pestañas aparecen en la página principal</string>
-    <string name="conferences">Conferencias</string>
     <string name="updates_setting_title">Actualizaciones</string>
     <string name="updates_setting_description">Mostrar una notificación para solicitar actualizar la aplicación al haber una nueva versión disponible</string>
     <string name="list_view_mode">Modo de vista de lista</string>
@@ -397,7 +391,6 @@
     <string name="clear_playback_states_title">Borrar posiciones de reproducción</string>
     <string name="clear_playback_states_summary">Borra todas las posiciones de reproducción</string>
     <string name="delete_playback_states_alert">¿Quieres borrar todas las posiciones de reproducción\?</string>
-    <string name="default_kiosk_page_summary">Quiosco predeterminado</string>
     <string name="no_one_watching">Nadie está viendo</string>
     <plurals name="watching">
         <item quantity="one">Visualización %s</item>
@@ -412,8 +405,6 @@
     </plurals>
     <string name="seek_duration_title">Duración de búsqueda al avanzar y/o retroceder</string>
     <string name="local">Local</string>
-    <string name="recently_added">Añadidos recientemente</string>
-    <string name="most_liked">Más gustados</string>
     <string name="playlist_no_uploader">Generado automáticamente (no se encontró creador)</string>
     <string name="choose_instance_prompt">Elige una instancia</string>
     <string name="clear_download_history">Limpiar historial de descargas</string>
@@ -806,14 +797,8 @@
     <string name="search_with_service_name">Buscar %1$s</string>
     <string name="search_with_service_name_and_filter">Buscar %1$s (%2$s)</string>
     <string name="channel_tab_likes">Me gusta</string>
-    <string name="migration_info_6_7_title">Página Top 50 de SoundCloud eliminada</string>
-    <string name="migration_info_6_7_message">SoundCloud ha descontinuado las listas originales del Top 50. La pestaña correspondiente se ha eliminado de la página principal.</string>
     <string name="migration_info_7_8_title">YouTube tendencias combinadas eliminado</string>
     <string name="migration_info_7_8_message">YouTube ha descontinuado la página de tendencias combinadas a partir del 21 de julio de 2025. NewPipe reemplazó la página de tendencias predeterminada con tendencias en directo.\n\nTambién puedes seleccionar diferentes páginas de tendencias en \"Ajustes &gt; Contenido &gt; Contenido de la página principal\".</string>
-    <string name="trending_gaming">Tendencias videojuegos</string>
-    <string name="trending_podcasts">Tendencias pódcasts</string>
-    <string name="trending_movies">Tendencias películas y programas</string>
-    <string name="trending_music">Tendencias música</string>
     <string name="permission_display_over_apps_permission_name">“Permitir mostrar sobre otras aplicaciones”</string>
     <string name="delete_file">Eliminar archivo</string>
     <string name="short_thousand">%sM</string>

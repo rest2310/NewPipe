@@ -18,7 +18,6 @@
     <string name="subscription_change_failed">సబ్ స్క్రైబ్ సాధ్యం కాలేదు</string>
     <string name="subscription_update_failed">సబ్ స్క్రైబ్ నవీకరించలేరు</string>
     <string name="tab_subscriptions">సభ్యత్వం</string>
-    <string name="fragment_feed_title">కొత్తది ఏమిటి</string>
     <string name="controls_background_title">వెనుకగా</string>
     <string name="controls_popup_title">పాపప్</string>
     <string name="download_path_title">వీడియో డౌన్లోడ్ మార్గం</string>
@@ -127,8 +126,6 @@
     <string name="select_a_channel">ఛానెల్ని ఎంచుకోండి</string>
     <string name="no_channel_subscribed_yet">ఇంకా ఏ ఛానెల్ సభ్యత్వం లేదు</string>
     <string name="trending">ట్రెండింగ్</string>
-    <string name="top_50">టాప్ 50</string>
-    <string name="new_and_hot">క్రొత్తది మరియు వేడి</string>
     <string name="play_queue_remove">తొలగించు</string>
     <string name="play_queue_stream_detail">వివరాలు</string>
     <string name="play_queue_audio_settings">ఆడియో సెట్టింగ్లు</string>
@@ -314,7 +311,6 @@
     <string name="read_privacy_policy">గోప్యతా విధానాన్ని చదవండి</string>
     <string name="detail_uploader_thumbnail_view_description">అప్‌లోడర్ అవతార్ థంబ్‌నెయిల్</string>
     <string name="donation_title">విరాళం ఇవ్వండి</string>
-    <string name="select_a_kiosk">కియోస్క్‌ని ఎంచుకోండి</string>
     <string name="recaptcha_cookies_cleared">reCAPTCHA కుక్కీలను క్లియర్ చేయండి</string>
     <string name="msg_popup_permission">దీనికి ఈ అనుమతి అవసరం
 \nతేలియాడే పద్ధతిలో తెరవండి</string>
@@ -342,8 +338,6 @@
     <string name="privacy_policy_title">NewPipe యొక్క గోప్యతా విధానం</string>
     <string name="title_most_played">ఎక్కువగా ఆడినవి</string>
     <string name="main_page_content_summary">ప్రధాన పేజీలో ఏ ట్యాబ్‌లు చూపబడతాయి</string>
-    <string name="kiosk_page_summary">కియోస్క్ పేజీ</string>
-    <string name="default_kiosk_page_summary">డిఫాల్ట్ కియోస్క్</string>
     <string name="export_complete_toast">ఎగుమతి చేయబడింది</string>
     <string name="import_complete_toast">దిగుమతి చేయబడింది</string>
     <string name="no_valid_zip_file">చెల్లుబాటు అయ్యే జిప్ ఫైల్ లేదు</string>
@@ -371,9 +365,6 @@
     <string name="override_current_data">ఇది మీ ప్రస్తుత సెటప్‌ను భర్తీ చేస్తుంది.</string>
     <string name="import_settings">మీరు అమరికలను కూడా దిగుమతి చేయాలనుకుంటున్నారా\?</string>
     <string name="error_unable_to_load_comments">వ్యాఖ్యలను లోడ్ చేయడం సాధ్యపడలేదు</string>
-    <string name="recently_added">ఇటీవల జోడించినవి</string>
-    <string name="most_liked">చాలా నచ్చింది</string>
-    <string name="conferences">సమావేశాలు</string>
     <string name="title_activity_play_queue">ప్లే క్యూ</string>
     <string name="enqueue_stream">ఎన్క్యూ</string>
     <string name="enqueued">క్యూలో ఉంచారు</string>

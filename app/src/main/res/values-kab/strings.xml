@@ -34,7 +34,6 @@
     <string name="channel_created_by">Yerna-t %s</string>
     <string name="delete_playlist_prompt">Kkes tabdart-a n tɣuri\?</string>
     <string name="clear">Sfeḍ</string>
-    <string name="recently_added">Ittwarna taggara-agi</string>
     <string name="default_audio_format_title">Amasal n imesli amezwer</string>
     <string name="main_page_content">Agbur n usebter agejdan</string>
     <plurals name="minutes">
@@ -73,7 +72,6 @@
     <string name="playback_reset">Wennez</string>
     <string name="create">Snulfu-d</string>
     <string name="accept">Qbel</string>
-    <string name="fragment_feed_title">D acu-t umaynut</string>
     <string name="show_info">Sken talɣut</string>
     <string name="disabled">Ittwarermed</string>
     <string name="audio">Imesli</string>
@@ -114,7 +112,6 @@
     <string name="decline">Agwi</string>
     <string name="show_comments_title">Beqqeḍ iwenniten</string>
     <string name="settings_category_player_title">Ameɣri</string>
-    <string name="conferences">Isaragen</string>
     <string name="updates_setting_title">Ileqman</string>
     <string name="theme_title">Asentel</string>
     <string name="dark_theme_title">Ubrik</string>

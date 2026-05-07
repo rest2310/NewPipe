@@ -118,7 +118,6 @@
     <string name="subscription_change_failed">Impossibile cambiare l\'iscrizione</string>
     <string name="subscription_update_failed">Impossibile aggiornare l\'iscrizione</string>
     <string name="tab_subscriptions">Iscrizioni</string>
-    <string name="fragment_feed_title">Novità</string>
     <string name="enable_search_history_title">Cronologia delle ricerche</string>
     <string name="enable_search_history_summary">Salva le ricerche localmente</string>
     <string name="enable_watch_history_title">Cronologia delle visualizzazioni</string>
@@ -162,14 +161,10 @@
     <string name="delete_item_search_history">Eliminare questo elemento dalla cronologia delle ricerche\?</string>
     <string name="main_page_content">Contenuto della pagina principale</string>
     <string name="blank_page_summary">Pagina vuota</string>
-    <string name="kiosk_page_summary">Contenuti in evidenza personalizzati</string>
     <string name="channel_page_summary">Canale personalizzato</string>
     <string name="select_a_channel">Seleziona un canale</string>
     <string name="no_channel_subscribed_yet">Nessuna iscrizione</string>
-    <string name="select_a_kiosk">Seleziona Contenuto</string>
     <string name="trending">Tendenze</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Nuovi e popolari</string>
     <string name="show_hold_to_append_title">Mostra suggerimento \"Tieni premuto per accodare\"</string>
     <string name="show_hold_to_append_summary">Nei dettagli dei video, mostra un suggerimento alla pressione dei pulsanti per la riproduzione popup o in sottofondo</string>
     <string name="play_all">Riproduci tutto</string>
@@ -359,7 +354,6 @@
     <string name="pause_downloads_on_mobile">Interrompi con connessioni a consumo</string>
     <string name="pause_downloads_on_mobile_desc">Utile quando si passa alla connessione dati mobile, tuttavia alcuni download non possono essere sospesi</string>
     <string name="events">Eventi</string>
-    <string name="conferences">Conferenze</string>
     <string name="error_timeout">Tempo per la connessione esaurito</string>
     <string name="show_comments_title">Mostra commenti</string>
     <string name="show_comments_summary">Disattiva per nascondere i commenti</string>
@@ -405,11 +399,8 @@
         <item quantity="many">%s ascoltatori</item>
         <item quantity="other">%s ascoltatori</item>
     </plurals>
-    <string name="default_kiosk_page_summary">Contenuti in evidenza predefiniti</string>
     <string name="seek_duration_title">Durata avanzamento e riavvolgimento rapidi</string>
     <string name="local">Locale</string>
-    <string name="recently_added">Aggiunti di recente</string>
-    <string name="most_liked">Più piaciuti</string>
     <string name="playlist_no_uploader">Generata automaticamente (nessun autore trovato)</string>
     <string name="recovering">recupero</string>
     <string name="error_download_resource_gone">Impossibile recuperare questo download</string>
@@ -811,17 +802,11 @@
     <string name="search_with_service_name_and_filter">Cerca %1$s (%2$s)</string>
     <string name="search_with_service_name">Cerca su %1$s</string>
     <string name="channel_tab_likes">Mi piace</string>
-    <string name="migration_info_6_7_title">Pagina Top 50 di SoundCloud rimossa</string>
-    <string name="migration_info_6_7_message">SoundCloud ha dismesso i grafici Top 50 originali. La scheda relativa è stata rimossa dalla pagina principale.</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sMilio.</string>
     <string name="short_billion">%sMilia.</string>
     <string name="migration_info_7_8_title">Rimosse tendenze combinate YouTube</string>
     <string name="migration_info_7_8_message">YouTube ha interrotto la pagina di tendenza combinata il 21 luglio 2025. NewPipe ha sostituito la pagina di tendenza predefinita con le dirette in tendenza.\n\nPuoi anche selezionare diverse pagine di tendenza in \"Impostazioni &gt; Contenuto &gt; Contenuto della pagina principale\".</string>
-    <string name="trending_gaming">Giochi in tendenza</string>
-    <string name="trending_podcasts">Podcast in tendenza</string>
-    <string name="trending_movies">Film e spettacoli in tendenza</string>
-    <string name="trending_music">Musica in tendenza</string>
     <string name="permission_display_over_apps_message">Per usare il riproduttore popup, seleziona %1$s nel seguente menu delle impostazioni Android e attiva %2$s.</string>
     <string name="permission_display_over_apps_permission_name">“Consenti la visualizzazione sopra altre app”</string>
     <string name="delete_file">Elimina file</string>

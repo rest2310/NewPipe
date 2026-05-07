@@ -83,14 +83,14 @@ public class TabsJsonHelperTest {
     }
 
     @Test
-    public void testRemovedKioskTabsAreFilteredOnRead()
+    public void testRemovedLegacyTabsAreFilteredOnRead()
             throws TabsJsonHelper.InvalidJsonException {
         final int feedTabId = Tab.Type.FEED.getTabId();
         final String tabsJson = "{\"" + JSON_TABS_ARRAY_KEY + "\":["
                 + "{\"" + JSON_TAB_ID_KEY + "\":5,\"service_id\":0,\"kiosk_id\":\"Trending\"},"
                 + "{\"" + JSON_TAB_ID_KEY + "\":5,\"service_id\":0,\"kiosk_id\":\"live\"},"
                 + "{\"" + JSON_TAB_ID_KEY
-                + "\":5,\"service_id\":0,\"kiosk_id\":\"trending_gaming\"},"
+                + "\":5,\"service_id\":0,\"kiosk_id\":\"legacy_games\"},"
                 + "{\"" + JSON_TAB_ID_KEY + "\":7},"
                 + "{\"" + JSON_TAB_ID_KEY + "\":" + feedTabId + "}"
                 + "]}";

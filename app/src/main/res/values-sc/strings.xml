@@ -48,12 +48,7 @@
     <string name="play_queue_audio_settings">Impostatziones àudio</string>
     <string name="play_queue_stream_detail">Detàllios</string>
     <string name="play_queue_remove">Boga</string>
-    <string name="conferences">Cunferèntzias</string>
-    <string name="most_liked">Prus agradèssidos</string>
-    <string name="recently_added">Annànghidos dae pagu</string>
     <string name="local">Locale</string>
-    <string name="new_and_hot">Noos e Populares</string>
-    <string name="top_50">Sos mègius 50</string>
     <string name="trending">Tendèntzias</string>
     <string name="error_unable_to_load_comments">Carrigamentu de sos cummentos fallidu</string>
     <string name="import_settings">Cheres fintzas importare sas impostatziones\?</string>
@@ -62,12 +57,9 @@
     <string name="no_valid_zip_file">Perunu documentu ZIP vàlidu</string>
     <string name="import_complete_toast">Importatzione acabada</string>
     <string name="export_complete_toast">Esportatzione acabada</string>
-    <string name="select_a_kiosk">Ischerta una pàgina de cuntenutos in evidèntzia personalizados</string>
     <string name="no_channel_subscribed_yet">Galu peruna iscritzione a sos canales</string>
     <string name="select_a_channel">Ischerta unu canale</string>
     <string name="channel_page_summary">Pàgina de su canale</string>
-    <string name="default_kiosk_page_summary">Cuntenutos in evidèntzia predefinidos</string>
-    <string name="kiosk_page_summary">Cuntenutos in evidèntzia personalizados</string>
     <string name="blank_page_summary">Pàgina bòida</string>
     <string name="main_page_content_summary">Ischedas benint ammustradas in sa pàgina printzipale</string>
     <string name="main_page_content">Cuntenutu de sa pàgina printzipale</string>
@@ -248,7 +240,6 @@
     <string name="feed_subscription_not_loaded_count">Non carrigadas: %d</string>
     <string name="feed_oldest_subscription_update">Ùrtimu agiornamentu de sa fonte (feed): %s</string>
     <string name="feed_groups_header_title">Grupos de canales</string>
-    <string name="fragment_feed_title">Ite b\'at de nou</string>
     <plurals name="days">
         <item quantity="one">%d dies</item>
         <item quantity="other">%d die</item>
@@ -797,12 +788,6 @@
     <string name="no_feed_group_created_yet">Galu perunu grupu de flussos creadu</string>
     <string name="feed_group_page_summary">Pàgina de grupu de canales</string>
     <string name="channel_tab_likes">Agradessimentos</string>
-    <string name="migration_info_6_7_title">Pàgina Top 50 de SoundCloud bogada</string>
-    <string name="migration_info_6_7_message">SoundCloud at abbandonadu sos gràficos Top 50 originales. S\'ischeda currispondente est istada bogada dae sa pàgina printzipale tua.</string>
     <string name="migration_info_7_8_title">Tendèntzias cumbinadas de YouTube bogadas</string>
     <string name="migration_info_7_8_message">YouTube at abbandonadu sa pàgina de sas tendèntzias cumbinadas in su 21 de trìulas de su 2025. NewPipe at sostituidu sa pàgina de sas tendèntzias printzipales cun sas diretas de tendèntzia.\n\nPodes fintzas seletzionare pàginas de sas tendèntzias diferentes in \"Impostatziones &gt; Cuntenutos &gt; Cuntenutu de sa pàgina printzipale\".</string>
-    <string name="trending_gaming">Giogos de tendèntzia</string>
-    <string name="trending_podcasts">Podcasts de tendèntzia</string>
-    <string name="trending_movies">Films e programmas de tendèntzia</string>
-    <string name="trending_music">Mùsica de tendèntzia</string>
 </resources>

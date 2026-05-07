@@ -84,7 +84,6 @@
     <string name="general_error">ᱪᱷᱟᱸᱪ</string>
     <string name="contribution_encouragement">ᱟᱢᱟᱜ ᱟᱭᱳ ᱟᱲᱟᱝ, ᱰᱤᱡᱟᱭᱤᱱ ᱵᱮᱵᱚᱥᱛᱟ, ᱠᱳᱰ ᱥᱟᱹᱠᱷᱭᱟᱹᱛ, ᱟᱨᱵᱟᱝ ᱟᱹᱰᱤ ᱢᱟᱨᱟᱝ ᱠᱳᱰ ᱵᱮᱵᱚᱥᱛᱟ ᱨᱮᱱᱟᱜ ᱟᱭᱳ ᱟᱲᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ ⁇ ᱜᱚᱲᱚ ᱫᱚ ᱡᱚᱛᱚ ᱚᱠᱛᱚ ᱨᱮᱜᱮ ᱥᱟᱨᱦᱟᱣ ᱢᱮᱱᱟᱜᱼᱟ ᱾ ᱰᱤᱜᱟᱱ ᱠᱟᱹᱢᱤ ᱦᱩᱭ ᱞᱮᱱ ᱠᱷᱟᱱ ᱚᱱᱟ ᱜᱮ ᱱᱟᱯᱟᱭᱚᱜ-ᱟ ᱾</string>
     <string name="view_on_github">GitHub ᱨᱮ ᱧᱮᱞ ᱢᱮ</string>
-    <string name="most_liked">ᱡᱟᱹᱥᱛᱤ ᱞᱟᱭᱠᱟᱨ</string>
     <string name="delete_downloaded_files">ᱰᱟᱩᱱᱞᱚᱰ ᱟᱠᱟᱱ ᱯᱷᱤᱞᱤᱯ ᱠᱚ ᱵᱚᱫᱚᱞ ᱢᱮ</string>
     <string name="delete_downloaded_files_confirm">ᱰᱤᱥᱠ ᱠᱷᱚᱱ ᱡᱚᱛᱚ ᱰᱟᱩᱱᱞᱚᱰ ᱟᱠᱟᱱ ᱯᱷᱤᱞ ᱠᱚ ᱵᱚᱫᱚᱞ ᱢᱮ?</string>
     <string name="radio">ᱨᱮᱰᱤᱭᱳ</string>
@@ -103,9 +102,6 @@
 \nᱯᱚᱯ-ᱟᱯ ᱢᱚᱰ ᱨᱮ ᱮᱛᱦᱚᱵ ᱢᱮ</string>
     <string name="subtitle_activity_recaptcha">ᱡᱚᱠᱷᱚᱱ ᱥᱟᱦᱟᱣ ᱟᱠᱟᱱᱟ \"Done\" ᱚᱞ ᱢᱮ</string>
     <string name="give_back">ᱨᱩᱣᱟ.</string>
-    <string name="select_a_kiosk">ᱠᱤᱭᱳᱥᱠ ᱵᱟᱪᱷᱟᱣ ᱢᱮ</string>
-    <string name="new_and_hot">ᱱᱟᱣᱟ ᱟᱨ ᱦᱮᱴ</string>
-    <string name="recently_added">ᱱᱟᱦᱟᱜ ᱥᱮᱞᱮᱫ ᱟᱠᱟᱱᱟ</string>
     <string name="show_channel_details">ᱪᱟᱱᱮᱞ ᱵᱟᱰᱟᱭ ᱧᱮᱞ ᱢᱮ</string>
     <string name="enqueue_stream">ᱤᱱᱠᱭᱩᱤᱝ</string>
     <string name="enqueued">ᱮᱱᱠᱭᱩᱣᱮᱰ</string>
@@ -135,7 +131,6 @@
     <string name="error_ssl_exception">ᱥᱤᱠᱷᱱᱟᱹᱛ ᱡᱚᱱᱚᱲᱟᱣ ᱵᱟᱭ ᱛᱮᱭᱟᱨ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ</string>
     <string name="downloads_storage_ask_title">ᱡᱟᱦᱟᱸ ᱨᱮ ᱰᱟᱩᱱᱞᱚᱰ ᱢᱮ</string>
     <string name="new_seek_duration_toast">ᱮᱠᱥᱳᱯᱞᱮᱭᱟᱨ ᱞᱟᱹᱠᱛᱤᱭᱟᱜ ᱞᱟᱹᱠᱛᱤᱭᱟᱜ ᱞᱟᱹᱠᱛᱤᱭᱟᱜ ᱚᱠᱛᱚ %d ᱥᱮᱠᱮᱱᱰ ᱨᱮ ᱞᱟᱜᱟᱣ ᱟᱠᱟᱱᱟ</string>
-    <string name="fragment_feed_title">ᱪᱮᱫ ᱱᱟᱣᱟ</string>
     <string name="selected_stream_external_player_not_supported">ᱵᱟᱦᱨᱮ ᱠᱷᱮᱞᱚᱸᱰᱤᱭᱟᱹᱠᱚ ᱵᱟᱠᱚ ᱥᱚᱦᱚᱫ ᱟᱠᱟᱫ ᱪᱷᱟᱸᱪ</string>
     <string name="no_audio_streams_available_for_external_players">ᱵᱟᱦᱨᱮ ᱯᱞᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱰᱤᱭᱚ ᱥᱴᱨᱤᱢ ᱵᱟᱭ ᱧᱟᱢᱚᱜ ᱠᱟᱱᱟ</string>
     <string name="audio_track_type_original">ᱚᱥᱚᱞ</string>
@@ -228,8 +223,6 @@
     <string name="override_current_data">ᱱᱚᱶᱟ ᱫᱚ ᱟᱢᱟᱜ ᱱᱮᱛᱟᱨᱟᱜ ᱥᱮᱴᱯᱟᱴ ᱩᱫᱩᱜ ᱮᱫᱟ ᱾</string>
     <string name="import_settings">ᱟᱢ ᱥᱤᱴᱤᱝ ᱦᱚᱸ ᱟᱢᱯᱷᱮᱨᱟᱣ ᱦᱩᱭᱩᱜ ᱛᱟᱢᱟ?</string>
     <string name="error_unable_to_load_comments">ᱠᱚᱢᱮᱱᱴ ᱞᱚᱰ ᱫᱚ ᱵᱟᱝ ᱜᱟᱱᱚᱜ ᱠᱟᱱᱟ</string>
-    <string name="top_50">ᱢᱩᱬ ᱕᱐</string>
-    <string name="conferences">ᱠᱚᱱᱯᱷᱮᱨᱮᱱᱥ</string>
     <string name="title_activity_play_queue">ᱠᱷᱮᱞ ᱞᱟᱦᱟ</string>
     <string name="play_queue_remove">ᱥᱟᱦᱟᱣ ᱢᱮ</string>
     <string name="play_queue_stream_detail">ᱡᱚᱠᱷᱟ</string>
@@ -493,8 +486,6 @@
     <string name="main_page_content">ᱢᱩᱬᱩᱛ ᱥᱟᱦᱴᱟ ᱨᱮᱱᱟᱜ ᱥᱟᱦᱴᱟ</string>
     <string name="main_page_content_summary">ᱢᱩᱬᱩᱛ ᱥᱟᱦᱴᱟ ᱨᱮ ᱚᱠᱟ ᱛᱟᱵᱽ ᱠᱚ ᱵᱚᱫᱚᱞ ᱟᱠᱟᱱᱟ</string>
     <string name="main_page_content_swipe_remove">ᱡᱤᱱᱤᱥ ᱠᱚ ᱵᱟᱧᱪᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱥᱣᱟᱭᱯ ᱢᱮ</string>
-    <string name="default_kiosk_page_summary">ᱰᱤᱯᱷᱚᱞᱴ ᱠᱤᱭᱳᱥᱠ</string>
-    <string name="kiosk_page_summary">ᱠᱤᱭᱳᱥᱠ ᱥᱟᱦᱴᱟ</string>
     <string name="channel_page_summary">ᱪᱟᱱᱮᱞ ᱥᱟᱦᱴᱟ</string>
     <string name="select_a_channel">ᱪᱟᱱᱮᱞ ᱵᱟᱪᱷᱟᱣ ᱢᱮ</string>
     <string name="no_channel_subscribed_yet">ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱱᱮᱞ ᱥᱚᱵᱽᱥᱠᱨᱟᱭᱵᱽ ᱵᱟᱝ</string>

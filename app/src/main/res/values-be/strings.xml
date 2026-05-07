@@ -26,7 +26,6 @@
     <string name="show_info">Паказаць звесткі</string>
     <string name="tab_subscriptions">Падпіскі</string>
     <string name="tab_bookmarks">Закладкі</string>
-    <string name="fragment_feed_title">Што новага</string>
     <string name="controls_background_title">У фоне</string>
     <string name="controls_popup_title">У акне</string>
     <string name="controls_add_to_playlist_title">Дадаць да</string>
@@ -233,11 +232,9 @@
     <string name="title_most_played">Прайгравалася найбольш</string>
     <string name="main_page_content">Змесціва галоўнай старонкі</string>
     <string name="blank_page_summary">Пустая старонка</string>
-    <string name="kiosk_page_summary">Старонка кіёска</string>
     <string name="channel_page_summary">Старонка канала</string>
     <string name="select_a_channel">Выберыце канал</string>
     <string name="no_channel_subscribed_yet">Пакуль няма падпісак на каналы</string>
-    <string name="select_a_kiosk">Выберыце кіёск</string>
     <string name="export_complete_toast">Экспарт завершаны</string>
     <string name="import_complete_toast">Імпарт завершаны</string>
     <string name="no_valid_zip_file">Няма правільнага Zip-файла</string>
@@ -245,8 +242,6 @@
     <string name="override_current_data">Бягучыя даныя будуць перазапісаны.</string>
     <string name="import_settings">Хочаце імпартаваць налады?</string>
     <string name="trending">Трэнды</string>
-    <string name="top_50">Топ 50</string>
-    <string name="new_and_hot">Новае і гарачае</string>
     <string name="play_queue_remove">Выдаліць</string>
     <string name="play_queue_stream_detail">Падрабязнасці</string>
     <string name="play_queue_audio_settings">Налады аўдыя</string>
@@ -358,7 +353,6 @@
     <string name="pause_downloads_on_mobile">Прыпыняць у сетках з тарыфікацыяй</string>
     <string name="pause_downloads_on_mobile_desc">Карысна пры пераключэнні на мабільную сетку, хоць некаторыя спампоўванні немагчыма прыпыніць</string>
     <string name="events">Падзеі</string>
-    <string name="conferences">Канферэнцыі</string>
     <string name="show_comments_title">Паказваць каментарыі</string>
     <string name="show_comments_summary">Выключыце, каб схаваць каментарыі</string>
     <string name="autoplay_title">Аўтазапуск</string>
@@ -416,12 +410,9 @@
     <string name="enqueue_stream">Дадаць у чаргу</string>
     <string name="enqueued">Дададзена у чаргу</string>
     <string name="title_activity_play_queue">Чарга прайгравання</string>
-    <string name="most_liked">Найбольш папулярнае</string>
     <string name="local">Лакальнае</string>
-    <string name="recently_added">Нядаўна дададзенае</string>
     <string name="no_playlist_bookmarked_yet">Плэй-лісты яшчэ не дададзены</string>
     <string name="select_a_playlist">Выберыце плэй-ліст</string>
-    <string name="default_kiosk_page_summary">Прадвызначаны кіёск</string>
     <string name="done">Так</string>
     <string name="subtitle_activity_recaptcha">Па завяршэнні націсніце «Гатова»</string>
     <string name="infinite_videos">∞ відэа</string>
@@ -806,12 +797,7 @@
     <string name="short_billion">%s млрд</string>
     <string name="delete_file">Выдаліць файл</string>
     <string name="delete_entry">Выдаліць запіс</string>
-    <string name="migration_info_6_7_title">Старонка SoundCloud Top 50 выдалена</string>
-    <string name="trending_music">Трэнды – музыка</string>
     <string name="entry_deleted">Запіс выдалены</string>
-    <string name="trending_gaming">Трэнды – гульні</string>
-    <string name="trending_podcasts">Трэнды – падкасты</string>
-    <string name="trending_movies">Трэнды – фільмы і перадачы</string>
     <string name="unsupported_content_in_country">Гэты кантэнт недаступны для цяперашняй краіны кантэнту.\n\nЯе можна змяніць праз «Налады &gt; Кантэнт &gt; Прадвызначаная краіна кантэнту».</string>
     <string name="migration_info_7_8_message">21 ліпеня 2025 года YouTube спыніў падтрымку аб\'яднанай старонкі трэндаў. NewPipe замяніў старонку трэндаў на трэнды трансляцый.\n\nТаксама можна выбраць іншыя старонкі трэндаў праз «Налады &gt; Кантэнт &gt; Змесціва галоўнай старонкі».</string>
     <string name="migration_info_7_8_title">Аб\'яднаныя трэнды YouTube выдалены</string>
