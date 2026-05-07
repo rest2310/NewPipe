@@ -114,4 +114,20 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="RoundedThumbnailImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/rounded_surface_radius_small</item>
+    </style>
+
+    <style name="RoundedBannerImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/rounded_surface_radius</item>
+    </style>
+
+    <style name="NewPipe.ChannelTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textAllCaps">false</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
 </resources>
