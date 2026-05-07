@@ -10,7 +10,7 @@
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/itemThumbnailView"
         android:layout_width="@dimen/play_queue_thumbnail_width"
         android:layout_height="@dimen/play_queue_thumbnail_height"
@@ -19,6 +19,7 @@
         android:layout_marginBottom="@dimen/video_item_search_image_right_margin"
         android:scaleType="fitCenter"
         android:src="@drawable/placeholder_thumbnail_video"
+        app:shapeAppearance="@style/RoundedThumbnailImageView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +32,7 @@
         android:layout_alignBottom="@id/itemThumbnailView"
         android:layout_marginEnd="@dimen/video_item_search_duration_margin"
         android:layout_marginBottom="@dimen/video_item_search_duration_margin"
-        android:background="@color/duration_background_color"
+        android:background="@drawable/rounded_thumbnail_overlay_background"
         android:paddingStart="@dimen/video_item_search_duration_horizontal_padding"
         android:paddingTop="@dimen/video_item_search_duration_vertical_padding"
         android:paddingEnd="@dimen/video_item_search_duration_horizontal_padding"

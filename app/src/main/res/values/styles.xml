@@ -29,7 +29,7 @@
         <item name="bottomNavigationStyle">@style/NewPipe.BottomNavigationView</item>
         <item name="rounded_surface_background">@drawable/rounded_surface_background</item>
         <item name="rounded_list_item_background">@drawable/rounded_list_item_background</item>
-        <item name="rounded_selected_navigation_background">@drawable/rounded_selected_navigation_pill</item>
+        <item name="rounded_selected_navigation_background">@color/transparent_background_color</item>
         <item name="rounded_dialog_background">@drawable/rounded_dialog_background</item>
         <item name="rounded_menu_popup_background">@drawable/rounded_menu_popup_background</item>
         <item name="rounded_bottom_sheet_background">@drawable/rounded_bottom_sheet_background</item>
@@ -140,11 +140,12 @@
     </style>
 
     <style name="NewPipe.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
-        <item name="itemBackground">?attr/rounded_selected_navigation_background</item>
-        <item name="itemIconTint">?attr/colorControlActivated</item>
+        <item name="itemBackground">@android:color/transparent</item>
+        <item name="itemIconTint">@color/bottom_navigation_item_tint</item>
+        <item name="itemTextColor">@color/bottom_navigation_item_tint</item>
         <item name="itemRippleColor">?attr/colorControlHighlight</item>
         <item name="labelVisibilityMode">labeled</item>
-        <item name="elevation">8dp</item>
+        <item name="elevation">0dp</item>
     </style>
 
     <style name="NewPipe.RoundedSurface">

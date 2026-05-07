@@ -602,11 +602,11 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbarLayoutBinding.toolbar.setNavigationOnClickListener(v -> onHomeButtonPressed());
             toolbarLayoutBinding.toolbar.setBackgroundColor(
-                    ThemeHelper.resolveColorFromAttr(this, R.attr.colorPrimary));
+                    ThemeHelper.resolveColorFromAttr(this, R.attr.windowBackground));
             toolbarLayoutBinding.toolbar.setTitleTextColor(
-                    ThemeHelper.resolveColorFromAttr(this, R.attr.actionColor));
+                    ContextCompat.getColor(this, R.color.contrastColor));
             toolbarLayoutBinding.toolbar.setSubtitleTextColor(
-                    ThemeHelper.resolveColorFromAttr(this, R.attr.actionColor));
+                    ContextCompat.getColor(this, R.color.contrastColor));
         }
     }
 

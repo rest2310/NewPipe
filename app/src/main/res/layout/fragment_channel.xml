@@ -5,13 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- since ToolbarTheme sets the tint to icons, it would make images all white,
-    therefore app:tint="@null" is used to undo that setting -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ToolbarTheme"
+        android:background="?android:attr/windowBackground"
         app:elevation="0dp">
 
         <org.schabi.newpipe.views.CustomCollapsingToolbarLayout
@@ -24,19 +22,27 @@
                 android:id="@+id/channel_metadata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/rounded_surface_spacing"
+                android:background="?attr/rounded_surface_background"
                 android:fitsSystemWindows="true"
+                android:padding="@dimen/rounded_surface_spacing"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/channel_banner_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:maxHeight="70dp"
-                    android:scaleType="fitCenter"
+                    android:background="@drawable/channel_banner_background"
+                    android:maxHeight="104dp"
+                    android:minHeight="72dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/placeholder_channel_banner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearance="@style/RoundedBannerImageView"
                     app:tint="@null"
                     tools:ignore="ContentDescription" />
 
@@ -50,8 +56,7 @@
                     android:src="@drawable/placeholder_person"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintTop_toBottomOf="@id/channel_banner_image"
                     app:shapeAppearance="@style/CircularImageView"
                     app:strokeColor="#ffffff"
                     app:strokeWidth="2dp"
@@ -126,7 +131,11 @@
                     android:id="@+id/channel_subscribe_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/modern_subscribe_button_background"
+                    android:minHeight="40dp"
+                    android:paddingHorizontal="16dp"
                     android:text="@string/subscribe_button_title"
+                    android:textAllCaps="false"
                     android:textSize="@dimen/channel_rss_title_size"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -146,12 +155,19 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="@color/white"
+            android:background="?android:attr/windowBackground"
+            android:paddingHorizontal="@dimen/rounded_surface_spacing"
+            android:paddingTop="@dimen/rounded_surface_spacing"
+            app:tabGravity="center"
+            app:tabIndicator="@drawable/channel_tab_indicator"
+            app:tabIndicatorColor="?attr/colorPrimary"
+            app:tabIndicatorFullWidth="false"
+            app:tabMinHeight="40dp"
             app:tabMode="scrollable"
-            app:tabRippleColor="@color/white"
-            app:tabTextColor="@color/white" />
+            app:tabRippleColor="?attr/colorControlHighlight"
+            app:tabSelectedTextColor="?attr/colorPrimary"
+            app:tabTextAppearance="@style/NewPipe.ChannelTabText"
+            app:tabTextColor="?android:attr/textColorSecondary" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
