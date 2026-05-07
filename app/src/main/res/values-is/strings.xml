@@ -74,8 +74,6 @@
     <string name="charset_letters_and_digits">Bókstafir og tölustafir</string>
     <string name="main_page_content_summary">Hvaða flipar eru sýndir á aðalsíðunni</string>
     <string name="blank_page_summary">Auð síða</string>
-    <string name="new_and_hot">Nýtt og heitt</string>
-    <string name="recently_added">Nýlega bætt við</string>
     <string name="start_here_on_popup">Spila í sprettiglugga</string>
     <string name="always_ask_open_action">Alltaf spyrja</string>
     <string name="preferred_player_fetcher_notification_title">Sækir upplýsingar…</string>
@@ -84,7 +82,6 @@
     <string name="select_a_channel">Veldu rás</string>
     <string name="error_details_headline">Nánar:</string>
     <string name="comments_tab_description">Ummæli</string>
-    <string name="most_liked">Vinsælt</string>
     <string name="play_queue_audio_settings">Hljóðstillingar</string>
     <string name="start_here_on_background">Spila í bakgrunni</string>
     <string name="preferred_open_action_settings_summary">Þegar hlekkur er opnaður — %s</string>
@@ -265,7 +262,6 @@
     <string name="could_not_import_all_files">Ath: gat ekki flutt inn allar skrár.</string>
     <string name="import_settings">Viltu einnig flytja inn stillingar\?</string>
     <string name="error_unable_to_load_comments">Gat ekki hlaðið ummælum</string>
-    <string name="top_50">Topp 50</string>
     <string name="enqueue_stream">Setja í röð</string>
     <string name="enqueued">Í röð</string>
     <string name="show_channel_details">Sýna upplýsingar um rás</string>
@@ -378,9 +374,6 @@
     <string name="related_items_tab_description">Tengd efni</string>
     <string name="msg_calculating_hash">Að reikna gátsummu</string>
     <string name="settings_file_replacement_character_title">Stafur sem kemur í staðinn</string>
-    <string name="kiosk_page_summary">Sölusíða</string>
-    <string name="default_kiosk_page_summary">Sjálfgefin sölusíða</string>
-    <string name="conferences">Fjarfundar</string>
     <string name="title_activity_play_queue">Spilunarröð</string>
     <string name="enqueue_next_stream">Bæta við</string>
     <string name="enqueued_next">Í röð næst</string>
@@ -447,7 +440,6 @@
         <item quantity="one">%d dagur</item>
         <item quantity="other">%d dagar</item>
     </plurals>
-    <string name="fragment_feed_title">Hvað er nýtt</string>
     <string name="feed_groups_header_title">Rásarhópar</string>
     <string name="feed_notification_loading">Hleður…</string>
     <string name="settings_category_feed_title">Streymi</string>
@@ -601,7 +593,6 @@
     <string name="download_to_sdcard_error_message">Niðurhal á SD kort er ekki mögulegt. Endurstilla niðurhalsmöppu\?</string>
     <string name="main_page_content_swipe_remove">Strjúktu til að fjarlægja</string>
     <string name="no_playlist_bookmarked_yet">Engir spilunarlistar bókamerktir ennþá</string>
-    <string name="select_a_kiosk">Veldu sölusíðu</string>
     <string name="no_valid_zip_file">Engin gild ZIP safnskrá</string>
     <string name="override_current_data">Núverandi gögnum verður skipt út.</string>
     <string name="hold_to_append">Haltu niðri til að bæta við spilunarröð</string>
@@ -773,15 +764,9 @@
     <string name="no_feed_group_created_yet">Enginn hópur streyma útbúinn ennþá</string>
     <string name="feed_group_page_summary">Síða rásahóps</string>
     <string name="channel_tab_likes">Líkar við</string>
-    <string name="migration_info_6_7_title">Topp 50 síða SoundCloud fjarlægð</string>
-    <string name="migration_info_6_7_message">SoundCloud er hætt með Topp 50 vinsældalistann. Viðkomandi flipi hefur verið fjarlægður af aðalsíðunni þinni.</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>
-    <string name="trending_gaming">Vinsælir leikir</string>
-    <string name="trending_podcasts">Vinsæl hlaðvörp</string>
-    <string name="trending_movies">Vinsælar kvikmyndir og þættir</string>
-    <string name="trending_music">Vinsæl tónlist</string>
     <string name="permission_display_over_apps_permission_name">\"Leyfa birtingu ofan á öðrum forritum\"</string>
     <string name="delete_file">Eyða skrá</string>
     <string name="delete_entry">Eyða færslu</string>

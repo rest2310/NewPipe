@@ -165,8 +165,6 @@
     <string name="channel_page_summary">Chaîne</string>
     <string name="select_a_channel">Sélectionner une chaîne</string>
     <string name="trending">Tendances</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Nouveau et populaire</string>
     <string name="play_all">Tout lire</string>
     <string name="player_stream_failure">Impossible de lire ce flux</string>
     <string name="player_unrecoverable_failure">Une erreur irrécupérable du lecteur est survenue</string>
@@ -178,8 +176,6 @@
     <string name="show_hold_to_append_summary">Affiche l’astuce lors de l’appui des boutons « Arrière-plan » ou « Flottant » sur la page de détails d’une vidéo</string>
     <string name="unknown_content">[Inconnu]</string>
     <string name="player_recoverable_failure">Récupération depuis l’erreur du lecteur</string>
-    <string name="kiosk_page_summary">Kiosque</string>
-    <string name="select_a_kiosk">Sélectionner un kiosque</string>
     <string name="hold_to_append">Maintenir pour ajouter à la file</string>
     <string name="start_here_on_background">Démarrer la lecture en arrière-plan</string>
     <string name="start_here_on_popup">Démarrer la lecture dans une fenêtre flottante</string>
@@ -336,7 +332,6 @@
     <string name="paused">en pause</string>
     <string name="download_failed">Téléchargement échoué</string>
     <string name="error_timeout">Délai de connexion expiré</string>
-    <string name="conferences">Conférences</string>
     <string name="queued">ajouté à la liste de lecture</string>
     <string name="generate_unique_name">Générer un nom unique</string>
     <string name="overwrite">Écraser</string>
@@ -393,7 +388,6 @@
     <string name="clear_playback_states_title">Supprimer les positions de reprise de lecture</string>
     <string name="clear_playback_states_summary">Supprime toutes les positions de reprise de lecture</string>
     <string name="delete_playback_states_alert">Voulez-vous supprimer toutes les positions de reprise de lecture \?</string>
-    <string name="default_kiosk_page_summary">Kiosque par défaut</string>
     <string name="no_one_watching">Personne ne regarde</string>
     <plurals name="watching">
         <item quantity="one">%s spectateur</item>
@@ -408,8 +402,6 @@
     </plurals>
     <string name="seek_duration_title">Durée de l’avance et retour rapide</string>
     <string name="local">Local</string>
-    <string name="recently_added">Ajoutées récemment</string>
-    <string name="most_liked">Les plus aimées</string>
     <string name="recovering">récupération</string>
     <string name="error_download_resource_gone">Impossible de récupérer ce téléchargement</string>
     <string name="choose_instance_prompt">Veuillez choisir une instance</string>
@@ -447,7 +439,6 @@
         <item quantity="other">%d jours</item>
     </plurals>
     <!-- feed -->
-    <string name="fragment_feed_title">Nouveautés</string>
     <string name="feed_groups_header_title">Groupes de chaînes</string>
     <string name="feed_oldest_subscription_update">Dernière mise à jour du flux : %s</string>
     <string name="feed_subscription_not_loaded_count">Pas chargés : %d</string>
@@ -813,14 +804,8 @@
     <string name="search_with_service_name">Rechercher %1$s</string>
     <string name="search_with_service_name_and_filter">Rechercher %1$s (%2$s)</string>
     <string name="channel_tab_likes">J’aime</string>
-    <string name="migration_info_6_7_title">Page SoundCloud Top 50 supprimée</string>
-    <string name="migration_info_6_7_message">SoundCloud a abandonné le classement original du Top 50. L\'onglet correspondant a été supprimé de votre page d\'accueil.</string>
     <string name="migration_info_7_8_title">Suppression des tendances combinées sur YouTube</string>
     <string name="migration_info_7_8_message">YouTube a supprimé la page des tendances combinées depuis le 21 juillet 2025. NewPipe a remplacé la page des tendances par défaut par les diffusions en direct les plus populaires.\n\nVous pouvez également sélectionner différentes pages de tendances dans « Paramètres &gt; Contenu &gt; Contenu de la page principale ».</string>
-    <string name="trending_gaming">Tendances jeu vidéo</string>
-    <string name="trending_podcasts">Tendances podcasts</string>
-    <string name="trending_movies">Tendances films et séries</string>
-    <string name="trending_music">Tendances musique</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>

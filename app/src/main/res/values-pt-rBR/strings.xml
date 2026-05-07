@@ -124,7 +124,6 @@
     <string name="subscription_change_failed">Não foi possível alterar a inscrição</string>
     <string name="subscription_update_failed">Não foi possível atualizar a inscrição</string>
     <string name="tab_subscriptions">Inscrições</string>
-    <string name="fragment_feed_title">Novidades</string>
     <string name="resume_on_audio_focus_gain_title">Continuar reprodução</string>
     <string name="resume_on_audio_focus_gain_summary">Continuar a reprodução após interrupções (por exemplo, chamadas telefônicas)</string>
     <string name="enable_search_history_title">Histórico de busca</string>
@@ -162,14 +161,10 @@
     <string name="delete_item_search_history">Deseja excluir este item do histórico de busca\?</string>
     <string name="main_page_content">Conteúdo da tela inicial</string>
     <string name="blank_page_summary">Página em branco</string>
-    <string name="kiosk_page_summary">Página do Kiosk</string>
     <string name="channel_page_summary">Página do canal</string>
     <string name="select_a_channel">Selecione um canal</string>
     <string name="no_channel_subscribed_yet">Nenhuma inscrição ainda</string>
-    <string name="select_a_kiosk">Selecione um Kiosk</string>
     <string name="trending">Em Alta</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Novos e tendências</string>
     <string name="show_hold_to_append_title">Mostrar dica \"Segure para pôr na fila\"</string>
     <string name="show_hold_to_append_summary">Mostra dica ao tocar no botão segundo plano ou popup em \"Detalhes:\" do vídeo</string>
     <string name="play_all">Reproduzir tudo</string>
@@ -325,7 +320,6 @@
     <string name="restore_defaults_confirmation">Deseja restaurar os padrões?</string>
     <string name="subscribers_count_not_available">Número de inscritos indisponível</string>
     <string name="main_page_content_summary">Quais guias são exibidas na tela inicial</string>
-    <string name="conferences">Conferências</string>
     <string name="updates_setting_title">Atualizações</string>
     <string name="updates_setting_description">Notificar quando uma nova versão do aplicativo estiver disponível</string>
     <string name="list_view_mode">Modo de exibição da lista</string>
@@ -393,7 +387,6 @@
     <string name="clear_playback_states_title">Remover posições de reprodução</string>
     <string name="clear_playback_states_summary">Remove todas as posições de reprodução</string>
     <string name="delete_playback_states_alert">Remover todas as posições de reprodução?</string>
-    <string name="default_kiosk_page_summary">Kiosk padrão</string>
     <string name="no_one_watching">Ninguém está assistindo</string>
     <plurals name="watching">
         <item quantity="one">%s assistindo</item>
@@ -408,8 +401,6 @@
     </plurals>
     <string name="seek_duration_title">Duração de avanço/retrocesso rápido</string>
     <string name="local">Local</string>
-    <string name="recently_added">Adicionado recentemente</string>
-    <string name="most_liked">Mais curtidos</string>
     <string name="playlist_no_uploader">Gerado automaticamente (nenhum carregador encontrado)</string>
     <string name="recovering">recuperando</string>
     <string name="error_download_resource_gone">O download não pôde ser recuperado</string>
@@ -811,8 +802,6 @@
     <string name="search_with_service_name">Buscar %1$s</string>
     <string name="search_with_service_name_and_filter">Buscar %1$s (%2$s)</string>
     <string name="channel_tab_likes">Curtidas</string>
-    <string name="migration_info_6_7_title">Página Top 50 do SoundCloud removida</string>
-    <string name="migration_info_6_7_message">O SoundCloud descontinuou as paradas originais do Top 50. A aba correspondente foi removida da sua página principal.</string>
     <string name="permission_display_over_apps_message">Para usar o Popup Player, selecione %1$s no seguinte menu de configurações do Android e ative %2$s.</string>
     <string name="permission_display_over_apps_permission_name">“Permitir exibição sobre outros aplicativos”</string>
     <string name="short_thousand">%sK</string>
@@ -822,10 +811,6 @@
     <string name="delete_entry">Excluir entrada</string>
     <string name="migration_info_7_8_title">Tendências combinadas do YouTube removidas</string>
     <string name="migration_info_7_8_message">O YouTube descontinuou a página de tendências combinadas em 21 de julho de 2025. O NewPipe substituiu a página de tendências padrão pelas transmissões ao vivo em alta.\n\nVocê também pode selecionar páginas de tendências diferentes em \"Configurações &gt; Conteúdo &gt; Conteúdo da página principal\".</string>
-    <string name="trending_gaming">Jogos em alta</string>
-    <string name="trending_podcasts">Podcasts em alta</string>
-    <string name="trending_movies">Filmes e programas em alta</string>
-    <string name="trending_music">Músicas em alta</string>
     <string name="entry_deleted">Entrada excluída</string>
     <string name="account_terminated_service_provides_reason">Conta encerrada\n\n%1$s informa este motivo: %2$s</string>
     <string name="player_http_403">Erro HTTP 403 recebido do servidor durante a reprodução, provavelmente causado por URL de streaming expirado ou IP banido</string>

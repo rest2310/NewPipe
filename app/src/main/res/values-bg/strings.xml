@@ -22,7 +22,6 @@
     <string name="subscription_change_failed">Неуспешна промяна на абонамента</string>
     <string name="subscription_update_failed">Неуспешно обновление на абонамента</string>
     <string name="tab_subscriptions">Абонаменти</string>
-    <string name="fragment_feed_title">Обновления</string>
     <string name="controls_background_title">Фонов режим</string>
     <string name="controls_popup_title">В прозорец</string>
     <string name="download_path_title">Директория за изтегляне на видео</string>
@@ -225,11 +224,9 @@
     <string name="title_most_played">Най-възпроизвеждани</string>
     <string name="main_page_content">Съдържание на главната страница</string>
     <string name="blank_page_summary">Празна страница</string>
-    <string name="kiosk_page_summary">Страница-павилион</string>
     <string name="channel_page_summary">Страница на канал</string>
     <string name="select_a_channel">Изберете канал</string>
     <string name="no_channel_subscribed_yet">За момента нямате абонаменти</string>
-    <string name="select_a_kiosk">Изберете павилион</string>
     <string name="export_complete_toast">Изнасянето приключи</string>
     <string name="import_complete_toast">Внасянето приключи</string>
     <string name="no_valid_zip_file">Невалиден ZIP файл</string>
@@ -237,8 +234,6 @@
     <string name="override_current_data">Това ще замени текущата Ви инсталация.</string>
     <string name="import_settings">Искате ли да внесете и настройки?</string>
     <string name="trending">Набиращи популярност</string>
-    <string name="top_50">Топ 50</string>
-    <string name="new_and_hot">Ново и горещо</string>
     <string name="play_queue_remove">Премахни</string>
     <string name="play_queue_stream_detail">Детайли</string>
     <string name="play_queue_audio_settings">Аудио настройки</string>
@@ -419,8 +414,6 @@
     <string name="off">Изключен</string>
     <string name="open_website_license">Отвори уеб-страницата</string>
     <string name="detail_heart_img_view_description">Отбелязан със сърце от автора</string>
-    <string name="conferences">Конференции</string>
-    <string name="most_liked">Най-харесвани</string>
     <string name="done">Готово</string>
     <string name="comments_tab_description">Коментари</string>
     <string name="metadata_privacy_unlisted">Скрит</string>
@@ -519,7 +512,6 @@
     <string name="percent">Процент</string>
     <string name="unknown_quality">Неизвестно качество</string>
     <string name="unknown_format">Неизвестен формат</string>
-    <string name="recently_added">Наскоро добавено</string>
     <string name="notification_action_buffering">Буфериране</string>
     <string name="crash_the_player">Разбийте плейъра</string>
     <string name="show_meta_info_summary">Изключете, за да скриете полетата с мета информация с допълнителна информация за създателя на потока, съдържанието на потока или заявка за търсене</string>
@@ -710,7 +702,6 @@
     <string name="subtitle_activity_recaptcha">Натиснете „Готово“, когато решите</string>
     <string name="faq_description">Ако имате проблеми с използването на приложението, не забравяйте да проверите тези отговори на често задавани въпроси!</string>
     <string name="main_page_content_swipe_remove">Плъзнете елементи, за да ги премахнете</string>
-    <string name="default_kiosk_page_summary">Kiosk по подразбиране</string>
     <string name="enqueue_next_stream">Наредете следващия</string>
     <string name="enqueued_next">Следващ в опашка</string>
     <string name="loading_stream_details">Подробностите за потока се зареждат…</string>
@@ -795,14 +786,8 @@
     <string name="search_with_service_name">Търсене %1$s</string>
     <string name="search_with_service_name_and_filter">Търсене %1$s (%2$s)</string>
     <string name="channel_tab_likes">Харесвания</string>
-    <string name="migration_info_6_7_title">Страница SoundCloud Top 50 е премахната</string>
-    <string name="migration_info_6_7_message">SoundCloud преустанови оригиналните класации Топ 50. Съответният раздел е премахнат от главната ви страница.</string>
     <string name="migration_info_7_8_message">YouTube преустанови комбинираната страница с популярни от 21 юли 2025 г. NewPipe замени стандартната страница с популярни с популярни предавания на живо.\n\nМожете също да изберете различни популярни страници в „Настройки &gt; Съдържание &gt; Съдържание на главната страница“.</string>
     <string name="migration_info_7_8_title">YouTube комбинирани популярни са премахнати</string>
-    <string name="trending_gaming">Популярни игри</string>
-    <string name="trending_podcasts">Популярни подкасти</string>
-    <string name="trending_movies">Популярни филми и сериали</string>
-    <string name="trending_music">Популярна музика</string>
     <string name="short_thousand">%s хил.</string>
     <string name="short_million">%s млн.</string>
     <string name="short_billion">%s млрд.</string>

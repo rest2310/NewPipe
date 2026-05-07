@@ -142,14 +142,11 @@
     <string name="no_valid_zip_file">Pelê ZIP-yê derbasdar tune</string>
     <string name="import_complete_toast">Îthal kirin</string>
     <string name="export_complete_toast">Exxrac kirin</string>
-    <string name="select_a_kiosk">Kiosk hilbijêrin</string>
     <string name="no_playlist_bookmarked_yet">Hîn qeşmerên lîsteya lîsteyê tune</string>
     <string name="select_a_playlist">Lîsteyek lîstinê hilbijêrin</string>
     <string name="no_channel_subscribed_yet">Tevî aboneyên kanalê tune</string>
     <string name="select_a_channel">Kanalek hilbijêrin</string>
     <string name="channel_page_summary">Rûpela Qenalê</string>
-    <string name="default_kiosk_page_summary">Jixweber Kiosk</string>
-    <string name="kiosk_page_summary">Rûpela Kiosk</string>
     <string name="blank_page_summary">Rûpelê Vala</string>
     <string name="main_page_content_summary">Kîjan tabî di rûpelê sereke de têne nîşandin</string>
     <string name="main_page_content">Naveroka rûpelê sereke</string>
@@ -328,7 +325,6 @@
     <string name="feed_subscription_not_loaded_count">Ne barkirî: %d</string>
     <string name="feed_oldest_subscription_update">Xxweyîkirin herî dawî hate nûve kirin: %s</string>
     <string name="feed_groups_header_title">Komên kenalê</string>
-    <string name="fragment_feed_title">Çi Nû ye</string>
     <plurals name="days">
         <item quantity="one">%d rojê</item>
         <item quantity="other">%d roj</item>
@@ -486,12 +482,7 @@
     <string name="play_queue_stream_detail">Hûrgulî</string>
     <string name="play_queue_remove">Rakirin</string>
     <string name="title_activity_play_queue">Dûvê lîstin</string>
-    <string name="conferences">Konferans</string>
-    <string name="most_liked">Pir hez kirin</string>
-    <string name="recently_added">Demên dawî zêde kirin</string>
     <string name="local">Herêmî</string>
-    <string name="new_and_hot">Nû û germ</string>
-    <string name="top_50">Yekem 50</string>
     <string name="trending">Tiştên Trend</string>
     <string name="app_license_title">Lîsansa NewPipe</string>
     <string name="read_privacy_policy">Polîtîkaya nepeniyê bixwînin</string>

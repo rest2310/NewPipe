@@ -73,7 +73,6 @@
     <string name="import_subscriptions_hint">استيراد الاشتراكات أو تصديرها من القائمة المكونة من 3 نقاط</string>
     <string name="downloads_title">الملفات المحملة</string>
     <string name="invalid_source">لا يوجد مثل هذا الملف/مصدر المحتوى</string>
-    <string name="most_liked">الأكثر إعجابًا</string>
     <string name="feed_load_error_account_info">تعذر تحميل موجز \'%s\'.</string>
     <string name="question_mark">؟</string>
     <string name="check_for_updates">التحقق من وجود تحديثات</string>
@@ -199,11 +198,9 @@
     <string name="read_full_license">قراءة الرخصة</string>
     <string name="show_channel_tabs">ألسنة القنوات</string>
     <string name="seekbar_preview_thumbnail_title">معاينة مصغرة على شريط التمرير</string>
-    <string name="fragment_feed_title">ما الجديد</string>
     <string name="feed_oldest_subscription_update">آخر تحديث للموجز: %s</string>
     <string name="msg_error">الخطأ</string>
     <string name="notification_action_4_title">زر الإجراء الخامس</string>
-    <string name="new_and_hot">جديد وساخن</string>
     <string name="use_inexact_seek_title">استعمال التقديم السريع الغير دقيق</string>
     <string name="settings_category_downloads_title">التنزيل</string>
     <string name="permission_display_over_apps">امنح الإذن بالعرض فوق التطبيقات الأخرى</string>
@@ -314,7 +311,6 @@
     <string name="youtube_restricted_mode_enabled_summary">يوفر YouTube \"وضع تقييد المحتوى\" الذي يخفي المحتوى المحتمل للكبار</string>
     <string name="show_comments_summary">عطّله لإخفاء التعليقات</string>
     <string name="error_report_notification_title">واجه NewPipe خطأ، اضغط للتقرير</string>
-    <string name="default_kiosk_page_summary">الكشك الافتراضي</string>
     <string name="show_search_suggestions_title">اقتراحات البحث</string>
     <string name="skip_silence_checkbox">تسريع إلى الأمام أثناء الصمت</string>
     <string name="settings_category_exoplayer_summary">إدارة بعض إعدادات ExoPlayer. تتطلب هذه التغييرات إعادة تشغيل المشغل لتصبح سارية المفعول</string>
@@ -672,7 +668,6 @@
     <string name="clear_download_history">تنظيف تاريخ التحميل</string>
     <string name="download_already_pending">هناك تنزيل معلق بهذا الاسم</string>
     <string name="missions_header_finished">انتهى</string>
-    <string name="recently_added">أُضيف مؤخرًا</string>
     <string name="settings_file_replacement_character_summary">يتم استبدال الرموز غير المسموح بها بهذه القيمة</string>
     <string name="empty_list_subtitle">لا شيء هنا سوى الصراصير</string>
     <string name="playlist_no_uploader">مُنشأة تلقائيًا (لم يتم العثور على رافع)</string>
@@ -684,7 +679,6 @@
     <string name="error_unknown_host">تعذر العثور على الخادم</string>
     <string name="enable_disposed_exceptions_title">تقرير الأخطاء خارج دورة الحياة</string>
     <string name="card">البطاقة</string>
-    <string name="select_a_kiosk">حدد كشك</string>
     <string name="feed_load_error_fast_unknown">لا يوفر وضع الموجز السريع مزيدًا من المعلومات حول هذا الموضوع.</string>
     <string name="no_available_dir">يرجى تحديد مجلد التنزيل لاحقا في الإعدادات</string>
     <string name="downloads_storage_ask_summary_no_saf_notice">سيتم سؤالك عن مكان حفظ كل تنزيل</string>
@@ -722,7 +716,6 @@
     <string name="no_valid_zip_file">ملف مضغوط ZIP غير صالح</string>
     <string name="error_http_not_found">غير موجود</string>
     <string name="night_theme_summary">حدد موضوعك الليلي المفضل — %s</string>
-    <string name="kiosk_page_summary">صفحة الكشك</string>
     <plurals name="listening">
         <item quantity="zero">لا مُستمِع</item>
         <item quantity="one">مُستَمِع واحد</item>
@@ -732,7 +725,6 @@
         <item quantity="other">%s مستمع</item>
     </plurals>
     <string name="metadata_privacy_unlisted">غير مدرج</string>
-    <string name="conferences">المؤتمرات</string>
     <string name="import_file_title">إستيراد ملف</string>
     <string name="show_error_snackbar">إظهار خطأ snackbar</string>
     <string name="website_encouragement">قم بزيارة موقع NewPipe لمزيد من المعلومات والمستجدات.</string>
@@ -756,7 +748,6 @@
     <string name="unmute">غير صامت</string>
     <string name="clear_cookie_summary">امسح ملفات تعريف الارتباط التي يخزنها NewPipe عند حل reCAPTCHA</string>
     <string name="new_seek_duration_toast">نظرا لقيود مشغل ExoPlayer مدة التقديم تم ضبطها الى %d ثانية</string>
-    <string name="top_50">أفضل ٥٠</string>
     <string name="brightness">السطوع</string>
     <string name="description_select_enable">تمكين تحديد نص في الوصف</string>
     <string name="feed_show_watched">شاهَدتَها بالكامل</string>

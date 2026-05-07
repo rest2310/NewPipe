@@ -303,12 +303,7 @@
     <string name="title_last_played">ଶେଷ ଥର ପ୍ଲେ ହୋଇଛି</string>
     <string name="blank_page_summary">ଖାଲି ପୃଷ୍ଠା</string>
     <string name="channel_page_summary">ଚ୍ୟାନେଲ୍ ପୃଷ୍ଠା</string>
-    <string name="kiosk_page_summary">କିଓସ୍କ ପୃଷ୍ଠା</string>
-    <string name="default_kiosk_page_summary">ଡିଫଲ୍ଟ କିଓସ୍କ</string>
-    <string name="top_50">ଶ୍ରେଷ୍ଠ 50</string>
-    <string name="new_and_hot">ନୂତନ ଏବଂ ଗରମ</string>
     <string name="local">ସ୍ଥାନୀୟ</string>
-    <string name="recently_added">ସମ୍ପ୍ରତି ଯୋଡା ଯାଇଛି</string>
     <string name="always_ask_open_action">ସର୍ବଦା ପଚାର</string>
     <string name="preferred_player_fetcher_notification_message">ଅନୁରୋଧ କରାଯାଇଥିବା ବିଷୟବସ୍ତୁକୁ ଧାରଣ କରୁଛି</string>
     <string name="background_player">ପୃଷ୍ଠଭୂମି ପ୍ଲେୟାର</string>
@@ -450,7 +445,6 @@
     <string name="website_encouragement">ଅଧିକ ସୂଚନା ଏବଂ ସମ୍ବାଦ ପାଇଁ NewPipe ୱେବସାଇଟ୍ ପରିଦର୍ଶନ କରନ୍ତୁ ।</string>
     <string name="export_complete_toast">ରପ୍ତାନି ହୋଇଛି</string>
     <string name="no_valid_zip_file">କୌଣସି ବୈଧ ZIP ଫାଇଲ୍ ନାହିଁ</string>
-    <string name="conferences">ଆଲୋଚନା</string>
     <string name="play_queue_remove">ଅପସାରଣ କରନ୍ତୁ</string>
     <string name="play_queue_audio_settings">ଅଡିଓ ସେଟିଂସମୂହ</string>
     <string name="hold_to_append">ଏନକ୍ୟୁ କରିବାକୁ ଧର</string>
@@ -458,7 +452,6 @@
     <string name="playlist_creation_success">ପ୍ଲେଲିଷ୍ଟ ସୃଷ୍ଟି ହୋଇଛି</string>
     <string name="channel_created_by">%s ଦ୍ୱାରା ସୃଷ୍ଟି</string>
     <string name="video_detail_by">%s ଦ୍ଵାରା</string>
-    <string name="fragment_feed_title">ନୁଆ କଣ</string>
     <string name="feed_oldest_subscription_update">ଶେଷ ଅଦ୍ୟତନ କରନ୍ତୁ: %s</string>
     <string name="feed_subscription_not_loaded_count">ଲୋଡ୍ ହୋଇନାହିଁ: %d</string>
     <string name="feed_notification_loading">ଫିଡ୍ ଲୋଡିଂ…</string>
@@ -602,11 +595,9 @@
     <string name="select_a_channel">ଏକ ଚ୍ୟାନେଲ୍ ଚୟନ କରନ୍ତୁ</string>
     <string name="main_page_content_swipe_remove">ସେଗୁଡିକ ଅପସାରଣ କରିବା ପାଇଁ ଆଇଟମଗୁଡିକ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
     <string name="no_channel_subscribed_yet">ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଚ୍ୟାନେଲ ରେ ସଦସ୍ୟତା ନାହିଁ</string>
-    <string name="select_a_kiosk">ଏକ କିଓସ୍କ ଚୟନ କରନ୍ତୁ</string>
     <string name="could_not_import_all_files">ଚେତାବନୀ: ସମସ୍ତ ଫାଇଲ୍ ଆମଦାନି କରିପାରିଲା ନାହିଁ ।</string>
     <string name="import_settings">ଆପଣ ସେଟିଂସମୂହ ମଧ୍ୟ ଆମଦାନୀ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି\?</string>
     <string name="error_unable_to_load_comments">ମନ୍ତବ୍ୟ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ</string>
-    <string name="most_liked">ଅଧିକାଂଶ ପସନ୍ଦ କରନ୍ତି</string>
     <string name="show_channel_details">ଚ୍ୟାନେଲର ବିବରଣୀ ଦେଖାନ୍ତୁ</string>
     <string name="enqueue_stream">ଏନକ୍ୟୁ</string>
     <string name="enqueued">ଅନୁକରଣ</string>

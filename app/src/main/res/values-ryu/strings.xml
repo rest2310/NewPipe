@@ -118,7 +118,6 @@
     <string name="subscription_change_failed">チャンネルとぅうるいちゅんへいるかんなやびらん</string>
     <string name="subscription_update_failed">チャンネルとぅうるいちゅんかんしでぃちゃびらん</string>
     <string name="tab_subscriptions">とうるいちゅるチャンネル</string>
-    <string name="fragment_feed_title">しじちゃいちゅん</string>
     <string name="enable_search_history_title">きんさくりりき</string>
     <string name="enable_search_history_summary">きんさくりりききうくさびーん</string>
     <string name="enable_watch_history_title">さいせいりりき</string>
@@ -153,13 +152,10 @@
     <string name="delete_item_search_history">くぬアイテムきーるさくりりきからさくじょさびーが？</string>
     <string name="main_page_content">メインページぬコンテンツ</string>
     <string name="blank_page_summary">くゎいるはくページ</string>
-    <string name="kiosk_page_summary">Kioskページ</string>
     <string name="channel_page_summary">チャンネルページ</string>
     <string name="select_a_channel">チャンネルしんたく</string>
     <string name="no_channel_subscribed_yet">とうるくさてぃうぅるチャンネルーあいびらん</string>
-    <string name="select_a_kiosk">Kioskしんたく</string>
     <string name="trending">にいるき</string>
-    <string name="top_50">トップ50</string>
     <string name="play_queue_remove">さくじょ</string>
     <string name="play_queue_stream_detail">しょうさい</string>
     <string name="play_queue_audio_settings">うんせいぬしってい</string>
@@ -272,7 +268,6 @@
     <string name="show_hold_to_append_title">「ながうしっしキューんかいちちが」ぬヒントひょうじ</string>
     <string name="tracks">トラック</string>
     <string name="notification_channel_description">NewPipeぬプレイヤーぬちうち</string>
-    <string name="new_and_hot">しんちゃくとぅにんき</string>
     <string name="hold_to_append">ながうしっしキューんかいちちが</string>
     <string name="start_here_on_popup">ポップアップっしりんずくささるゆいかいし</string>
     <string name="preferred_open_action_settings_title">うくぬみぬ「ふぃらく」アクション</string>
@@ -311,7 +306,6 @@
     <string name="restore_defaults">っちいちんかいむどぅすん</string>
     <string name="restore_defaults_confirmation">きていぬしっていふちゅるぎんさびーが？</string>
     <string name="subscribers_count_not_available">とうるくさゃすうはりようでぃきましん</string>
-    <string name="conferences">がいぎ</string>
     <string name="start_accept_privacy_policy">ヨーロッパぬいちぱんデータふぐきせい（GDPR）にじゅんきょしーんたみに、NewPipeぬくじんじょうほうふぐほうしんにぐちゅういください。ゆーゆでぃくぃみそーれー。
 \nわったーんかいふぐあいほうくーくうくいんでー、くりうけいりらんだれーなやびらん。</string>
     <string name="updates_setting_title">アプリぬこうしん</string>
@@ -390,7 +384,6 @@
         <item quantity="one">%sふんぬちゃーしが</item>
         <item quantity="other">%sふんぬちゃーしが</item>
     </plurals>
-    <string name="default_kiosk_page_summary">デフォルトぬKiosk</string>
     <string name="no_one_watching">たーんんーじゃびらん</string>
     <plurals name="watching">
         <item quantity="one">%sんかいんがしちょうちゅう</item>
@@ -403,8 +396,6 @@
     </plurals>
     <string name="seek_duration_title">こうすくはやうくい/まきむどぅしかんかく</string>
     <string name="local">ローカル</string>
-    <string name="recently_added">さいきんちいからさったん</string>
-    <string name="most_liked">かんひょうが</string>
     <string name="recovering">しーゅうふくちゅう</string>
     <string name="error_download_resource_gone">ダウンロードぬしーゅうふくなやびらん</string>
     <string name="choose_instance_prompt">インスタンスしんたく</string>

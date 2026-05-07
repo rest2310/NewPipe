@@ -46,7 +46,6 @@
     <string name="use_external_audio_player_title">बाहरी ऑडियो प्लेयर का उपयोग करें</string>
     <string name="subscription_change_failed">सब्सक्रिप्शन बदली नहीं जा सकी</string>
     <string name="subscription_update_failed">सब्सक्रिप्शन अपडेट नहीं किया जा सका</string>
-    <string name="fragment_feed_title">क्या नया है</string>
     <string name="download_path_title">वीडियो के लिए डाउनलोड फ़ोल्डर</string>
     <string name="download_path_summary">डाउनलोड की गई वीडियो फ़ाइलें यहां संग्रहित होती हैं</string>
     <string name="download_path_dialog_title">वीडियो फ़ाइलों के लिए डाउनलोड फ़ोल्डर चुनें</string>
@@ -168,13 +167,9 @@
     <string name="delete_item_search_history">क्या आप इसको खोज इतिहास से मिटाना चाहते हैं \?</string>
     <string name="main_page_content">मुख्य पृष्ठ की विषयवस्तु</string>
     <string name="blank_page_summary">खाली पन्ना</string>
-    <string name="kiosk_page_summary">कियोस्क पन्ना</string>
     <string name="channel_page_summary">चैनल पन्ना</string>
     <string name="select_a_channel">चैनल चुनें</string>
     <string name="no_channel_subscribed_yet">अभी तक किसी चैनल की सब्सक्रिप्शन नहीं है</string>
-    <string name="select_a_kiosk">कियोस्क चुनें</string>
-    <string name="top_50">शीर्ष 50</string>
-    <string name="new_and_hot">नए और प्रचलित</string>
     <string name="play_queue_remove">निकालें</string>
     <string name="play_queue_stream_detail">विवरण</string>
     <string name="hold_to_append">कतार में जोड़ने के लिए दबाकर रखें</string>
@@ -345,7 +340,6 @@
     <string name="pause_downloads_on_mobile">मीटर्ड नेटवर्क पर रोकें</string>
     <string name="pause_downloads_on_mobile_desc">मोबाइल डाटा का इस्तेमाल करते समय उपयोगी है, परंतु कुछ डाउन्लोड रोके नहीं जा सकते है</string>
     <string name="events">घटनायें</string>
-    <string name="conferences">कॉन्फ्रेंस</string>
     <string name="show_comments_title">टिप्पणियां दिखाएं</string>
     <string name="show_comments_summary">टिप्पणियां छिपाने के लिए इसे बंद करे</string>
     <string name="autoplay_title">ऑटोप्ले</string>
@@ -390,7 +384,6 @@
     <string name="show_error">त्रुटि दिखाएं</string>
     <string name="error_http_unsupported_range">सर्वर मल्टी थ्रेडेड डाउनलोड स्वीकार नहीं करता, @string/msg_threads = 1 के साथ पुनः कोशिश करें</string>
     <string name="downloads_storage_use_saf_summary">\'स्टोरेज एक्सेस फ्रेमवर्क\' आपको बाहरी एसडी कार्ड पर डाउनलोड करने देता है</string>
-    <string name="default_kiosk_page_summary">डिफ़ॉल्ट कियोस्क</string>
     <string name="no_one_watching">कोई दर्शक नहीं देख रहा</string>
     <plurals name="watching">
         <item quantity="one">%s दर्शक है</item>
@@ -474,8 +467,6 @@
     <string name="show_memory_leaks">मेमरी लीक दर्शाएँ</string>
     <string name="unmute">अवाज चालू करें</string>
     <string name="mute">अवाज बंद करें</string>
-    <string name="most_liked">सबसे पसंद किए गए</string>
-    <string name="recently_added">हाल ही में जोड़ा</string>
     <string name="local">स्थानीय</string>
     <string name="no_playlist_bookmarked_yet">अभी कोई प्लेलिस्ट बुक्मार्क नहीं की हुई</string>
     <string name="select_a_playlist">प्लेलिस्ट चुनें</string>
@@ -806,14 +797,8 @@
     <string name="short_million">%sमिलीअन</string>
     <string name="short_billion">%sअरब</string>
     <string name="account_terminated_service_provides_reason">अकाउंट बंद कर दिया गया\n\n%1$s यह कारण बताता है: %2$s</string>
-    <string name="migration_info_6_7_title">साउंडक्लाउड टॉप 50 पेज हटा दिया गया</string>
-    <string name="migration_info_6_7_message">साउंडक्लाउड ने ओरिजिनल टॉप 50 चार्ट बंद कर दिए हैं। इससे जुड़ा टैब आपके मेन पेज से हटा दिया गया है।</string>
     <string name="migration_info_7_8_title">YouTube कंबाइंड ट्रेंडिंग हटा दी गई</string>
     <string name="migration_info_7_8_message">YouTube ने 21 जुलाई 2025 से कंबाइंड ट्रेंडिंग पेज बंद कर दिया है। NewPipe ने डिफ़ॉल्ट ट्रेंडिंग पेज को ट्रेंडिंग लाइवस्ट्रीम से बदल दिया है।\n\nआप \"सेटिंग्स &gt; कंटेंट &gt; मेन पेज कंटेंट\" में अलग-अलग ट्रेंडिंग पेज भी चुन सकते हैं।</string>
-    <string name="trending_gaming">गेमिंग ट्रेंडस</string>
-    <string name="trending_podcasts">ट्रेंडिंग पॉडकास्ट</string>
-    <string name="trending_movies">ट्रेंडिंग फिल्में और शो</string>
-    <string name="trending_music">ट्रेंडिंग संगीत</string>
     <string name="player_http_403">पले करते समय सर्वर से HTTP error 403 मिला, शायद स्ट्रीमिंग URL एक्सपायर होने या IP बैन की वजह से हुआ</string>
     <string name="player_http_invalid_status">पले करते समय सर्वर से HTTP error %1$s मिला</string>
     <string name="youtube_player_http_403">पले करते समय सर्वर से HTTP error 403 मिला, जो शायद IP बैन या स्ट्रीमिंग URL डीओबफस्केशन की दिक्कतों की वजह से हुआ है</string>

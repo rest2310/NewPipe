@@ -2,7 +2,6 @@
 <resources>
     <string name="feed_create_new_group_button_title">নতুন</string>
     <string name="feed_notification_loading">ফিড লোড হচ্ছে…</string>
-    <string name="fragment_feed_title">কি নতুন</string>
     <string name="app_language_title">অ্যাপ এর ভাষা</string>
     <string name="pause_downloads">ডাউনলোড পজ করুন</string>
     <string name="start_downloads">ডাউনলোড শুরু করুন</string>
@@ -45,10 +44,7 @@
     <string name="play_queue_audio_settings">অডিও সেটিং</string>
     <string name="play_queue_stream_detail">বিবরণ</string>
     <string name="play_queue_remove">সরাও</string>
-    <string name="recently_added">সাম্প্রতিক যুক্ত</string>
     <string name="local">স্থানীয়</string>
-    <string name="new_and_hot">নতুন এবং হট</string>
-    <string name="top_50">প্রথম ৫০</string>
     <string name="trending">ট্রেন্ডিং</string>
     <string name="error_unable_to_load_comments">মন্তব্যগুলি লোড করা যায় নি</string>
     <string name="import_complete_toast">আনা হয়েছে</string>
@@ -340,7 +336,6 @@
     <string name="error_http_no_content">সার্ভার ডেটা পাঠায় না</string>
     <string name="error_connect_host">সার্ভারে সংযোগ করা যাচ্ছে না</string>
     <string name="import_title">আমদানি</string>
-    <string name="conferences">সম্মেলন</string>
     <string name="enable_playback_state_lists_summary">তালিকায় প্লেব্যাক অবস্থান সূচক দেখাও</string>
     <string name="auto_queue_toggle">স্বত-সারি</string>
     <string name="error_timeout">সংযোগের সময় শেষ</string>
@@ -354,9 +349,6 @@
     <string name="popup_player">পপআপ প্লেয়ার</string>
     <string name="background_player">পটভূমি প্লেয়ার</string>
     <string name="title_activity_play_queue">প্লে সারি</string>
-    <string name="most_liked">সর্বোচ্চ পছন্দ</string>
-    <string name="default_kiosk_page_summary">ডিফল্ট কিয়স্ক</string>
-    <string name="kiosk_page_summary">কিয়স্ক পৃষ্ঠা</string>
     <string name="settings_file_replacement_character_title">প্রতিস্থাপক অক্ষর</string>
     <plurals name="videos">
         <item quantity="one">%sটি ভিডিও</item>
@@ -436,7 +428,6 @@
     <string name="playlist_thumbnail_change_success">প্লে-তালিকার থাম্বনেইল পরিবর্তিত হয়েছে।</string>
     <string name="preferred_player_fetcher_notification_message">অনুরোধকৃত তথ্য লোড হচ্ছে</string>
     <string name="hold_to_append">সারিতে ঢুকাতে ধরে রাখো</string>
-    <string name="select_a_kiosk">কিয়স্ক নির্বাচন করো</string>
     <string name="charset_most_special_characters">সর্বাধিক বিশেষ অক্ষর</string>
     <string name="subscribers_count_not_available">সাবস্ক্রাইবার গণনা পাওয়া যায়নি</string>
     <string name="detail_drag_description">সাজাতে টানো</string>

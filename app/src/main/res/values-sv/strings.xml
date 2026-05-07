@@ -83,7 +83,6 @@
     <string name="subscription_change_failed">Kunde inte ändra prenumeration</string>
     <string name="subscription_update_failed">Kunde inte uppdatera prenumeration</string>
     <string name="tab_subscriptions">Prenumerationer</string>
-    <string name="fragment_feed_title">Vad är nytt</string>
     <string name="enable_search_history_title">Sökhistorik</string>
     <string name="enable_search_history_summary">Spara sökfrågor lokalt</string>
     <string name="enable_watch_history_title">Visningshistorik</string>
@@ -166,14 +165,10 @@
     <string name="delete_item_search_history">Vill du ta bort det här objektet från sökhistoriken?</string>
     <string name="main_page_content">Huvudsidans innehåll</string>
     <string name="blank_page_summary">Tom sida</string>
-    <string name="kiosk_page_summary">Kiosksida</string>
     <string name="channel_page_summary">Kanalsida</string>
     <string name="select_a_channel">Välj en kanal</string>
     <string name="no_channel_subscribed_yet">Inga kanal prenumerationer ännu</string>
-    <string name="select_a_kiosk">Välj en kiosk</string>
     <string name="trending">Populärt</string>
-    <string name="top_50">Topp 50</string>
-    <string name="new_and_hot">Nytt och populärt</string>
     <string name="play_queue_remove">Ta bort</string>
     <string name="play_queue_stream_detail">Detaljer</string>
     <string name="play_queue_audio_settings">Ljudinställningar</string>
@@ -349,7 +344,6 @@
     <string name="max_retry_msg">Max försök</string>
     <string name="max_retry_desc">Maximalt antal försök innan hämtningen avbryts</string>
     <string name="events">Händelser</string>
-    <string name="conferences">Konferenser</string>
     <string name="show_comments_title">Visa kommentarer</string>
     <string name="show_comments_summary">Inaktivera för att dölja kommentarer</string>
     <string name="enable_playback_resume_title">Återuppta uppspelning</string>
@@ -387,7 +381,6 @@
     <string name="no_one_watching">Ingen tittar</string>
     <string name="permission_display_over_apps">Ge behörighet att visa över andra appar</string>
     <string name="no_one_listening">Ingen lyssnar</string>
-    <string name="default_kiosk_page_summary">Standardkiosk</string>
     <string name="error_path_creation">Destinationsmappen kan inte skapas</string>
     <string name="error_file_creation">Det går inte att skapa filen</string>
     <string name="download_already_pending">Det finns en pågående hämtning med det här namnet</string>
@@ -401,8 +394,6 @@
     <string name="playlist_no_uploader">Automatiskt genererad (ingen uppladdare hittades)</string>
     <string name="unmute">Slå på ljudet</string>
     <string name="mute">Tysta</string>
-    <string name="most_liked">Mest gillade</string>
-    <string name="recently_added">Nyligen tillagd</string>
     <string name="local">Lokala</string>
     <string name="done">Klar</string>
     <string name="youtube_restricted_mode_enabled_title">Slå på YouTubes \"Begränsat läge\"</string>
@@ -800,14 +791,8 @@
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>
     <string name="channel_tab_likes">Gillar</string>
-    <string name="migration_info_6_7_title">SoundCloud Topp 50-sida borttagen</string>
-    <string name="migration_info_6_7_message">SoundCloud har lagt ner de ursprungliga topp 50-listorna. Motsvarande flik har tagits bort från din startsida.</string>
     <string name="migration_info_7_8_title">YouTubes kombinerade trender har tagits bort</string>
     <string name="migration_info_7_8_message">YouTube har upphört med den kombinerade trendsidan från och med den 21 juli 2025. NewPipe ersatte standardtrendsidan med trendiga livestreams.\n\nDu kan också välja olika trendsidor i \"Inställningar &gt; Innehåll &gt; Innehåll på huvudsidan\".</string>
-    <string name="trending_gaming">Speltrender</string>
-    <string name="trending_podcasts">Trendiga poddar</string>
-    <string name="trending_movies">Populära filmer och serier</string>
-    <string name="trending_music">Populär musik</string>
     <string name="permission_display_over_apps_message">För att använda Popup Player, välj %1$s i följande Android-inställningsmeny och aktivera %2$s.</string>
     <string name="permission_display_over_apps_permission_name">\"Tillåt visning över andra appar\"</string>
     <string name="delete_file">Ta bort fil</string>

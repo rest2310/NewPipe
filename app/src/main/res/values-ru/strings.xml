@@ -116,7 +116,6 @@
     <string name="subscription_change_failed">Не удалось изменить подписку</string>
     <string name="subscription_update_failed">Не удалось обновить подписку</string>
     <string name="tab_subscriptions">Подписки</string>
-    <string name="fragment_feed_title">Что нового</string>
     <string name="enable_search_history_title">История поиска</string>
     <string name="enable_search_history_summary">Хранить запросы поиска (локально)</string>
     <string name="enable_watch_history_title">История просмотров</string>
@@ -171,13 +170,9 @@
     <string name="delete_item_search_history">Удалить этот элемент из истории поиска?</string>
     <string name="main_page_content">Главная страница</string>
     <string name="blank_page_summary">Пустая страница</string>
-    <string name="kiosk_page_summary">Киоск</string>
     <string name="channel_page_summary">Канал</string>
     <string name="select_a_channel">Выберите канал</string>
-    <string name="select_a_kiosk">Выберите киоск</string>
     <string name="trending">Тренды</string>
-    <string name="top_50">Топ 50</string>
-    <string name="new_and_hot">Новое и горячее</string>
     <string name="play_all">Играть всё</string>
     <string name="player_stream_failure">Не удалось воспроизвести этот поток</string>
     <string name="play_queue_stream_detail">Сведения</string>
@@ -359,7 +354,6 @@
     <string name="error_http_not_found">Не найдено</string>
     <string name="stop">Остановить</string>
     <string name="events">События</string>
-    <string name="conferences">Конференции</string>
     <string name="post_processing">пост-обработка</string>
     <string name="missions_header_pending">В очереди</string>
     <string name="generate_unique_name">Создать уникальное имя</string>
@@ -399,7 +393,6 @@
     <string name="clear_playback_states_title">Очистить позиции воспроизведения</string>
     <string name="clear_playback_states_summary">Удалить все позиции воспроизведения</string>
     <string name="delete_playback_states_alert">Удалить все позиции воспроизведения\?</string>
-    <string name="default_kiosk_page_summary">Киоск по умолчанию</string>
     <string name="no_one_watching">Никто не смотрел</string>
     <plurals name="watching">
         <item quantity="one">%s зритель</item>
@@ -414,8 +407,6 @@
     </plurals>
     <string name="seek_duration_title">Шаг перемотки</string>
     <string name="local">Локальное</string>
-    <string name="recently_added">Новое</string>
-    <string name="most_liked">Популярное</string>
     <string name="playlist_no_uploader">Создано автоматически (автор не найден)</string>
     <string name="recovering">восстановление</string>
     <string name="error_download_resource_gone">Не удалось восстановить загрузку</string>
@@ -816,17 +807,11 @@
     <string name="search_with_service_name">Поиск %1$s</string>
     <string name="search_with_service_name_and_filter">Поиск %1$s (%2$s)</string>
     <string name="channel_tab_likes">Лайки</string>
-    <string name="migration_info_6_7_title">Страница SoundCloud Top 50 удалена</string>
-    <string name="migration_info_6_7_message">SoundCloud прекратил поддерживать оригинальные чарты Top 50. Соответствующая вкладка была удалена с вашей главной страницы.</string>
     <string name="short_thousand">%sК</string>
     <string name="short_million">%sмлн</string>
     <string name="short_billion">%sмлрд</string>
-    <string name="trending_gaming">Игровые тренды</string>
     <string name="migration_info_7_8_title">Удалены объединённые тренды YouTube</string>
     <string name="migration_info_7_8_message">YouTube прекратил поддержку объединённой страницы трендов 21 июля 2025 года. NewPipe заменил страницу трендов по умолчанию на тренды в прямых трансляциях.\n\nВы также можете выбрать другие страницы трендов в \"Настройки &gt; Контент &gt; Главная страница\".</string>
-    <string name="trending_podcasts">Тренды в подкастах</string>
-    <string name="trending_movies">Тренды в фильмах и шоу</string>
-    <string name="trending_music">Тренды в музыке</string>
     <string name="permission_display_over_apps_message">Чтобы использовать Popup Player, выберите %1$s в следующем меню настроек Android и включите %2$s.</string>
     <string name="permission_display_over_apps_permission_name">«Разрешить отображение поверх других приложений»</string>
     <string name="delete_file">Удалить файл</string>

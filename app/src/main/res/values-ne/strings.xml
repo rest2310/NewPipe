@@ -244,11 +244,9 @@
     <string name="main_page_content">मुख्य पृष्ठको सामग्री</string>
     <string name="main_page_content_summary">मुख्य पृष्ठ मा कुनकुन ट्याबहरू देखाइन्छ</string>
     <string name="blank_page_summary">खाली पृष्ठ</string>
-    <string name="kiosk_page_summary">(kiosk ) किओस्क पृष्ठ</string>
     <string name="channel_page_summary">च्यानल पृष्ठ</string>
     <string name="select_a_channel">एक च्यानल चयन गर्नुहोस्</string>
     <string name="no_channel_subscribed_yet">अहिलेसम्म कुनै च्यानलको सदस्यता छैन</string>
-    <string name="select_a_kiosk">एक किओस्क चयन</string>
     <string name="export_complete_toast">निर्यातित</string>
     <string name="import_complete_toast">आयातित</string>
     <string name="no_valid_zip_file">कुनै मान्य जिप फाइल भेटिएन</string>
@@ -257,9 +255,6 @@
     <string name="import_settings">तपाईं सेटिङहरू पनि आयात गर्न चाहनुहुन्छ\?</string>
     <string name="error_unable_to_load_comments">टिप्पणीहरू लोड गर्न सकिएन</string>
     <string name="trending">लोकप्रिय</string>
-    <string name="top_50">शीर्ष 50</string>
-    <string name="new_and_hot">नयाँ र तात्तातो</string>
-    <string name="conferences">सम्मेलनहरु</string>
     <string name="play_queue_remove">हटाउ</string>
     <string name="play_queue_stream_detail">विवरण</string>
     <string name="play_queue_audio_settings">अडियो सेटिङहरू</string>
@@ -398,11 +393,8 @@
         <item quantity="one">%s श्रोता</item>
         <item quantity="other">%s श्रोताहरु</item>
     </plurals>
-    <string name="default_kiosk_page_summary">पूर्वनिर्धारित किओस्क (Kiosk)</string>
     <string name="seek_duration_title">छिटो-अगाडि /-पछाडी खोज्न अवधि</string>
     <string name="local">स्थानिय</string>
-    <string name="recently_added">हालसालै थपिएको</string>
-    <string name="most_liked">सबैभन्दा धेरै मनपराइएको</string>
     <string name="playlist_no_uploader">स्वतः उत्पन्न (कुनै अपलोडर भेटिएन)</string>
     <string name="recovering">पुन (recovering)</string>
     <string name="error_download_resource_gone">यो डाउनलोड पुन:प्राप्त गर्न सकिँदैन</string>
@@ -456,7 +448,6 @@
     <string name="feed_subscription_not_loaded_count">लोड गरिएको छैन:%d</string>
     <string name="feed_oldest_subscription_update">फिड पछिल्लोपटक अपडेट गरिएको:%s</string>
     <string name="feed_groups_header_title">च्यानल समूहहरू</string>
-    <string name="fragment_feed_title">नयाँ के छ</string>
     <plurals name="hours">
         <item quantity="one">%d घण्टा</item>
         <item quantity="other">%d घण्टा</item>

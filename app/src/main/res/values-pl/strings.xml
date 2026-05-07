@@ -123,7 +123,6 @@
     <string name="subscription_change_failed">Nie udało się zmienić subskrypcji</string>
     <string name="subscription_update_failed">Nie udało się zaktualizować subskrypcji</string>
     <string name="tab_subscriptions">Subskrypcje</string>
-    <string name="fragment_feed_title">Co nowego</string>
     <string name="enable_search_history_title">Historia wyszukiwania</string>
     <string name="enable_search_history_summary">Przechowuj lokalnie historię wyszukiwania</string>
     <string name="enable_watch_history_title">Historia oglądania</string>
@@ -177,14 +176,10 @@
     <string name="delete_item_search_history">Czy chcesz usunąć tę pozycję z historii wyszukiwania?</string>
     <string name="main_page_content">Zawartość strony głównej</string>
     <string name="blank_page_summary">Pusta strona</string>
-    <string name="kiosk_page_summary">Strona „Odkrywaj”</string>
     <string name="channel_page_summary">Strona kanału</string>
     <string name="select_a_channel">Wybierz kanał</string>
     <string name="no_channel_subscribed_yet">Nie masz jeszcze subskrypcji kanałów</string>
-    <string name="select_a_kiosk">Wybierz kartę „Odkrywaj”</string>
     <string name="trending">Na czasie</string>
-    <string name="top_50">50 najlepszych</string>
-    <string name="new_and_hot">Nowe i popularne</string>
     <string name="play_queue_remove">Usuń</string>
     <string name="play_queue_stream_detail">Szczegóły</string>
     <string name="play_queue_audio_settings">Ustawienia dźwięku</string>
@@ -361,7 +356,6 @@
     <string name="pause_downloads_on_mobile">Przerwij przy sieciach z ograniczonym transferem</string>
     <string name="pause_downloads_on_mobile_desc">Pomocne przy przełączaniu na dane mobilne, chociaż niektóre pobierania nie mogą być wstrzymywane</string>
     <string name="events">Wydarzenia</string>
-    <string name="conferences">Konferencje</string>
     <string name="missions_header_pending">Oczekujące</string>
     <string name="show_comments_title">Pokazuj komentarze</string>
     <string name="show_comments_summary">Wyłącz, aby ukryć komentarze</string>
@@ -396,7 +390,6 @@
     <string name="clear_playback_states_title">Wyczyść pozycje odtwarzania</string>
     <string name="clear_playback_states_summary">Usuwa wszystkie pozycje odtwarzania</string>
     <string name="delete_playback_states_alert">Usunąć wszystkie pozycje odtwarzania\?</string>
-    <string name="default_kiosk_page_summary">Domyślna karta „Odkrywaj”</string>
     <string name="no_one_watching">Nikt nie ogląda</string>
     <plurals name="watching">
         <item quantity="one">%s oglądający</item>
@@ -412,8 +405,6 @@
     </plurals>
     <string name="seek_duration_title">Wielkość skoku przy przewijaniu</string>
     <string name="local">Lokalne</string>
-    <string name="recently_added">Ostatnio dodane</string>
-    <string name="most_liked">Najbardziej lubiane</string>
     <string name="playlist_no_uploader">Wygenerowana automatycznie (nie znaleziono przesyłającego)</string>
     <string name="recovering">odzyskiwanie</string>
     <string name="error_download_resource_gone">Nie udało się odzyskać tego pobrania</string>
@@ -820,14 +811,8 @@
     <string name="search_with_service_name">Szukaj %1$s</string>
     <string name="search_with_service_name_and_filter">Szukaj %1$s (%2$s)</string>
     <string name="channel_tab_likes">Polubienia</string>
-    <string name="migration_info_6_7_title">Usunięto stronę SoundCloud 50 najlepszych</string>
-    <string name="migration_info_6_7_message">SoundCloud wycofał oryginalną listę 50 najlepszych. Odpowiadająca karta została usunięta ze strony głównej.</string>
     <string name="migration_info_7_8_title">Usunięto połączone Na czasie YouTube</string>
     <string name="migration_info_7_8_message">Od 21 lipca 2025 r. YouTube zaprzestał korzystania z połączonego Na czasie. NewPipe zastąpił domyślną stronę Na czasie popularnymi transmisjami na żywo.\n\nMożesz także wybrać różne strony Na czasie w „Ustawienia &gt; Zawartość &gt; Zawartość strony głównej”.</string>
-    <string name="trending_gaming">Gry na czasie</string>
-    <string name="trending_podcasts">Podcasty na czasie</string>
-    <string name="trending_movies">Filmy i programy na czasie</string>
-    <string name="trending_music">Muzyka na czasie</string>
     <string name="short_thousand">%stys.</string>
     <string name="short_million">%smln</string>
     <string name="short_billion">%smld</string>

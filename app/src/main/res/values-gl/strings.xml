@@ -26,7 +26,6 @@
     <string name="show_info">Mostrar información</string>
     <string name="tab_subscriptions">Subscricións</string>
     <string name="tab_bookmarks">Listas de reprodución marcadas</string>
-    <string name="fragment_feed_title">Novidades</string>
     <string name="controls_background_title">Segundo plano</string>
     <string name="controls_popup_title">Modo popup</string>
     <string name="controls_add_to_playlist_title">Engadir a</string>
@@ -228,11 +227,9 @@
     <string name="title_most_played">Máis reproducido</string>
     <string name="main_page_content">Contido da páxina principal</string>
     <string name="blank_page_summary">Páxina en branco</string>
-    <string name="kiosk_page_summary">Páxina do «kiosk»</string>
     <string name="channel_page_summary">Páxina do canal</string>
     <string name="select_a_channel">Seleccione un canal</string>
     <string name="no_channel_subscribed_yet">Non se subscribiu a ningunha canle aínda</string>
-    <string name="select_a_kiosk">Seleccione un «kiosk»</string>
     <string name="export_complete_toast">Exportado</string>
     <string name="import_complete_toast">Importado</string>
     <string name="no_valid_zip_file">Ficheiro ZIP inválido</string>
@@ -240,8 +237,6 @@
     <string name="override_current_data">Isto vai reescribir a súa configuración actual.</string>
     <string name="import_settings">Desexa importar tamén as opcións?</string>
     <string name="trending">Tendencias</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Novo e popular</string>
     <string name="play_queue_remove">Eliminar</string>
     <string name="play_queue_stream_detail">Detalles</string>
     <string name="play_queue_audio_settings">Opcións de audio</string>
@@ -437,13 +432,9 @@
     <string name="playlist_no_uploader">Xerado automaticamente (non se atopou ningún cargador)</string>
     <string name="unmute">Non silenciar</string>
     <string name="mute">Silenciar</string>
-    <string name="conferences">Conferencias</string>
-    <string name="most_liked">O que ten mais gústames</string>
-    <string name="recently_added">Engadiuse recentemente</string>
     <string name="error_unable_to_load_comments">Non se puideron cargar os comentarios</string>
     <string name="no_playlist_bookmarked_yet">Aínda non hai marcadores nesta lista de reprodución</string>
     <string name="select_a_playlist">Seleccionar unha lista de reprodución</string>
-    <string name="default_kiosk_page_summary">Quiosco predeterminado</string>
     <string name="main_page_content_summary">Que lapelas se amosan na páxina principal</string>
     <string name="done">Feito</string>
     <string name="subtitle_activity_recaptcha">Prema \"Feito\" cando o resolva</string>

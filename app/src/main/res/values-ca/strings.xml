@@ -12,7 +12,6 @@
     <string name="show_info">Mostra la informació</string>
     <string name="tab_subscriptions">Subscripcions</string>
     <string name="tab_bookmarks">Llistes de reproducció desades</string>
-    <string name="fragment_feed_title">Novetats</string>
     <string name="download_path_title">Carpeta de baixada dels vídeos</string>
     <string name="download_path_audio_title">Carpeta de baixada dels fitxers d\'àudio</string>
     <string name="default_resolution_title">Resolució per defecte</string>
@@ -199,14 +198,11 @@
     <string name="website_encouragement">Per a més informació i notícies, visiteu el nostre web.</string>
     <string name="title_last_played">Últimes reproduccions</string>
     <string name="title_most_played">Més reproduïts</string>
-    <string name="kiosk_page_summary">Tendències</string>
     <string name="channel_page_summary">Pàgina d\'un canal</string>
-    <string name="select_a_kiosk">Trieu un quiosc</string>
     <string name="no_valid_zip_file">El fitxer no té un format ZIP vàlid</string>
     <string name="could_not_import_all_files">Avís: No s\'han pogut importar tots els fitxers.</string>
     <string name="override_current_data">Això sobreescriurà els paràmetres actuals.</string>
     <string name="trending">Tendències</string>
-    <string name="top_50">Els millors 50</string>
     <string name="preferred_player_fetcher_notification_title">S\'està obtenint la informació…</string>
     <string name="preferred_player_fetcher_notification_message">S\'està carregant el contingut seleccionat</string>
     <string name="delete_playlist_prompt">Voleu eliminar aquesta llista de reproducció\?</string>
@@ -243,7 +239,6 @@
     <string name="donation_encouragement">El NewPipe està desenvolupat per voluntaris que fan servir el seu temps lliure per oferir-vos la millor experiència possible. Feu una aportació per assegurar que els nostres desenvolupadors puguin millorar encara més el NewPipe mentre fan un cafè.</string>
     <string name="give_back">Feu la vostra aportació</string>
     <string name="no_channel_subscribed_yet">Encara no us heu subscrit a cap canal</string>
-    <string name="new_and_hot">Novetats</string>
     <string name="hold_to_append">Manteniu premut per afegir a la cua</string>
     <string name="start_here_on_background">Comença a reproduir en rerefons</string>
     <string name="start_here_on_popup">Comença a reproduir en mode emergent</string>
@@ -335,7 +330,6 @@
     <string name="app_update_notification_channel_description">Notificacions de noves versions del NewPipe</string>
     <string name="subscribers_count_not_available">Nombre de subscriptors no disponible</string>
     <string name="main_page_content_summary">Quines pestanyes es mostren a la pàgina principal</string>
-    <string name="conferences">Conferències</string>
     <string name="list_view_mode">Mode de vista de llista</string>
     <string name="missions_header_finished">Finalitzades</string>
     <string name="post_processing">post-processament</string>
@@ -405,7 +399,6 @@
         <item quantity="many">%s escoltants</item>
         <item quantity="other">%s escoltants</item>
     </plurals>
-    <string name="default_kiosk_page_summary">Tendències</string>
     <string name="show_original_time_ago_title">Ensenya el temps passat original sobre els \"items\"</string>
     <string name="playlist_no_uploader">Auto-generat (no es troba cap uploader)</string>
     <string name="unmute">Desactivar Silenci</string>
@@ -508,8 +501,6 @@
     <string name="enqueued">Ja a la cua</string>
     <string name="enqueue_stream">Afegeix a la cua</string>
     <string name="title_activity_play_queue">Cua de reproducció</string>
-    <string name="most_liked">Més m\'agrada</string>
-    <string name="recently_added">Afegits recentment</string>
     <string name="local">Local</string>
     <string name="no_playlist_bookmarked_yet">Encara no hi ha llistes de reproducció favorites</string>
     <string name="select_a_playlist">Sel·leccioneu una llista de reproducció</string>

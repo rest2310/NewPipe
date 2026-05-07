@@ -316,7 +316,6 @@
     <string name="no_channel_subscribed_yet">არხის გამოწერები ჯერ არ არის</string>
     <string name="select_a_playlist">აირჩიეთ დასაკრავი სია</string>
     <string name="no_playlist_bookmarked_yet">დასაკრავი სიის სანიშნეები ჯერ არ არის</string>
-    <string name="select_a_kiosk">აირჩიეთ კიოსკი</string>
     <string name="export_complete_toast">ექსპორტირებულია</string>
     <string name="import_complete_toast">იმპორტირებულია</string>
     <string name="no_valid_zip_file">არ არის სწორი ZIP ფაილი</string>
@@ -324,10 +323,6 @@
     <string name="override_current_data">ეს უგულებელყოფს თქვენს მიმდინარე პარამეტრს.</string>
     <string name="error_unable_to_load_comments">კომენტარების ჩატვირთვა ვერ მოხერხდა</string>
     <string name="trending">ტრენდული</string>
-    <string name="top_50">ტოპ 50</string>
-    <string name="new_and_hot">ახალი და ცხელი</string>
-    <string name="most_liked">ყველაზე მეტად მოწონებული</string>
-    <string name="conferences">კონფერენციები</string>
     <string name="title_activity_play_queue">რიგის დაკვრა</string>
     <string name="play_queue_remove">ამოღება</string>
     <string name="play_queue_stream_detail">დეტალები</string>
@@ -484,7 +479,6 @@
         <item quantity="one">%d დღე</item>
         <item quantity="other">%d დღეების</item>
     </plurals>
-    <string name="fragment_feed_title">Რა არის ახალი</string>
     <string name="feed_groups_header_title">არხების ჯგუფები</string>
     <string name="feed_oldest_subscription_update">არხი ბოლოს განახლდა: %s</string>
     <string name="feed_subscription_not_loaded_count">არ არის ჩატვირთული: %d</string>
@@ -632,13 +626,10 @@
     <string name="auto">ავტო</string>
     <string name="blank_page_summary">ცარიელი გვერდი</string>
     <string name="select_a_channel">აირჩიეთ არხი</string>
-    <string name="kiosk_page_summary">კიოსკის გვერდი</string>
-    <string name="default_kiosk_page_summary">ნაგულისხმევი კიოსკი</string>
     <string name="import_settings">გსურთ პარამეტრების იმპორტიც\?</string>
     <string name="enqueued_next">რიგში დადგა შემდეგი</string>
     <string name="start_here_on_popup">დაიწყეთ დაკვრა ამომხტარ ფანჯარაში</string>
     <string name="local">ადგილობრივი</string>
-    <string name="recently_added">ახლახან დამატებულია</string>
     <string name="preferred_player_fetcher_notification_title">ინფორმაციის მიღება…</string>
     <string name="create_playlist">ახალი დასაკრავი სია</string>
     <string name="processing_may_take_a_moment">დამუშავება… შეიძლება რამდენიმე წუთი დასჭირდეს</string>
@@ -752,10 +743,6 @@
     <string name="use_exoplayer_decoder_fallback_summary">ჩართეთ ეს პარამეტრი, თუ დეკოდერის ინიციალიზაციის პრობლემები გაქვთ, რაც, თუ პირველადი დეკოდერების ინიციალიზაცია ვერ მოხერხდა, დაბალი პრიორიტეტის მქონე დეკოდერებს ეხება. ამან შეიძლება გამოიწვიოს დაკვრის დაბალი შესრულება, ვიდრე პირველადი დეკოდერების გამოყენებისას.</string>
     <string name="always_use_exoplayer_set_output_surface_workaround_title">ყოველთვის გამოიყენეთ ExoPlayer-ის ვიდეო გამომავალი ზედაპირის პარამეტრების ალტერნატიული გადაწყვეტა</string>
     <string name="always_use_exoplayer_set_output_surface_workaround_summary">ეს გამოსავალი ათავისუფლებს და ხელახლა ააქტიურებს ვიდეო კოდეკებს ზედაპირის ცვლილებისას, ზედაპირის პირდაპირ კოდეკზე დაყენების ნაცვლად. ეს პარამეტრი უკვე გამოიყენება ExoPlayer-ის მიერ ზოგიერთ მოწყობილობაზე, რომელსაც ეს პრობლემა აქვს, და მოქმედებს მხოლოდ Android 6-ზე და უფრო მაღალ ვერსიებზე.\n\nამ პარამეტრის ჩართვამ შეიძლება თავიდან აიცილოს დაკვრის შეცდომები მიმდინარე ვიდეო პლეერის გადართვისას ან სრულ ეკრანზე გადართვისას.</string>
-    <string name="trending_gaming">თამაშების ტრენდები</string>
-    <string name="trending_podcasts">ტრენდული პოდკასტები</string>
-    <string name="trending_movies">ტრენდული ფილმები და შოუები</string>
-    <string name="trending_music">ტრენდული მუსიკა</string>
     <string name="entry_deleted">ჩანაწერი წაშლილია</string>
     <string name="player_http_403">დაკვრის დროს სერვერიდან მიღებული HTTP შეცდომა 403, სავარაუდოდ, გამოწვეული სტრიმინგის URL-ის ვადის გასვლით ან IP აკრძალვით.</string>
     <string name="player_http_invalid_status">დაკვრის დროს სერვერიდან მიღებული HTTP შეცდომა %1$s</string>
@@ -787,8 +774,6 @@
     <string name="show_more">მეტის ჩვენება</string>
     <string name="show_less">ნაკლების ჩვენება</string>
     <string name="import_settings_vulnerable_format">იმპორტირებული ექსპორტის პარამეტრები იყენებს დაუცველ ფორმატს, რომელიც მოძველებულია NewPipe 0.27.0 ვერსიიდან. დარწმუნდით, რომ იმპორტირებული ექსპორტი სანდო წყაროდან არის და მომავალში უპირატესობა მიანიჭეთ მხოლოდ NewPipe 0.27.0 ან უფრო ახალი ვერსიიდან მიღებული ექსპორტირებული პარამეტრების გამოყენებას. ამ დაუცველ ფორმატში პარამეტრების იმპორტის მხარდაჭერა მალე მთლიანად გაუქმდება და შემდეგ NewPipe-ის ძველი ვერსიები ვეღარ შეძლებენ ექსპორტირებული პარამეტრების იმპორტირებას ახალი ვერსიებიდან.</string>
-    <string name="migration_info_6_7_title">SoundCloud-ის ტოპ 50 გვერდი წაიშალა</string>
-    <string name="migration_info_6_7_message">SoundCloud-მა შეწყვიტა ორიგინალი ტოპ 50 ჩარტების გამოშვება. შესაბამისი ჩანართი წაიშალა თქვენი მთავარი გვერდიდან.</string>
     <string name="migration_info_7_8_title">YouTube-ის კომბინირებული ტრენდული გვერდი წაშლილია</string>
     <string name="migration_info_7_8_message">YouTube-მა 2025 წლის 21 ივლისიდან შეწყვიტა კომბინირებული ტრენდული გვერდის არსებობა. NewPipe-მა ნაგულისხმევი ტრენდული გვერდი ტრენდული პირდაპირი ტრანსლაციებით ჩაანაცვლა.\n\nასევე შეგიძლიათ აირჩიოთ სხვადასხვა ტრენდული გვერდები „პარამეტრები &gt; მასალა &gt; მთავარი გვერდის შინაარსი“-ში.</string>
 </resources>

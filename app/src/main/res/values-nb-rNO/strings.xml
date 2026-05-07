@@ -99,7 +99,6 @@
     <string name="subscription_change_failed">Klarte ikke å endre abonnement</string>
     <string name="subscription_update_failed">Klarte ikke å oppdatere abonnement</string>
     <string name="tab_subscriptions">Abonnementer</string>
-    <string name="fragment_feed_title">Hva er nytt</string>
     <string name="controls_background_title">Bakgrunn</string>
     <string name="controls_popup_title">Oppsprett</string>
     <string name="popup_remember_size_pos_title">Husk oppsprettsegenskaper</string>
@@ -161,12 +160,8 @@
     <string name="player_stream_failure">Kunne ikke spille av denne strømmen</string>
     <string name="player_unrecoverable_failure">Uopprettelig avspillerfeil oppstod</string>
     <string name="blank_page_summary">Blank side</string>
-    <string name="kiosk_page_summary">Kiosk-side</string>
     <string name="channel_page_summary">Kanalside</string>
     <string name="select_a_channel">Velg en kanal</string>
-    <string name="select_a_kiosk">Velg en kiosk</string>
-    <string name="top_50">Topp 50</string>
-    <string name="new_and_hot">Nytt og hett</string>
     <string name="play_queue_remove">Fjern</string>
     <string name="play_queue_stream_detail">Detaljer</string>
     <string name="play_queue_audio_settings">Lydinnstillinger</string>
@@ -322,7 +317,6 @@
     <string name="restore_defaults_confirmation">Ønsker du å gjenopprette forvalg\?</string>
     <string name="subscribers_count_not_available">Abonnementsantall utilgjengelig</string>
     <string name="main_page_content_summary">Hvilke faner vises på hovedsiden</string>
-    <string name="conferences">Konferanser</string>
     <string name="updates_setting_title">Oppdatering</string>
     <string name="updates_setting_description">Vis varsel om appoppdatering når en ny versjon er tilgjengelig</string>
     <string name="list_view_mode">Listevisningsmodus</string>
@@ -400,10 +394,7 @@
         <item quantity="one">%s lytter</item>
         <item quantity="other">%s lyttere</item>
     </plurals>
-    <string name="default_kiosk_page_summary">Standard kiosk</string>
     <string name="local">Lokal</string>
-    <string name="recently_added">Nylig lagt til</string>
-    <string name="most_liked">Mest likt</string>
     <string name="choose_instance_prompt">Velg en instans</string>
     <string name="clear_download_history">Tøm nedlastingshistorikk</string>
     <string name="delete_downloaded_files">Slett nedlastede filer</string>

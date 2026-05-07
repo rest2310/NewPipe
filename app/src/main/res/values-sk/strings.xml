@@ -107,7 +107,6 @@
     <string name="subscription_change_failed">Nemožno zmeniť odber</string>
     <string name="subscription_update_failed">Nemožno aktualizovať odber</string>
     <string name="tab_subscriptions">Odbery</string>
-    <string name="fragment_feed_title">Čo je nové</string>
     <string name="enable_search_history_title">Hľadať v histórií</string>
     <string name="enable_search_history_summary">Hľadané výrazy uloží lokálne</string>
     <string name="enable_watch_history_title">História pozerania</string>
@@ -199,19 +198,15 @@
     <string name="title_most_played">Najprehrávanejšie</string>
     <string name="main_page_content">Obsah na hlavnej stránke</string>
     <string name="blank_page_summary">Prázdna stránka</string>
-    <string name="kiosk_page_summary">Kiosk</string>
     <string name="channel_page_summary">Kanál</string>
     <string name="select_a_channel">Vyberte si kanál</string>
     <string name="no_channel_subscribed_yet">Zatiaľ nemáte žiadne odbery kanálov</string>
-    <string name="select_a_kiosk">Vyberte si kiosk</string>
     <string name="export_complete_toast">Export dokončený</string>
     <string name="import_complete_toast">Import dokončený</string>
     <string name="no_valid_zip_file">Neplatný ZIP súbor</string>
     <string name="could_not_import_all_files">Upozornenie: Nemožno importovať všetky súbory.</string>
     <string name="override_current_data">Toto prepíše vaše aktuálne nastavenie.</string>
     <string name="trending">Populárne</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Nové a horúce</string>
     <string name="play_queue_remove">Odstrániť</string>
     <string name="play_queue_stream_detail">Podrobnosti</string>
     <string name="play_queue_audio_settings">Nastavenie zvuku</string>
@@ -326,7 +321,6 @@
     <string name="restore_defaults_confirmation">Chcete obnoviť predvolené hodnoty\?</string>
     <string name="subscribers_count_not_available">Počet odberateľov nie je k dispozícii</string>
     <string name="main_page_content_summary">Aké karty sa zobrazujú na hlavnej stránke</string>
-    <string name="conferences">Konferencie</string>
     <string name="updates_setting_title">Aktualizácie</string>
     <string name="updates_setting_description">Zobrazí sa výzva na aktualizáciu aplikácie, keď je k dispozícii nová verzia</string>
     <string name="list_view_mode">Režim zobrazenia zoznamu</string>
@@ -394,7 +388,6 @@
     <string name="clear_playback_states_title">Odstrániť pozície prehrávania</string>
     <string name="clear_playback_states_summary">Odstráni všetky pozície prehrávania</string>
     <string name="delete_playback_states_alert">Odstrániť všetky pozície prehrávania\?</string>
-    <string name="default_kiosk_page_summary">Predvolený kiosk</string>
     <string name="no_one_watching">Toto nikto nesleduje</string>
     <plurals name="watching">
         <item quantity="one">%s sleduje</item>
@@ -409,8 +402,6 @@
     </plurals>
     <string name="seek_duration_title">Dĺžka rýchleho pretáčania</string>
     <string name="local">Miestne</string>
-    <string name="recently_added">Nedávno pridané</string>
-    <string name="most_liked">Najobľúbenejšie</string>
     <string name="playlist_no_uploader">Automaticky generované (používateľ sa nenašiel)</string>
     <string name="recovering">obnovovanie</string>
     <string name="error_download_resource_gone">Sťahovanie nemožno obnoviť</string>
@@ -812,14 +803,8 @@
     <string name="search_with_service_name_and_filter">Hľadať %1$s (%2$s)</string>
     <string name="search_with_service_name">Hľadať %1$s</string>
     <string name="channel_tab_likes">Páči sa</string>
-    <string name="migration_info_6_7_title">SoundCloud Top 50 stránka odstránená</string>
-    <string name="migration_info_6_7_message">SoundCloud prestal používať pôvodnú Top 50. Daná stránka bola odstránená z hlavnej stránky.</string>
     <string name="migration_info_7_8_title">Odstránené kombinované trendy na YouTube</string>
     <string name="migration_info_7_8_message">YouTube ukončil prevádzku kombinovanej stránky s trendmi k 21. júlu 2025. NewPipe nahradil predvolenú stránku s trendmi stránkou s trendovými živými prenosmi.\n\nV nastaveniach „Nastavenia &gt; Obsah &gt; Obsah hlavnej stránky“ môžete vybrať aj iné stránky s trendmi.</string>
-    <string name="trending_gaming">Populárne hry</string>
-    <string name="trending_podcasts">Populárne podcasty</string>
-    <string name="trending_movies">Populárne filmy a seriály</string>
-    <string name="trending_music">Populárna hudba</string>
     <string name="short_thousand">%stis.</string>
     <string name="short_million">%smil.</string>
     <string name="short_billion">%smld.</string>

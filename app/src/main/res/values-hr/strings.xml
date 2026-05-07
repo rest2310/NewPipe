@@ -22,7 +22,6 @@
     <string name="subscription_change_failed">Nije bilo moguće promijeniti pretplatu</string>
     <string name="subscription_update_failed">Nije bilo moguće aktualizirati pretplatu</string>
     <string name="tab_subscriptions">Pretplate</string>
-    <string name="fragment_feed_title">Što je novo</string>
     <string name="controls_background_title">Pozadina</string>
     <string name="controls_popup_title">Skočni prozor</string>
     <string name="download_path_title">Mapa za preuzimanje videozapisa</string>
@@ -168,14 +167,10 @@
     <string name="delete_item_search_history">Želiš li izbrisati ovu stavku iz povijesti pretrage\?</string>
     <string name="main_page_content">Sadržaj</string>
     <string name="blank_page_summary">Prazna stranica</string>
-    <string name="kiosk_page_summary">Stranica kioska</string>
     <string name="channel_page_summary">Stranica kanala</string>
     <string name="select_a_channel">Odaberi kanal</string>
     <string name="no_channel_subscribed_yet">Još nema pretplata na nijedan kanal</string>
-    <string name="select_a_kiosk">Odaberi jedan kiosk</string>
     <string name="trending">U trendu</string>
-    <string name="top_50">50 najboljih</string>
-    <string name="new_and_hot">Novi i popularni</string>
     <string name="play_queue_remove">Ukloni</string>
     <string name="play_queue_stream_detail">Detalji</string>
     <string name="play_queue_audio_settings">Postavke za audio snimke</string>
@@ -315,7 +310,6 @@
     <string name="subscribers_count_not_available">Broj pretplatnika nije dostupan</string>
     <string name="donation_encouragement">NewPipe razvijaju volonteri koji provode vrijeme kako bi doprinijeli najboljem korisničkom iskustvu. Doprinesi programerima kako bi poboljšali NewPipe dok uživaju u šalici kave.</string>
     <string name="main_page_content_summary">Koje su kartice prikazane na glavnoj stranici</string>
-    <string name="conferences">Konferencije</string>
     <string name="preferred_open_action_settings_title">Željena radnja za otvaranje</string>
     <string name="preferred_open_action_settings_summary">Zadana radnja pri otvaranju sadržaja — %s</string>
     <string name="caption_setting_title">Titlovi</string>
@@ -385,9 +379,7 @@
     <string name="delete_playback_states_alert">Izbrisati sve pozicije reprodukcije\?</string>
     <string name="no_one_watching">Nitko ne gleda</string>
     <string name="no_one_listening">Nitko ne sluša</string>
-    <string name="default_kiosk_page_summary">Standardni kiosk</string>
     <string name="local">Lokalni</string>
-    <string name="recently_added">Nedavno dodani</string>
     <string name="playlist_no_uploader">Automatski generirano (prenositelj nedefiniran)</string>
     <string name="clear_download_history">Očisti povijest preuzimanja</string>
     <string name="delete_downloaded_files">Izbriši preuzete datoteke</string>
@@ -404,7 +396,6 @@
     <string name="feed_use_dedicated_fetch_method_enable_button">Uključi brzi modus</string>
     <string name="feed_use_dedicated_fetch_method_disable_button">Isključi brzi modus</string>
     <string name="error_insufficient_storage_left">Memorija uređaja je popunjena</string>
-    <string name="most_liked">Najomiljeniji</string>
     <string name="subtitle_activity_recaptcha">Pritisni „Gotovo” kad je riješeno</string>
     <string name="done">Gotovo</string>
     <string name="infinite_videos">∞ videa</string>
@@ -817,14 +808,8 @@
     <string name="channel_tab_likes">Lajkovi</string>
     <string name="share_playlist_as_youtube_temporary_playlist">Podijeli kao privremenu playlistu na YouTubeu</string>
     <string name="import_settings_vulnerable_format">Postavke u izvozu koji se uvozi koriste ranjivi format koji je zastario od verzije NewPipe 0.27.0. Provjerite je li izvoz koji se uvozi iz pouzdanog izvora i u budućnosti radije koristite samo izvoze dobivene iz NewPipe 0.27.0 ili novije verzije. Podrška za uvoz postavki u ovom ranjivom formatu uskoro će biti potpuno uklonjena, a zatim stare verzije NewPipea više neće moći uvoziti postavke izvoza iz novih verzija.</string>
-    <string name="migration_info_6_7_title">Stranica SoundCloud Top 50 uklonjena</string>
-    <string name="migration_info_6_7_message">SoundCloud je ukinuo originalne Top 50 ljestvice. Odgovarajuća kartica je uklonjena s vaše glavne stranice.</string>
     <string name="migration_info_7_8_title">Uklonjeni kombinirani trendovi na YouTubeu</string>
     <string name="migration_info_7_8_message">YouTube je ukinuo kombiniranu stranicu s trendovima od 21. srpnja 2025. NewPipe je zamijenio zadanu stranicu s trendovima s trendovima prijenosa uživo.\n\nTakođer možete odabrati različite stranice s trendovima u \"Postavke &gt; Sadržaj &gt; Sadržaj glavne stranice\".</string>
-    <string name="trending_gaming">Trendovi u igrama</string>
-    <string name="trending_podcasts">Trendovi podcasti</string>
-    <string name="trending_movies">Trendovi u filmovima i serijama</string>
-    <string name="trending_music">Glazba u trendu</string>
     <string name="entry_deleted">Unos izbrisan</string>
     <string name="player_http_403">HTTP greška 403 primljena od poslužitelja tijekom reprodukcije, vjerojatno uzrokovana istekom URL-a za streaming ili zabranom IP adrese</string>
     <string name="player_http_invalid_status">HTTP greška %1$s primljena od poslužitelja tijekom reprodukcije</string>

@@ -117,7 +117,6 @@
     <string name="subscription_change_failed">Negalima keisti prenumeratos</string>
     <string name="subscription_update_failed">Negalima atnaujinti prenumeratos</string>
     <string name="tab_subscriptions">Prenumeratos</string>
-    <string name="fragment_feed_title">Kas naujo</string>
     <string name="enable_search_history_title">Ieškoti istorijoje</string>
     <string name="enable_search_history_summary">Saugoti paieškos užklausas vietinėje atmintyje</string>
     <string name="enable_watch_history_title">Žiūrėjimo istorija</string>
@@ -174,14 +173,10 @@
     <string name="delete_item_search_history">Ar norite ištrinti šį elementą iš paieškos istorijos?</string>
     <string name="main_page_content">Pagrindinio puslapio turinys</string>
     <string name="blank_page_summary">Tuščias puslapis</string>
-    <string name="kiosk_page_summary">Kiosko puslapis</string>
     <string name="channel_page_summary">Kanalo puslapis</string>
     <string name="select_a_channel">Pasirinkite kanalą</string>
     <string name="no_channel_subscribed_yet">Nė vienas kanalas dar neužprenumeruotas</string>
-    <string name="select_a_kiosk">Pasirinkite kioską</string>
     <string name="trending">Tendencijos</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Nauja ir karšta</string>
     <string name="play_queue_remove">Pašalinti</string>
     <string name="play_queue_stream_detail">Išsami informacija</string>
     <string name="play_queue_audio_settings">Garso nustatymai</string>
@@ -461,15 +456,11 @@
     <string name="enqueue_stream">Pridėti į eilę</string>
     <string name="show_channel_details">Rodyti kanalo išsamią informaciją</string>
     <string name="title_activity_play_queue">Groti eilę</string>
-    <string name="conferences">Konferencijos</string>
-    <string name="most_liked">Labiausiai patikę</string>
-    <string name="recently_added">Nesenai pridėta</string>
     <string name="local">Vietinė</string>
     <string name="error_unable_to_load_comments">Komentarų įkelti nepavyko</string>
     <string name="import_settings">Ar norite importuoti nustatymus\?</string>
     <string name="no_playlist_bookmarked_yet">Kol kas nėra grojaraščio žymų</string>
     <string name="select_a_playlist">Pasirinkite grojaraštį</string>
-    <string name="default_kiosk_page_summary">Numatytasis režimas</string>
     <string name="main_page_content_summary">Kokios kortelės rodomos pagrindiniame puslapyje</string>
     <string name="read_privacy_policy">Skaityti privatumo politiką</string>
     <string name="privacy_policy_encouragement">NewPipe į jūsų privatumą žiūri labai rimtai. Programa be jūsų sutikimo nerenka jokių duomenų.
@@ -819,12 +810,6 @@
     <string name="feed_group_page_summary">Kanalo grupės puslapis</string>
     <string name="account_terminated_service_provides_reason">Paskyra pašalinta\n\n%1$s dėl šios priežasties: %2$s</string>
     <string name="channel_tab_likes">Mėgsta</string>
-    <string name="migration_info_6_7_title">SoundCloud Top 50 puslapis pašalintas</string>
-    <string name="migration_info_6_7_message">SoundCloud nebeteikia Top 50. Šis puslapis pašalintas iš jūsų pagrindinio puslapio.</string>
     <string name="migration_info_7_8_title">YouTube sujungti rekomenduojami pašalinti</string>
-    <string name="trending_gaming">Žaidimų pasiūlymai</string>
-    <string name="trending_podcasts">Mėgstami podcasts</string>
-    <string name="trending_movies">Mėgstami filmai ir laidos</string>
-    <string name="trending_music">Mėgstama muzika</string>
     <string name="entry_deleted">Įrašas pašalintas</string>
 </resources>

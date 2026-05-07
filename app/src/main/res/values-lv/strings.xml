@@ -23,11 +23,7 @@
     <string name="play_queue_stream_detail">Detaļas</string>
     <string name="play_queue_remove">Noņemt</string>
     <string name="title_activity_play_queue">Atskaņošanas saraksts</string>
-    <string name="conferences">Konferences</string>
-    <string name="recently_added">Nesen pievienots</string>
     <string name="local">Lokāls</string>
-    <string name="new_and_hot">Jauns un populārs</string>
-    <string name="top_50">Top 50</string>
     <string name="error_unable_to_load_comments">Nevarēja ielādēt komentārus</string>
     <string name="import_settings">Vai vēlaties ievietot arī iestatījumus?</string>
     <string name="override_current_data">Pašreizējie dati tiks aizstāti.</string>
@@ -35,14 +31,11 @@
     <string name="no_valid_zip_file">Nederīga ZIP datne</string>
     <string name="import_complete_toast">Ievietošana pabeigta</string>
     <string name="export_complete_toast">Eksportēts</string>
-    <string name="select_a_kiosk">Atlasiet kiosku</string>
     <string name="no_playlist_bookmarked_yet">Nav atskaņošanas sarakstu pagaidām</string>
     <string name="select_a_playlist">Atlasiet atskaņošanas sarakstu</string>
     <string name="no_channel_subscribed_yet">Nav kanālu abonamentu pagaidām</string>
     <string name="select_a_channel">Atlasiet kanālu</string>
     <string name="channel_page_summary">Kanāls</string>
-    <string name="default_kiosk_page_summary">Noklusējuma Kiosks</string>
-    <string name="kiosk_page_summary">Kioska lapa</string>
     <string name="blank_page_summary">Tukša lapa</string>
     <string name="main_page_content_summary">Kādas cilnes rādīt galvenajā lapā</string>
     <string name="main_page_content">Galvenā lapa</string>
@@ -296,7 +289,6 @@
     <string name="feed_subscription_not_loaded_count">Nav ielādēts: %d</string>
     <string name="feed_oldest_subscription_update">Atjaunināta: %s</string>
     <string name="feed_groups_header_title">Abonementu grupas</string>
-    <string name="fragment_feed_title">Kas jauns</string>
     <plurals name="days">
         <item quantity="zero">%d dienas</item>
         <item quantity="one">%d dienu</item>
@@ -377,7 +369,6 @@
     <string name="skip_silence_checkbox">Klusuma brīžos patīt uz priekšu</string>
     <string name="unhook_checkbox">Atvienot (var izraisīt traucējumus)</string>
     <string name="import_network_expensive_warning">Paturiet prātā, ka šī darbība var pieprasīt lielu datu daudzumu\n\nVai vēlaties turpināt?</string>
-    <string name="most_liked">Vispopulārākais</string>
     <string name="preferred_open_action_settings_summary">Noklusējuma darbība, kad atver saturu — %s</string>
     <string name="show_original_time_ago_summary">Pakalpojumu oriģinālteksti būs redzami video vienumos</string>
     <string name="enable_disposed_exceptions_summary">Pēc izdzēšanas, piespiedu kārtā ziņot par nepiegādātiem Rx izņēmumiem, ārpus fragmenta vai darbības dzīves cikla</string>
@@ -788,10 +779,6 @@
     <string name="short_million">%s milj.</string>
     <string name="short_billion">%s mljrd.</string>
     <string name="channel_tab_likes">Patīk</string>
-    <string name="trending_music">Pašlaik populāra mūzika</string>
-    <string name="trending_movies">Pašlaik populāras filmas un TV raidījumi</string>
-    <string name="trending_podcasts">Pašlaik populāri raidieraksti</string>
-    <string name="trending_gaming">Pašlaik populārs spēļu nozarē</string>
     <string name="migration_info_7_8_message">YouTube pārtrauca piedāvāt apvienoto pašlaik populārs lapu kopš 2025. gada 21. jūlija. NewPipe aizstāja noklusējuma pašlaik populārs lapu ar pašlaik populāras tiešraides.\n\nJūs variet atlasīt arī citas pašlaik populārs lapas zem \"Iestatījumi &gt; Saturs &gt; Galvenā lapa\".</string>
     <string name="delete_file">Dzēst datni</string>
     <string name="delete_entry">Dzēst ierakstu</string>
@@ -802,7 +789,6 @@
     <string name="permission_display_over_apps_permission_name">“Ļaut rādīt virs citām lietotnēm”</string>
     <string name="search_with_service_name">Meklēt %1$s</string>
     <string name="search_with_service_name_and_filter">Meklēt %1$s (%2$s)</string>
-    <string name="migration_info_6_7_title">SoundCloud Top 50 lapa likvidēta</string>
     <string name="no_feed_group_created_yet">Vēl nav izveidota neviena abonementu grupa</string>
     <string name="account_terminated_service_provides_reason">Konts slēgts\n\n%1$s norāda, ka iemesls kādēļ: %2$s</string>
     <string name="player_http_403">Atskaņošanas laikā no servera saņemta HTTP 403 kļūda, ko, iespējams, izraisīja straumēšanas URL derīguma beigu termiņš vai IP aizliegums</string>
@@ -811,7 +797,6 @@
     <string name="kao_dialog_warning">2025. gada augustā Google paziņoja, ka, sākot ar 2026. gada septembri, lai uzstādītu lietotnes, būs nepieciešama izstrādātāja verifikācija visām Android lietotnēm sertificētajās ierīcēs, tostarp arī tām, kuras uzstādītas ārpus Play veikala. Tā kā NewPipe izstrādātāji nepiekrīt un negrib pieņemt šo prasību, pēc šī datuma NewPipe vairs nedarbosies sertificētajās Android ierīcēs.</string>
     <string name="kao_dialog_more_info">Detalizētāka informācija</string>
     <string name="kao_solution">Risinājums</string>
-    <string name="migration_info_6_7_message">SoundCloud likvidēja oriģinālos Top 50 topus. Atbilstošā cilne noņemta no jūsu galvenās lapas.</string>
     <string name="permission_display_over_apps_message">Lai varētu izmantot uznirstošo atskaņotāju, lūdzu, atlasiet %1$s šajā Android iestatījumu izvēlnē un iespējojiet %2$s.</string>
     <string name="import_subscriptions_title">Ievietot abonementus</string>
     <string name="export_subscriptions_title">Izgūt abonementus</string>

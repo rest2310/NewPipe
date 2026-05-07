@@ -125,7 +125,6 @@
     <string name="show_info">Hiện thông tin</string>
     <string name="tab_subscriptions">Kênh đăng ký</string>
     <string name="tab_bookmarks">Đã đánh dấu danh sách phát</string>
-    <string name="fragment_feed_title">Có gì mới</string>
     <string name="controls_add_to_playlist_title">Thêm vào</string>
     <string name="use_inexact_seek_title">Dùng tua nhanh ít chính xác</string>
     <string name="use_inexact_seek_summary">Tua ít chính xác cho phép trình phát giảm độ chính xác để tua tới vị trí nhanh hơn. Tua khoảng 5, 15 hoặc 25 giây không hoạt động với điều này</string>
@@ -226,11 +225,9 @@
     <string name="title_most_played">Được phát nhiều nhất</string>
     <string name="main_page_content">Nội dung trang chính</string>
     <string name="blank_page_summary">Trang trống</string>
-    <string name="kiosk_page_summary">Trang chủ</string>
     <string name="channel_page_summary">Trang kênh</string>
     <string name="select_a_channel">Chọn kênh</string>
     <string name="no_channel_subscribed_yet">Chưa đăng ký kênh nào</string>
-    <string name="select_a_kiosk">Chọn Trang chủ</string>
     <string name="export_complete_toast">Đã xuất</string>
     <string name="import_complete_toast">Đã nhập</string>
     <string name="no_valid_zip_file">Không có tệp ZIP hợp lệ</string>
@@ -238,7 +235,6 @@
     <string name="override_current_data">Thao tác này sẽ ghi đè cài đặt hiện tại của bạn.</string>
     <string name="import_settings">Bạn có muốn cũng nhập các cài đặt không?</string>
     <string name="trending">Đang thịnh hành</string>
-    <string name="new_and_hot">Mới và phổ biến</string>
     <string name="play_queue_remove">Loại bỏ</string>
     <string name="play_queue_stream_detail">Chi tiết</string>
     <string name="play_queue_audio_settings">Cài đặt âm thanh</string>
@@ -318,7 +314,6 @@
     <string name="restore_defaults_confirmation">Bạn có muốn khôi phục về mặc định\?</string>
     <string name="subscribers_count_not_available">Số người đăng ký không khả dụng</string>
     <string name="main_page_content_summary">Chọn các tab để hiện trên trang chủ</string>
-    <string name="top_50">Top 50 phổ biến</string>
     <string name="updates_setting_title">Cập nhật</string>
     <string name="updates_setting_description">Hiển thị thông báo để nhắc cập nhật ứng dụng khi có phiên bản mới</string>
     <string name="list_view_mode">Chế độ hiển thị danh sách</string>
@@ -353,7 +348,6 @@
     <string name="pause_downloads_on_mobile">Tạm dừng tải khi trên dữ liệu di động</string>
     <string name="pause_downloads_on_mobile_desc">Hữu ích khi chuyển sang dữ liệu di động, nhưng một số tải xuống không thể bị đình chỉ</string>
     <string name="missions_header_pending">Đang chờ xử lý</string>
-    <string name="conferences">Hội thảo</string>
     <string name="show_comments_title">Hiện bình luận</string>
     <string name="show_comments_summary">Tắt để ẩn bình luận</string>
     <string name="autoplay_title">Tự động phát</string>
@@ -412,8 +406,6 @@
     <string name="error_download_resource_gone">Không thể khôi phục bản tải xuống này</string>
     <string name="unmute">Bật tiếng</string>
     <string name="mute">Tắt tiếng</string>
-    <string name="most_liked">Được yêu thích nhất</string>
-    <string name="recently_added">Đã thêm gần đây</string>
     <string name="subtitle_activity_recaptcha">Bấm \"Xong\" khi hoàn thành</string>
     <string name="done">Đã hoàn thành</string>
     <string name="infinite_videos">∞ video</string>
@@ -479,7 +471,6 @@
     <string name="recovering">đang khôi phục</string>
     <string name="playlist_no_uploader">Được tạo tự động (không tìm thấy người tải lên)</string>
     <string name="local">Cục bộ</string>
-    <string name="default_kiosk_page_summary">Trang chính mặc định</string>
     <string name="playlist_page_summary">Trang danh sách phát</string>
     <string name="feed_group_show_only_ungrouped_subscriptions">Chỉ hiển thị các đăng ký chưa được nhóm</string>
     <string name="never">Không bao giờ</string>
@@ -784,14 +775,8 @@
     <string name="audio_track_type_secondary">phụ</string>
     <string name="channel_tab_likes">Thích</string>
     <string name="share_playlist_as_youtube_temporary_playlist">Chia sẻ dưới dạng danh sách phát tạm thời của YouTube</string>
-    <string name="migration_info_6_7_title">SoundCloud 50 trang hàng đầu đã xóa</string>
-    <string name="migration_info_6_7_message">SoundCloud đã ngừng hiển thị bảng xếp hạng Top 50 ban đầu. Tab tương ứng đã bị xóa khỏi trang chính của bạn.</string>
     <string name="migration_info_7_8_title">Đã xóa kết hợp đang thịnh hành của YouTube</string>
     <string name="migration_info_7_8_message">YouTube đã ngừng cung cấp trang thịnh hành kết hợp kể từ ngày 21 tháng 7 năm 2025. NewPipe đã thay thế trang xu hướng mặc định bằng các buổi phát trực tiếp theo thịnh hành.\n\nBạn cũng có thể chọn các trang thịnh hành khác nhau trong \"Cài đặt &gt; Nội dung &gt; Nội dung của trang chính\".</string>
-    <string name="trending_gaming">Trò chơi thịnh hành</string>
-    <string name="trending_podcasts">Podcasts đang thịnh hành</string>
-    <string name="trending_movies">Phim và chương trình đang thịnh hành</string>
-    <string name="trending_music">Âm nhạc đang thịnh hành</string>
     <string name="player_http_403">Đã xảy ra lỗi HTTP 403 trong khi phát, có thể do URL phát sóng đã hết hạn hoặc bị ban IP</string>
     <string name="sign_in_confirm_not_bot_error">%1$s đã từ chối cung cấp dữ liệu, cần phải đăng nhập để xác nhận requester của NewPipe ko phải là bot.\n\nIP này có vẻ đã bị ban tạm thời bởi %1$s, bạn có thể đợi một lúc hoặc chuyển sang IP khác (ví dụ như việc tắt / bật lại VPN, hoặc là chuyển mạng từ WIFI sang 4G/5G).\n\nXem qua <a href="%2$s">phần FAQ này</a> đẻ biết thêm chi tiết</string>
     <string name="unsupported_content_in_country">Nội dung này không được hỗ trợ tại quốc gia mà bạn chọn.\n\nHãy đổi quốc gia trong phần \"Cài đặt &gt; Nội dung &gt; Quốc gia nội dung mặc định\".</string>

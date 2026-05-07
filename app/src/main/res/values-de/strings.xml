@@ -123,7 +123,6 @@
     <string name="subscribed_button_title">Abonniert</string>
     <string name="channel_unsubscribed">Kanal deabonniert</string>
     <string name="tab_subscriptions">Abonnements</string>
-    <string name="fragment_feed_title">Neuigkeiten</string>
     <string name="enable_search_history_title">Suchverlauf</string>
     <string name="enable_search_history_summary">Suchanfragen lokal speichern</string>
     <string name="enable_watch_history_title">Verlauf ansehen</string>
@@ -170,13 +169,9 @@
     <string name="main_page_content">Inhalt der Hauptseite</string>
     <string name="channel_page_summary">Kanalseite</string>
     <string name="play_queue_stream_detail">Details</string>
-    <string name="top_50">Top 50</string>
     <string name="player_unrecoverable_failure">Nicht behebbarer Wiedergabefehler aufgetreten</string>
     <string name="player_recoverable_failure">Wiederherstellen nach einem Wiedergabefehler</string>
-    <string name="kiosk_page_summary">Kiosk-Seite</string>
-    <string name="select_a_kiosk">Kiosk auswählen</string>
     <string name="show_hold_to_append_summary">Tipp anzeigen, wenn die Hintergrundwiedergabe- oder Pop-up-Schaltfläche „Details:“ im Video gedrückt wird</string>
-    <string name="new_and_hot">Neu und Heiß</string>
     <string name="hold_to_append">Halten, um zur Wiedergabeliste hinzuzufügen</string>
     <string name="show_hold_to_append_title">„Halten zum Einreihen“-Tipp anzeigen</string>
     <string name="unknown_content">[Unbekannt]</string>
@@ -363,7 +358,6 @@
     <string name="max_retry_desc">Maximalanzahl der Versuche, bevor der Download abgebrochen wird</string>
     <string name="pause_downloads_on_mobile">Unterbrechen bei kostenpflichtigen Netzwerken</string>
     <string name="pause_downloads_on_mobile_desc">Nützlich beim Wechsel zu mobilen Daten, obwohl einige Downloads nicht unterbrochen werden können</string>
-    <string name="conferences">Konferenzen</string>
     <string name="events">Ereignisse</string>
     <string name="error_timeout">Verbindungszeitüberschreitung</string>
     <string name="show_comments_title">Kommentare anzeigen</string>
@@ -399,7 +393,6 @@
     <string name="clear_playback_states_title">Wiedergabepositionen löschen</string>
     <string name="clear_playback_states_summary">Alle Wiedergabepositionen löschen</string>
     <string name="delete_playback_states_alert">Alle Wiedergabepositionen löschen\?</string>
-    <string name="default_kiosk_page_summary">Standard-Kiosk</string>
     <string name="no_one_watching">Niemand schaut zu</string>
     <plurals name="watching">
         <item quantity="one">%s Zuschauer</item>
@@ -411,11 +404,9 @@
         <item quantity="other">%s Zuhörer</item>
     </plurals>
     <string name="local">Lokal</string>
-    <string name="recently_added">Kürzlich hinzugefügt</string>
     <string name="playlist_no_uploader">Auto-generiert (kein Autor gefunden)</string>
     <string name="choose_instance_prompt">Eine Instanz wählen</string>
     <string name="seek_duration_title">Dauer der Suche bei schnellem Vor-/Zurückspulen</string>
-    <string name="most_liked">Am beliebtesten</string>
     <string name="recovering">Wiederherstellen</string>
     <string name="error_download_resource_gone">Kann diesen Download nicht wiederherstellen</string>
     <string name="clear_download_history">Downloadverlauf löschen</string>
@@ -797,15 +788,9 @@
     <string name="search_with_service_name">Suche %1$s</string>
     <string name="search_with_service_name_and_filter">Suche %1$s (%2$s)</string>
     <string name="channel_tab_likes">Gefällt mir</string>
-    <string name="migration_info_6_7_title">SoundCloud-Top-50-Seite entfernt</string>
-    <string name="migration_info_6_7_message">SoundCloud hat die ursprünglichen Top-50-Charts abgeschafft. Der entsprechende Tab wurde von deiner Hauptseite entfernt.</string>
     <string name="short_million">%sMio.</string>
     <string name="short_billion">%sMrd.</string>
     <string name="short_thousand">%sTsd.</string>
-    <string name="trending_gaming">Gaming-Trends</string>
-    <string name="trending_movies">Beliebte Filme und Shows</string>
-    <string name="trending_music">Beliebte Musik</string>
-    <string name="trending_podcasts">Beliebte Podcasts</string>
     <string name="migration_info_7_8_title">YouTube hat die kombinierten „beliebten Seiten“ entfernt</string>
     <string name="migration_info_7_8_message">YouTube hat die kombinierte Trending-Seite ab dem 21. Juli 2025 eingestellt. NewPipe hat die Standard-Trending-Seite durch die Trending-Livestreams ersetzt.\n\nDu kannst auch verschiedene Trendseiten unter „Einstellungen &gt; Inhalt &gt; Inhalt der Hauptseite“ auswählen.</string>
     <string name="permission_display_over_apps_message">Um den Pop-up-Player zu verwenden, bitte in den folgenden Android-Einstellungen %1$s auswählen und %2$s aktivieren.</string>

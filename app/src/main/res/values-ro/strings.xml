@@ -107,7 +107,6 @@
     <string name="subscription_change_failed">Nu s-a putut modifica abonamentul</string>
     <string name="subscription_update_failed">Nu s-a putut actualiza abonamentul</string>
     <string name="tab_subscriptions">Abonamente</string>
-    <string name="fragment_feed_title">Noutăți</string>
     <string name="enable_search_history_title">Istoric de căutări</string>
     <string name="enable_search_history_summary">Stochează local căutările</string>
     <string name="enable_watch_history_title">Istoricul vizionărilor</string>
@@ -162,14 +161,10 @@
     <string name="delete_item_search_history">Doriți să ștergeți acest element din istoricul de căutare?</string>
     <string name="main_page_content">Conținutul pagini principale</string>
     <string name="blank_page_summary">Pagină goală</string>
-    <string name="kiosk_page_summary">Pagina de chioșc</string>
     <string name="channel_page_summary">Pagină canal</string>
     <string name="select_a_channel">Alegeți un canal</string>
     <string name="no_channel_subscribed_yet">Nu v-ați abonat la niciun canal deocamdată</string>
-    <string name="select_a_kiosk">Alegeți un chioșc</string>
     <string name="trending">Tendințe</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Noi și populare</string>
     <string name="no_player_found_toast">Niciun player pentru streaming găsit. (Totuși, puteți instala VLC).</string>
     <string name="controls_download_desc">Descărcați fișierul de flux</string>
     <string name="show_info">Afișare informații</string>
@@ -303,7 +298,6 @@
     <string name="restore_defaults_confirmation">Doriți să restaurați valorile implicite\?</string>
     <string name="subscribers_count_not_available">Numărul de abonați nu este disponibil</string>
     <string name="main_page_content_summary">Ce file vor fi afișate pe pagina principală</string>
-    <string name="conferences">Conferințe</string>
     <string name="show_comments_title">Arată comentariile</string>
     <string name="show_comments_summary">Dezactivează pentru oprirea afișării comentariilor</string>
     <string name="autoplay_title">Redare automată</string>
@@ -526,12 +520,9 @@
     <string name="enqueued">Pus în coadă</string>
     <string name="enqueue_stream">Puneți în coadă</string>
     <string name="title_activity_play_queue">Coadă de redare</string>
-    <string name="most_liked">Cele mai apreciate</string>
-    <string name="recently_added">Adăugate recent</string>
     <string name="local">Local</string>
     <string name="no_playlist_bookmarked_yet">Nu există încă marcaje în playlist</string>
     <string name="select_a_playlist">Selectați un playlist</string>
-    <string name="default_kiosk_page_summary">Chioșc implicit</string>
     <string name="msg_calculating_hash">Se calculează hash-ul</string>
     <string name="infinite_videos">∞ videoclipuri</string>
     <string name="more_than_100_videos">Peste 100 de videoclipuri</string>
@@ -808,8 +799,6 @@
     <string name="select_a_feed_group">Selectați un grup de fluxuri</string>
     <string name="no_feed_group_created_yet">Încă nu a fost creat niciun grup de fluxuri</string>
     <string name="channel_tab_likes">Aprecieri</string>
-    <string name="migration_info_6_7_title">Pagina SoundCloud Top 50 a fost eliminată</string>
-    <string name="migration_info_6_7_message">SoundCloud a eliminat Top 50. Fila corespunzătoare a fost eliminată din pagina principală.</string>
     <string name="permission_display_over_apps_permission_name">„Permite afișarea deasupra altor aplicații”</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%s mil.</string>
@@ -823,10 +812,6 @@
     <string name="player_http_invalid_status">S-a primit eroarea HTTP %1$s de la server în timpul redării</string>
     <string name="player_http_403">S-a primit eroarea HTTP 403 de la server în timpul redării, probabil din cauza expirării adresei URL de flux sau a blocării adresei IP</string>
     <string name="entry_deleted">Intrare ștearsă</string>
-    <string name="trending_music">Muzică în tendințe</string>
-    <string name="trending_movies">Filme și seriale în tendințe</string>
-    <string name="trending_podcasts">Podcast-uri în tendințe</string>
-    <string name="trending_gaming">Jocuri în tendințe</string>
     <string name="migration_info_7_8_message">YouTube a desființat pagina combinată de tendințe începând cu 21 iulie 2025. NewPipe a înlocuit pagina implicită de tendințe cu secțiunea de transmisiuni live în tendințe.\n\nDe asemenea, puteți selecta diferite pagini de tendințe din „Setări &gt; Conținut &gt; Conținutul paginii principale”.</string>
     <string name="migration_info_7_8_title">Youtube a desființat pagina combinată de tendințe</string>
     <string name="permission_display_over_apps_message">Pentru a utiliza playerul pop-up, vă rugăm să selectați %1$s la următorul meniu de setări Android și să activați %2$s.</string>

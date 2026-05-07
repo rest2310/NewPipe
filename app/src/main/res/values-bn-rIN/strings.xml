@@ -137,7 +137,6 @@
     <string name="upload_date_text">প্রকাশকাল %1$s</string>
     <string name="main_bg_subtitle">অনুসন্ধান শুরু করুন</string>
     <string name="feed_create_new_group_button_title">নতুন</string>
-    <string name="fragment_feed_title">নতুন কি</string>
     <string name="app_language_title">অ্যাপ এর ভাষা</string>
     <string name="stop">বন্ধ করুন</string>
     <string name="clear_download_history">ডাওন লোড ইতিহাস মুছুন</string>
@@ -160,9 +159,6 @@
     <string name="add_to_playlist">প্লে লিস্ট এ যুক্ত করুন</string>
     <string name="always_ask_open_action">সবসময় জিজ্ঞেস করুন</string>
     <string name="video_player">ভিডিও প্লেয়ার</string>
-    <string name="recently_added">সাম্প্রতিক যুক্ত</string>
-    <string name="new_and_hot">নতুন এবং হট</string>
-    <string name="top_50">প্রথম ৫০</string>
     <string name="error_unable_to_load_comments">মন্তব্যগুলি লোড করা যায় নি</string>
     <string name="select_a_channel">একটি চ্যানেল পছন্দ করুন</string>
     <string name="channel_page_summary">চ্যানেল এর পাতা</string>

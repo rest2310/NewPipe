@@ -26,7 +26,6 @@
     <string name="show_info">Kuva info</string>
     <string name="tab_subscriptions">Tellimused</string>
     <string name="tab_bookmarks">Esitusloendid järjehoidjates</string>
-    <string name="fragment_feed_title">Mis on uut</string>
     <string name="controls_background_title">Taust</string>
     <string name="controls_popup_title">Hüpikaken</string>
     <string name="controls_add_to_playlist_title">Lisa esitusloendisse</string>
@@ -214,11 +213,9 @@
     <string name="title_most_played">Enim esitatud</string>
     <string name="main_page_content">Avalehe sisu</string>
     <string name="blank_page_summary">Tühi leht</string>
-    <string name="kiosk_page_summary">Kioskivaade</string>
     <string name="channel_page_summary">Kanali leht</string>
     <string name="select_a_channel">Vali kanal</string>
     <string name="no_channel_subscribed_yet">Kanaleid pole veel tellitud</string>
-    <string name="select_a_kiosk">Vali kiosk</string>
     <string name="export_complete_toast">Eksporditud</string>
     <string name="import_complete_toast">Imporditud</string>
     <string name="no_valid_zip_file">Korralikku ZIP faili pole</string>
@@ -226,8 +223,6 @@
     <string name="override_current_data">See alistab praeguse seadistuse.</string>
     <string name="import_settings">Kas importida ka seadistused?</string>
     <string name="trending">Trendid</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Uus ja kuum</string>
     <string name="play_queue_remove">Eemalda</string>
     <string name="play_queue_stream_detail">Üksikasjad</string>
     <string name="play_queue_audio_settings">Heli seaded</string>
@@ -320,7 +315,6 @@
     <string name="restore_defaults_confirmation">Kas soovid taastada vaikeväärtused\?</string>
     <string name="subscribers_count_not_available">Tellijate arv pole saadaval</string>
     <string name="main_page_content_summary">Esilehel kuvatavad vahekaardid</string>
-    <string name="conferences">Konverentsid</string>
     <string name="updates_setting_title">Uuendused</string>
     <string name="updates_setting_description">Kuva teavitus, kui uus versioon on saadaval</string>
     <string name="list_view_mode">Nimekirjavaate režiim</string>
@@ -454,15 +448,12 @@
     <string name="unmute">Lõpeta summutamine</string>
     <string name="mute">Summuta</string>
     <string name="enqueued">Esitusjärjekorda lisatud</string>
-    <string name="most_liked">Enim meeldimisi</string>
     <string name="title_activity_play_queue">Esitusjärjekord</string>
     <string name="enqueue_stream">Lisa esitusjärjekorda</string>
-    <string name="recently_added">Hiljuti lisatud</string>
     <string name="local">Kohalikud</string>
     <string name="error_unable_to_load_comments">Kommentaaride laadimine ei õnnestunud</string>
     <string name="no_playlist_bookmarked_yet">Esitusloendi järjehoidjaid veel pole</string>
     <string name="select_a_playlist">Vali esitusloend</string>
-    <string name="default_kiosk_page_summary">Vaikimisi seadistatud kiosk</string>
     <string name="done">Valmis</string>
     <string name="subtitle_activity_recaptcha">Kui oled lõpetanud, siis vajuta „Valmis“ nuppu</string>
     <string name="no_comments">Kommentaare pole</string>
@@ -782,14 +773,8 @@
     <string name="search_with_service_name">Otsi: %1$s</string>
     <string name="search_with_service_name_and_filter">Otsi: %1$s (%2$s)</string>
     <string name="channel_tab_likes">Meeldimisi</string>
-    <string name="migration_info_6_7_title">SoundCloudi „Top 50“ leht on eemaldatud</string>
-    <string name="migration_info_6_7_message">SoundCloud on lõpetanud oma algse „Top 50“ edetabeli pidamise. Seega on ka vastav vahekaart meie rakenduse põhivaatest eemaldatud.</string>
     <string name="migration_info_7_8_title">YouTube\'i kombineeritud populaarsust koguvad videovoog on eemaldatud</string>
     <string name="migration_info_7_8_message">YouTube on alates 21.07.25 lõpetanud ühendatud populaarsust koguvate videote lehe kasutamise. Mistõttu ka NewPipe on asendanud vaikimisi populaarsust koguvate videote lehe sarnase otse-eetri lehega.\n\n„Seadistused -&gt; Sisu -&gt; Avalehe sisu“ alt saad ka muid sarnaseid lehti seadistada.</string>
-    <string name="trending_podcasts">Populaarsust koguvad taskuhäälingud</string>
-    <string name="trending_movies">Populaarsust koguvad filmid ja telesarjad</string>
-    <string name="trending_music">Populaarsust koguv muusika</string>
-    <string name="trending_gaming">Populaarsust koguvad mängud</string>
     <string name="short_thousand">%s tuh</string>
     <string name="short_million">%s mln</string>
     <string name="short_billion">%s mld</string>

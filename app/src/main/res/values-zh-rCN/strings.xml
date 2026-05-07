@@ -177,7 +177,6 @@
     <string name="subscription_change_failed">无法修改订阅</string>
     <string name="subscription_update_failed">无法更新订阅</string>
     <string name="tab_subscriptions">订阅</string>
-    <string name="fragment_feed_title">最新</string>
     <string name="resume_on_audio_focus_gain_title">自动恢复播放</string>
     <string name="resume_on_audio_focus_gain_summary">在播放被打断（例如突然来电）后恢复播放</string>
     <string name="enable_search_history_title">记录搜索历史</string>
@@ -194,14 +193,10 @@
     <string name="delete_item_search_history">是否删除此条搜索历史记录？</string>
     <string name="main_page_content">主页面的显示内容</string>
     <string name="blank_page_summary">空白页</string>
-    <string name="kiosk_page_summary">Kiosk 页面</string>
     <string name="channel_page_summary">频道页</string>
     <string name="select_a_channel">选择一个频道</string>
     <string name="no_channel_subscribed_yet">尚未订阅频道</string>
-    <string name="select_a_kiosk">选择一个时下流行页</string>
     <string name="trending">时下流行</string>
-    <string name="top_50">前 50</string>
-    <string name="new_and_hot">最新与热门</string>
     <string name="show_hold_to_append_title">显示“长按加入播放队列”提示</string>
     <string name="show_hold_to_append_summary">在视频详情页中，按下后台播放或悬浮窗播放按钮时显示提示</string>
     <string name="player_stream_failure">无法播放此串流</string>
@@ -355,7 +350,6 @@
     <string name="pause_downloads_on_mobile">切换到按流量计费的网络后中断下载</string>
     <string name="pause_downloads_on_mobile_desc">切换至移动数据时可能有用，虽然部分下载无法被暂停</string>
     <string name="events">事件</string>
-    <string name="conferences">会议大会</string>
     <string name="show_comments_title">显示评论</string>
     <string name="show_comments_summary">是否隐藏评论</string>
     <string name="error_unable_to_load_comments">无法加载评论</string>
@@ -387,7 +381,6 @@
     <string name="clear_playback_states_title">删除播放痕迹历史</string>
     <string name="clear_playback_states_summary">删除所有播放痕迹历史</string>
     <string name="delete_playback_states_alert">是否删除全部播放痕迹历史？</string>
-    <string name="default_kiosk_page_summary">『时下流行』页-默认</string>
     <string name="no_one_watching">没有人在观看</string>
     <plurals name="watching">
         <item quantity="other">%s 人在观看</item>
@@ -397,8 +390,6 @@
         <item quantity="other">%s 位听众</item>
     </plurals>
     <string name="local">本地</string>
-    <string name="recently_added">最近添加</string>
-    <string name="most_liked">最受欢迎</string>
     <string name="playlist_no_uploader">自动生成的（找不到上传者）</string>
     <string name="recovering">正在恢复</string>
     <string name="error_download_resource_gone">无法恢复此下载</string>
@@ -783,14 +774,8 @@
     <string name="channel_tab_likes">赞</string>
     <string name="search_with_service_name">搜索%1$s</string>
     <string name="search_with_service_name_and_filter">搜索 %1$s （%2$s）</string>
-    <string name="migration_info_6_7_title">移除了 SoundCloud Top 50 页面</string>
-    <string name="migration_info_6_7_message">SoundCloud 已停止发布原创 Top 50 榜单。相应的标签页已从你的主页移除。</string>
     <string name="migration_info_7_8_title">移除了 Youtube 合并的“时下流行”标签页</string>
     <string name="migration_info_7_8_message">自 2025.7.21 起， Youtube 下线了合并的“时下流行”标签页。Newpipe 用“时下流行”的直播替代了默认的“时下流行”页。\n\n你也可以在 “设置 &gt; 内容&gt; 主页内容”中选择不同的“时下流行”页。</string>
-    <string name="trending_gaming">“时下流行”的游戏视频</string>
-    <string name="trending_podcasts">“时下流行”的播客</string>
-    <string name="trending_movies">“时下流行”的电影和娱乐节目</string>
-    <string name="trending_music">“时下流行”的音乐</string>
     <string name="short_thousand">%s千</string>
     <string name="short_million">%s百万</string>
     <string name="short_billion">%s十亿</string>

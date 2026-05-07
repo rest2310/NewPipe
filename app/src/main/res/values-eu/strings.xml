@@ -118,7 +118,6 @@
     <string name="subscription_change_failed">Ezin izan da harpidetza aldatu</string>
     <string name="subscription_update_failed">Ezin izan da harpidetza eguneratu</string>
     <string name="tab_subscriptions">Harpidetzak</string>
-    <string name="fragment_feed_title">Zer dago berri</string>
     <string name="resume_on_audio_focus_gain_title">Berrekin erreprodukzioa</string>
     <string name="resume_on_audio_focus_gain_summary">Jarraitu erreproduzitzen etenaldien ostean (adib. telefono deiak)</string>
     <string name="settings_category_downloads_title">Deskargak</string>
@@ -175,14 +174,10 @@
     <string name="delete_item_search_history">Elementu hau bilaketa-historiatik ezabatu nahi duzu?</string>
     <string name="main_page_content">Orri nagusiko edukia</string>
     <string name="blank_page_summary">Orri hutsa</string>
-    <string name="kiosk_page_summary">Kioskoaren orria</string>
     <string name="channel_page_summary">Kanalaren orria</string>
     <string name="select_a_channel">Hautatu kanal bat</string>
     <string name="no_channel_subscribed_yet">Ez dago kanal harpidetzarik oraindik</string>
-    <string name="select_a_kiosk">Hautatu kiosko bat</string>
     <string name="trending">Joerak</string>
-    <string name="top_50">50 onenak</string>
-    <string name="new_and_hot">Berria eta arrakastatsua</string>
     <string name="play_queue_remove">Kendu</string>
     <string name="play_queue_stream_detail">Xehetasunak</string>
     <string name="play_queue_audio_settings">Audio ezarpenak</string>
@@ -320,7 +315,6 @@
     <string name="restore_defaults_confirmation">Lehenetsitako balioak berrezarri nahi dituzu?</string>
     <string name="subscribers_count_not_available">Harpidedun kopurua ez dago eskuragarri</string>
     <string name="main_page_content_summary">Orri nagusian ikusiko diren fitxak</string>
-    <string name="conferences">Konferentziak</string>
     <string name="updates_setting_title">Eguneraketak</string>
     <string name="updates_setting_description">Erakutsi jakinarazpena bertsio berri bat eskuragarri dagoenean aplikazioaren eguneratzea eskatzeko</string>
     <string name="list_view_mode">Zerrenda ikuspegi modua</string>
@@ -398,11 +392,8 @@
     <string name="clear_playback_states_title">Ezabatu erreprodukzio-kokapenak</string>
     <string name="clear_playback_states_summary">Erreprodukzio-kokapen guztiak ezabatzen ditu</string>
     <string name="delete_playback_states_alert">Ezabatu erreprodukzio-kokapen guztiak?</string>
-    <string name="default_kiosk_page_summary">Kiosko lehenetsia</string>
     <string name="seek_duration_title">Aurreratze/atzeratze bilaketaren iraupena</string>
     <string name="local">Tokikoa</string>
-    <string name="recently_added">Berriki gehitua</string>
-    <string name="most_liked">Gogokoenak</string>
     <string name="playlist_no_uploader">Automatikoki sortua (igotzailea ez da aurkitu)</string>
     <string name="recovering">berreskuratzen</string>
     <string name="error_download_resource_gone">Ezin da deskarga hau berreskuratu</string>
@@ -799,14 +790,8 @@
     <string name="account_terminated_service_provides_reason">Kontua itxi da\n\n%1$s-ek arrazoi hau ematen du: %2$s</string>
     <string name="channel_tab_likes">Gustoko</string>
     <string name="share_playlist_as_youtube_temporary_playlist">Partekatu YouTubeko aldi baterako erreprodukzio-zerrenda gisa</string>
-    <string name="migration_info_6_7_title">SoundCloud-eko 50 onenen orrialdea kendu da</string>
-    <string name="migration_info_6_7_message">SoundCloud-ek jatorrizko Top 50 zerrendetan eten egin du. Dagokion fitxa kendu da zure orrialde nagusitik.</string>
     <string name="migration_info_7_8_title">YouTubeko joera konbinatuak kendu dira</string>
     <string name="migration_info_7_8_message">YouTube-k joera-orrialde konbinatua eten du 2025eko uztailaren 21etik aurrera. NewPipe-k joera-orrialde lehenetsia zuzeneko emankizunekin ordezkatu du.\n\nJoera desberdineko orrialdeak ere hauta ditzakezu \"Ezarpenak &gt; Edukia &gt; Orrialde nagusiaren edukia\" atalean.</string>
-    <string name="trending_gaming">Bideojoko joerak</string>
-    <string name="trending_podcasts">Podcast joerak</string>
-    <string name="trending_movies">Film eta telesail joerak</string>
-    <string name="trending_music">Musika joerak</string>
     <string name="entry_deleted">Sarrera ezabatua</string>
     <string name="player_http_403">403 HTTP errorea jaso da zerbitzaritik erreproduzitzen ari zenean, ziurrenik streaming URLaren iraungipenak edo IP debeku batek eraginda</string>
     <string name="player_http_invalid_status">%1$s HTTP errorea jaso da zerbitzaritik erreproduzitzen ari zela</string>

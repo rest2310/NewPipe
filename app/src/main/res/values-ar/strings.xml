@@ -49,7 +49,6 @@
     <string name="subscribe_button_title">اشتراك</string>
     <string name="subscribed_button_title">مشترك</string>
     <string name="tab_subscriptions">الاشتراكات</string>
-    <string name="fragment_feed_title">ما الجديد</string>
     <string name="controls_background_title">في الخلفية</string>
     <string name="black_theme_title">أسود</string>
     <string name="enable_watch_history_title">سجل المشاهدة</string>
@@ -168,8 +167,6 @@
     <string name="select_a_channel">اختر قناة</string>
     <string name="no_channel_subscribed_yet">لم يتم الاشتراك في أي قناة بعد</string>
     <string name="trending">الشائعة</string>
-    <string name="top_50">أفضل ٥٠</string>
-    <string name="new_and_hot">جديد وساخن</string>
     <string name="play_queue_remove">أحذف</string>
     <string name="play_queue_stream_detail">التفاصيل</string>
     <string name="play_queue_audio_settings">إعدادات الصوت</string>
@@ -194,8 +191,6 @@
     </plurals>
     <string name="recaptcha_request_toast">طلب اختبار الكابتشا مطلوب</string>
     <string name="copyright" formatted="true">© %1$sبواسطة%2$sتحت%3$s</string>
-    <string name="kiosk_page_summary">صفحة الكشك</string>
-    <string name="select_a_kiosk">حدد كشك</string>
     <string name="start_here_on_background">بدأ التشغيل في الخلفية</string>
     <string name="default_content_country_title">المحتوى الإفتراضي حسب البلد</string>
     <string name="switch_to_background">الإنتقال إلى التشغيل في الخلفية</string>
@@ -334,7 +329,6 @@
     <string name="restore_defaults_confirmation">هل تريد استعادة الإعدادات الافتراضية؟</string>
     <string name="subscribers_count_not_available">عدد المشتركين غير متاح</string>
     <string name="main_page_content_summary">ما هي التبويبات التي تظهر على الصفحة الرئيسية</string>
-    <string name="conferences">المؤتمرات</string>
     <string name="updates_setting_title">التحديثات</string>
     <string name="updates_setting_description">إظهار تنبيه للمطالبة بتحديث التطبيق عندما يتوفر إصدار جديد</string>
     <string name="list_view_mode">وضع عرض قائمة</string>
@@ -402,7 +396,6 @@
     <string name="clear_playback_states_title">حذف مواقف التشغيل</string>
     <string name="clear_playback_states_summary">حذف كل مواقف التشغيل</string>
     <string name="delete_playback_states_alert">حذف كل مواقف التشغيل؟</string>
-    <string name="default_kiosk_page_summary">الكشك الافتراضي</string>
     <string name="no_one_watching">لا توجد مشاهدة</string>
     <string name="no_one_listening">لا أحد يستمع</string>
     <plurals name="watching">
@@ -423,8 +416,6 @@
     </plurals>
     <string name="seek_duration_title">تسريع إلى الأمام/-ترجيع وقت البحث</string>
     <string name="local">محلي</string>
-    <string name="recently_added">أُضيف مؤخرًا</string>
-    <string name="most_liked">الأكثر إعجابًا</string>
     <string name="playlist_no_uploader">مُنشأة تلقائيًا (لم يتم العثور على رافع)</string>
     <string name="recovering">استرد</string>
     <string name="error_download_resource_gone">لا يمكن استرداد هذا التنزيل</string>
@@ -853,14 +844,8 @@
     <string name="channel_tab_likes">الإعجابات</string>
     <string name="search_with_service_name">البحث %1$s</string>
     <string name="search_with_service_name_and_filter">البحث %1$s (%2$s)</string>
-    <string name="migration_info_6_7_title">تمت إزالة صفحة أفضل 50 من SoundCloud</string>
-    <string name="migration_info_6_7_message">أوقفت SoundCloud صفحة أفضل 50 الأصلية. تمت إزالة علامة التبويب المقابلة من صفحتك الرئيسية.</string>
     <string name="migration_info_7_8_title">تمت إزالة تريندات YouTube المجمعة</string>
     <string name="migration_info_7_8_message">أوقف YouTube صفحة الترند المدمجة اعتبارًا من 21 يوليو 2025. استبدلت NewPipe صفحة الموضوعات المتداولة الافتراضية بصفحة الموضوعات المتداولة الشائعة مع البث المباشر المتداول.\n\nيمكنك أيضًا تحديد صفحات رائجة مختلفة في \"الإعدادات &gt; المحتوى &gt; محتوى الصفحة الرئيسية\".</string>
-    <string name="trending_gaming">توجهات الألعاب</string>
-    <string name="trending_podcasts">توجهات البث الصوتي</string>
-    <string name="trending_movies">الأفلام والعروض الأكثر رواجاً</string>
-    <string name="trending_music">الموسيقى الرائجة</string>
     <string name="short_thousand">%s الف</string>
     <string name="short_million">%s مليون</string>
     <string name="short_billion">%sمليار</string>

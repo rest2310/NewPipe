@@ -103,7 +103,6 @@
     <string name="subscribed_button_title">Пратите</string>
     <string name="subscribe_button_title">Запрати</string>
     <string name="tab_subscriptions">Праћења</string>
-    <string name="fragment_feed_title">Шта је ново</string>
     <string name="enable_search_history_title">Историја претраге</string>
     <string name="enable_search_history_summary">Локално чувајте упите за претрагу</string>
     <string name="enable_watch_history_title">Историја гледања</string>
@@ -167,14 +166,10 @@
     <string name="delete_item_search_history">Желите ли да избришете ову ставку из историје претраге\?</string>
     <string name="main_page_content">Садржај главне странице</string>
     <string name="blank_page_summary">Празна страница</string>
-    <string name="kiosk_page_summary">Киоск страница</string>
     <string name="channel_page_summary">Страница канала</string>
     <string name="select_a_channel">Изаберите канал</string>
     <string name="no_channel_subscribed_yet">Још нема претплата на канале</string>
-    <string name="select_a_kiosk">Изаберите киоск</string>
     <string name="trending">У тренду</string>
-    <string name="top_50">Топ 50</string>
-    <string name="new_and_hot">Ново и популарно</string>
     <string name="play_queue_remove">Уклони</string>
     <string name="play_queue_stream_detail">Детаљи</string>
     <string name="play_queue_audio_settings">Подешавања аудио снимка</string>
@@ -342,9 +337,6 @@
     <string name="enqueue_stream">Стави у редослед</string>
     <string name="enqueued">Стављено у редослед</string>
     <string name="title_activity_play_queue">Редослед пуштања</string>
-    <string name="conferences">Конференције</string>
-    <string name="most_liked">Највише свиђања</string>
-    <string name="recently_added">Недавно додато</string>
     <string name="local">Локално</string>
     <string name="error_unable_to_load_comments">Није могуће учитати коментаре</string>
     <string name="import_settings">Желите ли да увезете и подешавања\?</string>
@@ -355,7 +347,6 @@
     <string name="export_complete_toast">Извезено</string>
     <string name="no_playlist_bookmarked_yet">Још нема обележивача плејлисте</string>
     <string name="select_a_playlist">Изаберите плејлисту</string>
-    <string name="default_kiosk_page_summary">Подразумевани киоск</string>
     <string name="main_page_content_summary">Које картице се приказују на главној страници</string>
     <string name="title_most_played">Највише пуштано</string>
     <string name="title_last_played">Последње пуштано</string>
@@ -819,14 +810,8 @@
     <string name="delete_file">Избриши фајл</string>
     <string name="delete_entry">Избриши унос</string>
     <string name="account_terminated_service_provides_reason">Налог је укинут\n\n%1$s наводи овај разлог: %2$s</string>
-    <string name="migration_info_6_7_title">Страница SoundCloud Top 50 је уклоњена</string>
-    <string name="migration_info_6_7_message">SoundCloud је укинуо оригиналне топ 50 листе. Одговарајућа картица је уклоњена са ваше главне странице.</string>
     <string name="migration_info_7_8_title">Уклоњен је комбиновану страницу у тренду на YouTube-у</string>
     <string name="migration_info_7_8_message">YouTube је укинуо комбиновану страницу у тренду од 21. јула 2025. NewPipe је заменио подразумевану страницу у тренду са страницом уживо у тренду.\n\nТакође можете одабрати различите странице у тренду у „Подешавања &gt; Садржај &gt; Садржај главне странице“.</string>
-    <string name="trending_gaming">Игре у тренду</string>
-    <string name="trending_podcasts">Подкасти у тренду</string>
-    <string name="trending_movies">Филмови и серије у тренду</string>
-    <string name="trending_music">Музика у тренду</string>
     <string name="entry_deleted">Унос избрисан</string>
     <string name="player_http_403">HTTP грешка 403 примљена са сервера током репродукције, вероватно узрокована истеком URL-а за токовање или забраном IP адресе</string>
     <string name="player_http_invalid_status">HTTP грешка %1$s примљена са сервера током репродукције</string>

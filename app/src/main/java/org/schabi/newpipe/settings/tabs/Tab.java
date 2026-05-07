@@ -233,7 +233,7 @@ public abstract class Tab {
 
         @Override
         public String getTabName(final Context context) {
-            return context.getString(R.string.fragment_feed_title);
+            return context.getString(R.string.home);
         }
 
         @DrawableRes
@@ -577,7 +577,7 @@ public abstract class Tab {
 
         @Override
         public String getTabName(final Context context) {
-            return context.getString(R.string.fragment_feed_title);
+            return context.getString(R.string.home);
         }
 
         @DrawableRes

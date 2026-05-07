@@ -82,7 +82,6 @@
     <string name="subscription_update_failed">Nem sikerült frissíteni a feliratkozást</string>
     <string name="tab_subscriptions">Feliratkozások</string>
     <string name="tab_bookmarks">Könyvjelzőzött lejátszási listák</string>
-    <string name="fragment_feed_title">Újdonságok</string>
     <string name="controls_background_title">Háttér</string>
     <string name="controls_popup_title">Felugró ablak</string>
     <string name="no_player_found_toast">Nem található lejátszó a közvetítéshez (a lejátszásához telepítheti a VLC-t).</string>
@@ -219,11 +218,9 @@
     <string name="title_most_played">Legtöbbet lejátszott</string>
     <string name="main_page_content">Főoldal tartalma</string>
     <string name="blank_page_summary">Üres oldal</string>
-    <string name="kiosk_page_summary">Témagyűjtemények</string>
     <string name="channel_page_summary">Csatornaoldal</string>
     <string name="select_a_channel">Válasszon egy csatornát</string>
     <string name="no_channel_subscribed_yet">Még nincs csatornafeliratkozás</string>
-    <string name="select_a_kiosk">Válasszon egy témagyűjteményt</string>
     <string name="export_complete_toast">Exportálva</string>
     <string name="import_complete_toast">Importálva</string>
     <string name="no_valid_zip_file">Nem érvényes ZIP-fájl</string>
@@ -231,8 +228,6 @@
     <string name="override_current_data">Ez felül fogja írni a jelenlegi beállításokat.</string>
     <string name="import_settings">A beállításokat is importálja\?</string>
     <string name="trending">Felkapott</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Új és népszerű</string>
     <string name="play_queue_remove">Eltávolítás</string>
     <string name="play_queue_stream_detail">Részletek</string>
     <string name="play_queue_audio_settings">Hangbeállítások</string>
@@ -397,7 +392,6 @@
     <string name="radio">Rádió</string>
     <string name="night_theme_summary">Válassza ki a kedvenc éjszakai témáját — %s</string>
     <string name="select_night_theme_toast">Lent kiválaszthatja a kedvenc éjszakai témáját</string>
-    <string name="recently_added">Nemrég hozzáadott</string>
     <string name="new_seek_duration_toast">Az ExoPlayer korlátai miatt az előre- és visszatekerés időtartama %d másodpercre lett állítva</string>
     <string name="feed_groups_header_title">Csatornacsoportok</string>
     <string name="systems_language">Rendszer alapértelmezése</string>
@@ -407,8 +401,6 @@
     <string name="enable_leak_canary_summary">A memóriaszivárgás-monitorozás az alkalmazás megállását okozhatja, amíg a dinamikus memória mentése folyik</string>
     <string name="playlist_no_uploader">Automatikusan létrehozott (feltöltő nem található)</string>
     <string name="title_activity_play_queue">Lejátszási sor</string>
-    <string name="conferences">Konferenciák</string>
-    <string name="most_liked">Legkedveltebb</string>
     <string name="main_page_content_summary">Mely oldalak jelennek meg a főoldalon</string>
     <plurals name="listening">
         <item quantity="one">%s hallgató</item>
@@ -516,7 +508,6 @@
     <string name="preferred_open_action_settings_title">Előnyben részesített „megnyitási” művelet</string>
     <string name="show_channel_details">Csatorna részleteinek megjelenítése</string>
     <string name="hold_to_append">Tartsa a sorba állításhoz</string>
-    <string name="default_kiosk_page_summary">Alapértelmezett témagyűjtemény</string>
     <string name="app_license">A NewPipe egy copyleft szabad szoftver: tetszése szerint felhasználhatja, tanulmányozhatja, megoszthatja és fejlesztheti. Egész pontosan a Free Software Foundation által kiadott GNU General Public License 3-as, vagy (választható módon) újabb verziójának feltételei szerint módosíthatja vagy adhatja tovább.</string>
     <string name="recaptcha_solve">Megoldás</string>
     <string name="subtitle_activity_recaptcha">Nyomja meg a „Kész” gombot, ha megoldotta</string>
@@ -781,14 +772,8 @@
     <string name="search_with_service_name">Keresés %1$s</string>
     <string name="search_with_service_name_and_filter">Keresés %1$s (%2$s)</string>
     <string name="channel_tab_likes">Kedvelések</string>
-    <string name="migration_info_6_7_title">SoundCloud Top 50 oldal eltávolítva</string>
-    <string name="migration_info_6_7_message">A SoundCloud megszüntette az eredeti Top 50-es listákat. A megfelelő lap el lett távolítva a főoldalról.</string>
     <string name="migration_info_7_8_title">YouTube „felkapott lapok” eltávolítva</string>
     <string name="migration_info_7_8_message">A YouTube 2025. július 21-től megszüntette a „felkapott” oldalt. A NewPipe a korábbi alapértelmezett „felkapott” oldalt felkapott élő közvetítésekkel helyettesítette.\n\nA „Beállítások &gt; Tartalom &gt; Főoldal tartalma” menüpontban különböző felkapott lapokat is kiválaszthat.</string>
-    <string name="trending_gaming">Felkapott játékok</string>
-    <string name="trending_podcasts">Felkapott podcastok</string>
-    <string name="trending_movies">Felkapott filmek és sorozatok</string>
-    <string name="trending_music">Felkapott zenék</string>
     <string name="short_thousand">%se</string>
     <string name="short_million">%sm</string>
     <string name="short_billion">%sM</string>

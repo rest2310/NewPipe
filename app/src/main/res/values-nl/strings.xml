@@ -124,7 +124,6 @@
     <string name="subscription_change_failed">Kan abonnement niet wijzigen</string>
     <string name="subscription_update_failed">Kan abonnement niet bijwerken</string>
     <string name="tab_subscriptions">Abonnementen</string>
-    <string name="fragment_feed_title">Nieuw</string>
     <string name="enable_search_history_title">Zoekgeschiedenis</string>
     <string name="enable_search_history_summary">Sla zoekopdrachten lokaal op</string>
     <string name="enable_watch_history_title">Geschiedenis bekijken</string>
@@ -165,14 +164,10 @@
     <string name="player_recoverable_failure">Bezig met herstellen na spelerfout</string>
     <string name="main_page_content">Inhoud van hoofdpagina</string>
     <string name="blank_page_summary">Blanco pagina</string>
-    <string name="kiosk_page_summary">Kioskpagina</string>
     <string name="channel_page_summary">Kanaalpagina</string>
     <string name="select_a_channel">Kies een kanaal</string>
     <string name="no_channel_subscribed_yet">Nog niet geabonneerd op een kanaal</string>
-    <string name="select_a_kiosk">Kies een kiosk</string>
     <string name="trending">Populair</string>
-    <string name="top_50">Top 50</string>
-    <string name="new_and_hot">Nieuw en populair</string>
     <string name="play_queue_remove">Verwijderen</string>
     <string name="play_queue_stream_detail">Details</string>
     <string name="play_queue_audio_settings">Audio-instellingen</string>
@@ -356,7 +351,6 @@
     <string name="pause_downloads_on_mobile">Pauzeren bij mobiele gegevens­verbinding</string>
     <string name="pause_downloads_on_mobile_desc">Handig voor wanneer u naar mobiel internet overschakelt, hoewel sommige downloads niet gepauzeerd kunnen worden</string>
     <string name="events">Gebeurtenissen</string>
-    <string name="conferences">Conferenties</string>
     <string name="error_timeout">Time-out van verbinding</string>
     <string name="show_comments_title">Reacties tonen</string>
     <string name="show_comments_summary">Schakel dit uit om reacties te verbergen</string>
@@ -399,10 +393,8 @@
         <item quantity="one">%s luisteraar</item>
         <item quantity="other">%s luisteraars</item>
     </plurals>
-    <string name="default_kiosk_page_summary">Standaard kiosk</string>
     <string name="seek_duration_title">Duur voor-/achteruit spoelen</string>
     <string name="local">Lokaal</string>
-    <string name="recently_added">Recentelijk toegevoegd</string>
     <string name="playlist_no_uploader">Automatisch gegenereerd (geen uploader gevonden)</string>
     <string name="recovering">herstellen</string>
     <string name="error_download_resource_gone">Kan deze download niet herstellen</string>
@@ -467,7 +459,6 @@
 \nYouTube is een voorbeeld van een service die deze snelle methode aanbiedt door zijn RSS-feed.
 \n
 \nDe keuze komt dus neer op wat je liever hebt: snelheid of precieze informatie.</string>
-    <string name="most_liked">Meest geliked</string>
     <string name="error_postprocessing_stopped">NewPipe werd gesloten terwijl het bezig was met het bestand</string>
     <string name="songs">Nummers</string>
     <string name="albums">Albums</string>
@@ -797,12 +788,6 @@
     <string name="search_with_service_name">Zoeken met %1$s</string>
     <string name="search_with_service_name_and_filter">Zoeken met %1$s (%2$s)</string>
     <string name="channel_tab_likes">Vind-ik-leuks</string>
-    <string name="trending_podcasts">Trending podcasts</string>
-    <string name="trending_gaming">Trending games</string>
-    <string name="trending_movies">Trending films en series</string>
-    <string name="trending_music">Trending muziek</string>
-    <string name="migration_info_6_7_title">‘SoundCloud Top 50’-pagina verwĳderd</string>
-    <string name="migration_info_6_7_message">SoundCloud heeft de originele Top 50-hitlĳsten stopgezet. Het bĳbehorende tabblad is van uw hoofdpagina verwĳderd.</string>
     <string name="migration_info_7_8_title">YouTube gecombineerde trending verwĳderd</string>
     <string name="migration_info_7_8_message">YouTube heeft de gecombineerde trending­pagina per 21 juli 2025 stopgezet. NewPipe heeft de standaard­trendingpagina vervangen door de trending livestreams.\n\nU kunt ook andere trending­pagina\'s selecteren via \'Instellingen &gt; Inhoud &gt; Inhoud van de hoofdpagina\'.</string>
     <string name="short_thousand">%s dznd.</string>

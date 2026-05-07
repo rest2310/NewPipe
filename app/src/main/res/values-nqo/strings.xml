@@ -318,7 +318,6 @@
     <string name="no_channel_subscribed_yet">ߡߊ߬ߝߘߎ߬ߓߊ߰ ߕߍ߫ ߥߙߏߝߋ ߟߊ߫ ߝߟߐ߫</string>
     <string name="show_channel_details">ߥߙߏߝߋ ߕߐ߬ߝߍ߬ߦߊ ߟߎ߬ ߝߍ߲߬ߛߍ߲߫</string>
     <string name="enqueue_stream">ߞߵߊ߬ ߝߙߊ߬ ߕߎ߲߰ߠߌ߲ ߠߊ߫</string>
-    <string name="top_50">ߛߏ߬ߘߊ߲߬ߛߏ߬ ߅߀</string>
     <string name="preferred_open_action_settings_summary">ߞߍߟߌ߫ ߖߏߣߡߊ ߞߣߐߘߐ߫ ߘߊߦߟߍ ߘߐ߫ — %s</string>
     <string name="background_player">ߝߊ߲߬ߝߘߊ߬ߞߘߐ߬ߟߊ߫ ߘߐ߬ߛߊ߬ߙߌ߬ߟߊ߲</string>
     <string name="popup_player">ߝߎ߲ߞߊ߲ߡߊ߫ ߘߐ߬ߛߊ߬ߙߌ߬ߟߊ߲</string>
@@ -386,10 +385,7 @@
     <string name="title_activity_history">ߘߝߐ߬ߦߊ</string>
     <string name="title_last_played">ߞߐߟߕߊ߫ ߕߏߟߏ߲ߣߍ߲ ߠߎ߬</string>
     <string name="channel_page_summary">ߥߙߏߝߋ߫ ߞߐߜߍ</string>
-    <string name="kiosk_page_summary">ߝߎ߲ߞߎ߲ߟߋ߲</string>
     <string name="select_a_channel">ߥߙߏߝߋ ߘߏ߫ ߛߎߥߊ߲ߘߌ߫</string>
-    <string name="default_kiosk_page_summary">ߝߎ߲ߞߎ߲ߟߋ߲߫ ߖߏߣߡߊ</string>
-    <string name="select_a_kiosk">ߝߎ߲ߞߎ߲ߟߋ߲ ߘߏ߫ ߛߎߥߊ߲ߘߌ߫</string>
     <string name="import_complete_toast">ߊ߬ ߓߘߊ߫ ߟߊߛߣߍ߫</string>
     <string name="no_valid_zip_file">ZIP ߞߐߕߐ߮ ߕߍ߫ ߛߐ߲߬</string>
     <string name="export_complete_toast">ߊ߬ ߓߘߊ߫ ߟߊߓߐ߫</string>
@@ -399,15 +395,11 @@
     <string name="trending">ߛߊ߲ߞߊߥߟߌ ߟߎ߬</string>
     <string name="error_unable_to_load_comments">ߞߊ߲߬ߞߎߡߊ ߟߎ߬ ߕߍ߫ ߛߋ߫ ߟߊ߫ ߖߛߐ߫ ߟߊ߫</string>
     <string name="local">ߘߌ߲߬ߞߌ߬ߙߊ߬ߡߊ</string>
-    <string name="most_liked">ߘߌߦߊߢߍߣߍ߲ߓߊ ߟߎ߬</string>
-    <string name="conferences">ߜߊ߬ߙߊ ߟߎ߬</string>
     <string name="title_activity_play_queue">ߕߏߟߏ߲߫ ߛߙߍߘߍ</string>
     <string name="play_queue_remove">ߞߵߊ߬ ߖߏ߬ߛߌ߫</string>
     <string name="play_queue_stream_detail">ߕߐ߬ߝߍ߬ߦߊ ߟߎ߬</string>
     <string name="play_queue_audio_settings">ߡߍ߲ߕߊ߫ ߢߊߓߐߟߌ ߟߎ߬</string>
     <string name="hold_to_append">ߊ߬ ߘߌ߯ߣߍ߲ ߕߏ߫ ߞߵߊ߬ ߝߙߊ߬ ߕߎ߲߰ߠߌ߲ ߠߊ߫</string>
-    <string name="new_and_hot">ߞߎߘߊ ߣߌ߫ ߞߟߊߡߊ߲</string>
-    <string name="recently_added">ߞߎߘߊ߫ ߝߙߊ߬ߣߍ߲ ߠߎ߬</string>
     <string name="enqueue_next_stream">ߞߵߊ߬ ߞߍ߫ ߣߊ߬ߕߐ ߘߌ߫ ߕߎ߲߰ߠߌ߲ ߘߐ߫</string>
     <string name="enqueued">ߊ߬ ߓߘߊ߫ ߝߙߊ߬ ߕߎ߲߰ߠߌ߲ ߠߊ߫</string>
     <string name="enqueued_next">ߊ߬ ߓߘߊ߫ ߞߍ߫ ߣߊ߬ߕߐ ߘߌ߫ ߕߎ߲߰ߠߌ߲ ߘߐ߫</string>
@@ -639,7 +631,6 @@
     <plurals name="seconds">
         <item quantity="other">ߝߌ߬ߟߊ߲߬ %d</item>
     </plurals>
-    <string name="fragment_feed_title">ߞߎߘߊ ߟߎ߬</string>
     <string name="feed_groups_header_title">ߥߙߏߝߋ߫ ߘߙߎ ߟߎ߬</string>
     <string name="feed_oldest_subscription_update">ߟߊ߬ߞߎ߬ߘߦߊ߬ߟߌ ߞߍ߫ ߘߊ߫: %s</string>
     <plurals name="days">
