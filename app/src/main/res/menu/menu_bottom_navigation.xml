@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/bottom_navigation_home"
-        android:icon="@drawable/ic_subscriptions"
+        android:icon="@drawable/ic_nav_home_selector"
         android:title="@string/home" />
     <item
         android:id="@+id/bottom_navigation_subscriptions"
-        android:icon="@drawable/ic_tv"
+        android:icon="@drawable/ic_nav_subscriptions_selector"
         android:title="@string/tab_subscriptions" />
     <item
         android:id="@+id/bottom_navigation_playlists"
-        android:icon="@drawable/ic_bookmark"
+        android:icon="@drawable/ic_nav_playlists_selector"
         android:title="@string/tab_bookmarks_short" />
     <item
         android:id="@+id/bottom_navigation_downloads"
-        android:icon="@drawable/ic_file_download"
+        android:icon="@drawable/ic_nav_downloads_selector"
         android:title="@string/downloads" />
 </menu>
