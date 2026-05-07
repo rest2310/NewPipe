@@ -162,7 +162,7 @@
             app:tabIndicator="@drawable/channel_tab_indicator"
             app:tabIndicatorColor="?attr/colorPrimary"
             app:tabIndicatorFullWidth="false"
-            app:tabMinHeight="40dp"
+            android:minHeight="40dp"
             app:tabMode="scrollable"
             app:tabRippleColor="?attr/colorControlHighlight"
             app:tabSelectedTextColor="?attr/colorPrimary"

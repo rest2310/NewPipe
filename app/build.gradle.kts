@@ -98,7 +98,6 @@ configure<ApplicationExtension> {
 
     sourceSets {
         getByName("main") {
-            res.srcDir(layout.buildDirectory.dir("generated/res/bottomNavigationIcons"))
             (res as PatternFilterable).exclude("drawable/nav/**")
         }
         getByName("androidTest") {
@@ -143,22 +142,22 @@ val bottomNavigationIconNames = mapOf(
 val generateBottomNavigationIcons = tasks.register<Sync>("generateBottomNavigationIcons") {
     val navIconDir = layout.projectDirectory.dir("src/main/res/drawable/nav")
     val fallbackIconDir = layout.projectDirectory.dir("src/main/res/drawable")
-    val generatedDrawableDir = layout.buildDirectory.dir(
-        "generated/res/bottomNavigationIcons/drawable"
-    )
+    val generatedResDir = layout.buildDirectory.dir("generated/res/bottomNavigationIcons")
 
-    into(generatedDrawableDir)
+    into(generatedResDir)
     bottomNavigationIconNames.forEach { (iconName, fallbackIconName) ->
         val customIcon = navIconDir.file("$iconName.xml").asFile
         val fallbackIcon = fallbackIconDir.file("$fallbackIconName.xml").asFile
         from(customIcon.takeIf { it.isFile } ?: fallbackIcon) {
+            into("drawable")
             rename { "$iconName.xml" }
         }
     }
 }
 
-tasks.matching { it.name.startsWith("merge") && it.name.endsWith("Resources") }
-    .configureEach { dependsOn(generateBottomNavigationIcons) }
+configure<ApplicationExtension> {
+    sourceSets.getByName("main").res.srcDir(generateBottomNavigationIcons)
+}
 
 ksp {
     arg("room.schemaLocation", "$projectDir/schemas")
