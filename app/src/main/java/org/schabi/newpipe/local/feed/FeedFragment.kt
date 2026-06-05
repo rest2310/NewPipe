@@ -36,7 +36,9 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
@@ -79,10 +81,13 @@ import org.schabi.newpipe.local.feed.service.FeedLoadService
 import org.schabi.newpipe.local.subscription.SubscriptionManager
 import org.schabi.newpipe.util.DeviceUtils
 import org.schabi.newpipe.util.NavigationHelper
+import org.schabi.newpipe.util.SimpleDialog
 import org.schabi.newpipe.util.ThemeHelper.getGridSpanCountStreams
 import org.schabi.newpipe.util.ThemeHelper.getItemViewMode
+import org.schabi.newpipe.util.ThemeHelper.resolveColorFromAttr
 import org.schabi.newpipe.util.ThemeHelper.resolveDrawable
 import org.schabi.newpipe.util.ThemeHelper.shouldUseGridLayout
+import org.schabi.newpipe.util.external_communication.ShareUtils
 
 class FeedFragment : BaseStateFragment<FeedState>() {
     private var _feedBinding: FragmentFeedBinding? = null
@@ -166,15 +171,54 @@ class FeedFragment : BaseStateFragment<FeedState>() {
     }
 
     private fun setupHomeHeader() {
-        feedBinding.feedFilterChips.setOnCheckedStateChangeListener { _, checkedIds ->
-            val checkedId = checkedIds.firstOrNull() ?: R.id.feed_filter_all
+        val filterViews = listOf(
+            R.id.feed_filter_all,
+            R.id.feed_filter_favorites,
+            R.id.feed_filter_new,
+            R.id.feed_filter_unfinished
+        )
+
+        fun selectFilter(checkedId: Int) {
             currentFeedFilter = when (checkedId) {
                 R.id.feed_filter_favorites -> FeedFilter.FAVORITES
                 R.id.feed_filter_new -> FeedFilter.NEW
                 R.id.feed_filter_unfinished -> FeedFilter.UNFINISHED
                 else -> FeedFilter.ALL
             }
+            updateFilterButtons(checkedId)
             viewModel.setFeedFilter(currentFeedFilter)
+        }
+
+        filterViews.forEach { filterViewId ->
+            feedBinding.root.findViewById<View>(filterViewId).setOnClickListener {
+                selectFilter(filterViewId)
+            }
+        }
+        updateFilterButtons(R.id.feed_filter_all)
+    }
+
+    private fun updateFilterButtons(selectedId: Int) {
+        val selectedTextColor = ContextCompat.getColor(requireContext(), R.color.white)
+        val unselectedTextColor = resolveColorFromAttr(
+            requireContext(),
+            android.R.attr.textColorPrimary
+        )
+        listOf(
+            R.id.feed_filter_all,
+            R.id.feed_filter_favorites,
+            R.id.feed_filter_new,
+            R.id.feed_filter_unfinished
+        ).forEach { filterViewId ->
+            val filterView = feedBinding.root.findViewById<TextView>(filterViewId)
+            val selected = filterViewId == selectedId
+            filterView.setBackgroundResource(
+                if (selected) {
+                    R.drawable.feed_filter_selected_background
+                } else {
+                    R.drawable.feed_filter_unselected_background
+                }
+            )
+            filterView.setTextColor(if (selected) selectedTextColor else unselectedTextColor)
         }
     }
 
@@ -239,6 +283,15 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         if (item.itemId == R.id.menu_item_feed_refresh) {
             reloadContent()
             return true
+        } else if (item.itemId == R.id.menu_item_feed_settings) {
+            NavigationHelper.openSettings(requireContext())
+            return true
+        } else if (item.itemId == R.id.menu_item_feed_history) {
+            NavigationHelper.openStatisticFragment(fm)
+            return true
+        } else if (item.itemId == R.id.menu_item_feed_faq) {
+            ShareUtils.openUrlInBrowser(requireContext(), getString(R.string.faq_url))
+            return true
         } else if (item.itemId == R.id.menu_item_feed_help) {
             val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
@@ -249,15 +302,21 @@ class FeedFragment : BaseStateFragment<FeedState>() {
                 else -> R.string.feed_use_dedicated_fetch_method_enable_button
             }
 
-            AlertDialog.Builder(requireContext())
-                .setMessage(R.string.feed_use_dedicated_fetch_method_help_text)
-                .setNeutralButton(enableDisableButtonText) { _, _ ->
+            SimpleDialog.show(
+                requireContext(),
+                0,
+                R.string.feed_use_dedicated_fetch_method_help_text,
+                0,
+                null,
+                enableDisableButtonText,
+                {
                     sharedPreferences.edit {
                         putBoolean(getString(R.string.feed_use_dedicated_fetch_method_key), !usingDedicatedMethod)
                     }
-                }
-                .setPositiveButton(resources.getString(R.string.ok), null)
-                .show()
+                },
+                R.string.ok,
+                null
+            )
             return true
         }
 

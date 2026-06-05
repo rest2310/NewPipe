@@ -1,92 +1,137 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/item_bkg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:background="@color/bluegray">
+        android:padding="@dimen/video_item_search_padding">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/item_icon"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_centerVertical="true"
+            android:layout_width="@dimen/video_item_search_thumbnail_image_width"
+            android:layout_height="@dimen/video_item_search_thumbnail_image_height"
             android:contentDescription="TODO"
-            android:gravity="center"
-            android:padding="15dp"
-            android:scaleType="fitXY"
-            app:tint="?attr/actionColor" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder_thumbnail_video"
+            app:layout_constraintBottom_toBottomOf="@+id/item_text_group"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/item_text_group"
+            app:shapeAppearance="@style/RoundedThumbnailImageView" />
 
         <org.schabi.newpipe.views.NewPipeTextView
-            android:id="@+id/item_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/item_more"
-            android:layout_toRightOf="@id/item_icon"
-            android:ellipsize="end"
-            android:padding="6dp"
-            android:text="XXX.xx"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <org.schabi.newpipe.views.NewPipeTextView
-            android:id="@+id/item_size"
+            android:id="@+id/item_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/item_name"
-            android:layout_toRightOf="@id/item_icon"
-            android:padding="6dp"
-            android:singleLine="true"
-            android:text="100.00MB"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded_thumbnail_overlay_gradient"
+            android:paddingHorizontal="@dimen/video_item_search_duration_horizontal_padding"
+            android:paddingVertical="@dimen/video_item_search_duration_vertical_padding"
+            android:textColor="@color/duration_text_color"
+            android:textSize="@dimen/video_item_search_duration_text_size"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/item_icon"
+            app:layout_constraintEnd_toEndOf="@+id/item_icon"
+            tools:text="19:03"
+            tools:visibility="visible" />
 
-        <org.schabi.newpipe.views.NewPipeTextView
-            android:id="@+id/item_status"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/item_text_group"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/item_name"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@+id/item_more"
-            android:layout_toRightOf="@id/item_size"
-            android:padding="6dp"
-            android:singleLine="true"
-            android:text="0%"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:layout_marginStart="@dimen/video_item_search_image_right_margin"
+            android:layout_marginEnd="6dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/item_more"
+            app:layout_constraintStart_toEndOf="@+id/item_icon"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <org.schabi.newpipe.views.NewPipeTextView
-            android:id="@+id/item_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/item_name"
-            android:layout_toLeftOf="@id/item_more"
-            android:padding="6dp"
-            android:singleLine="true"
-            android:text=""
-            android:textColor="@color/white"
-            android:textSize="12sp" />
+            <org.schabi.newpipe.views.NewPipeTextView
+                android:id="@+id/item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:padding="0dp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="@dimen/video_item_search_title_text_size"
+                tools:text="Wie Putin sich vor Attentaten schützt" />
+
+            <org.schabi.newpipe.views.NewPipeTextView
+                android:id="@+id/item_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="0dp"
+                android:textColor="@color/placeholder_foreground"
+                android:textSize="@dimen/video_item_search_uploader_text_size"
+                tools:text="Simplicissimus" />
+
+            <org.schabi.newpipe.views.NewPipeTextView
+                android:id="@+id/item_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="0dp"
+                android:textColor="@color/placeholder_foreground"
+                android:textSize="@dimen/video_item_search_upload_date_text_size"
+                tools:text="958K views • 1 week ago • MP4 • 170.13 MB" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/item_more"
             style="?attr/buttonBarButtonStyle"
-            android:layout_width="49dp"
-            android:layout_height="49dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="4dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:contentDescription="TODO"
             android:scaleType="centerInside"
             android:src="@drawable/ic_more_vert"
-            app:tint="?attr/actionColor" />
+            app:layout_constraintBottom_toBottomOf="@+id/item_text_group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/item_text_group"
+            app:tint="@color/placeholder_foreground" />
 
-    </RelativeLayout>
+        <FrameLayout
+            android:id="@+id/item_progress_track"
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/download_progress_track"
+            android:clipChildren="true"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/item_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_icon"
+            tools:visibility="visible">
 
-</RelativeLayout>
+            <View
+                android:id="@+id/item_progress_fill"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/download_progress_fill" />
+        </FrameLayout>
+
+        <org.schabi.newpipe.views.NewPipeTextView
+            android:id="@+id/item_status"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|end"
+            android:textColor="@color/placeholder_foreground"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/item_progress_track"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/item_progress_track"
+            tools:text="35%"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

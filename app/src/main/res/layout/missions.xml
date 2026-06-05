@@ -15,6 +15,11 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:layoutAnimation="@anim/layout_list_item_animation"
-        android:padding="@dimen/rounded_surface_spacing" />
+        android:paddingStart="10dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="@dimen/rounded_surface_spacing"
+        android:scrollbarThumbVertical="@drawable/rounded_scrollbar_thumb"
+        android:scrollbars="vertical" />
 
 </LinearLayout>

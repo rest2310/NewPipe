@@ -35,12 +35,14 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.TooltipCompat;
 import androidx.collection.SparseArrayCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.evernote.android.state.State;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.databinding.FragmentSearchBinding;
@@ -57,7 +59,6 @@ import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.exceptions.ParsingException;
 import org.schabi.newpipe.extractor.search.SearchExtractor;
 import org.schabi.newpipe.extractor.search.SearchInfo;
-import org.schabi.newpipe.extractor.services.youtube.linkHandler.YoutubeSearchQueryHandlerFactory;
 import org.schabi.newpipe.fragments.BackPressable;
 import org.schabi.newpipe.fragments.list.BaseListFragment;
 import org.schabi.newpipe.ktx.AnimationType;
@@ -69,7 +70,6 @@ import org.schabi.newpipe.util.DeviceUtils;
 import org.schabi.newpipe.util.ExtractorHelper;
 import org.schabi.newpipe.util.KeyboardUtil;
 import org.schabi.newpipe.util.NavigationHelper;
-import org.schabi.newpipe.util.ServiceHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -164,6 +164,7 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
     private View searchToolbarContainer;
     private EditText searchEditText;
+    private View searchBack;
     private View searchClear;
 
     private boolean suggestionsPanelVisible = false;
@@ -229,6 +230,7 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
                     getString(R.string.search_with_service_name,
                             service.getServiceInfo().getName()));
         }
+        bindSearchFilters();
         showSearchOnStart();
         initSearchListeners();
     }
@@ -273,6 +275,12 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
             Log.d(TAG, "onResume() called");
         }
         super.onResume();
+
+        final BottomNavigationView bottomNavigationView =
+                activity.findViewById(R.id.bottom_navigation);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.getMenu().findItem(R.id.bottom_navigation_home).setChecked(true);
+        }
 
         if (suggestionDisposable == null || suggestionDisposable.isDisposed()) {
             initSuggestionObserver();
@@ -379,6 +387,7 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
         searchToolbarContainer = activity.findViewById(R.id.toolbar_search_container);
         searchEditText = searchToolbarContainer.findViewById(R.id.toolbar_search_edit_text);
+        searchBack = searchToolbarContainer.findViewById(R.id.toolbar_search_back);
         searchClear = searchToolbarContainer.findViewById(R.id.toolbar_search_clear);
     }
 
@@ -410,6 +419,47 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     // Init's
     //////////////////////////////////////////////////////////////////////////*/
 
+    private void bindSearchFilters() {
+        bindSearchFilter(searchBinding.searchFilterAll, R.id.search_filter_all,
+                getString(R.string.all), Collections.emptyList());
+        bindSearchFilter(searchBinding.searchFilterVideos, R.id.search_filter_videos,
+                getString(R.string.videos_string), Collections.singletonList("videos"));
+        bindSearchFilter(searchBinding.searchFilterChannels, R.id.search_filter_channels,
+                getString(R.string.channels), Collections.singletonList("channels"));
+        bindSearchFilter(searchBinding.searchFilterPlaylists, R.id.search_filter_playlists,
+                getString(R.string.playlists), Collections.singletonList("playlists"));
+
+        updateSearchFilterButtons(filterItemCheckedId > 0
+                ? filterItemCheckedId
+                : R.id.search_filter_all);
+    }
+
+    private void bindSearchFilter(final TextView chip,
+                                  final int chipId,
+                                  final String title,
+                                  final List<String> filter) {
+        chip.setOnClickListener(v -> changeContentFilter(chipId, title, filter));
+    }
+
+    private void updateSearchFilterButtons(final int selectedChipId) {
+        updateSearchFilterButton(searchBinding.searchFilterAll,
+                selectedChipId == R.id.search_filter_all);
+        updateSearchFilterButton(searchBinding.searchFilterVideos,
+                selectedChipId == R.id.search_filter_videos);
+        updateSearchFilterButton(searchBinding.searchFilterChannels,
+                selectedChipId == R.id.search_filter_channels);
+        updateSearchFilterButton(searchBinding.searchFilterPlaylists,
+                selectedChipId == R.id.search_filter_playlists);
+    }
+
+    private void updateSearchFilterButton(final TextView chip, final boolean selected) {
+        chip.setBackgroundResource(selected
+                ? R.drawable.feed_filter_selected_background
+                : R.drawable.feed_filter_unselected_background);
+        chip.setTextColor(ContextCompat.getColor(requireContext(),
+                selected ? R.color.white : R.color.black));
+    }
+
     @Override
     public void reloadContent() {
         if (!TextUtils.isEmpty(searchString) || (searchEditText != null
@@ -438,46 +488,15 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         final ActionBar supportActionBar = activity.getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setDisplayShowTitleEnabled(false);
-            supportActionBar.setDisplayHomeAsUpEnabled(true);
+            supportActionBar.setDisplayHomeAsUpEnabled(false);
         }
 
-        int itemId = 0;
-        boolean isFirstItem = true;
-        final Context c = getContext();
-
-        if (service == null) {
-            Log.w(TAG, "onCreateOptionsMenu() called with null service");
-            updateService();
-        }
-
-        for (final String filter : service.getSearchQHFactory().getAvailableContentFilter()) {
-            if (filter.equals(YoutubeSearchQueryHandlerFactory.MUSIC_SONGS)) {
-                final MenuItem musicItem = menu.add(2,
-                        itemId++,
-                        0,
-                        "YouTube Music");
-                musicItem.setEnabled(false);
-            }
-            menuItemToFilterName.put(itemId, filter);
-            final MenuItem item = menu.add(1,
-                    itemId++,
-                    0,
-                    ServiceHelper.getTranslatedFilterString(filter, c));
-            if (isFirstItem) {
-                item.setChecked(true);
-                isFirstItem = false;
-            }
-        }
-        menu.setGroupCheckable(1, true, true);
-
-        restoreFilterChecked(menu, filterItemCheckedId);
+        menu.clear();
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull final MenuItem item) {
-        final var filter = Collections.singletonList(menuItemToFilterName.get(item.getItemId()));
-        changeContentFilter(item, filter);
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void restoreFilterChecked(final Menu menu, final int itemId) {
@@ -506,16 +525,18 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
         if (TextUtils.isEmpty(searchString)
                 || isSearchEditBlank()) {
-            searchToolbarContainer.setTranslationX(100);
+            searchToolbarContainer.setTranslationX(0);
+            searchToolbarContainer.setTranslationY(40);
             searchToolbarContainer.setAlpha(0.0f);
             searchToolbarContainer.setVisibility(View.VISIBLE);
             searchToolbarContainer.animate()
-                    .translationX(0)
+                    .translationY(0)
                     .alpha(1.0f)
                     .setDuration(200)
                     .setInterpolator(new DecelerateInterpolator()).start();
         } else {
             searchToolbarContainer.setTranslationX(0);
+            searchToolbarContainer.setTranslationY(0);
             searchToolbarContainer.setAlpha(1.0f);
             searchToolbarContainer.setVisibility(View.VISIBLE);
         }
@@ -525,23 +546,15 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         if (DEBUG) {
             Log.d(TAG, "initSearchListeners() called");
         }
-        searchClear.setOnClickListener(v -> {
+        searchBack.setOnClickListener(v -> {
             if (DEBUG) {
                 Log.d(TAG, "onClick() called with: v = [" + v + "]");
             }
-            if (isSearchEditBlank()) {
-                NavigationHelper.openHomeFragment(getFM());
-                return;
-            }
-
-            searchBinding.correctSuggestion.setVisibility(View.GONE);
-
-            searchEditText.setText("");
-            suggestionListAdapter.submitList(null);
-            showKeyboardSearch();
+            NavigationHelper.openHomeFragment(getFM());
         });
 
-        TooltipCompat.setTooltipText(searchClear, getString(R.string.clear));
+        searchClear.setVisibility(View.GONE);
+        TooltipCompat.setTooltipText(searchBack, getString(R.string.back));
 
         searchEditText.setOnClickListener(v -> {
             if (DEBUG) {
@@ -627,7 +640,7 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
                             && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER
                             || event.getAction() == EditorInfo.IME_ACTION_SEARCH)) {
                         searchEditText.setText(getSearchEditString().trim());
-                        search(getSearchEditString(), new String[0], "");
+                        search(getSearchEditString(), contentFilter, sortFilter);
                         return true;
                     }
                     return false;
@@ -642,6 +655,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         if (DEBUG) {
             Log.d(TAG, "unsetSearchListeners() called");
         }
+        searchBack.setOnClickListener(null);
+        searchBack.setOnLongClickListener(null);
         searchClear.setOnClickListener(null);
         searchClear.setOnLongClickListener(null);
         searchEditText.setOnClickListener(null);
@@ -965,6 +980,31 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
                 searchEditText.setHint(getString(R.string.search_with_service_name_and_filter,
                         service.getServiceInfo().getName(),
                         item.getTitle()));
+            }
+        }
+
+        contentFilter = theContentFilter.toArray(new String[0]);
+
+        if (!TextUtils.isEmpty(searchString)) {
+            search(searchString, contentFilter, sortFilter);
+        }
+    }
+
+    private void changeContentFilter(final int chipId,
+                                     final String title,
+                                     final List<String> theContentFilter) {
+        filterItemCheckedId = chipId;
+        updateSearchFilterButtons(chipId);
+
+        if (service != null) {
+            if (theContentFilter.isEmpty() || "all".equals(theContentFilter.get(0))) {
+                searchEditText.setHint(
+                        getString(R.string.search_with_service_name,
+                                service.getServiceInfo().getName()));
+            } else {
+                searchEditText.setHint(getString(R.string.search_with_service_name_and_filter,
+                        service.getServiceInfo().getName(),
+                        title));
             }
         }
 

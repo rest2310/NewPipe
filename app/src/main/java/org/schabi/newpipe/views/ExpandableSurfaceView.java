@@ -2,14 +2,14 @@ package org.schabi.newpipe.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.SurfaceView;
+import android.view.TextureView;
 
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 
 import static com.google.android.exoplayer2.ui.AspectRatioFrameLayout.RESIZE_MODE_FIT;
 import static com.google.android.exoplayer2.ui.AspectRatioFrameLayout.RESIZE_MODE_ZOOM;
 
-public class ExpandableSurfaceView extends SurfaceView {
+public class ExpandableSurfaceView extends TextureView {
     private int resizeMode = RESIZE_MODE_FIT;
     private int baseHeight = 0;
     private int maxHeight = 0;

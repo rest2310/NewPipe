@@ -102,7 +102,7 @@ public final class BookmarkFragment extends BaseLocalListFragment<List<PlaylistL
                              final Bundle savedInstanceState) {
 
         if (!useAsFrontPage) {
-            setTitle(activity.getString(R.string.tab_bookmarks));
+            setTitle(activity.getString(R.string.tab_bookmarks_short));
         }
         return inflater.inflate(R.layout.fragment_bookmarks, container, false);
     }
@@ -111,7 +111,7 @@ public final class BookmarkFragment extends BaseLocalListFragment<List<PlaylistL
     public void onResume() {
         super.onResume();
         if (activity != null) {
-            setTitle(activity.getString(R.string.tab_bookmarks));
+            setTitle(activity.getString(R.string.tab_bookmarks_short));
         }
     }
 

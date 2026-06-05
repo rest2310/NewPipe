@@ -71,12 +71,7 @@ data class StreamItem(
 
         if (stream.duration > 0) {
             viewBinding.itemDurationView.text = Localization.getDurationString(stream.duration)
-            viewBinding.itemDurationView.setBackgroundColor(
-                ContextCompat.getColor(
-                    viewBinding.itemDurationView.context,
-                    R.color.duration_background_color
-                )
-            )
+            viewBinding.itemDurationView.setBackgroundResource(R.drawable.rounded_thumbnail_overlay_gradient)
             viewBinding.itemDurationView.visibility = View.VISIBLE
 
             if (stateProgressTime != null) {

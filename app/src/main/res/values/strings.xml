@@ -19,6 +19,7 @@
     <string name="search">Search</string>
     <string name="search_with_service_name">Search %1$s</string>
     <string name="search_with_service_name_and_filter">Search %1$s (%2$s)</string>
+    <string name="back">Back</string>
     <string name="settings">Settings</string>
     <string name="did_you_mean">Did you mean \"%1$s\"?</string>
     <string name="search_showing_result_for">Showing results for: %s</string>
@@ -221,6 +222,7 @@
     <string name="delete_search_history_alert">Delete entire search history?</string>
     <string name="search_history_deleted">Search history deleted</string>
     <string name="fast_mode">Fast mode</string>
+    <string name="fast_mode_menu_title">Fast Mode</string>
     <string name="main_tabs_position_summary">Move main tab selector to the bottom</string>
     <string name="main_tabs_position_title">Main tabs position</string>
     <!-- error strings -->
@@ -383,6 +385,7 @@
     <string name="faq_title">Frequently asked questions</string>
     <string name="faq_description">If you are having trouble using the app, be sure to check out these answers to common questions!</string>
     <string name="faq">View on website</string>
+    <string name="faq_menu_title">FAQ</string>
     <!-- History -->
     <string name="title_activity_history">History</string>
     <string name="action_history">History</string>

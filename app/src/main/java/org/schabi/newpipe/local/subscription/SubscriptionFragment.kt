@@ -19,7 +19,9 @@ import com.evernote.android.state.State
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Section
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import org.schabi.newpipe.R
 import org.schabi.newpipe.databinding.DialogTitleBinding
 import org.schabi.newpipe.databinding.FragmentSubscriptionBinding
@@ -31,10 +33,10 @@ import org.schabi.newpipe.fragments.BaseStateFragment
 import org.schabi.newpipe.ktx.animate
 import org.schabi.newpipe.local.subscription.SubscriptionViewModel.SubscriptionState
 import org.schabi.newpipe.local.subscription.item.ChannelItem
-import org.schabi.newpipe.local.subscription.item.Header
 import org.schabi.newpipe.local.subscription.item.ImportSubscriptionsHintPlaceholderItem
 import org.schabi.newpipe.util.NavigationHelper
 import org.schabi.newpipe.util.OnClickGesture
+import org.schabi.newpipe.util.SimpleDialog
 import org.schabi.newpipe.util.external_communication.ShareUtils
 
 class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
@@ -122,8 +124,8 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
     // ////////////////////////////////////////////////////////////////////////
 
     override fun initViews(rootView: View, savedInstanceState: Bundle?) {
-        super.initViews(rootView, savedInstanceState)
         _binding = FragmentSubscriptionBinding.bind(rootView)
+        super.initViews(rootView, savedInstanceState)
 
         groupAdapter.spanCount = 1
         binding.itemsList.layoutManager = LinearLayoutManager(requireContext())
@@ -141,12 +143,7 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
         subscriptionsSection.setHideWhenEmpty(true)
 
         groupAdapter.clear()
-        groupAdapter.add(
-            Section(
-                Header(getString(R.string.tab_subscriptions)),
-                listOf(subscriptionsSection)
-            )
-        )
+        groupAdapter.add(subscriptionsSection)
     }
 
     private fun showLongTapDialog(selectedItem: ChannelInfoItem) {
@@ -183,18 +180,36 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
     }
 
     private fun confirmDeleteChannel(selectedItem: ChannelInfoItem) {
-        AlertDialog.Builder(requireContext())
-            .setMessage(R.string.remove_subscription_confirmation)
-            .setPositiveButton(R.string.yes) { _, _ -> deleteChannel(selectedItem) }
-            .setNegativeButton(R.string.no, null)
-            .show()
+        SimpleDialog.show(
+            requireContext(),
+            0,
+            R.string.remove_subscription_confirmation,
+            R.string.no,
+            null,
+            0,
+            null,
+            R.string.yes,
+            { deleteChannel(selectedItem) }
+        )
     }
 
     private fun deleteChannel(selectedItem: ChannelInfoItem) {
         disposables.add(
-            subscriptionManager.deleteSubscription(selectedItem.serviceId, selectedItem.url).subscribe {
-                Toast.makeText(requireContext(), getString(R.string.channel_unsubscribed), Toast.LENGTH_SHORT).show()
-            }
+            subscriptionManager.deleteSubscription(selectedItem.serviceId, selectedItem.url)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        Toast.makeText(
+                            requireContext(),
+                            getString(R.string.channel_unsubscribed),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    },
+                    {
+                        Toast.makeText(requireContext(), R.string.general_error, Toast.LENGTH_SHORT).show()
+                    }
+                )
         )
     }
 

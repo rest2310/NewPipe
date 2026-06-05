@@ -8,6 +8,10 @@
 
     <color name="placeholder_background">#999999</color>
     <color name="placeholder_foreground">#6C6C6C</color>
+    <color name="navigation_separator_color">#D6D6D6</color>
+    <color name="bottom_navigation_active_color">#ff0033</color>
+    <color name="feed_filter_selected_start">#ff0033</color>
+    <color name="feed_filter_selected_end">#f82488</color>
 
     <!-- Light Theme -->
     <color name="light_background_color">#EEEEEE</color>

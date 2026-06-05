@@ -38,9 +38,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.ViewParent;
 import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -119,6 +121,7 @@ import org.schabi.newpipe.util.ThemeHelper;
 import org.schabi.newpipe.util.external_communication.KoreUtils;
 import org.schabi.newpipe.util.external_communication.ShareUtils;
 import org.schabi.newpipe.util.image.CoilHelper;
+import org.schabi.newpipe.views.MorphingFrameLayout;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -142,7 +145,7 @@ public final class VideoDetailFragment
         OnKeyDownListener {
     public static final String KEY_SWITCHING_PLAYERS = "switching_players";
 
-    private static final float MAX_OVERLAY_ALPHA = 0.9f;
+    private static final float MAX_OVERLAY_ALPHA = 1.0f;
     private static final float MAX_PLAYER_HEIGHT = 0.7f;
 
     public static final String ACTION_SHOW_MAIN_PLAYER =
@@ -206,6 +209,12 @@ public final class VideoDetailFragment
     @State
     protected boolean autoPlayEnabled = true;
     private boolean forceFullscreen = false;
+    private boolean miniPlayerControlsHaveRoom = false;
+    private boolean keepPlayerCollapsedOnNextOpen = false;
+    private boolean ignorePlayerStartedAfterClose = false;
+    private boolean closingMainPlayer = false;
+    private String overlayThumbnailStreamUrl = "";
+    private boolean showOverlayThumbnailUntilFirstPlay = false;
 
     @Nullable
     private StreamInfo currentInfo = null;
@@ -371,6 +380,11 @@ public final class VideoDetailFragment
         activity.sendBroadcast(new Intent(ACTION_VIDEO_FRAGMENT_RESUMED));
 
         updateOverlayPlayQueueButtonVisibility();
+        updateOverlayThumbnailVisibility();
+        if (bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED && isPlayerAvailable()) {
+            player.UIs().get(VideoPlayerUi.class).ifPresent(ui -> ui.hideControls(0, 0));
+            setPlayerRootMiniTouchEnabled(true);
+        }
 
         setupBrightness();
 
@@ -476,6 +490,7 @@ public final class VideoDetailFragment
             }
         }));
         binding.detailThumbnailRootLayout.setOnClickListener(v -> {
+            prepareMainPlayerOpeningSurface(false);
             autoPlayEnabled = true; // forcefully start playing
             // FIXME Workaround #7427
             if (isPlayerAvailable()) {
@@ -521,13 +536,29 @@ public final class VideoDetailFragment
                     VideoDetailPlayerCrasher.onCrashThePlayer(requireContext(), player));
         }
 
-        final View.OnClickListener overlayListener = v -> bottomSheetBehavior
-                .setState(BottomSheetBehavior.STATE_EXPANDED);
-        binding.overlayThumbnail.setOnClickListener(overlayListener);
+        final View.OnClickListener overlayListener = v -> {
+            if (bottomSheetBehavior != null) {
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+        };
+        binding.overlayThumbnail.setOnClickListener(v -> {
+            if (bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED) {
+                overlayListener.onClick(v);
+                return;
+            }
+            if (isPlayerAvailable() && !player.exoPlayerIsNull()) {
+                showOverlayThumbnailUntilFirstPlay = false;
+                updateOverlayThumbnailVisibility();
+                player.play();
+            } else {
+                prepareMainPlayerOpeningSurface(false);
+                autoPlayEnabled = true;
+                openVideoPlayer(false);
+            }
+        });
         binding.overlayMetadataLayout.setOnClickListener(overlayListener);
         binding.overlayButtonsLayout.setOnClickListener(overlayListener);
-        binding.overlayCloseButton.setOnClickListener(v -> bottomSheetBehavior
-                .setState(BottomSheetBehavior.STATE_HIDDEN));
+        binding.overlayCloseButton.setOnClickListener(v -> hideMainPlayer());
         binding.overlayPlayQueueButton.setOnClickListener(v -> openPlayQueue(requireContext()));
         binding.overlayPlayPauseButton.setOnClickListener(v -> {
             if (playerIsNotStopped()) {
@@ -535,6 +566,8 @@ public final class VideoDetailFragment
                 player.UIs().get(VideoPlayerUi.class).ifPresent(ui -> ui.hideControls(0, 0));
                 showSystemUi();
             } else {
+                keepPlayerCollapsedOnNextOpen =
+                        bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED;
                 autoPlayEnabled = true; // forcefully start playing
                 openVideoPlayer(false);
             }
@@ -549,6 +582,27 @@ public final class VideoDetailFragment
                 consumer.accept(currentInfo);
             }
         };
+    }
+
+    private void hideMainPlayer() {
+        if (bottomSheetBehavior == null) {
+            return;
+        }
+
+        ignorePlayerStartedAfterClose = true;
+        closingMainPlayer = true;
+        if (binding != null) {
+            setOverlayElementsClickable(false);
+            hideMiniPlayerOverlayForClose();
+            setBottomSheetSurfaceVisible(false);
+            manageSpaceAtTheBottom(true);
+        }
+        if (isPlayerAvailable()) {
+            player.UIs().get(VideoPlayerUi.class).ifPresent(ui -> ui.hideControls(0, 0));
+        }
+        bottomSheetBehavior.setHideable(true);
+        bottomSheetBehavior.setPeekHeight(0);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
     }
 
     private void setOnLongClickListeners() {
@@ -867,6 +921,10 @@ public final class VideoDetailFragment
                         hideAgeRestrictedContent();
                     } else {
                         handleResult(result);
+                        final boolean shouldOpenMainPlayer = isAutoplayEnabled() || forceFullscreen;
+                        if (shouldOpenMainPlayer) {
+                            prepareMainPlayerOpeningSurface(false);
+                        }
                         showContent();
                         if (addToBackStack) {
                             if (playQueue == null) {
@@ -878,7 +936,7 @@ public final class VideoDetailFragment
                             }
                         }
 
-                        if (isAutoplayEnabled() || forceFullscreen) {
+                        if (shouldOpenMainPlayer) {
                             openVideoPlayerAutoFullscreen();
                         }
                     }
@@ -1176,16 +1234,32 @@ public final class VideoDetailFragment
     }
 
     private void openMainPlayer() {
-        if (!isPlayerServiceAvailable()) {
-            playerHolder.startService(autoPlayEnabled, this);
-            return;
-        }
         if (currentInfo == null) {
             return;
         }
 
+        ignorePlayerStartedAfterClose = false;
+        closingMainPlayer = false;
+        final boolean keepCollapsed = keepPlayerCollapsedOnNextOpen;
+        keepPlayerCollapsedOnNextOpen = false;
+        prepareMainPlayerOpeningSurface(keepCollapsed);
+
+        if (!isPlayerServiceAvailable()) {
+            playerHolder.startService(autoPlayEnabled, this);
+            return;
+        }
+
+        if (bottomSheetBehavior != null && !keepCollapsed) {
+            updateBottomSheetState(BottomSheetBehavior.STATE_EXPANDED);
+            bottomSheetBehavior.setHideable(false);
+            prepareExpandedPlayerSurface();
+            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+        }
+
         final PlayQueue queue = setupPlayQueueForIntent(false);
         tryAddVideoPlayerView();
+        overlayThumbnailStreamUrl = currentInfo.getUrl();
+        showOverlayThumbnailUntilFirstPlay = true;
 
         final Context context = requireContext();
         final Intent playerIntent =
@@ -1194,6 +1268,17 @@ public final class VideoDetailFragment
                         .putExtra(Player.PLAY_WHEN_READY, autoPlayEnabled)
                         .putExtra(Player.RESUME_PLAYBACK, true);
         ContextCompat.startForegroundService(activity, playerIntent);
+
+        if (bottomSheetBehavior != null && keepCollapsed) {
+            updateBottomSheetState(BottomSheetBehavior.STATE_COLLAPSED);
+            bottomSheetBehavior.setHideable(false);
+            bottomSheetBehavior.setPeekHeight(getCollapsedBottomSheetPeekHeight());
+            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            updateMiniPlayerTransform(1.0f);
+            setMiniPlayerChromeAlpha(MAX_OVERLAY_ALPHA);
+            setMiniPlayerControlsAlpha(1.0f);
+            setOverlayElementsClickable(true);
+        }
     }
 
     /**
@@ -1297,8 +1382,10 @@ public final class VideoDetailFragment
                 if (binding != null) {
                     // prevent from re-adding a view multiple times
                     playerUi.removeViewFromParent();
-                    binding.playerPlaceholder.addView(playerUi.getBinding().getRoot());
+                    movePlayerViewToMiniContainer();
                     playerUi.setupVideoSurfaceIfNeeded();
+                    updateMiniPlayerTransform(
+                            bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED ? 1.0f : 0.0f);
                 }
             });
         });
@@ -1306,6 +1393,7 @@ public final class VideoDetailFragment
 
     private void removeVideoPlayerView() {
         makeDefaultHeightForVideoPlaceholder();
+        resetMiniPlayerVideoTransform();
 
         if (player != null) {
             player.UIs().get(VideoPlayerUi.class).ifPresent(VideoPlayerUi::removeViewFromParent);
@@ -1319,6 +1407,7 @@ public final class VideoDetailFragment
 
         binding.playerPlaceholder.getLayoutParams().height = FrameLayout.LayoutParams.MATCH_PARENT;
         binding.playerPlaceholder.requestLayout();
+        resetMiniPlayerVideoTransform();
     }
 
     private final ViewTreeObserver.OnPreDrawListener preDrawListener =
@@ -1373,6 +1462,7 @@ public final class VideoDetailFragment
                 new FrameLayout.LayoutParams(
                         RelativeLayout.LayoutParams.MATCH_PARENT, newHeight));
         binding.detailThumbnailImageView.setMinimumHeight(newHeight);
+        setDetailPlayerSpacerHeight(newHeight);
         if (isPlayerAvailable()) {
             final int maxHeight = (int) (metrics.heightPixels * MAX_PLAYER_HEIGHT);
             player.UIs().get(VideoPlayerUi.class).ifPresent(ui ->
@@ -1431,12 +1521,17 @@ public final class VideoDetailFragment
             public void onReceive(final Context context, final Intent intent) {
                 switch (intent.getAction()) {
                     case ACTION_SHOW_MAIN_PLAYER:
+                        ignorePlayerStartedAfterClose = false;
+                        closingMainPlayer = false;
                         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                         break;
                     case ACTION_HIDE_MAIN_PLAYER:
-                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+                        hideMainPlayer();
                         break;
                     case ACTION_PLAYER_STARTED:
+                        if (ignorePlayerStartedAfterClose) {
+                            break;
+                        }
                         // If the state is not hidden we don't need to show the mini player
                         if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN) {
                             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -1823,6 +1918,15 @@ public final class VideoDetailFragment
                                  final boolean shuffled,
                                  final PlaybackParameters parameters) {
         setOverlayPlayPauseImage(player != null && player.isPlaying());
+        if (state == Player.STATE_PLAYING
+                || player != null && player.getExoPlayer() != null
+                && player.getExoPlayer().getCurrentPosition() > 500L) {
+            showOverlayThumbnailUntilFirstPlay = false;
+        }
+        updateOverlayThumbnailVisibility();
+        if (bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED && player != null) {
+            player.UIs().get(VideoPlayerUi.class).ifPresent(ui -> ui.hideControls(0, 0));
+        }
 
         switch (state) {
             case Player.STATE_PLAYING:
@@ -2270,7 +2374,11 @@ public final class VideoDetailFragment
         playerHolder.stopService();
         setInitialData(0, null, "", null);
         currentInfo = null;
+        showOverlayThumbnailUntilFirstPlay = false;
+        overlayThumbnailStreamUrl = "";
         updateOverlayData(null, null, List.of());
+        resetMiniPlayerVideoTransform();
+        setBottomNavigationAlpha(1.0f);
     }
 
     /*//////////////////////////////////////////////////////////////////////////
@@ -2318,7 +2426,7 @@ public final class VideoDetailFragment
      * @param showMore whether main fragment should be expanded or not
      */
     private void manageSpaceAtTheBottom(final boolean showMore) {
-        final int peekHeight = getResources().getDimensionPixelSize(R.dimen.mini_player_height);
+        final int peekHeight = getMiniPlayerHeight();
         final ViewGroup holder = requireActivity().findViewById(R.id.fragment_holder);
         final int newBottomPadding;
         if (showMore) {
@@ -2343,17 +2451,25 @@ public final class VideoDetailFragment
         final FrameLayout bottomSheetLayout = activity.findViewById(R.id.fragment_player_holder);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
         bottomSheetBehavior.setState(lastStableBottomSheetState);
+        bottomSheetBehavior.setHideable(
+                lastStableBottomSheetState == BottomSheetBehavior.STATE_HIDDEN);
+        setBottomPlayerOffsetForState(bottomSheetLayout, lastStableBottomSheetState);
         updateBottomSheetState(lastStableBottomSheetState);
 
-        final int peekHeight = getResources().getDimensionPixelSize(R.dimen.mini_player_height);
+        final int peekHeight = getCollapsedBottomSheetPeekHeight();
         if (bottomSheetState != BottomSheetBehavior.STATE_HIDDEN) {
             manageSpaceAtTheBottom(false);
             bottomSheetBehavior.setPeekHeight(peekHeight);
             if (bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED) {
                 binding.overlayLayout.setAlpha(MAX_OVERLAY_ALPHA);
+                updateMiniPlayerTransform(1.0f);
+                setMiniPlayerControlsAlpha(1.0f);
+                setBottomNavigationAlpha(1.0f);
             } else if (bottomSheetState == BottomSheetBehavior.STATE_EXPANDED) {
                 binding.overlayLayout.setAlpha(0);
                 setOverlayElementsClickable(false);
+                updateMiniPlayerTransform(0.0f);
+                setBottomNavigationAlpha(0.0f);
             }
         }
 
@@ -2364,13 +2480,17 @@ public final class VideoDetailFragment
 
                 switch (newState) {
                     case BottomSheetBehavior.STATE_HIDDEN:
+                        setBottomPlayerOffsetForState(bottomSheet, newState);
                         moveFocusToMainFragment(true);
                         manageSpaceAtTheBottom(true);
 
                         bottomSheetBehavior.setPeekHeight(0);
                         cleanUp();
+                        closingMainPlayer = false;
                         break;
                     case BottomSheetBehavior.STATE_EXPANDED:
+                        bottomSheetBehavior.setHideable(false);
+                        setBottomPlayerOffsetForState(bottomSheet, newState);
                         moveFocusToMainFragment(false);
                         manageSpaceAtTheBottom(false);
 
@@ -2391,6 +2511,8 @@ public final class VideoDetailFragment
                         setOverlayLook(binding.appBarLayout, behavior, 1);
                         break;
                     case BottomSheetBehavior.STATE_COLLAPSED:
+                        bottomSheetBehavior.setHideable(false);
+                        setBottomPlayerOffsetForState(bottomSheet, newState);
                         moveFocusToMainFragment(true);
                         manageSpaceAtTheBottom(false);
 
@@ -2399,6 +2521,7 @@ public final class VideoDetailFragment
                         // Re-enable clicks
                         setOverlayElementsClickable(true);
                         if (isPlayerAvailable()) {
+                            movePlayerViewToMiniContainer();
                             player.UIs().get(MainPlayerUi.class)
                                     .ifPresent(MainPlayerUi::closeItemsList);
                         }
@@ -2406,6 +2529,9 @@ public final class VideoDetailFragment
                         break;
                     case BottomSheetBehavior.STATE_DRAGGING:
                     case BottomSheetBehavior.STATE_SETTLING:
+                        if (!closingMainPlayer) {
+                            bottomSheetBehavior.setHideable(false);
+                        }
                         if (isFullscreen()) {
                             showSystemUi();
                         }
@@ -2424,6 +2550,7 @@ public final class VideoDetailFragment
 
             @Override
             public void onSlide(@NonNull final View bottomSheet, final float slideOffset) {
+                setBottomPlayerOffsetForSlide(bottomSheet, slideOffset);
                 setOverlayLook(binding.appBarLayout, behavior, slideOffset);
             }
         };
@@ -2438,15 +2565,68 @@ public final class VideoDetailFragment
         });
     }
 
+    private int getBottomNavigationHeight() {
+        final View bottomNavigation = requireActivity().findViewById(R.id.bottom_navigation);
+        if (bottomNavigation != null && bottomNavigation.getHeight() > 0) {
+            return bottomNavigation.getHeight();
+        }
+        return getResources().getDimensionPixelSize(R.dimen.bottom_navigation_height);
+    }
+
+    private int getMiniPlayerHeight() {
+        final Rect miniPlayerVideoTarget = getMiniPlayerVideoTargetRect();
+        if (miniPlayerVideoTarget != null) {
+            return miniPlayerVideoTarget.bottom + dp(12);
+        }
+        return getResources().getDimensionPixelSize(
+                R.dimen.video_item_search_thumbnail_image_height) + dp(24);
+    }
+
+    private int getCollapsedBottomSheetPeekHeight() {
+        return getMiniPlayerHeight() + getBottomNavigationHeight();
+    }
+
+    private void setBottomPlayerOffsetForState(@NonNull final View bottomSheet,
+                                               final int state) {
+        setBottomPlayerOffset(bottomSheet, 0);
+        bringBottomNavigationToFront();
+    }
+
+    private void setBottomPlayerOffsetForSlide(@NonNull final View bottomSheet,
+                                               final float slideOffset) {
+        if (slideOffset < 0) {
+            return;
+        }
+        setBottomPlayerOffset(bottomSheet, 0);
+        bringBottomNavigationToFront();
+    }
+
+    private void setBottomPlayerOffset(@NonNull final View bottomSheet, final int offset) {
+        final ViewGroup.LayoutParams layoutParams = bottomSheet.getLayoutParams();
+        if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+            final ViewGroup.MarginLayoutParams marginParams =
+                    (ViewGroup.MarginLayoutParams) layoutParams;
+            if (marginParams.bottomMargin != offset) {
+                marginParams.bottomMargin = offset;
+                bottomSheet.setLayoutParams(marginParams);
+            }
+        }
+    }
+
+    private void bringBottomNavigationToFront() {
+        final View separator = requireActivity().findViewById(R.id.bottom_navigation_separator);
+        final View bottomNavigation = requireActivity().findViewById(R.id.bottom_navigation);
+        if (separator != null) {
+            separator.bringToFront();
+        }
+        if (bottomNavigation != null) {
+            bottomNavigation.bringToFront();
+        }
+    }
+
     private void updateOverlayPlayQueueButtonVisibility() {
-        final boolean isPlayQueueEmpty =
-                player == null // no player => no play queue :)
-                        || player.getPlayQueue() == null
-                        || player.getPlayQueue().isEmpty();
         if (binding != null) {
-            // binding is null when rotating the device...
-            binding.overlayPlayQueueButton.setVisibility(
-                    isPlayQueueEmpty ? View.GONE : View.VISIBLE);
+            binding.overlayPlayQueueButton.setVisibility(View.GONE);
         }
     }
 
@@ -2455,8 +2635,10 @@ public final class VideoDetailFragment
                                    @NonNull final List<Image> thumbnails) {
         binding.overlayTitleTextView.setText(isEmpty(overlayTitle) ? "" : overlayTitle);
         binding.overlayChannelTextView.setText(isEmpty(uploader) ? "" : uploader);
-        binding.overlayThumbnail.setImageDrawable(null);
-        CoilHelper.INSTANCE.loadDetailsThumbnail(binding.overlayThumbnail, thumbnails);
+        final ImageView overlayThumbnail = (ImageView) binding.overlayThumbnail;
+        overlayThumbnail.setImageDrawable(null);
+        CoilHelper.INSTANCE.loadThumbnail(overlayThumbnail, thumbnails);
+        updateOverlayThumbnailVisibility();
     }
 
     private void setOverlayPlayPauseImage(final boolean playerIsPlaying) {
@@ -2466,30 +2648,389 @@ public final class VideoDetailFragment
         binding.overlayPlayPauseButton.setImageResource(drawable);
     }
 
+    private void movePlayerViewToMiniContainer() {
+        if (binding == null || !isPlayerAvailable()) {
+            return;
+        }
+        player.UIs().get(MainPlayerUi.class).ifPresent(playerUi -> {
+            final View playerRoot = playerUi.getBinding().getRoot();
+            final ViewParent parent = playerRoot.getParent();
+            if (parent instanceof ViewGroup && parent != binding.overlayVideoContainer) {
+                ((ViewGroup) parent).removeView(playerRoot);
+            }
+            if (playerRoot.getParent() == null) {
+                binding.overlayVideoContainer.addView(playerRoot, 0,
+                        new FrameLayout.LayoutParams(
+                                FrameLayout.LayoutParams.MATCH_PARENT,
+                                FrameLayout.LayoutParams.MATCH_PARENT));
+            }
+            playerUi.setupVideoSurfaceIfNeeded();
+            setPlayerRootMiniTouchEnabled(bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED);
+            if (bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED
+                    || bottomSheetState == BottomSheetBehavior.STATE_DRAGGING
+                    || bottomSheetState == BottomSheetBehavior.STATE_SETTLING) {
+                player.UIs().get(VideoPlayerUi.class).ifPresent(ui -> ui.hideControls(0, 0));
+            }
+        });
+        binding.overlayVideoContainer.bringToFront();
+        binding.overlayThumbnail.bringToFront();
+        binding.overlayMetadataLayout.bringToFront();
+        binding.overlayButtonsLayout.bringToFront();
+        updateOverlayThumbnailVisibility();
+    }
+
+    private void prepareMainPlayerOpeningSurface(final boolean keepCollapsed) {
+        if (binding == null) {
+            return;
+        }
+        binding.overlayLayout.bringToFront();
+        binding.overlayLayout.setVisibility(View.VISIBLE);
+        binding.overlayLayout.setAlpha(1.0f);
+        setBottomSheetSurfaceVisible(true);
+        setLegacyThumbnailAlpha(0.0f);
+        binding.overlayVideoContainer.setAlpha(1.0f);
+
+        final Rect target = keepCollapsed
+                ? getMiniPlayerVideoTargetRect()
+                : getExpandedPlayerTargetRectOrFallback();
+        if (target != null) {
+            setDetailPlayerSpacerHeight(target.bottom);
+            setMiniPlayerOverlayHeight(keepCollapsed ? getMiniPlayerHeight() : target.bottom);
+            setMiniPlayerVideoBounds(target, keepCollapsed ? dp(10) : 0.0f);
+            if (keepCollapsed) {
+                positionMiniPlayerControls(target);
+            }
+        }
+        setMiniPlayerChromeAlpha(keepCollapsed ? MAX_OVERLAY_ALPHA : 0.0f);
+        setMiniPlayerControlsAlpha(keepCollapsed ? 1.0f : 0.0f);
+        setBottomNavigationAlpha(keepCollapsed ? 1.0f : 0.0f);
+        if (currentInfo != null) {
+            overlayThumbnailStreamUrl = currentInfo.getUrl();
+            updateOverlayData(currentInfo.getName(), currentInfo.getUploaderName(),
+                    currentInfo.getThumbnails());
+        }
+        showOverlayThumbnailUntilFirstPlay = true;
+        updateOverlayThumbnailVisibility();
+    }
+
+    private void prepareExpandedPlayerSurface() {
+        resetMiniPlayerVideoTransform();
+        setOverlayElementsClickable(false);
+    }
+
+    private void resetMiniPlayerVideoTransform() {
+        if (binding == null) {
+            return;
+        }
+        final Rect expanded = getExpandedPlayerTargetRectOrFallback();
+        if (expanded != null) {
+            setMiniPlayerVideoBounds(expanded, 0.0f);
+            setMiniPlayerOverlayHeight(expanded.bottom);
+        }
+        if (binding.getRoot() instanceof MorphingFrameLayout) {
+            ((MorphingFrameLayout) binding.getRoot()).setCornerRadius(0.0f);
+        }
+        binding.overlayMetadataLayout.setTranslationX(0.0f);
+        binding.overlayButtonsLayout.setTranslationX(0.0f);
+        setMiniPlayerControlsAlpha(0.0f);
+    }
+
     private void setOverlayLook(final AppBarLayout appBar,
                                 final AppBarLayout.Behavior behavior,
                                 final float slideOffset) {
-        // SlideOffset < 0 when mini player is about to close via swipe.
-        // Stop animation in this case
-        if (behavior == null || slideOffset < 0) {
+        if (behavior == null) {
             return;
         }
-        binding.overlayLayout.setAlpha(Math.min(MAX_OVERLAY_ALPHA, 1 - slideOffset));
-        // These numbers are not special. They just do a cool transition
-        behavior.setTopAndBottomOffset(
-                (int) (-binding.detailThumbnailImageView.getHeight() * 2 * (1 - slideOffset) / 3));
+        if (closingMainPlayer) {
+            hideMiniPlayerOverlayForClose();
+            setBottomSheetSurfaceVisible(false);
+            behavior.setTopAndBottomOffset(0);
+            appBar.requestLayout();
+            return;
+        }
+        // SlideOffset < 0 when mini player is about to close via swipe.
+        // Stop animation in this case.
+        if (slideOffset < 0) {
+            return;
+        }
+        final float clampedOffset = Math.max(0.0f, Math.min(1.0f, slideOffset));
+        final float miniProgress = 1.0f - clampedOffset;
+        updateMiniPlayerTransform(miniProgress);
+        setMiniPlayerChromeAlpha(Math.min(MAX_OVERLAY_ALPHA, miniProgress));
+        setMiniPlayerControlsAlpha(smoothStep(miniProgress));
+        setBottomNavigationAlpha(miniProgress);
+        setLegacyThumbnailAlpha(isPlayerAvailable() || showOverlayThumbnailUntilFirstPlay
+                ? 0.0f : clampedOffset);
+        behavior.setTopAndBottomOffset(0);
         appBar.requestLayout();
     }
 
+    private void updateMiniPlayerTransform(final float progress) {
+        if (binding == null) {
+            return;
+        }
+        final float clampedProgress = Math.max(0.0f, Math.min(1.0f, progress));
+        final float transformProgress = smoothStep(clampedProgress);
+        final Rect start = getExpandedPlayerTargetRectOrFallback();
+        final Rect end = getMiniPlayerVideoTargetRect();
+        if (start == null || end == null) {
+            return;
+        }
+
+        binding.overlayLayout.bringToFront();
+        final Rect current = new Rect(
+                (int) (start.left + (end.left - start.left) * transformProgress),
+                (int) (start.top + (end.top - start.top) * transformProgress),
+                (int) (start.right + (end.right - start.right) * transformProgress),
+                (int) (start.bottom + (end.bottom - start.bottom) * transformProgress));
+        setDetailPlayerSpacerHeight(current.bottom);
+        setMiniPlayerOverlayHeight(current.bottom + (int) (dp(12) * transformProgress));
+        setMiniPlayerVideoBounds(current, dp(10) * transformProgress);
+        positionMiniPlayerControls(current);
+        updateOverlayThumbnailVisibility();
+
+        if (binding.getRoot() instanceof MorphingFrameLayout) {
+            ((MorphingFrameLayout) binding.getRoot()).setCornerRadius(dp(22) * transformProgress);
+        }
+
+        if (bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED && player != null) {
+            player.UIs().get(VideoPlayerUi.class).ifPresent(ui -> ui.hideControls(0, 0));
+        }
+    }
+
+    @Nullable
+    private Rect getExpandedPlayerTargetRectOrFallback() {
+        if (binding == null) {
+            return null;
+        }
+        final DisplayMetrics metrics = getResources().getDisplayMetrics();
+        final int height = isFullscreen()
+                ? (DeviceUtils.isInMultiWindow(activity)
+                ? Math.max(requireView().getHeight(), 1)
+                : activity.getWindow().getDecorView().getHeight())
+                : (int) (metrics.widthPixels / (16.0f / 9.0f));
+        return new Rect(0, 0, Math.max(binding.overlayLayout.getWidth(), metrics.widthPixels),
+                Math.max(height, 1));
+    }
+
+    @Nullable
+    private Rect getMiniPlayerVideoTargetRect() {
+        if (binding == null) {
+            return null;
+        }
+        final int width = getResources()
+                .getDimensionPixelSize(R.dimen.video_item_search_thumbnail_image_width);
+        final int height = getResources()
+                .getDimensionPixelSize(R.dimen.video_item_search_thumbnail_image_height);
+        final int left = dp(12);
+        final int top = dp(12);
+        return new Rect(left, top, left + width, top + height);
+    }
+
+    private void setMiniPlayerVideoBounds(@NonNull final Rect bounds, final float cornerRadius) {
+        final RelativeLayout.LayoutParams params =
+                (RelativeLayout.LayoutParams) binding.overlayVideoContainer.getLayoutParams();
+        params.width = Math.max(bounds.width(), 1);
+        params.height = Math.max(bounds.height(), 1);
+        params.leftMargin = bounds.left;
+        params.topMargin = bounds.top;
+        params.removeRule(RelativeLayout.CENTER_VERTICAL);
+        binding.overlayVideoContainer.setLayoutParams(params);
+        binding.overlayVideoContainer.setAlpha(1.0f);
+        binding.overlayVideoContainer.setVisibility(View.VISIBLE);
+        binding.overlayVideoContainer.setCornerRadius(cornerRadius);
+        binding.overlayThumbnail.setClipToOutline(cornerRadius > 0.0f);
+    }
+
+    private void positionMiniPlayerControls(@NonNull final Rect videoRect) {
+        final Rect finalVideoRect = getMiniPlayerVideoTargetRect();
+        if (binding == null || finalVideoRect == null || binding.overlayLayout.getWidth() == 0) {
+            return;
+        }
+
+        final int overlayWidth = binding.overlayLayout.getWidth();
+        final int buttonsWidth = dp(96);
+        final int finalControlsLeft = finalVideoRect.right + dp(10);
+        final int finalButtonsLeft = overlayWidth - buttonsWidth;
+        final int controlsWidth = Math.max(finalButtonsLeft - finalControlsLeft, dp(24));
+        final float controlsTranslation = videoRect.right - finalVideoRect.right;
+        miniPlayerControlsHaveRoom = controlsWidth > dp(24);
+
+        final RelativeLayout.LayoutParams metadataParams =
+                (RelativeLayout.LayoutParams) binding.overlayMetadataLayout.getLayoutParams();
+        metadataParams.width = controlsWidth;
+        metadataParams.height = dp(60);
+        metadataParams.leftMargin = finalControlsLeft;
+        metadataParams.topMargin = videoRect.top
+                + Math.max(0, (videoRect.height() - metadataParams.height) / 2);
+        metadataParams.removeRule(RelativeLayout.CENTER_VERTICAL);
+        metadataParams.removeRule(RelativeLayout.END_OF);
+        metadataParams.removeRule(RelativeLayout.START_OF);
+        metadataParams.removeRule(RelativeLayout.ALIGN_PARENT_END);
+        metadataParams.addRule(RelativeLayout.ALIGN_PARENT_START);
+        binding.overlayMetadataLayout.setLayoutParams(metadataParams);
+
+        final RelativeLayout.LayoutParams buttonsParams =
+                (RelativeLayout.LayoutParams) binding.overlayButtonsLayout.getLayoutParams();
+        buttonsParams.width = buttonsWidth;
+        buttonsParams.height = dp(60);
+        buttonsParams.leftMargin = finalButtonsLeft;
+        buttonsParams.rightMargin = 0;
+        buttonsParams.topMargin = metadataParams.topMargin;
+        buttonsParams.removeRule(RelativeLayout.CENTER_VERTICAL);
+        buttonsParams.removeRule(RelativeLayout.END_OF);
+        buttonsParams.removeRule(RelativeLayout.START_OF);
+        buttonsParams.removeRule(RelativeLayout.ALIGN_PARENT_END);
+        buttonsParams.addRule(RelativeLayout.ALIGN_PARENT_START);
+        binding.overlayButtonsLayout.setLayoutParams(buttonsParams);
+
+        binding.overlayMetadataLayout.setTranslationX(controlsTranslation);
+        binding.overlayButtonsLayout.setTranslationX(controlsTranslation);
+    }
+
+    private void setMiniPlayerOverlayHeight(final int height) {
+        final ViewGroup.LayoutParams params = binding.overlayLayout.getLayoutParams();
+        if (params.height != height) {
+            params.height = height;
+            binding.overlayLayout.setLayoutParams(params);
+        }
+    }
+
+    private void setDetailPlayerSpacerHeight(final int height) {
+        if (height <= 0 || binding == null || isFullscreen()) {
+            return;
+        }
+        final ViewGroup.LayoutParams rootParams =
+                binding.detailThumbnailRootLayout.getLayoutParams();
+        if (rootParams.height != height) {
+            rootParams.height = height;
+            binding.detailThumbnailRootLayout.setLayoutParams(rootParams);
+        }
+        final ViewGroup.LayoutParams imageParams =
+                binding.detailThumbnailImageView.getLayoutParams();
+        if (imageParams.height != height) {
+            imageParams.height = height;
+            binding.detailThumbnailImageView.setLayoutParams(imageParams);
+            binding.detailThumbnailImageView.setMinimumHeight(height);
+        }
+    }
+
+    private void setMiniPlayerChromeAlpha(final float alpha) {
+        binding.overlayBackground.setAlpha(alpha);
+        if (alpha > 0.01f) {
+            binding.overlayBackground.setVisibility(View.VISIBLE);
+        } else {
+            binding.overlayBackground.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void hideMiniPlayerOverlayForClose() {
+        binding.overlayLayout.setAlpha(0.0f);
+        binding.overlayLayout.setVisibility(View.INVISIBLE);
+        binding.overlayBackground.setAlpha(0.0f);
+        binding.overlayBackground.setVisibility(View.INVISIBLE);
+        binding.overlayVideoContainer.setVisibility(View.INVISIBLE);
+        binding.overlayThumbnail.setVisibility(View.GONE);
+        setMiniPlayerControlsAlpha(0.0f);
+        setBottomNavigationAlpha(1.0f);
+    }
+
+    private void setBottomSheetSurfaceVisible(final boolean visible) {
+        final View bottomSheet = requireActivity().findViewById(R.id.fragment_player_holder);
+        if (bottomSheet != null) {
+            bottomSheet.setAlpha(visible ? 1.0f : 0.0f);
+        }
+    }
+
+    private void setMiniPlayerControlsAlpha(final float alpha) {
+        final float controlsAlpha = miniPlayerControlsHaveRoom ? alpha : 0.0f;
+        binding.overlayMetadataLayout.setAlpha(controlsAlpha);
+        binding.overlayButtonsLayout.setAlpha(controlsAlpha);
+    }
+
+    private void setBottomNavigationAlpha(final float alpha) {
+        final View separator = requireActivity().findViewById(R.id.bottom_navigation_separator);
+        final View bottomNavigation = requireActivity().findViewById(R.id.bottom_navigation);
+        if (separator != null) {
+            separator.setAlpha(alpha);
+            separator.setVisibility(alpha <= 0.01f ? View.INVISIBLE : View.VISIBLE);
+        }
+        if (bottomNavigation != null) {
+            bottomNavigation.setAlpha(alpha);
+            bottomNavigation.setVisibility(alpha <= 0.01f ? View.INVISIBLE : View.VISIBLE);
+        }
+    }
+
+    private void setLegacyThumbnailAlpha(final float alpha) {
+        binding.detailThumbnailRootLayout.setAlpha(alpha);
+        binding.detailThumbnailImageView.setAlpha(alpha);
+        binding.detailThumbnailPlayButton.setAlpha(alpha);
+        binding.detailDurationView.setAlpha(alpha);
+        binding.detailPositionView.setAlpha(alpha);
+    }
+
+    private float smoothStep(final float value) {
+        final float clamped = Math.max(0.0f, Math.min(1.0f, value));
+        return clamped * clamped * (3.0f - 2.0f * clamped);
+    }
+
+    private int dp(final float value) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value,
+                getResources().getDisplayMetrics());
+    }
+
+    private void updateOverlayThumbnailVisibility() {
+        if (binding == null) {
+            return;
+        }
+        final boolean shouldShowThumbnail = !isPlayerAvailable()
+                || showOverlayThumbnailUntilFirstPlay
+                && currentInfo != null
+                && currentInfo.getUrl().equals(overlayThumbnailStreamUrl)
+                && (player.isStopped()
+                || player.getCurrentState() == Player.STATE_BLOCKED
+                || !player.isPlaying());
+        binding.overlayThumbnail.setVisibility(shouldShowThumbnail ? View.VISIBLE : View.GONE);
+        binding.overlayThumbnail.setAlpha(shouldShowThumbnail ? 1.0f : 0.0f);
+    }
+
     private void setOverlayElementsClickable(final boolean enable) {
-        binding.overlayThumbnail.setClickable(enable);
-        binding.overlayThumbnail.setLongClickable(enable);
+        binding.overlayLayout.setClickable(false);
+        binding.overlayVideoContainer.setClickable(false);
+        binding.overlayThumbnail.setClickable(true);
+        binding.overlayThumbnail.setLongClickable(false);
         binding.overlayMetadataLayout.setClickable(enable);
         binding.overlayMetadataLayout.setLongClickable(enable);
-        binding.overlayButtonsLayout.setClickable(enable);
+        binding.overlayButtonsLayout.setClickable(false);
         binding.overlayPlayQueueButton.setClickable(enable);
         binding.overlayPlayPauseButton.setClickable(enable);
         binding.overlayCloseButton.setClickable(enable);
+        setPlayerRootMiniTouchEnabled(enable);
+    }
+
+    private void setPlayerRootMiniTouchEnabled(final boolean enable) {
+        if (!isPlayerAvailable()) {
+            return;
+        }
+        player.UIs().get(MainPlayerUi.class).ifPresent(playerUi -> {
+            final View playerRoot = playerUi.getBinding().getRoot();
+            if (enable) {
+                playerRoot.setOnClickListener(v -> {
+                    if (bottomSheetBehavior != null) {
+                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    }
+                });
+                playerRoot.setOnLongClickListener(v -> {
+                    if (bottomSheetBehavior != null) {
+                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    }
+                    return true;
+                });
+            } else {
+                playerRoot.setOnClickListener(null);
+                playerRoot.setOnLongClickListener(null);
+            }
+        });
     }
 
     // helpers to check the state of player and playerService

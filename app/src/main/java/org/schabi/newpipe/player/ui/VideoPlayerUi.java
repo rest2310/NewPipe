@@ -49,7 +49,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.exoplayer2.C;
-import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.PlaybackParameters;
 import com.google.android.exoplayer2.Player.RepeatMode;
@@ -73,7 +72,6 @@ import org.schabi.newpipe.player.gesture.BasePlayerGestureListener;
 import org.schabi.newpipe.player.gesture.DisplayPortion;
 import org.schabi.newpipe.player.helper.PlayerHelper;
 import org.schabi.newpipe.player.mediaitem.MediaItemTag;
-import org.schabi.newpipe.player.playback.SurfaceHolderCallback;
 import org.schabi.newpipe.player.playqueue.PlayQueue;
 import org.schabi.newpipe.player.playqueue.PlayQueueItem;
 import org.schabi.newpipe.player.seekbarpreview.SeekbarPreviewThumbnailHelper;
@@ -81,6 +79,7 @@ import org.schabi.newpipe.player.seekbarpreview.SeekbarPreviewThumbnailHolder;
 import org.schabi.newpipe.util.DeviceUtils;
 import org.schabi.newpipe.util.Localization;
 import org.schabi.newpipe.util.NavigationHelper;
+import org.schabi.newpipe.util.ThemeHelper;
 import org.schabi.newpipe.util.external_communication.KoreUtils;
 import org.schabi.newpipe.util.external_communication.ShareUtils;
 import org.schabi.newpipe.views.player.PlayerFastSeekOverlay;
@@ -113,8 +112,6 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
 
     protected PlayerBinding binding;
     private final Handler controlsVisibilityHandler = new Handler(Looper.getMainLooper());
-    @Nullable
-    private SurfaceHolderCallback surfaceHolderCallback;
     boolean surfaceIsSetup = false;
 
 
@@ -178,7 +175,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
                 .setColorFilter(new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY));
 
         final ContextThemeWrapper themeWrapper = new ContextThemeWrapper(context,
-                R.style.DarkPopupMenu);
+                ThemeHelper.isLightThemeSelected(context)
+                        ? R.style.LightPlayerPopupMenu : R.style.DarkPopupMenu);
 
         qualityPopupMenu = new PopupMenu(themeWrapper, binding.qualityTextView);
         audioTrackPopupMenu = new PopupMenu(themeWrapper, binding.audioTrackTextView);
@@ -1564,47 +1562,26 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
 
 
     /*//////////////////////////////////////////////////////////////////////////
-    // SurfaceHolderCallback helpers
+    // Video texture helpers
     //////////////////////////////////////////////////////////////////////////*/
-    //region SurfaceHolderCallback helpers
+    //region Video texture helpers
 
     /**
-     * Connects the video surface to the exo player. This can be called anytime without the risk for
-     * issues to occur, since the player will run just fine when no surface is connected. Therefore
-     * the video surface will be setup only when all of these conditions are true: it is not already
-     * setup (this just prevents wasting resources to setup the surface again), there is an exo
-     * player, the root view is attached to a parent and the surface view is valid/unreleased (the
-     * latter two conditions prevent "The surface has been released" errors). So this function can
-     * be called many times and even while the UI is in unready states.
+     * Connects the video texture to ExoPlayer. A texture-backed view can be clipped and transformed
+     * when the main player becomes the rounded mini player.
      */
     public void setupVideoSurfaceIfNeeded() {
         if (!surfaceIsSetup && player.getExoPlayer() != null
                 && binding.getRoot().getParent() != null) {
-            // make sure there is nothing left over from previous calls
             clearVideoSurface();
-
-            surfaceHolderCallback = new SurfaceHolderCallback(context, player.getExoPlayer());
-            binding.surfaceView.getHolder().addCallback(surfaceHolderCallback);
-
-            // ensure player is using an unreleased surface, which the surfaceView might not be
-            // when starting playback on background or during player switching
-            if (binding.surfaceView.getHolder().getSurface().isValid()) {
-                // initially set the surface manually otherwise
-                // onRenderedFirstFrame() will not be called
-                player.getExoPlayer().setVideoSurfaceHolder(binding.surfaceView.getHolder());
-            }
-
+            player.getExoPlayer().setVideoTextureView(binding.surfaceView);
             surfaceIsSetup = true;
         }
     }
 
     private void clearVideoSurface() {
-        if (surfaceHolderCallback != null) {
-            binding.surfaceView.getHolder().removeCallback(surfaceHolderCallback);
-            surfaceHolderCallback.release();
-            surfaceHolderCallback = null;
-        }
-        Optional.ofNullable(player.getExoPlayer()).ifPresent(ExoPlayer::clearVideoSurface);
+        Optional.ofNullable(player.getExoPlayer())
+                .ifPresent(exoPlayer -> exoPlayer.clearVideoTextureView(binding.surfaceView));
         surfaceIsSetup = false;
     }
     //endregion
@@ -1621,6 +1598,10 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
 
     public GestureDetector getGestureDetector() {
         return gestureDetector;
+    }
+
+    public void restoreDefaultTouchListener() {
+        binding.getRoot().setOnTouchListener(playerGestureListener);
     }
     //endregion
 }

@@ -67,15 +67,16 @@ import org.schabi.newpipe.streams.io.StoredFileHelper;
 import org.schabi.newpipe.util.Localization;
 import org.schabi.newpipe.util.NavigationHelper;
 import org.schabi.newpipe.util.external_communication.ShareUtils;
+import org.schabi.newpipe.util.image.CoilHelper;
 
 import java.io.File;
 import java.net.URI;
+import java.time.Instant;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.Date;
 import java.util.Locale;
-import java.text.DateFormat;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
@@ -88,7 +89,6 @@ import us.shandian.giga.get.MissionRecoveryInfo;
 import us.shandian.giga.service.DownloadManager;
 import us.shandian.giga.service.DownloadManagerService;
 import us.shandian.giga.ui.common.Deleter;
-import us.shandian.giga.ui.common.ProgressDrawable;
 import us.shandian.giga.util.Utility;
 
 public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callback {
@@ -197,34 +197,97 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
         ViewHolderItem h = (ViewHolderItem) view;
         h.item = item;
 
-        Utility.FileType type = Utility.getFileType(item.mission.kind, item.mission.storage.getName());
-
-        h.icon.setImageResource(Utility.getIconForFileType(type));
-        h.name.setText(item.mission.storage.getName());
-
-        h.progress.setColors(Utility.getBackgroundForFileType(mContext, type), Utility.getForegroundForFileType(mContext, type));
+        h.icon.setImageResource(R.drawable.placeholder_thumbnail_video);
+        if (item.mission.thumbnailUrl != null && !item.mission.thumbnailUrl.isEmpty()) {
+            CoilHelper.INSTANCE.loadThumbnail(h.icon, item.mission.thumbnailUrl);
+        }
+        h.name.setText(displayTitle(item.mission));
+        h.date.setText(item.mission.uploaderName == null ? "" : item.mission.uploaderName);
+        if (h.duration != null) {
+            if (item.mission.durationSeconds > 0) {
+                h.duration.setText(Localization.getDurationString(item.mission.durationSeconds));
+                h.duration.setVisibility(View.VISIBLE);
+            } else {
+                h.duration.setVisibility(View.GONE);
+            }
+        }
 
         if (h.item.mission instanceof DownloadMission) {
             DownloadMission mission = (DownloadMission) item.mission;
             String length = Utility.formatBytes(mission.getLength());
-            if (mission.running && !mission.isPsRunning()) length += " --.- kB/s";
-
-            h.size.setText(length);
+            h.size.setText(detailLine(item.mission, length));
             h.pause.setTitle(mission.unknownLength ? R.string.stop : R.string.pause);
             updateProgress(h);
             mPendingDownloadsItems.add(h);
-
-            h.date.setText("");
         } else {
-            h.progress.setMarquee(false);
-            h.status.setText("100%");
-            h.progress.setProgress(1.0f);
-            h.size.setText(Utility.formatBytes(item.mission.length));
-
-            DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault());
-            Date date = new Date(item.mission.timestamp);
-            h.date.setText(dateFormat.format(date));
+            setDownloadProgressVisible(h, false);
+            h.size.setText(detailLine(item.mission, Utility.formatBytes(item.mission.length)));
         }
+    }
+
+    private String displayTitle(@NonNull Mission mission) {
+        if (mission.title != null && !mission.title.isEmpty()) {
+            return mission.title;
+        }
+        return cleanDisplayName(mission.storage.getName());
+    }
+
+    private String cleanDisplayName(@NonNull String name) {
+        int extensionStart = name.lastIndexOf('.');
+        if (extensionStart > 0) {
+            return name.substring(0, extensionStart);
+        }
+        return name;
+    }
+
+    private String fileTypeLabel(@NonNull String name) {
+        int extensionStart = name.lastIndexOf('.');
+        if (extensionStart >= 0 && extensionStart < name.length() - 1) {
+            return name.substring(extensionStart + 1).toUpperCase(Locale.getDefault());
+        }
+        return mContext.getString(R.string.unknown_content);
+    }
+
+    private String detailLine(@NonNull Mission mission, @NonNull String size) {
+        ArrayList<String> details = new ArrayList<>();
+        if (mission.viewCount > 0) {
+            details.add(Localization.shortViewCount(mContext, mission.viewCount));
+        }
+        if (mission.uploadDateMillis > 0) {
+            details.add(Localization.relativeTime(
+                    Instant.ofEpochMilli(mission.uploadDateMillis).atOffset(ZoneOffset.UTC)));
+        } else if (mission.textualUploadDate != null && !mission.textualUploadDate.isEmpty()) {
+            details.add(mission.textualUploadDate);
+        }
+        details.add(fileTypeLabel(mission.storage.getName()));
+        details.add(size);
+        return String.join(Localization.DOT_SEPARATOR, details);
+    }
+
+    private void setDownloadProgressVisible(@NonNull ViewHolderItem h, boolean visible) {
+        h.progressTrack.setVisibility(visible ? View.VISIBLE : View.GONE);
+        h.status.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
+
+    private void setDownloadProgress(@NonNull ViewHolderItem h, double progress) {
+        setDownloadProgressVisible(h, true);
+        if (isNotFinite(progress)) {
+            h.status.setText(UNDEFINED_PROGRESS);
+            h.progressTrack.post(() -> {
+                ViewGroup.LayoutParams params = h.progressFill.getLayoutParams();
+                params.width = 0;
+                h.progressFill.setLayoutParams(params);
+            });
+            return;
+        }
+
+        double clamped = Math.max(0.0d, Math.min(1.0d, progress));
+        h.status.setText(String.format(Locale.getDefault(), "%.0f%%", clamped * 100.0d));
+        h.progressTrack.post(() -> {
+            ViewGroup.LayoutParams params = h.progressFill.getLayoutParams();
+            params.width = (int) Math.round(h.progressTrack.getWidth() * clamped);
+            h.progressFill.setLayoutParams(params);
+        });
     }
 
     @Override
@@ -247,34 +310,27 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
         long now = System.currentTimeMillis();
         boolean hasError = mission.errCode != ERROR_NOTHING;
 
-        // hide on error
-        // show if current resource length is not fetched
-        // show if length is unknown
-        h.progress.setMarquee(mission.isRecovering() || !hasError && (!mission.isInitialized() || mission.unknownLength));
-
         double progress;
         if (mission.unknownLength) {
             progress = Double.NaN;
-            h.progress.setProgress(0.0f);
         } else {
             progress = done / length;
         }
 
         if (hasError) {
-            h.progress.setProgress(isNotFinite(progress) ? 1d : progress);
             h.status.setText(R.string.msg_error);
+            setDownloadProgress(h, isNotFinite(progress) ? 1d : progress);
         } else if (isNotFinite(progress)) {
-            h.status.setText(UNDEFINED_PROGRESS);
+            setDownloadProgress(h, progress);
         } else {
-            h.status.setText(String.format("%.2f%%", progress * 100));
-            h.progress.setProgress(progress);
+            setDownloadProgress(h, progress);
         }
 
         @StringRes int state;
         String sizeStr = Utility.formatBytes(length).concat("  ");
 
         if (mission.isPsFailed() || mission.errCode == ERROR_POSTPROCESSING_HOLD) {
-            h.size.setText(sizeStr);
+            h.size.setText(detailLine(mission, Utility.formatBytes(length)));
             return;
         } else if (!mission.running) {
             state = mission.enqueued ? R.string.queued : R.string.paused;
@@ -288,13 +344,13 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
 
         if (state != 0) {
             // update state without download speed
-            h.size.setText(sizeStr.concat("(").concat(mContext.getString(state)).concat(")"));
+            h.size.setText(detailLine(mission, Utility.formatBytes(length)));
             h.resetSpeedMeasure();
             return;
         }
 
         if (h.lastTimestamp < 0) {
-            h.size.setText(sizeStr);
+            h.size.setText(detailLine(mission, Utility.formatBytes(length)));
             h.lastTimestamp = now;
             h.lastDone = done;
             return;
@@ -305,7 +361,7 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
 
         if (h.lastDone > done) {
             h.lastDone = done;
-            h.size.setText(sizeStr);
+            h.size.setText(detailLine(mission, Utility.formatBytes(length)));
             return;
         }
 
@@ -333,7 +389,7 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
                 etaStr = Utility.formatBytes((long) done) + "/" + Utility.stringifySeconds(eta) + "  ";
             }
 
-            h.size.setText(sizeStr.concat(etaStr).concat(speedStr));
+            h.size.setText(detailLine(mission, Utility.formatBytes(length)));
 
             h.lastTimestamp = now;
             h.lastDone = done;
@@ -751,10 +807,8 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
     }
 
     public void setClearButton(MenuItem clearButton) {
-        if (mClear == null)
-            clearButton.setVisible(mIterator.hasFinishedMissions());
-
         mClear = clearButton;
+        clearButton.setVisible(mIterator.hasFinishedMissions());
     }
 
     public void setMasterButtons(MenuItem startButton, MenuItem pauseButton) {
@@ -779,6 +833,7 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
     }
 
     private static void setButtonVisible(MenuItem button, boolean visible) {
+        if (button == null) return;
         if (button.isVisible() != visible)
             button.setVisible(visible);
     }
@@ -814,8 +869,8 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
         mission.resetState(true, false, DownloadMission.ERROR_NOTHING);
 
         h.status.setText(UNDEFINED_PROGRESS);
-        h.size.setText(Utility.formatBytes(mission.getLength()));
-        h.progress.setMarquee(true);
+        h.size.setText(detailLine(mission, Utility.formatBytes(mission.getLength())));
+        setDownloadProgress(h, Double.NaN);
 
         mDownloadManager.resumeMission(mission);
     }
@@ -848,7 +903,9 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
         TextView name;
         TextView size;
         TextView date;
-        ProgressDrawable progress;
+        TextView duration;
+        View progressTrack;
+        View progressFill;
 
         PopupMenu popupMenu;
         MenuItem retry;
@@ -871,14 +928,14 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
         ViewHolderItem(View view) {
             super(view);
 
-            progress = new ProgressDrawable();
-            itemView.findViewById(R.id.item_bkg).setBackground(progress);
-
             status = itemView.findViewById(R.id.item_status);
             name = itemView.findViewById(R.id.item_name);
             icon = itemView.findViewById(R.id.item_icon);
             size = itemView.findViewById(R.id.item_size);
             date = itemView.findViewById(R.id.item_date);
+            duration = itemView.findViewById(R.id.item_duration);
+            progressTrack = itemView.findViewById(R.id.item_progress_track);
+            progressFill = itemView.findViewById(R.id.item_progress_fill);
 
             name.setSelected(true);
 
@@ -998,3 +1055,4 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
         void tryRecover(DownloadMission mission);
     }
 }
+

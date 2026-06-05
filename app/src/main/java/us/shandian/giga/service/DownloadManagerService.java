@@ -45,6 +45,7 @@ import org.schabi.newpipe.player.helper.LockManager;
 import org.schabi.newpipe.streams.io.StoredDirectoryHelper;
 import org.schabi.newpipe.streams.io.StoredFileHelper;
 import org.schabi.newpipe.util.Localization;
+import org.schabi.newpipe.util.image.ImageStrategy;
 
 import java.io.File;
 import java.io.IOException;
@@ -411,6 +412,18 @@ public class DownloadManagerService extends Service {
         final DownloadMission mission = new DownloadMission(urls, storage, kind, ps);
         mission.threadCount = threads;
         mission.source = streamInfo.getUrl();
+        mission.title = streamInfo.getName();
+        mission.uploaderName = streamInfo.getUploaderName();
+        mission.thumbnailUrl = ImageStrategy.choosePreferredImage(streamInfo.getThumbnails());
+        mission.textualUploadDate = streamInfo.getTextualUploadDate();
+        mission.viewCount = streamInfo.getViewCount();
+        mission.durationSeconds = streamInfo.getDuration();
+        if (streamInfo.getUploadDate() != null) {
+            mission.uploadDateMillis = streamInfo.getUploadDate()
+                    .offsetDateTime()
+                    .toInstant()
+                    .toEpochMilli();
+        }
         mission.nearLength = nearLength;
         mission.recoveryInfo = recovery.toArray(new MissionRecoveryInfo[0]);
 

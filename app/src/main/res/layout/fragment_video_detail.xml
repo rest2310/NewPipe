@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<org.schabi.newpipe.views.MorphingFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/video_item_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/windowBackground"
+    android:clipChildren="true"
+    android:clipToPadding="true"
     android:focusableInTouchMode="true">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -31,7 +33,7 @@
                     android:id="@+id/detail_thumbnail_root_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/black"
+                    android:background="?attr/windowBackground"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
@@ -590,8 +592,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
+            android:background="?attr/windowBackground"
             app:elevation="16dp"
-            app:tabBackground="?attr/rounded_surface_background"
+            app:tabBackground="@android:color/transparent"
             app:tabGravity="fill"
             app:tabIconTint="?attr/colorAccent"
             app:tabIndicatorGravity="top" />
@@ -601,28 +604,45 @@
     <RelativeLayout
         android:id="@+id/overlay_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.9"
-        android:background="?attr/rounded_bottom_sheet_background">
+        android:layout_height="@dimen/mini_player_height"
+        android:layout_gravity="top"
+        android:alpha="1"
+        android:background="@android:color/transparent"
+        android:clipChildren="false"
+        android:clipToPadding="false">
 
-        <ImageButton
-            android:id="@+id/overlay_thumbnail"
-            android:layout_width="62dp"
-            android:layout_height="60dp"
+        <View
+            android:id="@+id/overlay_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/mini_player_background" />
+
+        <org.schabi.newpipe.views.MorphingFrameLayout
+            android:id="@+id/overlay_video_container"
+            android:layout_width="@dimen/video_item_search_thumbnail_image_width"
+            android:layout_height="@dimen/video_item_search_thumbnail_image_height"
             android:layout_alignParentStart="true"
-            android:background="@color/transparent_background_color"
-            android:gravity="center_vertical"
-            android:paddingLeft="@dimen/video_item_search_padding"
-            android:paddingRight="@dimen/video_item_search_padding"
-            android:scaleType="fitCenter"
-            tools:ignore="ContentDescription" />
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/overlay_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+
+        </org.schabi.newpipe.views.MorphingFrameLayout>
 
         <LinearLayout
             android:id="@+id/overlay_metadata_layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/overlay_buttons_layout"
-            android:layout_toEndOf="@+id/overlay_thumbnail"
+            android:layout_toEndOf="@+id/overlay_video_container"
+            android:layout_marginStart="10dp"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center_vertical"
@@ -634,11 +654,8 @@
                 android:id="@+id/overlay_title_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="marquee"
-                android:fadingEdge="horizontal"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="@dimen/video_item_search_title_text_size"
                 tools:ignore="RtlHardcoded"
@@ -648,10 +665,7 @@
                 android:id="@+id/overlay_channel_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="marquee"
-                android:fadingEdge="horizontal"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:scrollHorizontally="true"
+                android:ellipsize="end"
                 android:singleLine="true"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="@dimen/video_item_search_uploader_text_size"
@@ -664,6 +678,7 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:theme="@style/ContrastTintTheme"
             tools:ignore="RtlHardcoded">
@@ -704,4 +719,4 @@
 
     </RelativeLayout>
 
-</FrameLayout>
+</org.schabi.newpipe.views.MorphingFrameLayout>

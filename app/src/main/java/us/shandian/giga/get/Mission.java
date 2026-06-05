@@ -15,6 +15,14 @@ public abstract class Mission implements Serializable {
      */
     public String source;
 
+    public String title;
+    public String uploaderName;
+    public String thumbnailUrl;
+    public String textualUploadDate;
+    public long viewCount = -1;
+    public long uploadDateMillis = -1;
+    public long durationSeconds = -1;
+
     /**
      * Length of the current resource
      */

@@ -121,7 +121,7 @@ public class StatisticsPlaylistFragment
     protected void initViews(final View rootView, final Bundle savedInstanceState) {
         super.initViews(rootView, savedInstanceState);
         if (!useAsFrontPage) {
-            setTitle(getString(R.string.title_last_played));
+            setTitle(getString(R.string.title_activity_history));
         }
     }
 
@@ -277,6 +277,7 @@ public class StatisticsPlaylistFragment
         PlayButtonHelper.initPlaylistControlClickListener(activity, playlistControlBinding, this);
 
         headerBinding.sortButton.setOnClickListener(view -> toggleSortMode());
+        updateSortButton();
 
         hideLoading();
     }
@@ -300,17 +301,26 @@ public class StatisticsPlaylistFragment
     private void toggleSortMode() {
         if (sortMode == StatisticSortMode.LAST_PLAYED) {
             sortMode = StatisticSortMode.MOST_PLAYED;
-            setTitle(getString(R.string.title_most_played));
-            headerBinding.sortButtonIcon.setImageResource(R.drawable.ic_history);
-            headerBinding.sortButtonText.setText(R.string.title_last_played);
         } else {
             sortMode = StatisticSortMode.LAST_PLAYED;
-            setTitle(getString(R.string.title_last_played));
-            headerBinding.sortButtonIcon.setImageResource(
-                R.drawable.ic_filter_list);
+        }
+        setTitle(getString(R.string.title_activity_history));
+        updateSortButton();
+        startLoading(true);
+    }
+
+    private void updateSortButton() {
+        if (headerBinding == null) {
+            return;
+        }
+
+        if (sortMode == StatisticSortMode.LAST_PLAYED) {
+            headerBinding.sortButtonIcon.setImageResource(R.drawable.ic_filter_list);
+            headerBinding.sortButtonText.setText(R.string.title_last_played);
+        } else {
+            headerBinding.sortButtonIcon.setImageResource(R.drawable.ic_history);
             headerBinding.sortButtonText.setText(R.string.title_most_played);
         }
-        startLoading(true);
     }
 
     private PlayQueue getPlayQueueStartingAt(final StreamStatisticsEntry infoItem) {

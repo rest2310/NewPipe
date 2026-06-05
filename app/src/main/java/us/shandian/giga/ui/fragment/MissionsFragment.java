@@ -21,7 +21,6 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -35,6 +34,7 @@ import org.schabi.newpipe.settings.NewPipeSettings;
 import org.schabi.newpipe.streams.io.NoFileManagerSafeGuard;
 import org.schabi.newpipe.streams.io.StoredFileHelper;
 import org.schabi.newpipe.util.FilePickerActivityHelper;
+import org.schabi.newpipe.util.SimpleDialog;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,7 +52,6 @@ public class MissionsFragment extends Fragment {
 
     private SharedPreferences mPrefs;
     private boolean mLinear;
-    private MenuItem mSwitch;
     private MenuItem mClear = null;
     private MenuItem mStart = null;
     private MenuItem mPause = null;
@@ -60,7 +59,6 @@ public class MissionsFragment extends Fragment {
     private RecyclerView mList;
     private View mEmpty;
     private MissionAdapter mAdapter;
-    private GridLayoutManager mGridManager;
     private LinearLayoutManager mLinearManager;
     private Context mContext;
 
@@ -105,7 +103,7 @@ public class MissionsFragment extends Fragment {
         View v = inflater.inflate(R.layout.missions, container, false);
 
         mPrefs = PreferenceManager.getDefaultSharedPreferences(requireActivity());
-        mLinear = mPrefs.getBoolean("linear", false);
+        mLinear = true;
 
         // Bind the service
         mBound = mContext.bindService(new Intent(mContext, DownloadManagerService.class),
@@ -116,19 +114,6 @@ public class MissionsFragment extends Fragment {
         mList = v.findViewById(R.id.mission_recycler);
 
         // Init layouts managers
-        mGridManager = new GridLayoutManager(getActivity(), SPAN_SIZE);
-        mGridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                switch (mAdapter.getItemViewType(position)) {
-                    case DownloadManager.SPECIAL_PENDING:
-                    case DownloadManager.SPECIAL_FINISHED:
-                        return SPAN_SIZE;
-                    default:
-                        return 1;
-                }
-            }
-        });
         mLinearManager = new LinearLayoutManager(getActivity());
 
         setHasOptionsMenu(true);
@@ -181,7 +166,6 @@ public class MissionsFragment extends Fragment {
 
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
-        mSwitch = menu.findItem(R.id.switch_mode);
         mClear = menu.findItem(R.id.clear_list);
         mStart = menu.findItem(R.id.start_downloads);
         mPause = menu.findItem(R.id.pause_downloads);
@@ -194,11 +178,7 @@ public class MissionsFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        if (itemId == R.id.switch_mode) {
-            mLinear = !mLinear;
-            updateList();
-            return true;
-        } else if (itemId == R.id.clear_list) {
+        if (itemId == R.id.clear_list) {
             showClearDownloadHistoryPrompt();
             return true;
         } else if (itemId == R.id.start_downloads && mBinder != null) {
@@ -214,27 +194,37 @@ public class MissionsFragment extends Fragment {
     }
 
     public void showClearDownloadHistoryPrompt() {
+        if (mAdapter == null) {
+            return;
+        }
+
         // ask the user whether he wants to just clear history or instead delete files on disk
-        new AlertDialog.Builder(mContext)
-                .setTitle(R.string.clear_download_history)
-                .setMessage(R.string.confirm_prompt)
-                // Intentionally misusing buttons' purpose in order to achieve good order
-                .setNegativeButton(R.string.clear_download_history, (dialog, which) ->
-                        mAdapter.clearFinishedDownloads(false))
-                .setNeutralButton(R.string.cancel, null)
-                .setPositiveButton(R.string.delete_downloaded_files, (dialog, which) ->
-                        showDeleteDownloadedFilesConfirmationPrompt())
-                .show();
+        SimpleDialog.show(mContext,
+                R.string.clear_download_history,
+                R.string.confirm_prompt,
+                R.string.clear_download_history,
+                () -> mAdapter.clearFinishedDownloads(false),
+                R.string.cancel,
+                null,
+                R.string.delete_downloaded_files,
+                this::showDeleteDownloadedFilesConfirmationPrompt);
     }
 
     public void showDeleteDownloadedFilesConfirmationPrompt() {
+        if (mAdapter == null) {
+            return;
+        }
+
         // make sure the user confirms once more before deleting files on disk
-        new AlertDialog.Builder(mContext)
-                .setTitle(R.string.delete_downloaded_files_confirm)
-                .setNegativeButton(R.string.cancel, null)
-                .setPositiveButton(R.string.ok, (dialog, which) ->
-                        mAdapter.clearFinishedDownloads(true))
-                .show();
+        SimpleDialog.show(mContext,
+                R.string.delete_downloaded_files_confirm,
+                0,
+                R.string.cancel,
+                null,
+                0,
+                null,
+                R.string.ok,
+                () -> mAdapter.clearFinishedDownloads(true));
     }
 
     private void updateList() {
@@ -242,11 +232,7 @@ public class MissionsFragment extends Fragment {
             return;
         }
 
-        if (mLinear) {
-            mList.setLayoutManager(mLinearManager);
-        } else {
-            mList.setLayoutManager(mGridManager);
-        }
+        mList.setLayoutManager(mLinearManager);
 
         // destroy all created views in the recycler
         mList.setAdapter(null);
@@ -256,13 +242,7 @@ public class MissionsFragment extends Fragment {
         mAdapter.setLinear(mLinear);
         mList.setAdapter(mAdapter);
 
-        if (mSwitch != null) {
-            mSwitch.setIcon(mLinear
-                            ? R.drawable.ic_apps
-                            : R.drawable.ic_list);
-            mSwitch.setTitle(mLinear ? R.string.grid : R.string.list);
-            mPrefs.edit().putBoolean("linear", mLinear).apply();
-        }
+        mPrefs.edit().putBoolean("linear", true).apply();
     }
 
     private void setAdapterButtons() {

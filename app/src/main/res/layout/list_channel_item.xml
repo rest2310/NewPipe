@@ -5,11 +5,9 @@
     android:id="@+id/itemRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/rounded_list_item_background"
-    android:clickable="true"
-    android:focusable="true"
     android:orientation="vertical"
-    android:padding="@dimen/video_item_search_padding">
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/channelRowContent"
@@ -18,10 +16,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/itemThumbnailView"
-            android:layout_width="@dimen/video_item_search_avatar_image_width"
-            android:layout_height="@dimen/video_item_search_avatar_image_height"
-            android:layout_marginLeft="@dimen/video_item_search_avatar_left_margin"
-            android:layout_marginRight="@dimen/video_item_search_avatar_right_margin"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
             android:src="@drawable/placeholder_person"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +29,7 @@
             android:id="@+id/itemTitleView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
             android:ellipsize="end"
             android:lines="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -58,34 +55,55 @@
             app:layout_constraintTop_toBottomOf="@+id/itemTitleView"
             tools:text="10M subscribers" />
 
+        <View
+            android:id="@+id/channelInfoClickArea"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/favoriteButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageButton
             android:id="@+id/favoriteButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/icon_button_ripple"
             android:contentDescription="@string/feed_filter_favorites"
-            android:src="@drawable/ic_favorite"
+            android:padding="8dp"
+            android:src="@drawable/ic_favorite_inactive"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/subscribedButton"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
+        <TextView
             android:id="@+id/subscribedButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="34dp"
+            android:background="@drawable/feed_filter_selected_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
             android:minWidth="0dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
             android:text="@string/subscribed_button_title"
+            android:textColor="@color/white"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/expandButton"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/expandButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/icon_button_ripple"
             android:contentDescription="@string/show_more"
+            android:padding="8dp"
             android:src="@drawable/ic_expand_more"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -96,51 +114,8 @@
         android:id="@+id/latestVideosContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/video_item_search_avatar_image_width"
-        android:layout_marginTop="@dimen/spacing_micro"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
         android:visibility="gone"
-        tools:visibility="visible">
-
-        <ProgressBar
-            android:id="@+id/latestVideosProgress"
-            style="?android:attr/progressBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/latestVideo1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:padding="@dimen/spacing_micro"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            tools:text="Latest video title" />
-
-        <TextView
-            android:id="@+id/latestVideo2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:padding="@dimen/spacing_micro"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            tools:text="Another latest video title" />
-
-        <TextView
-            android:id="@+id/latestVideo3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:padding="@dimen/spacing_micro"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            tools:text="Third latest video title" />
-    </LinearLayout>
+        tools:visibility="visible" />
 </LinearLayout>

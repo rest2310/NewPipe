@@ -43,6 +43,8 @@
         <item name="colorAccent">@color/light_youtube_accent_color</item>
         <item name="android:windowBackground">@color/light_background_color</item>
         <item name="windowBackground">@color/light_background_color</item>
+        <item name="android:statusBarColor">@color/light_background_color</item>
+        <item name="android:windowLightStatusBar">true</item>
 
         <item name="separator_color">@color/light_separator_color</item>
         <item name="contrast_background_color">@color/light_contrast_background_color</item>
@@ -67,6 +69,8 @@
         <item name="colorAccent">@color/dark_youtube_accent_color</item>
         <item name="android:windowBackground">@color/dark_background_color</item>
         <item name="windowBackground">@color/dark_background_color</item>
+        <item name="android:statusBarColor">@color/dark_background_color</item>
+        <item name="android:windowLightStatusBar">false</item>
 
         <item name="separator_color">@color/dark_separator_color</item>
         <item name="contrast_background_color">@color/dark_contrast_background_color</item>
@@ -108,12 +112,37 @@
         <item name="android:windowExitAnimation">@anim/dialog_popup_exit</item>
     </style>
 
+    <style name="NewPipe.DialogTitleText">
+        <item name="android:textColor">@color/contrastColor</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="NewPipe.DialogWindowTitle" parent="android:Widget">
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textAppearance">@style/NewPipe.DialogTitleText</item>
+    </style>
+
+    <style name="NewPipe.DialogTextView" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/contrastColor</item>
+        <item name="android:textColorHighlight">@color/light_ripple_color</item>
+        <item name="android:textColorHint">@color/placeholder_foreground</item>
+        <item name="android:textColorLink">@color/feed_filter_selected_start</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="NewPipe.AlertDialog" parent="Theme.AppCompat.DayNight.Dialog.Alert">
         <item name="android:windowBackground">@drawable/rounded_dialog_background</item>
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
         <item name="android:windowAnimationStyle">@style/NewPipe.WindowAnimation</item>
-        <item name="colorAccent">?attr/colorAccent</item>
+        <item name="android:windowTitleStyle">@style/NewPipe.DialogWindowTitle</item>
+        <item name="android:textViewStyle">@style/NewPipe.DialogTextView</item>
+        <item name="android:textColor">@color/contrastColor</item>
+        <item name="android:textColorPrimary">@color/contrastColor</item>
+        <item name="android:textColorSecondary">@color/placeholder_foreground</item>
+        <item name="colorAccent">@color/feed_filter_selected_start</item>
     </style>
 
     <style name="NewPipe.PopupMenu" parent="Widget.AppCompat.PopupMenu">

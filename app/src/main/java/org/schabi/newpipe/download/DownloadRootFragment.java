@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import org.schabi.newpipe.R;
@@ -56,7 +57,7 @@ public class DownloadRootFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        requireActivity().setTitle(R.string.downloads_title);
+        setToolbarTitle();
         requireActivity().invalidateOptionsMenu();
     }
 
@@ -64,6 +65,19 @@ public class DownloadRootFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull final Menu menu,
                                     @NonNull final MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
+        setToolbarTitle();
         inflater.inflate(R.menu.download_menu, menu);
+    }
+
+    private void setToolbarTitle() {
+        if (requireActivity() instanceof AppCompatActivity) {
+            final AppCompatActivity activity = (AppCompatActivity) requireActivity();
+            if (activity.getSupportActionBar() != null) {
+                activity.getSupportActionBar().setDisplayShowTitleEnabled(true);
+                activity.getSupportActionBar().setTitle(R.string.downloads_title);
+                return;
+            }
+        }
+        requireActivity().setTitle(R.string.downloads_title);
     }
 }

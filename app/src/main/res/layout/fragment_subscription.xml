@@ -12,6 +12,7 @@
         android:clipToPadding="false"
         android:layoutAnimation="@anim/layout_list_item_animation"
         android:padding="@dimen/rounded_surface_spacing"
+        android:scrollbarThumbVertical="@drawable/rounded_scrollbar_thumb"
         android:scrollbars="vertical"
         android:visibility="gone"
         tools:listitem="@layout/list_channel_item" />
@@ -38,11 +39,5 @@
         android:layout_marginTop="50dp"
         android:visibility="gone"
         tools:visibility="visible" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_alignParentTop="true"
-        android:background="?attr/toolbar_shadow" />
 
 </RelativeLayout>

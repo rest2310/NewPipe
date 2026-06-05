@@ -27,7 +27,7 @@ public class FinishedMissionStore extends SQLiteOpenHelper {
     // TODO: use NewPipeSQLiteHelper ('s constants) when playlist branch is merged (?)
     private static final String DATABASE_NAME = "downloads.db";
 
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
 
     /**
      * The table name of download missions (old)
@@ -55,6 +55,13 @@ public class FinishedMissionStore extends SQLiteOpenHelper {
     private static final String KEY_KIND = "kind";
 
     private static final String KEY_PATH = "path";
+    private static final String KEY_TITLE = "title";
+    private static final String KEY_UPLOADER_NAME = "uploader_name";
+    private static final String KEY_THUMBNAIL_URL = "thumbnail_url";
+    private static final String KEY_TEXTUAL_UPLOAD_DATE = "textual_upload_date";
+    private static final String KEY_VIEW_COUNT = "view_count";
+    private static final String KEY_UPLOAD_DATE_MILLIS = "upload_date_millis";
+    private static final String KEY_DURATION_SECONDS = "duration_seconds";
 
     /**
      * The statement to create the table
@@ -66,6 +73,13 @@ public class FinishedMissionStore extends SQLiteOpenHelper {
                     KEY_DONE + " INTEGER NOT NULL, " +
                     KEY_TIMESTAMP + " INTEGER NOT NULL, " +
                     KEY_KIND + " TEXT NOT NULL, " +
+                    KEY_TITLE + " TEXT, " +
+                    KEY_UPLOADER_NAME + " TEXT, " +
+                    KEY_THUMBNAIL_URL + " TEXT, " +
+                    KEY_TEXTUAL_UPLOAD_DATE + " TEXT, " +
+                    KEY_VIEW_COUNT + " INTEGER DEFAULT -1, " +
+                    KEY_UPLOAD_DATE_MILLIS + " INTEGER DEFAULT -1, " +
+                    KEY_DURATION_SECONDS + " INTEGER DEFAULT -1, " +
                     " UNIQUE(" + KEY_TIMESTAMP + ", " + KEY_PATH + "));";
 
 
@@ -130,6 +144,28 @@ public class FinishedMissionStore extends SQLiteOpenHelper {
 
             cursor.close();
             db.execSQL("DROP TABLE " + MISSIONS_TABLE_NAME_v2);
+            oldVersion++;
+        }
+
+        if (oldVersion == 4) {
+            addColumnIfMissing(db, FINISHED_TABLE_NAME, KEY_TITLE, "TEXT");
+            addColumnIfMissing(db, FINISHED_TABLE_NAME, KEY_UPLOADER_NAME, "TEXT");
+            addColumnIfMissing(db, FINISHED_TABLE_NAME, KEY_THUMBNAIL_URL, "TEXT");
+            addColumnIfMissing(db, FINISHED_TABLE_NAME, KEY_TEXTUAL_UPLOAD_DATE, "TEXT");
+            addColumnIfMissing(db, FINISHED_TABLE_NAME, KEY_VIEW_COUNT, "INTEGER DEFAULT -1");
+            oldVersion++;
+        }
+
+        if (oldVersion == 5) {
+            addColumnIfMissing(db, FINISHED_TABLE_NAME, KEY_UPLOAD_DATE_MILLIS, "INTEGER DEFAULT -1");
+            addColumnIfMissing(db, FINISHED_TABLE_NAME, KEY_DURATION_SECONDS, "INTEGER DEFAULT -1");
+        }
+    }
+
+    private void addColumnIfMissing(SQLiteDatabase db, String table, String column, String type) {
+        try {
+            db.execSQL("ALTER TABLE " + table + " ADD COLUMN " + column + " " + type + ";");
+        } catch (Exception ignored) {
         }
     }
 
@@ -146,6 +182,13 @@ public class FinishedMissionStore extends SQLiteOpenHelper {
         values.put(KEY_DONE, downloadMission.length);
         values.put(KEY_TIMESTAMP, downloadMission.timestamp);
         values.put(KEY_KIND, String.valueOf(downloadMission.kind));
+        values.put(KEY_TITLE, downloadMission.title);
+        values.put(KEY_UPLOADER_NAME, downloadMission.uploaderName);
+        values.put(KEY_THUMBNAIL_URL, downloadMission.thumbnailUrl);
+        values.put(KEY_TEXTUAL_UPLOAD_DATE, downloadMission.textualUploadDate);
+        values.put(KEY_VIEW_COUNT, downloadMission.viewCount);
+        values.put(KEY_UPLOAD_DATE_MILLIS, downloadMission.uploadDateMillis);
+        values.put(KEY_DURATION_SECONDS, downloadMission.durationSeconds);
         return values;
     }
 
@@ -162,6 +205,13 @@ public class FinishedMissionStore extends SQLiteOpenHelper {
         mission.length = cursor.getLong(cursor.getColumnIndexOrThrow(KEY_DONE));
         mission.timestamp = cursor.getLong(cursor.getColumnIndexOrThrow(KEY_TIMESTAMP));
         mission.kind = kind.charAt(0);
+        mission.title = getOptionalString(cursor, KEY_TITLE);
+        mission.uploaderName = getOptionalString(cursor, KEY_UPLOADER_NAME);
+        mission.thumbnailUrl = getOptionalString(cursor, KEY_THUMBNAIL_URL);
+        mission.textualUploadDate = getOptionalString(cursor, KEY_TEXTUAL_UPLOAD_DATE);
+        mission.viewCount = getOptionalLong(cursor, KEY_VIEW_COUNT, -1);
+        mission.uploadDateMillis = getOptionalLong(cursor, KEY_UPLOAD_DATE_MILLIS, -1);
+        mission.durationSeconds = getOptionalLong(cursor, KEY_DURATION_SECONDS, -1);
 
         try {
             mission.storage = new StoredFileHelper(context,null, Uri.parse(path), "");
@@ -171,6 +221,16 @@ public class FinishedMissionStore extends SQLiteOpenHelper {
         }
 
         return mission;
+    }
+
+    private String getOptionalString(Cursor cursor, String column) {
+        int index = cursor.getColumnIndex(column);
+        return index < 0 ? null : cursor.getString(index);
+    }
+
+    private long getOptionalLong(Cursor cursor, String column, long fallback) {
+        int index = cursor.getColumnIndex(column);
+        return index < 0 ? fallback : cursor.getLong(index);
     }
 
 
