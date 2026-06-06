@@ -1571,12 +1571,13 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
      * when the main player becomes the rounded mini player.
      */
     public void setupVideoSurfaceIfNeeded() {
-        if (!surfaceIsSetup && player.getExoPlayer() != null
-                && binding.getRoot().getParent() != null) {
-            clearVideoSurface();
-            player.getExoPlayer().setVideoTextureView(binding.surfaceView);
-            surfaceIsSetup = true;
+        if (player.getExoPlayer() == null || binding.getRoot().getParent() == null) {
+            return;
         }
+
+        clearVideoSurface();
+        player.getExoPlayer().setVideoTextureView(binding.surfaceView);
+        surfaceIsSetup = true;
     }
 
     private void clearVideoSurface() {

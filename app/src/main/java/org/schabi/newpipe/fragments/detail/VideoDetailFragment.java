@@ -209,7 +209,7 @@ public final class VideoDetailFragment
     @State
     protected boolean autoPlayEnabled = true;
     private boolean forceFullscreen = false;
-    private boolean miniPlayerControlsHaveRoom = false;
+    private boolean miniPlayerControlsHaveRoom = true;
     private boolean keepPlayerCollapsedOnNextOpen = false;
     private boolean ignorePlayerStartedAfterClose = false;
     private boolean closingMainPlayer = false;
@@ -1244,22 +1244,34 @@ public final class VideoDetailFragment
         keepPlayerCollapsedOnNextOpen = false;
         prepareMainPlayerOpeningSurface(keepCollapsed);
 
+        if (bottomSheetBehavior != null) {
+            bottomSheetBehavior.setHideable(false);
+            if (keepCollapsed) {
+                updateBottomSheetState(BottomSheetBehavior.STATE_COLLAPSED);
+                bottomSheetBehavior.setPeekHeight(getCollapsedBottomSheetPeekHeight());
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                updateMiniPlayerTransform(1.0f);
+                setMiniPlayerChromeAlpha(MAX_OVERLAY_ALPHA);
+                setMiniPlayerControlsAlpha(1.0f);
+                setOverlayElementsClickable(true);
+            } else {
+                updateBottomSheetState(BottomSheetBehavior.STATE_EXPANDED);
+                bottomSheetBehavior.setPeekHeight(getCollapsedBottomSheetPeekHeight());
+                prepareExpandedPlayerSurface();
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+        }
+
         if (!isPlayerServiceAvailable()) {
             playerHolder.startService(autoPlayEnabled, this);
             return;
         }
 
-        if (bottomSheetBehavior != null && !keepCollapsed) {
-            updateBottomSheetState(BottomSheetBehavior.STATE_EXPANDED);
-            bottomSheetBehavior.setHideable(false);
-            prepareExpandedPlayerSurface();
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-        }
-
         final PlayQueue queue = setupPlayQueueForIntent(false);
         tryAddVideoPlayerView();
         overlayThumbnailStreamUrl = currentInfo.getUrl();
-        showOverlayThumbnailUntilFirstPlay = true;
+        showOverlayThumbnailUntilFirstPlay = shouldShowPlayerStartupThumbnail();
+        updateOverlayThumbnailVisibility();
 
         final Context context = requireContext();
         final Intent playerIntent =
@@ -1268,17 +1280,6 @@ public final class VideoDetailFragment
                         .putExtra(Player.PLAY_WHEN_READY, autoPlayEnabled)
                         .putExtra(Player.RESUME_PLAYBACK, true);
         ContextCompat.startForegroundService(activity, playerIntent);
-
-        if (bottomSheetBehavior != null && keepCollapsed) {
-            updateBottomSheetState(BottomSheetBehavior.STATE_COLLAPSED);
-            bottomSheetBehavior.setHideable(false);
-            bottomSheetBehavior.setPeekHeight(getCollapsedBottomSheetPeekHeight());
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-            updateMiniPlayerTransform(1.0f);
-            setMiniPlayerChromeAlpha(MAX_OVERLAY_ALPHA);
-            setMiniPlayerControlsAlpha(1.0f);
-            setOverlayElementsClickable(true);
-        }
     }
 
     /**
@@ -2461,16 +2462,22 @@ public final class VideoDetailFragment
             manageSpaceAtTheBottom(false);
             bottomSheetBehavior.setPeekHeight(peekHeight);
             if (bottomSheetState == BottomSheetBehavior.STATE_COLLAPSED) {
+                binding.overlayLayout.setVisibility(View.VISIBLE);
                 binding.overlayLayout.setAlpha(MAX_OVERLAY_ALPHA);
                 updateMiniPlayerTransform(1.0f);
                 setMiniPlayerControlsAlpha(1.0f);
                 setBottomNavigationAlpha(1.0f);
             } else if (bottomSheetState == BottomSheetBehavior.STATE_EXPANDED) {
-                binding.overlayLayout.setAlpha(0);
+                binding.overlayLayout.setVisibility(View.VISIBLE);
+                binding.overlayLayout.setAlpha(1.0f);
                 setOverlayElementsClickable(false);
                 updateMiniPlayerTransform(0.0f);
+                setMiniPlayerChromeAlpha(0.0f);
+                setMiniPlayerControlsAlpha(0.0f);
                 setBottomNavigationAlpha(0.0f);
             }
+            setLegacyThumbnailAlpha(isPlayerAvailable() || showOverlayThumbnailUntilFirstPlay
+                    ? 0.0f : 1.0f);
         }
 
         bottomSheetCallback = new BottomSheetBehavior.BottomSheetCallback() {
@@ -2704,12 +2711,12 @@ public final class VideoDetailFragment
         setMiniPlayerChromeAlpha(keepCollapsed ? MAX_OVERLAY_ALPHA : 0.0f);
         setMiniPlayerControlsAlpha(keepCollapsed ? 1.0f : 0.0f);
         setBottomNavigationAlpha(keepCollapsed ? 1.0f : 0.0f);
+        showOverlayThumbnailUntilFirstPlay = shouldShowPlayerStartupThumbnail();
         if (currentInfo != null) {
             overlayThumbnailStreamUrl = currentInfo.getUrl();
             updateOverlayData(currentInfo.getName(), currentInfo.getUploaderName(),
                     currentInfo.getThumbnails());
         }
-        showOverlayThumbnailUntilFirstPlay = true;
         updateOverlayThumbnailVisibility();
     }
 
@@ -2748,6 +2755,9 @@ public final class VideoDetailFragment
             appBar.requestLayout();
             return;
         }
+        binding.overlayLayout.setVisibility(View.VISIBLE);
+        binding.overlayLayout.setAlpha(1.0f);
+        setBottomSheetSurfaceVisible(true);
         // SlideOffset < 0 when mini player is about to close via swipe.
         // Stop animation in this case.
         if (slideOffset < 0) {
@@ -2943,9 +2953,28 @@ public final class VideoDetailFragment
     }
 
     private void setMiniPlayerControlsAlpha(final float alpha) {
+        if (alpha > 0.01f && binding.overlayLayout.getWidth() > 0) {
+            final Rect videoRect = getCurrentOverlayVideoRect();
+            if (videoRect != null) {
+                positionMiniPlayerControls(videoRect);
+            }
+        }
         final float controlsAlpha = miniPlayerControlsHaveRoom ? alpha : 0.0f;
         binding.overlayMetadataLayout.setAlpha(controlsAlpha);
         binding.overlayButtonsLayout.setAlpha(controlsAlpha);
+    }
+
+    @Nullable
+    private Rect getCurrentOverlayVideoRect() {
+        if (binding == null || binding.overlayVideoContainer.getWidth() == 0
+                || binding.overlayVideoContainer.getHeight() == 0) {
+            return null;
+        }
+        return new Rect(
+                binding.overlayVideoContainer.getLeft(),
+                binding.overlayVideoContainer.getTop(),
+                binding.overlayVideoContainer.getRight(),
+                binding.overlayVideoContainer.getBottom());
     }
 
     private void setBottomNavigationAlpha(final float alpha) {
@@ -2992,6 +3021,10 @@ public final class VideoDetailFragment
                 || !player.isPlaying());
         binding.overlayThumbnail.setVisibility(shouldShowThumbnail ? View.VISIBLE : View.GONE);
         binding.overlayThumbnail.setAlpha(shouldShowThumbnail ? 1.0f : 0.0f);
+    }
+
+    private boolean shouldShowPlayerStartupThumbnail() {
+        return !isPlayerAvailable() || player.exoPlayerIsNull() || player.isStopped();
     }
 
     private void setOverlayElementsClickable(final boolean enable) {

@@ -119,18 +119,21 @@ class ChannelItem(
         latestVideosContainer ?: return
 
         val wasExpanded = latestVideosContainer.getTag(R.id.latestVideosContainer) as? Boolean ?: false
-        latestVideosContainer.setTag(R.id.latestVideosContainer, isExpanded)
 
         if (isLoadingLatestVideos) {
             return
         }
 
         if (!isExpanded) {
+            latestVideosContainer.setTag(R.id.latestVideosContainer, false)
             collapseLatestVideos(latestVideosContainer, wasExpanded)
             return
         }
 
-        val animateIn = !wasExpanded
+        val animateIn = !wasExpanded ||
+            latestVideosContainer.childCount == 0 ||
+            !latestVideosContainer.isVisible
+        latestVideosContainer.setTag(R.id.latestVideosContainer, true)
         populateLatestVideos(latestVideosContainer, animateIn)
         latestVideosContainer.visibility = View.VISIBLE
         if (!animateIn) {
