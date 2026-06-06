@@ -15,6 +15,7 @@ import org.schabi.newpipe.extractor.channel.ChannelInfoItem
 import org.schabi.newpipe.extractor.stream.StreamInfoItem
 import org.schabi.newpipe.info_list.ItemViewMode
 import org.schabi.newpipe.local.subscription.item.ChannelItem
+import org.schabi.newpipe.util.ChannelTabHelper
 import org.schabi.newpipe.util.DEFAULT_THROTTLE_TIMEOUT
 import org.schabi.newpipe.util.ExtractorHelper
 import org.schabi.newpipe.util.ThemeHelper.getItemViewMode
@@ -90,15 +91,30 @@ class SubscriptionViewModel(application: Application) : AndroidViewModel(applica
         if (latestVideosDisposables[key]?.isDisposed == false) {
             return
         }
-        latestVideosDisposables[key] = ExtractorHelper.getChannelInfo(infoItem.serviceId, infoItem.url, false)
+        latestVideosDisposables[key] = ExtractorHelper
+            .getChannelInfo(infoItem.serviceId, infoItem.url, false)
             .flatMap { channelInfo ->
-                val tab = channelInfo.tabs.firstOrNull()
+                val tab = channelInfo.tabs.firstOrNull { ChannelTabHelper.isStreamsTab(it) }
                 if (tab == null) {
                     Single.just<List<StreamInfoItem>>(emptyList())
                 } else {
-                    ExtractorHelper.getChannelTab(infoItem.serviceId, tab, false)
-                        .map { tabInfo ->
-                            tabInfo.relatedItems.filterIsInstance<StreamInfoItem>().take(3)
+                    ExtractorHelper.getChannelTab(infoItem.serviceId, tab, true)
+                        .flatMap { tabInfo ->
+                            val streams = tabInfo.relatedItems.filterIsInstance<StreamInfoItem>()
+                            if (streams.isNotEmpty() || tabInfo.nextPage == null) {
+                                Single.just(streams.take(LATEST_VIDEOS_COUNT))
+                            } else {
+                                ExtractorHelper.getMoreChannelTabItems(
+                                    infoItem.serviceId,
+                                    tab,
+                                    tabInfo.nextPage
+                                )
+                                    .map { page ->
+                                        page.items
+                                            .filterIsInstance<StreamInfoItem>()
+                                            .take(LATEST_VIDEOS_COUNT)
+                                    }
+                            }
                         }
                 }
             }
@@ -151,6 +167,7 @@ class SubscriptionViewModel(application: Application) : AndroidViewModel(applica
     }
 
     companion object {
+        private const val LATEST_VIDEOS_COUNT = 3
 
         /**
          * Returns whether to use GridLayout mode for Subscription Fragment.
