@@ -44,7 +44,6 @@ import org.schabi.newpipe.player.helper.PlayerDataSource;
 import org.schabi.newpipe.player.mediaitem.MediaItemTag;
 import org.schabi.newpipe.player.mediaitem.StreamInfoTag;
 import org.schabi.newpipe.util.StreamTypeUtil;
-import org.schabi.newpipe.util.potoken.SabrPoTokenProviderImpl;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -536,7 +535,7 @@ public interface PlaybackResolver extends Resolver<StreamInfo, MediaSource> {
                     videoItag.id,
                     NewPipe.getPreferredLocalization(),
                     NewPipe.getPreferredContentCountry(),
-                    SabrPoTokenProviderImpl.INSTANCE);
+                    null);
             final SabrSessionStore.Holder holder = SabrSessionStore.getOrCreate(config);
             final MediaItem mediaItem = new MediaItem.Builder()
                     .setTag(metadata)

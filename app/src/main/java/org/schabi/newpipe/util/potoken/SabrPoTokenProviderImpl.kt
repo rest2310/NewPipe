@@ -20,7 +20,7 @@ object SabrPoTokenProviderImpl : SabrPoTokenProvider {
         forceRefresh: Boolean
     ): ByteArray? {
         val token = PoTokenProviderImpl.getWebClientPoToken(info.videoId)
-            ?.streamingDataPoToken
+            ?.playerRequestPoToken
             ?: return null
 
         return try {

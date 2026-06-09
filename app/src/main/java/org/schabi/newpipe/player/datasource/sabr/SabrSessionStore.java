@@ -128,7 +128,7 @@ public final class SabrSessionStore {
             }
 
             final YoutubeSabrInfo info = YoutubeSabrProbe.fetchSabrInfo(config.getVideoId(),
-                    YoutubeSabrClientProfile.WEB, config.getLocalization(),
+                    YoutubeSabrClientProfile.ANDROID, config.getLocalization(),
                     config.getContentCountry());
             final YoutubeSabrFormat audioFormat = pickAudioFormat(info,
                     config.getSelectedAudioItag());
