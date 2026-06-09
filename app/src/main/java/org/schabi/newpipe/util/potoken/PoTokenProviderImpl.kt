@@ -23,12 +23,16 @@ object PoTokenProviderImpl : PoTokenProvider {
     private var webPoTokenGenerator: PoTokenGenerator? = null
 
     override fun getWebClientPoToken(videoId: String): PoTokenResult? {
+        return getWebClientPoToken(videoId = videoId, forceRecreate = false)
+    }
+
+    fun getWebClientPoToken(videoId: String, forceRecreate: Boolean): PoTokenResult? {
         if (!webViewSupported || webViewBadImpl) {
             return null
         }
 
         try {
-            return getWebClientPoToken(videoId = videoId, forceRecreate = false)
+            return getWebClientPoTokenInternal(videoId = videoId, forceRecreate = forceRecreate)
         } catch (e: RuntimeException) {
             // RxJava's Single wraps exceptions into RuntimeErrors, so we need to unwrap them here
             when (val cause = e.cause) {
@@ -50,7 +54,7 @@ object PoTokenProviderImpl : PoTokenProvider {
      * case the current [webPoTokenGenerator] threw an error last time
      * [PoTokenGenerator.generatePoToken] was called
      */
-    private fun getWebClientPoToken(videoId: String, forceRecreate: Boolean): PoTokenResult {
+    private fun getWebClientPoTokenInternal(videoId: String, forceRecreate: Boolean): PoTokenResult {
         // just a helper class since Kotlin does not have builtin support for 4-tuples
         data class Quadruple<T1, T2, T3, T4>(val t1: T1, val t2: T2, val t3: T3, val t4: T4)
 
@@ -109,15 +113,15 @@ object PoTokenProviderImpl : PoTokenProvider {
                 // this might happen for example if NewPipe goes in the background and the WebView
                 // content is lost
                 Log.e(TAG, "Failed to obtain poToken, retrying", throwable)
-                return getWebClientPoToken(videoId = videoId, forceRecreate = true)
+                return getWebClientPoTokenInternal(videoId = videoId, forceRecreate = true)
             }
         }
 
         if (BuildConfig.DEBUG) {
             Log.d(
                 TAG,
-                "poToken for $videoId: playerPot=$playerPot, " +
-                    "streamingPot=$streamingPot, visitor_data=$visitorData"
+                "poToken for $videoId: playerPotBytes=${playerPot.length}, " +
+                    "streamingPotBytes=${streamingPot.length}, visitorDataBytes=${visitorData.length}"
             )
         }
 

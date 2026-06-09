@@ -46,6 +46,7 @@ final class SabrStreamPump {
     // within the back-buffer window the cache can't drain -> the pump throttles forever and stalls.
     // Shrinking the back-buffer lets eviction free bytes so playback keeps fetching.
     private static final long MIN_BACK_BUFFER_MS = 5_000;
+    private static final long SEEK_AHEAD_THRESHOLD_MS = 1_000;
 
     private final YoutubeSabrSession session;
     private final SabrSessionStore.Holder holder;
@@ -55,8 +56,8 @@ final class SabrStreamPump {
     private volatile boolean stopped;
     private volatile boolean fatal;
     private volatile long lastReadMs;
-    // Set by a reader blocked on an evicted segment behind the edge (backward seek); the loop
-    // repositions the session onto it next round. Single-slot: the latest rewind target wins.
+    // Set by a reader blocked on a missing segment. Behind the edge this is a rewind/refetch;
+    // ahead of the edge it is active demand and bypasses normal read-ahead throttling.
     private volatile SabrSegmentRequest pendingRefetch;
     private Thread thread;
 
@@ -139,15 +140,27 @@ final class SabrStreamPump {
                     session.setPlayHeadMs(Math.max(0, holder.getReaderTailMs() - backBufferMs));
                     session.evictPlayed();
                     final long edgeMs = session.getStreamState().getMinBufferedEndMs();
-                    // Backward seek beyond the back-buffer: a reader is blocked on an evicted
-                    // segment
-                    // behind the edge. Reposition the session onto it (prepareForMediaSegment sets
-                    // buffered=up-to-(seg-1) + playerTime=seg start, so the server re-sends.
-                    // instead of fetching forward this round. Bypasses the throttle by design.
+                    // A reader is blocked on a concrete segment. Reposition the session and ask
+                    // immediately, bypassing read-ahead/byte throttles by design.
                     final SabrSegmentRequest refetch = pendingRefetch;
                     if (refetch != null) {
                         pendingRefetch = null;
-                        session.prepareForRewind(refetch);
+                        final long refetchStartMs = session.getStreamState()
+                                .getSegmentStartMs(refetch.getFormat(),
+                                        refetch.getSequenceNumber());
+                        if (refetchStartMs < edgeMs) {
+                            session.prepareForRewind(refetch);
+                        } else {
+                            session.prepareForMediaSegment(refetch);
+                        }
+                        session.pumpOnce(localization);
+                        continue;
+                    }
+                    if (readerHeadMs > edgeMs + SEEK_AHEAD_THRESHOLD_MS) {
+                        final int seq = session.getStreamState()
+                                .getSegmentNumberAtOrAfterTimeMs(holder.videoFormat, readerHeadMs);
+                        session.prepareForMediaSegment(SabrSegmentRequest.media(
+                                holder.videoFormat, seq));
                         session.pumpOnce(localization);
                         continue;
                     }
@@ -164,6 +177,9 @@ final class SabrStreamPump {
                     // report on edge.
                     session.getStreamState().setPlayerTimeMs(edgeMs);
                     final List<SabrMediaSegment> segments = session.pumpOnce(localization);
+                    if (!segments.isEmpty()) {
+                        holder.prewarmPoToken();
+                    }
                     if (segments.isEmpty()) {
                         Thread.sleep(IDLE_POLL_MS);
                     }

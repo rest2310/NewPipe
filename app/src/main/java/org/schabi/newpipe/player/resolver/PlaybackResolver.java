@@ -40,6 +40,7 @@ import org.schabi.newpipe.player.datasource.NonUriHlsDataSourceFactory;
 import org.schabi.newpipe.player.datasource.sabr.SabrMediaSource;
 import org.schabi.newpipe.player.datasource.sabr.SabrPlaybackConfig;
 import org.schabi.newpipe.player.datasource.sabr.SabrSessionStore;
+import org.schabi.newpipe.util.potoken.SabrPoTokenProviderImpl;
 import org.schabi.newpipe.player.helper.PlayerDataSource;
 import org.schabi.newpipe.player.mediaitem.MediaItemTag;
 import org.schabi.newpipe.player.mediaitem.StreamInfoTag;
@@ -535,7 +536,7 @@ public interface PlaybackResolver extends Resolver<StreamInfo, MediaSource> {
                     videoItag.id,
                     NewPipe.getPreferredLocalization(),
                     NewPipe.getPreferredContentCountry(),
-                    null);
+                    SabrPoTokenProviderImpl.INSTANCE);
             final SabrSessionStore.Holder holder = SabrSessionStore.getOrCreate(config);
             final MediaItem mediaItem = new MediaItem.Builder()
                     .setTag(metadata)

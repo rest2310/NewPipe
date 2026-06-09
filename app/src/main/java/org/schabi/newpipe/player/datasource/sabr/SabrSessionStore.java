@@ -3,8 +3,10 @@ package org.schabi.newpipe.player.datasource.sabr;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import org.schabi.newpipe.App;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.localization.Localization;
+import org.schabi.newpipe.extractor.services.youtube.sabr.SabrPoTokenProvider;
 import org.schabi.newpipe.extractor.services.youtube.sabr.SabrSegmentRequest;
 import org.schabi.newpipe.extractor.services.youtube.sabr.YoutubeSabrClientProfile;
 import org.schabi.newpipe.extractor.services.youtube.sabr.YoutubeSabrFormat;
@@ -16,14 +18,31 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class SabrSessionStore {
     private static final Map<String, Holder> SESSIONS = new ConcurrentHashMap<>();
     private static final Deque<String> ORDER = new ArrayDeque<>();
     private static final int MAX_SESSIONS = 2;
+    private static volatile SabrWebViewPoTokenProvider sharedPoTokenProvider;
 
     private SabrSessionStore() {
+    }
+
+    @NonNull
+    private static SabrWebViewPoTokenProvider provider() {
+        SabrWebViewPoTokenProvider provider = sharedPoTokenProvider;
+        if (provider == null) {
+            synchronized (SabrSessionStore.class) {
+                provider = sharedPoTokenProvider;
+                if (provider == null) {
+                    provider = new SabrWebViewPoTokenProvider(App.getInstance());
+                    sharedPoTokenProvider = provider;
+                }
+            }
+        }
+        return provider;
     }
 
     public static final class Holder {
@@ -32,21 +51,25 @@ public final class SabrSessionStore {
         @NonNull public final YoutubeSabrSession session;
         @NonNull public final YoutubeSabrFormat audioFormat;
         @NonNull public final YoutubeSabrFormat videoFormat;
+        @Nullable private final SabrPoTokenProvider poTokenProvider;
 
         private volatile long playerTimeMs;
         private final Map<Integer, Long> readerPositions = new ConcurrentHashMap<>();
+        private final AtomicBoolean tokenPrewarmStarted = new AtomicBoolean();
         @Nullable private volatile SabrStreamPump pump;
 
         Holder(@NonNull final String videoId,
                @NonNull final YoutubeSabrInfo info,
                @NonNull final YoutubeSabrSession session,
                @NonNull final YoutubeSabrFormat audioFormat,
-               @NonNull final YoutubeSabrFormat videoFormat) {
+               @NonNull final YoutubeSabrFormat videoFormat,
+               @Nullable final SabrPoTokenProvider poTokenProvider) {
             this.videoId = videoId;
             this.info = info;
             this.session = session;
             this.audioFormat = audioFormat;
             this.videoFormat = videoFormat;
+            this.poTokenProvider = poTokenProvider;
         }
 
         public long getPlayerTimeMs() {
@@ -55,6 +78,11 @@ public final class SabrSessionStore {
 
         void setPlayerTimeMs(final long playerTimeMs) {
             this.playerTimeMs = playerTimeMs;
+        }
+
+        void setReaderPositionMs(final long ms) {
+            setReaderPositionMs(audioFormat.getItag(), ms);
+            setReaderPositionMs(videoFormat.getItag(), ms);
         }
 
         public void setReaderPositionMs(final int itag, final long ms) {
@@ -99,6 +127,21 @@ public final class SabrSessionStore {
         boolean isBeyondEnd(@NonNull final SabrSegmentRequest request) {
             return session.isBeyondEnd(request);
         }
+
+        void prewarmPoToken() {
+            if (poTokenProvider == null || !tokenPrewarmStarted.compareAndSet(false, true)) {
+                return;
+            }
+            final Thread warm = new Thread(() -> {
+                try {
+                    poTokenProvider.getPoToken(info, session.getStreamState());
+                } catch (final Exception ignored) {
+                    // Best effort; the pump mints on demand if this fails.
+                }
+            }, "SabrTokenPrewarm");
+            warm.setDaemon(true);
+            warm.start();
+        }
     }
 
     public static void updatePlayerTime(@NonNull final String videoId, final long playerTimeMs) {
@@ -127,6 +170,8 @@ public final class SabrSessionStore {
                 evict(config.getVideoId());
             }
 
+            final SabrPoTokenProvider poTokenProvider = config.getPoTokenProvider() == null
+                    ? null : provider();
             final YoutubeSabrInfo info = YoutubeSabrProbe.fetchSabrInfo(config.getVideoId(),
                     YoutubeSabrClientProfile.ANDROID, config.getLocalization(),
                     config.getContentCountry());
@@ -140,9 +185,9 @@ public final class SabrSessionStore {
             }
 
             final YoutubeSabrSession session = new YoutubeSabrSession(info, audioFormat,
-                    videoFormat, config.getPoTokenProvider());
+                    videoFormat, poTokenProvider);
             final Holder holder = new Holder(config.getVideoId(), info, session, audioFormat,
-                    videoFormat);
+                    videoFormat, poTokenProvider);
             SESSIONS.put(config.getVideoId(), holder);
             ORDER.remove(config.getVideoId());
             ORDER.addLast(config.getVideoId());

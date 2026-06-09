@@ -145,24 +145,17 @@ public final class SabrSegmentDataSource implements DataSource {
             if (pump.isFatal()) {
                 throw new IOException("SABR pump fatal for itag=" + format.getItag());
             }
-            // Backward seek to an evicted segment behind the buffered edge: the forward pump never
-            // re-fetches it, so it would never arrive. Drop our read position onto it
-            // (so eviction +
-            // pacing follow the rewind, not the stale pre-seek position) and ask the pump to
-            // reposition the session there. The edge check leaves a merely-slow forward fetch (the
-            // segment is still ahead of the edge) to the normal pump, so forward
-            // playback is untouched.
+            // If this read is waiting while the pump is throttled (read-ahead full / byte budget),
+            // explicitly demand the segment. Behind the buffered edge this rewinds onto an evicted
+            // segment; ahead of the edge it bypasses throttling so an active reader is not starved.
             if (!request.isInitializationSegment()) {
                 final long now = System.currentTimeMillis();
                 if (now - waitStart > REFETCH_AFTER_MS && now - lastRefetchMs > REFETCH_AFTER_MS) {
-                    final long edgeMs = holder.session.getStreamState().getMinBufferedEndMs();
                     final long segStartMs = holder.session.getStreamState()
                             .getSegmentStartMs(format, request.getSequenceNumber());
-                    if (segStartMs < edgeMs) {
-                        holder.setReaderPositionMs(format.getItag(), segStartMs);
-                        pump.requestRefetchFrom(request);
-                        lastRefetchMs = now;
-                    }
+                    holder.setReaderPositionMs(format.getItag(), segStartMs);
+                    pump.requestRefetchFrom(request);
+                    lastRefetchMs = now;
                 }
             }
             // Stall = THIS segment hasn't arrived within STALL_MS of us actually waiting for it. Do

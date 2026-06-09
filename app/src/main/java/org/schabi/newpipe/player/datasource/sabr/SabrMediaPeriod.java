@@ -110,6 +110,7 @@ final class SabrMediaPeriod implements MediaPeriod,
     public long selectTracks(final ExoTrackSelection[] selections, final boolean[] mayRetainFlags,
                              final SampleStream[] outStreams, final boolean[] streamResetFlags,
                              final long positionUs) {
+        holder.setReaderPositionMs(Math.max(0, positionUs / 1000));
         // Release streams no longer wanted; create streams for newly selected tracks.
         for (int i = 0; i < selections.length; i++) {
             if (outStreams[i] instanceof ChunkSampleStream && (selections[i] == null
@@ -217,6 +218,7 @@ final class SabrMediaPeriod implements MediaPeriod,
 
     @Override
     public long seekToUs(final long positionUs) {
+        holder.setReaderPositionMs(Math.max(0, positionUs / 1000));
         for (final ChunkSampleStream<SabrChunkSource> s : streams) {
             s.seekToUs(positionUs);
         }
