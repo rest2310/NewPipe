@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 
 import com.google.android.exoplayer2.source.MediaSource;
 
+import org.schabi.newpipe.extractor.stream.DeliveryMethod;
 import org.schabi.newpipe.extractor.stream.AudioStream;
 import org.schabi.newpipe.extractor.stream.Stream;
 import org.schabi.newpipe.extractor.stream.StreamInfo;
@@ -76,6 +77,20 @@ public class AudioPlaybackResolver implements PlaybackResolver {
         }
 
         try {
+            if (stream.getDeliveryMethod() == DeliveryMethod.SABR) {
+                if (!(stream instanceof AudioStream)) {
+                    Log.e(TAG, "Unable to create SABR audio source without an audio stream");
+                    return null;
+                }
+                final VideoStream companionVideo = getSabrCompanionVideo(info);
+                if (companionVideo == null) {
+                    Log.e(TAG, "Unable to create SABR audio source without a video companion");
+                    return null;
+                }
+                return PlaybackResolver.buildYoutubeSabrMediaSource(companionVideo,
+                        (AudioStream) stream, info, PlaybackResolver.cacheKeyOf(info, stream),
+                        tag, false, true);
+            }
             return PlaybackResolver.buildMediaSource(
                     dataSource, stream, info, PlaybackResolver.cacheKeyOf(info, stream), tag);
         } catch (final ResolverException e) {
@@ -90,6 +105,18 @@ public class AudioPlaybackResolver implements PlaybackResolver {
             return streams.get(index);
         }
         return null;
+    }
+
+    @Nullable
+    private VideoStream getSabrCompanionVideo(@NonNull final StreamInfo info) {
+        final List<VideoStream> videoStreams = ListHelper.getSortedStreamVideosList(context,
+                ListHelper.getStreamsOfSpecifiedDelivery(info.getVideoStreams(),
+                        DeliveryMethod.SABR),
+                ListHelper.getStreamsOfSpecifiedDelivery(info.getVideoOnlyStreams(),
+                        DeliveryMethod.SABR),
+                true,
+                true);
+        return videoStreams.isEmpty() ? null : videoStreams.get(0);
     }
 
     @Nullable

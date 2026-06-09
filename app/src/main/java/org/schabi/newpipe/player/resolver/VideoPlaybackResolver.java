@@ -13,6 +13,7 @@ import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.MergingMediaSource;
 
 import org.schabi.newpipe.extractor.MediaFormat;
+import org.schabi.newpipe.extractor.stream.DeliveryMethod;
 import org.schabi.newpipe.extractor.stream.AudioStream;
 import org.schabi.newpipe.extractor.stream.StreamInfo;
 import org.schabi.newpipe.extractor.stream.SubtitlesStream;
@@ -101,31 +102,49 @@ public class VideoPlaybackResolver implements PlaybackResolver {
                 .map(MediaItemTag.AudioTrack::getSelectedAudioStream)
                 .orElse(null);
 
-        if (video != null) {
-            try {
-                final MediaSource streamSource = PlaybackResolver.buildMediaSource(
-                        dataSource, video, info, PlaybackResolver.cacheKeyOf(info, video), tag);
-                mediaSources.add(streamSource);
-            } catch (final ResolverException e) {
-                Log.e(TAG, "Unable to create video source", e);
+        if (isSabr(video) || isSabr(audio)) {
+            if (!isSabr(video) || !isSabr(audio)) {
+                Log.e(TAG, "Unable to create SABR source without both video and audio streams");
                 return null;
             }
-        }
-
-        // Use the audio stream if there is no video stream, or
-        // merge with audio stream in case if video does not contain audio
-        if (audio != null && (video == null || video.isVideoOnly() || audioTrack != null)) {
             try {
-                final MediaSource audioSource = PlaybackResolver.buildMediaSource(
-                        dataSource, audio, info, PlaybackResolver.cacheKeyOf(info, audio), tag);
-                mediaSources.add(audioSource);
+                final String cacheKey = PlaybackResolver.cacheKeyOf(info, video)
+                        + " " + PlaybackResolver.cacheKeyOf(info, audio);
+                mediaSources.add(PlaybackResolver.buildYoutubeSabrMediaSource(video, audio, info,
+                        cacheKey, tag, true, true));
                 streamSourceType = SourceType.VIDEO_WITH_SEPARATED_AUDIO;
             } catch (final ResolverException e) {
-                Log.e(TAG, "Unable to create audio source", e);
+                Log.e(TAG, "Unable to create SABR source", e);
                 return null;
             }
         } else {
-            streamSourceType = SourceType.VIDEO_WITH_AUDIO_OR_AUDIO_ONLY;
+            if (video != null) {
+                try {
+                    final MediaSource streamSource = PlaybackResolver.buildMediaSource(
+                            dataSource, video, info, PlaybackResolver.cacheKeyOf(info, video), tag);
+                    mediaSources.add(streamSource);
+                } catch (final ResolverException e) {
+                    Log.e(TAG, "Unable to create video source", e);
+                    return null;
+                }
+            }
+
+            // Use the audio stream if there is no video stream, or
+            // merge with audio stream in case if video does not contain audio
+            if (audio != null && (video == null || video.isVideoOnly() || audioTrack != null)) {
+                try {
+                    final MediaSource audioSource = PlaybackResolver.buildMediaSource(
+                            dataSource, audio, info, PlaybackResolver.cacheKeyOf(info, audio),
+                            tag);
+                    mediaSources.add(audioSource);
+                    streamSourceType = SourceType.VIDEO_WITH_SEPARATED_AUDIO;
+                } catch (final ResolverException e) {
+                    Log.e(TAG, "Unable to create audio source", e);
+                    return null;
+                }
+            } else {
+                streamSourceType = SourceType.VIDEO_WITH_AUDIO_OR_AUDIO_ONLY;
+            }
         }
 
         // If there is no audio or video sources, then this media source cannot be played back
@@ -200,5 +219,10 @@ public class VideoPlaybackResolver implements PlaybackResolver {
         int getDefaultResolutionIndex(List<VideoStream> sortedVideos);
 
         int getOverrideResolutionIndex(List<VideoStream> sortedVideos, String playbackQuality);
+    }
+
+    private static boolean isSabr(
+            @Nullable final org.schabi.newpipe.extractor.stream.Stream stream) {
+        return stream != null && stream.getDeliveryMethod() == DeliveryMethod.SABR;
     }
 }

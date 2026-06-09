@@ -31,3 +31,10 @@ include (":app")
 //            .using(project(":extractor"))
 //    }
 //}
+
+includeBuild("../NewPipeExtractor-sabr") {
+    dependencySubstitution {
+        substitute(module("com.github.TeamNewPipe:NewPipeExtractor"))
+            .using(project(":extractor"))
+    }
+}

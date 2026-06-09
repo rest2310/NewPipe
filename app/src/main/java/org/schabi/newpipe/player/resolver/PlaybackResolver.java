@@ -22,7 +22,9 @@ import com.google.android.exoplayer2.source.smoothstreaming.manifest.SsManifest;
 import com.google.android.exoplayer2.source.smoothstreaming.manifest.SsManifestParser;
 
 import org.schabi.newpipe.extractor.MediaFormat;
+import org.schabi.newpipe.extractor.NewPipe;
 import org.schabi.newpipe.extractor.ServiceList;
+import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.services.youtube.ItagItem;
 import org.schabi.newpipe.extractor.services.youtube.dashmanifestcreators.CreationException;
 import org.schabi.newpipe.extractor.services.youtube.dashmanifestcreators.YoutubeOtfDashManifestCreator;
@@ -35,10 +37,14 @@ import org.schabi.newpipe.extractor.stream.StreamInfo;
 import org.schabi.newpipe.extractor.stream.StreamType;
 import org.schabi.newpipe.extractor.stream.VideoStream;
 import org.schabi.newpipe.player.datasource.NonUriHlsDataSourceFactory;
+import org.schabi.newpipe.player.datasource.sabr.SabrMediaSource;
+import org.schabi.newpipe.player.datasource.sabr.SabrPlaybackConfig;
+import org.schabi.newpipe.player.datasource.sabr.SabrSessionStore;
 import org.schabi.newpipe.player.helper.PlayerDataSource;
 import org.schabi.newpipe.player.mediaitem.MediaItemTag;
 import org.schabi.newpipe.player.mediaitem.StreamInfoTag;
 import org.schabi.newpipe.util.StreamTypeUtil;
+import org.schabi.newpipe.util.potoken.SabrPoTokenProviderImpl;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -501,9 +507,46 @@ public interface PlaybackResolver extends Resolver<StreamInfo, MediaSource> {
                                 .setUri(Uri.parse(stream.getContent()))
                                 .setCustomCacheKey(cacheKey)
                                 .build());
+            case SABR:
+                throw new ResolverException("SABR requires a paired audio/video media source");
             default:
                 throw new ResolverException("Unsupported delivery method for YouTube contents: "
                         + deliveryMethod);
+        }
+    }
+
+    static MediaSource buildYoutubeSabrMediaSource(final VideoStream videoStream,
+                                                   final AudioStream audioStream,
+                                                   final StreamInfo streamInfo,
+                                                   final String cacheKey,
+                                                   final MediaItemTag metadata,
+                                                   final boolean exposeVideoTrack,
+                                                   final boolean exposeAudioTrack)
+            throws ResolverException {
+        final ItagItem videoItag = videoStream.getItagItem();
+        final ItagItem audioItag = audioStream.getItagItem();
+        if (videoItag == null || audioItag == null) {
+            throw new ResolverException("SABR stream is missing an itag");
+        }
+
+        try {
+            final SabrPlaybackConfig config = new SabrPlaybackConfig(
+                    streamInfo.getId(),
+                    audioItag.id,
+                    videoItag.id,
+                    NewPipe.getPreferredLocalization(),
+                    NewPipe.getPreferredContentCountry(),
+                    SabrPoTokenProviderImpl.INSTANCE);
+            final SabrSessionStore.Holder holder = SabrSessionStore.getOrCreate(config);
+            final MediaItem mediaItem = new MediaItem.Builder()
+                    .setTag(metadata)
+                    .setUri(Uri.parse("sabr://" + streamInfo.getId()))
+                    .setCustomCacheKey(cacheKey)
+                    .build();
+            return new SabrMediaSource(mediaItem, holder, config.getLocalization(),
+                    exposeVideoTrack, exposeAudioTrack);
+        } catch (final IOException | ExtractionException e) {
+            throw new ResolverException("Could not create SABR media source", e);
         }
     }
 

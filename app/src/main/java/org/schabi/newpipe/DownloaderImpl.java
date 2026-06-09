@@ -14,6 +14,7 @@ import org.schabi.newpipe.extractor.exceptions.ReCaptchaException;
 import org.schabi.newpipe.util.InfoCache;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -164,9 +165,14 @@ public final class DownloaderImpl extends Downloader {
                 throw new ReCaptchaException("reCaptcha Challenge requested", url);
             }
 
+            byte[] responseBodyBytesToReturn = null;
             String responseBodyToReturn = null;
             try (ResponseBody body = response.body()) {
-                responseBodyToReturn = body.string();
+                if (body != null) {
+                    responseBodyBytesToReturn = body.bytes();
+                    responseBodyToReturn = new String(responseBodyBytesToReturn,
+                            StandardCharsets.UTF_8);
+                }
             }
 
             final String latestUrl = response.request().url().toString();
@@ -175,6 +181,7 @@ public final class DownloaderImpl extends Downloader {
                     response.message(),
                     response.headers().toMultimap(),
                     responseBodyToReturn,
+                    responseBodyBytesToReturn,
                     latestUrl);
         }
     }

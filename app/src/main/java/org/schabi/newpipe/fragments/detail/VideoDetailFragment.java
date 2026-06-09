@@ -79,6 +79,7 @@ import org.schabi.newpipe.extractor.NewPipe;
 import org.schabi.newpipe.extractor.comments.CommentsInfoItem;
 import org.schabi.newpipe.extractor.exceptions.ContentNotSupportedException;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
+import org.schabi.newpipe.extractor.stream.DeliveryMethod;
 import org.schabi.newpipe.extractor.stream.AudioStream;
 import org.schabi.newpipe.extractor.stream.Stream;
 import org.schabi.newpipe.extractor.stream.StreamInfo;
@@ -1729,7 +1730,7 @@ public final class VideoDetailFragment
         }
 
         binding.detailControlsDownload.setVisibility(
-                StreamTypeUtil.isLiveStream(info.getStreamType()) ? View.GONE : View.VISIBLE);
+                hasDownloadableStreams(info) ? View.VISIBLE : View.GONE);
         binding.detailControlsBackground.setVisibility(
                 info.getAudioStreams().isEmpty() && info.getVideoStreams().isEmpty()
                         ? View.GONE : View.VISIBLE);
@@ -1739,6 +1740,18 @@ public final class VideoDetailFragment
         binding.detailControlsPopup.setVisibility(noVideoStreams ? View.GONE : View.VISIBLE);
         binding.detailThumbnailPlayButton.setImageResource(
                 noVideoStreams ? R.drawable.ic_headset_shadow : R.drawable.ic_play_arrow_shadow);
+    }
+
+    private static boolean hasDownloadableStreams(@NonNull final StreamInfo info) {
+        return !StreamTypeUtil.isLiveStream(info.getStreamType())
+                && (!ListHelper.getStreamsOfSpecifiedDelivery(info.getAudioStreams(),
+                        DeliveryMethod.PROGRESSIVE_HTTP).isEmpty()
+                || !ListHelper.getStreamsOfSpecifiedDelivery(info.getVideoStreams(),
+                        DeliveryMethod.PROGRESSIVE_HTTP).isEmpty()
+                || !ListHelper.getStreamsOfSpecifiedDelivery(info.getVideoOnlyStreams(),
+                        DeliveryMethod.PROGRESSIVE_HTTP).isEmpty()
+                || !ListHelper.getStreamsOfSpecifiedDelivery(info.getSubtitles(),
+                        DeliveryMethod.PROGRESSIVE_HTTP).isEmpty());
     }
 
     private void displayUploaderAsSubChannel(final StreamInfo info) {
