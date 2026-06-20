@@ -808,6 +808,8 @@
     <string name="sort">Sort</string>
     <string name="settings_category_exoplayer_title">ExoPlayer settings</string>
     <string name="settings_category_exoplayer_summary">Manage some ExoPlayer settings. These changes require a player restart to take effect</string>
+    <string name="force_sabr_protocol_title">Force SABR protocol</string>
+    <string name="force_sabr_protocol_summary">Always use SABR for supported YouTube videos</string>
     <string name="use_exoplayer_decoder_fallback_title">Use ExoPlayer\'s decoder fallback feature</string>
     <string name="use_exoplayer_decoder_fallback_summary">Enable this option if you have decoder initialization issues, which falls back to lower-priority decoders if primary decoders initialization fail. This may result in poor playback performance than when using primary decoders</string>
     <string name="always_use_exoplayer_set_output_surface_workaround_title">Always use ExoPlayer\'s video output surface setting workaround</string>

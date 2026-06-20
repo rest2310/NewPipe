@@ -75,11 +75,16 @@ public class VideoPlaybackResolver implements PlaybackResolver {
         final List<MediaSource> mediaSources = new ArrayList<>();
 
         // Create video stream source
+        final boolean useSabr = SabrPlaybackSelector.shouldUseSabr(context, info);
+        Log.i(TAG, "Playback delivery for " + info.getId() + ": "
+                + (useSabr ? "SABR" : "classic"));
         final List<VideoStream> videoStreamsList = ListHelper.getSortedStreamVideosList(context,
-                getPlayableStreams(info.getVideoStreams(), info.getServiceId()),
-                getPlayableStreams(info.getVideoOnlyStreams(), info.getServiceId()), false, true);
-        final List<AudioStream> audioStreamsList =
-                getFilteredAudioStreams(context, info.getAudioStreams());
+                getPlayableStreams(SabrPlaybackSelector.selectDelivery(info.getVideoStreams(),
+                        useSabr), info.getServiceId()),
+                getPlayableStreams(SabrPlaybackSelector.selectDelivery(info.getVideoOnlyStreams(),
+                        useSabr), info.getServiceId()), false, true);
+        final List<AudioStream> audioStreamsList = getFilteredAudioStreams(context,
+                SabrPlaybackSelector.selectDelivery(info.getAudioStreams(), useSabr));
 
         final int videoIndex;
         if (videoStreamsList.isEmpty()) {

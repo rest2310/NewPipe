@@ -54,8 +54,9 @@ public class AudioPlaybackResolver implements PlaybackResolver {
             return liveSource;
         }
 
-        final List<AudioStream> audioStreams =
-                getFilteredAudioStreams(context, info.getAudioStreams());
+        final boolean useSabr = SabrPlaybackSelector.shouldUseSabr(context, info);
+        final List<AudioStream> audioStreams = getFilteredAudioStreams(context,
+                SabrPlaybackSelector.selectDelivery(info.getAudioStreams(), useSabr));
         final Stream stream;
         final MediaItemTag tag;
 
@@ -66,7 +67,8 @@ public class AudioPlaybackResolver implements PlaybackResolver {
             tag = StreamInfoTag.of(info, audioStreams, audioIndex);
         } else {
             final List<VideoStream> videoStreams =
-                    getPlayableStreams(info.getVideoStreams(), info.getServiceId());
+                    getPlayableStreams(SabrPlaybackSelector.selectDelivery(info.getVideoStreams(),
+                            useSabr), info.getServiceId());
             if (!videoStreams.isEmpty()) {
                 final int index = ListHelper.getDefaultResolutionIndex(context, videoStreams);
                 stream = getStreamForIndex(index, videoStreams);

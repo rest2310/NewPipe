@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.SeekParameters;
+import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.drm.DrmSessionEventListener;
 import com.google.android.exoplayer2.drm.DrmSessionManager;
 import com.google.android.exoplayer2.source.MediaPeriod;
@@ -13,87 +14,87 @@ import com.google.android.exoplayer2.source.SampleStream;
 import com.google.android.exoplayer2.source.SequenceableLoader;
 import com.google.android.exoplayer2.source.TrackGroup;
 import com.google.android.exoplayer2.source.TrackGroupArray;
+import com.google.android.exoplayer2.source.chunk.BundledChunkExtractor;
 import com.google.android.exoplayer2.source.chunk.ChunkSampleStream;
 import com.google.android.exoplayer2.trackselection.ExoTrackSelection;
 import com.google.android.exoplayer2.upstream.Allocator;
 import com.google.android.exoplayer2.upstream.DefaultLoadErrorHandlingPolicy;
 import com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy;
 
-import org.schabi.newpipe.extractor.localization.Localization;
-import org.schabi.newpipe.extractor.services.youtube.sabr.YoutubeSabrFormat;
+import org.schabi.newpipe.player.datasource.sabr.libretube.DefaultSabrChunkSource;
+import org.schabi.newpipe.player.datasource.sabr.libretube.SabrDataSource;
+import org.schabi.newpipe.player.datasource.sabr.libretube.manifest.AdaptationSet;
+import org.schabi.newpipe.player.datasource.sabr.libretube.manifest.Representation;
+import org.schabi.newpipe.player.datasource.sabr.libretube.manifest.SabrManifest;
+import org.schabi.newpipe.player.datasource.sabr.libretube.parser.SabrClient;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Tier-2 {@link MediaPeriod} for SABR: exposes the audio and video tracks and backs each selected
- * one with a {@link ChunkSampleStream} over a {@link SabrChunkSource}. Seeking is handled by the
- * chunk streams (time -> chunk index), so it actually lands, unlike the v1 byte-stream source.
- */
+/** ExoPlayer 2.19 adapter for LibreTube's demand-driven SABR chunk pipeline. */
 final class SabrMediaPeriod implements MediaPeriod,
-        SequenceableLoader.Callback<ChunkSampleStream<SabrChunkSource>> {
-
-    private final SabrSessionStore.Holder holder;
-    private final Localization localization;
-    private final long durationUs;
+        SequenceableLoader.Callback<ChunkSampleStream<DefaultSabrChunkSource>> {
+    private final SabrManifest manifest;
+    private final SabrClient client;
     private final Allocator allocator;
     private final DrmSessionManager drmSessionManager;
     private final DrmSessionEventListener.EventDispatcher drmEventDispatcher;
     private final MediaSourceEventListener.EventDispatcher mediaSourceEventDispatcher;
     private final LoadErrorHandlingPolicy loadErrorHandlingPolicy =
             new DefaultLoadErrorHandlingPolicy();
-
     private final TrackGroupArray trackGroups;
-    private final YoutubeSabrFormat[] sabrFormats;
+    private final int[] adaptationSetIndices;
     private final int[] trackTypes;
+    private final List<ChunkSampleStream<DefaultSabrChunkSource>> streams = new ArrayList<>();
 
-    private final List<ChunkSampleStream<SabrChunkSource>> streams = new ArrayList<>();
     private SequenceableLoader compositeLoader = new EmptyLoader();
     @Nullable
     private MediaPeriod.Callback callback;
 
-    SabrMediaPeriod(final SabrSessionStore.Holder holder,
-                    final Format audioFormat,
-                    final Format videoFormat,
-                    final long durationUs,
+    SabrMediaPeriod(final SabrManifest manifest,
+                    final SabrClient client,
                     final Allocator allocator,
                     final DrmSessionManager drmSessionManager,
                     final DrmSessionEventListener.EventDispatcher drmEventDispatcher,
                     final MediaSourceEventListener.EventDispatcher mediaSourceEventDispatcher,
-                    final Localization localization,
-                    final boolean exposeVideoTrack,
-                    final boolean exposeAudioTrack) {
-        this.holder = holder;
-        this.localization = localization;
-        this.durationUs = durationUs;
+                    final int exposedTrackTypes) {
+        this.manifest = manifest;
+        this.client = client;
         this.allocator = allocator;
         this.drmSessionManager = drmSessionManager;
         this.drmEventDispatcher = drmEventDispatcher;
         this.mediaSourceEventDispatcher = mediaSourceEventDispatcher;
-        final List<TrackGroup> groups = new ArrayList<>();
-        final List<YoutubeSabrFormat> formats = new ArrayList<>();
-        final List<Integer> types = new ArrayList<>();
-        if (exposeVideoTrack) {
-            groups.add(new TrackGroup("sabr-video", videoFormat));
-            formats.add(holder.videoFormat);
-            types.add(C.TRACK_TYPE_VIDEO);
+
+        final List<AdaptationSet> adaptationSets = manifest.getAdaptationSets();
+        final List<Integer> includedIndices = new ArrayList<>();
+        for (int i = 0; i < adaptationSets.size(); i++) {
+            final int type = adaptationSets.get(i).getType();
+            if ((exposedTrackTypes & (1 << type)) != 0) {
+                includedIndices.add(i);
+            }
         }
-        if (exposeAudioTrack) {
-            groups.add(new TrackGroup("sabr-audio", audioFormat));
-            formats.add(holder.audioFormat);
-            types.add(C.TRACK_TYPE_AUDIO);
+        final TrackGroup[] groups = new TrackGroup[includedIndices.size()];
+        adaptationSetIndices = new int[includedIndices.size()];
+        trackTypes = new int[includedIndices.size()];
+        for (int i = 0; i < includedIndices.size(); i++) {
+            final int adaptationSetIndex = includedIndices.get(i);
+            final AdaptationSet adaptationSet = adaptationSets.get(adaptationSetIndex);
+            final List<Representation> representations = adaptationSet.getRepresentations();
+            final Format[] formats = new Format[representations.size()];
+            for (int j = 0; j < representations.size(); j++) {
+                formats[j] = representations.get(j).getFormat();
+            }
+            groups[i] = new TrackGroup("sabr-" + i, formats);
+            adaptationSetIndices[i] = adaptationSetIndex;
+            trackTypes[i] = adaptationSet.getType();
         }
-        this.sabrFormats = formats.toArray(new YoutubeSabrFormat[0]);
-        this.trackTypes = new int[types.size()];
-        for (int i = 0; i < types.size(); i++) {
-            this.trackTypes[i] = types.get(i);
-        }
-        this.trackGroups = new TrackGroupArray(groups.toArray(new TrackGroup[0]));
+        trackGroups = new TrackGroupArray(groups);
     }
 
     @Override
     public void prepare(final MediaPeriod.Callback cb, final long positionUs) {
-        this.callback = cb;
+        callback = cb;
         cb.onPrepared(this);
     }
 
@@ -110,85 +111,88 @@ final class SabrMediaPeriod implements MediaPeriod,
     public long selectTracks(final ExoTrackSelection[] selections, final boolean[] mayRetainFlags,
                              final SampleStream[] outStreams, final boolean[] streamResetFlags,
                              final long positionUs) {
-        holder.setReaderPositionMs(Math.max(0, positionUs / 1000));
-        // Release streams no longer wanted; create streams for newly selected tracks.
+        final long now = Instant.now().toEpochMilli();
+        client.setLastManualFormatSelectionMs(now);
+        client.setLastActionMs(now);
+
         for (int i = 0; i < selections.length; i++) {
             if (outStreams[i] instanceof ChunkSampleStream && (selections[i] == null
                     || !mayRetainFlags[i])) {
                 @SuppressWarnings("unchecked")
-                final ChunkSampleStream<SabrChunkSource> s =
-                        (ChunkSampleStream<SabrChunkSource>) outStreams[i];
-                streams.remove(s);
-                s.release();
+                final ChunkSampleStream<DefaultSabrChunkSource> stream =
+                        (ChunkSampleStream<DefaultSabrChunkSource>) outStreams[i];
+                streams.remove(stream);
+                stream.release();
                 outStreams[i] = null;
             }
             if (outStreams[i] == null && selections[i] != null) {
-                final ChunkSampleStream<SabrChunkSource> s = buildStream(selections[i], positionUs);
-                streams.add(s);
-                outStreams[i] = s;
+                final ChunkSampleStream<DefaultSabrChunkSource> stream =
+                        buildStream(selections[i], positionUs);
+                streams.add(stream);
+                outStreams[i] = stream;
                 streamResetFlags[i] = true;
+            } else if (outStreams[i] instanceof ChunkSampleStream && selections[i] != null) {
+                @SuppressWarnings("unchecked")
+                final ChunkSampleStream<DefaultSabrChunkSource> stream =
+                        (ChunkSampleStream<DefaultSabrChunkSource>) outStreams[i];
+                stream.getChunkSource().updateTrackSelection(selections[i]);
             }
         }
         rebuildCompositeLoader();
         return positionUs;
     }
 
-    private ChunkSampleStream<SabrChunkSource> buildStream(final ExoTrackSelection selection,
-                                                           final long positionUs) {
-        final TrackGroup group = selection.getTrackGroup();
-        final int groupIndex = trackGroups.indexOf(group);
-        final Format trackFormat = group.getFormat(0);
-        final SabrChunkSource chunkSource = new SabrChunkSource(holder, sabrFormats[groupIndex],
-                trackFormat, trackTypes[groupIndex], localization);
+    private ChunkSampleStream<DefaultSabrChunkSource> buildStream(
+            final ExoTrackSelection selection, final long positionUs) {
+        final int groupIndex = trackGroups.indexOf(selection.getTrackGroup());
+        final DefaultSabrChunkSource chunkSource = new DefaultSabrChunkSource(
+                BundledChunkExtractor.FACTORY, manifest, client,
+                new int[]{adaptationSetIndices[groupIndex]}, selection, trackTypes[groupIndex],
+                new SabrDataSource(client), PlayerId.UNSET);
         return new ChunkSampleStream<>(trackTypes[groupIndex], null, null, chunkSource, this,
                 allocator, positionUs, drmSessionManager, drmEventDispatcher,
                 loadErrorHandlingPolicy, mediaSourceEventDispatcher);
     }
 
     private void rebuildCompositeLoader() {
-        // Simplest correct loader: drive each stream; report the min buffered / max load position.
         compositeLoader = new SequenceableLoader() {
             @Override
             public long getBufferedPositionUs() {
-                // Skip tracks already buffered to the end (END_OF_SOURCE = Long.MIN_VALUE), else a
-                // finished shorter track (audio) would collapse the min and make media3 think the
-                // whole period is buffered to the end, starving the still-loading
-                // video near the end.
-                long min = Long.MAX_VALUE;
-                for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-                    final long b = s.getBufferedPositionUs();
-                    if (b != C.TIME_END_OF_SOURCE) {
-                        min = Math.min(min, b);
+                long minimum = Long.MAX_VALUE;
+                for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+                    final long position = stream.getBufferedPositionUs();
+                    if (position != C.TIME_END_OF_SOURCE) {
+                        minimum = Math.min(minimum, position);
                     }
                 }
-                return min == Long.MAX_VALUE ? C.TIME_END_OF_SOURCE : min;
+                return minimum == Long.MAX_VALUE ? C.TIME_END_OF_SOURCE : minimum;
             }
 
             @Override
             public long getNextLoadPositionUs() {
-                long min = Long.MAX_VALUE;
-                for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-                    final long n = s.getNextLoadPositionUs();
-                    if (n != C.TIME_END_OF_SOURCE) {
-                        min = Math.min(min, n);
+                long minimum = Long.MAX_VALUE;
+                for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+                    final long position = stream.getNextLoadPositionUs();
+                    if (position != C.TIME_END_OF_SOURCE) {
+                        minimum = Math.min(minimum, position);
                     }
                 }
-                return min == Long.MAX_VALUE ? C.TIME_END_OF_SOURCE : min;
+                return minimum == Long.MAX_VALUE ? C.TIME_END_OF_SOURCE : minimum;
             }
 
             @Override
             public boolean continueLoading(final long positionUs) {
-                boolean any = false;
-                for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-                    any |= s.continueLoading(positionUs);
+                boolean continued = false;
+                for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+                    continued |= stream.continueLoading(positionUs);
                 }
-                return any;
+                return continued;
             }
 
             @Override
             public boolean isLoading() {
-                for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-                    if (s.isLoading()) {
+                for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+                    if (stream.isLoading()) {
                         return true;
                     }
                 }
@@ -197,8 +201,8 @@ final class SabrMediaPeriod implements MediaPeriod,
 
             @Override
             public void reevaluateBuffer(final long positionUs) {
-                for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-                    s.reevaluateBuffer(positionUs);
+                for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+                    stream.reevaluateBuffer(positionUs);
                 }
             }
         };
@@ -206,8 +210,8 @@ final class SabrMediaPeriod implements MediaPeriod,
 
     @Override
     public void discardBuffer(final long positionUs, final boolean toKeyframe) {
-        for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-            s.discardBuffer(positionUs, toKeyframe);
+        for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+            stream.discardBuffer(positionUs, toKeyframe);
         }
     }
 
@@ -218,17 +222,19 @@ final class SabrMediaPeriod implements MediaPeriod,
 
     @Override
     public long seekToUs(final long positionUs) {
-        holder.setReaderPositionMs(Math.max(0, positionUs / 1000));
-        for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-            s.seekToUs(positionUs);
+        for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+            stream.seekToUs(positionUs);
         }
         return positionUs;
     }
 
     @Override
-    public long getAdjustedSeekPositionUs(final long positionUs, final SeekParameters params) {
-        for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-            return s.getAdjustedSeekPositionUs(positionUs, params);
+    public long getAdjustedSeekPositionUs(final long positionUs,
+                                          final SeekParameters seekParameters) {
+        for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+            if (stream.primaryTrackType == C.TRACK_TYPE_VIDEO) {
+                return stream.getAdjustedSeekPositionUs(positionUs, seekParameters);
+            }
         }
         return positionUs;
     }
@@ -259,20 +265,20 @@ final class SabrMediaPeriod implements MediaPeriod,
     }
 
     @Override
-    public void onContinueLoadingRequested(final ChunkSampleStream<SabrChunkSource> source) {
+    public void onContinueLoadingRequested(
+            final ChunkSampleStream<DefaultSabrChunkSource> source) {
         if (callback != null) {
             callback.onContinueLoadingRequested(this);
         }
     }
 
     void release() {
-        for (final ChunkSampleStream<SabrChunkSource> s : streams) {
-            s.release();
+        for (final ChunkSampleStream<DefaultSabrChunkSource> stream : streams) {
+            stream.release();
         }
         streams.clear();
     }
 
-    /** No-op loader used before any track is selected. */
     private static final class EmptyLoader implements SequenceableLoader {
         @Override
         public long getBufferedPositionUs() {

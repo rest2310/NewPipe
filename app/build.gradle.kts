@@ -4,6 +4,7 @@
  */
 
 import com.android.build.api.dsl.ApplicationExtension
+import com.google.protobuf.gradle.id
 import org.gradle.api.tasks.util.PatternFilterable
 
 plugins {
@@ -11,6 +12,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.kapt)
     alias(libs.plugins.google.ksp)
+    alias(libs.plugins.google.protobuf)
     alias(libs.plugins.jetbrains.kotlin.parcelize)
     alias(libs.plugins.jetbrains.kotlinx.serialization)
     alias(libs.plugins.sonarqube)
@@ -296,6 +298,8 @@ dependencies {
     implementation(libs.google.exoplayer.mediasession)
     implementation(libs.google.exoplayer.smoothstreaming)
     implementation(libs.google.exoplayer.ui)
+    implementation(libs.google.protobuf.javalite)
+    implementation(libs.google.protobuf.kotlin.lite)
 
     // Manager for complex RecyclerView layouts
     implementation(libs.lisawray.groupie.core)
@@ -343,4 +347,19 @@ dependencies {
     androidTestImplementation(libs.androidx.runner)
     androidTestImplementation(libs.androidx.room.testing)
     androidTestImplementation(libs.assertj.core)
+}
+
+protobuf {
+    protoc {
+        artifact = libs.protobuf.protoc.get().toString()
+    }
+    generateProtoTasks {
+        all().forEach { task ->
+            task.plugins {
+                id("java") {
+                    option("lite")
+                }
+            }
+        }
+    }
 }
